@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectiveSugar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,7 +37,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>67D4D936C851A63A1703CAC57972DE87</key>
+		<key>511B536F0DE06D9C3BD65397A91990C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>708E01B006A9F88B3C13711562282B5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8224336C798DE0775227F009678A3349</key>
 		<dict>
 			<key>primary</key>
 			<true/>
