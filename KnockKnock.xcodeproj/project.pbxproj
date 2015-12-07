@@ -14,6 +14,7 @@
 		E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11462011C1170B900983BC3 /* LaunchScreen.storyboard */; };
 		E114620E1C1170BA00983BC3 /* KnockKnockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114620D1C1170BA00983BC3 /* KnockKnockTests.swift */; };
 		E11462191C1170BA00983BC3 /* KnockKnockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11462181C1170BA00983BC3 /* KnockKnockUITests.swift */; };
+		E11AC1FF1C16185400479927 /* Credential.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11AC1FE1C16185400479927 /* Credential.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E11462141C1170BA00983BC3 /* KnockKnockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnockKnockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11462181C1170BA00983BC3 /* KnockKnockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnockKnockUITests.swift; sourceTree = "<group>"; };
 		E114621A1C1170BA00983BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E11AC1FE1C16185400479927 /* Credential.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Credential.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				E11461F61C1170B900983BC3 /* AppDelegate.swift */,
 				E11461FC1C1170B900983BC3 /* Main.storyboard */,
+				E11AC1FE1C16185400479927 /* Credential.storyboard */,
 				E11461FF1C1170B900983BC3 /* Assets.xcassets */,
 				E11462011C1170B900983BC3 /* LaunchScreen.storyboard */,
 				E11462041C1170B900983BC3 /* Info.plist */,
@@ -259,6 +262,7 @@
 				E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */,
 				E11462001C1170B900983BC3 /* Assets.xcassets in Resources */,
 				E11461FE1C1170B900983BC3 /* Main.storyboard in Resources */,
+				E11AC1FF1C16185400479927 /* Credential.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
