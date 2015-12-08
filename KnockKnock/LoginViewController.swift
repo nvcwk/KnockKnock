@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
         let pass = tf_password.text!
 
         if (user.isEmpty || pass.isEmpty) {
-            UIAlertView(title: "Missing Input", message: "Key in all fields!", delegate: self, cancelButtonTitle: "OK").show()
+            KnockKnockUtils.okAlert(self, title: "Missing Input", message: "Key in all inputs!", handle: nil)
         } else {
             SwiftSpinner.show("Logging in....") // Run a spinner to show a task in progress
 
@@ -49,9 +49,9 @@ class LoginViewController: UIViewController {
                 SwiftSpinner.hide()
                 
                 if ((user) != nil) {
-                    StoryBoardCalls.call(self, story: "Main")
+                    KnockKnockUtils.storyBoardCall(self, story: "Main")
                 } else {
-                    UIAlertView(title: "Error Logging In!", message: "", delegate: self, cancelButtonTitle: "OK").show()
+                    KnockKnockUtils.okAlert(self, title: "Error", message: "Incorrect Username or Password", handle: nil)
                 }
             })
         }

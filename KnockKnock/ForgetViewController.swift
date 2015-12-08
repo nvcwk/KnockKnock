@@ -40,16 +40,9 @@ class ForgetViewController: UIViewController, ValidationDelegate {
     func validationSuccessful() {
         PFUser.requestPasswordResetForEmailInBackground(tb_email.text!)
         
-        let alertController = UIAlertController(title: "Reset Password", message: "Please check your email", preferredStyle: .Alert)
-        
-        
-        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
-            self.performSegueWithIdentifier("toLogin", sender: self)
-        }
-        
-        alertController.addAction(OKAction)
-        
-        self.presentViewController(alertController, animated: true, completion:nil)
+        KnockKnockUtils.okAlert(self, title: "Reset Password", message: "Please check your email",
+            handle: { (action:UIAlertAction!) in
+                self.performSegueWithIdentifier("toLogin", sender: self)})
     }
     
     func validationFailed(errors:[UITextField:ValidationError]) {
