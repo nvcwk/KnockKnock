@@ -10,7 +10,6 @@ pod 'Parse'
 # Custom UI
 pod 'ZFRippleButton'
 pod 'SwiftSpinner'
-pod 'TextFieldEffects'
 
 =begin 
 To Consider 
