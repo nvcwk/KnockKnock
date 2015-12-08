@@ -11,9 +11,6 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func actionLogout(sender: UIButton) {
-       ParseUtils.logout(self)
-        
+        ParseUtils.logout(self)
     }
-    
-
 }

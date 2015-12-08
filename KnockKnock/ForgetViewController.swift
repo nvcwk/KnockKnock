@@ -1,11 +1,3 @@
-//
-//  ForgetViewController.swift
-//  KnockKnock
-//
-//  Created by Nicholas Chan on 8/12/15.
-//  Copyright © 2015 Gen6. All rights reserved.
-//
-
 import UIKit
 import SwiftValidator
 import Parse
@@ -27,9 +19,6 @@ class ForgetViewController: UIViewController, ValidationDelegate {
         
         tb_email.leftView = emailIcon
         tb_email.leftViewMode = UITextFieldViewMode.Always
-
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -46,7 +35,6 @@ class ForgetViewController: UIViewController, ValidationDelegate {
     }
     
     func validationFailed(errors:[UITextField:ValidationError]) {
-        
         for (field, error) in validator.errors {
             field.layer.borderColor = UIColor.redColor().CGColor
             field.layer.borderWidth = 1.0
