@@ -6,6 +6,7 @@ pod 'ObjectiveSugar', '~> 0.5'
 
 # Backend Cloud
 pod 'Parse'
+pod 'ParseFacebookUtilsV4'
 
 # Custom UI
 pod 'ZFRippleButton'

@@ -14,12 +14,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FBSDKCoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectiveSugar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ParseFacebookUtilsV4.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,12 +62,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1DAC8E4705DB89B7F8FEF76AAFB11A3E</key>
+		<key>0F98F85575B93F19AE698C564B266D98</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2BD3E67CEC03D06954F3A38ED1D6FF92</key>
+		<key>3675E0E15109B01FE9EBB06F3EF70776</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +82,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EEAB5520F333960D6FC08036B3EE10E</key>
+		<key>57ADC05E440A960212657DE6DA1FEDD5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>708E01B006A9F88B3C13711562282B5E</key>
+		<key>5D69761C2CD2A1E5C013537B29CAB4CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E4585264A2963B31B91F8FC64F94E0F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7FAB0BF5FCD4885D73EE44F08991CB92</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8AFB948342E025FD4A175860992F8875</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +112,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDD657227AC7BC7624E50DF30EC84303</key>
+		<key>F5ACF367AE3BD7A7F2AF2D430901DF7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
