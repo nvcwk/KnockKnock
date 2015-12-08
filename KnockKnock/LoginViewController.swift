@@ -62,8 +62,9 @@ class LoginViewController: UIViewController {
         SwiftSpinner.show("Logging in....")
         PFFacebookUtils.logInInBackgroundWithReadPermissions(["email"]) {
             (user: PFUser?, error: NSError?) -> Void in
+            SwiftSpinner.hide()
+            
             if let user = user {
-                SwiftSpinner.hide()
                 KnockKnockUtils.storyBoardCall(self, story: "Main", animated: false)
             } else {
                 KnockKnockUtils.okAlert(self, title: "Error Logging In!", message: "Try Again!", handle: nil)
