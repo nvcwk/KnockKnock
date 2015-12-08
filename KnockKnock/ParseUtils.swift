@@ -24,19 +24,15 @@ class ParseUtils {
         if PFUser.currentUser() == nil {
             StoryBoardCalls.call(controller, story: "Credential")
         }
-        else {
-            StoryBoardCalls.call(controller, story: "Main")
-        }
     }
     
     static func logout(controller: UIViewController) {
         SwiftSpinner.show("Logging out....")
         
         PFUser.logOutInBackgroundWithBlock( { (error: NSError?) -> Void in
+            SwiftSpinner.hide()
             
             if( error == nil) {
-                SwiftSpinner.hide()
-            
                 StoryBoardCalls.call(controller, story: "Credential")
             }
         })

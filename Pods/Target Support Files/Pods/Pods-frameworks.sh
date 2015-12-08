@@ -89,7 +89,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/ObjectiveSugar.framework"
   install_framework "Pods/Parse.framework"
   install_framework "Pods/SwiftSpinner.framework"
-  install_framework "Pods/TextFieldEffects.framework"
   install_framework "Pods/ZFRippleButton.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -98,6 +97,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/ObjectiveSugar.framework"
   install_framework "Pods/Parse.framework"
   install_framework "Pods/SwiftSpinner.framework"
-  install_framework "Pods/TextFieldEffects.framework"
   install_framework "Pods/ZFRippleButton.framework"
 fi

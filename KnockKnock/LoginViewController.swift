@@ -35,22 +35,25 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func actionLogin(sender: UIButton) {
-        // Run a spinner to show a task in progress
-        SwiftSpinner.show("Logging in....")
-        
-        // Send a request to login
-        PFUser.logInWithUsernameInBackground(tf_username.text!, password: tf_password.text!, block: {
-            (user: PFUser?, error: NSError?) -> Void in
-                    
-            if ((user) != nil) {
+        let user = tf_username.text!
+        let pass = tf_password.text!
+
+        if (user.isEmpty || pass.isEmpty) {
+            UIAlertView(title: "Missing Input", message: "Key in all fields!", delegate: self, cancelButtonTitle: "OK").show()
+        } else {
+            SwiftSpinner.show("Logging in....") // Run a spinner to show a task in progress
+
+            PFUser.logInWithUsernameInBackground(tf_username.text!, password: tf_password.text!, block: {
+                (user: PFUser?, error: NSError?) -> Void in
                 SwiftSpinner.hide()
                 
-                StoryBoardCalls.call(self, story: "Main")
-            } else {
-                //let alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
-                //alert.show()
-            }
-        })
+                if ((user) != nil) {
+                    StoryBoardCalls.call(self, story: "Main")
+                } else {
+                    UIAlertView(title: "Error Logging In!", message: "", delegate: self, cancelButtonTitle: "OK").show()
+                }
+            })
+        }
         
     }
 }
