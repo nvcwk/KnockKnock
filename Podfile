@@ -10,6 +10,7 @@ pod 'Parse'
 # Custom UI
 pod 'ZFRippleButton'
 pod 'SwiftSpinner'
+pod 'SwiftValidator'
 
 =begin 
 To Consider 

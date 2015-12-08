@@ -14,18 +14,19 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var tf_username: UITextField!
     @IBOutlet weak var tf_password: UITextField!
+    @IBOutlet weak var btn_forget: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let usernameIcon = UIImageView(image: UIImage(named: "username"))
-        usernameIcon.frame = CGRect(x: 30, y: 15, width: 25, height: 25)
+        let emailIcon = UIImageView(image: UIImage(named: "username"))
+        emailIcon.frame = CGRect(x: 60, y: 15, width: 25, height: 25)
         
-        tf_username.leftView = usernameIcon
+        tf_username.leftView = emailIcon
         tf_username.leftViewMode = UITextFieldViewMode.Always
         
         let passwordIcon = UIImageView(image: UIImage(named: "password"))
-        passwordIcon.frame = CGRect(x: 30, y: 15, width: 25, height: 25)
+        passwordIcon.frame = CGRect(x: 60, y: 15, width: 25, height: 25)
         
         tf_password.leftView = passwordIcon
         tf_password.leftViewMode = UITextFieldViewMode.Always
@@ -54,6 +55,8 @@ class LoginViewController: UIViewController {
                 }
             })
         }
-        
+    }
+    
+    @IBAction func backLogin(segue:UIStoryboardSegue) {
     }
 }

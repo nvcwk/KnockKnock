@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftValidator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZFRippleButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,6 +47,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1DAC8E4705DB89B7F8FEF76AAFB11A3E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2BD3E67CEC03D06954F3A38ED1D6FF92</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
 		<dict>
 			<key>primary</key>
@@ -52,12 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>708E01B006A9F88B3C13711562282B5E</key>
+		<key>6EEAB5520F333960D6FC08036B3EE10E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B4072DB93C2A41573A3E917D9CB7A9E8</key>
+		<key>708E01B006A9F88B3C13711562282B5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F358DD752E832B33031996926E1170DB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FA9CF66E9E6F04DAB567E76A72A08F32</key>
+		<key>CDD657227AC7BC7624E50DF30EC84303</key>
 		<dict>
 			<key>primary</key>
 			<true/>
