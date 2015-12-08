@@ -22,7 +22,7 @@ class ParseUtils {
     
     static func checkLogin(controller: UIViewController) {
         if PFUser.currentUser() == nil {
-            StoryBoardCalls.call(controller, story: "Credential")
+            KnockKnockUtils.storyBoardCall(controller, story: "Credential")
         }
     }
     
@@ -33,7 +33,7 @@ class ParseUtils {
             SwiftSpinner.hide()
             
             if( error == nil) {
-                StoryBoardCalls.call(controller, story: "Credential")
+                KnockKnockUtils.storyBoardCall(controller, story: "Credential")
             }
         })
     }
