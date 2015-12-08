@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TextFieldEffects.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZFRippleButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,6 +47,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>32B54D1CF00C1D95C7D8A5BBE61FA4BA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
 		<dict>
 			<key>primary</key>
@@ -57,7 +67,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B4072DB93C2A41573A3E917D9CB7A9E8</key>
+		<key>B7D18FB5FE17CD4287DA6E362E5BF4AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F358DD752E832B33031996926E1170DB</key>
+		<key>E369105D5F26296BA0E4F2C04FD1890F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA9CF66E9E6F04DAB567E76A72A08F32</key>
+		<key>EE615BA53F30208038B7F715DA89D370</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -19,13 +19,13 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         let usernameIcon = UIImageView(image: UIImage(named: "username"))
-        usernameIcon.frame = CGRect(x: 30, y: 15, width: 30, height: 30)
+        usernameIcon.frame = CGRect(x: 30, y: 15, width: 25, height: 25)
         
         tf_username.leftView = usernameIcon
         tf_username.leftViewMode = UITextFieldViewMode.Always
         
         let passwordIcon = UIImageView(image: UIImage(named: "password"))
-        passwordIcon.frame = CGRect(x: 30, y: 15, width: 30, height: 30)
+        passwordIcon.frame = CGRect(x: 30, y: 15, width: 25, height: 25)
         
         tf_password.leftView = passwordIcon
         tf_password.leftViewMode = UITextFieldViewMode.Always
@@ -45,8 +45,7 @@ class LoginViewController: UIViewController {
             if ((user) != nil) {
                 SwiftSpinner.hide()
                 
-                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
-                self.presentViewController(viewController, animated: true, completion: nil)
+                StoryBoardCalls.call(self, story: "Main")
             } else {
                 //let alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                 //alert.show()
