@@ -16,7 +16,6 @@
 		E11462191C1170BA00983BC3 /* KnockKnockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11462181C1170BA00983BC3 /* KnockKnockUITests.swift */; };
 		E11AC1FF1C16185400479927 /* Credential.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11AC1FE1C16185400479927 /* Credential.storyboard */; };
 		E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2001C1618A100479927 /* LoginViewController.swift */; };
-		E11AC2051C1621CE00479927 /* KnockKnockButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2041C1621CE00479927 /* KnockKnockButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		E114621A1C1170BA00983BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E11AC1FE1C16185400479927 /* Credential.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Credential.storyboard; sourceTree = "<group>"; };
 		E11AC2001C1618A100479927 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E11AC2041C1621CE00479927 /* KnockKnockButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +154,6 @@
 		E11AC2061C16241600479927 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
-				E11AC2041C1621CE00479927 /* KnockKnockButton.swift */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -367,7 +364,6 @@
 			files = (
 				E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
-				E11AC2051C1621CE00479927 /* KnockKnockButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

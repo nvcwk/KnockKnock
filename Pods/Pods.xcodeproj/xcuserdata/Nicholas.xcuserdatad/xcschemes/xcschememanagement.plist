@@ -29,10 +29,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ZFRippleButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49D6471BA3D7D6EB8581760AA780375F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,7 +57,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8224336C798DE0775227F009678A3349</key>
+		<key>AD1AEF2F97A0BFC3B4189CC0615D6FE5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
