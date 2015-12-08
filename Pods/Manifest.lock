@@ -21,25 +21,25 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.5.0)
-  - LYUITabBarController (0.1.0)
   - ObjectiveSugar (0.9)
   - Parse (1.10.0):
     - Bolts/Tasks (~> 1.5)
+  - SwiftSpinner (0.8.0)
   - ZFRippleButton (0.5.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
-  - LYUITabBarController
   - ObjectiveSugar (~> 0.5)
   - Parse
+  - SwiftSpinner
   - ZFRippleButton
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
-  LYUITabBarController: e7e379b9c1345f5aeb64c901f56da21b4d198762
   ObjectiveSugar: 18409ee1ec578dd8598b55e5008f393488dca5cf
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
+  SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   ZFRippleButton: 263bdf4e31dabd5826133b121d9ff908c87a6a11
 
 COCOAPODS: 0.39.0

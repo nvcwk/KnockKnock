@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>LYUITabBarController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ObjectiveSugar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZFRippleButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,16 +42,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>385BC6FA6A2E9BED3FF6AF2E020450AC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3FCB0ED625038813783DEEE2D1319E90</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
 		<dict>
 			<key>primary</key>
@@ -67,12 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BEF13E82585EE1BC628DB8C01BCD3E14</key>
+		<key>B4072DB93C2A41573A3E917D9CB7A9E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C58C7421DAD296EE054EEEDAE49151AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F358DD752E832B33031996926E1170DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA9CF66E9E6F04DAB567E76A72A08F32</key>
 		<dict>
 			<key>primary</key>
 			<true/>

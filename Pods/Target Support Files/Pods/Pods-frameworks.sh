@@ -86,16 +86,16 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/AFNetworking.framework"
   install_framework "Pods/Bolts.framework"
-  install_framework "Pods/LYUITabBarController.framework"
   install_framework "Pods/ObjectiveSugar.framework"
   install_framework "Pods/Parse.framework"
+  install_framework "Pods/SwiftSpinner.framework"
   install_framework "Pods/ZFRippleButton.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/AFNetworking.framework"
   install_framework "Pods/Bolts.framework"
-  install_framework "Pods/LYUITabBarController.framework"
   install_framework "Pods/ObjectiveSugar.framework"
   install_framework "Pods/Parse.framework"
+  install_framework "Pods/SwiftSpinner.framework"
   install_framework "Pods/ZFRippleButton.framework"
 fi

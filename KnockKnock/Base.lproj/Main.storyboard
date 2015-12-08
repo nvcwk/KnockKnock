@@ -57,12 +57,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Secondary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhI-dU-bKr">
-                                <rect key="frame" x="242" y="244" width="167" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secondary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhI-dU-bKr">
+                                <rect key="frame" x="104" y="241" width="167" height="128"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="167" id="u99-x1-JWH"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,9 +68,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZhI-dU-bKr" firstAttribute="top" secondItem="Hc9-b5-HKg" secondAttribute="bottom" constant="180" id="lUq-rR-wCl"/>
-                            <constraint firstItem="ZhI-dU-bKr" firstAttribute="leading" secondItem="xgB-Hj-cpQ" secondAttribute="leading" constant="242" id="tik-w4-F4i"/>
-                            <constraint firstItem="F8z-q1-wZ8" firstAttribute="top" secondItem="ZhI-dU-bKr" secondAttribute="bottom" constant="228" id="xh9-6H-R8g"/>
+                            <constraint firstItem="ZhI-dU-bKr" firstAttribute="centerX" secondItem="xgB-Hj-cpQ" secondAttribute="centerX" id="Knc-Sz-f13"/>
+                            <constraint firstItem="F8z-q1-wZ8" firstAttribute="top" secondItem="ZhI-dU-bKr" secondAttribute="bottom" constant="249" id="dI8-QO-e49"/>
+                            <constraint firstItem="ZhI-dU-bKr" firstAttribute="top" secondItem="Hc9-b5-HKg" secondAttribute="bottom" constant="177" id="jT3-xx-APj"/>
+                            <constraint firstItem="ZhI-dU-bKr" firstAttribute="leading" secondItem="xgB-Hj-cpQ" secondAttribute="leadingMargin" constant="88" id="sGi-oW-Wez"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6bL-aa-v1g"/>
@@ -100,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="790" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="YVK-hT-hjp">
             <objects>
-                <viewController id="21f-OX-2zB" sceneMemberID="viewController">
+                <viewController id="21f-OX-2zB" customClass="HomeViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fSz-Lp-b7h"/>
                         <viewControllerLayoutGuide type="bottom" id="IZ3-3l-kMA"/>
@@ -113,20 +111,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR0-zU-elF">
-                                <rect key="frame" x="115" y="176" width="164" height="284"/>
+                                <rect key="frame" x="105" y="175" width="164" height="284"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFC-IW-KL6">
+                                <rect key="frame" x="163" y="446" width="48" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="actionLogout:" destination="21f-OX-2zB" eventType="touchUpInside" id="pKw-5D-ZZc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aR0-zU-elF" firstAttribute="leading" secondItem="KN0-9F-Dhb" secondAttribute="leadingMargin" constant="99" id="IdF-nI-pwv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aR0-zU-elF" secondAttribute="trailing" constant="80" id="hhZ-JW-e4Q"/>
-                            <constraint firstItem="aR0-zU-elF" firstAttribute="top" secondItem="fSz-Lp-b7h" secondAttribute="bottom" constant="112" id="rjA-4H-pCb"/>
-                            <constraint firstItem="IZ3-3l-kMA" firstAttribute="top" secondItem="aR0-zU-elF" secondAttribute="bottom" constant="158" id="vrc-QW-p3N"/>
+                            <constraint firstItem="IZ3-3l-kMA" firstAttribute="top" secondItem="aR0-zU-elF" secondAttribute="bottom" constant="159" id="GbV-wP-9bd"/>
+                            <constraint firstItem="aR0-zU-elF" firstAttribute="centerX" secondItem="KN0-9F-Dhb" secondAttribute="centerX" id="Ro6-pu-WjH"/>
+                            <constraint firstItem="aR0-zU-elF" firstAttribute="leading" secondItem="KN0-9F-Dhb" secondAttribute="leadingMargin" constant="89" id="gGl-eM-G1a"/>
+                            <constraint firstItem="aR0-zU-elF" firstAttribute="top" secondItem="fSz-Lp-b7h" secondAttribute="bottom" constant="111" id="tDZ-QQ-zGd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pKs-0w-bAy"/>
