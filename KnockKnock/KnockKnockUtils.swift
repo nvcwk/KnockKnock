@@ -11,10 +11,10 @@ import Parse
 
 class KnockKnockUtils {
     
-    static func storyBoardCall(controller: UIViewController, story: String) {
-        var viewController : UIViewController = UIStoryboard(name: story, bundle: nil).instantiateInitialViewController()!
+    static func storyBoardCall(controller: UIViewController, story: String, animated: Bool) {
+        let viewController : UIViewController = UIStoryboard(name: story, bundle: nil).instantiateInitialViewController()!
         
-        controller.presentViewController(viewController, animated: true, completion: nil)
+        controller.presentViewController(viewController, animated: animated, completion: nil)
     }
     
     static func okAlert(controller: UIViewController, title: String, message: String, handle: ((UIAlertAction) -> Void)?) {

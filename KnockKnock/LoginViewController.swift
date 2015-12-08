@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import SwiftSpinner
+import ParseFacebookUtilsV4
 
 class LoginViewController: UIViewController {
     
@@ -49,11 +50,24 @@ class LoginViewController: UIViewController {
                 SwiftSpinner.hide()
                 
                 if ((user) != nil) {
-                    KnockKnockUtils.storyBoardCall(self, story: "Main")
+                    KnockKnockUtils.storyBoardCall(self, story: "Main", animated: true)
                 } else {
                     KnockKnockUtils.okAlert(self, title: "Error", message: "Incorrect Username or Password", handle: nil)
                 }
             })
+        }
+    }
+    
+    @IBAction func actionFBLogin(sender: UIButton) {
+        SwiftSpinner.show("Logging in....")
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(["email"]) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                SwiftSpinner.hide()
+                KnockKnockUtils.storyBoardCall(self, story: "Main", animated: false)
+            } else {
+                KnockKnockUtils.okAlert(self, title: "Error Logging In!", message: "Try Again!", handle: nil)
+            }
         }
     }
     
