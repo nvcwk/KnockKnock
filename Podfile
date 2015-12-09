@@ -12,6 +12,7 @@ pod 'ParseFacebookUtilsV4'
 pod 'ZFRippleButton'
 pod 'SwiftSpinner'
 pod 'SwiftValidator'
+pod 'CountryPicker'
 
 =begin 
 To Consider 

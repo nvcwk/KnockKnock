@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CountryPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,17 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3675E0E15109B01FE9EBB06F3EF70776</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>511B536F0DE06D9C3BD65397A91990C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>547F50B87E988377B16E066C759AA8E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,22 +97,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5E4585264A2963B31B91F8FC64F94E0F</key>
+		<key>73D0E83A873117212F916AF0CCC91213</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7FAB0BF5FCD4885D73EE44F08991CB92</key>
+		<key>9266BCFE006C277B1041497F639317FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AFB948342E025FD4A175860992F8875</key>
+		<key>97005362B42BE01022C31E81A60DC629</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C58C7421DAD296EE054EEEDAE49151AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D73C13F1BCA711991FFBBAE00EDC991B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
