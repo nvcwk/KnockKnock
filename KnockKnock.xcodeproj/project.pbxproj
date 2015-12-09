@@ -25,6 +25,7 @@
 		E1E4B4421C1713D100242A83 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43D1C1713D100242A83 /* FBSDKMessengerShareKit.framework */; };
 		E1E4B4431C1713D100242A83 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43E1C1713D100242A83 /* FBSDKShareKit.framework */; };
 		E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4451C17291000242A83 /* ForgetViewController.swift */; };
+		E1E4B4481C177F9D00242A83 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4471C177F9D00242A83 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		E1E4B43D1C1713D100242A83 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		E1E4B43E1C1713D100242A83 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		E1E4B4451C17291000242A83 /* ForgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
+		E1E4B4471C177F9D00242A83 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 				E11AC2001C1618A100479927 /* LoginViewController.swift */,
 				E11AC20B1C16CD3200479927 /* HomeViewController.swift */,
 				E1E4B4451C17291000242A83 /* ForgetViewController.swift */,
+				E1E4B4471C177F9D00242A83 /* RegisterViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			files = (
 				E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
+				E1E4B4481C177F9D00242A83 /* RegisterViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,

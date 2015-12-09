@@ -26,6 +26,7 @@ PODS:
   - Bolts/AppLinks (1.5.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.5.0)
+  - CountryPicker (1.2.3)
   - FBSDKCoreKit (4.8.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.8.0)
@@ -51,6 +52,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - CountryPicker
   - ObjectiveSugar (~> 0.5)
   - Parse
   - ParseFacebookUtilsV4
@@ -61,6 +63,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  CountryPicker: 6f166e2f1cc250f07eba4c587fbe1c0efc21049b
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
   ObjectiveSugar: 18409ee1ec578dd8598b55e5008f393488dca5cf
