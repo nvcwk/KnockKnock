@@ -5,7 +5,7 @@ import SwiftSpinner
 
 class ForgetViewController: UIViewController, ValidationDelegate {
 
-    @IBOutlet weak var tb_email: UITextField!
+    @IBOutlet weak var tf_email: UITextField!
     @IBOutlet weak var lb_email: UILabel!
     
     let validator = Validator()
@@ -13,13 +13,13 @@ class ForgetViewController: UIViewController, ValidationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        validator.registerField(tb_email, errorLabel: lb_email, rules: [RequiredRule(), EmailRule(message: "Invalid email")])
+        validator.registerField(tf_email, errorLabel: lb_email, rules: [RequiredRule(), EmailRule(message: "Invalid email")])
         
         let emailIcon = UIImageView(image: UIImage(named: "username"))
         emailIcon.frame = CGRect(x: 60, y: 15, width: 25, height: 25)
         
-        tb_email.leftView = emailIcon
-        tb_email.leftViewMode = UITextFieldViewMode.Always
+        tf_email.leftView = emailIcon
+        tf_email.leftViewMode = UITextFieldViewMode.Always
     }
     
 
@@ -30,7 +30,7 @@ class ForgetViewController: UIViewController, ValidationDelegate {
     func validationSuccessful() {
         SwiftSpinner.show("Loading...")
         
-        PFUser.requestPasswordResetForEmailInBackground(tb_email.text!) { (success, error) -> Void in
+        PFUser.requestPasswordResetForEmailInBackground(tf_email.text!) { (success, error) -> Void in
             SwiftSpinner.hide()
             
             if (error == nil) {

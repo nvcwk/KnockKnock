@@ -39,31 +39,32 @@ class ParseUtils {
     }
     
     static func signUp(controller: UIViewController, email: String, username: String, password: String, country: String, contact: Int, birthday: NSDate) {
-        print("HELLO")
-//        let user = PFUser()
-//        SwiftSpinner.show("Signing up...")
-//        
-//        user.email = email
-//        user.username = username
-//        user.password = password
-//
-//        user["country"] = country
-//        user["contact"] = contact
-//        user["birthday"] = birthday
-//        
-//        
-//        
-//        user.signUpInBackgroundWithBlock {
-//            (succeeded: Bool, error: NSError?) -> Void in
-//            SwiftSpinner.hide()
-//            
-//            if succeeded {
-//                KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: "Welcome " + username, handle: { (action:UIAlertAction!) in
-//                    KnockKnockUtils.storyBoardCall(controller, story: "Main", animated: true)})
-//            } else {
-//                KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: "Welcome " + username, handle: nil)
-//            }
-//        }
+ 
+        let user = PFUser()
+        SwiftSpinner.show("Signing up...")
+        
+        user.email = email
+        user.username = username
+        user.password = password
+
+        user["country"] = country
+        user["contact"] = contact
+        user["dob"] = birthday
+        
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            SwiftSpinner.hide()
+            
+            if let error = error {
+                let errorString = error.userInfo["error"] as? NSString
+                
+                KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: String(errorString!), handle: nil)
+                // Show the errorString somewhere and let the user try again.
+            } else {
+                KnockKnockUtils.okAlert(controller, title: "Error!", message: "Welcome " + username, handle: { (action:UIAlertAction!) in
+                    KnockKnockUtils.storyBoardCall(controller, story: "Main", animated: true)})
+            }
+        }
     }
 
 }
