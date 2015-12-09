@@ -1,6 +1,7 @@
 import UIKit
 import SwiftValidator
 import Parse
+import SwiftSpinner
 
 class ForgetViewController: UIViewController, ValidationDelegate {
 
@@ -27,11 +28,22 @@ class ForgetViewController: UIViewController, ValidationDelegate {
     }
     
     func validationSuccessful() {
-        PFUser.requestPasswordResetForEmailInBackground(tb_email.text!)
+        SwiftSpinner.show("Loading...")
         
-        KnockKnockUtils.okAlert(self, title: "Reset Password", message: "Please check your email",
-            handle: { (action:UIAlertAction!) in
-                self.performSegueWithIdentifier("toLogin", sender: self)})
+        PFUser.requestPasswordResetForEmailInBackground(tb_email.text!) { (success, error) -> Void in
+            SwiftSpinner.hide()
+            
+            if (error == nil) {
+                KnockKnockUtils.okAlert(self, title: "Reset Password", message: "Please check your email",
+                    handle: { (action:UIAlertAction!) in
+                        self.performSegueWithIdentifier("toLogin", sender: self)})
+                
+            } else {
+                KnockKnockUtils.okAlert(self, title: "Error", message: "Invalid Email", handle: nil)
+            }
+        }
+        
+        
     }
     
     func validationFailed(errors:[UITextField:ValidationError]) {
