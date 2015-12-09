@@ -26,6 +26,12 @@ class KnockKnockUtils {
         
         controller.presentViewController(alertController, animated: true, completion:nil)
     }
+    
+    static func dateToString(date: NSDate) -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        return formatter.stringFromDate(date)
+    }
 
 }
 
