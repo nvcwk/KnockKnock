@@ -1,8 +1,14 @@
-import UIKit
-import CountryPicker
-import PIDatePicker
+//
+//  RegisterViewController.swift
+//  KnockKnock
+//
+//  Created by Nicholas Chan on 9/12/15.
+//  Copyright © 2015 Gen6. All rights reserved.
+//
 
-class RegisterViewController: UIViewController, CountryPickerDelegate {
+import UIKit
+
+class RegisterViewController: UIViewController {
     
     @IBOutlet weak var tf_country: UITextField!
     @IBOutlet weak var tf_email: UITextField!
@@ -12,22 +18,29 @@ class RegisterViewController: UIViewController, CountryPickerDelegate {
     @IBOutlet weak var tf_birthday: UITextField!
     @IBOutlet weak var tf_contact: UITextField!
     
-    let countryPickerView = CountryPicker()
-    let datePickerView = PIDatePicker()
-
+    var selectedDate = NSDate()
+    
+    //let countryPickerView = CountryPicker()
+    let datePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        countryPickerView.delegate = self
-        countryPickerView.selectedLocale = NSLocale.currentLocale()
-        tf_country.inputView = countryPickerView
-        tf_country.text = countryPickerView.selectedCountryName
+        // Do any additional setup after loading the view.
         
-        
-    }
-
-    func countryPicker(picker: CountryPicker!, didSelectCountryWithName name: String!, code: String!) {
-        tf_country.text = name
+        datePicker.datePickerMode = UIDatePickerMode.Date
+        datePicker.maximumDate = NSDate()
+        datePicker.addTarget(self, action: Selector("updateBirthday:"),
+            forControlEvents:UIControlEvents.ValueChanged)
+        tf_birthday.inputView = datePicker
     }
     
+        func updateBirthday(sender: UIDatePicker) {
+            tf_birthday.text = KnockKnockUtils.dateToString(sender.date)
+            selectedDate = sender.date
+        }
+    
+    @IBAction func actionSignUser(sender: UIButton) {
+        print("heello")
+    }
 }

@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KnockKnock/RegisterViewController.swift"
-            timestampString = "471357982.664516"
+            timestampString = "471360496.292211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "RegisterViewController"
-            landmarkType = "3">
+            startingLineNumber = "53"
+            endingLineNumber = "53">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

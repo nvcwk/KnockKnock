@@ -27,7 +27,7 @@ class ParseUtils {
     }
     
     static func logout(controller: UIViewController) {
-        SwiftSpinner.show("Logging out....")
+        SwiftSpinner.show("Logging out...")
         
         PFUser.logOutInBackgroundWithBlock( { (error: NSError?) -> Void in
             SwiftSpinner.hide()
@@ -36,6 +36,34 @@ class ParseUtils {
                 KnockKnockUtils.storyBoardCall(controller, story: "Credential", animated: true)
             }
         })
+    }
+    
+    static func signUp(controller: UIViewController, email: String, username: String, password: String, country: String, contact: Int, birthday: NSDate) {
+        print("HELLO")
+//        let user = PFUser()
+//        SwiftSpinner.show("Signing up...")
+//        
+//        user.email = email
+//        user.username = username
+//        user.password = password
+//
+//        user["country"] = country
+//        user["contact"] = contact
+//        user["birthday"] = birthday
+//        
+//        
+//        
+//        user.signUpInBackgroundWithBlock {
+//            (succeeded: Bool, error: NSError?) -> Void in
+//            SwiftSpinner.hide()
+//            
+//            if succeeded {
+//                KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: "Welcome " + username, handle: { (action:UIAlertAction!) in
+//                    KnockKnockUtils.storyBoardCall(controller, story: "Main", animated: true)})
+//            } else {
+//                KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: "Welcome " + username, handle: nil)
+//            }
+//        }
     }
 
 }
