@@ -44,6 +44,9 @@
                                         <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionUpload:" destination="vcT-m4-Qgd" eventType="touchUpInside" id="Guy-9u-oCr"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-profile" translatesAutoresizingMaskIntoConstraints="NO" id="93f-tH-syb">
                                 <rect key="frame" x="37" y="128" width="300" height="300"/>

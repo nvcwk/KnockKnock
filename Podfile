@@ -13,16 +13,10 @@ pod 'ZFRippleButton'
 pod 'SwiftSpinner'
 pod 'SwiftValidator'
 pod 'CountryPicker'
-pod 'DZNPhotoPickerController'
-
-=begin
-# Not Working
-pod 'NZCircularImageView'
-pod 'SDWebImage'
-=end
 
 =begin 
 To Consider 
 pod 'LRTextField'
 pod 'JVFloatLabeledTextField'
+pod 'DZNPhotoPickerController'
 =end
