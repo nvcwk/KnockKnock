@@ -23,14 +23,14 @@
                                 <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-dj-g9F" customClass="ZFRippleButton" customModule="ZFRippleButton">
-                                <rect key="frame" x="20" y="451" width="335" height="40"/>
+                                <rect key="frame" x="20" y="403" width="335" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.086274509799999996" green="0.45098039220000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="hBz-ZK-Grf"/>
+                                    <constraint firstAttribute="height" constant="40" id="JFE-aC-PBM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Upload">
+                                <state key="normal" title="Change Profile Picture">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -45,41 +45,57 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="actionUpload:" destination="vcT-m4-Qgd" eventType="touchUpInside" id="Guy-9u-oCr"/>
+                                    <action selector="actionChange:" destination="vcT-m4-Qgd" eventType="touchUpInside" id="Kyb-fE-hGx"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-profile" translatesAutoresizingMaskIntoConstraints="NO" id="93f-tH-syb">
-                                <rect key="frame" x="37" y="128" width="300" height="300"/>
+                                <rect key="frame" x="37" y="80" width="300" height="300"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload your Profile Picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0je-0R-4Z6">
-                                <rect key="frame" x="37" y="86" width="300" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg5-IV-Dxl" customClass="ZFRippleButton" customModule="ZFRippleButton">
+                                <rect key="frame" x="20" y="459" width="335" height="40"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.45098039220000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Hwb-7a-gl9"/>
+                                    <constraint firstAttribute="height" constant="40" id="YbP-82-oVx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionUpload:" destination="vcT-m4-Qgd" eventType="touchUpInside" id="zVe-vr-wYx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="93f-tH-syb" firstAttribute="leading" secondItem="0je-0R-4Z6" secondAttribute="leading" id="70g-CH-wvA"/>
-                            <constraint firstItem="93f-tH-syb" firstAttribute="top" secondItem="0je-0R-4Z6" secondAttribute="bottom" constant="21" id="FdK-Sw-Ndk"/>
-                            <constraint firstItem="0je-0R-4Z6" firstAttribute="centerX" secondItem="4R1-8y-EWZ" secondAttribute="centerX" id="HDR-ub-dyJ"/>
-                            <constraint firstItem="Gni-dj-g9F" firstAttribute="top" secondItem="93f-tH-syb" secondAttribute="bottom" constant="23" id="Hr6-KV-5Ek"/>
-                            <constraint firstItem="4R1-8y-EWZ" firstAttribute="bottom" secondItem="FHT-Q9-NNV" secondAttribute="top" id="Kb9-u2-Yl7"/>
-                            <constraint firstItem="0je-0R-4Z6" firstAttribute="top" secondItem="81H-71-lAx" secondAttribute="bottom" constant="66" id="QIh-GE-Z4b"/>
-                            <constraint firstAttribute="trailing" secondItem="4R1-8y-EWZ" secondAttribute="trailing" id="SH0-br-yA8"/>
-                            <constraint firstItem="0je-0R-4Z6" firstAttribute="trailing" secondItem="93f-tH-syb" secondAttribute="trailing" id="Ti5-sa-rnn"/>
-                            <constraint firstItem="Gni-dj-g9F" firstAttribute="leading" secondItem="Doj-9a-DCH" secondAttribute="leadingMargin" constant="4" id="lJf-4J-xja"/>
-                            <constraint firstItem="Gni-dj-g9F" firstAttribute="centerX" secondItem="93f-tH-syb" secondAttribute="centerX" id="qPe-LK-lzU"/>
-                            <constraint firstItem="FHT-Q9-NNV" firstAttribute="top" secondItem="Gni-dj-g9F" secondAttribute="bottom" constant="176" id="sGw-yB-Hqf"/>
-                            <constraint firstItem="4R1-8y-EWZ" firstAttribute="top" secondItem="Doj-9a-DCH" secondAttribute="top" id="tg5-p1-ESR"/>
-                            <constraint firstItem="4R1-8y-EWZ" firstAttribute="leading" secondItem="Doj-9a-DCH" secondAttribute="leading" id="vWa-wN-ybz"/>
-                            <constraint firstItem="0je-0R-4Z6" firstAttribute="leading" secondItem="Doj-9a-DCH" secondAttribute="leadingMargin" constant="21" id="ylW-RJ-udk"/>
+                            <constraint firstItem="4R1-8y-EWZ" firstAttribute="centerX" secondItem="93f-tH-syb" secondAttribute="centerX" id="1LQ-uh-8Ug"/>
+                            <constraint firstItem="dg5-IV-Dxl" firstAttribute="top" secondItem="Gni-dj-g9F" secondAttribute="bottom" constant="16" id="APe-G0-KE3"/>
+                            <constraint firstItem="FHT-Q9-NNV" firstAttribute="top" secondItem="dg5-IV-Dxl" secondAttribute="bottom" constant="168" id="QVZ-W8-v0x"/>
+                            <constraint firstItem="4R1-8y-EWZ" firstAttribute="leading" secondItem="Doj-9a-DCH" secondAttribute="leading" id="SAf-fm-7hj"/>
+                            <constraint firstItem="Gni-dj-g9F" firstAttribute="trailing" secondItem="dg5-IV-Dxl" secondAttribute="trailing" id="TTR-AR-AIP"/>
+                            <constraint firstItem="93f-tH-syb" firstAttribute="leading" secondItem="Doj-9a-DCH" secondAttribute="leadingMargin" constant="21" id="VeC-ss-Wb9"/>
+                            <constraint firstAttribute="trailing" secondItem="4R1-8y-EWZ" secondAttribute="trailing" id="amL-NV-u8V"/>
+                            <constraint firstItem="93f-tH-syb" firstAttribute="top" secondItem="81H-71-lAx" secondAttribute="bottom" constant="60" id="d7f-3M-TCa"/>
+                            <constraint firstItem="Gni-dj-g9F" firstAttribute="leading" secondItem="Doj-9a-DCH" secondAttribute="leadingMargin" constant="4" id="eEX-yZ-ZBf"/>
+                            <constraint firstItem="4R1-8y-EWZ" firstAttribute="bottom" secondItem="FHT-Q9-NNV" secondAttribute="top" id="hfo-CU-rb7"/>
+                            <constraint firstItem="93f-tH-syb" firstAttribute="centerX" secondItem="Gni-dj-g9F" secondAttribute="centerX" id="iJQ-sP-wRr"/>
+                            <constraint firstItem="4R1-8y-EWZ" firstAttribute="top" secondItem="Doj-9a-DCH" secondAttribute="top" id="l2g-Qk-Irk"/>
+                            <constraint firstItem="Gni-dj-g9F" firstAttribute="leading" secondItem="dg5-IV-Dxl" secondAttribute="leading" id="qpo-7b-Gad"/>
+                            <constraint firstItem="Gni-dj-g9F" firstAttribute="top" secondItem="93f-tH-syb" secondAttribute="bottom" constant="23" id="tMn-ig-vyh"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
