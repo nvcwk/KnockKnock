@@ -31,38 +31,6 @@
             endingLineNumber = "11"
             landmarkName = "RegProfilePicViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KnockKnock.RegProfilePicViewController.__deallocating_deinit"
-                  moduleName = "KnockKnock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nicholas/Documents/KnockKnock/KnockKnock/RegProfilePicViewController.swift"
-                  timestampString = "471456894.781845"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KnockKnock.RegProfilePicViewController.init (KnockKnock.RegProfilePicViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;KnockKnock.RegProfilePicViewController&gt;"
-                  moduleName = "KnockKnock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nicholas/Documents/KnockKnock/KnockKnock/RegProfilePicViewController.swift"
-                  timestampString = "471456894.782322"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -77,38 +45,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "9"
             endingLineNumber = "9">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KnockKnock.RegProfilePicViewController.__deallocating_deinit"
-                  moduleName = "KnockKnock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nicholas/Documents/KnockKnock/KnockKnock/RegProfilePicViewController.swift"
-                  timestampString = "471456894.783607"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KnockKnock.RegProfilePicViewController.init (KnockKnock.RegProfilePicViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; KnockKnock.RegProfilePicViewController"
-                  moduleName = "KnockKnock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nicholas/Documents/KnockKnock/KnockKnock/RegProfilePicViewController.swift"
-                  timestampString = "471456894.78379"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "58">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KnockKnock/ProfilePicViewController.swift"
+            timestampString = "471459296.258932"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "actionUpload(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

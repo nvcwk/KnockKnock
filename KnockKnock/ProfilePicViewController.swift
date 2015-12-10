@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ProfilePicViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -54,7 +55,7 @@ class ProfilePicViewController: UIViewController, UIImagePickerControllerDelegat
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func actionUpload(sender: UIButton) {
+    @IBAction func actionChange(sender: UIButton) {
         let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { UIAlertAction in
@@ -79,9 +80,12 @@ class ProfilePicViewController: UIViewController, UIImagePickerControllerDelegat
             
             popover!.presentPopoverFromRect(btn_upload.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         }
-
     }
     
+    
+    @IBAction func actionUpload(sender: UIButton) {
+        ParseUtils.updateProfileImage(KnockKnockUtils.RBResizeImage(img_profile.image!, targetSize: CGSize(width: 300, height: 300)), controller: self)
+    }
     
 
 }

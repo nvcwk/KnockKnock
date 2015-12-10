@@ -39,14 +39,14 @@ class ParseUtils {
     }
     
     static func signUp(controller: UIViewController, email: String, username: String, password: String, country: String, contact: Int, birthday: NSDate) {
- 
+        
         let user = PFUser()
         SwiftSpinner.show("Signing up...")
         
         user.email = email
         user.username = username
         user.password = password
-
+        
         user["country"] = country
         user["contact"] = contact
         user["dob"] = birthday
@@ -66,6 +66,32 @@ class ParseUtils {
             }
         }
     }
-
+    
+    static func updateProfileImage(image: UIImage, controller: UIViewController) {
+        SwiftSpinner.show("Loading...")
+        
+        let user = currentUser()
+        
+        let imageFile:PFFile = PFFile(data: UIImagePNGRepresentation(image)!)!
+        
+        user["profilePic"] = imageFile
+        
+        user.saveInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            SwiftSpinner.hide()
+            
+            if let error = error {
+                let errorString = error.userInfo["error"] as? NSString
+                
+                KnockKnockUtils.okAlert(controller, title: "Error!", message: String(errorString!), handle: nil)
+            } else {
+                KnockKnockUtils.storyBoardCall(controller, story: "Main", animated: true)
+            }
+        }
+    }
+    
+    static func currentUser() -> PFUser {
+        return PFUser.currentUser()!
+    }
 }
 
