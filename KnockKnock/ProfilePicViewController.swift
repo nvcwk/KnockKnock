@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import DZNPhotoPickerController
 
 class ProfilePicViewController: UIViewController {
     
     @IBOutlet weak var img_profile: UIImageView!
     @IBOutlet weak var btn_upload: UIButton!
+    
+    var picker = DZNPhotoPickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
