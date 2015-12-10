@@ -20,10 +20,13 @@ class ParseUtils {
             clientKey: "vBrciAAvdgFipUxAAf12luP8JzaQhHbPs9ELbvs9")
     }
     
-    static func checkLogin(controller: UIViewController) {
+    static func checkLogin(controller: UIViewController) -> Bool {
         if PFUser.currentUser() == nil {
             KnockKnockUtils.storyBoardCall(controller, story: "Credential", animated: true)
+            
+            return false
         }
+        return true
     }
     
     static func logout(controller: UIViewController) {

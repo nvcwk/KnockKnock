@@ -1,13 +1,25 @@
 import UIKit
 import Parse
 import SwiftSpinner
+import ParseUI
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var lb_temp: UILabel!
+    @IBOutlet weak var image_profile: PFImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ParseUtils.checkLogin(self)
+        if(ParseUtils.checkLogin(self)) {
+            let user = ParseUtils.currentUser()
+        
+            lb_temp.text = String(user["username"]!)
+            
+            image_profile.file = user["profilePic"] as! PFFile
+            
+            image_profile.loadInBackground()
+        }
     }
 
     @IBAction func actionLogout(sender: UIButton) {
