@@ -1,11 +1,3 @@
-//
-//  StoryBoardCalls.swift
-//  KnockKnock
-//
-//  Created by Nicholas Chan on 8/12/15.
-//  Copyright © 2015 Gen6. All rights reserved.
-//
-
 import UIKit
 import Parse
 
@@ -13,6 +5,12 @@ class KnockKnockUtils {
     
     static func storyBoardCall(controller: UIViewController, story: String, animated: Bool) {
         let viewController : UIViewController = UIStoryboard(name: story, bundle: nil).instantiateInitialViewController()!
+        
+        controller.presentViewController(viewController, animated: animated, completion: nil)
+    }
+    
+    static func storyBoardCall(controller: UIViewController, story: String, animated: Bool, view: String) {
+        let viewController : UIViewController = UIStoryboard(name: story, bundle: nil).instantiateViewControllerWithIdentifier(view)
         
         controller.presentViewController(viewController, animated: animated, completion: nil)
     }

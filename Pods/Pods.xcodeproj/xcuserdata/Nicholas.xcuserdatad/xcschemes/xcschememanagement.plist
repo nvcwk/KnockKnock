@@ -19,6 +19,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DZNEmptyDataSet.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DZNPhotoPickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -49,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftSpinner.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,17 +87,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>16FB872D0D2D4BA0F378AB34D47CF95F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47A7A8DC219F835EBFCFD4FD07349665</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>511B536F0DE06D9C3BD65397A91990C0</key>
+		<key>499145992D41C0C2BD6E909241404505</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>547F50B87E988377B16E066C759AA8E8</key>
+		<key>4CA16B1E14C931C3ECA8D55C91A12787</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>511B536F0DE06D9C3BD65397A91990C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,7 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>73D0E83A873117212F916AF0CCC91213</key>
+		<key>7CA374AC179B8F162813222246AC2669</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DDF395413C8D6F27EF992B44F13763E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,17 +142,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>97005362B42BE01022C31E81A60DC629</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C58C7421DAD296EE054EEEDAE49151AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D73C13F1BCA711991FFBBAE00EDC991B</key>
+		<key>F4FA4046A42F90B45AE211820377B8D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
