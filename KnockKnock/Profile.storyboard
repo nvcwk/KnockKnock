@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vcT-m4-Qgd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile Pic View Controller-->
+        <scene sceneID="gM6-Ky-JGf">
+            <objects>
+                <viewController storyboardIdentifier="profilePic" id="vcT-m4-Qgd" customClass="ProfilePicViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="81H-71-lAx"/>
+                        <viewControllerLayoutGuide type="bottom" id="FHT-Q9-NNV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Doj-9a-DCH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="4R1-8y-EWZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-dj-g9F" customClass="ZFRippleButton" customModule="ZFRippleButton">
+                                <rect key="frame" x="20" y="451" width="335" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.45098039220000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hBz-ZK-Grf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-profile" translatesAutoresizingMaskIntoConstraints="NO" id="93f-tH-syb">
+                                <rect key="frame" x="37" y="128" width="300" height="300"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload your Profile Picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0je-0R-4Z6">
+                                <rect key="frame" x="37" y="86" width="300" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Hwb-7a-gl9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="93f-tH-syb" firstAttribute="leading" secondItem="0je-0R-4Z6" secondAttribute="leading" id="70g-CH-wvA"/>
+                            <constraint firstItem="93f-tH-syb" firstAttribute="top" secondItem="0je-0R-4Z6" secondAttribute="bottom" constant="21" id="FdK-Sw-Ndk"/>
+                            <constraint firstItem="0je-0R-4Z6" firstAttribute="centerX" secondItem="4R1-8y-EWZ" secondAttribute="centerX" id="HDR-ub-dyJ"/>
+                            <constraint firstItem="Gni-dj-g9F" firstAttribute="top" secondItem="93f-tH-syb" secondAttribute="bottom" constant="23" id="Hr6-KV-5Ek"/>
+                            <constraint firstItem="4R1-8y-EWZ" firstAttribute="bottom" secondItem="FHT-Q9-NNV" secondAttribute="top" id="Kb9-u2-Yl7"/>
+                            <constraint firstItem="0je-0R-4Z6" firstAttribute="top" secondItem="81H-71-lAx" secondAttribute="bottom" constant="66" id="QIh-GE-Z4b"/>
+                            <constraint firstAttribute="trailing" secondItem="4R1-8y-EWZ" secondAttribute="trailing" id="SH0-br-yA8"/>
+                            <constraint firstItem="0je-0R-4Z6" firstAttribute="trailing" secondItem="93f-tH-syb" secondAttribute="trailing" id="Ti5-sa-rnn"/>
+                            <constraint firstItem="Gni-dj-g9F" firstAttribute="leading" secondItem="Doj-9a-DCH" secondAttribute="leadingMargin" constant="4" id="lJf-4J-xja"/>
+                            <constraint firstItem="Gni-dj-g9F" firstAttribute="centerX" secondItem="93f-tH-syb" secondAttribute="centerX" id="qPe-LK-lzU"/>
+                            <constraint firstItem="FHT-Q9-NNV" firstAttribute="top" secondItem="Gni-dj-g9F" secondAttribute="bottom" constant="176" id="sGw-yB-Hqf"/>
+                            <constraint firstItem="4R1-8y-EWZ" firstAttribute="top" secondItem="Doj-9a-DCH" secondAttribute="top" id="tg5-p1-ESR"/>
+                            <constraint firstItem="4R1-8y-EWZ" firstAttribute="leading" secondItem="Doj-9a-DCH" secondAttribute="leading" id="vWa-wN-ybz"/>
+                            <constraint firstItem="0je-0R-4Z6" firstAttribute="leading" secondItem="Doj-9a-DCH" secondAttribute="leadingMargin" constant="21" id="ylW-RJ-udk"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="btn_upload" destination="Gni-dj-g9F" id="iXn-ms-awG"/>
+                        <outlet property="img_profile" destination="93f-tH-syb" id="UEQ-Kk-vbe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWw-Qq-Px6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366.5" y="0.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="1563" height="2779"/>
+        <image name="default-profile" width="530" height="530"/>
+    </resources>
+</document>

@@ -58,11 +58,11 @@ class ParseUtils {
             if let error = error {
                 let errorString = error.userInfo["error"] as? NSString
                 
-                KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: String(errorString!), handle: nil)
+                KnockKnockUtils.okAlert(controller, title: "Error!", message: String(errorString!), handle: nil)
                 // Show the errorString somewhere and let the user try again.
             } else {
-                KnockKnockUtils.okAlert(controller, title: "Error!", message: "Welcome " + username, handle: { (action:UIAlertAction!) in
-                    KnockKnockUtils.storyBoardCall(controller, story: "Main", animated: true)})
+                KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: "Welcome " + username, handle: { (action:UIAlertAction!) in
+                    KnockKnockUtils.storyBoardCall(controller, story: "Profile", animated: true, view:"profilePic")})
             }
         }
     }

@@ -19,6 +19,9 @@
 		E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC20B1C16CD3200479927 /* HomeViewController.swift */; };
 		E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC21E1C16E0B700479927 /* KnockKnockUtils.swift */; };
 		E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2201C16E12C00479927 /* ParseUtils.swift */; };
+		E182C1F61C19C33200B3DF9B /* RegProfilePicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182C1F51C19C33200B3DF9B /* RegProfilePicViewController.swift */; };
+		E182C1F81C19C36D00B3DF9B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E182C1F71C19C36D00B3DF9B /* Profile.storyboard */; };
+		E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */; };
 		E1E4B43F1C1713D100242A83 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43A1C1713D100242A83 /* FBAudienceNetwork.framework */; };
 		E1E4B4401C1713D100242A83 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43B1C1713D100242A83 /* FBSDKCoreKit.framework */; };
 		E1E4B4411C1713D100242A83 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43C1C1713D100242A83 /* FBSDKLoginKit.framework */; };
@@ -67,6 +70,9 @@
 		E11AC20B1C16CD3200479927 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E11AC21E1C16E0B700479927 /* KnockKnockUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockUtils.swift; sourceTree = "<group>"; };
 		E11AC2201C16E12C00479927 /* ParseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUtils.swift; sourceTree = "<group>"; };
+		E182C1F51C19C33200B3DF9B /* RegProfilePicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegProfilePicViewController.swift; sourceTree = "<group>"; };
+		E182C1F71C19C36D00B3DF9B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicViewController.swift; sourceTree = "<group>"; };
 		E1E4B43A1C1713D100242A83 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		E1E4B43B1C1713D100242A83 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E1E4B43C1C1713D100242A83 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 				E11461FC1C1170B900983BC3 /* Main.storyboard */,
 				E11AC1FE1C16185400479927 /* Credential.storyboard */,
 				E11462011C1170B900983BC3 /* LaunchScreen.storyboard */,
+				E182C1F71C19C36D00B3DF9B /* Profile.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -205,6 +212,8 @@
 				E11AC20B1C16CD3200479927 /* HomeViewController.swift */,
 				E1E4B4451C17291000242A83 /* ForgetViewController.swift */,
 				E1E4B4541C18601100242A83 /* RegisterViewController.swift */,
+				E182C1F51C19C33200B3DF9B /* RegProfilePicViewController.swift */,
+				E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E182C1F81C19C36D00B3DF9B /* Profile.storyboard in Resources */,
 				E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */,
 				E11462001C1170B900983BC3 /* Assets.xcassets in Resources */,
 				E11461FE1C1170B900983BC3 /* Main.storyboard in Resources */,
@@ -427,6 +437,8 @@
 			files = (
 				E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
+				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
+				E182C1F61C19C33200B3DF9B /* RegProfilePicViewController.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
@@ -578,7 +590,7 @@
 				);
 				INFOPLIST_FILE = KnockKnock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Gen6.KnockKnock;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gen6.knockknock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -594,7 +606,7 @@
 				);
 				INFOPLIST_FILE = KnockKnock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Gen6.KnockKnock;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gen6.knockknock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
