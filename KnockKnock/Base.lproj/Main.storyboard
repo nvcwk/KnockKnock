@@ -110,15 +110,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR0-zU-elF">
-                                <rect key="frame" x="105" y="175" width="164" height="284"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Main" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR0-zU-elF">
+                                <rect key="frame" x="62" y="80" width="250" height="114"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rfd-Sv-fmq" customClass="PFImageView">
+                                <rect key="frame" x="37" y="184" width="300" height="300"/>
+                                <animations/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFC-IW-KL6">
-                                <rect key="frame" x="163" y="446" width="48" height="30"/>
+                                <rect key="frame" x="163" y="517" width="48" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
@@ -129,17 +133,21 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IZ3-3l-kMA" firstAttribute="top" secondItem="aR0-zU-elF" secondAttribute="bottom" constant="159" id="GbV-wP-9bd"/>
+                            <constraint firstItem="IZ3-3l-kMA" firstAttribute="top" secondItem="aR0-zU-elF" secondAttribute="bottom" constant="424" id="GbV-wP-9bd"/>
                             <constraint firstItem="aR0-zU-elF" firstAttribute="centerX" secondItem="KN0-9F-Dhb" secondAttribute="centerX" id="Ro6-pu-WjH"/>
-                            <constraint firstItem="aR0-zU-elF" firstAttribute="leading" secondItem="KN0-9F-Dhb" secondAttribute="leadingMargin" constant="89" id="gGl-eM-G1a"/>
-                            <constraint firstItem="aR0-zU-elF" firstAttribute="top" secondItem="fSz-Lp-b7h" secondAttribute="bottom" constant="111" id="tDZ-QQ-zGd"/>
+                            <constraint firstItem="aR0-zU-elF" firstAttribute="leading" secondItem="KN0-9F-Dhb" secondAttribute="leadingMargin" constant="42" id="gGl-eM-G1a"/>
+                            <constraint firstItem="aR0-zU-elF" firstAttribute="top" secondItem="fSz-Lp-b7h" secondAttribute="bottom" constant="16" id="tDZ-QQ-zGd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pKs-0w-bAy"/>
+                    <connections>
+                        <outlet property="image_profile" destination="Rfd-Sv-fmq" id="uAh-wc-0wm"/>
+                        <outlet property="lb_temp" destination="aR0-zU-elF" id="1w9-Sg-tYf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAP-VO-eud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="0.0"/>
+            <point key="canvasLocation" x="1621.5" y="-0.5"/>
         </scene>
     </scenes>
     <resources>
