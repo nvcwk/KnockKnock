@@ -41,7 +41,7 @@ class ParseUtils {
         })
     }
     
-    static func signUp(controller: UIViewController, email: String, username: String, password: String, country: String, contact: Int, birthday: NSDate) {
+    static func signUp(controller: UIViewController, email: String, username: String, fName: String, lName: String, password: String, country: String, contact: Int, birthday: NSDate) {
         
         let user = PFUser()
         SwiftSpinner.show("Signing up...")
@@ -53,6 +53,8 @@ class ParseUtils {
         user["country"] = country
         user["contact"] = contact
         user["dob"] = birthday
+        user["fName"] = fName
+        user["lName"] = lName
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
@@ -64,7 +66,7 @@ class ParseUtils {
                 KnockKnockUtils.okAlert(controller, title: "Error!", message: String(errorString!), handle: nil)
                 // Show the errorString somewhere and let the user try again.
             } else {
-                KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: "Welcome " + username, handle: { (action:UIAlertAction!) in
+                KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: "Welcome " + fName, handle: { (action:UIAlertAction!) in
                     KnockKnockUtils.storyBoardCall(controller, story: "Profile", animated: true, view:"profilePic")})
             }
         }
