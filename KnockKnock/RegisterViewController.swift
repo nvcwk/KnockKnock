@@ -13,10 +13,11 @@ import SwiftValidator
 class RegisterViewController: UIViewController, CountryPickerDelegate, ValidationDelegate {
     
     @IBOutlet weak var tf_country: UITextField!
-    @IBOutlet weak var tf_email: UITextField!
+    @IBOutlet weak var tf_fName: UITextField!
+    @IBOutlet weak var tf_lName: UITextField!
     @IBOutlet weak var tf_pass: UITextField!
     @IBOutlet weak var tf_cfmPass: UITextField!
-    @IBOutlet weak var tf_username: UITextField!
+    @IBOutlet weak var tf_email: UITextField!
     @IBOutlet weak var tf_birthday: UITextField!
     @IBOutlet weak var tf_contact: UITextField!
     
@@ -47,7 +48,8 @@ class RegisterViewController: UIViewController, CountryPickerDelegate, Validatio
         
         validator.registerField(tf_email, rules: [RequiredRule(message: missTxt), EmailRule(message: "Invalid email")])
         validator.registerField(tf_pass, rules: [RequiredRule(message: missTxt), ConfirmationRule(confirmField: tf_cfmPass, message: "Password do not match!")])
-        validator.registerField(tf_username, rules: [RequiredRule(message: missTxt)])
+        validator.registerField(tf_fName, rules: [RequiredRule(message: missTxt)])
+        validator.registerField(tf_lName, rules: [RequiredRule(message: missTxt)])
         validator.registerField(tf_country, rules: [RequiredRule(message: missTxt)])
         validator.registerField(tf_birthday, rules: [RequiredRule(message: missTxt)])
         validator.registerField(tf_contact, rules: [RequiredRule(message: missTxt)])
@@ -67,7 +69,7 @@ class RegisterViewController: UIViewController, CountryPickerDelegate, Validatio
     }
     
     func validationSuccessful() {
-       ParseUtils.signUp(self, email: tf_email.text!, username: tf_username.text!, password: tf_pass.text!, country: tf_country.text!, contact: Int(tf_contact.text!)!, birthday: selectedDate)
+        ParseUtils.signUp(self, email: tf_email.text!, username: tf_email.text!, fName: tf_fName.text!, lName: tf_lName.text!, password: tf_pass.text!, country: tf_country.text!, contact: Int(tf_contact.text!)!, birthday: selectedDate)
     }
     
     func validationFailed(errors:[UITextField:ValidationError]) {

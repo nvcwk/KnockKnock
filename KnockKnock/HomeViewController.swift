@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
         if(ParseUtils.checkLogin(self)) {
             let user = ParseUtils.currentUser()
         
-            lb_temp.text = String(user["username"]!)
+            lb_temp.text = String(user["lName"]!)
             
             image_profile.file = user["profilePic"] as! PFFile
             
