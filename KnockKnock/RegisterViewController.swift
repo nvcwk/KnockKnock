@@ -48,8 +48,8 @@ class RegisterViewController: UIViewController, CountryPickerDelegate, Validatio
         
         validator.registerField(tf_email, rules: [RequiredRule(message: missTxt), EmailRule(message: "Invalid email")])
         validator.registerField(tf_pass, rules: [RequiredRule(message: missTxt), ConfirmationRule(confirmField: tf_cfmPass, message: "Password do not match!"), KnockKnockRule(regex: "^(?=.*\\d)(?=.*[a-zA-Z])(?!.*[\\W_\\x7B-\\xFF]).{7,20}$", message: "Password no symbols")])
-        validator.registerField(tf_fName, rules: [RequiredRule(message: missTxt), MaxLengthRule(length: 10, message: "First Name should be max 10 characters"), KnockKnockRule(regex: "^[a-z]{1,10}$", message: "First Name must have a-z/A-Z characters only")])
-        validator.registerField(tf_lName, rules: [RequiredRule(message: missTxt), MinLengthRule(length: 2, message: "Last Name should be min 1 characters"), MaxLengthRule(length: 10, message: "Last Name should be max 10 characters"), KnockKnockRule(regex: "^[a-z]{2,10}$", message: "Last Name must have a-z/A-Z characters only")])
+        validator.registerField(tf_fName, rules: [RequiredRule(message: missTxt), MaxLengthRule(length: 10, message: "First Name should be max 10 characters"), KnockKnockRule(regex: "^[a-z]{1,10}$", message: "First Name must have characters only")])
+        validator.registerField(tf_lName, rules: [RequiredRule(message: missTxt), MinLengthRule(length: 2, message: "Last Name should be min 2 characters"), MaxLengthRule(length: 10, message: "Last Name should be max 10 characters"), KnockKnockRule(regex: "^[a-z]{2,10}$", message: "Last Name must have characters only")])
         validator.registerField(tf_country, rules: [RequiredRule(message: missTxt)])
         validator.registerField(tf_birthday, rules: [RequiredRule(message: missTxt)])
         validator.registerField(tf_contact, rules: [RequiredRule(message: missTxt)])
