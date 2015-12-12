@@ -1,7 +1,7 @@
 import Foundation
 import SwiftValidator
 
-public class NameRule : Rule {
+public class KnockKnockRule : Rule {
     
     private var REGEX: String = "^(?=.*?[A-Z]).{8,}$"
     private var message : String
