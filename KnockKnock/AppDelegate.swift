@@ -9,6 +9,8 @@
 import UIKit
 import FBSDKCoreKit
 import ParseFacebookUtilsV4
+import IQKeyboardManagerSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         ParseUtils.loadParse()
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
-               
+        
+        IQKeyboardManager.sharedManager().enable = true
+        
         return true
     }
 
