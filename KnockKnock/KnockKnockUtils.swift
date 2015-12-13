@@ -3,18 +3,21 @@ import Parse
 
 class KnockKnockUtils {
     
+    // Call storyboard and instantiate initial view
     static func storyBoardCall(controller: UIViewController, story: String, animated: Bool) {
         let viewController : UIViewController = UIStoryboard(name: story, bundle: nil).instantiateInitialViewController()!
         
         controller.presentViewController(viewController, animated: animated, completion: nil)
     }
     
+    // Call storyboard and instantiate specific view
     static func storyBoardCall(controller: UIViewController, story: String, animated: Bool, view: String) {
         let viewController : UIViewController = UIStoryboard(name: story, bundle: nil).instantiateViewControllerWithIdentifier(view)
         
         controller.presentViewController(viewController, animated: animated, completion: nil)
     }
     
+    // Call Alert with ok button
     static func okAlert(controller: UIViewController, title: String, message: String, handle: ((UIAlertAction) -> Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
@@ -25,12 +28,14 @@ class KnockKnockUtils {
         controller.presentViewController(alertController, animated: true, completion:nil)
     }
     
+    // Convert date to string
     static func dateToString(date: NSDate) -> String {
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.LongStyle
         return formatter.stringFromDate(date)
     }
     
+    // Resize Image
     static func RBResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
         

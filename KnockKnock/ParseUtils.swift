@@ -20,6 +20,7 @@ class ParseUtils {
             clientKey: "vBrciAAvdgFipUxAAf12luP8JzaQhHbPs9ELbvs9")
     }
     
+    // Check user login
     static func checkLogin(controller: UIViewController) -> Bool {
         if PFUser.currentUser() == nil {
             KnockKnockUtils.storyBoardCall(controller, story: "Credential", animated: true)
@@ -29,6 +30,7 @@ class ParseUtils {
         return true
     }
     
+    // Logout
     static func logout(controller: UIViewController) {
         SwiftSpinner.show("Logging out...")
         
@@ -41,6 +43,7 @@ class ParseUtils {
         })
     }
     
+    // Sign User Up
     static func signUp(controller: UIViewController, email: String, username: String, fName: String, lName: String, password: String, country: String, contact: Int, birthday: NSDate) {
         
         let user = PFUser()
@@ -72,6 +75,7 @@ class ParseUtils {
         }
     }
     
+    // Update Profile Image
     static func updateProfileImage(image: UIImage, controller: UIViewController) {
         SwiftSpinner.show("Loading...")
         
@@ -95,6 +99,7 @@ class ParseUtils {
         }
     }
     
+    // Current User
     static func currentUser() -> PFUser {
         return PFUser.currentUser()!
     }
