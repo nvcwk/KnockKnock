@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CGb-zr-jhB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="3OP-58-KdT">
+            <objects>
+                <navigationController id="CGb-zr-jhB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="second" id="0Kh-Z2-GlW"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bqm-Ky-nlA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2ng-me-C9Q" kind="relationship" relationship="rootViewController" id="3Ln-cS-Cb1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSF-nP-nTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.5" y="858.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8Sm-Og-LK3">
+            <objects>
+                <viewController id="2ng-me-C9Q" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FzE-j7-p1I"/>
+                        <viewControllerLayoutGuide type="bottom" id="7vO-u9-d9i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PBU-cz-Msk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPh-gk-Ya7">
+                                <rect key="frame" x="163" y="323" width="49" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uPh-gk-Ya7" firstAttribute="top" secondItem="FzE-j7-p1I" secondAttribute="bottom" constant="259" id="Q9d-9O-lnB"/>
+                            <constraint firstItem="uPh-gk-Ya7" firstAttribute="centerY" secondItem="PBU-cz-Msk" secondAttribute="centerY" id="j26-Pb-WGw"/>
+                            <constraint firstItem="uPh-gk-Ya7" firstAttribute="centerX" secondItem="PBU-cz-Msk" secondAttribute="centerX" id="yLg-4K-UOM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zE2-gG-NfS"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0E1-UH-Vx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1275.5" y="858.5"/>
+        </scene>
+        <!--Profile Pic View Controller-->
+        <scene sceneID="lu0-zb-WZ9">
+            <objects>
+                <viewController storyboardIdentifier="profilePic" id="gt6-4z-RlB" customClass="ProfilePicViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jhn-nw-1rE"/>
+                        <viewControllerLayoutGuide type="bottom" id="KKE-nd-cib"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R5J-93-p5k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="f6G-TM-xUI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnn-Sb-Xw2" customClass="ZFRippleButton" customModule="ZFRippleButton">
+                                <rect key="frame" x="20" y="403" width="335" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.45098039220000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="X6d-j6-Vg0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Change Profile Picture">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionChange:" destination="gt6-4z-RlB" eventType="touchUpInside" id="b7a-6A-sRW"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-profile" translatesAutoresizingMaskIntoConstraints="NO" id="qvE-Oy-2mb">
+                                <rect key="frame" x="37" y="80" width="300" height="300"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogy-mB-3Ox" customClass="ZFRippleButton" customModule="ZFRippleButton">
+                                <rect key="frame" x="20" y="459" width="335" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.45098039220000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uUX-i7-FA8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionUpload:" destination="gt6-4z-RlB" eventType="touchUpInside" id="Y76-cf-b5F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f6G-TM-xUI" firstAttribute="top" secondItem="R5J-93-p5k" secondAttribute="top" id="1qG-Nz-nKf"/>
+                            <constraint firstItem="fnn-Sb-Xw2" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="4" id="38U-Wf-4da"/>
+                            <constraint firstItem="fnn-Sb-Xw2" firstAttribute="trailing" secondItem="Ogy-mB-3Ox" secondAttribute="trailing" id="JTU-xB-G67"/>
+                            <constraint firstItem="KKE-nd-cib" firstAttribute="top" secondItem="Ogy-mB-3Ox" secondAttribute="bottom" constant="168" id="KmY-fg-wmH"/>
+                            <constraint firstItem="qvE-Oy-2mb" firstAttribute="top" secondItem="Jhn-nw-1rE" secondAttribute="bottom" constant="60" id="Obe-Gl-rjn"/>
+                            <constraint firstItem="f6G-TM-xUI" firstAttribute="bottom" secondItem="KKE-nd-cib" secondAttribute="top" id="PKg-EY-QUk"/>
+                            <constraint firstItem="f6G-TM-xUI" firstAttribute="centerX" secondItem="qvE-Oy-2mb" secondAttribute="centerX" id="Pes-3C-PSO"/>
+                            <constraint firstItem="f6G-TM-xUI" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leading" id="Qbl-a5-mgv"/>
+                            <constraint firstItem="Ogy-mB-3Ox" firstAttribute="top" secondItem="fnn-Sb-Xw2" secondAttribute="bottom" constant="16" id="Rvg-5r-Co9"/>
+                            <constraint firstAttribute="trailing" secondItem="f6G-TM-xUI" secondAttribute="trailing" id="Sen-1b-6o3"/>
+                            <constraint firstItem="fnn-Sb-Xw2" firstAttribute="top" secondItem="qvE-Oy-2mb" secondAttribute="bottom" constant="23" id="d0l-W4-5XW"/>
+                            <constraint firstItem="fnn-Sb-Xw2" firstAttribute="leading" secondItem="Ogy-mB-3Ox" secondAttribute="leading" id="s7l-C8-dWh"/>
+                            <constraint firstItem="qvE-Oy-2mb" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="21" id="uIu-ml-wOO"/>
+                            <constraint firstItem="qvE-Oy-2mb" firstAttribute="centerX" secondItem="fnn-Sb-Xw2" secondAttribute="centerX" id="zGq-f6-pRf"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="btn_upload" destination="fnn-Sb-Xw2" id="jKr-tY-bOC"/>
+                        <outlet property="img_profile" destination="qvE-Oy-2mb" id="3sB-du-Ykz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zXT-8g-8la" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.5" y="6.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="1563" height="2779"/>
+        <image name="default-profile" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>
