@@ -38,6 +38,7 @@ PODS:
     - FBSDKCoreKit/arc
   - FBSDKLoginKit (4.8.0):
     - FBSDKCoreKit
+  - IQKeyboardManagerSwift (3.3.4)
   - ObjectiveSugar (0.9)
   - Parse (1.10.0):
     - Bolts/Tasks (~> 1.5)
@@ -51,17 +52,20 @@ PODS:
     - Parse (~> 1.9)
   - SwiftSpinner (0.8.0)
   - SwiftValidator (3.0.1)
+  - TextFieldEffects (1.1.0)
   - ZFRippleButton (0.5.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - CountryPicker
+  - IQKeyboardManagerSwift
   - ObjectiveSugar (~> 0.5)
   - Parse
   - ParseFacebookUtilsV4
   - ParseUI
   - SwiftSpinner
   - SwiftValidator
+  - TextFieldEffects
   - ZFRippleButton
 
 SPEC CHECKSUMS:
@@ -70,12 +74,14 @@ SPEC CHECKSUMS:
   CountryPicker: 6f166e2f1cc250f07eba4c587fbe1c0efc21049b
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
+  IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   ObjectiveSugar: 18409ee1ec578dd8598b55e5008f393488dca5cf
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
   ParseFacebookUtilsV4: eab9b4ade12f0800b4d30f6b808bca55ce17a0e9
   ParseUI: c2bcdfbb00330e464b5b773266ae221697a3bb7b
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   SwiftValidator: c59223144754045d7691febdc3b3ecc2e73b609c
+  TextFieldEffects: 8e43fea8836e97be80fc4db27a1596c9e98a26ba
   ZFRippleButton: 263bdf4e31dabd5826133b121d9ff908c87a6a11
 
 COCOAPODS: 0.39.0

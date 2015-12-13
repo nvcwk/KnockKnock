@@ -14,6 +14,8 @@ pod 'ZFRippleButton'
 pod 'SwiftSpinner'
 pod 'SwiftValidator'
 pod 'CountryPicker'
+pod 'TextFieldEffects'
+pod 'IQKeyboardManagerSwift'
 
 =begin 
 To Consider 
