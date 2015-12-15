@@ -9,8 +9,8 @@
 import UIKit
 
 class MarketplaceTableViewCell: UITableViewCell {
-    @IBOutlet weak var bkimageview: UIImageView!
-    @IBOutlet weak var headingLabel: UILabel!
+    @IBOutlet weak var headerLabel: UILabel!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
