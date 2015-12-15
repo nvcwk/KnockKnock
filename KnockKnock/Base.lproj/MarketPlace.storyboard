@@ -47,8 +47,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BX0-2v-E8P">
+                                                    <rect key="frame" x="0.0" y="-9" width="375" height="151.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkF-Jt-7P3">
+                                                    <rect key="frame" x="309" y="109" width="39" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udb-Wv-Fa5">
-                                                    <rect key="frame" x="159" y="30" width="56" height="21"/>
+                                                    <rect key="frame" x="63" y="35" width="249" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -57,6 +66,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="headerLabel" destination="udb-Wv-Fa5" id="AjC-yP-Wfl"/>
+                                            <outlet property="imageLabel" destination="BX0-2v-E8P" id="hQl-Am-yuE"/>
+                                            <outlet property="priceLabel" destination="tkF-Jt-7P3" id="Rxh-tr-w8l"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
