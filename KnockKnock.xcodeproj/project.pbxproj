@@ -32,7 +32,7 @@
 		E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4451C17291000242A83 /* ForgetViewController.swift */; };
 		E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */; };
 		E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4541C18601100242A83 /* RegisterViewController.swift */; };
-		F6BDE62C1C1FFE4600E090DA /* MarketplaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BDE62B1C1FFE4600E090DA /* MarketplaceTableViewController.swift */; };
+		F6B9E55D1C203A5600D3446C /* MarketplaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9E55C1C203A5600D3446C /* MarketplaceViewController.swift */; };
 		F6BDE62F1C2001CC00E090DA /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BDE62E1C2001CC00E090DA /* Marketplace.swift */; };
 		F6BDE6311C200A5900E090DA /* MarketplaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BDE6301C200A5900E090DA /* MarketplaceTableViewCell.swift */; };
 		F6BDE6341C201C6300E090DA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BDE6321C201C6300E090DA /* Bolts.framework */; };
@@ -100,7 +100,7 @@
 		E1E4B4451C17291000242A83 /* ForgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
 		E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CountryPicker.bundle; sourceTree = "<group>"; };
 		E1E4B4541C18601100242A83 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		F6BDE62B1C1FFE4600E090DA /* MarketplaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTableViewController.swift; sourceTree = "<group>"; };
+		F6B9E55C1C203A5600D3446C /* MarketplaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceViewController.swift; sourceTree = "<group>"; };
 		F6BDE62E1C2001CC00E090DA /* Marketplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
 		F6BDE6301C200A5900E090DA /* MarketplaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTableViewCell.swift; sourceTree = "<group>"; };
 		F6BDE6321C201C6300E090DA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -274,7 +274,7 @@
 				E1E4B4451C17291000242A83 /* ForgetViewController.swift */,
 				E1E4B4541C18601100242A83 /* RegisterViewController.swift */,
 				E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */,
-				F6BDE62B1C1FFE4600E090DA /* MarketplaceTableViewController.swift */,
+				F6B9E55C1C203A5600D3446C /* MarketplaceViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -510,6 +510,7 @@
 			files = (
 				E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
+				F6B9E55D1C203A5600D3446C /* MarketplaceViewController.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
@@ -519,7 +520,6 @@
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
-				F6BDE62C1C1FFE4600E090DA /* MarketplaceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

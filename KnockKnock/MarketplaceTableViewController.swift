@@ -15,6 +15,7 @@ class MarketplaceTableViewController: UITableViewController {
     //let marketplace = MarketPlace()
     //array
     var ArrayOfMarketPlace = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,13 +43,13 @@ class MarketplaceTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return ArrayOfMarketPlace.count
+       return 1
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)as! MarketplaceTableViewCell
-       cell.headingLabel.text = self.ArrayOfMarketPlace[indexPath.row]
+       cell.headerLabel.text = self.ArrayOfMarketPlace[indexPath.row]
         return cell
     }
     
