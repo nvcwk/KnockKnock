@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
-class MarketplaceTableViewCell: UITableViewCell {
+class MarketplaceTableViewCell: PFTableViewCell {
     @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
 
+    @IBOutlet weak var imageLabel: PFImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
