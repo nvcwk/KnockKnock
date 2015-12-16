@@ -15,7 +15,7 @@ import ParseUI
 
 
 
-class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -149,10 +149,6 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.reloadData()
     }
     
-    
-}
-
-extension MarketplaceViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
