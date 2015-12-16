@@ -39,16 +39,24 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ubp-Xg-LFE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="dnZ-eJ-Wdw">
+                                    <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="maF-xh-XER" id="G1B-AS-xpP"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="143" id="uX8-WO-oKN" customClass="MarketplaceTableViewCell" customModule="KnockKnock" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="143"/>
+                                        <rect key="frame" x="0.0" y="136" width="375" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uX8-WO-oKN" id="yeM-Kg-FMa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BX0-2v-E8P">
-                                                    <rect key="frame" x="0.0" y="-9" width="375" height="151.5"/>
+                                                    <rect key="frame" x="0.0" y="-9" width="375" height="152"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkF-Jt-7P3">
                                                     <rect key="frame" x="309" y="109" width="39" height="21"/>
@@ -82,10 +90,28 @@
                     <navigationItem key="navigationItem" id="tiG-v7-GTD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="FLa-4G-J6e" id="tGK-SD-uSx"/>
                         <outlet property="tableView" destination="ubp-Xg-LFE" id="LmI-qS-fJs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baa-9R-QKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="ZUJ-K7-jcb">
+                    <connections>
+                        <outlet property="delegate" destination="maF-xh-XER" id="foD-8j-lii"/>
+                        <outlet property="searchContentsController" destination="maF-xh-XER" id="U5G-rw-FQp"/>
+                        <outlet property="searchResultsDataSource" destination="maF-xh-XER" id="lRs-VG-V4f"/>
+                        <outlet property="searchResultsDelegate" destination="maF-xh-XER" id="ACO-RA-42Y"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="FLa-4G-J6e">
+                    <connections>
+                        <outlet property="delegate" destination="maF-xh-XER" id="PWy-wc-Dck"/>
+                        <outlet property="searchBar" destination="dnZ-eJ-Wdw" id="1o7-iU-Csh"/>
+                        <outlet property="searchContentsController" destination="maF-xh-XER" id="4vf-uk-ufS"/>
+                        <outlet property="searchResultsDataSource" destination="maF-xh-XER" id="dM6-8l-ESg"/>
+                        <outlet property="searchResultsDelegate" destination="maF-xh-XER" id="DiA-n2-4xc"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1139.5" y="49.5"/>
         </scene>
