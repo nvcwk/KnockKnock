@@ -47,6 +47,7 @@
 		F6BDE6451C201CE000E090DA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BDE6441C201CE000E090DA /* SystemConfiguration.framework */; };
 		F6BDE6471C201CF000E090DA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BDE6461C201CF000E090DA /* libz.tbd */; };
 		F6BDE6491C201CFC00E090DA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BDE6481C201CFC00E090DA /* libsqlite3.tbd */; };
+		F6BDEAC51C2166B500CBC537 /* DetailedMarketplaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BDEAC41C2166B500CBC537 /* DetailedMarketplaceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		F6BDE6441C201CE000E090DA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F6BDE6461C201CF000E090DA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F6BDE6481C201CFC00E090DA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F6BDEAC41C2166B500CBC537 /* DetailedMarketplaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedMarketplaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 				E1E4B4541C18601100242A83 /* RegisterViewController.swift */,
 				E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */,
 				F6B9E55C1C203A5600D3446C /* MarketplaceViewController.swift */,
+				F6BDEAC41C2166B500CBC537 /* DetailedMarketplaceViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
+				F6BDEAC51C2166B500CBC537 /* DetailedMarketplaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

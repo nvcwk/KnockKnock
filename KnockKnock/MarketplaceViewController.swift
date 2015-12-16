@@ -18,7 +18,9 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     var headerArray = [String]()
     var priceArray = [Int]()
     var picArray = [PFFile]()
-    
+    var hostArray = [PFObject]()
+    var summaryArray = [String]()
+    var marketplaceArray = [PFObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
         let query = PFQuery(className: "MarketPlace")
@@ -29,14 +31,19 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         if error == nil{
             if let objects = objects as [PFObject]!{
                 for object in objects {
-                    
+                   
                     let header = object.objectForKey("title") as! String
                     let price = object.objectForKey("price") as! Int
                     let tourImageFile = object.objectForKey("image") as! PFFile
+                    let summary = object.objectForKey("summary") as! String
+                    let host = object.objectForKey("host") as! PFObject
                     self.headerArray.append(header)
                     self.priceArray.append(price)
                     self.picArray.append(tourImageFile)
-                    print(self.picArray)
+                    self.summaryArray.append(summary)
+                    self.hostArray.append(host)
+                    self.marketplaceArray.append(object)
+                    
                 }
             }
             
@@ -83,22 +90,22 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             cell.imageLabel.image = UIImage(data:imageData!)
             }
         }
+                return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailedController: DetailedMarketplaceViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailedMarketplaceViewController") as! DetailedMarketplaceViewController
         
+        let imageFile = picArray[indexPath.row]
+        let host = hostArray[indexPath.row]
+        let marketObject = marketplaceArray[indexPath.row]
         
-        // cell.imageLabel.file = imageFile
-        //cell.imageLabel.loadInBackground()
-        
-        
-        //cell.imageLabel.file = imageFile
-        //cell.imageLabel.loadInBackground()
-        
-        /*
-        if let tourImageFile = object?["image"] as? PFFile {
-            cell?.tourImage.file = tourImageFile
-            cell?.tourImage.loadInBackground()
-        }
-
-        */
-        return cell
+        detailedController.header = headerArray[indexPath.row]
+        detailedController.price = String(self.priceArray[indexPath.row])
+        detailedController.host = host
+        detailedController.summary = summaryArray[indexPath.row]
+        detailedController.picFile = imageFile
+        detailedController.currentObject = marketObject
+        self.presentViewController(detailedController, animated: true, completion: nil)
     }
 }
