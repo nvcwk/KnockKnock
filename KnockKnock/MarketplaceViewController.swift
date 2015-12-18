@@ -87,7 +87,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                         self.summaryArray.append(summary)
                         self.hostArray.append(host)
                         self.marketplaceArray.append(object)
-                        print(self.priceArray)
+
                     }
                 }
                 
