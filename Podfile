@@ -17,6 +17,7 @@ pod 'CountryPicker'
 pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
 pod 'DZNPhotoPickerController/Editor'
+pod 'GMStepper'
 
 =begin 
 To Consider 
