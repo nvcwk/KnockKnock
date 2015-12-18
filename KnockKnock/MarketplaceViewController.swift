@@ -15,7 +15,7 @@ import ParseUI
 
 
 
-class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
+class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, CalendarViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -29,12 +29,32 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     var summaryArray = [String]()
     var marketplaceArray = [PFObject]()
     
+    @IBOutlet weak var placeholderView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        
+        
+        // todays date.
+        let date = NSDate()
+        
+        // create an instance of calendar view with
+        // base date (Calendar shows 12 months range from current base date)
+        // selected date (marked dated in the calendar)
+        let calendarView = CalendarView.instance(date, selectedDate: date)
+        calendarView.delegate = self
+        calendarView.translatesAutoresizingMaskIntoConstraints = false
+        placeholderView.addSubview(calendarView)
+        
+        // Constraints for calendar view - Fill the parent view.
+        placeholderView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[calendarView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["calendarView": calendarView]))
+        placeholderView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[calendarView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["calendarView": calendarView]))
+        
+        
         
         callingParse(sort)
 
@@ -96,6 +116,10 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                 print("error: \(error!)  \(error!.userInfo)")
             }
         }
+    }
+    
+    func didSelectDate(date: NSDate) {
+        print(date)
     }
     
     
