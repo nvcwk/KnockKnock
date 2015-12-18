@@ -20,6 +20,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    var sort = false
     var headerArray = [String]()
     var filteredHeaderArray = [String]()
     var priceArray = [Int]()
@@ -30,47 +31,74 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
-        let query = PFQuery(className: "MarketPlace")
-        let runkey = query.orderByAscending("title")
-        runkey.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
+        callingParse(sort)
+
         
-        if error == nil{
-            if let objects = objects as [PFObject]!{
-                for object in objects {
-                   
-                    let header = object.objectForKey("title") as! String
-                    let price = object.objectForKey("price") as! Int
-                    let tourImageFile = object.objectForKey("image") as! PFFile
-                    let summary = object.objectForKey("summary") as! String
-                    let host = object.objectForKey("host") as! PFObject
-                    self.headerArray.append(header)
-                    self.priceArray.append(price)
-                    self.picArray.append(tourImageFile)
-                    self.summaryArray.append(summary)
-                    self.hostArray.append(host)
-                    self.marketplaceArray.append(object)
-                    
-                }
-            }
-            
-        }else{
-            //log details of the failure
-            print("error: \(error!)  \(error!.userInfo)")
-            }
-        }
         //reload uiviewcontroller && tableview
         sleep(3)
         
         do_table_refresh()
     }
 
+    @IBAction func soryByPrice(sender: AnyObject) {
+        sort = true
+        viewDidLoad()
+    }
+    
+    func callingParse(sort : Bool){
+        
+        self.headerArray.removeAll()
+        self.priceArray.removeAll()
+        self.picArray.removeAll()
+        self.summaryArray.removeAll()
+        self.hostArray.removeAll()
+        self.marketplaceArray.removeAll()
+        
+        let query = PFQuery(className: "MarketPlace")
+        
+        if sort
+        {
+            query.orderByAscending("price")
+        }
+        else
+        {
+        query.orderByAscending("title")
+        }
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil{
+                if let objects = objects as [PFObject]!{
+                    for object in objects {
+                        
+                        let header = object.objectForKey("title") as! String
+                        let price = object.objectForKey("price") as! Int
+                        let tourImageFile = object.objectForKey("image") as! PFFile
+                        let summary = object.objectForKey("summary") as! String
+                        let host = object.objectForKey("host") as! PFObject
+                        self.headerArray.append(header)
+                        self.priceArray.append(price)
+                        self.picArray.append(tourImageFile)
+                        self.summaryArray.append(summary)
+                        self.hostArray.append(host)
+                        self.marketplaceArray.append(object)
+                        print(self.priceArray)
+                    }
+                }
+                
+            }else{
+                //log details of the failure
+                print("error: \(error!)  \(error!.userInfo)")
+            }
+        }
+    }
+    
+    
     func do_table_refresh(){
         dispatch_async(dispatch_get_main_queue(), {self.tableView.reloadData()}
         )
