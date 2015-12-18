@@ -89,27 +89,10 @@
                     <navigationItem key="navigationItem" id="tiG-v7-GTD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="FLa-4G-J6e" id="tGK-SD-uSx"/>
                         <outlet property="tableView" destination="ubp-Xg-LFE" id="LmI-qS-fJs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baa-9R-QKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="ZUJ-K7-jcb">
-                    <connections>
-                        <outlet property="delegate" destination="maF-xh-XER" id="foD-8j-lii"/>
-                        <outlet property="searchContentsController" destination="maF-xh-XER" id="U5G-rw-FQp"/>
-                        <outlet property="searchResultsDataSource" destination="maF-xh-XER" id="lRs-VG-V4f"/>
-                        <outlet property="searchResultsDelegate" destination="maF-xh-XER" id="ACO-RA-42Y"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="FLa-4G-J6e">
-                    <connections>
-                        <outlet property="delegate" destination="maF-xh-XER" id="PWy-wc-Dck"/>
-                        <outlet property="searchContentsController" destination="maF-xh-XER" id="4vf-uk-ufS"/>
-                        <outlet property="searchResultsDataSource" destination="maF-xh-XER" id="dM6-8l-ESg"/>
-                        <outlet property="searchResultsDelegate" destination="maF-xh-XER" id="DiA-n2-4xc"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1139.5" y="49.5"/>
         </scene>
