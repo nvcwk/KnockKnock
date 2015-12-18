@@ -26,6 +26,7 @@
 		E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */; };
 		E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */; };
 		E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */; };
+		E1CAA7EF1C24853600AB4637 /* ItiDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA7EE1C24853600AB4637 /* ItiDaysViewController.swift */; };
 		E1E4B43F1C1713D100242A83 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43A1C1713D100242A83 /* FBAudienceNetwork.framework */; };
 		E1E4B4401C1713D100242A83 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43B1C1713D100242A83 /* FBSDKCoreKit.framework */; };
 		E1E4B4411C1713D100242A83 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43C1C1713D100242A83 /* FBSDKLoginKit.framework */; };
@@ -81,6 +82,7 @@
 		E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicViewController.swift; sourceTree = "<group>"; };
 		E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockRule.swift; sourceTree = "<group>"; };
 		E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiSummaryViewController.swift; sourceTree = "<group>"; };
+		E1CAA7EE1C24853600AB4637 /* ItiDaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiDaysViewController.swift; sourceTree = "<group>"; };
 		E1E4B43A1C1713D100242A83 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		E1E4B43B1C1713D100242A83 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E1E4B43C1C1713D100242A83 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */,
 				E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */,
 				E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */,
+				E1CAA7EE1C24853600AB4637 /* ItiDaysViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
+				E1CAA7EF1C24853600AB4637 /* ItiDaysViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
 				E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */,
