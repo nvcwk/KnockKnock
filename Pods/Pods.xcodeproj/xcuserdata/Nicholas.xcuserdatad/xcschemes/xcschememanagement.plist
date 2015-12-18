@@ -19,12 +19,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DZNPhotoPickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -64,6 +74,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TextFieldEffects.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZFRippleButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,7 +87,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0CA57236269598FF86D59F78EBF1696E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0F98F85575B93F19AE698C564B266D98</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>192C8C2413796E089B0A00D1D53C6C09</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,17 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60124694820328AE418C60C285A4DB94</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7C562D39B2E93EE3B5C551DA45D05714</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>86156D82877932C71A07811492004343</key>
+		<key>7C5FAE6E3DDD5296A79665373E9441E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA2FF75C7E39BAED42C3A17C729D76E9</key>
+		<key>C58C7421DAD296EE054EEEDAE49151AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C58C7421DAD296EE054EEEDAE49151AD</key>
+		<key>D0772044E6A5A9777455AA16901C6409</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D4955065549BD6CE6A59D8A3268730BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -133,6 +153,16 @@
 			<true/>
 		</dict>
 		<key>F710EAB41DD6932844C4A82A87A2628F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC7493589D82D7DAD76805126F6AA28D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF4FEBEC403022C84AA91B294F5DE12E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

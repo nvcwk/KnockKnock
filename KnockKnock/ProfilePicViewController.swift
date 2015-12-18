@@ -27,7 +27,7 @@ class ProfilePicViewController: UIViewController, UIImagePickerControllerDelegat
     func openCamera() {
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
             picker.sourceType = UIImagePickerControllerSourceType.Camera
-            self .presentViewController(picker, animated: true, completion: nil)
+            self.presentViewController(picker, animated: true, completion: nil)
         } else {
             openGallery()
         }

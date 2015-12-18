@@ -16,6 +16,7 @@ pod 'SwiftValidator'
 pod 'CountryPicker'
 pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
+pod 'DZNPhotoPickerController/Editor'
 
 =begin 
 To Consider 
