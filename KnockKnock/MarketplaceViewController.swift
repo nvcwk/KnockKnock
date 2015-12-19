@@ -15,10 +15,12 @@ import ParseUI
 
 
 
-class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, CalendarViewDelegate {
-    @IBOutlet weak var tableView: UITableView!
+class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, CalendarViewDelegate {
     
-    let searchController = UISearchController(searchResultsController: nil)
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var searchActive : Bool = false
     
     var sort = false
     var headerArray = [String]()
@@ -29,16 +31,15 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     var summaryArray = [String]()
     var marketplaceArray = [PFObject]()
     
-    @IBOutlet weak var placeholderView: UIView!
+    //@IBOutlet weak var placeholderView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
         
         
+        searchBar.delegate = self
+        
+        /*
         // todays date.
         let date = NSDate()
         
@@ -53,7 +54,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         // Constraints for calendar view - Fill the parent view.
         placeholderView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[calendarView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["calendarView": calendarView]))
         placeholderView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[calendarView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["calendarView": calendarView]))
-        
+        */
         
         
         callingParse(sort)
@@ -135,35 +136,64 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredHeaderArray = headerArray.filter({ (text) -> Bool in
+            let tmp: NSString = text
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        if(filteredHeaderArray.count == 0){
+            searchActive = false;
+        } else {
+            searchActive = true;
+        }
+        self.tableView.reloadData()
+    }
+    
+    
     //tableview
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        //return headerArray.count
         
-        if searchController.active && searchController.searchBar.text != "" {
+        if(searchActive) {
             return filteredHeaderArray.count
         }
-        return headerArray.count
+        return headerArray.count;
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MarketplaceTableViewCell
         let imageFile = picArray[indexPath.row]
-//        cell.headerLabel.text = self.headerArray[indexPath.row]
-//        cell.priceLabel.text = String(self.priceArray[indexPath.row]) + " /pax"
-//        
-
-//                return cell
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MarketplaceTableViewCell
         let header: String
-        if searchController.active && searchController.searchBar.text != "" {
+        
+        
+        if(searchActive){
             header = filteredHeaderArray[indexPath.row]
         } else {
-            header = headerArray[indexPath.row]
+            header = headerArray[indexPath.row];
         }
         
         imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
@@ -171,9 +201,9 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                 cell.imageLabel.image = UIImage(data:imageData!)
             }
         }
+        
         cell.headerLabel?.text = header
         cell.priceLabel.text = "S$" + String(self.priceArray[indexPath.row]) + " /pax"
-        //cell.detailTextLabel?.text = candy.category
         return cell
     }
     
@@ -201,7 +231,4 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.reloadData()
     }
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
-    }
 }
