@@ -27,6 +27,9 @@
 		E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */; };
 		E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */; };
 		E1CAA7EF1C24853600AB4637 /* ItiDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA7EE1C24853600AB4637 /* ItiDaysViewController.swift */; };
+		E1CAA8001C254F9000AB4637 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA7FF1C254F9000AB4637 /* DayCollectionViewCell.swift */; };
+		E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */; };
+		E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */; };
 		E1E4B43F1C1713D100242A83 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43A1C1713D100242A83 /* FBAudienceNetwork.framework */; };
 		E1E4B4401C1713D100242A83 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43B1C1713D100242A83 /* FBSDKCoreKit.framework */; };
 		E1E4B4411C1713D100242A83 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B43C1C1713D100242A83 /* FBSDKLoginKit.framework */; };
@@ -83,6 +86,9 @@
 		E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockRule.swift; sourceTree = "<group>"; };
 		E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiSummaryViewController.swift; sourceTree = "<group>"; };
 		E1CAA7EE1C24853600AB4637 /* ItiDaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiDaysViewController.swift; sourceTree = "<group>"; };
+		E1CAA7FF1C254F9000AB4637 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiActivitiesViewController.swift; sourceTree = "<group>"; };
+		E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiActivityViewController.swift; sourceTree = "<group>"; };
 		E1E4B43A1C1713D100242A83 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		E1E4B43B1C1713D100242A83 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E1E4B43C1C1713D100242A83 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 		E11461F51C1170B900983BC3 /* KnockKnock */ = {
 			isa = PBXGroup;
 			children = (
+				E1CAA8011C254F9A00AB4637 /* CollectionViewCell */,
 				E1E4B44F1C18230A00242A83 /* Resources */,
 				E11AC20D1C16DD3A00479927 /* Utilities */,
 				E11AC2081C16244900479927 /* ViewControllers */,
@@ -228,6 +235,8 @@
 				E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */,
 				E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */,
 				E1CAA7EE1C24853600AB4637 /* ItiDaysViewController.swift */,
+				E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */,
+				E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -240,6 +249,14 @@
 				E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E1CAA8011C254F9A00AB4637 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E1CAA7FF1C254F9000AB4637 /* DayCollectionViewCell.swift */,
+			);
+			name = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		E1E4B4441C1713D300242A83 /* FBSDK */ = {
@@ -334,6 +351,11 @@
 					E11461F21C1170B900983BC3 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 7F392F8CBL;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					E11462081C1170B900983BC3 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -454,13 +476,16 @@
 			files = (
 				E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
+				E1CAA8001C254F9000AB4637 /* DayCollectionViewCell.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
 				E1CAA7EF1C24853600AB4637 /* ItiDaysViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
+				E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
 				E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
+				E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
 				E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */,
@@ -625,6 +650,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = KnockKnock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gen6.knockknock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -641,6 +667,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = KnockKnock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gen6.knockknock;
 				PRODUCT_NAME = "$(TARGET_NAME)";

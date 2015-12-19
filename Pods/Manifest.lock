@@ -40,6 +40,7 @@ PODS:
   - FBSDKLoginKit (4.8.0):
     - FBSDKCoreKit
   - GMStepper (1.1.0)
+  - GoogleMaps (1.11.1)
   - IQKeyboardManagerSwift (3.3.4)
   - ObjectiveSugar (0.9)
   - Parse (1.10.0):
@@ -62,6 +63,7 @@ DEPENDENCIES:
   - CountryPicker
   - DZNPhotoPickerController/Editor
   - GMStepper
+  - GoogleMaps
   - IQKeyboardManagerSwift
   - ObjectiveSugar (~> 0.5)
   - Parse
@@ -80,6 +82,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
   GMStepper: 3b7922778a80e0eab89a55003ca36b25fc2393b7
+  GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   ObjectiveSugar: 18409ee1ec578dd8598b55e5008f393488dca5cf
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2

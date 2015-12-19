@@ -2,6 +2,7 @@ import UIKit
 import Parse
 import SwiftSpinner
 import ParseUI
+import GoogleMaps
 
 class HomeViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class HomeViewController: UIViewController {
             image_profile.file = user["profilePic"] as! PFFile
             
             image_profile.loadInBackground()
+            
         }
     }
 
