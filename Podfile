@@ -18,6 +18,7 @@ pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
 pod 'DZNPhotoPickerController/Editor'
 pod 'GMStepper'
+pod 'GoogleMaps'
 
 =begin 
 To Consider 
