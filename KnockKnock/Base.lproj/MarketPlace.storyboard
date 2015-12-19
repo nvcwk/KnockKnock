@@ -37,11 +37,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ubp-Xg-LFE">
-                                <rect key="frame" x="0.0" y="44" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Itinerary " id="R71-1x-4Eo">
+                                    <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="143" id="uX8-WO-oKN" customClass="MarketplaceTableViewCell" customModule="KnockKnock" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="143"/>
+                                        <rect key="frame" x="0.0" y="136" width="375" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uX8-WO-oKN" id="yeM-Kg-FMa">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
@@ -76,24 +81,23 @@
                                     <outlet property="delegate" destination="maF-xh-XER" id="ujh-kJ-s3K"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeY-jT-nza">
-                                <rect key="frame" x="75" y="72" width="89" height="30"/>
-                                <state key="normal" title="Sort by price"/>
-                                <connections>
-                                    <action selector="soryByPrice:" destination="maF-xh-XER" eventType="touchUpInside" id="3fo-zl-e4q"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IKn-Ad-UsO">
-                                <rect key="frame" x="0.0" y="237" width="375" height="194"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tiG-v7-GTD"/>
+                    <navigationItem key="navigationItem" id="tiG-v7-GTD">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WeY-jT-nza">
+                            <rect key="frame" x="143" y="7" width="89" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Sort by price"/>
+                            <connections>
+                                <action selector="soryByPrice:" destination="maF-xh-XER" eventType="touchUpInside" id="3fo-zl-e4q"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="placeholderView" destination="IKn-Ad-UsO" id="iPA-WC-f6d"/>
+                        <outlet property="searchBar" destination="R71-1x-4Eo" id="uEt-2v-TTU"/>
                         <outlet property="tableView" destination="ubp-Xg-LFE" id="LmI-qS-fJs"/>
                     </connections>
                 </viewController>
