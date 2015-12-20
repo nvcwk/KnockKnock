@@ -1,19 +1,25 @@
 import UIKit
 import GMStepper
+import Parse
 
-class ItiDaysViewController: UIViewController {
+class ItiDaysSelectorViewController: UIViewController {
     
     @IBOutlet weak var stepper_days: GMStepper!
+    
+    var itineraryObj = PFObject(className:"Itinerary")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationItem.setHidesBackButton(true, animated:true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //let controller = segue.destinationViewController as! ItiActivitiesViewController
-        //controller.days = Int(stepper_days.value)
+        if(segue .identifier == "toActivitiesView") {
+            let controller = segue.destinationViewController as! ItiActivitiesViewController
+            controller.days = Int(stepper_days.value)
+            controller.itineraryObj = itineraryObj
+        }
     }
 
 }

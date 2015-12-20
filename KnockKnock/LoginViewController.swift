@@ -68,6 +68,4 @@ class LoginViewController: UIViewController {
     
     @IBAction func backLogin(segue:UIStoryboardSegue) {
     }
-    
-    
 }
