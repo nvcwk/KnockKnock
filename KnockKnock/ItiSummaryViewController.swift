@@ -1,7 +1,6 @@
 import UIKit
 import DZNPhotoPickerController
 import SwiftValidator
-import SwiftSpinner
 import Parse
 
 class ItiSummaryViewController: UIViewController {
@@ -41,28 +40,16 @@ class ItiSummaryViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "toSelectDaysView") {
-            uploadDraft()
-            SwiftSpinner.hide()
-        }
-    }
-    
-    private func uploadDraft() {
-        SwiftSpinner.show("Creating Itinerary...", animated: true)
-        
-        let gameScore = PFObject(className:"Itinerary")
-        gameScore["status"] = "d"
-        gameScore["title"] = tf_title.text
-        gameScore["summary"] = tv_summary.text
-        gameScore["host"] = PFUser.currentUser()
-        gameScore["image"] = PFFile(data: UIImagePNGRepresentation(img_tour.image!)!)!
-        
-        gameScore.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                
-            } else {
-                 KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
-            }
+            let itinerary = PFObject(className:"Itinerary")
+            itinerary["status"] = "d"
+            itinerary["title"] = tf_title.text
+            itinerary["summary"] = tv_summary.text
+            itinerary["host"] = PFUser.currentUser()
+            itinerary["image"] = PFFile(data: UIImagePNGRepresentation(img_tour.image!)!)!
+            
+            let controller = segue.destinationViewController as! ItiDaysSelectorViewController
+            controller.itineraryObj = itinerary
+            
         }
     }
 }
