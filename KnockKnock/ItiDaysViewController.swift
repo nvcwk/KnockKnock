@@ -12,8 +12,8 @@ class ItiDaysViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let controller = segue.destinationViewController as! ItiActivitiesViewController
-        controller.days = Int(stepper_days.value)
+        //let controller = segue.destinationViewController as! ItiActivitiesViewController
+        //controller.days = Int(stepper_days.value)
     }
 
 }
