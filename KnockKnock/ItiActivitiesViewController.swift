@@ -11,7 +11,7 @@ import UIKit
 class ItiActivitiesViewController: UIViewController {
     
     let identifier = "daysIdentifier"
-    var days = 3
+    var days = 1
     
     @IBOutlet weak var collection_days: UICollectionView!
     override func viewDidLoad() {

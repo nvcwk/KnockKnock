@@ -1,90 +1,131 @@
-//
-//  ItiSummaryViewController.swift
-//  KnockKnock
-//
-//  Created by Nicholas Chan on 18/12/15.
-//  Copyright © 2015 Gen6. All rights reserved.
-//
-
 import UIKit
 import DZNPhotoPickerController
+import SwiftValidator
+import SwiftSpinner
+import Parse
 
-class ItiSummaryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class ItiSummaryViewController: UIViewController {
+    
+    @IBOutlet weak var tf_title: UITextField!
+    @IBOutlet weak var tv_summary: UITextView!
+    @IBOutlet weak var img_tour: UIImageView!
     
     let imagePicker = UIImagePickerController()
-    var popover: UIPopoverController? = nil
-    
-    @IBOutlet weak var img_Tour: UIImageView!
+    let validator = Validator()
+    var validationStatus = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tv_summary.delegate = self
+        imagePicker.delegate = self
+        
+        validator.registerField(tf_title, rules: [RequiredRule(message: "Fill in title!")])
     }
     
     @IBAction func actionTapImage(sender: UITapGestureRecognizer) {
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        imagePicker.cropSize = CGSizeMake(420, 300);
-        
-        let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
-        let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { UIAlertAction in
-            self.openCamera()
-        }
-        
-        let gallaryAction = UIAlertAction(title: "Gallery", style: UIAlertActionStyle.Default) { UIAlertAction in
-            self.openGallery()
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { UIAlertAction in }
-        
-        // Add the actions
-        alert.addAction(cameraAction)
-        alert.addAction(gallaryAction)
-        alert.addAction(cancelAction)
-        
-        // Present the controller
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            self.presentViewController(alert, animated: true, completion: nil)
-        } else {
-            popover = UIPopoverController(contentViewController: alert)
-            
-            popover!.presentPopoverFromRect(img_Tour.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
-        }
-    }
-    
-    func openCamera() {
-        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
-            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-            self.presentViewController(imagePicker, animated: true, completion: nil)
-        } else {
-            openGallery()
-        }
-    }
-    
-    func openGallery() {
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            self.presentViewController(imagePicker, animated: true, completion: nil)
-        } else {
-            popover = UIPopoverController(contentViewController: imagePicker)
-            
-            popover!.presentPopoverFromRect(img_Tour.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
-        }
-    }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
-    {
-        picker.dismissViewControllerAnimated(true, completion: nil)
-        img_Tour.image = info[UIImagePickerControllerEditedImage] as? UIImage
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController)
-    {
-        picker.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBAction func backSummary(segue:UIStoryboardSegue) {
-        
+        KnockKnockImageUtils.imagePicker(self, picker: self.imagePicker)
     }
 
+    @IBAction func backSummary(segue:UIStoryboardSegue) { }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if(identifier == "toSelectDaysView") {
+            validator.validate(self)
+        
+            return validationStatus
+        }
+        
+        return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "toSelectDaysView") {
+            uploadDraft()
+            SwiftSpinner.hide()
+        }
+    }
+    
+    private func uploadDraft() {
+        SwiftSpinner.show("Creating Itinerary...", animated: true)
+        
+        let gameScore = PFObject(className:"Itinerary")
+        gameScore["status"] = "d"
+        gameScore["title"] = tf_title.text
+        gameScore["summary"] = tv_summary.text
+        gameScore["host"] = PFUser.currentUser()
+        gameScore["image"] = PFFile(data: UIImagePNGRepresentation(img_tour.image!)!)!
+        
+        gameScore.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                
+            } else {
+                 KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
+            }
+        }
+    }
+}
+
+extension ItiSummaryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        img_tour.image = info[UIImagePickerControllerEditedImage] as? UIImage
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension ItiSummaryViewController: ValidationDelegate {
+    func validationSuccessful() {
+        if(validateOthers()) {
+            validationStatus = true
+        } else {
+            validationStatus = false
+        }
+    }
+    
+    func validationFailed(errors:[UITextField:ValidationError]) {
+        validationStatus = false
+        KnockKnockUtils.okAlert(self, title: "Error!", message: (errors.values.first?.errorMessage)!, handle: nil)
+    }
+    
+    func validateOthers() -> Bool {
+        var isGood = true
+        
+        if(tv_summary.text.isEmpty) {
+            isGood = false
+            KnockKnockUtils.okAlert(self, title: "Error!", message: "Fill in summary!", handle: nil)
+        }
+        
+        if(img_tour.image == nil) {
+            isGood = false
+            KnockKnockUtils.okAlert(self, title: "Error!", message: "Select an image!", handle: nil)
+        }
+        
+        return isGood
+    }
+}
+
+extension ItiSummaryViewController : UITextViewDelegate {
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        let checkString = "\n"
+        let crCount = countOccurrences(textView.text, forSubstring: checkString) + countOccurrences(text, forSubstring: checkString)
+        
+        if(crCount > 4) {
+            return false
+        }
+        
+        let newLength = textView.text.utf16.count + text.utf16.count - range.length
+        
+        return newLength <= 200
+    }
+    
+    private func countOccurrences(toCheck: String, forSubstring: String) -> Int
+    {
+        var tokenArray = toCheck.componentsSeparatedByString(forSubstring)
+        return tokenArray.count-1
+    }
 }
