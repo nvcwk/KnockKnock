@@ -19,7 +19,7 @@ class ItiActivitiesViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue .identifier == "toActivityView") {
+        if(segue.identifier == "toActivityView") {
             if let cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPathForCell(cell)
                 
@@ -30,6 +30,10 @@ class ItiActivitiesViewController: UITableViewController {
                     controller.activity = activities[index]
                 }
             }
+        } else if (segue.identifier == "toPublishView") {
+            let controller = segue.destinationViewController as! ItiPublishViewController
+            
+            controller.itineraryObj = itineraryObj
         }
     }
     
@@ -47,6 +51,51 @@ class ItiActivitiesViewController: UITableViewController {
         //self.tableView.editing = true
     }
     
+    func save(publish: Bool) {
+        SwiftSpinner.show("Saving...")
+        
+        itineraryObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                var savingActivities = [PFObject]()
+                
+                for a in self.activities {
+                    let activity = PFObject(className: "Activity")
+                    
+                    activity["title"] = a.title
+                    activity["description"] = a.description
+                    activity["meetingTime"] = a.meetingTime
+                    activity["day"] = a.day
+                    
+                    if (a.address.isEmpty) {
+                        activity["address"] = ""
+                    } else {
+                        activity["address"] = a.address
+                    }
+                    
+                    activity["cordinate"] = PFGeoPoint(latitude: a.cor!.latitude, longitude: a.cor!.longitude)
+                    activity["itineraryId"] = self.itineraryObj
+                    
+                    savingActivities.append(activity)
+                }
+                
+                PFObject.saveAllInBackground(savingActivities, block: { (success: Bool, error: NSError?) -> Void in
+                    if (success) {
+                        SwiftSpinner.hide()
+                        
+                        if(publish) {
+                            self.performSegueWithIdentifier("toPublishView", sender: nil)
+                        } else {
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        }
+                    }
+                })
+                
+            } else {
+                KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
+            }
+        }
+    }
+    
     @IBAction func actionSave(sender: AnyObject) {
         var cont = true
         
@@ -57,47 +106,32 @@ class ItiActivitiesViewController: UITableViewController {
         }
         
         if(cont) {
-            SwiftSpinner.show("Saving...")
+            let alert:UIAlertController = UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
             
-            itineraryObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                if (success) {
-                    var savingActivities = [PFObject]()
-                    
-                    for a in self.activities {
-                        let activity = PFObject(className: "Activity")
-                        
-                        activity["title"] = a.title
-                        activity["description"] = a.description
-                        activity["meetingTime"] = a.meetingTime
-                        activity["day"] = a.day
-                        
-                        if (a.address.isEmpty) {
-                            activity["address"] = ""
-                        } else {
-                            activity["address"] = a.address
-                        }
-                        
-                        activity["cordinate"] = PFGeoPoint(latitude: a.cor!.latitude, longitude: a.cor!.longitude)
-                        activity["itineraryId"] = self.itineraryObj
-                        
-                        savingActivities.append(activity)
-                    }
-                    
-                    PFObject.saveAllInBackground(savingActivities, block: { (success: Bool, error: NSError?) -> Void in
-                        if (success) {
-                            SwiftSpinner.hide()
-                            
-                            
-                        }
-                    })
-                    
-                } else {
-                    KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
-                }
+            let cameraAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default) { UIAlertAction in
+                self.save(false)
             }
-        } else {
+            
+            let gallaryAction = UIAlertAction(title: "Save and Publish", style: UIAlertActionStyle.Default) { UIAlertAction in
+                self.save(true)
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { UIAlertAction in }
+            
+            alert.addAction(cameraAction)
+            alert.addAction(gallaryAction)
+            alert.addAction(cancelAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            
+            
+        }  else {
             KnockKnockUtils.okAlert(self, title: "Error!", message: "Please fill in all details!", handle: nil)
+            
         }
+        
+        
         
     }
     
