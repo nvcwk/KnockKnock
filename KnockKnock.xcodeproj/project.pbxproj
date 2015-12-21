@@ -7,17 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8FB2C94F1C247A7D00A637B0 /* CalendarLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C9441C247A7D00A637B0 /* CalendarLogic.swift */; };
-		8FB2C9501C247A7D00A637B0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C9451C247A7D00A637B0 /* CalendarView.swift */; };
-		8FB2C9511C247A7D00A637B0 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB2C9461C247A7D00A637B0 /* CalendarView.xib */; };
-		8FB2C9521C247A7D00A637B0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C9471C247A7D00A637B0 /* Date.swift */; };
-		8FB2C9531C247A7D00A637B0 /* DayCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C9481C247A7D00A637B0 /* DayCollectionCell.swift */; };
-		8FB2C9541C247A7D00A637B0 /* DayCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB2C9491C247A7D00A637B0 /* DayCollectionCell.xib */; };
-		8FB2C9551C247A7D00A637B0 /* MonthCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C94A1C247A7D00A637B0 /* MonthCollectionCell.swift */; };
-		8FB2C9561C247A7D00A637B0 /* MonthCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB2C94B1C247A7D00A637B0 /* MonthCollectionCell.xib */; };
-		8FB2C9571C247A7D00A637B0 /* NSDateAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C94C1C247A7D00A637B0 /* NSDateAdditions.swift */; };
-		8FB2C9581C247A7D00A637B0 /* WeekHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C94D1C247A7D00A637B0 /* WeekHeaderView.swift */; };
-		8FB2C9591C247A7D00A637B0 /* WeekHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB2C94E1C247A7D00A637B0 /* WeekHeaderView.xib */; };
 		C1EE6E34C4461D4E0E5AD45D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5AD10247D09E5AD74690E6 /* Pods.framework */; };
 		E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11461F61C1170B900983BC3 /* AppDelegate.swift */; };
 		E11461FE1C1170B900983BC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11461FC1C1170B900983BC3 /* Main.storyboard */; };
@@ -82,17 +71,6 @@
 		10AD83D3612BA182A25F67B2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1B5AD10247D09E5AD74690E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2934923C3E232A836459B32D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		8FB2C9441C247A7D00A637B0 /* CalendarLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarLogic.swift; sourceTree = "<group>"; };
-		8FB2C9451C247A7D00A637B0 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		8FB2C9461C247A7D00A637B0 /* CalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
-		8FB2C9471C247A7D00A637B0 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		8FB2C9481C247A7D00A637B0 /* DayCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionCell.swift; sourceTree = "<group>"; };
-		8FB2C9491C247A7D00A637B0 /* DayCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayCollectionCell.xib; sourceTree = "<group>"; };
-		8FB2C94A1C247A7D00A637B0 /* MonthCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCollectionCell.swift; sourceTree = "<group>"; };
-		8FB2C94B1C247A7D00A637B0 /* MonthCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthCollectionCell.xib; sourceTree = "<group>"; };
-		8FB2C94C1C247A7D00A637B0 /* NSDateAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateAdditions.swift; sourceTree = "<group>"; };
-		8FB2C94D1C247A7D00A637B0 /* WeekHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekHeaderView.swift; sourceTree = "<group>"; };
-		8FB2C94E1C247A7D00A637B0 /* WeekHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekHeaderView.xib; sourceTree = "<group>"; };
 		E11461F31C1170B900983BC3 /* KnockKnock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockKnock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11461F61C1170B900983BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E11461FD1C1170B900983BC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -196,7 +174,6 @@
 		547C72A766A57714E8C3C0A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8FB2C9431C247A7D00A637B0 /* CalendarKit */,
 				F6BDE6481C201CFC00E090DA /* libsqlite3.tbd */,
 				F6BDE6461C201CF000E090DA /* libz.tbd */,
 				F6BDE6441C201CE000E090DA /* SystemConfiguration.framework */,
@@ -213,25 +190,6 @@
 				1B5AD10247D09E5AD74690E6 /* Pods.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8FB2C9431C247A7D00A637B0 /* CalendarKit */ = {
-			isa = PBXGroup;
-			children = (
-				8FB2C9441C247A7D00A637B0 /* CalendarLogic.swift */,
-				8FB2C9451C247A7D00A637B0 /* CalendarView.swift */,
-				8FB2C9461C247A7D00A637B0 /* CalendarView.xib */,
-				8FB2C9471C247A7D00A637B0 /* Date.swift */,
-				8FB2C9481C247A7D00A637B0 /* DayCollectionCell.swift */,
-				8FB2C9491C247A7D00A637B0 /* DayCollectionCell.xib */,
-				8FB2C94A1C247A7D00A637B0 /* MonthCollectionCell.swift */,
-				8FB2C94B1C247A7D00A637B0 /* MonthCollectionCell.xib */,
-				8FB2C94C1C247A7D00A637B0 /* NSDateAdditions.swift */,
-				8FB2C94D1C247A7D00A637B0 /* WeekHeaderView.swift */,
-				8FB2C94E1C247A7D00A637B0 /* WeekHeaderView.xib */,
-			);
-			name = CalendarKit;
-			path = "../../Downloads/Calendar-master 2/Calendar/CalendarKit";
 			sourceTree = "<group>";
 		};
 		E11461EA1C1170B900983BC3 = {
@@ -476,14 +434,10 @@
 				E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */,
 				E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */,
 				E11462001C1170B900983BC3 /* Assets.xcassets in Resources */,
-				8FB2C9591C247A7D00A637B0 /* WeekHeaderView.xib in Resources */,
-				8FB2C9511C247A7D00A637B0 /* CalendarView.xib in Resources */,
-				8FB2C9541C247A7D00A637B0 /* DayCollectionCell.xib in Resources */,
 				E11461FE1C1170B900983BC3 /* Main.storyboard in Resources */,
 				E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */,
 				E16B357C1C1CC9D4003897EF /* Profile.storyboard in Resources */,
 				E16B35861C1CCC65003897EF /* MarketPlace.storyboard in Resources */,
-				8FB2C9561C247A7D00A637B0 /* MonthCollectionCell.xib in Resources */,
 				E11AC1FF1C16185400479927 /* Credential.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,25 +511,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FB2C94F1C247A7D00A637B0 /* CalendarLogic.swift in Sources */,
 				E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
-				8FB2C9521C247A7D00A637B0 /* Date.swift in Sources */,
 				F6B9E55D1C203A5600D3446C /* MarketplaceViewController.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
-				8FB2C9551C247A7D00A637B0 /* MonthCollectionCell.swift in Sources */,
-				8FB2C9501C247A7D00A637B0 /* CalendarView.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				F6BDE6311C200A5900E090DA /* MarketplaceTableViewCell.swift in Sources */,
-				8FB2C9581C247A7D00A637B0 /* WeekHeaderView.swift in Sources */,
 				F6BDE62F1C2001CC00E090DA /* Marketplace.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
-				8FB2C9531C247A7D00A637B0 /* DayCollectionCell.swift in Sources */,
-				8FB2C9571C247A7D00A637B0 /* NSDateAdditions.swift in Sources */,
 				F6BDEAC51C2166B500CBC537 /* DetailedMarketplaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
