@@ -17,7 +17,16 @@ class ItiMainViewController: UIViewController {
     }
 
     @IBAction func backItinerary(segue:UIStoryboardSegue) {
+//        if(segue.identifier == "exitActivityToItinerary") {
+//            let controller = segue.sourceViewController as! ItiActivitiesViewController
+//            let itineraryObj = controller.itineraryObj
+//
+//            print(itineraryObj["title"])
+//            
+//            KnockKnockUtils.storyBoardCall(self, story: "Itinerary", animated: true, view: "toPublishView")
         
+        print("WOO")
+//        }
     }
     
 

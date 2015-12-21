@@ -20,6 +20,7 @@ pod 'DZNPhotoPickerController/Editor'
 pod 'GMStepper'
 pod 'GoogleMaps' 
 pod 'RLDTableViewSuite'
+pod 'SwiftDate'
 
 =begin 
 To Consider 

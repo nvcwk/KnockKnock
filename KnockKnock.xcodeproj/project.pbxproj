@@ -24,10 +24,11 @@
 		E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B357D1C1CCA39003897EF /* Itinerary.storyboard */; };
 		E16B35861C1CCC65003897EF /* MarketPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B35841C1CCC65003897EF /* MarketPlace.storyboard */; };
 		E1751ABB1C273210000A1360 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1751ABA1C273210000A1360 /* Activity.swift */; };
+		E1822CE41C27C0C500E78ED6 /* ItiPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */; };
 		E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */; };
 		E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */; };
 		E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */; };
-		E1CAA7EF1C24853600AB4637 /* ItiDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA7EE1C24853600AB4637 /* ItiDaysViewController.swift */; };
+		E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA7EE1C24853600AB4637 /* ItiDaysSelectorViewController.swift */; };
 		E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */; };
 		E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */; };
 		E1CAA8091C26A7BC00AB4637 /* KnockKnockImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA8081C26A7BC00AB4637 /* KnockKnockImageUtils.swift */; };
@@ -85,10 +86,11 @@
 		E16B357D1C1CCA39003897EF /* Itinerary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Itinerary.storyboard; sourceTree = "<group>"; };
 		E16B35851C1CCC65003897EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MarketPlace.storyboard; sourceTree = "<group>"; };
 		E1751ABA1C273210000A1360 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiPublishViewController.swift; sourceTree = "<group>"; };
 		E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicViewController.swift; sourceTree = "<group>"; };
 		E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockRule.swift; sourceTree = "<group>"; };
 		E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiSummaryViewController.swift; sourceTree = "<group>"; };
-		E1CAA7EE1C24853600AB4637 /* ItiDaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiDaysViewController.swift; sourceTree = "<group>"; };
+		E1CAA7EE1C24853600AB4637 /* ItiDaysSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiDaysSelectorViewController.swift; sourceTree = "<group>"; };
 		E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiActivitiesViewController.swift; sourceTree = "<group>"; };
 		E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiActivityViewController.swift; sourceTree = "<group>"; };
 		E1CAA8081C26A7BC00AB4637 /* KnockKnockImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockImageUtils.swift; sourceTree = "<group>"; };
@@ -239,9 +241,10 @@
 				E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */,
 				E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */,
 				E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */,
-				E1CAA7EE1C24853600AB4637 /* ItiDaysViewController.swift */,
+				E1CAA7EE1C24853600AB4637 /* ItiDaysSelectorViewController.swift */,
 				E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */,
 				E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */,
+				E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -494,9 +497,10 @@
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
-				E1CAA7EF1C24853600AB4637 /* ItiDaysViewController.swift in Sources */,
+				E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */,
+				E1822CE41C27C0C500E78ED6 /* ItiPublishViewController.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
 				E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */,
 				E1CAA80B1C27053300AB4637 /* ActivityTableViewCell.swift in Sources */,
