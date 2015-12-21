@@ -15,7 +15,7 @@ import ParseUI
 
 
 
-class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, CalendarViewDelegate {
+class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -66,7 +66,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         do_table_refresh()
     }
 
-    @IBAction func soryByPrice(sender: AnyObject) {
+    @IBAction func sortByPrice(sender: AnyObject) {
         sort = true
         viewDidLoad()
     }
@@ -118,11 +118,6 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
     }
-    
-    func didSelectDate(date: NSDate) {
-        print(date)
-    }
-    
     
     func do_table_refresh(){
         dispatch_async(dispatch_get_main_queue(), {self.tableView.reloadData()}
@@ -230,5 +225,13 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         tableView.reloadData()
     }
+    
+    @IBAction func sortByDate(sender: AnyObject) {
+
+        
+
+    }
+    
+
     
 }
