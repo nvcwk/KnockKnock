@@ -68,6 +68,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
+                                                <action selector="onClick_editprofile:" destination="2ng-me-C9Q" eventType="primaryActionTriggered" id="5NI-vU-nwL"/>
                                                 <action selector="profileEdit:" destination="2ng-me-C9Q" eventType="editingDidBegin" id="1UZ-bj-Tzv"/>
                                             </connections>
                                         </button>
