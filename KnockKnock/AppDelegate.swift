@@ -11,19 +11,21 @@ import FBSDKCoreKit
 import ParseFacebookUtilsV4
 import Parse
 import Bolts
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
        
         ParseUtils.loadParse()
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
-               
+        
+        IQKeyboardManager.sharedManager().enable = true
+        
         return true
     }
 
