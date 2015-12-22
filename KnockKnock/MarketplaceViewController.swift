@@ -44,13 +44,15 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let initialDate = convertDateFormat(NSDate())
+
         startDatePicker.datePickerMode = UIDatePickerMode.Date
         startDatePicker.minimumDate = 5.days.fromDate(NSDate())
         startDatePicker.addTarget(self, action: Selector("updateStartDate:"),
             forControlEvents:UIControlEvents.ValueChanged)
         
         tf_startDate.inputView = startDatePicker
-        tf_startDate.text = KnockKnockUtils.dateToString(5.days.fromDate(NSDate()))
+        tf_startDate.text = initialDate
         
         endDatePicker.datePickerMode = UIDatePickerMode.Date
         endDatePicker.minimumDate = 5.days.fromDate(NSDate())
@@ -58,9 +60,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             forControlEvents:UIControlEvents.ValueChanged)
         
         tf_endDate.inputView = endDatePicker
-        tf_endDate.text = KnockKnockUtils.dateToString(5.days.fromDate(NSDate()))
-    
-        
+        tf_endDate.text = initialDate
         
         
         searchBar.delegate = self
@@ -92,26 +92,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         do_table_refresh()
     }
     
-    func updateStartDate(sender: UIDatePicker) {
-        tf_startDate.text = KnockKnockUtils.dateToString(sender.date)
-        
-        endDatePicker.minimumDate = sender.date
-        
-        if(selectedEndDate < sender.date) {
-            tf_endDate.text = ""
-        }
-    }
-    
-    func updateEndDate(sender: UIDatePicker) {
-        tf_endDate.text = KnockKnockUtils.dateToString(sender.date)
-        selectedEndDate = sender.date
-    }
-
-    @IBAction func sortByPrice(sender: AnyObject) {
-        sort = true
-        viewDidLoad()
-    }
-    
+    // Calling Parse DB
     func callingParse(sort : Bool){
         
         self.headerArray.removeAll()
@@ -161,52 +142,18 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func do_table_refresh(){
-        dispatch_async(dispatch_get_main_queue(), {self.tableView.reloadData()}
-        )
+        dispatch_async(dispatch_get_main_queue(), {self.tableView.reloadData()})
         return
     }
     
-    
+    // Dispose of any resources that can be recreated.
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true;
-    }
-    
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
-        filteredHeaderArray = headerArray.filter({ (text) -> Bool in
-            let tmp: NSString = text
-            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-            return range.location != NSNotFound
-        })
-        if(filteredHeaderArray.count == 0){
-            searchActive = false;
-        } else {
-            searchActive = true;
-        }
-        self.tableView.reloadData()
+        super.didReceiveMemoryWarning()
+
     }
     
-    
-    //tableview
+    // Tableview
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -259,6 +206,39 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         self.presentViewController(detailedController, animated: true, completion: nil)
     }
     
+
+    // Search engine
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredHeaderArray = headerArray.filter({ (text) -> Bool in
+            let tmp: NSString = text
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        if(filteredHeaderArray.count == 0){
+            searchActive = false;
+        } else {
+            searchActive = true;
+        }
+        self.tableView.reloadData()
+    }
+    
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filteredHeaderArray = headerArray.filter { header in
             return header.lowercaseString.containsString(searchText.lowercaseString)
@@ -267,12 +247,46 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.reloadData()
     }
     
-    @IBAction func sortByDate(sender: AnyObject) {
-
-        
-
+    // Sort by Price btn
+    @IBAction func sortByPrice(sender: AnyObject) {
+        sort = true
+        viewDidLoad()
     }
     
-
     
+    
+    //Sort by date tf
+    
+    //Convert date format to dd/MM/yyyy for easier display in the tf
+    func convertDateFormat(date: NSDate) -> String{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let convertedDate = dateFormatter.stringFromDate(date)
+        
+        return convertedDate
+    }
+    
+    func updateStartDate(sender: UIDatePicker) {
+        
+        let convertedDate = convertDateFormat(sender.date)
+        
+        tf_startDate.text = convertedDate
+        
+        endDatePicker.minimumDate = sender.date
+        
+        if(selectedEndDate < sender.date) {
+            tf_endDate.text = ""
+        }
+    
+    }
+    
+    func updateEndDate(sender: UIDatePicker) {
+        
+        let convertedDate = convertDateFormat(sender.date)
+        
+        tf_endDate.text = convertedDate
+        
+        selectedEndDate = sender.date
+        
+    }
 }
