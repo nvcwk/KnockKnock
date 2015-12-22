@@ -119,6 +119,8 @@
                     <connections>
                         <outlet property="searchBar" destination="R71-1x-4Eo" id="uEt-2v-TTU"/>
                         <outlet property="tableView" destination="ubp-Xg-LFE" id="LmI-qS-fJs"/>
+                        <outlet property="tf_endDate" destination="Ylf-Re-gh5" id="YFb-YS-5pg"/>
+                        <outlet property="tf_startDate" destination="P0l-ZS-Tv0" id="mXn-o5-AfR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baa-9R-QKz" userLabel="First Responder" sceneMemberID="firstResponder"/>

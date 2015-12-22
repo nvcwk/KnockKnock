@@ -11,14 +11,22 @@ import PassKit
 import Parse
 import Bolts
 import ParseUI
-
-
-
+import SwiftDate
+import GMStepper
 
 class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tf_startDate: UITextField!
+    @IBOutlet weak var tf_endDate: UITextField!
+    
+    
+    let startDatePicker = UIDatePicker()
+    let endDatePicker = UIDatePicker()
+    var selectedEndDate = 5.days.fromDate(NSDate())
+    var selectedStartDate = 5.days.fromDate(NSDate())
+    
     
     var searchActive : Bool = false
     
@@ -35,6 +43,24 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startDatePicker.datePickerMode = UIDatePickerMode.Date
+        startDatePicker.minimumDate = 5.days.fromDate(NSDate())
+        startDatePicker.addTarget(self, action: Selector("updateStartDate:"),
+            forControlEvents:UIControlEvents.ValueChanged)
+        
+        tf_startDate.inputView = startDatePicker
+        tf_startDate.text = KnockKnockUtils.dateToString(5.days.fromDate(NSDate()))
+        
+        endDatePicker.datePickerMode = UIDatePickerMode.Date
+        endDatePicker.minimumDate = 5.days.fromDate(NSDate())
+        endDatePicker.addTarget(self, action: Selector("updateEndDate:"),
+            forControlEvents:UIControlEvents.ValueChanged)
+        
+        tf_endDate.inputView = endDatePicker
+        tf_endDate.text = KnockKnockUtils.dateToString(5.days.fromDate(NSDate()))
+    
+        
         
         
         searchBar.delegate = self
@@ -64,6 +90,21 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         sleep(3)
         
         do_table_refresh()
+    }
+    
+    func updateStartDate(sender: UIDatePicker) {
+        tf_startDate.text = KnockKnockUtils.dateToString(sender.date)
+        
+        endDatePicker.minimumDate = sender.date
+        
+        if(selectedEndDate < sender.date) {
+            tf_endDate.text = ""
+        }
+    }
+    
+    func updateEndDate(sender: UIDatePicker) {
+        tf_endDate.text = KnockKnockUtils.dateToString(sender.date)
+        selectedEndDate = sender.date
     }
 
     @IBAction func sortByPrice(sender: AnyObject) {
