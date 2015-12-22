@@ -21,11 +21,29 @@ class ProfileViewController: UIViewController{
     @IBOutlet weak var tf_birthday: UITextField!
     @IBOutlet weak var tf_contactNo: UITextField!
     
-    
-    @IBAction func profileEdit(sender: AnyObject) {
-        enableEditing()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var current_User = PFUser.currentUser();
+        
         
     }
+
+    
+    
+    
+    @IBAction func onClick_editprofile(sender: AnyObject) {
+        
+        if(editProfile.titleLabel?.text != "Save"){
+            enableEditing()
+            editProfile.titleLabel?.text = "Save"
+        } else {
+            disableEditing()
+            editProfile.titleLabel?.text = "Edit Profile"
+        }
+
+    }
+
     
     
     func enableEditing(){
