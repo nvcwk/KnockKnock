@@ -147,8 +147,10 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                             //valid tour, continue to add into array
                             if (host.objectId != PFUser.currentUser()?.objectId){
                                 print(object)
+                                if (host.objectId != PFUser.currentUser()?.objectId){
                                 self.marketplaceArray.append(object)
                                     print("ok5")
+                                }
                             }
                             
                         }

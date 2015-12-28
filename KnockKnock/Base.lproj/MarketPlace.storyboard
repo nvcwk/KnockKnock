@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--MarketPlace-->
@@ -44,25 +45,40 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uX8-WO-oKN" id="yeM-Kg-FMa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BX0-2v-E8P">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BX0-2v-E8P">
                                                     <rect key="frame" x="0.0" y="-9" width="375" height="152"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkF-Jt-7P3">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkF-Jt-7P3">
                                                     <rect key="frame" x="309" y="109" width="39" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="dpm-bv-HA3"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udb-Wv-Fa5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udb-Wv-Fa5">
                                                     <rect key="frame" x="63" y="35" width="249" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="udb-Wv-Fa5" firstAttribute="leading" secondItem="yeM-Kg-FMa" secondAttribute="leadingMargin" constant="55" id="369-c4-l3K"/>
+                                                <constraint firstItem="BX0-2v-E8P" firstAttribute="leading" secondItem="yeM-Kg-FMa" secondAttribute="leading" id="3hM-Ax-LCM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BX0-2v-E8P" secondAttribute="bottom" constant="-8.5" id="9J8-cq-izS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="udb-Wv-Fa5" secondAttribute="bottom" constant="64.5" id="PKJ-Qr-Zw6"/>
+                                                <constraint firstItem="BX0-2v-E8P" firstAttribute="centerX" secondItem="udb-Wv-Fa5" secondAttribute="centerX" id="PRG-8a-t72"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tkF-Jt-7P3" secondAttribute="bottom" constant="4.5" id="ecu-W1-r2w"/>
+                                                <constraint firstAttribute="trailing" secondItem="BX0-2v-E8P" secondAttribute="trailing" id="h7s-uT-hyR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tkF-Jt-7P3" secondAttribute="trailing" constant="19" id="hey-fH-XbP"/>
+                                                <constraint firstItem="udb-Wv-Fa5" firstAttribute="top" secondItem="yeM-Kg-FMa" secondAttribute="topMargin" constant="27" id="kg1-nA-Uir"/>
+                                                <constraint firstItem="BX0-2v-E8P" firstAttribute="top" secondItem="yeM-Kg-FMa" secondAttribute="topMargin" constant="-17" id="ygH-Mg-G6l"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="headerLabel" destination="udb-Wv-Fa5" id="AjC-yP-Wfl"/>
