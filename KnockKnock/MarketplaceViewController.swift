@@ -1,3 +1,4 @@
+
 //
 //  MarketplaceViewController.swift
 //  KnockKnock
@@ -240,25 +241,33 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailedController: DetailedMarketplaceViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailedMarketplaceViewController") as! DetailedMarketplaceViewController
         let currentObject : PFObject
-        
         currentObject = marketplaceArray[indexPath.row] as! PFObject
+       let itinerary = currentObject.objectForKey("itinerary") as! PFObject
+        print(itinerary)
         
-        let itinerary = currentObject["itineraryId"] as! PFObject
-        let imageFile = itinerary["image"]
-        let host = itinerary["host"]
-        let marketObject = marketplaceArray[indexPath.row]
-  
-        detailedController.summary = currentObject.objectForKey("summary") as! String
-        detailedController.header = currentObject.objectForKey("title") as! String
-        detailedController.price = String(currentObject.objectForKey("price") as! Int)
-        /*
-        detailedController.header = headerArray[indexPath.row]
-        detailedController.price = String(self.priceArray[indexPath.row])
-        detailedController.host = host
-        detailedController.summary = summaryArray[indexPath.row]
-        detailedController.picFile = imageFile
-        detailedController.currentObject = marketObject
-*/
+        let iti : PFObject
+        
+        let query2 = PFQuery(className: "Itinerary")
+        do {
+            iti = try query2.getObjectWithId(itinerary.objectId as String!)
+            // load image
+            var imageFile = iti.objectForKey("image") as! PFFile
+            detailedController.picFile = imageFile
+            //load host
+            var host = currentObject.objectForKey("host") as! PFUser
+            
+            detailedController.host = host
+            //load header
+            detailedController.header = currentObject.objectForKey("title") as! String
+            //load price
+            detailedController.price = String(currentObject.objectForKey("price") as! Int)
+            //load activites 
+            detailedController.activities = iti.objectForKey("activities") as! Array<AnyObject>
+        } catch is ErrorType {
+            print("Invalid Selection.")
+        }
+        
+        
         self.presentViewController(detailedController, animated: true, completion: nil)
     }
     
