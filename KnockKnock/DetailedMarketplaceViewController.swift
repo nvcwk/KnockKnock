@@ -22,12 +22,11 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     
     var header: String! = ""
     var price: String! = ""
-    var host: PFObject!
+    var host: PFUser!
     var summary: String! = ""
     var picFile: PFFile!
     var currentObject : PFObject?
-    var guide : PFUser?
-
+    var activities = [AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +35,24 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         self.priceLabel.text = String(price)
         
         // to include below two label once itenerary builder is up, currently no userid associated, will cause to crash
-        //self.hostLabel.text = host["username"] as! String
-       // self.contactLabel.text = guide["contact"] as! String
+        
+        
+        let query = PFQuery(className: "User")
+        do {
+            let guide = try query.getObjectWithId(host.objectId as String!)
+            print(guide)
+            //self.hostLabel.text = guide.objectForKey("username") as! String
+            //self.contactLabel.text = guide.objectForKey("contact") as! String
+
+        } catch is ErrorType {
+            print("Invalid Selection.")
+            //print(host)
+            //print(guide)
+        }
+
+        
+        
+        
         self.summaryField.text = summary
         picFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
             if (error == nil) {
@@ -100,23 +115,39 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         if(searchActive) {
             return filteredHeaderArray.count
         }*/
-        return 1 //headerArray.count;
+        return activities.count;
         
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath) as! ActivityTableViewCell
-        let headerInput: String
+        
+        let activity = activities[indexPath.row]
+        //print(activity.objectId)
+       /* let headerInput: String
         let summary : String
         
-        headerInput = "a"
-        summary = "b"
+        let query = PFQuery(className: "Activity")
+        do {
+            let act = try query.getObjectWithId(activity.objectId as String!)
+            headerInput = act["title"] as! String
+            summary = act["description"]as! String
+            
+            cell.header.text = headerInput
+            cell.activityDesc?.text = summary
+            return cell
+
+        } catch is ErrorType {
+            print("Invalid Selection.")
+           
+        }
+        */
         
-        cell.header.text = headerInput
-        cell.activityDesc?.text = summary
+        print(activities.count)
+        //headerInput = activities as String
         return cell
-    }
+            }
     
 
     
