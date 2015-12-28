@@ -31,14 +31,14 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     var searchActive : Bool = false
     
     var sort = false
-    var headerArray = [String]()
+    var headerArray = [String]() //to remove
     var filteredHeaderArray = [String]()
-    var priceArray = [Int]()
-    var picArray = [PFFile]()
-    var hostArray = [PFObject]()
-    var summaryArray = [String]()
+    var priceArray = [Int]() //to remove
+    var picArray = [PFFile]() //to remove
+    var hostArray = [PFObject]() //to remove
+    var summaryArray = [String]() //to remove
     var marketplaceArray = [PFObject]()
-    
+
     //@IBOutlet weak var placeholderView: UIView!
     
     override func viewDidLoad() {
@@ -95,13 +95,13 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     // Calling Parse DB
     func callingParse(sort : Bool){
         
-        self.headerArray.removeAll()
+       /* self.headerArray.removeAll()
         self.priceArray.removeAll()
         self.picArray.removeAll()
         self.summaryArray.removeAll()
         self.hostArray.removeAll()
         self.marketplaceArray.removeAll()
-        
+        */
         let query = PFQuery(className: "MarketPlace")
         
         if sort
@@ -118,7 +118,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             if error == nil{
                 if let objects = objects as [PFObject]!{
                     for object in objects {
-                        
+                        /* to remove
                         let header = object.objectForKey("title") as! String
                         let price = object.objectForKey("price") as! Int
                         let tourImageFile = object.objectForKey("image") as! PFFile
@@ -129,8 +129,30 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                         self.picArray.append(tourImageFile)
                         self.summaryArray.append(summary)
                         self.hostArray.append(host)
-                        self.marketplaceArray.append(object)
+                        */
 
+                        //checking for similar host
+                        let host = object["host"] as! PFObject
+                        print(host.objectId)
+                        
+                        print("ok2")
+                        //checking for date
+                        let endDate = object.objectForKey("lastAvailability") as! NSDate
+                        print("ok3")
+                        if (endDate.timeIntervalSinceNow.isSignMinus ){
+                            //expired tour, do not add in array
+                            print("date is before")
+                             print("ok4")
+                        }else {
+                            //valid tour, continue to add into array
+                            if (host.objectId != PFUser.currentUser()?.objectId){
+                                print(object)
+                                self.marketplaceArray.append(object)
+                                    print("ok5")
+                            }
+                            
+                        }
+                        
                     }
                 }
                 
@@ -163,46 +185,69 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         if(searchActive) {
             return filteredHeaderArray.count
         }
-        return headerArray.count;
+        print(marketplaceArray.count) ;
+        return marketplaceArray.count
+       // return headerArray.count;
         
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let imageFile = picArray[indexPath.row]
+        //let imageFile = picArray[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MarketplaceTableViewCell
         let header: String
+        let price : Int
+        let currentObject : PFObject
         
         
-        if(searchActive){
+        currentObject = marketplaceArray[indexPath.row] as! PFObject
+        header = currentObject.objectForKey("title") as! String
+        price = currentObject.objectForKey("price") as! Int
+        let itinerary = currentObject.objectForKey("itinerary") as! PFObject
+        print(itinerary)
+        //let imageFile = itinerary.objectForKey("image")
+        print(6)
+        /*if(searchActive){
             header = filteredHeaderArray[indexPath.row]
+            price = currentObject.objectForKey("price") as! Int // please append accordingly
         } else {
-            header = headerArray[indexPath.row];
-        }
-        
-        imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+            //header = headerArray[indexPath.row];
+            header = currentObject.objectForKey("title") as! String
+            price = currentObject.objectForKey("price") as! Int
+        }*/
+      /*
+        imageFile!.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
             if (error == nil) {
                 cell.imageLabel.image = UIImage(data:imageData!)
             }
         }
-        
+        */
         cell.headerLabel?.text = header
-        cell.priceLabel.text = "S$" + String(self.priceArray[indexPath.row]) + " /pax"
+        cell.priceLabel.text = "S$" + String(price) + " /pax"
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailedController: DetailedMarketplaceViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailedMarketplaceViewController") as! DetailedMarketplaceViewController
+        let currentObject : PFObject
         
-        let imageFile = picArray[indexPath.row]
-        let host = hostArray[indexPath.row]
+        currentObject = marketplaceArray[indexPath.row] as! PFObject
+        
+        let itinerary = currentObject["itineraryId"] as! PFObject
+        let imageFile = itinerary["image"]
+        let host = itinerary["host"]
         let marketObject = marketplaceArray[indexPath.row]
-        
+  
+        detailedController.summary = currentObject.objectForKey("summary") as! String
+        detailedController.header = currentObject.objectForKey("title") as! String
+        detailedController.price = String(currentObject.objectForKey("price") as! Int)
+        /*
         detailedController.header = headerArray[indexPath.row]
         detailedController.price = String(self.priceArray[indexPath.row])
         detailedController.host = host
         detailedController.summary = summaryArray[indexPath.row]
         detailedController.picFile = imageFile
         detailedController.currentObject = marketObject
+*/
         self.presentViewController(detailedController, animated: true, completion: nil)
     }
     
