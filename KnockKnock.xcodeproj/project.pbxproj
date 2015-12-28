@@ -32,6 +32,7 @@
 		E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4451C17291000242A83 /* ForgetViewController.swift */; };
 		E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */; };
 		E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4541C18601100242A83 /* RegisterViewController.swift */; };
+		F6B08D0E1C2FFB51002E64A3 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B08D0D1C2FFB51002E64A3 /* ActivityTableViewCell.swift */; };
 		F6B9E55D1C203A5600D3446C /* MarketplaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9E55C1C203A5600D3446C /* MarketplaceViewController.swift */; };
 		F6BDE62F1C2001CC00E090DA /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BDE62E1C2001CC00E090DA /* Marketplace.swift */; };
 		F6BDE6311C200A5900E090DA /* MarketplaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BDE6301C200A5900E090DA /* MarketplaceTableViewCell.swift */; };
@@ -101,6 +102,7 @@
 		E1E4B4451C17291000242A83 /* ForgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
 		E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CountryPicker.bundle; sourceTree = "<group>"; };
 		E1E4B4541C18601100242A83 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F6B08D0D1C2FFB51002E64A3 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		F6B9E55C1C203A5600D3446C /* MarketplaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceViewController.swift; sourceTree = "<group>"; };
 		F6BDE62E1C2001CC00E090DA /* Marketplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
 		F6BDE6301C200A5900E090DA /* MarketplaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTableViewCell.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			children = (
 				F6BDE62E1C2001CC00E090DA /* Marketplace.swift */,
 				F6BDE6301C200A5900E090DA /* MarketplaceTableViewCell.swift */,
+				F6B08D0D1C2FFB51002E64A3 /* ActivityTableViewCell.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
 				F6B9E55D1C203A5600D3446C /* MarketplaceViewController.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
+				F6B08D0E1C2FFB51002E64A3 /* ActivityTableViewCell.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				F6BDE6311C200A5900E090DA /* MarketplaceTableViewCell.swift in Sources */,
