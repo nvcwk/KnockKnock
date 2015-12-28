@@ -206,8 +206,21 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         price = currentObject.objectForKey("price") as! Int
         let itinerary = currentObject.objectForKey("itinerary") as! PFObject
         print(itinerary)
-        //let imageFile = itinerary.objectForKey("image")
-        print(6)
+        
+        let iti : PFObject
+        let query2 = PFQuery(className: "Itinerary")
+        do {
+            iti = try query2.getObjectWithId(itinerary.objectId!)
+            var imageFile = iti.objectForKey("image") as! PFFile
+            imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                if (error == nil) {
+                    cell.imageLabel.image = UIImage(data:imageData!)
+                }
+            }
+        } catch is ErrorType {
+            print("Invalid Selection.")
+        }
+        
         /*if(searchActive){
             header = filteredHeaderArray[indexPath.row]
             price = currentObject.objectForKey("price") as! Int // please append accordingly
@@ -216,13 +229,9 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             header = currentObject.objectForKey("title") as! String
             price = currentObject.objectForKey("price") as! Int
         }*/
-      /*
-        imageFile!.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
-            if (error == nil) {
-                cell.imageLabel.image = UIImage(data:imageData!)
-            }
-        }
-        */
+      
+        
+        
         cell.headerLabel?.text = header
         cell.priceLabel.text = "S$" + String(price) + " /pax"
         return cell
