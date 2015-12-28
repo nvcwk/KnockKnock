@@ -11,13 +11,14 @@ import Parse
 import ParseUI
 import Bolts
 
-class DetailedMarketplaceViewController: UIViewController {
+class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var contactLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
     @IBOutlet weak var summaryField: UITextField!
     @IBOutlet weak var tourPic: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
     var header: String! = ""
     var price: String! = ""
@@ -88,6 +89,36 @@ class DetailedMarketplaceViewController: UIViewController {
         presentViewController(bookAlert, animated: true, completion: nil)
     }
     
+    
+    // Tableview
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+      /*
+        if(searchActive) {
+            return filteredHeaderArray.count
+        }*/
+        return 1 //headerArray.count;
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+        let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath) as! ActivityTableViewCell
+        let headerInput: String
+        let summary : String
+        
+        headerInput = "a"
+        summary = "b"
+        
+        cell.header.text = headerInput
+        cell.activityDesc?.text = summary
+        return cell
+    }
+    
+
     
 
 }

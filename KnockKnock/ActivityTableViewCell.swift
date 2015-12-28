@@ -12,7 +12,8 @@ import Parse
 import ParseUI
 
 class ActivityTableViewCell: PFTableViewCell {
-    
+    @IBOutlet weak var header: UILabel!
+    @IBOutlet weak var activityDesc: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
