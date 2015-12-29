@@ -14,6 +14,7 @@ import ParseUI
 class ActivityTableViewCell: PFTableViewCell {
     @IBOutlet weak var header: UILabel!
     @IBOutlet weak var activityDesc: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -10,6 +10,8 @@ import UIKit
 import Parse
 import ParseUI
 import Bolts
+import Foundation
+import CoreData
 
 class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var headerLabel: UILabel!
@@ -26,8 +28,8 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     var summary: String! = ""
     var picFile: PFFile!
     var currentObject : PFObject?
-    var activities = [AnyObject]()
-    
+    var activities = NSArray()
+    var tours = [PFObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -115,26 +117,31 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         return activities.count;
         
     }
-    
+   
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath) as! ActivityTableViewCell
-       /*
-        let activity = activities[indexPath.row] as! PFObject
+        
+        
+       let actvitiy = activities[indexPath.row]
+        
+        let query2 = PFQuery(className: "Activity")
+       
         do {
-            try activity.fetchIfNeeded();
-            cell.header.text = activity["title"] as! String
-            cell.activityDesc.text = activity["description"] as! String
+           let act = try query2.getObjectWithId(actvitiy["objectId"] as! String!)
+            cell.header.text = act["title"] as! String
+            cell.activityDesc.text = act["description"] as! String
+            cell.dayLabel.text = String(act["day"])
         } catch is ErrorType {
             print("Invalid Selection.")
         }
-        */
-        print(activities.count)
-        //headerInput = activities as String
+    
         return cell
             }
     
-
+   
+    
+    
     
 
 }
