@@ -36,18 +36,15 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         
         // to include below two label once itenerary builder is up, currently no userid associated, will cause to crash
         
+        let guide = currentObject!["host"] as! PFUser
         
         let query = PFQuery(className: "User")
         do {
-            let guide = try query.getObjectWithId(host.objectId as String!)
-            print(guide)
-            //self.hostLabel.text = guide.objectForKey("username") as! String
-            //self.contactLabel.text = guide.objectForKey("contact") as! String
-
+            try guide.fetchIfNeeded();
+            self.hostLabel.text = guide["fName"] as! String
+            self.contactLabel.text = String(guide["contact"])
         } catch is ErrorType {
             print("Invalid Selection.")
-            //print(host)
-            //print(guide)
         }
 
         
@@ -122,28 +119,16 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath) as! ActivityTableViewCell
-        
-        let activity = activities[indexPath.row]
-        //print(activity.objectId)
-       /* let headerInput: String
-        let summary : String
-        
-        let query = PFQuery(className: "Activity")
+       /*
+        let activity = activities[indexPath.row] as! PFObject
         do {
-            let act = try query.getObjectWithId(activity.objectId as String!)
-            headerInput = act["title"] as! String
-            summary = act["description"]as! String
-            
-            cell.header.text = headerInput
-            cell.activityDesc?.text = summary
-            return cell
-
+            try activity.fetchIfNeeded();
+            cell.header.text = activity["title"] as! String
+            cell.activityDesc.text = activity["description"] as! String
         } catch is ErrorType {
             print("Invalid Selection.")
-           
         }
         */
-        
         print(activities.count)
         //headerInput = activities as String
         return cell

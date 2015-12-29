@@ -263,6 +263,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             detailedController.price = String(currentObject.objectForKey("price") as! Int)
             //load activites 
             detailedController.activities = iti.objectForKey("activities") as! Array<AnyObject>
+            //load iti/current object
+            detailedController.currentObject = iti as! PFObject
         } catch is ErrorType {
             print("Invalid Selection.")
         }
