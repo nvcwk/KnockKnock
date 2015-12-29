@@ -14,6 +14,7 @@ import Bolts
 import ParseUI
 import SwiftDate
 import GMStepper
+import CoreData
 
 class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPopoverPresentationControllerDelegate {
     
@@ -262,7 +263,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             //load price
             detailedController.price = String(currentObject.objectForKey("price") as! Int)
             //load activites 
-            detailedController.activities = iti.objectForKey("activities") as! Array<AnyObject>
+            let list = iti.objectForKey("activities") as! NSArray
+            detailedController.activities = list
             //load iti/current object
             detailedController.currentObject = iti as! PFObject
         } catch is ErrorType {
