@@ -97,6 +97,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     // Calling Parse DB
     func callingParse(sort : Bool){
         
+        let today = NSDate()
+        
        /* self.headerArray.removeAll()
         self.priceArray.removeAll()
         self.picArray.removeAll()
@@ -104,16 +106,19 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         self.hostArray.removeAll()
         self.marketplaceArray.removeAll()
         */
+        
+        // This query calls for the listing in the marketplace and validate the date (lastavailabledate < today's date)
         let query = PFQuery(className: "MarketPlace")
         
-        if sort
-        {
+        query.whereKey("lastAvailability", greaterThan: today)
+        
+        if sort{
             query.orderByAscending("price")
         }
-        else
-        {
+        else{
         query.orderByAscending("title")
         }
+        
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -133,29 +138,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                         self.hostArray.append(host)
                         */
 
-                        //checking for similar host
-                        let host = object["host"] as! PFObject
-                        print(host.objectId)
-                        
-                        print("ok2")
-                        //checking for date
-                        let endDate = object.objectForKey("lastAvailability") as! NSDate
-                        print("ok3")
-                        if (endDate.timeIntervalSinceNow.isSignMinus ){
-                            //expired tour, do not add in array
-                            print("date is before")
-                             print("ok4")
-                        }else {
-                            //valid tour, continue to add into array
-                            if (host.objectId != PFUser.currentUser()?.objectId){
-                                print(object)
-                                if (host.objectId != PFUser.currentUser()?.objectId){
-                                self.marketplaceArray.append(object)
-                                    print("ok5")
-                                }
-                            }
-                            
-                        }
+                        self.marketplaceArray.append(object)
                         
                     }
                 }
@@ -165,6 +148,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                 print("error: \(error!)  \(error!.userInfo)")
             }
         }
+        
     }
     
     func do_table_refresh(){
@@ -189,7 +173,6 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         if(searchActive) {
             return filteredHeaderArray.count
         }
-        print(marketplaceArray.count) ;
         return marketplaceArray.count
        // return headerArray.count;
         
@@ -198,22 +181,21 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let imageFile = picArray[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MarketplaceTableViewCell
+        
         let header: String
         let price : Int
         let currentObject : PFObject
         
-        
-        currentObject = marketplaceArray[indexPath.row] as! PFObject
+        currentObject = marketplaceArray[indexPath.row] 
         header = currentObject.objectForKey("title") as! String
         price = currentObject.objectForKey("price") as! Int
         let itinerary = currentObject.objectForKey("itinerary") as! PFObject
-        print(itinerary)
         
         let iti : PFObject
         let query2 = PFQuery(className: "Itinerary")
         do {
             iti = try query2.getObjectWithId(itinerary.objectId!)
-            var imageFile = iti.objectForKey("image") as! PFFile
+            let imageFile = iti.objectForKey("image") as! PFFile
             imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
                 if (error == nil) {
                     cell.imageLabel.image = UIImage(data:imageData!)
@@ -242,9 +224,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailedController: DetailedMarketplaceViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailedMarketplaceViewController") as! DetailedMarketplaceViewController
         let currentObject : PFObject
-        currentObject = marketplaceArray[indexPath.row] as! PFObject
+        currentObject = marketplaceArray[indexPath.row] 
        let itinerary = currentObject.objectForKey("itinerary") as! PFObject
-        print(itinerary)
         
         let iti : PFObject
         
@@ -252,10 +233,10 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         do {
             iti = try query2.getObjectWithId(itinerary.objectId as String!)
             // load image
-            var imageFile = iti.objectForKey("image") as! PFFile
+            let imageFile = iti.objectForKey("image") as! PFFile
             detailedController.picFile = imageFile
             //load host
-            var host = currentObject.objectForKey("host") as! PFUser
+            let host = currentObject.objectForKey("host") as! PFUser
             
             detailedController.host = host
             //load header
