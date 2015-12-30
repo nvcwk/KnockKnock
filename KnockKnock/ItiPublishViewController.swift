@@ -7,10 +7,12 @@ import SwiftSpinner
 class ItiPublishViewController: UIViewController {
    
     @IBOutlet weak var lb_title: UILabel!
-    @IBOutlet weak var stepper_price: GMStepper!
+    @IBOutlet weak var lb_price: UITextField!
     @IBOutlet weak var tf_startDate: UITextField!
     @IBOutlet weak var tf_endDate: UITextField!
-    @IBOutlet weak var tf_id: UILabel!
+//    @IBOutlet weak var tf_id: UILabel!
+    
+    //    @IBOutlet weak var stepper_price: GMStepper!
     
     let startDatePicker = UIDatePicker()
     let endDatePicker = UIDatePicker()
@@ -18,6 +20,7 @@ class ItiPublishViewController: UIViewController {
     var selectedStartDate = 5.days.fromDate(NSDate())
     
     var itineraryObj = PFObject(className: "Itinerary")
+    var publishObj = PFObject(className: "MarketPlace")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +42,12 @@ class ItiPublishViewController: UIViewController {
         tf_endDate.text = KnockKnockUtils.dateToString(5.days.fromDate(NSDate()))
 
         lb_title.text = itineraryObj["title"] as! String
-        tf_id.text = "Itinerary ID: #" + itineraryObj.objectId!
+//        tf_id.text = "Itinerary ID: #" + itineraryObj.objectId!
     }
     
     func updateStartDate(sender: UIDatePicker) {
         tf_startDate.text = KnockKnockUtils.dateToString(sender.date)
-        itineraryObj["startDay_availability"] = sender.date
+        publishObj["startAvailability"] = sender.date
         
         endDatePicker.minimumDate = sender.date
         
@@ -55,7 +58,7 @@ class ItiPublishViewController: UIViewController {
     
     func updateEndDate(sender: UIDatePicker) {
         tf_endDate.text = KnockKnockUtils.dateToString(sender.date)
-        itineraryObj["lastDay_availability"] = sender.date
+        publishObj["lastAvailability"] = sender.date
         selectedEndDate = sender.date
     }
     
@@ -63,10 +66,11 @@ class ItiPublishViewController: UIViewController {
     @IBAction func actionPublish(sender: UIBarButtonItem) {
         SwiftSpinner.show("Publishing...")
         
-        itineraryObj["price"] = stepper_price.value
-        itineraryObj["status"] = "p"
+        publishObj["price"] = Int(lb_price.text!)
+        publishObj["itinerary"] = itineraryObj
+        publishObj["host"] = PFUser.currentUser()!
         
-        itineraryObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+        publishObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             SwiftSpinner.hide()
             
             if (success) {

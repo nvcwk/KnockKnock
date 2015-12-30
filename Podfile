@@ -1,4 +1,5 @@
 platform :ios, "8.0"
+
 use_frameworks!
 
 pod 'AFNetworking', '~> 2.0'  
@@ -19,7 +20,6 @@ pod 'IQKeyboardManagerSwift'
 pod 'DZNPhotoPickerController/Editor'
 pod 'GMStepper'
 pod 'GoogleMaps' 
-pod 'RLDTableViewSuite'
 pod 'SwiftDate'
 
 =begin 
@@ -27,4 +27,5 @@ To Consider
 pod 'LRTextField'
 pod 'JVFloatLabeledTextField'
 pod 'DZNPhotoPickerController'
+pod 'RLDTableViewSuite'
 =end
