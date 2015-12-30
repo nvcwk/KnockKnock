@@ -234,12 +234,11 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                     let controller = segue.destinationViewController as! DetailedMarketplaceViewController
                     let cellObject : PFObject
                     
-                    if searchActive{
-                        cellObject = filteredMarketplaceArray[index]
-                    }else{
+                    if !searchActive || filteredMarketplaceArray.isEmpty{
                         cellObject = marketplaceArray[index]
+                    }else{
+                       cellObject = filteredMarketplaceArray[index]
                     }
-                    
                     
                     controller.currentObject = cellObject
 
