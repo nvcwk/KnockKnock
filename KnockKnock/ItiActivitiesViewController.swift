@@ -3,10 +3,29 @@ import Parse
 import SwiftSpinner
 
 class ItiActivitiesViewController: UITableViewController {
-    
     var itineraryObj = PFObject(className: "Itinerary")
-    var activities = [Activity]()
+    
+    var activities = [PFObject]()
     var days = 1
+    var completed = [Bool]()
+    
+    @IBAction func backActivities(segue:UIStoryboardSegue) { }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationItem.setHidesBackButton(true, animated:true)
+        
+        completed = [Bool](count: days, repeatedValue: false)
+        
+        for _ in 1...days {
+            let activityObj = PFObject(className: "Activity")
+            activityObj["title"] = String()
+            activityObj["description"] = String()
+            
+            activities.append(activityObj)
+        }
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return days
@@ -26,8 +45,7 @@ class ItiActivitiesViewController: UITableViewController {
                 if let index = indexPath?.row {
                     let controller = segue.destinationViewController as! ItiActivityViewController
                     controller.day = index + 1
-                    
-                    controller.activity = activities[index]
+                    controller.activityObj = activities[index]
                 }
             }
         } else if (segue.identifier == "toPublishView") {
@@ -37,58 +55,20 @@ class ItiActivitiesViewController: UITableViewController {
         }
     }
     
-    @IBAction func backActivities(segue:UIStoryboardSegue) { }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.navigationItem.setHidesBackButton(true, animated:true);
-        
-        for _ in 1...days {
-            activities.append(Activity())
-        }
-        
-        //self.tableView.editing = true
-    }
-    
     func save(publish: Bool) {
         SwiftSpinner.show("Saving...")
         
-        itineraryObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+        itineraryObj["activities"] = activities
+        
+        self.itineraryObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if (success) {
-                var savingActivities = [PFObject]()
+                SwiftSpinner.hide()
                 
-                for a in self.activities {
-                    let activity = PFObject(className: "Activity")
-                    
-                    activity["title"] = a.title
-                    activity["description"] = a.description
-                    activity["meetingTime"] = a.meetingTime
-                    activity["day"] = a.day
-                    
-                    if (a.address.isEmpty) {
-                        activity["address"] = ""
-                    } else {
-                        activity["address"] = a.address
-                    }
-                    
-                    activity["cordinate"] = PFGeoPoint(latitude: a.cor!.latitude, longitude: a.cor!.longitude)
-                    activity["itineraryId"] = self.itineraryObj
-                    
-                    savingActivities.append(activity)
+                if(publish) {
+                    self.performSegueWithIdentifier("toPublishView", sender: nil)
+                } else {
+                    self.dismissViewControllerAnimated(true, completion: nil)
                 }
-                
-                PFObject.saveAllInBackground(savingActivities, block: { (success: Bool, error: NSError?) -> Void in
-                    if (success) {
-                        SwiftSpinner.hide()
-                        
-                        if(publish) {
-                            self.performSegueWithIdentifier("toPublishView", sender: nil)
-                        } else {
-                            self.dismissViewControllerAnimated(true, completion: nil)
-                        }
-                    }
-                })
                 
             } else {
                 KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
@@ -97,16 +77,17 @@ class ItiActivitiesViewController: UITableViewController {
     }
     
     @IBAction func actionSave(sender: AnyObject) {
-        var cont = true
         
-        for a in activities {
-            if(!a.isCompleted) {
-                cont = false
+        var canCon = true
+        
+        for con in completed {
+            if(!con) {
+                canCon = false
             }
         }
         
-        if(cont) {
-            let alert:UIAlertController = UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        if(canCon) {
+            let alert:UIAlertController = UIAlertController(title: "Proceed to?", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
             
             let cameraAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default) { UIAlertAction in
                 self.save(false)
@@ -123,32 +104,8 @@ class ItiActivitiesViewController: UITableViewController {
             alert.addAction(cancelAction)
             
             self.presentViewController(alert, animated: true, completion: nil)
-            
-            
-            
-        }  else {
+        } else {
             KnockKnockUtils.okAlert(self, title: "Error!", message: "Please fill in all details!", handle: nil)
-            
         }
-        
-        
-        
     }
-    
-    
-    //    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-    ////        let movedObject = self.data[sourceIndexPath.row]
-    ////        data.removeAtIndex(sourceIndexPath.row)
-    ////        data.insert(movedObject, atIndex: destinationIndexPath.row)
-    //
-    //        self.tableView.reloadData()
-    //    }
-    //
-    //    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-    //        return .None
-    //    }
-    //
-    //    override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    //        return false
-    //    }
 }

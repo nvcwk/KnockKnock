@@ -19,13 +19,22 @@
 		E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC20B1C16CD3200479927 /* HomeViewController.swift */; };
 		E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC21E1C16E0B700479927 /* KnockKnockUtils.swift */; };
 		E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2201C16E12C00479927 /* ParseUtils.swift */; };
+		E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */; };
 		E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */; };
+		E159A8301C33DE4200EF80A4 /* PubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E159A82E1C33DE4200EF80A4 /* PubTableViewCell.swift */; };
+		E159A8311C33DE4200EF80A4 /* PubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E159A82F1C33DE4200EF80A4 /* PubTableViewCell.xib */; };
+		E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E159A8361C33E9E600EF80A4 /* PubTableViewController.swift */; };
+		E159A8391C33E9E600EF80A4 /* PubTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E159A8371C33E9E600EF80A4 /* PubTableViewController.xib */; };
 		E16B357C1C1CC9D4003897EF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B357A1C1CC9D4003897EF /* Profile.storyboard */; };
 		E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B357D1C1CCA39003897EF /* Itinerary.storyboard */; };
 		E16B35861C1CCC65003897EF /* MarketPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B35841C1CCC65003897EF /* MarketPlace.storyboard */; };
 		E1751ABB1C273210000A1360 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1751ABA1C273210000A1360 /* Activity.swift */; };
 		E1822CE41C27C0C500E78ED6 /* ItiPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */; };
 		E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */; };
+		E187E5441C32E80800E00E5A /* ItiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187E5421C32E80800E00E5A /* ItiTableViewCell.swift */; };
+		E187E5451C32E80800E00E5A /* ItiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E187E5431C32E80800E00E5A /* ItiTableViewCell.xib */; };
+		E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187E5501C32F29100E00E5A /* ItiTableViewController.swift */; };
+		E187E5551C32F3A700E00E5A /* ItiTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E187E5541C32F3A700E00E5A /* ItiTableViewController.xib */; };
 		E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */; };
 		E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */; };
 		E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAA7EE1C24853600AB4637 /* ItiDaysSelectorViewController.swift */; };
@@ -81,13 +90,22 @@
 		E11AC20B1C16CD3200479927 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E11AC21E1C16E0B700479927 /* KnockKnockUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockUtils.swift; sourceTree = "<group>"; };
 		E11AC2201C16E12C00479927 /* ParseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUtils.swift; sourceTree = "<group>"; };
+		E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiMainViewController.swift; sourceTree = "<group>"; };
+		E159A82E1C33DE4200EF80A4 /* PubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubTableViewCell.swift; sourceTree = "<group>"; };
+		E159A82F1C33DE4200EF80A4 /* PubTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PubTableViewCell.xib; sourceTree = "<group>"; };
+		E159A8361C33E9E600EF80A4 /* PubTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubTableViewController.swift; sourceTree = "<group>"; };
+		E159A8371C33E9E600EF80A4 /* PubTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PubTableViewController.xib; sourceTree = "<group>"; };
 		E16B357B1C1CC9D4003897EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		E16B357D1C1CCA39003897EF /* Itinerary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Itinerary.storyboard; sourceTree = "<group>"; };
 		E16B35851C1CCC65003897EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MarketPlace.storyboard; sourceTree = "<group>"; };
 		E1751ABA1C273210000A1360 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiPublishViewController.swift; sourceTree = "<group>"; };
 		E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicViewController.swift; sourceTree = "<group>"; };
+		E187E5421C32E80800E00E5A /* ItiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiTableViewCell.swift; sourceTree = "<group>"; };
+		E187E5431C32E80800E00E5A /* ItiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiTableViewCell.xib; sourceTree = "<group>"; };
+		E187E5501C32F29100E00E5A /* ItiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiTableViewController.swift; sourceTree = "<group>"; };
+		E187E5541C32F3A700E00E5A /* ItiTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiTableViewController.xib; sourceTree = "<group>"; };
 		E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockRule.swift; sourceTree = "<group>"; };
 		E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiSummaryViewController.swift; sourceTree = "<group>"; };
 		E1CAA7EE1C24853600AB4637 /* ItiDaysSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiDaysSelectorViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +197,7 @@
 		E11461F51C1170B900983BC3 /* KnockKnock */ = {
 			isa = PBXGroup;
 			children = (
+				E187E5391C32E48700E00E5A /* ExtLib */,
 				E1CAA80C1C27129400AB4637 /* Entity */,
 				E1CAA8011C254F9A00AB4637 /* ViewCell */,
 				E1E4B44F1C18230A00242A83 /* Resources */,
@@ -214,6 +233,14 @@
 		E11AC2061C16241600479927 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				E187E5421C32E80800E00E5A /* ItiTableViewCell.swift */,
+				E187E5431C32E80800E00E5A /* ItiTableViewCell.xib */,
+				E187E5501C32F29100E00E5A /* ItiTableViewController.swift */,
+				E187E5541C32F3A700E00E5A /* ItiTableViewController.xib */,
+				E159A82E1C33DE4200EF80A4 /* PubTableViewCell.swift */,
+				E159A82F1C33DE4200EF80A4 /* PubTableViewCell.xib */,
+				E159A8361C33E9E600EF80A4 /* PubTableViewController.swift */,
+				E159A8371C33E9E600EF80A4 /* PubTableViewController.xib */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -258,6 +285,14 @@
 				E1CAA8081C26A7BC00AB4637 /* KnockKnockImageUtils.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E187E5391C32E48700E00E5A /* ExtLib */ = {
+			isa = PBXGroup;
+			children = (
+				E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */,
+			);
+			name = ExtLib;
 			sourceTree = "<group>";
 		};
 		E1CAA8011C254F9A00AB4637 /* ViewCell */ = {
@@ -411,12 +446,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E187E5551C32F3A700E00E5A /* ItiTableViewController.xib in Resources */,
+				E159A8391C33E9E600EF80A4 /* PubTableViewController.xib in Resources */,
 				E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */,
+				E159A8311C33DE4200EF80A4 /* PubTableViewCell.xib in Resources */,
 				E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */,
 				E11462001C1170B900983BC3 /* Assets.xcassets in Resources */,
 				E11461FE1C1170B900983BC3 /* Main.storyboard in Resources */,
 				E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */,
 				E16B357C1C1CC9D4003897EF /* Profile.storyboard in Resources */,
+				E187E5451C32E80800E00E5A /* ItiTableViewCell.xib in Resources */,
 				E16B35861C1CCC65003897EF /* MarketPlace.storyboard in Resources */,
 				E11AC1FF1C16185400479927 /* Credential.storyboard in Resources */,
 			);
@@ -494,11 +533,15 @@
 				E1751ABB1C273210000A1360 /* Activity.swift in Sources */,
 				E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */,
 				E1CAA8091C26A7BC00AB4637 /* KnockKnockImageUtils.swift in Sources */,
+				E159A8301C33DE4200EF80A4 /* PubTableViewCell.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
+				E187E5441C32E80800E00E5A /* ItiTableViewCell.swift in Sources */,
 				E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */,
+				E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
+				E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */,
 				E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */,
 				E1822CE41C27C0C500E78ED6 /* ItiPublishViewController.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
@@ -507,6 +550,7 @@
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
 				E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
+				E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */,
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
 				E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */,
 			);
