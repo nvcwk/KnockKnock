@@ -184,41 +184,6 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let detailedController: DetailedMarketplaceViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailedMarketplaceViewController") as! DetailedMarketplaceViewController
-//        let currentObject : PFObject
-//        currentObject = filteredMarketplaceArray[indexPath.row]
-//       let itinerary = currentObject.objectForKey("itinerary") as! PFObject
-//        
-//        let iti : PFObject
-//        
-//        let query2 = PFQuery(className: "Itinerary")
-//        do {
-//            iti = try query2.getObjectWithId(itinerary.objectId as String!)
-//            // load image
-//            let imageFile = iti.objectForKey("image") as! PFFile
-//            detailedController.picFile = imageFile
-//            //load host
-//            let host = currentObject.objectForKey("host") as! PFUser
-//            
-//            detailedController.host = host
-//            //load header
-//            detailedController.header = currentObject.objectForKey("title") as! String
-//            //load price
-//            detailedController.price = String(currentObject.objectForKey("price") as! Int)
-//            //load activites 
-//            let list = iti.objectForKey("activities") as! NSArray
-//            detailedController.activities = list
-//            //load iti/current object
-//            detailedController.currentObject = iti as! PFObject
-//        } catch is ErrorType {
-//            print("Invalid Selection.")
-//        }
-//        
-//        
-//        self.presentViewController(detailedController, animated: true, completion: nil)
-//    }
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
