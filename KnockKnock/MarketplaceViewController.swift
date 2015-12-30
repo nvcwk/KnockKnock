@@ -32,22 +32,10 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     var searchActive : Bool = false
     
-    
-    
-//    var titleArray = [String]()
-//    var priceArray = [Int]()
-//    var imageArray = [PFFile]()
-//    var filteredTitleArray = [String]()
-    
     var filteredMarketplaceArray = [PFObject]()
-    
-    
-    
     
     var sort = false
 
-//    var hostArray = [PFObject]() //to remove
-//    var summaryArray = [String]() //to remove
     var marketplaceArray = [PFObject]()
 
     //@IBOutlet weak var placeholderView: UIView!
@@ -105,6 +93,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         let query = PFQuery(className: "MarketPlace")
         query.whereKey("lastAvailability", greaterThan: today)
         query.includeKey("itinerary")
+        query.includeKey("host")
+        query.includeKey("activities")
         
 
         
@@ -164,19 +154,18 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let image = imageArray[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MarketplaceTableViewCell
         let price : Int
         let image : PFFile
         if(searchActive){
             let filteredMarketplaceObject = filteredMarketplaceArray[indexPath.row]
-            title = filteredMarketplaceObject.objectForKey("title") as? String
+            title = filteredMarketplaceObject["itinerary"].objectForKey("title") as? String
             price = filteredMarketplaceObject.objectForKey("price") as! Int
             image = filteredMarketplaceObject["itinerary"].objectForKey("image")! as! PFFile
 
         } else {
             let marketplaceObject = marketplaceArray[indexPath.row]
-            title = marketplaceObject.objectForKey("title") as? String
+            title = marketplaceObject["itinerary"].objectForKey("title") as? String
             price = marketplaceArray[indexPath.row].objectForKey("price") as! Int
             image = marketplaceObject["itinerary"].objectForKey("image")! as! PFFile
         }
@@ -195,40 +184,71 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let detailedController: DetailedMarketplaceViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailedMarketplaceViewController") as! DetailedMarketplaceViewController
+//        let currentObject : PFObject
+//        currentObject = filteredMarketplaceArray[indexPath.row]
+//       let itinerary = currentObject.objectForKey("itinerary") as! PFObject
+//        
+//        let iti : PFObject
+//        
+//        let query2 = PFQuery(className: "Itinerary")
+//        do {
+//            iti = try query2.getObjectWithId(itinerary.objectId as String!)
+//            // load image
+//            let imageFile = iti.objectForKey("image") as! PFFile
+//            detailedController.picFile = imageFile
+//            //load host
+//            let host = currentObject.objectForKey("host") as! PFUser
+//            
+//            detailedController.host = host
+//            //load header
+//            detailedController.header = currentObject.objectForKey("title") as! String
+//            //load price
+//            detailedController.price = String(currentObject.objectForKey("price") as! Int)
+//            //load activites 
+//            let list = iti.objectForKey("activities") as! NSArray
+//            detailedController.activities = list
+//            //load iti/current object
+//            detailedController.currentObject = iti as! PFObject
+//        } catch is ErrorType {
+//            print("Invalid Selection.")
+//        }
+//        
+//        
+//        self.presentViewController(detailedController, animated: true, completion: nil)
+//    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let detailedController: DetailedMarketplaceViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailedMarketplaceViewController") as! DetailedMarketplaceViewController
-        let currentObject : PFObject
-        currentObject = filteredMarketplaceArray[indexPath.row]
-       let itinerary = currentObject.objectForKey("itinerary") as! PFObject
-        
-        let iti : PFObject
-        
-        let query2 = PFQuery(className: "Itinerary")
-        do {
-            iti = try query2.getObjectWithId(itinerary.objectId as String!)
-            // load image
-            let imageFile = iti.objectForKey("image") as! PFFile
-            detailedController.picFile = imageFile
-            //load host
-            let host = currentObject.objectForKey("host") as! PFUser
-            
-            detailedController.host = host
-            //load header
-            detailedController.header = currentObject.objectForKey("title") as! String
-            //load price
-            detailedController.price = String(currentObject.objectForKey("price") as! Int)
-            //load activites 
-            let list = iti.objectForKey("activities") as! NSArray
-            detailedController.activities = list
-            //load iti/current object
-            detailedController.currentObject = iti as! PFObject
-        } catch is ErrorType {
-            print("Invalid Selection.")
-        }
-        
-        
-        self.presentViewController(detailedController, animated: true, completion: nil)
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        performSegueWithIdentifier("showExpandedView", sender: cell)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showExpandedView") {
+            if let cell = sender as? UITableViewCell {
+                let indexPath = tableView.indexPathForCell(cell)
+                
+                if let index = indexPath?.row {
+                    let controller = segue.destinationViewController as! DetailedMarketplaceViewController
+                    let cellObject : PFObject
+                    
+                    if searchActive{
+                        cellObject = filteredMarketplaceArray[index]
+                    }else{
+                        cellObject = marketplaceArray[index]
+                    }
+                    
+                    
+                    controller.currentObject = cellObject
+
+                }
+            }
+        }
+    }
+    
+
     
 
     // Search engine
@@ -251,7 +271,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     //lacking of zero data
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         filteredMarketplaceArray = marketplaceArray.filter({ (object) -> Bool in
-            let tmp: NSString = object.objectForKey("title") as! NSString
+            let tmp: NSString = object["itinerary"].objectForKey("title") as! NSString
             let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
             return range.location != NSNotFound
         })
