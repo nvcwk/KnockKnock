@@ -22,42 +22,31 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     @IBOutlet weak var tourPic: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    var header: String! = ""
-    var price: String! = ""
-    var host: PFUser!
-    var summary: String! = ""
-    var picFile: PFFile!
-    var currentObject : PFObject?
-    var activities = NSArray()
-    var tours = [PFObject]()
+    var currentObject : PFObject!
+    var activityArray : NSArray!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.headerLabel.text = header
-        self.priceLabel.text = String(price)
+        let image : PFFile
+        let currentObjIti = currentObject["itinerary"]
+        
+        self.headerLabel.text = currentObjIti.objectForKey("title") as? String
+        self.priceLabel.text = String(currentObject.objectForKey("price")!)
         
         // to include below two label once itenerary builder is up, currently no userid associated, will cause to crash
+        self.hostLabel.text = currentObject!["host"].objectForKey("fName")! as? String
+        self.contactLabel.text = String(currentObject!["host"].objectForKey("contact")!)
+        self.summaryField.text = currentObjIti.objectForKey("summary") as? String
+        image = currentObjIti.objectForKey("image")! as! PFFile
         
-        let guide = currentObject!["host"] as! PFUser
+        image.getDataInBackgroundWithBlock({
+            (result, error) in
+            self.tourPic.image = UIImage(data: result!)
+        })
         
-        let query = PFQuery(className: "User")
-        do {
-            try guide.fetchIfNeeded();
-            self.hostLabel.text = guide["fName"] as! String
-            self.contactLabel.text = String(guide["contact"])
-        } catch is ErrorType {
-            print("Invalid Selection.")
-        }
-
+        activityArray = currentObjIti["activities"] as! NSArray
         
-        
-        
-        self.summaryField.text = summary
-        picFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
-            if (error == nil) {
-                self.tourPic.image = UIImage(data:imageData!)
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,11 +99,8 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-      /*
-        if(searchActive) {
-            return filteredHeaderArray.count
-        }*/
-        return activities.count;
+
+        return activityArray.count;
         
     }
    
@@ -122,26 +108,13 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath) as! ActivityTableViewCell
         
+        let activity = activityArray[indexPath.row]
         
-       let actvitiy = activities[indexPath.row]
+        cell.header.text = activity.objectForKey("title") as? String
+        cell.activityDesc.text = activity.objectForKey("description") as? String
+        cell.dayLabel.text = String(activity.objectForKey("day")!)
         
-        let query2 = PFQuery(className: "Activity")
-       
-        do {
-           let act = try query2.getObjectWithId(actvitiy["objectId"] as! String!)
-            cell.header.text = act["title"] as! String
-            cell.activityDesc.text = act["description"] as! String
-            cell.dayLabel.text = String(act["day"])
-        } catch is ErrorType {
-            print("Invalid Selection.")
-        }
-    
         return cell
-            }
-    
-   
-    
-    
-    
+    }
 
 }
