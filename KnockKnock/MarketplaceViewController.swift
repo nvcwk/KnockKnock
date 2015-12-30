@@ -198,7 +198,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailedController: DetailedMarketplaceViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailedMarketplaceViewController") as! DetailedMarketplaceViewController
         let currentObject : PFObject
-        currentObject = marketplaceArray[indexPath.row] 
+        currentObject = filteredMarketplaceArray[indexPath.row]
        let itinerary = currentObject.objectForKey("itinerary") as! PFObject
         
         let iti : PFObject
