@@ -32,13 +32,22 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     var searchActive : Bool = false
     
+    
+    
+//    var titleArray = [String]()
+//    var priceArray = [Int]()
+//    var imageArray = [PFFile]()
+//    var filteredTitleArray = [String]()
+    
+    var filteredMarketplaceArray = [PFObject]()
+    
+    
+    
+    
     var sort = false
-    var headerArray = [String]() //to remove
-    var filteredHeaderArray = [String]()
-    var priceArray = [Int]() //to remove
-    var picArray = [PFFile]() //to remove
-    var hostArray = [PFObject]() //to remove
-    var summaryArray = [String]() //to remove
+
+//    var hostArray = [PFObject]() //to remove
+//    var summaryArray = [String]() //to remove
     var marketplaceArray = [PFObject]()
 
     //@IBOutlet weak var placeholderView: UIView!
@@ -67,22 +76,6 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         searchBar.delegate = self
         
-        /*
-        // todays date.
-        let date = NSDate()
-        
-        // create an instance of calendar view with
-        // base date (Calendar shows 12 months range from current base date)
-        // selected date (marked dated in the calendar)
-        let calendarView = CalendarView.instance(date, selectedDate: date)
-        calendarView.delegate = self
-        calendarView.translatesAutoresizingMaskIntoConstraints = false
-        placeholderView.addSubview(calendarView)
-        
-        // Constraints for calendar view - Fill the parent view.
-        placeholderView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[calendarView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["calendarView": calendarView]))
-        placeholderView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[calendarView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["calendarView": calendarView]))
-        */
         
         
         callingParse(sort)
@@ -98,6 +91,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     func callingParse(sort : Bool){
         
         let today = NSDate()
+
         
        /* self.headerArray.removeAll()
         self.priceArray.removeAll()
@@ -109,14 +103,17 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         // This query calls for the listing in the marketplace and validate the date (lastavailabledate < today's date)
         let query = PFQuery(className: "MarketPlace")
-        
         query.whereKey("lastAvailability", greaterThan: today)
+        query.includeKey("itinerary")
+        
+
+        
         
         if sort{
             query.orderByAscending("price")
         }
         else{
-        query.orderByAscending("title")
+            query.orderByAscending("title")
         }
         
         query.findObjectsInBackgroundWithBlock {
@@ -125,21 +122,9 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             if error == nil{
                 if let objects = objects as [PFObject]!{
                     for object in objects {
-                        /* to remove
-                        let header = object.objectForKey("title") as! String
-                        let price = object.objectForKey("price") as! Int
-                        let tourImageFile = object.objectForKey("image") as! PFFile
-                        let summary = object.objectForKey("summary") as! String
-                        let host = object.objectForKey("host") as! PFObject
-                        self.headerArray.append(header)
-                        self.priceArray.append(price)
-                        self.picArray.append(tourImageFile)
-                        self.summaryArray.append(summary)
-                        self.hostArray.append(host)
-                        */
-
-                        self.marketplaceArray.append(object)
                         
+                        self.marketplaceArray.append(object)
+
                     }
                 }
                 
@@ -148,7 +133,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                 print("error: \(error!)  \(error!.userInfo)")
             }
         }
-        
+
+
     }
     
     func do_table_refresh(){
@@ -171,53 +157,41 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         if(searchActive) {
-            return filteredHeaderArray.count
+            return filteredMarketplaceArray.count
         }
-        return marketplaceArray.count
-       // return headerArray.count;
+        return marketplaceArray.count;
         
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let imageFile = picArray[indexPath.row]
+        //let image = imageArray[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MarketplaceTableViewCell
-        
-        let header: String
         let price : Int
-        let currentObject : PFObject
-        
-        currentObject = marketplaceArray[indexPath.row] 
-        header = currentObject.objectForKey("title") as! String
-        price = currentObject.objectForKey("price") as! Int
-        let itinerary = currentObject.objectForKey("itinerary") as! PFObject
-        
-        let iti : PFObject
-        let query2 = PFQuery(className: "Itinerary")
-        do {
-            iti = try query2.getObjectWithId(itinerary.objectId!)
-            let imageFile = iti.objectForKey("image") as! PFFile
-            imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
-                if (error == nil) {
-                    cell.imageLabel.image = UIImage(data:imageData!)
-                }
-            }
-        } catch is ErrorType {
-            print("Invalid Selection.")
+        let image : PFFile
+        if(searchActive){
+            let filteredMarketplaceObject = filteredMarketplaceArray[indexPath.row]
+            title = filteredMarketplaceObject.objectForKey("title") as? String
+            price = filteredMarketplaceObject.objectForKey("price") as! Int
+            image = filteredMarketplaceObject["itinerary"].objectForKey("image")! as! PFFile
+
+        } else {
+            let marketplaceObject = marketplaceArray[indexPath.row]
+            title = marketplaceObject.objectForKey("title") as? String
+            price = marketplaceArray[indexPath.row].objectForKey("price") as! Int
+            image = marketplaceObject["itinerary"].objectForKey("image")! as! PFFile
         }
         
-        /*if(searchActive){
-            header = filteredHeaderArray[indexPath.row]
-            price = currentObject.objectForKey("price") as! Int // please append accordingly
-        } else {
-            //header = headerArray[indexPath.row];
-            header = currentObject.objectForKey("title") as! String
-            price = currentObject.objectForKey("price") as! Int
-        }*/
-      
+        
+        image.getDataInBackgroundWithBlock({
+            (result, error) in
+            cell.imageLabel.image = UIImage(data: result!)
+        })
         
         
-        cell.headerLabel?.text = header
-        cell.priceLabel.text = "S$" + String(price) + " /pax"
+        cell.priceLabel.text = "S$" + String(price) + "/pax"
+        
+        cell.headerLabel?.text = title
+
         return cell
     }
     
@@ -274,14 +248,14 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         searchActive = false;
     }
     
+    //lacking of zero data
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        filteredHeaderArray = headerArray.filter({ (text) -> Bool in
-            let tmp: NSString = text
+        filteredMarketplaceArray = marketplaceArray.filter({ (object) -> Bool in
+            let tmp: NSString = object.objectForKey("title") as! NSString
             let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
             return range.location != NSNotFound
         })
-        if(filteredHeaderArray.count == 0){
+        if(filteredMarketplaceArray.count == 0){
             searchActive = false;
         } else {
             searchActive = true;
@@ -290,8 +264,9 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
-        filteredHeaderArray = headerArray.filter { header in
-            return header.lowercaseString.containsString(searchText.lowercaseString)
+        
+        filteredMarketplaceArray = marketplaceArray.filter { marketplace in
+            return marketplace.objectForKey("title")!.lowercaseString.containsString(searchText.lowercaseString)
         }
         
         tableView.reloadData()
