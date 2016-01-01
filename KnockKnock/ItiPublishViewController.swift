@@ -42,6 +42,9 @@ class ItiPublishViewController: UIViewController {
         tf_endDate.text = KnockKnockUtils.dateToString(5.days.fromDate(NSDate()))
 
         lb_title.text = itineraryObj["title"] as! String
+        
+        publishObj["startAvailability"] = NSDate()
+        publishObj["lastAvailability"] = NSDate()
 //        tf_id.text = "Itinerary ID: #" + itineraryObj.objectId!
     }
     
