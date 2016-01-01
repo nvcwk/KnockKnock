@@ -12,6 +12,8 @@ import Parse
 
 class ItiTableViewController: PFQueryTableViewController {
     
+    var parentNaviController = UINavigationController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,14 +21,11 @@ class ItiTableViewController: PFQueryTableViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "Itinerary")
+        
+        query.addDescendingOrder("updatedAt")
         query.whereKey("host", equalTo: PFUser.currentUser()!)
         
         return query
@@ -57,5 +56,11 @@ class ItiTableViewController: PFQueryTableViewController {
         return 163.0
     }
     
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let viewController : ItiDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("itiDetailsView") as! ItiDetailsViewController
+        
+        viewController.itineraryObj = objectAtIndexPath(indexPath)! as PFObject
+        
+        parentNaviController.showViewController(viewController, sender: nil)
+    }
 }

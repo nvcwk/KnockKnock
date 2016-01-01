@@ -8,38 +8,43 @@
 
 import UIKit
 
-class ItiMainViewController: UIViewController {
+class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
     
-    var pageMenu : CAPSPageMenu?
+    var pageMenu: CAPSPageMenu?
+    
+    var controller1 : ItiTableViewController?
+    var controller2 : PubTableViewController?
+
+    func loadList(notification: NSNotification){
+        //load data here
+        setup()
+        pageMenu?.moveToPage(1)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
 
-        // Do any additional setup after loading the view.
-        
-        // Array to keep track of controllers in page menu
+        setup()
+    }
+    
+    func setup() {
         var controllerArray : [UIViewController] = []
+        var parameters: [CAPSPageMenuOption]?
         
-        // Create variables for all view controllers you want to put in the
-        // page menu, initialize them, and add each to the controller array.
-        // (Can be any UIViewController subclass)
-        // Make sure the title property of all view controllers is set
-        // Example:
-//        let controller = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("testing") as!TestViewController
-//        controllerArray.append(controller)
-
-        let controller1 : ItiTableViewController = ItiTableViewController(nibName: "ItiTableViewController", bundle: nil)
-        controller1.title = "Itinerary"
-        controllerArray.append(controller1)
+        controller1 = ItiTableViewController(nibName: "ItiTableViewController", bundle: nil)
+        controller1!.title = "Itinerary"
+        controller1!.parentNaviController = self.navigationController!
+        controllerArray.append(controller1!)
         
-        let controller2 : PubTableViewController = PubTableViewController(nibName: "PubTableViewController", bundle: nil)
-        controller2.title = "Published"
-        controllerArray.append(controller2)
+        controller2 = PubTableViewController(nibName: "PubTableViewController", bundle: nil)
+        controller2!.title = "Publish"
+        controller2!.parentNaviController = self.navigationController!
+        controllerArray.append(controller2!)
         
-        // Customize page menu to your liking (optional) or use default settings by sending nil for 'options' in the init
-        // Example:
-        let parameters: [CAPSPageMenuOption] = [
+        parameters = [
             .MenuItemSeparatorWidth(4.3),
             .ScrollMenuBackgroundColor(UIColor.whiteColor()),
             .ViewBackgroundColor(UIColor(red: 247.0/255.0, green: 247.0/255.0, blue: 247.0/255.0, alpha: 1.0)),
@@ -56,24 +61,32 @@ class ItiMainViewController: UIViewController {
             .MenuItemSeparatorPercentageHeight(0.1)
         ]
         
-        // Initialize page menu with controller array, frame, and optional parameters
-        // Initialize scroll menu
         let navheight = (navigationController?.navigationBar.frame.size.height ?? 0) + UIApplication.sharedApplication().statusBarFrame.size.height
         
         let frameHeight = self.tabBarController!.tabBar.frame.height + navheight
         
         pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, navheight, self.view.frame.width, self.view.frame.height - frameHeight), pageMenuOptions: parameters)
         
-        // Lastly add page menu as subview of base view controller view
-        // or use pageMenu controller in you view hierachy as desired
         self.view.addSubview(pageMenu!.view)
+        
+        pageMenu!.delegate = self
     }
 
     @IBAction func backItinerary(segue:UIStoryboardSegue) {
     }
-    
 
     
-
-
+    
+    func didMoveToPage(controller: UIViewController, index: Int){
+        print("ADASD")
+        if(index == 1) {
+            self.navigationItem.rightBarButtonItem?.title = ""
+            self.navigationItem.rightBarButtonItem?.enabled = false
+        } else {
+            self.navigationItem.rightBarButtonItem?.title = "Create"
+            self.navigationItem.rightBarButtonItem?.enabled = true
+        }
+    }
+    
+    
 }

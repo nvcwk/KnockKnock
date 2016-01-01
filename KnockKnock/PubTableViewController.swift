@@ -11,16 +11,13 @@ import Parse
 import ParseUI
 
 class PubTableViewController: PFQueryTableViewController {
+    
+    var parentNaviController = UINavigationController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.registerNib(UINib(nibName: "PubTableViewCell", bundle: nil), forCellReuseIdentifier: "PubViewCell")
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // Define the query that will provide the data for the table view
@@ -30,6 +27,7 @@ class PubTableViewController: PFQueryTableViewController {
         query.includeKey("itinerary")
         
         query.whereKey("host", equalTo: PFUser.currentUser()!)
+        query.whereKey("isPublished", equalTo: true)
         
         return query
     }
@@ -64,7 +62,11 @@ class PubTableViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //self.performSegueWithIdentifier("showDetails", sender: tableView)
+        let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
+        
+        viewController.pubObj = objectAtIndexPath(indexPath)! as PFObject
+        
+        parentNaviController.showViewController(viewController, sender: nil)
     }
     
 }
