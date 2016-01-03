@@ -25,6 +25,7 @@ class ItiTableViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "Itinerary")
         
+        query.includeKey("activities")
         query.addDescendingOrder("updatedAt")
         query.whereKey("host", equalTo: PFUser.currentUser()!)
         

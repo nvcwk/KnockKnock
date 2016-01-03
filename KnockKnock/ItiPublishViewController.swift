@@ -72,6 +72,7 @@ class ItiPublishViewController: UIViewController {
         publishObj["price"] = Int(lb_price.text!)
         publishObj["itinerary"] = itineraryObj
         publishObj["host"] = PFUser.currentUser()!
+        publishObj["isPublished"] = true
         
         publishObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             SwiftSpinner.hide()
