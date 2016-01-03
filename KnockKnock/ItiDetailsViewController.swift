@@ -55,7 +55,7 @@ extension ItiDetailsViewController : UITableViewDelegate, UITableViewDataSource 
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("activityViewCell", forIndexPath: indexPath) as! ActivityDetailsTableViewCell
 
-        let activity = activities[indexPath.row] as! NSDictionary
+        let activity = activities[indexPath.row] as! PFObject
 
         let day = activity["day"] as! Int
         let title = activity["title"] as! String
