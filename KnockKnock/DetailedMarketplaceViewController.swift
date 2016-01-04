@@ -23,18 +23,17 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     @IBOutlet weak var tableView: UITableView!
     
     var currentObject : PFObject!
-    var activityArray : NSArray!
-    
+    var activityArray = [PFObject]()
+    var activities = [PFObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let image : PFFile
         let currentObjIti = currentObject["itinerary"]
-        
         self.headerLabel.text = currentObjIti.objectForKey("title") as? String
         self.priceLabel.text = String(currentObject.objectForKey("price")!)
         
-        // to include below two label once itenerary builder is up, currently no userid associated, will cause to crash
+        
         self.hostLabel.text = currentObject!["host"].objectForKey("fName")! as? String
         self.contactLabel.text = String(currentObject!["host"].objectForKey("contact")!)
         self.summaryField.text = currentObjIti.objectForKey("summary") as? String
@@ -45,18 +44,45 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
             self.tourPic.image = UIImage(data: result!)
         })
         
-        activityArray = currentObjIti["activities"] as! NSArray
+        activityArray = currentObjIti["activities"] as! [PFObject]
         
+        let query = PFQuery(className: "Activity")
+        for a1 in activityArray{
+        query.whereKey("objectId", matchesRegex: a1.objectId! )
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+        
+            if error == nil{
+                if let objects = objects as [PFObject]!{
+
+                    for object in objects {
+                        self.activities.append(object)
+                    }
+                }
+                
+            }else{
+                //log details of the failure
+                print("error: \(error!)  \(error!.userInfo)")
+            }
+        }
+        
+        }
+        sleep(3)
+        do_table_refresh()
     }
 
+    func do_table_refresh(){
+        dispatch_async(dispatch_get_main_queue(), {self.tableView.reloadData()})
+        return
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func backButtonTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {});
-    }
+
     @IBAction func bookButtonTapped(sender: AnyObject) {
         
         
@@ -108,9 +134,9 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath) as! ActivityTableViewCell
         
-        let activity = activityArray[indexPath.row]
+       let activity = activityArray[indexPath.row]
         
-        cell.header.text = activity.objectForKey("title") as? String
+        cell.header.text = activity["title"] as? String
         cell.activityDesc.text = activity.objectForKey("description") as? String
         cell.dayLabel.text = String(activity.objectForKey("day")!)
         
