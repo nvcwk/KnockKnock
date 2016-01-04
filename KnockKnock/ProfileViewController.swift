@@ -26,6 +26,17 @@ class ProfileViewController: UIViewController{
         
         var current_User = PFUser.currentUser();
         
+        tf_email.text = current_User?.email
+        
+        if let birthDate = PFUser.currentUser()!["dob"] as? NSDate {
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+            tf_birthday.text = dateFormatter.stringFromDate(birthDate)
+        }
+        
+        if let contactNumber = PFUser.currentUser()!["contact"] as? Int {
+            tf_birthday.text = String(contactNumber)
+        }
         
     }
 
