@@ -103,5 +103,6 @@ class ParseUtils {
     static func currentUser() -> PFUser {
         return PFUser.currentUser()!
     }
+    
 }
 
