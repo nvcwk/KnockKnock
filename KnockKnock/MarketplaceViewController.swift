@@ -64,7 +64,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         searchBar.delegate = self
         
-        
+       
         
         callingParse(sort)
 
@@ -91,7 +91,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         // This query calls for the listing in the marketplace and validate the date (lastavailabledate < today's date)
         let query = PFQuery(className: "MarketPlace")
-        query.whereKey("lastAvailability", greaterThan: today)
+        //query.whereKey("lastAvailability", greaterThan: today)
         query.includeKey("itinerary")
         query.includeKey("host")
         query.includeKey("activities")
@@ -114,7 +114,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                     for object in objects {
                         
                         self.marketplaceArray.append(object)
-
+                         
                     }
                 }
                 
@@ -123,7 +123,6 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                 print("error: \(error!)  \(error!.userInfo)")
             }
         }
-
 
     }
     
@@ -203,6 +202,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                         cellObject = marketplaceArray[index]
                     }else{
                        cellObject = filteredMarketplaceArray[index]
+                       
                     }
                     
                     controller.currentObject = cellObject
