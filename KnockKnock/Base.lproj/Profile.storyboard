@@ -69,7 +69,6 @@
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="onClick_editprofile:" destination="2ng-me-C9Q" eventType="primaryActionTriggered" id="5NI-vU-nwL"/>
-                                                <action selector="profileEdit:" destination="2ng-me-C9Q" eventType="editingDidBegin" id="1UZ-bj-Tzv"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7m-58-Rut" customClass="ZFRippleButton" customModule="ZFRippleButton">
@@ -228,7 +227,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="changePhoto" destination="uAs-wX-NUE" id="5Ac-jM-iXu"/>
-                        <outlet property="editProfile" destination="uy5-xZ-DPN" id="YE9-7X-BbF"/>
+                        <outlet property="editProfile" destination="uy5-xZ-DPN" id="VOG-cd-b6f"/>
                         <outlet property="hostTours" destination="aKh-Zc-MeZ" id="JFz-jA-3fB"/>
                         <outlet property="joinedTours" destination="uAs-wX-NUE" id="Rmj-Pe-YRy"/>
                         <outlet property="tf_birthday" destination="y2r-eX-zYM" id="YiN-ks-Z25"/>
