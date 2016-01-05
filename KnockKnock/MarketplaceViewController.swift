@@ -35,6 +35,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     var filteredMarketplaceArray = [PFObject]()
     
     var sort = false
+    
+    var sortDesc = false
 
     var marketplaceArray = [PFObject]()
 
@@ -65,7 +67,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         searchBar.delegate = self
         
        
-        
+        marketplaceArray.removeAll()
         callingParse(sort)
 
         
@@ -100,7 +102,16 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         
         if sort{
-            query.orderByAscending("price")
+            if sortDesc{
+            
+                query.orderByDescending("price")
+                
+            }else{
+            
+                query.orderByAscending("price")
+            
+            }
+            
         }
         else{
             query.orderByAscending("title")
@@ -258,9 +269,18 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     // Sort by Price btn
     @IBAction func sortByPrice(sender: AnyObject) {
-        sort = true
+        sort = !sort
+        sortDesc = false
         viewDidLoad()
     }
+    
+    @IBAction func sortByPriceDesc(sender: AnyObject) {
+        sort = !sort
+        sortDesc = true
+        viewDidLoad()
+    }
+    
+    
     
     
     
