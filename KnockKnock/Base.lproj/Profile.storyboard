@@ -267,10 +267,10 @@
             </objects>
             <point key="canvasLocation" x="1275.5" y="1596.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Host View Controller-->
         <scene sceneID="7ww-eJ-OGZ">
             <objects>
-                <viewController id="Nqz-lO-fYc" sceneMemberID="viewController">
+                <viewController id="Nqz-lO-fYc" customClass="HostViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hve-74-AdJ"/>
                         <viewControllerLayoutGuide type="bottom" id="uwx-Jc-zRr"/>
@@ -280,7 +280,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hosted Tours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fi-NC-Ogi">
-                                <rect key="frame" x="105" y="323" width="103" height="21"/>
+                                <rect key="frame" x="128" y="104" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
