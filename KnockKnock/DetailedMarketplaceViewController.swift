@@ -21,6 +21,8 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     @IBOutlet weak var summaryField: UITextField!
     @IBOutlet weak var tourPic: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var startDateLabel: UILabel!
+    @IBOutlet weak var endDateLabel: UILabel!
     
     var currentObject : PFObject!
     var activityArray = [PFObject]()
@@ -31,11 +33,18 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         let image : PFFile
         let currentObjIti = currentObject["itinerary"]
         self.headerLabel.text = currentObjIti.objectForKey("title") as? String
-        self.priceLabel.text = String(currentObject.objectForKey("price")!)
+        self.priceLabel.text = String(currentObject.objectForKey("price")!) + " SGD/PAX"
         
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let endDate = dateFormatter.stringFromDate(currentObject.objectForKey("lastAvailability") as! NSDate)
+        let startDate = dateFormatter.stringFromDate(currentObject.objectForKey("startAvailability") as! NSDate)
         
-        self.hostLabel.text = currentObject!["host"].objectForKey("fName")! as? String
-        self.contactLabel.text = String(currentObject!["host"].objectForKey("contact")!)
+        self.startDateLabel.text = startDate
+        self.endDateLabel.text = endDate
+        
+        self.hostLabel.text = String(currentObject!["host"].objectForKey("fName")!)
+        self.contactLabel.text = String(currentObject["host"].objectForKey("contact")!)
         self.summaryField.text = currentObjIti.objectForKey("summary") as? String
         image = currentObjIti.objectForKey("image")! as! PFFile
         
