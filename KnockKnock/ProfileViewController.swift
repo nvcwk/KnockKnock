@@ -21,17 +21,25 @@ class ProfileViewController: UIViewController{
     @IBOutlet weak var tf_birthday: UITextField!
     @IBOutlet weak var tf_contactNo: UITextField!
     
+    
+    var selectedDate = NSDate()
+    let datePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Get Current User
         var current_User = PFUser.currentUser();
         
+        // Setting default values
         tf_email.text = current_User?.email
         
         if let birthDate = PFUser.currentUser()!["dob"] as? NSDate {
-            var dateFormatter = NSDateFormatter()
-            dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
-            tf_birthday.text = dateFormatter.stringFromDate(birthDate)
+            
+            tf_birthday.text = KnockKnockUtils.dateToString(birthDate)
+            //            var dateFormatter = NSDateFormatter()
+            //            dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+            //            tf_birthday.text = dateFormatter.stringFromDate(birthDate)
         }
         
         if let contactNumber = PFUser.currentUser()!["contact"] as? Int {
@@ -39,8 +47,6 @@ class ProfileViewController: UIViewController{
         }
         
     }
-
-    
     
     
     @IBAction func onClick_editprofile(sender: AnyObject) {
@@ -48,19 +54,42 @@ class ProfileViewController: UIViewController{
         if(editProfile.titleLabel?.text != "Save"){
             enableEditing()
             editProfile.titleLabel?.text = "Save"
+            changePhoto.titleLabel?.text = "Cancel"
+            
         } else {
+            
+            ParseUtils.updateUser(self, email: tf_email.text!, dob: selectedDate, contact: Int(tf_contactNo.text!)!)
             disableEditing()
             editProfile.titleLabel?.text = "Edit Profile"
         }
 
+    }
+    
+    @IBAction func onClick_save(sender: AnyObject){
+        
     }
 
     
     
     func enableEditing(){
         tf_email.enabled == true
+        
         tf_birthday.enabled == true
+        
+        // Date Picker
+        datePicker.datePickerMode = UIDatePickerMode.Date
+        datePicker.maximumDate = NSDate()
+        datePicker.addTarget(self, action: Selector("updateBirthday:"),
+            forControlEvents:UIControlEvents.ValueChanged)
+        tf_birthday.inputView = datePicker
+        
         tf_contactNo.enabled == true
+    }
+    
+    
+    func updateBirthday(sender: UIDatePicker) {
+        tf_birthday.text = KnockKnockUtils.dateToString(sender.date)
+        selectedDate = sender.date
     }
     
     
