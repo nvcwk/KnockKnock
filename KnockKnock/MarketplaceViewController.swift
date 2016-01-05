@@ -111,12 +111,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         
         if sortByEndDate{
-            //print(today)
             query.whereKey("lastAvailability", lessThan: endDate)
         }
-        
-        print(today)
-        print(endDate)
         
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
@@ -318,6 +314,10 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         today = dateFormatter.dateFromString(convertedDate)!
         
         sortByStartDate = true
+        
+        sortByEndDate = false
+        
+        endDate = NSDate()
         
         callingParse(sortByPrice, sortByStartDate: sortByStartDate, sortByEndDate: sortByEndDate)
         
