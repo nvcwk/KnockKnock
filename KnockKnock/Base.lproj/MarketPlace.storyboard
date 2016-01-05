@@ -98,8 +98,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeY-jT-nza">
-                                <rect key="frame" x="30" y="108" width="89" height="30"/>
-                                <state key="normal" title="Sort by Price"/>
+                                <rect key="frame" x="6" y="112" width="128" height="30"/>
+                                <state key="normal" title="Price: Low To High"/>
                                 <connections>
                                     <action selector="sortByPrice:" destination="maF-xh-XER" eventType="touchUpInside" id="rPV-Xo-bdw"/>
                                 </connections>
@@ -126,6 +126,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEz-uF-8P0">
+                                <rect key="frame" x="6" y="132" width="128" height="30"/>
+                                <state key="normal" title="Price: High To Low"/>
+                                <connections>
+                                    <action selector="sortByPriceDesc:" destination="maF-xh-XER" eventType="touchUpInside" id="CDb-Ju-71p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
