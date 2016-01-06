@@ -21,6 +21,7 @@
 		E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2201C16E12C00479927 /* ParseUtils.swift */; };
 		E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */; };
 		E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */; };
+		E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14174F41C3D7E57005E3B9A /* MarketActivityTableViewCell.swift */; };
 		E159A8301C33DE4200EF80A4 /* PubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E159A82E1C33DE4200EF80A4 /* PubTableViewCell.swift */; };
 		E159A8311C33DE4200EF80A4 /* PubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E159A82F1C33DE4200EF80A4 /* PubTableViewCell.xib */; };
 		E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E159A8361C33E9E600EF80A4 /* PubTableViewController.swift */; };
@@ -36,6 +37,11 @@
 		E187E5451C32E80800E00E5A /* ItiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E187E5431C32E80800E00E5A /* ItiTableViewCell.xib */; };
 		E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187E5501C32F29100E00E5A /* ItiTableViewController.swift */; };
 		E187E5551C32F3A700E00E5A /* ItiTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E187E5541C32F3A700E00E5A /* ItiTableViewController.xib */; };
+		E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE1751C3D7D74009FAB48 /* Marketplace.swift */; };
+		E19FE1781C3D7D84009FAB48 /* MarketplaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */; };
+		E19FE17B1C3D7D8F009FAB48 /* MarketplaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE1791C3D7D8F009FAB48 /* MarketplaceTableViewController.swift */; };
+		E19FE17C1C3D7D8F009FAB48 /* MarketplaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE17A1C3D7D8F009FAB48 /* MarketplaceViewController.swift */; };
+		E19FE17E1C3D7DA8009FAB48 /* DetailedMarketplaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE17D1C3D7DA8009FAB48 /* DetailedMarketplaceViewController.swift */; };
 		E1B95E441C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B95E431C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift */; };
 		E1B95E461C36C14600F85B8F /* PubDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B95E451C36C14600F85B8F /* PubDetailsViewController.swift */; };
 		E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */; };
@@ -95,6 +101,7 @@
 		E11AC2201C16E12C00479927 /* ParseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUtils.swift; sourceTree = "<group>"; };
 		E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiMainViewController.swift; sourceTree = "<group>"; };
+		E14174F41C3D7E57005E3B9A /* MarketActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketActivityTableViewCell.swift; sourceTree = "<group>"; };
 		E159A82E1C33DE4200EF80A4 /* PubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubTableViewCell.swift; sourceTree = "<group>"; };
 		E159A82F1C33DE4200EF80A4 /* PubTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PubTableViewCell.xib; sourceTree = "<group>"; };
 		E159A8361C33E9E600EF80A4 /* PubTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubTableViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +117,11 @@
 		E187E5431C32E80800E00E5A /* ItiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiTableViewCell.xib; sourceTree = "<group>"; };
 		E187E5501C32F29100E00E5A /* ItiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiTableViewController.swift; sourceTree = "<group>"; };
 		E187E5541C32F3A700E00E5A /* ItiTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiTableViewController.xib; sourceTree = "<group>"; };
+		E19FE1751C3D7D74009FAB48 /* Marketplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
+		E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTableViewCell.swift; sourceTree = "<group>"; };
+		E19FE1791C3D7D8F009FAB48 /* MarketplaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTableViewController.swift; sourceTree = "<group>"; };
+		E19FE17A1C3D7D8F009FAB48 /* MarketplaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceViewController.swift; sourceTree = "<group>"; };
+		E19FE17D1C3D7DA8009FAB48 /* DetailedMarketplaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedMarketplaceViewController.swift; sourceTree = "<group>"; };
 		E1B95E431C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		E1B95E451C36C14600F85B8F /* PubDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubDetailsViewController.swift; sourceTree = "<group>"; };
 		E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockRule.swift; sourceTree = "<group>"; };
@@ -266,6 +278,7 @@
 		E11AC2081C16244900479927 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E14174F61C3D7E8A005E3B9A /* MarketPlace */,
 				E1A7DA941C3CB14900759A8F /* Itinerary */,
 				E11AC2001C1618A100479927 /* LoginViewController.swift */,
 				E11AC20B1C16CD3200479927 /* HomeViewController.swift */,
@@ -285,6 +298,16 @@
 				E1CAA8081C26A7BC00AB4637 /* KnockKnockImageUtils.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E14174F61C3D7E8A005E3B9A /* MarketPlace */ = {
+			isa = PBXGroup;
+			children = (
+				E19FE1791C3D7D8F009FAB48 /* MarketplaceTableViewController.swift */,
+				E19FE17D1C3D7DA8009FAB48 /* DetailedMarketplaceViewController.swift */,
+				E19FE17A1C3D7D8F009FAB48 /* MarketplaceViewController.swift */,
+			);
+			name = MarketPlace;
 			sourceTree = "<group>";
 		};
 		E187E5391C32E48700E00E5A /* ExtLib */ = {
@@ -315,7 +338,9 @@
 			isa = PBXGroup;
 			children = (
 				E1CAA80A1C27053300AB4637 /* ActivityTableViewCell.swift */,
+				E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */,
 				E1B95E431C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift */,
+				E14174F41C3D7E57005E3B9A /* MarketActivityTableViewCell.swift */,
 			);
 			name = ViewCell;
 			sourceTree = "<group>";
@@ -323,6 +348,7 @@
 		E1CAA80C1C27129400AB4637 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				E19FE1751C3D7D74009FAB48 /* Marketplace.swift */,
 				E1751ABA1C273210000A1360 /* Activity.swift */,
 			);
 			name = Entity;
@@ -556,19 +582,25 @@
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
 				E1B95E441C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
+				E19FE1781C3D7D84009FAB48 /* MarketplaceTableViewCell.swift in Sources */,
 				E187E5441C32E80800E00E5A /* ItiTableViewCell.swift in Sources */,
 				E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */,
 				E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */,
+				E19FE17B1C3D7D8F009FAB48 /* MarketplaceTableViewController.swift in Sources */,
+				E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */,
 				E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */,
 				E1822CE41C27C0C500E78ED6 /* ItiPublishViewController.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
 				E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */,
+				E19FE17C1C3D7D8F009FAB48 /* MarketplaceViewController.swift in Sources */,
 				E1CAA80B1C27053300AB4637 /* ActivityTableViewCell.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
+				E19FE17E1C3D7DA8009FAB48 /* DetailedMarketplaceViewController.swift in Sources */,
 				E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
+				E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */,
 				E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */,
 				E1B95E461C36C14600F85B8F /* PubDetailsViewController.swift in Sources */,
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
