@@ -35,6 +35,13 @@ class KnockKnockUtils {
         return formatter.stringFromDate(date)
     }
     
+    // Convert date to string
+    static func timeToString(date: NSDate) -> String {
+        let formatter = NSDateFormatter()
+        formatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        return formatter.stringFromDate(date)
+    }
+    
     // Resize Image
     static func RBResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
