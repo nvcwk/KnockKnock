@@ -26,8 +26,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     let startDatePicker = UIDatePicker()
     let endDatePicker = UIDatePicker()
-    var selectedEndDate = 5.days.fromDate(NSDate())
-    var selectedStartDate = 5.days.fromDate(NSDate())
+    var selectedEndDate = NSDate()
+    var selectedStartDate = NSDate()
     
     
     var searchActive : Bool = false
@@ -57,7 +57,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         let initialDate = convertDateFormat(NSDate())
 
         startDatePicker.datePickerMode = UIDatePickerMode.Date
-        startDatePicker.minimumDate = 5.days.fromDate(NSDate())
+        startDatePicker.minimumDate = NSDate()
         startDatePicker.addTarget(self, action: Selector("updateStartDate:"),
             forControlEvents:UIControlEvents.ValueChanged)
         
@@ -65,7 +65,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         tf_startDate.text = initialDate
         
         endDatePicker.datePickerMode = UIDatePickerMode.Date
-        endDatePicker.minimumDate = 5.days.fromDate(NSDate())
+        endDatePicker.minimumDate = NSDate()
         endDatePicker.addTarget(self, action: Selector("updateEndDate:"),
             forControlEvents:UIControlEvents.ValueChanged)
         

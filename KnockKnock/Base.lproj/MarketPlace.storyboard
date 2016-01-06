@@ -165,7 +165,6 @@
                     <navigationItem key="navigationItem" id="tiG-v7-GTD">
                         <nil key="title"/>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="searchBar" destination="R71-1x-4Eo" id="uEt-2v-TTU"/>
                         <outlet property="tableView" destination="ubp-Xg-LFE" id="LmI-qS-fJs"/>
@@ -369,7 +368,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="clC-gd-tai" secondAttribute="trailing" id="yhA-3q-eWR"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="contactLabel" destination="4Ac-rl-Awt" id="jm3-MY-nBG"/>
                         <outlet property="endDateLabel" destination="ok8-qx-RIu" id="Yxj-tr-Mmb"/>
