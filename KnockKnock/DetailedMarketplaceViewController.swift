@@ -141,7 +141,7 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
-        let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath) as! ActivityTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath) as! MarketActivityTableViewCell
         
        let activity = activityArray[indexPath.row]
         
