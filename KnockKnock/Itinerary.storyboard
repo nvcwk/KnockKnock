@@ -550,15 +550,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muv-vq-BXN">
+                                <rect key="frame" x="132" y="561" width="111" height="30"/>
+                                <state key="normal" title="Browse Itinerary"/>
+                                <connections>
+                                    <segue destination="ayT-fK-nBV" kind="show" identifier="toItiView" id="U4B-yk-b4V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qbO-ue-eRY" firstAttribute="leading" secondItem="33J-Xx-Tve" secondAttribute="leadingMargin" constant="4" id="1Dk-kw-gHn"/>
                             <constraint firstItem="RSQ-KR-pIB" firstAttribute="trailing" secondItem="qbO-ue-eRY" secondAttribute="trailing" id="2EH-VY-uzO"/>
                             <constraint firstItem="reM-nR-Tl0" firstAttribute="leading" secondItem="IsE-Cy-AmN" secondAttribute="leading" id="4AI-vo-rfG"/>
+                            <constraint firstItem="muv-vq-BXN" firstAttribute="centerX" secondItem="reM-nR-Tl0" secondAttribute="centerX" id="56q-eT-Aj7"/>
                             <constraint firstItem="RSQ-KR-pIB" firstAttribute="top" secondItem="qbO-ue-eRY" secondAttribute="bottom" constant="25" id="5zm-s2-AUl"/>
                             <constraint firstItem="qbO-ue-eRY" firstAttribute="centerX" secondItem="P3t-ih-GoO" secondAttribute="centerX" id="E94-Ia-ugZ"/>
                             <constraint firstItem="reM-nR-Tl0" firstAttribute="trailing" secondItem="IsE-Cy-AmN" secondAttribute="trailing" id="GBC-7G-AZv"/>
+                            <constraint firstItem="muv-vq-BXN" firstAttribute="top" secondItem="reM-nR-Tl0" secondAttribute="bottom" constant="19" id="Gp9-jR-sic"/>
                             <constraint firstItem="P3t-ih-GoO" firstAttribute="leading" secondItem="33J-Xx-Tve" secondAttribute="leading" id="Jds-U5-xqU"/>
                             <constraint firstItem="RUG-I6-OWY" firstAttribute="top" secondItem="reM-nR-Tl0" secondAttribute="bottom" constant="76" id="Z5U-st-7Jo"/>
                             <constraint firstItem="RSQ-KR-pIB" firstAttribute="leading" secondItem="IsE-Cy-AmN" secondAttribute="leading" id="afz-uD-Onp"/>
@@ -572,11 +581,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Published" id="OMh-Rb-Fcu">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="N4S-th-G0P">
-                            <connections>
-                                <segue destination="okX-9j-RDQ" kind="unwind" unwindAction="backItinerary:" id="tZS-DS-igw"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Delete" id="xvE-5S-7oX">
                             <connections>
                                 <action selector="actionPubDelete:" destination="GH3-TZ-QAj" id="1w6-H2-pII"/>
@@ -592,7 +596,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJp-Ib-led" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="okX-9j-RDQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1831.5" y="-1714.5"/>
         </scene>
@@ -738,11 +741,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Itinerary" id="SYt-vv-ld4">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="a6j-rV-KeX">
-                            <connections>
-                                <segue destination="Kci-Bf-17v" kind="unwind" unwindAction="backItinerary:" id="LgL-Z3-LwH"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Publish" id="4bz-AL-9hN">
                             <connections>
                                 <segue destination="7HZ-lp-O8I" kind="show" identifier="fromItitoPublish" id="imT-ux-Uue"/>
@@ -761,7 +759,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xAl-nG-QzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Kci-Bf-17v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1831.5" y="-790"/>
         </scene>
@@ -788,5 +785,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="imT-ux-Uue"/>
+        <segue reference="U4B-yk-b4V"/>
     </inferredMetricsTieBreakers>
 </document>

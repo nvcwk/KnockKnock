@@ -210,7 +210,6 @@
 				E11AC20D1C16DD3A00479927 /* Utilities */,
 				E11AC2081C16244900479927 /* ViewControllers */,
 				E11AC2071C16242C00479927 /* StoryBoards */,
-				E11AC2061C16241600479927 /* CustomUI */,
 				E11461F61C1170B900983BC3 /* AppDelegate.swift */,
 				E11461FF1C1170B900983BC3 /* Assets.xcassets */,
 				E11462041C1170B900983BC3 /* Info.plist */,
@@ -267,19 +266,12 @@
 		E11AC2081C16244900479927 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E1A7DA941C3CB14900759A8F /* Itinerary */,
 				E11AC2001C1618A100479927 /* LoginViewController.swift */,
 				E11AC20B1C16CD3200479927 /* HomeViewController.swift */,
 				E1E4B4451C17291000242A83 /* ForgetViewController.swift */,
 				E1E4B4541C18601100242A83 /* RegisterViewController.swift */,
 				E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */,
-				E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */,
-				E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */,
-				E1CAA7EE1C24853600AB4637 /* ItiDaysSelectorViewController.swift */,
-				E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */,
-				E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */,
-				E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */,
-				E159A83A1C345CE700EF80A4 /* ItiDetailsViewController.swift */,
-				E1B95E451C36C14600F85B8F /* PubDetailsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -301,6 +293,22 @@
 				E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */,
 			);
 			name = ExtLib;
+			sourceTree = "<group>";
+		};
+		E1A7DA941C3CB14900759A8F /* Itinerary */ = {
+			isa = PBXGroup;
+			children = (
+				E11AC2061C16241600479927 /* CustomUI */,
+				E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */,
+				E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */,
+				E1CAA7EE1C24853600AB4637 /* ItiDaysSelectorViewController.swift */,
+				E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */,
+				E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */,
+				E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */,
+				E159A83A1C345CE700EF80A4 /* ItiDetailsViewController.swift */,
+				E1B95E451C36C14600F85B8F /* PubDetailsViewController.swift */,
+			);
+			name = Itinerary;
 			sourceTree = "<group>";
 		};
 		E1CAA8011C254F9A00AB4637 /* ViewCell */ = {

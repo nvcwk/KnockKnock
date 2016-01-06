@@ -21,14 +21,16 @@ class PubDetailsViewController: UIViewController {
     
     var pubObj = PFObject(className: "MarketPlace")
     
+    var itineraryObj = PFObject(className: "Itinerary")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let itinerary = pubObj["itinerary"] as! PFObject
+        itineraryObj = pubObj["itinerary"] as! PFObject
         
-        lb_title.text = itinerary["title"] as! String
+        lb_title.text = itineraryObj["title"] as! String
         
-        image_background.file = itinerary["image"] as! PFFile
+        image_background.file = itineraryObj["image"] as! PFFile
         image_background.loadInBackground()
         
         lb_price.text = "Price: $" + String(pubObj["price"] as! Int)
@@ -64,5 +66,13 @@ class PubDetailsViewController: UIViewController {
         alertController.addAction(CancelAction)
         
         self.presentViewController(alertController, animated: true, completion:nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue .identifier == "toItiView") {
+            let controller = segue.destinationViewController as! ItiDetailsViewController
+
+            controller.itineraryObj = itineraryObj
+        }
     }
 }
