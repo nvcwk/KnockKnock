@@ -15,11 +15,14 @@ pod 'SwiftValidator'
 pod 'CountryPicker'
 pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
+<<<<<<< HEAD
+=======
 pod 'DZNPhotoPickerController/Editor'
 pod 'GMStepper'
 pod 'GoogleMaps'
 pod 'RLDTableViewSuite'
 pod 'SwiftDate'
+>>>>>>> MarketPlaceBackEnd
 
 =begin 
 To Consider 
