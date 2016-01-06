@@ -24,6 +24,10 @@ class ItiDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         activities = itineraryObj["activities"] as! NSArray
+        
+        activities = activities.sortedArrayUsingDescriptors([
+            NSSortDescriptor(key: "day", ascending: true)
+            ])
     
         lb_title.text = itineraryObj["title"] as! String
         
