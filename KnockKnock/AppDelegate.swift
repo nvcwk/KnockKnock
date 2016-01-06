@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import ParseFacebookUtilsV4
 import IQKeyboardManagerSwift
+import GoogleMaps
 
 
 @UIApplicationMain
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
        
+        GMSServices.provideAPIKey("AIzaSyCU2X9erRL1NBnrHOSN6mq7Qq2qHhsVOWQ")
         ParseUtils.loadParse()
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         

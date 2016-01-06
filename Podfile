@@ -1,4 +1,5 @@
 platform :ios, "8.0"
+
 use_frameworks!
 
 pod 'AFNetworking', '~> 2.0'  
@@ -9,6 +10,7 @@ pod 'Parse'
 pod 'ParseFacebookUtilsV4'
 pod 'ParseUI'
 
+# Custom UI
 pod 'ZFRippleButton'
 pod 'SwiftSpinner'
 pod 'SwiftValidator'
@@ -17,8 +19,7 @@ pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
 pod 'DZNPhotoPickerController/Editor'
 pod 'GMStepper'
-pod 'GoogleMaps'
-pod 'RLDTableViewSuite'
+pod 'GoogleMaps' 
 pod 'SwiftDate'
 
 =begin 
@@ -26,4 +27,5 @@ To Consider
 pod 'LRTextField'
 pod 'JVFloatLabeledTextField'
 pod 'DZNPhotoPickerController'
+pod 'RLDTableViewSuite'
 =end
