@@ -27,6 +27,7 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.5.0)
   - CountryPicker (1.2.3)
+  - DZNPhotoPickerController/Editor (1.6.1)
   - FBSDKCoreKit (4.8.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.8.0)
@@ -38,6 +39,8 @@ PODS:
     - FBSDKCoreKit/arc
   - FBSDKLoginKit (4.8.0):
     - FBSDKCoreKit
+  - GMStepper (1.1.0)
+  - GoogleMaps (1.11.1)
   - IQKeyboardManagerSwift (3.3.4)
   - ObjectiveSugar (0.9)
   - Parse (1.10.0):
@@ -50,6 +53,8 @@ PODS:
   - ParseUI (1.1.7):
     - Bolts/Tasks (~> 1.3)
     - Parse (~> 1.9)
+  - RLDTableViewSuite (0.2.0)
+  - SwiftDate (2.0.2)
   - SwiftSpinner (0.8.0)
   - SwiftValidator (3.0.1)
   - TextFieldEffects (1.1.0)
@@ -58,11 +63,16 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - CountryPicker
+  - DZNPhotoPickerController/Editor
+  - GMStepper
+  - GoogleMaps
   - IQKeyboardManagerSwift
   - ObjectiveSugar (~> 0.5)
   - Parse
   - ParseFacebookUtilsV4
   - ParseUI
+  - RLDTableViewSuite
+  - SwiftDate
   - SwiftSpinner
   - SwiftValidator
   - TextFieldEffects
@@ -72,13 +82,18 @@ SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   CountryPicker: 6f166e2f1cc250f07eba4c587fbe1c0efc21049b
+  DZNPhotoPickerController: 1fcd18f2767b9c713865f0c09b32e1ba24f1516c
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
+  GMStepper: 3b7922778a80e0eab89a55003ca36b25fc2393b7
+  GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   ObjectiveSugar: 18409ee1ec578dd8598b55e5008f393488dca5cf
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
   ParseFacebookUtilsV4: eab9b4ade12f0800b4d30f6b808bca55ce17a0e9
   ParseUI: c2bcdfbb00330e464b5b773266ae221697a3bb7b
+  RLDTableViewSuite: 451d08bf4385aa0d8e920e5af3abff05ccca1bb8
+  SwiftDate: b4f4d0962afe48365ad2800c9850a6626deb9359
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   SwiftValidator: c59223144754045d7691febdc3b3ecc2e73b609c
   TextFieldEffects: 8e43fea8836e97be80fc4db27a1596c9e98a26ba
