@@ -96,7 +96,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         // This query calls for the listing in the marketplace and validate the date (lastavailabledate < today's date)
         let query = PFQuery(className: "MarketPlace")
-        query.whereKey("lastAvailability", greaterThan: today)
+        //query.whereKey("lastAvailability", greaterThan: today)
         query.includeKey("itinerary")
         query.includeKey("host")
         query.includeKey("activities")
@@ -109,9 +109,21 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
         
+        /*
+        if sortByStartDate{
+            query.whereKey("startAvailability", greaterThanOrEqualTo: today)
+        }else {
+            query.whereKey("startAvailability", greaterThan: today)
+        }
+        */
         
-        if sortByEndDate{
-            query.whereKey("lastAvailability", lessThan: endDate)
+        if sortByStartDate{
+            query.whereKey("startAvailability", lessThanOrEqualTo: today)
+            query.whereKey("lastAvailability", greaterThan: today)
+        }else if sortByEndDate{
+            query.whereKey("lastAvailability", lessThanOrEqualTo: endDate)
+        }else {
+            query.whereKey("lastAvailability", greaterThan: today)
         }
         
         query.findObjectsInBackgroundWithBlock {
