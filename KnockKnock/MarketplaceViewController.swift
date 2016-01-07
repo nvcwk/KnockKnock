@@ -96,7 +96,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         // This query calls for the listing in the marketplace and validate the date (lastavailabledate < today's date)
         let query = PFQuery(className: "MarketPlace")
-        //query.whereKey("lastAvailability", greaterThan: today)
+        query.whereKey("lastAvailability", greaterThan: today)
         query.includeKey("itinerary")
         query.includeKey("host")
         query.includeKey("activities")
@@ -109,22 +109,20 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
         
-        /*
-        if sortByStartDate{
-            query.whereKey("startAvailability", greaterThanOrEqualTo: today)
-        }else {
-            query.whereKey("startAvailability", greaterThan: today)
-        }
-        */
         
+        today = today.add(days: 1)
+        endDate = endDate.add(days: 1)
+
         if sortByStartDate{
-            query.whereKey("startAvailability", lessThanOrEqualTo: today)
-            query.whereKey("lastAvailability", greaterThan: today)
-        }else if sortByEndDate{
-            query.whereKey("lastAvailability", lessThanOrEqualTo: endDate)
-        }else {
+           query.whereKey("startAvailability", lessThan: today)
             query.whereKey("lastAvailability", greaterThan: today)
         }
+        if sortByEndDate{
+            query.whereKey("lastAvailability", greaterThan: endDate)
+        }
+        
+
+        query.whereKey("lastAvailability", greaterThan: endDate)
         
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
@@ -325,11 +323,12 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         today = dateFormatter.dateFromString(convertedDate)!
         
+        endDate = dateFormatter.dateFromString(convertedDate)!
+        
         sortByStartDate = true
         
         sortByEndDate = false
         
-        endDate = NSDate()
         
         callingParse(sortByPrice, sortByStartDate: sortByStartDate, sortByEndDate: sortByEndDate)
         
@@ -350,6 +349,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         endDate = dateFormatter.dateFromString(convertedDate)!
         
+        sortByStartDate = false
         sortByEndDate = true
         
         callingParse(sortByPrice, sortByStartDate: sortByStartDate, sortByEndDate: sortByEndDate)
