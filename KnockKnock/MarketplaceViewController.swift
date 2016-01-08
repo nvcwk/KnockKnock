@@ -180,15 +180,16 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MarketplaceTableViewCell
         let price : Int
         let image : PFFile
+        let title1 : String
         if(searchActive){
             let filteredMarketplaceObject = filteredMarketplaceArray[indexPath.row]
-            title = filteredMarketplaceObject["itinerary"].objectForKey("title") as? String
+            title1 = (filteredMarketplaceObject["itinerary"].objectForKey("title") as? String)!
             price = filteredMarketplaceObject.objectForKey("price") as! Int
             image = filteredMarketplaceObject["itinerary"].objectForKey("image")! as! PFFile
 
         } else {
             let marketplaceObject = marketplaceArray[indexPath.row]
-            title = marketplaceObject["itinerary"].objectForKey("title") as? String
+            title1 = (marketplaceObject["itinerary"].objectForKey("title") as? String)!
             price = marketplaceArray[indexPath.row].objectForKey("price") as! Int
             image = marketplaceObject["itinerary"].objectForKey("image")! as! PFFile
         }
@@ -202,7 +203,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         cell.priceLabel.text = "S$" + String(price) + "/pax"
         
-        cell.headerLabel?.text = title
+        cell.headerLabel?.text = title1
 
         return cell
     }
