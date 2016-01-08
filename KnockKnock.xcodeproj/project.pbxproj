@@ -28,6 +28,8 @@
 		E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E159A8361C33E9E600EF80A4 /* PubTableViewController.swift */; };
 		E159A8391C33E9E600EF80A4 /* PubTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E159A8371C33E9E600EF80A4 /* PubTableViewController.xib */; };
 		E159A83B1C345CE700EF80A4 /* ItiDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E159A83A1C345CE700EF80A4 /* ItiDetailsViewController.swift */; };
+		E15BF77C1C3FE191009A3C31 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF77B1C3FE191009A3C31 /* ProfileEditViewController.swift */; };
+		E15BF77E1C3FE617009A3C31 /* ProfileChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF77D1C3FE617009A3C31 /* ProfileChangePassViewController.swift */; };
 		E16B357C1C1CC9D4003897EF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B357A1C1CC9D4003897EF /* Profile.storyboard */; };
 		E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B357D1C1CCA39003897EF /* Itinerary.storyboard */; };
 		E16B35861C1CCC65003897EF /* MarketPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B35841C1CCC65003897EF /* MarketPlace.storyboard */; };
@@ -109,6 +111,8 @@
 		E159A8361C33E9E600EF80A4 /* PubTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubTableViewController.swift; sourceTree = "<group>"; };
 		E159A8371C33E9E600EF80A4 /* PubTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PubTableViewController.xib; sourceTree = "<group>"; };
 		E159A83A1C345CE700EF80A4 /* ItiDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiDetailsViewController.swift; sourceTree = "<group>"; };
+		E15BF77B1C3FE191009A3C31 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		E15BF77D1C3FE617009A3C31 /* ProfileChangePassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileChangePassViewController.swift; sourceTree = "<group>"; };
 		E16B357B1C1CC9D4003897EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		E16B357D1C1CCA39003897EF /* Itinerary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Itinerary.storyboard; sourceTree = "<group>"; };
 		E16B35851C1CCC65003897EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MarketPlace.storyboard; sourceTree = "<group>"; };
@@ -288,6 +292,8 @@
 				E1E4B4541C18601100242A83 /* RegisterViewController.swift */,
 				E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */,
 				7087D50C1C27D8E90005711E /* ProfileViewController.swift */,
+				E15BF77B1C3FE191009A3C31 /* ProfileEditViewController.swift */,
+				E15BF77D1C3FE617009A3C31 /* ProfileChangePassViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -601,9 +607,11 @@
 				E19FE17C1C3D7D8F009FAB48 /* MarketplaceViewController.swift in Sources */,
 				E1CAA80B1C27053300AB4637 /* ActivityTableViewCell.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
+				E15BF77E1C3FE617009A3C31 /* ProfileChangePassViewController.swift in Sources */,
 				E19FE17E1C3D7DA8009FAB48 /* DetailedMarketplaceViewController.swift in Sources */,
 				E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
+				E15BF77C1C3FE191009A3C31 /* ProfileEditViewController.swift in Sources */,
 				E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */,
 				E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */,
 				E1B95E461C36C14600F85B8F /* PubDetailsViewController.swift in Sources */,

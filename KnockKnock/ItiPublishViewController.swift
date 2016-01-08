@@ -80,7 +80,7 @@ class ItiPublishViewController: UIViewController {
             if (success) {
                 
                 KnockKnockUtils.okAlert(self, title: "Publish!", message: "Successful", handle: { (action:UIAlertAction!) in
-                     self.dismissViewControllerAnimated(true, completion: nil)})
+                     self.navigationController?.popToRootViewControllerAnimated(false)})
             } else {
                 KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
             }

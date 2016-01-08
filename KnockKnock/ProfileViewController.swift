@@ -8,94 +8,126 @@
 
 import UIKit
 import Parse
+import ParseUI
+import ZFRippleButton
+import TextFieldEffects
+import SwiftSpinner
+import SwiftValidator
 
-class ProfileViewController: UIViewController{
-    
-    @IBOutlet weak var editProfile: UIButton!
-    @IBOutlet weak var changePhoto : UIButton!
+class ProfileViewController: UIViewController {
+    @IBOutlet weak var img_profile : PFImageView!
 
-    @IBOutlet weak var hostTours: UIButton!
-    @IBOutlet weak var joinedTours: UIButton!
-    
+    @IBOutlet weak var btn_editSave: UIButton!
     @IBOutlet weak var tf_email: UITextField!
     @IBOutlet weak var tf_birthday: UITextField!
     @IBOutlet weak var tf_contactNo: UITextField!
     
+    let imagePicker = UIImagePickerController()
     
-    var selectedDate = NSDate()
-    let datePicker = UIDatePicker()
+    @IBAction func actionSelectPic(sender: UITapGestureRecognizer) {
+        KnockKnockImageUtils.imagePicker(self, picker: self.imagePicker)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Get Current User
-        var current_User = PFUser.currentUser();
+        let currentUser = PFUser.currentUser()!;
+        
+        let fName = currentUser["fName"] as! String
+        let lName = currentUser["lName"] as! String
+        
+        navigationItem.title = fName + " " + lName
+        
+        imagePicker.delegate = self
+        
+        loadProfilePic()
+        setupTxtFields()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadFields:",name:"setupProfileTxtFields", object: nil)
+    }
+    
+    func reloadFields(notification: NSNotification) {
+        setupTxtFields()
+    }
+    
+    func loadProfilePic() {
+        let currentUser = PFUser.currentUser()!;
+        
+        img_profile.file = currentUser["profilePic"] as! PFFile
+        img_profile.loadInBackground()
+    }
+    
+    func setupTxtFields() {
+        let currentUser = PFUser.currentUser()!;
         
         // Setting default values
-        tf_email.text = current_User?.email
+        tf_email.text = currentUser.email
         
-        if let birthDate = PFUser.currentUser()!["dob"] as? NSDate {
-            
+        if let birthDate = currentUser["dob"] as? NSDate {
             tf_birthday.text = KnockKnockUtils.dateToString(birthDate)
-            //            var dateFormatter = NSDateFormatter()
-            //            dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
-            //            tf_birthday.text = dateFormatter.stringFromDate(birthDate)
         }
         
-        if let contactNumber = PFUser.currentUser()!["contact"] as? Int {
-            tf_birthday.text = String(contactNumber)
+        if let contactNumber = currentUser["contact"] as? Int {
+            tf_contactNo.text = String(contactNumber)
         }
-        
     }
     
+//    
+//    func disableEditing() {
+//        tf_email.userInteractionEnabled = false
+//        tf_birthday.userInteractionEnabled = false
+//        tf_contactNo.userInteractionEnabled = false
+//        isEdit = false
+//
+//    }
+//    
+//    func enableEditing() {
+//        tf_email.userInteractionEnabled = true
+//        tf_birthday.userInteractionEnabled = true
+//        tf_contactNo.userInteractionEnabled = true
+//        isEdit = true
+//        
+//
+//    }
+//    
+    @IBAction func actionLogout(sender: UIBarButtonItem) {
+        ParseUtils.logout(self)
+    }
     
-    @IBAction func onClick_editprofile(sender: AnyObject) {
+    @IBAction func cancelProfileEdit(segue:UIStoryboardSegue) { }
+    
+}
+
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
         
-        if(editProfile.titleLabel?.text != "Save"){
-            enableEditing()
-            editProfile.titleLabel?.text = "Save"
-            changePhoto.titleLabel?.text = "Cancel"
+        SwiftSpinner.show("Updating...")
+        
+        img_profile.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        
+        let currentUser = PFUser.currentUser()!
             
-        } else {
+        currentUser["profilePic"] = PFFile(data: UIImagePNGRepresentation(img_profile.image!)!)!
             
-            ParseUtils.updateUser(self, email: tf_email.text!, dob: selectedDate, contact: Int(tf_contactNo.text!)!)
-            disableEditing()
-            editProfile.titleLabel?.text = "Edit Profile"
+        currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                SwiftSpinner.hide()
+                
+                self.loadProfilePic()
+                
+                KnockKnockUtils.okAlert(self, title: "Message!", message: "Updated New Pic!", handle: nil)
+        
+            } else {
+                KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
+            }
         }
 
     }
     
-    @IBAction func onClick_save(sender: AnyObject){
-        
-    }
-
-    
-    
-    func enableEditing(){
-        tf_email.enabled == true
-        
-        tf_birthday.enabled == true
-        
-        // Date Picker
-        datePicker.datePickerMode = UIDatePickerMode.Date
-        datePicker.maximumDate = NSDate()
-        datePicker.addTarget(self, action: Selector("updateBirthday:"),
-            forControlEvents:UIControlEvents.ValueChanged)
-        tf_birthday.inputView = datePicker
-        
-        tf_contactNo.enabled == true
-    }
-    
-    
-    func updateBirthday(sender: UIDatePicker) {
-        tf_birthday.text = KnockKnockUtils.dateToString(sender.date)
-        selectedDate = sender.date
-    }
-    
-    
-    func disableEditing(){
-        tf_email.enabled == false
-        tf_birthday.enabled == false
-        tf_contactNo.enabled == false
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
