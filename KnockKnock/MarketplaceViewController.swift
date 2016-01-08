@@ -80,6 +80,9 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         callingParse(sortByPrice, sortByStartDate: sortByStartDate, sortByEndDate: sortByEndDate)
 
 
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
         
         //reload uiviewcontroller && tableview
         sleep(3)
@@ -87,6 +90,10 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         do_table_refresh()
     }
     
+    func refresh(refreshControl: UIRefreshControl) {
+        do_table_refresh()
+        refreshControl.endRefreshing()
+    }
     // Calling Parse DB
     func callingParse(sortByPrice : Bool, sortByStartDate : Bool, sortByEndDate : Bool){
         
@@ -141,7 +148,6 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                 print("error: \(error!)  \(error!.userInfo)")
             }
         }
-        
     }
     
     func do_table_refresh(){
