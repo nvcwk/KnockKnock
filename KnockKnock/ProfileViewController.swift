@@ -47,6 +47,8 @@ class ProfileViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadFields:",name:"setupProfileTxtFields", object: nil)
     }
     
+    @IBAction func cancelProfile(segue : UIStoryboardSegue) { }
+    
     func reloadFields(notification: NSNotification) {
         setupTxtFields()
     }
@@ -94,9 +96,6 @@ class ProfileViewController: UIViewController {
     @IBAction func actionLogout(sender: UIBarButtonItem) {
         ParseUtils.logout(self)
     }
-    
-    @IBAction func cancelProfileEdit(segue:UIStoryboardSegue) { }
-    
 }
 
 
