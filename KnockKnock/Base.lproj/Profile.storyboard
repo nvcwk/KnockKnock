@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="789.5" y="858.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="8Sm-Og-LK3">
             <objects>
-                <viewController id="2ng-me-C9Q" sceneMemberID="viewController">
+                <viewController id="2ng-me-C9Q" customClass="ProfileViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FzE-j7-p1I"/>
                         <viewControllerLayoutGuide type="bottom" id="7vO-u9-d9i"/>
@@ -45,18 +45,39 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="uPh-gk-Ya7" firstAttribute="top" secondItem="FzE-j7-p1I" secondAttribute="bottom" constant="259" id="Q9d-9O-lnB"/>
-                            <constraint firstItem="uPh-gk-Ya7" firstAttribute="centerY" secondItem="PBU-cz-Msk" secondAttribute="centerY" id="j26-Pb-WGw"/>
-                            <constraint firstItem="uPh-gk-Ya7" firstAttribute="centerX" secondItem="PBU-cz-Msk" secondAttribute="centerX" id="yLg-4K-UOM"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zE2-gG-NfS"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0E1-UH-Vx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZl-ML-IAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275.5" y="858.5"/>
+            <point key="canvasLocation" x="1275.5" y="1596.5"/>
+        </scene>
+        <!--Host View Controller-->
+        <scene sceneID="7ww-eJ-OGZ">
+            <objects>
+                <viewController id="Nqz-lO-fYc" customClass="HostViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hve-74-AdJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="uwx-Jc-zRr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6U6-sJ-vs4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hosted Tours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fi-NC-Ogi">
+                                <rect key="frame" x="128" y="104" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQ5-bN-543" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781.5" y="858.5"/>
         </scene>
         <!--Profile Pic View Controller-->
         <scene sceneID="lu0-zb-WZ9">
@@ -159,6 +180,7 @@
     <resources>
         <image name="background" width="1563" height="2779"/>
         <image name="default-profile" width="30" height="30"/>
+        <image name="profile-rabbit-toy.png" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

@@ -104,5 +104,33 @@ class ParseUtils {
     static func currentUser() -> PFUser {
         return PFUser.currentUser()!
     }
+    
+    // Update user Details
+    static func updateUser(controller: UIViewController, email: String, dob: NSDate, contact: Int){
+        SwiftSpinner.show("Saving...")
+        let user = PFUser.currentUser()
+        
+        user!.email = email
+        user!["dob"] = dob
+        user!["contact"] = contact
+        
+        user!.saveInBackgroundWithBlock{
+            (succeeded: Bool, error: NSError?) -> Void in
+            SwiftSpinner.hide()
+        
+            if let error = error {
+                let errorString = error.userInfo["error"] as? NSString
+                
+                KnockKnockUtils.okAlert(controller, title: "Error!", message: String(errorString!), handle: nil)
+                // Show the errorString somewhere and let the user try again.
+            } else {
+                KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: "Success!", handle: { (action:UIAlertAction!) in
+                    KnockKnockUtils.storyBoardCall(controller, story: "Profile", animated: true, view:"profile")})
+            }
+            
+        }
+
+    }
+    
 }
 
