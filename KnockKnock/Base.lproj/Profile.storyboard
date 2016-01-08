@@ -265,7 +265,7 @@
             </objects>
             <point key="canvasLocation" x="1275.5" y="858.5"/>
         </scene>
-        <!--Title-->
+        <!--Change Password-->
         <scene sceneID="dWm-Jl-vz0">
             <objects>
                 <viewController id="vLQ-02-FTn" customClass="ProfileChangePassViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -341,10 +341,10 @@
                             <constraint firstItem="JK6-M6-ecy" firstAttribute="top" secondItem="5PG-RC-wgW" secondAttribute="bottom" constant="27" id="vFw-dR-I86"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="sfq-Od-COo">
+                    <navigationItem key="navigationItem" title="Change Password" id="sfq-Od-COo">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="IpG-0M-80m">
                             <connections>
-                                <segue destination="liB-Rk-dWo" kind="unwind" unwindAction="cancelProfileEdit:" id="CMB-dg-pre"/>
+                                <segue destination="liB-Rk-dWo" kind="unwind" unwindAction="cancelProfile:" id="MZd-1L-DOI"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Change" id="WJg-XF-c0d">
@@ -468,7 +468,7 @@
                     <navigationItem key="navigationItem" title="Title" id="CKM-mC-Q2R">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="249-K3-KAr">
                             <connections>
-                                <segue destination="hDS-Xn-Jaa" kind="unwind" unwindAction="cancelProfileEdit:" id="1U4-gb-78f"/>
+                                <segue destination="hDS-Xn-Jaa" kind="unwind" unwindAction="cancelProfile:" id="jAb-mA-GdJ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="It5-6v-fow">
