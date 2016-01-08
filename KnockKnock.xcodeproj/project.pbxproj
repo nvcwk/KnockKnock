@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087D50C1C27D8E90005711E /* ProfileViewController.swift */; };
 		C1EE6E34C4461D4E0E5AD45D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5AD10247D09E5AD74690E6 /* Pods.framework */; };
 		E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11461F61C1170B900983BC3 /* AppDelegate.swift */; };
 		E11461FE1C1170B900983BC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11461FC1C1170B900983BC3 /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		10AD83D3612BA182A25F67B2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1B5AD10247D09E5AD74690E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2934923C3E232A836459B32D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7087D50C1C27D8E90005711E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E11461F31C1170B900983BC3 /* KnockKnock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockKnock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11461F61C1170B900983BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E11461FD1C1170B900983BC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				E1E4B4451C17291000242A83 /* ForgetViewController.swift */,
 				E1E4B4541C18601100242A83 /* RegisterViewController.swift */,
 				E182C1F91C19D8F100B3DF9B /* ProfilePicViewController.swift */,
+				7087D50C1C27D8E90005711E /* ProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				E159A8301C33DE4200EF80A4 /* PubTableViewCell.swift in Sources */,
 				E159A83B1C345CE700EF80A4 /* ItiDetailsViewController.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
+				7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
 				E1B95E441C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
