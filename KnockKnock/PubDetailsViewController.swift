@@ -40,9 +40,35 @@ class PubDetailsViewController: UIViewController {
         
         lb_last.text = "Last Availability: " + KnockKnockUtils.dateToString(
             pubObj["lastAvailability"] as! NSDate)
+        
+
     }
     
-    @IBAction func actionPubDelete(sender: AnyObject) {
+    
+    
+    @IBAction func actionMore(sender: AnyObject) {
+        
+        
+        let alert:UIAlertController = UIAlertController(title: "More", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        let editAction = UIAlertAction(title: "Edit", style: UIAlertActionStyle.Default) { UIAlertAction in
+            self.performSegueWithIdentifier("toEditPublishView", sender: self)
+        }
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Default) { UIAlertAction in
+            self.actionPubDelete()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { UIAlertAction in }
+        
+        alert.addAction(editAction)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func actionPubDelete() {
         let alertController = UIAlertController(title: "Delete Publishing??", message: "Are you sure??", preferredStyle: .Alert)
         
         let OKAction = UIAlertAction(title: "Ok", style: .Default, handler: { UIAlertAction in
@@ -73,6 +99,11 @@ class PubDetailsViewController: UIViewController {
             let controller = segue.destinationViewController as! ItiDetailsViewController
 
             controller.itineraryObj = itineraryObj
+        } else  if (segue.identifier == "toEditPublishView") {
+            let controller = segue.destinationViewController as! PubDetailsEditViewController
+            controller.publishObj = pubObj
         }
     }
+    
+    
 }
