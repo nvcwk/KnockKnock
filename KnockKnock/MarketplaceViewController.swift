@@ -91,6 +91,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func refresh(refreshControl: UIRefreshControl) {
+        //callingParse(sortByPrice, sortByStartDate: sortByStartDate, sortByEndDate: sortByEndDate)
         do_table_refresh()
         refreshControl.endRefreshing()
     }
@@ -117,8 +118,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         
-        today = today.add(days: 1)
-        endDate = endDate.add(days: 1)
+       // today = today.add(days: 1)
+        //endDate = endDate.add(days: 1)
 
         if sortByStartDate{
            query.whereKey("startAvailability", lessThan: today)

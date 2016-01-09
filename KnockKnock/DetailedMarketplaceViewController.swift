@@ -40,8 +40,8 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         var endDate = currentObject.objectForKey("lastAvailability") as! NSDate
         var startDate = currentObject.objectForKey("startAvailability") as! NSDate
         
-        startDate = startDate.add(days: -1)
-        endDate = endDate.add(days: -1)
+        //startDate = startDate.add(days: -1)
+        //endDate = endDate.add(days: -1)
         
         self.startDateLabel.text = dateFormatter.stringFromDate(startDate)
         self.endDateLabel.text = dateFormatter.stringFromDate(endDate)
