@@ -91,8 +91,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func refresh(refreshControl: UIRefreshControl) {
-        //callingParse(sortByPrice, sortByStartDate: sortByStartDate, sortByEndDate: sortByEndDate)
-        do_table_refresh()
+        callingParse(sortByPrice, sortByStartDate: sortByStartDate, sortByEndDate: sortByEndDate)
+        tableView.reloadData()
         refreshControl.endRefreshing()
     }
     // Calling Parse DB
@@ -189,7 +189,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             image = filteredMarketplaceObject["itinerary"].objectForKey("image")! as! PFFile
 
         } else {
-            let marketplaceObject = marketplaceArray[indexPath.row]
+            var marketplaceObject = marketplaceArray[indexPath.row]
             title1 = (marketplaceObject["itinerary"].objectForKey("title") as? String)!
             price = marketplaceArray[indexPath.row].objectForKey("price") as! Int
             image = marketplaceObject["itinerary"].objectForKey("image")! as! PFFile
