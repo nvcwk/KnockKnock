@@ -1,3 +1,4 @@
+
 //
 //  MarketplaceViewController.swift
 //  KnockKnock
@@ -79,6 +80,9 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         callingParse(sortByPrice, sortByStartDate: sortByStartDate, sortByEndDate: sortByEndDate)
         
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
         
         //reload uiviewcontroller && tableview
         sleep(3)
@@ -86,6 +90,11 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         do_table_refresh()
     }
     
+    func refresh(refreshControl: UIRefreshControl) {
+        callingParse(sortByPrice, sortByStartDate: sortByStartDate, sortByEndDate: sortByEndDate)
+        tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
     // Calling Parse DB
     func callingParse(sortByPrice : Bool, sortByStartDate : Bool, sortByEndDate : Bool){
         
@@ -109,8 +118,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         
-        today = today.add(days: 1)
-        endDate = endDate.add(days: 1)
+        // today = today.add(days: 1)
+        //endDate = endDate.add(days: 1)
         
         if sortByStartDate{
             query.whereKey("startAvailability", lessThan: today)
@@ -140,7 +149,6 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                 print("error: \(error!)  \(error!.userInfo)")
             }
         }
-        
     }
     
     func do_table_refresh(){
@@ -173,15 +181,16 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MarketplaceTableViewCell
         let price : Int
         let image : PFFile
+        let title1 : String
         if(searchActive){
             let filteredMarketplaceObject = filteredMarketplaceArray[indexPath.row]
-            title = filteredMarketplaceObject["itinerary"].objectForKey("title") as? String
+            title1 = (filteredMarketplaceObject["itinerary"].objectForKey("title") as? String)!
             price = filteredMarketplaceObject.objectForKey("price") as! Int
             image = filteredMarketplaceObject["itinerary"].objectForKey("image")! as! PFFile
             
         } else {
-            let marketplaceObject = marketplaceArray[indexPath.row]
-            title = marketplaceObject["itinerary"].objectForKey("title") as? String
+            var marketplaceObject = marketplaceArray[indexPath.row]
+            title1 = (marketplaceObject["itinerary"].objectForKey("title") as? String)!
             price = marketplaceArray[indexPath.row].objectForKey("price") as! Int
             image = marketplaceObject["itinerary"].objectForKey("image")! as! PFFile
         }
@@ -195,7 +204,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         cell.priceLabel.text = "S$" + String(price) + "/pax"
         
-        cell.headerLabel?.text = title
+        cell.headerLabel?.text = title1
         
         return cell
     }
