@@ -21,7 +21,7 @@ pod 'DZNPhotoPickerController/Editor'
 pod 'GMStepper'
 pod 'GoogleMaps' 
 pod 'SwiftDate'
-
+pod 'CKCalendar'
 =begin 
 To Consider 
 pod 'LRTextField'

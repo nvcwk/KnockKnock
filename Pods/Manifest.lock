@@ -26,6 +26,7 @@ PODS:
   - Bolts/AppLinks (1.5.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.5.0)
+  - CKCalendar (1.0.0)
   - CountryPicker (1.2.3)
   - DZNPhotoPickerController/Editor (1.6.1)
   - FBSDKCoreKit (4.8.0):
@@ -61,6 +62,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - CKCalendar
   - CountryPicker
   - DZNPhotoPickerController/Editor
   - GMStepper
@@ -79,6 +81,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  CKCalendar: 1aebf76524bd4c4442e0002f989cd377fcdaf5e2
   CountryPicker: 6f166e2f1cc250f07eba4c587fbe1c0efc21049b
   DZNPhotoPickerController: 1fcd18f2767b9c713865f0c09b32e1ba24f1516c
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
