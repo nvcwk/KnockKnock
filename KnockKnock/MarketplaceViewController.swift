@@ -15,6 +15,7 @@ import SwiftDate
 import GMStepper
 import CoreData
 
+
 class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -28,6 +29,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     var selectedEndDate = NSDate()
     var selectedStartDate = NSDate()
     
+    var header : String!
     
     var searchActive : Bool = false
     
@@ -175,13 +177,13 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         let image : PFFile
         if(searchActive){
             let filteredMarketplaceObject = filteredMarketplaceArray[indexPath.row]
-            title = filteredMarketplaceObject["itinerary"].objectForKey("title") as? String
+            header = filteredMarketplaceObject["itinerary"].objectForKey("title") as? String
             price = filteredMarketplaceObject.objectForKey("price") as! Int
             image = filteredMarketplaceObject["itinerary"].objectForKey("image")! as! PFFile
             
         } else {
             let marketplaceObject = marketplaceArray[indexPath.row]
-            title = marketplaceObject["itinerary"].objectForKey("title") as? String
+            header = marketplaceObject["itinerary"].objectForKey("title") as? String
             price = marketplaceArray[indexPath.row].objectForKey("price") as! Int
             image = marketplaceObject["itinerary"].objectForKey("image")! as! PFFile
         }
@@ -195,7 +197,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         cell.priceLabel.text = "S$" + String(price) + "/pax"
         
-        cell.headerLabel?.text = title
+        cell.headerLabel?.text = header
         
         return cell
     }
@@ -355,4 +357,6 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         
     }
+
+
 }

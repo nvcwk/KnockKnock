@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/AFNetworking.framework"
   install_framework "Pods/Bolts.framework"
+  install_framework "Pods/CKCalendar.framework"
   install_framework "Pods/CountryPicker.framework"
   install_framework "Pods/DZNPhotoPickerController.framework"
   install_framework "Pods/FBSDKCoreKit.framework"
@@ -105,6 +106,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/AFNetworking.framework"
   install_framework "Pods/Bolts.framework"
+  install_framework "Pods/CKCalendar.framework"
   install_framework "Pods/CountryPicker.framework"
   install_framework "Pods/DZNPhotoPickerController.framework"
   install_framework "Pods/FBSDKCoreKit.framework"

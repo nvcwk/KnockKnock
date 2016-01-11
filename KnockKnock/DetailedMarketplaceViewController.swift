@@ -12,8 +12,9 @@ import ParseUI
 import Bolts
 import Foundation
 import CoreData
+import CKCalendar
 
-class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CKCalendarDelegate {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var contactLabel: UILabel!
@@ -27,6 +28,10 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     var currentObject : PFObject!
     var activityArray = [PFObject]()
     var activities = [PFObject]()
+    
+    var bookedDatesArray = [NSDate]()
+    var numOfDays: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,6 +63,10 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         
         activityArray = currentObjIti["activities"] as! [PFObject]
         
+        numOfDays = activityArray.count - 1
+        
+        bookedDatesArray = currentObject["bookedDate"] as! [NSDate]
+        
         let query = PFQuery(className: "Activity")
         for a1 in activityArray{
             query.whereKey("objectId", matchesRegex: a1.objectId! )
@@ -77,8 +86,8 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
                     print("error: \(error!)  \(error!.userInfo)")
                 }
             }
-            
         }
+        
         sleep(3)
         do_table_refresh()
     }
@@ -93,43 +102,6 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    @IBAction func bookButtonTapped(sender: AnyObject) {
-        
-        
-        let bookAlert = UIAlertController(title: "Book?", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
-            self.currentObject!["participant"] = PFUser.currentUser()
-            
-            let myAlert =
-            UIAlertController(title:"Booking!!", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
-            
-            self.currentObject!.saveInBackgroundWithBlock {
-                (success : Bool?, error: NSError?) -> Void in
-                if (success != nil) {
-                    let myAlert =
-                    UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
-                    
-                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
-                    
-                    myAlert.addAction(okAction);
-                    
-                    self.presentViewController(myAlert, animated:true, completion:nil);
-                } else {
-                    NSLog("%@", error!)
-                }
-            }
-        }))
-        
-        bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
-            
-        }))
-        
-        presentViewController(bookAlert, animated: true, completion: nil)
-    }
-    
     
     // Tableview
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -154,5 +126,64 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         
         return cell
     }
+    
+    @IBAction func bookButtonTapped(sender: AnyObject) {
+        
+        let calendar = createCalendar()
+        self.view!.addSubview(calendar)
+        calendar.delegate = self
+        
+    }
+    
+    func calendar(calendar: CKCalendarView!, willSelectDate date: NSDate!) -> Bool {
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let stringStartDateSelected = dateFormatter.stringFromDate(date)
+        let stringEndDateSelected = dateFormatter.stringFromDate(numOfDays.days.fromDate(date))
+        
+        
+        let format = NSDateFormatter()
+        format.dateFormat = "dd/MM/yyyy"
+        format.timeZone = NSTimeZone(name: "GMT")
+
+        
+        
+        let startDateSelected = format.dateFromString(stringStartDateSelected)!
+        let endDateSelected = format.dateFromString(stringEndDateSelected)!
+        
+        
+        
+        //Prevent user from selecting the booked dates
+        for object in bookedDatesArray as [NSDate]{
+            
+            let stringObjectDate = dateFormatter.stringFromDate(object)
+            
+            if (object > startDateSelected && object < endDateSelected) || (stringObjectDate == stringStartDateSelected && stringObjectDate == stringEndDateSelected){
+                return false
+            }
+        }
+        return true
+    }
+    
+    func calendar(calendar: CKCalendarView!, didSelectDate date: NSDate!) {
+        
+        if date != nil{
+            print(date)
+        }else{
+            //Deselect and return nil for date
+        }
+    }
+
+    
+    func createCalendar() -> CKCalendarView {
+        let calendar: CKCalendarView = CKCalendarView()
+        calendar.center = CGPointMake(self.view.frame.size.width  / 2,
+            self.view.frame.size.height / 2)
+        
+        return calendar
+    }
+    
+    
     
 }
