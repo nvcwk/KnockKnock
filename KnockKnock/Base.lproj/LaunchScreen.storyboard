@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,37 @@
                     <view key="view" contentMode="scaleToFill" id="9n4-qt-7NT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="9M5-LW-apj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Copyright (c), 2016. A gen6 Production" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FZ-N0-3Ii">
+                                <rect key="frame" x="0.0" y="459" width="375" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="lvt-bD-wNs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                                <color key="textColor" red="0.20793876259999999" green="0.20793876259999999" blue="0.20793876259999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yMd-8r-10S">
+                                <rect key="frame" x="48" y="172" width="279" height="279"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9M5-LW-apj" firstAttribute="top" secondItem="9n4-qt-7NT" secondAttribute="top" id="2Jr-7t-PCP"/>
+                            <constraint firstItem="7FZ-N0-3Ii" firstAttribute="trailing" secondItem="9M5-LW-apj" secondAttribute="trailing" id="4Hu-aL-vT0"/>
+                            <constraint firstItem="9M5-LW-apj" firstAttribute="bottom" secondItem="LL3-23-RIu" secondAttribute="top" id="C2D-iz-TUK"/>
+                            <constraint firstItem="yMd-8r-10S" firstAttribute="centerX" secondItem="7FZ-N0-3Ii" secondAttribute="centerX" id="Y6d-rK-Rf6"/>
+                            <constraint firstItem="7FZ-N0-3Ii" firstAttribute="top" secondItem="yMd-8r-10S" secondAttribute="bottom" constant="8" symbolic="YES" id="er7-Rj-BFQ"/>
+                            <constraint firstItem="yMd-8r-10S" firstAttribute="leading" secondItem="9n4-qt-7NT" secondAttribute="leadingMargin" constant="32" id="ncK-vh-E5U"/>
+                            <constraint firstItem="LL3-23-RIu" firstAttribute="top" secondItem="7FZ-N0-3Ii" secondAttribute="bottom" constant="161" id="oX6-Sq-l2t"/>
+                            <constraint firstItem="yMd-8r-10S" firstAttribute="top" secondItem="UhL-jt-f1w" secondAttribute="bottom" constant="152" id="saV-mG-1Bu"/>
+                            <constraint firstItem="7FZ-N0-3Ii" firstAttribute="leading" secondItem="9n4-qt-7NT" secondAttribute="leading" id="tF1-Pz-sEQ"/>
+                            <constraint firstItem="9M5-LW-apj" firstAttribute="leading" secondItem="7FZ-N0-3Ii" secondAttribute="leading" id="u7h-Zx-LiG"/>
+                            <constraint firstAttribute="trailing" secondItem="7FZ-N0-3Ii" secondAttribute="trailing" id="uMt-ZE-s4D"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -25,4 +56,8 @@
             <point key="canvasLocation" x="-225.5" y="370.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1563" height="2779"/>
+        <image name="logo" width="1563" height="1563"/>
+    </resources>
 </document>
