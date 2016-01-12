@@ -2,7 +2,6 @@ import UIKit
 import DZNPhotoPickerController
 import SwiftValidator
 import Parse
-import ABSteppedProgressBar
 
 class ItiSummaryViewController: UIViewController {
     
@@ -14,29 +13,25 @@ class ItiSummaryViewController: UIViewController {
     let validator = Validator()
     var validationStatus = false
     
-    //@IBOutlet weak var bar: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         tv_summary.delegate = self
         imagePicker.delegate = self
         
         validator.registerField(tf_title, rules: [RequiredRule(message: "Fill in title!")])
-        
     }
     
     @IBAction func actionTapImage(sender: UITapGestureRecognizer) {
         KnockKnockImageUtils.imagePicker(self, picker: self.imagePicker)
     }
-
+    
     @IBAction func backSummary(segue:UIStoryboardSegue) { }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if(identifier == "toSelectDaysView") {
             validator.validate(self)
-        
+            
             return validationStatus
         }
         

@@ -257,14 +257,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-St-eE1">
-                                <rect key="frame" x="47" y="454" width="280" height="171"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="p2D-K4-0ZX" appends="YES" id="6AU-1e-M3g"/>
-                                </connections>
-                            </imageView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08L-Pi-zWN" customClass="ABSteppedProgressBar" customModule="ABSteppedProgressBar">
                                 <rect key="frame" x="47" y="87" width="279" height="67"/>
                                 <subviews>
@@ -320,6 +312,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="Image_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-St-eE1">
+                                <rect key="frame" x="47" y="454" width="280" height="171"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="p2D-K4-0ZX" appends="YES" id="6AU-1e-M3g"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -370,7 +370,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bar" destination="08L-Pi-zWN" id="6tt-8p-ltk"/>
                         <outlet property="img_tour" destination="8fO-St-eE1" id="WGj-oa-Z4e"/>
                         <outlet property="tf_title" destination="3ya-yU-ZyM" id="eHX-tk-85s"/>
                         <outlet property="tv_summary" destination="Eqw-QR-bWu" id="pQ8-uv-7br"/>
@@ -1264,6 +1263,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image_Placeholder" width="100" height="100"/>
         <image name="Itinerary_Icon" width="30" height="30"/>
         <image name="background" width="1563" height="2779"/>
     </resources>
