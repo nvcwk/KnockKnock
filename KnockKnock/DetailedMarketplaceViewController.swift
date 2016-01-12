@@ -14,6 +14,7 @@ import Foundation
 import CoreData
 import CKCalendar
 
+
 class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CKCalendarDelegate {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -31,6 +32,8 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     
     var bookedDatesArray = [NSDate]()
     var numOfDays: Int!
+    var startDate = NSDate()
+    var endDate = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +45,11 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        var endDate = currentObject.objectForKey("lastAvailability") as! NSDate
-        var startDate = currentObject.objectForKey("startAvailability") as! NSDate
+        endDate = currentObject.objectForKey("lastAvailability") as! NSDate
+        startDate = currentObject.objectForKey("startAvailability") as! NSDate
         
-        startDate = startDate.add(days: -1)
-        endDate = endDate.add(days: -1)
+       // startDate = startDate.add(days: -1)
+        //endDate = endDate.add(days: -1)
         
         self.startDateLabel.text = dateFormatter.stringFromDate(startDate)
         self.endDateLabel.text = dateFormatter.stringFromDate(endDate)
@@ -128,12 +131,26 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     }
     
     @IBAction func bookButtonTapped(sender: AnyObject) {
-        
+      /*
         let calendar = createCalendar()
         self.view!.addSubview(calendar)
         calendar.delegate = self
-        
+        */
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var DestViewController : BookingViewController = segue.destinationViewController as! BookingViewController
+        DestViewController.StartDate = startDate
+        DestViewController.EndDate = endDate
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     func calendar(calendar: CKCalendarView!, willSelectDate date: NSDate!) -> Bool {
         
