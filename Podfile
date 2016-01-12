@@ -22,6 +22,8 @@ pod 'GMStepper'
 pod 'GoogleMaps' 
 pod 'SwiftDate'
 pod 'CKCalendar'
+pod 'FSCalendar'
+
 =begin 
 To Consider 
 pod 'LRTextField'
