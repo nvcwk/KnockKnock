@@ -19,15 +19,28 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var StartDate = NSDate()
     var StartDate2 = NSDate()
     var UserselectedDate = NSDate()
-    var bookedDatesArray = [NSDate]()
+    var bookedDatesArray = [String]()
+    var bookedDatesArray2 = [NSDate]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         StartDate2 = StartDate.add(days: 1)
         EndDate2 = EndDate.add(days: -1)
-        bookedDatesArray.append(StartDate2)
-        bookedDatesArray.append(EndDate2)
+       bookedDatesArray2.append(StartDate2)
+        bookedDatesArray2.append(EndDate2)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.timeZone = NSTimeZone(name: "GMT")
         
+        for stringDates in bookedDatesArray{
+            if let date = dateFormatter.dateFromString(stringDates){
+                var date = dateFormatter.dateFromString(stringDates)!
+                bookedDatesArray2.append(date)
+            }
+            
+        }
+        print(bookedDatesArray2)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +60,18 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     
     //show marking that some dates not available
     func calendar(calendar: FSCalendar!, imageForDate date: NSDate!) -> UIImage! {
-        return bookedDatesArray.contains(date) ? UIImage(named: "cross") : nil
+       // return bookedDatesArray2.contains(date) ? UIImage(named: "cross") : nil
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        for dates in bookedDatesArray2{
+            if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
+                return UIImage(named: "cross")
+            }
+        }
+        // if (bookedDatesArray2.contains(dateFormatter.stringFromDate(date))) {
+        //   return false
+        //}
+        return nil
     }
 
 
@@ -57,13 +81,18 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     }
     */
     
-    
-    
     //prevent dates from being selected
     func calendar(calendar: FSCalendar!, shouldSelectDate date: NSDate!) -> Bool {
-        if (bookedDatesArray.contains(date)) {
-            return false
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-mm-dd"
+        for dates in bookedDatesArray2{
+        if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
+                return false
         }
+        }
+        // if (bookedDatesArray2.contains(dateFormatter.stringFromDate(date))) {
+         //   return false
+        //}
         return true
     }
     
@@ -71,6 +100,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     //when date is selected
     func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
         print(date)
+
     }
     
     

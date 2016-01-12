@@ -30,7 +30,7 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     var activityArray = [PFObject]()
     var activities = [PFObject]()
     
-    var bookedDatesArray = [NSDate]()
+    var bookedDatesArray = [String]()
     var numOfDays: Int!
     var startDate = NSDate()
     var endDate = NSDate()
@@ -68,7 +68,8 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         
         numOfDays = activityArray.count - 1
         
-        bookedDatesArray = currentObject["bookedDate"] as! [NSDate]
+        bookedDatesArray = currentObject["bookedDate"] as! [String]
+        print(bookedDatesArray)
         
         let query = PFQuery(className: "Activity")
         for a1 in activityArray{
@@ -142,6 +143,7 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         var DestViewController : BookingViewController = segue.destinationViewController as! BookingViewController
         DestViewController.StartDate = startDate
         DestViewController.EndDate = endDate
+        DestViewController.bookedDatesArray = bookedDatesArray
     }
     
     
@@ -152,7 +154,7 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     
     
     
-    func calendar(calendar: CKCalendarView!, willSelectDate date: NSDate!) -> Bool {
+    /*func calendar(calendar: CKCalendarView!, willSelectDate date: NSDate!) -> Bool {
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -181,7 +183,7 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
             }
         }
         return true
-    }
+    }*/
     
     func calendar(calendar: CKCalendarView!, didSelectDate date: NSDate!) {
         

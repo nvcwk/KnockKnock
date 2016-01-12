@@ -50,6 +50,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     var endDate = NSDate()
     
+    var dateSet = [NSDate]()
+    
     //@IBOutlet weak var placeholderView: UIView!
     
     override func viewDidLoad() {
@@ -88,6 +90,10 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         do_table_refresh()
     }
     
+
+
+    
+    
     // Calling Parse DB
     func callingParse(sortByPrice : Bool, sortByStartDate : Bool, sortByEndDate : Bool){
         
@@ -97,6 +103,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         // This query calls for the listing in the marketplace and validate the date (lastavailabledate < today's date)
         let query = PFQuery(className: "MarketPlace")
+        
         query.whereKey("lastAvailability", greaterThan: today)
         query.includeKey("itinerary")
         query.includeKey("host")
@@ -134,6 +141,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                         
                         self.marketplaceArray.append(object)
                         
+                        
                     }
                 }
                 self.tableView.reloadData()
@@ -142,6 +150,10 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                 print("error: \(error!)  \(error!.userInfo)")
             }
         }
+        
+        
+
+    
         
     }
     
