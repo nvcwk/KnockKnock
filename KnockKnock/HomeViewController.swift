@@ -3,6 +3,7 @@ import Parse
 import SwiftSpinner
 import ParseUI
 import GoogleMaps
+import QIULaunchAnimation
 
 class HomeViewController: UIViewController {
 
@@ -22,6 +23,11 @@ class HomeViewController: UIViewController {
             image_profile.loadInBackground()
             
         }
+        
+        var fadeAnimation: QIULaunchAnimationFade = QIULaunchAnimationFade()
+        //fadeAnimation.animationDuration = 5;
+        fadeAnimation.startAnimation(nil)
+
     }
 
     @IBAction func actionLogout(sender: UIButton) {

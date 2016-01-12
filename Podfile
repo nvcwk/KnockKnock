@@ -21,6 +21,9 @@ pod 'DZNPhotoPickerController/Editor'
 pod 'GMStepper'
 pod 'GoogleMaps' 
 pod 'SwiftDate'
+pod 'QIULaunchAnimation'
+
+
 
 =begin 
 To Consider 
