@@ -10,7 +10,7 @@
         <scene sceneID="Dsf-YP-8av">
             <objects>
                 <navigationController id="qIL-uc-QTW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Itinerary" image="second" id="3b0-wh-6sv"/>
+                    <tabBarItem key="tabBarItem" title="Itinerary" image="Itinerary_Icon" id="3b0-wh-6sv"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lFz-ia-5Qw">
@@ -907,8 +907,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Itinerary_Icon" width="30" height="30"/>
         <image name="background" width="1563" height="2779"/>
-        <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="imT-ux-Uue"/>

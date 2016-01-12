@@ -32,7 +32,7 @@
         <scene sceneID="MEi-P3-PIU">
             <objects>
                 <navigationController id="g9e-bq-m3V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="9eT-fT-jd1"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home_Icon" id="9eT-fT-jd1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eQO-Vx-thC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -128,6 +128,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="Home_Icon" width="30" height="30"/>
     </resources>
 </document>
