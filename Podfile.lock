@@ -1,4 +1,5 @@
 PODS:
+  - ABSteppedProgressBar (0.0.3)
   - AFNetworking (2.6.3):
     - AFNetworking/NSURLConnection (= 2.6.3)
     - AFNetworking/NSURLSession (= 2.6.3)
@@ -61,6 +62,7 @@ PODS:
   - ZFRippleButton (0.5.1)
 
 DEPENDENCIES:
+  - ABSteppedProgressBar
   - AFNetworking (~> 2.0)
   - CountryPicker
   - DZNPhotoPickerController/Editor
@@ -79,6 +81,7 @@ DEPENDENCIES:
   - ZFRippleButton
 
 SPEC CHECKSUMS:
+  ABSteppedProgressBar: 2f4f51ad45a9610f15fb696e2447482e690210c5
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   CountryPicker: 6f166e2f1cc250f07eba4c587fbe1c0efc21049b
