@@ -11,7 +11,7 @@
         <scene sceneID="jzS-bX-Wjt">
             <objects>
                 <navigationController id="Mzm-qA-zp6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MarketPlace" image="second" id="eeh-As-AHK"/>
+                    <tabBarItem key="tabBarItem" title="MarketPlace" image="Marketplace_Icon" id="eeh-As-AHK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D4w-R4-FVj">
@@ -386,6 +386,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
+        <image name="Marketplace_Icon" width="30" height="30"/>
     </resources>
 </document>
