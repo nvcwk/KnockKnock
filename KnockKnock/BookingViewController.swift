@@ -47,7 +47,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     
     //show marking that some dates not available
     func calendar(calendar: FSCalendar!, imageForDate date: NSDate!) -> UIImage! {
-        return bookedDatesArray.contains(date) ? UIImage(named: "icon_cat") : nil
+        return bookedDatesArray.contains(date) ? UIImage(named: "cross") : nil
     }
 
 
