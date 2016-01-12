@@ -20,6 +20,7 @@ class ItiDaysSelectorViewController: UIViewController {
             controller.days = Int(stepper_days.value)
             controller.itineraryObj = itineraryObj
         }
+        
     }
 
 }
