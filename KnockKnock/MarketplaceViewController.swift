@@ -16,6 +16,7 @@ import SwiftDate
 import GMStepper
 import CoreData
 
+
 class MarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -29,6 +30,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     var selectedEndDate = NSDate()
     var selectedStartDate = NSDate()
     
+    var header : String!
     
     var searchActive : Bool = false
     
@@ -48,6 +50,8 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     var sortByEndDate = false
     
     var endDate = NSDate()
+    
+    var dateSet = [NSDate]()
     
     //@IBOutlet weak var placeholderView: UIView!
     
@@ -104,6 +108,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         
         // This query calls for the listing in the marketplace and validate the date (lastavailabledate < today's date)
         let query = PFQuery(className: "MarketPlace")
+        
         query.whereKey("lastAvailability", greaterThan: today)
         query.includeKey("itinerary")
         query.includeKey("host")
@@ -140,6 +145,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
                     for object in objects {
                         
                         self.marketplaceArray.append(object)
+                        
                         
                     }
                 }
