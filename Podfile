@@ -23,7 +23,7 @@ pod 'GoogleMaps'
 pod 'SwiftDate'
 pod 'QIULaunchAnimation'
 pod 'ABSteppedProgressBar'
-
+pod 'FSCalendar'
 
 
 

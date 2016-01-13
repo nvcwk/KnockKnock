@@ -12,10 +12,9 @@ import ParseUI
 import Bolts
 import Foundation
 import CoreData
-import CKCalendar
 
 
-class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CKCalendarDelegate {
+class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var contactLabel: UILabel!
@@ -131,4 +130,11 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         return cell
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var DestViewController : BookingViewController = segue.destinationViewController as! BookingViewController
+        DestViewController.StartDate = startDate
+        DestViewController.EndDate = endDate
+        DestViewController.bookedDatesArray = bookedDatesArray
+    }
 }

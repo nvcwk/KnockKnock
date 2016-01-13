@@ -300,7 +300,6 @@
                                 <rect key="frame" x="170" y="588" width="35" height="30"/>
                                 <state key="normal" title="Book"/>
                                 <connections>
-                                    <action selector="bookButtonTapped:" destination="P0x-4v-GfH" eventType="touchUpInside" id="WUa-9z-9YH"/>
                                     <segue destination="EQ8-WC-ZJB" kind="show" identifier="showBookingView" id="wa6-iT-yun"/>
                                 </connections>
                             </button>
