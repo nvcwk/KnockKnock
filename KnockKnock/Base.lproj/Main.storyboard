@@ -22,6 +22,7 @@
                         <segue destination="7NT-PX-KYv" kind="relationship" relationship="viewControllers" id="0m4-zD-YUE"/>
                         <segue destination="ymf-Zr-FqH" kind="relationship" relationship="viewControllers" id="ydq-JV-Fpa"/>
                         <segue destination="0gu-z4-IfZ" kind="relationship" relationship="viewControllers" id="cid-M9-7uq"/>
+                        <segue destination="I1f-RT-BjS" kind="relationship" relationship="viewControllers" id="cRx-7p-a4g"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -125,6 +126,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVc-hu-Eng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="636" y="62"/>
+        </scene>
+        <!--Booking-->
+        <scene sceneID="rJl-59-eFg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Booking" id="I1f-RT-BjS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="gEE-u2-iDi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rhk-PC-c1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690.5" y="552.5"/>
         </scene>
     </scenes>
     <resources>
