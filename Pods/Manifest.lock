@@ -26,6 +26,7 @@ PODS:
   - Bolts/AppLinks (1.5.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.5.0)
+  - CKCalendar (1.0.0)
   - CountryPicker (1.2.3)
   - DZNPhotoPickerController/Editor (1.6.1)
   - FBSDKCoreKit (4.8.0):
@@ -39,6 +40,7 @@ PODS:
     - FBSDKCoreKit/arc
   - FBSDKLoginKit (4.8.0):
     - FBSDKCoreKit
+  - FSCalendar (1.7.2)
   - GMStepper (1.1.0)
   - GoogleMaps (1.11.1)
   - IQKeyboardManagerSwift (3.3.4)
@@ -61,8 +63,10 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - CKCalendar
   - CountryPicker
   - DZNPhotoPickerController/Editor
+  - FSCalendar
   - GMStepper
   - GoogleMaps
   - IQKeyboardManagerSwift
@@ -79,10 +83,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  CKCalendar: 1aebf76524bd4c4442e0002f989cd377fcdaf5e2
   CountryPicker: 6f166e2f1cc250f07eba4c587fbe1c0efc21049b
   DZNPhotoPickerController: 1fcd18f2767b9c713865f0c09b32e1ba24f1516c
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
+  FSCalendar: 38f5b3de1aeaa7dc03a3e997bdc6fb3ff3a88b8d
   GMStepper: 3b7922778a80e0eab89a55003ca36b25fc2393b7
   GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
