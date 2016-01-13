@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ABSteppedProgressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -69,6 +74,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>QIULaunchAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftDate.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,6 +107,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>00453B03A3EE4CEEA3F6E7DC33BF01CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0F98F85575B93F19AE698C564B266D98</key>
 		<dict>
 			<key>primary</key>
@@ -107,17 +122,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4872B6344EC62232CF232FFA7092FB53</key>
+		<key>31E5A493C557296D07B3158474A18838</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41F7B5C21A0F910CD0319E724210EB3F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>43F43C77690BCAC8D5F97A1254C56991</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4B8A252308F5371C3AAD9C0F51CC636E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,7 +157,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8EE5201FCB61847B77B8D6DA5B57A65A</key>
+		<key>7BE756E821A285E88FA758A292CACC9F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>807A92943F9CF2A1FFF4B4DDEDF9D5A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,22 +172,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A32280B34932BA27801DC1260C9D6757</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B2328E44CF30EBFB7CCE9720ED4A7E76</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE228D464EE129BA9EA0DCEC3BA791EC</key>
+		<key>9646104B2942F4CA82E35B966BFA4D9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C58C7421DAD296EE054EEEDAE49151AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2E180613C6E640BD4792AC9ED5A3E15</key>
 		<dict>
 			<key>primary</key>
 			<true/>

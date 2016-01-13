@@ -39,8 +39,8 @@
     [superView addSubview:launchView];
     launchView.layer.zPosition = 999;
     [launchView setTranslatesAutoresizingMaskIntoConstraints:NO];
-//    [superView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[launchView]-0-|" options:NSLayoutFormatAlignAllLeading metrics:nil views:NSDictionaryOfVariableBindings(launchView)]];
-//    [superView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[launchView]-0-|" options:NSLayoutFormatAlignAllLeading metrics:nil views:NSDictionaryOfVariableBindings(launchView)]];
+    [superView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[launchView]-0-|" options:NSLayoutFormatAlignAllLeading metrics:nil views:NSDictionaryOfVariableBindings(launchView)]];
+    [superView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[launchView]-0-|" options:NSLayoutFormatAlignAllLeading metrics:nil views:NSDictionaryOfVariableBindings(launchView)]];
 }
 
 - (void)finishAnimaion {
