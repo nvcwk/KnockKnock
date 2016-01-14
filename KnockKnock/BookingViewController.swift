@@ -28,6 +28,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var selectedDate = NSDate()
     var finalPrice : Int = 0
     var host = PFUser()
+    var marketplace : PFObject!
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var priceLabel: UILabel!
@@ -128,7 +129,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             booking["Host"] = self.host
             booking["Pax"] = Int(self.pax)
             booking["Total"] = Int(self.finalPrice)
-            
+            booking["Marketplace"] = self.marketplace
             
             let myAlert =
             UIAlertController(title:"Sending to host!!", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
