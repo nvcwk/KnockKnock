@@ -136,5 +136,6 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         DestViewController.StartDate = startDate
         DestViewController.EndDate = endDate
         DestViewController.bookedDatesArray = bookedDatesArray
+        DestViewController.price = currentObject["price"] as! Int
     }
 }

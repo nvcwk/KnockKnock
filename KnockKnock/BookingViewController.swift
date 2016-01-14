@@ -21,14 +21,21 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var UserselectedDate = NSDate()
     var bookedDatesArray = [String]()
     var bookedDatesArray2 = [NSDate]()
-
+    var pax: Int = 1
+    var price = Int()
+    
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var paxLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         StartDate2 = StartDate.add(days: 1)
         EndDate2 = EndDate.add(days: -1)
-       bookedDatesArray2.append(StartDate2)
+        bookedDatesArray2.append(StartDate2)
         bookedDatesArray2.append(EndDate2)
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         dateFormatter.timeZone = NSTimeZone(name: "GMT")
@@ -40,7 +47,18 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             }
             
         }
-        print(bookedDatesArray2)
+       self.paxLabel.text = String(pax)
+        self.priceLabel.text = String(price)
+       
+    }
+    
+    @IBAction func sliderChanged(sender: AnyObject) {
+        var currentValue = sender.value as Float
+        var currentValue2 = Int(currentValue)
+       self.paxLabel.text = "\(currentValue2)"
+        var newPrice  = price * currentValue2
+        self.priceLabel.text = String(newPrice)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,23 +86,14 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                 return UIImage(named: "cross")
             }
         }
-        // if (bookedDatesArray2.contains(dateFormatter.stringFromDate(date))) {
-        //   return false
-        //}
         return nil
     }
 
 
-    //show dots
-    /*func calendar(calendar: FSCalendar!, hasEventForDate date: NSDate!) -> Bool {
-        return true
-    }
-    */
-    
     //prevent dates from being selected
     func calendar(calendar: FSCalendar!, shouldSelectDate date: NSDate!) -> Bool {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
+        dateFormatter.dateFormat = "YYYY-MM-dd"
         for dates in bookedDatesArray2{
         if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
                 return false
