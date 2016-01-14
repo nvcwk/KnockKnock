@@ -65,6 +65,15 @@
 		E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4541C18601100242A83 /* RegisterViewController.swift */; };
 		F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */; };
 		F6D33E031C44FD2800F913BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6D33E021C44FD2800F913BB /* Images.xcassets */; };
+		F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */; };
+		F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */; };
+		F6DC5CB71C4769AC00BA6776 /* ConfirmedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CB51C4769AC00BA6776 /* ConfirmedTableViewCell.swift */; };
+		F6DC5CB81C4769AC00BA6776 /* ConfirmedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CB61C4769AC00BA6776 /* ConfirmedTableViewCell.xib */; };
+		F6DC5CBB1C4769EF00BA6776 /* PendingTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CB91C4769EF00BA6776 /* PendingTableViewViewController.swift */; };
+		F6DC5CBC1C4769EF00BA6776 /* PendingTableViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CBA1C4769EF00BA6776 /* PendingTableViewViewController.xib */; };
+		F6DC5CC11C476A5B00BA6776 /* ConfirmedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CBF1C476A5B00BA6776 /* ConfirmedTableViewController.swift */; };
+		F6DC5CC21C476A5B00BA6776 /* ConfirmedTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CC01C476A5B00BA6776 /* ConfirmedTableViewController.xib */; };
+		F6DC5CC41C476BA500BA6776 /* MyBookingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CC31C476BA500BA6776 /* MyBookingMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +160,15 @@
 		E1E4B4541C18601100242A83 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		F6D33E021C44FD2800F913BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../../Desktop/FSCalendar-master/SwiftExample/SwiftExample/Images.xcassets"; sourceTree = "<group>"; };
+		F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTableViewCell.swift; sourceTree = "<group>"; };
+		F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendingTableViewCell.xib; sourceTree = "<group>"; };
+		F6DC5CB51C4769AC00BA6776 /* ConfirmedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedTableViewCell.swift; sourceTree = "<group>"; };
+		F6DC5CB61C4769AC00BA6776 /* ConfirmedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmedTableViewCell.xib; sourceTree = "<group>"; };
+		F6DC5CB91C4769EF00BA6776 /* PendingTableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTableViewViewController.swift; sourceTree = "<group>"; };
+		F6DC5CBA1C4769EF00BA6776 /* PendingTableViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendingTableViewViewController.xib; sourceTree = "<group>"; };
+		F6DC5CBF1C476A5B00BA6776 /* ConfirmedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedTableViewController.swift; sourceTree = "<group>"; };
+		F6DC5CC01C476A5B00BA6776 /* ConfirmedTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmedTableViewController.xib; sourceTree = "<group>"; };
+		F6DC5CC31C476BA500BA6776 /* MyBookingMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +309,7 @@
 		E11AC2081C16244900479927 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F6DC5CAB1C47683B00BA6776 /* MyBooking */,
 				E14174F61C3D7E8A005E3B9A /* MarketPlace */,
 				E1A7DA941C3CB14900759A8F /* Itinerary */,
 				E11AC2001C1618A100479927 /* LoginViewController.swift */,
@@ -390,6 +409,30 @@
 				E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		F6DC5CAB1C47683B00BA6776 /* MyBooking */ = {
+			isa = PBXGroup;
+			children = (
+				F6DC5CAC1C47684A00BA6776 /* CustomUI */,
+				F6DC5CC31C476BA500BA6776 /* MyBookingMainViewController.swift */,
+			);
+			name = MyBooking;
+			sourceTree = "<group>";
+		};
+		F6DC5CAC1C47684A00BA6776 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */,
+				F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */,
+				F6DC5CB51C4769AC00BA6776 /* ConfirmedTableViewCell.swift */,
+				F6DC5CB61C4769AC00BA6776 /* ConfirmedTableViewCell.xib */,
+				F6DC5CB91C4769EF00BA6776 /* PendingTableViewViewController.swift */,
+				F6DC5CBA1C4769EF00BA6776 /* PendingTableViewViewController.xib */,
+				F6DC5CBF1C476A5B00BA6776 /* ConfirmedTableViewController.swift */,
+				F6DC5CC01C476A5B00BA6776 /* ConfirmedTableViewController.xib */,
+			);
+			name = CustomUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,9 +551,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E187E5551C32F3A700E00E5A /* ItiTableViewController.xib in Resources */,
+				F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */,
 				E159A8391C33E9E600EF80A4 /* PubTableViewController.xib in Resources */,
 				E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */,
 				F6D33E031C44FD2800F913BB /* Images.xcassets in Resources */,
+				F6DC5CB81C4769AC00BA6776 /* ConfirmedTableViewCell.xib in Resources */,
+				F6DC5CC21C476A5B00BA6776 /* ConfirmedTableViewController.xib in Resources */,
 				E159A8311C33DE4200EF80A4 /* PubTableViewCell.xib in Resources */,
 				E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */,
 				E11462001C1170B900983BC3 /* Assets.xcassets in Resources */,
@@ -520,6 +566,7 @@
 				E16B357C1C1CC9D4003897EF /* Profile.storyboard in Resources */,
 				E187E5451C32E80800E00E5A /* ItiTableViewCell.xib in Resources */,
 				E16B35861C1CCC65003897EF /* MarketPlace.storyboard in Resources */,
+				F6DC5CBC1C4769EF00BA6776 /* PendingTableViewViewController.xib in Resources */,
 				E11AC1FF1C16185400479927 /* Credential.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,18 +655,23 @@
 				E187E5441C32E80800E00E5A /* ItiTableViewCell.swift in Sources */,
 				E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */,
 				E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */,
+				F6DC5CC41C476BA500BA6776 /* MyBookingMainViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */,
 				E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */,
 				E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */,
 				E1822CE41C27C0C500E78ED6 /* ItiPublishViewController.swift in Sources */,
+				F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
 				E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */,
+				F6DC5CC11C476A5B00BA6776 /* ConfirmedTableViewController.swift in Sources */,
 				E15BF7801C3FFB6A009A3C31 /* PubDetailsEditViewController.swift in Sources */,
 				E19FE17C1C3D7D8F009FAB48 /* MarketplaceViewController.swift in Sources */,
+				F6DC5CB71C4769AC00BA6776 /* ConfirmedTableViewCell.swift in Sources */,
 				E1CAA80B1C27053300AB4637 /* ActivityTableViewCell.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
 				E15BF77E1C3FE617009A3C31 /* ProfileChangePassViewController.swift in Sources */,
+				F6DC5CBB1C4769EF00BA6776 /* PendingTableViewViewController.swift in Sources */,
 				E19FE17E1C3D7DA8009FAB48 /* DetailedMarketplaceViewController.swift in Sources */,
 				E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,

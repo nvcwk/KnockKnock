@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="690.5" y="552.5"/>
         </scene>
-        <!--View Controller-->
+        <!--My Booking Main View Controller-->
         <scene sceneID="b7B-0s-xd0">
             <objects>
-                <viewController id="wBw-nL-b7K" sceneMemberID="viewController">
+                <viewController id="wBw-nL-b7K" customClass="MyBookingMainViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FfM-bu-F4l"/>
                         <viewControllerLayoutGuide type="bottom" id="GMa-05-sZr"/>
