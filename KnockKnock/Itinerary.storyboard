@@ -1144,7 +1144,7 @@
                             </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="162" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="COo-vl-mj3">
                                 <rect key="frame" x="0.0" y="516" width="375" height="272"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityViewCell" rowHeight="162" id="0Vc-fu-g4u" customClass="ActivityDetailsTableViewCell" customModule="KnockKnock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="162"/>
@@ -1164,7 +1164,6 @@
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3iH-Lb-8VR">
                                                     <rect key="frame" x="15" y="42" width="352" height="105"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1180,6 +1179,7 @@
                                                 <constraint firstItem="3iH-Lb-8VR" firstAttribute="top" secondItem="mKd-cf-tWv" secondAttribute="bottom" constant="13" id="bzW-ro-ZEy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="lb_day" destination="mKd-cf-tWv" id="0I3-RN-rft"/>
                                             <outlet property="tv_details" destination="3iH-Lb-8VR" id="z5Q-Gx-yhX"/>
@@ -1268,7 +1268,7 @@
         <image name="background" width="1563" height="2779"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U4B-yk-b4V"/>
+        <segue reference="4Qm-yt-CBq"/>
         <segue reference="imT-ux-Uue"/>
     </inferredMetricsTieBreakers>
 </document>
