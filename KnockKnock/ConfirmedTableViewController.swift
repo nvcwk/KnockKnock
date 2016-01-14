@@ -22,36 +22,32 @@ class ConfirmedTableViewController: PFQueryTableViewController {
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: "MarketPlace")
+        var query = PFQuery(className: "Confirmed")
         
-        query.includeKey("itinerary")
+        query.includeKey("Marketplace")
+        query.includeKey("Itinerary")
         
         query.whereKey("host", equalTo: PFUser.currentUser()!)
-        query.whereKey("isPublished", equalTo: true)
         
         return query
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
         
-        var cell: PubTableViewCell = tableView.dequeueReusableCellWithIdentifier("PubViewCell") as! PubTableViewCell
+        var cell: ConfirmedTableViewCell = tableView.dequeueReusableCellWithIdentifier("ConfirmedTableViewCell") as! ConfirmedTableViewCell
         
-        if let publish = object{
+        if let confirmed = object{
+            let marketplace = confirmed["Marketplace"] as! PFObject
+            let itinerary = marketplace["itinerary"] as! PFObject
+            cell.header.text = itinerary["titile"] as! String
             
-            let itinerary = publish["itinerary"] as! PFObject
-            cell.lb_price.text = String(publish["price"] as! Int)
+            cell.date.text = "test"
             
-            let startAvailability = KnockKnockUtils.dateToString(publish["startAvailability"] as! NSDate)
-            let lastAvailability = KnockKnockUtils.dateToString(publish["lastAvailability"] as! NSDate)
+            let requester = confirmed["Requester"] as! PFObject
+            cell.requester.text = requester.objectForKey("fName") as! String
             
-            cell.lb_availability.text = startAvailability + " ~ " + lastAvailability
             
-            cell.lb_title.text = itinerary["title"] as! String
             
-            let imageFile = itinerary["image"] as! PFFile
-            
-            cell.image_background.file = imageFile
-            cell.image_background.loadInBackground()
         }
         
         return cell
