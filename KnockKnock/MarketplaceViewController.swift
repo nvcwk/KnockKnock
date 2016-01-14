@@ -1,4 +1,3 @@
-
 //
 //  MarketplaceViewController.swift
 //  KnockKnock
@@ -58,7 +57,7 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let initialDate = convertDateFormat(NSDate())
+        let initialDate = KnockKnockUtils.dateToString(NSDate())
         
         startDatePicker.datePickerMode = UIDatePickerMode.Date
         startDatePicker.minimumDate = NSDate()
@@ -106,13 +105,18 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         filteredMarketplaceArray.removeAll()
         marketplaceArray.removeAll()
         
+        
         // This query calls for the listing in the marketplace and validate the date (lastavailabledate < today's date)
         let query = PFQuery(className: "MarketPlace")
         
-        query.whereKey("lastAvailability", greaterThan: today)
         query.includeKey("itinerary")
         query.includeKey("host")
         query.includeKey("activities")
+        
+        query.whereKey("isPublished", equalTo: true)
+        
+        query.whereKey("lastAvailability", greaterThan: today)
+        query.whereKey("startAvailability", lessThan: endDate)
         
         if sortByPrice{
             if sortByPriceDesc{
@@ -123,19 +127,14 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         
-        // today = today.add(days: 1)
-        //endDate = endDate.add(days: 1)
-        
         if sortByStartDate{
-            query.whereKey("startAvailability", lessThan: today)
             query.whereKey("lastAvailability", greaterThan: today)
+            //query.whereKey("lastAvailability", greaterThan: today)
         }
         if sortByEndDate{
-            query.whereKey("lastAvailability", greaterThan: endDate)
+            query.whereKey("lastAvailability", greaterThan: today)
+            query.whereKey("startAvailability", lessThan: endDate)
         }
-        
-        
-        query.whereKey("lastAvailability", greaterThan: endDate)
         
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
@@ -307,18 +306,9 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     //Sort by date tf
     
-    //Convert date format to dd/MM/yyyy for easier display in the tf
-    func convertDateFormat(date: NSDate) -> String{
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        let convertedDate = dateFormatter.stringFromDate(date)
-        
-        return convertedDate
-    }
-    
     func updateStartDate(sender: UIDatePicker) {
         
-        let convertedDate = convertDateFormat(sender.date)
+        let convertedDate = KnockKnockUtils.dateToString(sender.date)
         
         tf_startDate.text = convertedDate
         
@@ -328,16 +318,9 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             tf_endDate.text = ""
         }
         
+        today = KnockKnockUtils.StringToDate(convertedDate)
         
-        
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.timeZone = NSTimeZone(name: "GMT")
-        
-        today = dateFormatter.dateFromString(convertedDate)!
-        
-        endDate = dateFormatter.dateFromString(convertedDate)!
+        endDate = KnockKnockUtils.StringToDate(convertedDate)
         
         sortByStartDate = true
         
@@ -351,17 +334,13 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     func updateEndDate(sender: UIDatePicker) {
         
-        let convertedDate = convertDateFormat(sender.date)
+        let convertedDate = KnockKnockUtils.dateToString(sender.date)
         
         tf_endDate.text = convertedDate
         
         selectedEndDate = sender.date
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.timeZone = NSTimeZone(name: "GMT")
-        
-        endDate = dateFormatter.dateFromString(convertedDate)!
+        endDate = KnockKnockUtils.StringToDate(convertedDate)
         
         sortByStartDate = false
         sortByEndDate = true
