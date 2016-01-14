@@ -32,6 +32,8 @@ class KnockKnockUtils {
     static func dateToString(date: NSDate) -> String {
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.dateFormat = "dd MMM yyyy"
+        formatter.timeZone = NSTimeZone(name: "UTC +8")
         return formatter.stringFromDate(date)
     }
     
@@ -39,7 +41,16 @@ class KnockKnockUtils {
     static func timeToString(date: NSDate) -> String {
         let formatter = NSDateFormatter()
         formatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        formatter.dateFormat = "dd MMM yyyy"
+        formatter.timeZone = NSTimeZone(name: "UTC +8")
         return formatter.stringFromDate(date)
+    }
+    
+    static func StringToDate(stringDate: String) -> NSDate{
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.timeZone = NSTimeZone(name: "GMT")
+        return formatter.dateFromString(stringDate)!
     }
     
     // Resize Image
@@ -68,6 +79,5 @@ class KnockKnockUtils {
         
         return newImage
     }
-
+    
 }
-
