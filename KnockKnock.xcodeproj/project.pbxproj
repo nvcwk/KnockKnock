@@ -63,8 +63,8 @@
 		E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4451C17291000242A83 /* ForgetViewController.swift */; };
 		E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */; };
 		E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4541C18601100242A83 /* RegisterViewController.swift */; };
+		F601459C1C47A0D80085AC76 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F601459B1C47A0D80085AC76 /* cross.png */; };
 		F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */; };
-		F6D33E031C44FD2800F913BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6D33E021C44FD2800F913BB /* Images.xcassets */; };
 		F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */; };
 		F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */; };
 		F6DC5CB71C4769AC00BA6776 /* ConfirmedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CB51C4769AC00BA6776 /* ConfirmedTableViewCell.swift */; };
@@ -158,8 +158,8 @@
 		E1E4B4451C17291000242A83 /* ForgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
 		E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CountryPicker.bundle; sourceTree = "<group>"; };
 		E1E4B4541C18601100242A83 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F601459B1C47A0D80085AC76 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = ../../../Desktop/cross.png; sourceTree = "<group>"; };
 		F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
-		F6D33E021C44FD2800F913BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../../Desktop/FSCalendar-master/SwiftExample/SwiftExample/Images.xcassets"; sourceTree = "<group>"; };
 		F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTableViewCell.swift; sourceTree = "<group>"; };
 		F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendingTableViewCell.xib; sourceTree = "<group>"; };
 		F6DC5CB51C4769AC00BA6776 /* ConfirmedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedTableViewCell.swift; sourceTree = "<group>"; };
@@ -405,7 +405,7 @@
 		E1E4B44F1C18230A00242A83 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F6D33E021C44FD2800F913BB /* Images.xcassets */,
+				F601459B1C47A0D80085AC76 /* cross.png */,
 				E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */,
 			);
 			name = Resources;
@@ -554,9 +554,9 @@
 				F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */,
 				E159A8391C33E9E600EF80A4 /* PubTableViewController.xib in Resources */,
 				E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */,
-				F6D33E031C44FD2800F913BB /* Images.xcassets in Resources */,
 				F6DC5CB81C4769AC00BA6776 /* ConfirmedTableViewCell.xib in Resources */,
 				F6DC5CC21C476A5B00BA6776 /* ConfirmedTableViewController.xib in Resources */,
+				F601459C1C47A0D80085AC76 /* cross.png in Resources */,
 				E159A8311C33DE4200EF80A4 /* PubTableViewCell.xib in Resources */,
 				E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */,
 				E11462001C1170B900983BC3 /* Assets.xcassets in Resources */,
