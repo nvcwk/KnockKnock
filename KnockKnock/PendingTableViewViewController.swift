@@ -27,7 +27,7 @@ class PendingTableViewViewController: PFQueryTableViewController {
         query.includeKey("Marketplace")
         query.includeKey("Itinerary")
         //query.whereKey("host", equalTo: PFUser.currentUser()!)
-        query.whereKey("requester", equalTo: PFUser.currentUser()!)
+        query.whereKey("Requester", equalTo: PFUser.currentUser()!)
         
         return query
     }
@@ -38,10 +38,14 @@ class PendingTableViewViewController: PFQueryTableViewController {
         
         if let pending = object{
             let marketplace = pending["Marketplace"] as! PFObject
-            let itinerary = marketplace["itinerary"] as! PFObject
-            cell.header.text = itinerary["titile"] as! String
+            let itinerary = pending["Itinerary"] as! PFObject
+            cell.header.text = itinerary["title"] as! String
             
-            cell.date.text = "test"
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.timeZone = NSTimeZone(name: "GMT")
+            
+            cell.date.text = dateFormatter.stringFromDate(pending["Date"]! as! NSDate)
             
             let requester = pending["Requester"] as! PFObject
             cell.requester.text = requester.objectForKey("fName") as! String
@@ -57,10 +61,10 @@ class PendingTableViewViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
+        /*let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
         
         viewController.pubObj = objectAtIndexPath(indexPath)! as PFObject
         
-        parentNaviController.showViewController(viewController, sender: nil)
+        parentNaviController.showViewController(viewController, sender: nil)*/
     }
 }
