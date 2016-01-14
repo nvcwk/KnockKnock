@@ -58,11 +58,12 @@ class ConfirmedTableViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
+       /* let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
         
         viewController.pubObj = objectAtIndexPath(indexPath)! as PFObject
         
         parentNaviController.showViewController(viewController, sender: nil)
+*/
     }
 
 }
