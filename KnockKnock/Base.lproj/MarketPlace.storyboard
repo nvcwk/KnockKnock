@@ -434,6 +434,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmQ-F1-aFE">
                                 <rect key="frame" x="130" y="560" width="115" height="30"/>
                                 <state key="normal" title="Confirm Booking"/>
+                                <connections>
+                                    <action selector="confirmBtnTapped:" destination="EQ8-WC-ZJB" eventType="touchUpInside" id="DW9-ss-YDX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmm-GD-sFW">
                                 <rect key="frame" x="137" y="508" width="11" height="21"/>

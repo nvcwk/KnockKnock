@@ -8,6 +8,8 @@
 
 import UIKit
 import FSCalendar
+import Parse
+import ParseUI
 
 class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
 
@@ -21,8 +23,11 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var UserselectedDate = NSDate()
     var bookedDatesArray = [String]()
     var bookedDatesArray2 = [NSDate]()
-    var pax: Int = 1
+    var pax : Int = 1
     var price = Int()
+    var selectedDate = NSDate()
+    var finalPrice : Int = 0
+    var host = PFUser()
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var priceLabel: UILabel!
@@ -58,7 +63,8 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
        self.paxLabel.text = "\(currentValue2)"
         var newPrice  = price * currentValue2
         self.priceLabel.text = String(newPrice)
-
+        pax = Int(currentValue)
+        finalPrice = newPrice
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,10 +114,49 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     
     //when date is selected
     func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
-        print(date)
+        selectedDate = date
 
     }
     
+    @IBAction func confirmBtnTapped(sender: AnyObject) {
+        let bookAlert = UIAlertController(title: "Book?", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            var booking = PFObject(className: "Pending")
+            booking["Requester"] = PFUser.currentUser()
+            booking["Date"] = self.selectedDate
+            booking["Host"] = self.host
+            booking["Pax"] = Int(self.pax)
+            booking["Total"] = Int(self.finalPrice)
+            
+            
+            let myAlert =
+            UIAlertController(title:"Sending to host!!", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
+            
+            booking.saveInBackgroundWithBlock {
+                (success : Bool?, error: NSError?) -> Void in
+                if (success != nil) {
+                    let myAlert =
+                    UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
+                    
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
+                    
+                    myAlert.addAction(okAction);
+                    
+                    self.presentViewController(myAlert, animated:true, completion:nil);
+                } else {
+                    NSLog("%@", error!)
+                }
+            }
+        }))
+        
+        bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        
+        presentViewController(bookAlert, animated: true, completion: nil)
+        
+    }
     
     
     }
