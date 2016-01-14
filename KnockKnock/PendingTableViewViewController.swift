@@ -17,7 +17,7 @@ class PendingTableViewViewController: PFQueryTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingViewCell")
+        self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingTableViewCell")
     }
     
     // Define the query that will provide the data for the table view
@@ -26,8 +26,8 @@ class PendingTableViewViewController: PFQueryTableViewController {
         
         query.includeKey("Marketplace")
         query.includeKey("Itinerary")
-        
-        query.whereKey("host", equalTo: PFUser.currentUser()!)
+        //query.whereKey("host", equalTo: PFUser.currentUser()!)
+        query.whereKey("requester", equalTo: PFUser.currentUser()!)
         
         return query
     }
