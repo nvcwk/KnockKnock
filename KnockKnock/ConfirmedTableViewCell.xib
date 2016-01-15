@@ -46,6 +46,11 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="date" destination="Jgi-Hk-6k0" id="j8H-Bh-48H"/>
+                <outlet property="header" destination="iYu-UU-eW4" id="5JL-gc-PYl"/>
+                <outlet property="requester" destination="zFQ-ea-dpW" id="Fh5-2q-HvZ"/>
+            </connections>
             <point key="canvasLocation" x="324" y="81"/>
         </tableViewCell>
     </objects>
