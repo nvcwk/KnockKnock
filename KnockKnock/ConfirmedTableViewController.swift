@@ -17,17 +17,25 @@ class ConfirmedTableViewController: PFQueryTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerNib(UINib(nibName: "ConfirmedTableViewCell", bundle: nil), forCellReuseIdentifier: "ConfirmedViewCell")
+        self.tableView.registerNib(UINib(nibName: "ConfirmedTableViewCell", bundle: nil), forCellReuseIdentifier: "ConfirmedTableViewCell")
     }
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: "Confirmed")
+        var query1 = PFQuery(className: "Confirmed")
+        query1.whereKey("Requester", equalTo: PFUser.currentUser()!)
         
+        
+        var query2 = PFQuery(className: "Confirmed")
+        query2.whereKey("Host", equalTo: PFUser.currentUser()!)
+        
+        
+        
+        var query = PFQuery.orQueryWithSubqueries([query1, query2])
         query.includeKey("Marketplace")
         query.includeKey("Itinerary")
         
-        query.whereKey("host", equalTo: PFUser.currentUser()!)
+        
         
         return query
     }
