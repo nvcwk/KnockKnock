@@ -75,7 +75,7 @@ class MyBookingMainViewController: UIViewController, CAPSPageMenuDelegate {
     @IBAction func backItinerary(segue:UIStoryboardSegue) {
     }
     
-    
+    /*
     
     func didMoveToPage(controller: UIViewController, index: Int){
         print("ADASD")
@@ -87,6 +87,6 @@ class MyBookingMainViewController: UIViewController, CAPSPageMenuDelegate {
             self.navigationItem.rightBarButtonItem?.enabled = true
         }
     }
-    
+    */
 
 }

@@ -65,6 +65,8 @@
 		E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4541C18601100242A83 /* RegisterViewController.swift */; };
 		F601459C1C47A0D80085AC76 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F601459B1C47A0D80085AC76 /* cross.png */; };
 		F60DD3711C48B06D00B79F54 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F60DD3701C48B06D00B79F54 /* cross.png */; };
+		F60DD3731C48F7CA00B79F54 /* PendingExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */; };
+		F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */; };
 		F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */; };
 		F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */; };
 		F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */; };
@@ -161,6 +163,8 @@
 		E1E4B4541C18601100242A83 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F601459B1C47A0D80085AC76 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = ../../../Desktop/cross.png; sourceTree = "<group>"; };
 		F60DD3701C48B06D00B79F54 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = CountryPicker.bundle/cross.png; sourceTree = "<group>"; };
+		F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingExpandedViewController.swift; sourceTree = "<group>"; };
+		F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedExpandedViewController.swift; sourceTree = "<group>"; };
 		F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTableViewCell.swift; sourceTree = "<group>"; };
 		F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendingTableViewCell.xib; sourceTree = "<group>"; };
@@ -418,6 +422,8 @@
 			children = (
 				F6DC5CAC1C47684A00BA6776 /* CustomUI */,
 				F6DC5CC31C476BA500BA6776 /* MyBookingMainViewController.swift */,
+				F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */,
+				F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */,
 			);
 			name = MyBooking;
 			sourceTree = "<group>";
@@ -658,7 +664,9 @@
 				F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */,
 				E187E5441C32E80800E00E5A /* ItiTableViewCell.swift in Sources */,
 				E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */,
+				F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */,
 				E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */,
+				F60DD3731C48F7CA00B79F54 /* PendingExpandedViewController.swift in Sources */,
 				F6DC5CC41C476BA500BA6776 /* MyBookingMainViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */,

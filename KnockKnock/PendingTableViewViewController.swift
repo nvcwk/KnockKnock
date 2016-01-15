@@ -71,10 +71,10 @@ class PendingTableViewViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        /*let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
+        let viewController : PendingExpandedViewController = UIStoryboard(name: "Booking", bundle: nil).instantiateViewControllerWithIdentifier("PendingExpandedViewController") as! PendingExpandedViewController
         
-        viewController.pubObj = objectAtIndexPath(indexPath)! as PFObject
+       // viewController.pubObj = objectAtIndexPath(indexPath)! as PFObject
         
-        parentNaviController.showViewController(viewController, sender: nil)*/
+        parentNaviController.showViewController(viewController, sender: nil)
     }
 }
