@@ -10,11 +10,14 @@ import UIKit
 import FSCalendar
 import Parse
 import ParseUI
+import GMStepper
 
 class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
 
     @IBOutlet weak var cal: FSCalendar!
-    
+    @IBOutlet weak var stepper: GMStepper!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var paxLabel: UILabel!
     
     var EndDate = NSDate()
     var EndDate2 = NSDate()
@@ -31,9 +34,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var marketplace : PFObject!
     var itinerary : PFObject!
     
-    @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var paxLabel: UILabel!
+    
     
 
     override func viewDidLoad() {
@@ -58,16 +59,20 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         self.priceLabel.text = String(price)
        
     }
-    
-    @IBAction func sliderChanged(sender: AnyObject) {
-        var currentValue = sender.value as Float
-        var currentValue2 = Int(currentValue)
-       self.paxLabel.text = "\(currentValue2)"
-        var newPrice  = price * currentValue2
+    @IBAction func stepperTapped(sender: AnyObject) {
+        var currentValue = Int(stepper.value)
+        self.paxLabel.text = "\(currentValue)"
+        var newPrice  = price * currentValue
         self.priceLabel.text = String(newPrice)
         pax = Int(currentValue)
         finalPrice = newPrice
+
     }
+    
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
