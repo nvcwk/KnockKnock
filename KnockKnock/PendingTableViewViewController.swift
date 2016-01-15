@@ -22,14 +22,24 @@ class PendingTableViewViewController: PFQueryTableViewController {
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: "Pending")
+    
+        var query1 = PFQuery(className: "Pending")
+        query1.whereKey("Requester", equalTo: PFUser.currentUser()!)
         
+        
+        var query2 = PFQuery(className: "Pending")
+        query2.whereKey("Host", equalTo: PFUser.currentUser()!)
+       
+        
+        
+        var query = PFQuery.orQueryWithSubqueries([query1, query2])
         query.includeKey("Marketplace")
         query.includeKey("Itinerary")
-        //query.whereKey("host", equalTo: PFUser.currentUser()!)
-        query.whereKey("Requester", equalTo: PFUser.currentUser()!)
+
+        
         
         return query
+    
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
