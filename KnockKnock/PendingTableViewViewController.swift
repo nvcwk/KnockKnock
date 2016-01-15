@@ -35,7 +35,8 @@ class PendingTableViewViewController: PFQueryTableViewController {
         var query = PFQuery.orQueryWithSubqueries([query1, query2])
         query.includeKey("Marketplace")
         query.includeKey("Itinerary")
-
+        query.includeKey("Host")
+        query.includeKey("Requester")
         
         
         return query
@@ -73,7 +74,8 @@ class PendingTableViewViewController: PFQueryTableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewController : PendingExpandedViewController = UIStoryboard(name: "Booking", bundle: nil).instantiateViewControllerWithIdentifier("PendingExpandedViewController") as! PendingExpandedViewController
         
-       // viewController.pubObj = objectAtIndexPath(indexPath)! as PFObject
+       viewController.pendingObject = objectAtIndexPath(indexPath)! as PFObject
+        
         
         parentNaviController.showViewController(viewController, sender: nil)
     }
