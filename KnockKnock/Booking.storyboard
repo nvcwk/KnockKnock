@@ -9,7 +9,7 @@
         <scene sceneID="qI9-m9-v3K">
             <objects>
                 <navigationController id="CQJ-mk-qfZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Booking" id="dmj-98-s8W"/>
+                    <tabBarItem key="tabBarItem" title="Booking" image="Booking" id="dmj-98-s8W"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eI6-4r-H8T">
@@ -44,4 +44,7 @@
             <point key="canvasLocation" x="1188.5" y="552.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Booking" width="30" height="30"/>
+    </resources>
 </document>
