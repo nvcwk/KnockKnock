@@ -20,7 +20,7 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     @IBOutlet weak var contactLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
     @IBOutlet weak var summaryField: UITextField!
-    @IBOutlet weak var tourPic: UIImageView!
+    @IBOutlet weak var tourPic: PFImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
@@ -58,10 +58,13 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         self.summaryField.text = currentObjIti.objectForKey("summary") as? String
         image = currentObjIti.objectForKey("image")! as! PFFile
         
-        image.getDataInBackgroundWithBlock({
-            (result, error) in
-            self.tourPic.image = UIImage(data: result!)
-        })
+        self.tourPic.file = image
+        self.tourPic.loadInBackground()
+        
+//        image.getDataInBackgroundWithBlock({
+//            (result, error) in
+//            self.tourPic.image = UIImage(data: result!)
+//        })
         
         activityArray = currentObjIti["activities"] as! [PFObject]
         
