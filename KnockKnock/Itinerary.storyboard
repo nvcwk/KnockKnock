@@ -81,6 +81,9 @@
                                         <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="displayNumbers" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentIndex">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPO-DJ-hE1">
@@ -291,6 +294,9 @@
                                         <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="displayNumbers" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentIndex">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sM9-o7-HMe">
@@ -371,6 +377,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="img_tour" destination="8fO-St-eE1" id="WGj-oa-Z4e"/>
+                        <outlet property="progress_step" destination="08L-Pi-zWN" id="31c-C0-k2i"/>
                         <outlet property="tf_title" destination="3ya-yU-ZyM" id="eHX-tk-85s"/>
                         <outlet property="tv_summary" destination="Eqw-QR-bWu" id="pQ8-uv-7br"/>
                     </connections>
@@ -699,6 +706,9 @@
                                         <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="displayNumbers" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentIndex">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikz-Bc-zES">

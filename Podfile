@@ -24,6 +24,8 @@ pod 'SwiftDate'
 pod 'QIULaunchAnimation'
 pod 'ABSteppedProgressBar'
 pod 'FSCalendar'
+pod 'autoAutoLayout', '~> 2.0'
+
 
 
 

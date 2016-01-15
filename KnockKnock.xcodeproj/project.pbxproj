@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087D50C1C27D8E90005711E /* ProfileViewController.swift */; };
+		70B0E5841C4943960033991D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0E5831C4943960033991D /* QuartzCore.framework */; };
 		C1EE6E34C4461D4E0E5AD45D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5AD10247D09E5AD74690E6 /* Pods.framework */; };
 		E110D1DA1C4684F00074CF48 /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E110D1D91C4684F00074CF48 /* Booking.storyboard */; };
 		E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11461F61C1170B900983BC3 /* AppDelegate.swift */; };
@@ -99,6 +100,7 @@
 		1B5AD10247D09E5AD74690E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2934923C3E232A836459B32D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7087D50C1C27D8E90005711E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		70B0E5831C4943960033991D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E110D1D91C4684F00074CF48 /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
 		E11461F31C1170B900983BC3 /* KnockKnock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockKnock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11461F61C1170B900983BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70B0E5841C4943960033991D /* QuartzCore.framework in Frameworks */,
 				C1EE6E34C4461D4E0E5AD45D /* Pods.framework in Frameworks */,
 				E1E4B4401C1713D100242A83 /* FBSDKCoreKit.framework in Frameworks */,
 				E1E4B4431C1713D100242A83 /* FBSDKShareKit.framework in Frameworks */,
@@ -216,6 +219,7 @@
 		547C72A766A57714E8C3C0A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70B0E5831C4943960033991D /* QuartzCore.framework */,
 				E1E4B4441C1713D300242A83 /* FBSDK */,
 				1B5AD10247D09E5AD74690E6 /* Pods.framework */,
 			);

@@ -21,6 +21,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - autoAutoLayout (2.0.2)
   - Bolts (1.5.0):
     - Bolts/AppLinks (= 1.5.0)
     - Bolts/Tasks (= 1.5.0)
@@ -65,6 +66,7 @@ PODS:
 DEPENDENCIES:
   - ABSteppedProgressBar
   - AFNetworking (~> 2.0)
+  - autoAutoLayout (~> 2.0)
   - CountryPicker
   - DZNPhotoPickerController/Editor
   - FSCalendar
@@ -85,6 +87,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   ABSteppedProgressBar: 2f4f51ad45a9610f15fb696e2447482e690210c5
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  autoAutoLayout: cb00c68262cff287fbf2a3915de43be3395250dd
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   CountryPicker: 6f166e2f1cc250f07eba4c587fbe1c0efc21049b
   DZNPhotoPickerController: 1fcd18f2767b9c713865f0c09b32e1ba24f1516c
