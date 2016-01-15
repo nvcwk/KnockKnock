@@ -64,6 +64,7 @@
 		E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */; };
 		E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4541C18601100242A83 /* RegisterViewController.swift */; };
 		F601459C1C47A0D80085AC76 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F601459B1C47A0D80085AC76 /* cross.png */; };
+		F60DD3711C48B06D00B79F54 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F60DD3701C48B06D00B79F54 /* cross.png */; };
 		F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */; };
 		F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */; };
 		F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */; };
@@ -159,6 +160,7 @@
 		E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CountryPicker.bundle; sourceTree = "<group>"; };
 		E1E4B4541C18601100242A83 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F601459B1C47A0D80085AC76 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = ../../../Desktop/cross.png; sourceTree = "<group>"; };
+		F60DD3701C48B06D00B79F54 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = CountryPicker.bundle/cross.png; sourceTree = "<group>"; };
 		F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTableViewCell.swift; sourceTree = "<group>"; };
 		F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendingTableViewCell.xib; sourceTree = "<group>"; };
@@ -405,7 +407,7 @@
 		E1E4B44F1C18230A00242A83 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F601459B1C47A0D80085AC76 /* cross.png */,
+				F60DD3701C48B06D00B79F54 /* cross.png */,
 				E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */,
 			);
 			name = Resources;
@@ -425,6 +427,7 @@
 			children = (
 				F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */,
 				F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */,
+				F601459B1C47A0D80085AC76 /* cross.png */,
 				F6DC5CB51C4769AC00BA6776 /* ConfirmedTableViewCell.swift */,
 				F6DC5CB61C4769AC00BA6776 /* ConfirmedTableViewCell.xib */,
 				F6DC5CB91C4769EF00BA6776 /* PendingTableViewViewController.swift */,
@@ -560,6 +563,7 @@
 				E159A8311C33DE4200EF80A4 /* PubTableViewCell.xib in Resources */,
 				E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */,
 				E11462001C1170B900983BC3 /* Assets.xcassets in Resources */,
+				F60DD3711C48B06D00B79F54 /* cross.png in Resources */,
 				E11461FE1C1170B900983BC3 /* Main.storyboard in Resources */,
 				E110D1DA1C4684F00074CF48 /* Booking.storyboard in Resources */,
 				E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */,
