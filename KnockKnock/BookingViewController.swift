@@ -8,6 +8,8 @@
 
 import UIKit
 import FSCalendar
+import Parse
+import ParseUI
 
 class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
 
@@ -21,14 +23,26 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var UserselectedDate = NSDate()
     var bookedDatesArray = [String]()
     var bookedDatesArray2 = [NSDate]()
-
+    var pax : Int = 1
+    var price = Int()
+    var selectedDate = NSDate()
+    var finalPrice : Int = 0
+    var host = PFUser()
+    var marketplace : PFObject!
+    var itinerary : PFObject!
+    
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var paxLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         StartDate2 = StartDate.add(days: 1)
         EndDate2 = EndDate.add(days: -1)
-       bookedDatesArray2.append(StartDate2)
+        bookedDatesArray2.append(StartDate2)
         bookedDatesArray2.append(EndDate2)
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         dateFormatter.timeZone = NSTimeZone(name: "GMT")
@@ -40,7 +54,19 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             }
             
         }
-        print(bookedDatesArray2)
+       self.paxLabel.text = String(pax)
+        self.priceLabel.text = String(price)
+       
+    }
+    
+    @IBAction func sliderChanged(sender: AnyObject) {
+        var currentValue = sender.value as Float
+        var currentValue2 = Int(currentValue)
+       self.paxLabel.text = "\(currentValue2)"
+        var newPrice  = price * currentValue2
+        self.priceLabel.text = String(newPrice)
+        pax = Int(currentValue)
+        finalPrice = newPrice
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,23 +94,14 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                 return UIImage(named: "cross")
             }
         }
-        // if (bookedDatesArray2.contains(dateFormatter.stringFromDate(date))) {
-        //   return false
-        //}
         return nil
     }
 
 
-    //show dots
-    /*func calendar(calendar: FSCalendar!, hasEventForDate date: NSDate!) -> Bool {
-        return true
-    }
-    */
-    
     //prevent dates from being selected
     func calendar(calendar: FSCalendar!, shouldSelectDate date: NSDate!) -> Bool {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
+        dateFormatter.dateFormat = "YYYY-MM-dd"
         for dates in bookedDatesArray2{
         if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
                 return false
@@ -99,10 +116,49 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     
     //when date is selected
     func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
-        print(date)
+        selectedDate = date
 
     }
     
+    @IBAction func confirmBtnTapped(sender: AnyObject) {
+        let bookAlert = UIAlertController(title: "Book?", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            var booking = PFObject(className: "Pending")
+            booking["Requester"] = PFUser.currentUser()
+            booking["Date"] = self.selectedDate
+            booking["Host"] = self.host
+            booking["Pax"] = Int(self.pax)
+            booking["Total"] = Int(self.finalPrice)
+            booking["Marketplace"] = self.marketplace
+            booking["Itinerary"] = self.itinerary
+            let myAlert =
+            UIAlertController(title:"Sending to host!!", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
+            
+            booking.saveInBackgroundWithBlock {
+                (success : Bool?, error: NSError?) -> Void in
+                if (success != nil) {
+                    let myAlert =
+                    UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
+                    
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
+                    
+                    myAlert.addAction(okAction);
+                    
+                    self.presentViewController(myAlert, animated:true, completion:nil);
+                } else {
+                    NSLog("%@", error!)
+                }
+            }
+        }))
+        
+        bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        
+        presentViewController(bookAlert, animated: true, completion: nil)
+        
+    }
     
     
     }

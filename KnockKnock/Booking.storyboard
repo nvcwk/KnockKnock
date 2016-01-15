@@ -16,10 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="wBw-nL-b7K" kind="relationship" relationship="rootViewController" id="xqN-bD-w3d"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8BU-1I-J71" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="690.5" y="552.5"/>
+        </scene>
+        <!--My Booking Main View Controller-->
+        <scene sceneID="b7B-0s-xd0">
+            <objects>
+                <viewController id="wBw-nL-b7K" customClass="MyBookingMainViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FfM-bu-F4l"/>
+                        <viewControllerLayoutGuide type="bottom" id="GMa-05-sZr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c0I-L3-z9D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K6f-wY-CA5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JsB-8a-I9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188.5" y="552.5"/>
         </scene>
     </scenes>
 </document>
