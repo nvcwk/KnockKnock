@@ -77,6 +77,9 @@
                                     <constraint firstAttribute="height" constant="30" id="MlL-Pu-GoV"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button2Tapped:" destination="N3i-dn-Fjb" eventType="touchUpInside" id="ngb-MG-i5v"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzj-t6-dbx">
                                 <rect key="frame" x="158" y="515" width="46" height="30"/>
@@ -84,6 +87,9 @@
                                     <constraint firstAttribute="height" constant="30" id="qws-0Q-2nw"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button1Tapped:" destination="N3i-dn-Fjb" eventType="touchUpInside" id="LmO-lz-Xo7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeo-r7-nz5">
                                 <rect key="frame" x="6" y="117" width="344" height="27"/>

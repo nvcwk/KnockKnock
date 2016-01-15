@@ -137,6 +137,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             booking["Total"] = Int(self.finalPrice)
             booking["Marketplace"] = self.marketplace
             booking["Itinerary"] = self.itinerary
+            booking["Status"] = "Pending"
             let myAlert =
             UIAlertController(title:"Sending to host!!", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
