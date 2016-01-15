@@ -104,6 +104,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/SwiftValidator.framework"
   install_framework "Pods/TextFieldEffects.framework"
   install_framework "Pods/ZFRippleButton.framework"
+  install_framework "Pods/autoAutoLayout.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/ABSteppedProgressBar.framework"
@@ -126,4 +127,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/SwiftValidator.framework"
   install_framework "Pods/TextFieldEffects.framework"
   install_framework "Pods/ZFRippleButton.framework"
+  install_framework "Pods/autoAutoLayout.framework"
 fi
