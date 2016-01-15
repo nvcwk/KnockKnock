@@ -32,6 +32,7 @@
 		E15BF77C1C3FE191009A3C31 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF77B1C3FE191009A3C31 /* ProfileEditViewController.swift */; };
 		E15BF77E1C3FE617009A3C31 /* ProfileChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF77D1C3FE617009A3C31 /* ProfileChangePassViewController.swift */; };
 		E15BF7801C3FFB6A009A3C31 /* PubDetailsEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15BF77F1C3FFB6A009A3C31 /* PubDetailsEditViewController.swift */; };
+		E164E68F1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164E68E1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift */; };
 		E16B357C1C1CC9D4003897EF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B357A1C1CC9D4003897EF /* Profile.storyboard */; };
 		E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B357D1C1CCA39003897EF /* Itinerary.storyboard */; };
 		E16B35861C1CCC65003897EF /* MarketPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16B35841C1CCC65003897EF /* MarketPlace.storyboard */; };
@@ -42,6 +43,7 @@
 		E187E5451C32E80800E00E5A /* ItiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E187E5431C32E80800E00E5A /* ItiTableViewCell.xib */; };
 		E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187E5501C32F29100E00E5A /* ItiTableViewController.swift */; };
 		E187E5551C32F3A700E00E5A /* ItiTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E187E5541C32F3A700E00E5A /* ItiTableViewController.xib */; };
+		E1922AF11C49643A0078C401 /* MarketPlaceV2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1922AF01C49643A0078C401 /* MarketPlaceV2TableViewCell.swift */; };
 		E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE1751C3D7D74009FAB48 /* Marketplace.swift */; };
 		E19FE1781C3D7D84009FAB48 /* MarketplaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */; };
 		E19FE17C1C3D7D8F009FAB48 /* MarketplaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE17A1C3D7D8F009FAB48 /* MarketplaceViewController.swift */; };
@@ -128,6 +130,7 @@
 		E15BF77B1C3FE191009A3C31 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		E15BF77D1C3FE617009A3C31 /* ProfileChangePassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileChangePassViewController.swift; sourceTree = "<group>"; };
 		E15BF77F1C3FFB6A009A3C31 /* PubDetailsEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubDetailsEditViewController.swift; sourceTree = "<group>"; };
+		E164E68E1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceV2TableViewController.swift; sourceTree = "<group>"; };
 		E16B357B1C1CC9D4003897EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		E16B357D1C1CCA39003897EF /* Itinerary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Itinerary.storyboard; sourceTree = "<group>"; };
 		E16B35851C1CCC65003897EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MarketPlace.storyboard; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 		E187E5431C32E80800E00E5A /* ItiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiTableViewCell.xib; sourceTree = "<group>"; };
 		E187E5501C32F29100E00E5A /* ItiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiTableViewController.swift; sourceTree = "<group>"; };
 		E187E5541C32F3A700E00E5A /* ItiTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiTableViewController.xib; sourceTree = "<group>"; };
+		E1922AF01C49643A0078C401 /* MarketPlaceV2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceV2TableViewCell.swift; sourceTree = "<group>"; };
 		E19FE1751C3D7D74009FAB48 /* Marketplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
 		E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTableViewCell.swift; sourceTree = "<group>"; };
 		E19FE17A1C3D7D8F009FAB48 /* MarketplaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 		E11AC2081C16244900479927 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E164E68D1C494E4F00AEC87C /* MarketPlaceV2 */,
 				F6DC5CAB1C47683B00BA6776 /* MyBooking */,
 				E14174F61C3D7E8A005E3B9A /* MarketPlace */,
 				E1A7DA941C3CB14900759A8F /* Itinerary */,
@@ -345,6 +350,15 @@
 				F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */,
 			);
 			name = MarketPlace;
+			sourceTree = "<group>";
+		};
+		E164E68D1C494E4F00AEC87C /* MarketPlaceV2 */ = {
+			isa = PBXGroup;
+			children = (
+				E1922AF01C49643A0078C401 /* MarketPlaceV2TableViewCell.swift */,
+				E164E68E1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift */,
+			);
+			name = MarketPlaceV2;
 			sourceTree = "<group>";
 		};
 		E187E5391C32E48700E00E5A /* ExtLib */ = {
@@ -649,6 +663,7 @@
 				E1CAA8091C26A7BC00AB4637 /* KnockKnockImageUtils.swift in Sources */,
 				E159A8301C33DE4200EF80A4 /* PubTableViewCell.swift in Sources */,
 				E159A83B1C345CE700EF80A4 /* ItiDetailsViewController.swift in Sources */,
+				E1922AF11C49643A0078C401 /* MarketPlaceV2TableViewCell.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
 				7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
@@ -677,6 +692,7 @@
 				E15BF77E1C3FE617009A3C31 /* ProfileChangePassViewController.swift in Sources */,
 				F6DC5CBB1C4769EF00BA6776 /* PendingTableViewViewController.swift in Sources */,
 				E19FE17E1C3D7DA8009FAB48 /* DetailedMarketplaceViewController.swift in Sources */,
+				E164E68F1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift in Sources */,
 				E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
 				E15BF77C1C3FE191009A3C31 /* ProfileEditViewController.swift in Sources */,
