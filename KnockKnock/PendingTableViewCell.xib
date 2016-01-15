@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PendingTableViewCell" customModule="KnockKnock" customModuleProvider="target"/>
@@ -11,28 +12,46 @@
             <rect key="frame" x="0.0" y="0.0" width="318" height="102"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YtG-Kw-Eh5" id="4l0-XZ-gw5">
-                <rect key="frame" x="0.0" y="0.0" width="318" height="101.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="318" height="102"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkR-EY-5jD">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkR-EY-5jD">
                         <rect key="frame" x="15" y="12" width="56" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="m6E-MP-AYw"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Requester Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVr-wY-Ozy">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requester Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVr-wY-Ozy">
                         <rect key="frame" x="15" y="49" width="128" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="128" id="94h-Xg-haF"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ0-8o-9RT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ0-8o-9RT">
                         <rect key="frame" x="15" y="78" width="36" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="B3r-Ha-BsL"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="jJ0-8o-9RT" firstAttribute="top" secondItem="TVr-wY-Ozy" secondAttribute="bottom" constant="8" symbolic="YES" id="4zX-G3-TN4"/>
+                    <constraint firstItem="TVr-wY-Ozy" firstAttribute="top" secondItem="jkR-EY-5jD" secondAttribute="bottom" constant="16" id="6Zu-Lc-qba"/>
+                    <constraint firstItem="jkR-EY-5jD" firstAttribute="leading" secondItem="4l0-XZ-gw5" secondAttribute="leadingMargin" constant="7" id="9eY-S4-Tm0"/>
+                    <constraint firstItem="TVr-wY-Ozy" firstAttribute="leading" secondItem="jJ0-8o-9RT" secondAttribute="leading" id="HQP-Mm-6vk"/>
+                    <constraint firstItem="jkR-EY-5jD" firstAttribute="leading" secondItem="TVr-wY-Ozy" secondAttribute="leading" id="Qys-2L-iqs"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="jJ0-8o-9RT" secondAttribute="bottom" constant="-5.5" id="SSU-IT-g03"/>
+                    <constraint firstItem="jkR-EY-5jD" firstAttribute="top" secondItem="4l0-XZ-gw5" secondAttribute="topMargin" constant="4" id="Xof-ET-Hpt"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="date" destination="jJ0-8o-9RT" id="jAX-2h-vpl"/>
