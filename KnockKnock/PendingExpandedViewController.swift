@@ -26,13 +26,15 @@ class PendingExpandedViewController: UIViewController {
     @IBOutlet weak var reason: UILabel!
     
     var pendingObject : PFObject!
+    var hostObject : PFObject!
+    var requesterObject : PFObject!
     
     override func viewDidLoad() {
        
         super.viewDidLoad()
         pendingNum.text = pendingObject.objectId
-        let hostObject = (pendingObject["Host"]) as! PFObject
-        let requesterObject = (pendingObject["Requester"]) as! PFObject
+        hostObject = (pendingObject["Host"]) as! PFObject
+        requesterObject = (pendingObject["Requester"]) as! PFObject
         let itineraryObject = (pendingObject["Itinerary"]) as! PFObject
         var caseStatus =  pendingObject["Status"] as! String
         
@@ -67,7 +69,7 @@ class PendingExpandedViewController: UIViewController {
             actionButton.setTitle("", forState: UIControlState.Normal)
             actionButton.enabled = false
 
-            if (caseStatus == "Rejected"){
+            if (caseStatus == "Rejected" || caseStatus == "Cancelled"){
                 reason.text = "Reason: "
                 remarks.text =  pendingObject["Remarks"] as! String
                 actionButton2.setTitle("", forState: UIControlState.Normal)
@@ -88,6 +90,98 @@ class PendingExpandedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func button1Tapped(sender: AnyObject) {
+            //accept codes
+        
+        let bookAlert = UIAlertController(title: "Hosting", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        
+        bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            
+            
+            var booking = PFObject(className: "Confirmed")
+            booking["Requester"] = self.pendingObject["Requester"]
+            booking["Date"] = self.pendingObject["Date"]
+            booking["Host"] = self.pendingObject["Host"]
+            booking["Pax"] = self.pendingObject["Pax"]
+            booking["Total"] = self.pendingObject["Total"]
+            booking["Marketplace"] = self.pendingObject["Marketplace"]
+            booking["Itinerary"] = self.pendingObject["Itinerary"]
+            booking["Status"] = "Confirmed"
+            let myAlert =
+            UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
+            
+            booking.saveInBackgroundWithBlock {
+                (success : Bool?, error: NSError?) -> Void in
+                if (success != nil) {
+                    self.pendingObject["Status"] = "Accepted"
+                    self.pendingObject.saveInBackground()
+                    
+                    let myAlert =
+                    UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
+                    
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
+                    
+                    myAlert.addAction(okAction);
+                    
+                    self.presentViewController(myAlert, animated:true, completion:nil);
+                } else {
+                    NSLog("%@", error!)
+                }
+            }
+        }))
+        bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        
+        presentViewController(bookAlert, animated: true, completion: nil)
+        
 
 
+    }
+
+    @IBAction func button2Tapped(sender: AnyObject) {
+        //reject codes
+        
+        let bookAlert = UIAlertController(title: "Reject/Cancel", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        
+        bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            
+           // var booking = PFObject(className: "Pending")
+            if (self.hostObject == PFUser.currentUser()){
+                self.pendingObject["Status"] = "Rejected"
+                self.pendingObject["Remarks"] = "Host Rejected"
+            }else{
+                self.pendingObject["Status"] = "Cancelled"
+                self.pendingObject["Remarks"] = "User Cancelled"
+            }
+            let myAlert =
+            UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
+            
+            self.pendingObject.saveInBackgroundWithBlock {
+                (success : Bool?, error: NSError?) -> Void in
+                if (success != nil) {
+                let myAlert =
+                    UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
+                    
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
+                    
+                    myAlert.addAction(okAction);
+                    
+                    self.presentViewController(myAlert, animated:true, completion:nil);
+                } else {
+                    NSLog("%@", error!)
+                }
+            }
+        }))
+        bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        
+        presentViewController(bookAlert, animated: true, completion: nil)
+    }
+
+    
+    
 }
