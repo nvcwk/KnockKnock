@@ -151,7 +151,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E-mail Address" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="wre-Ke-qpd" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="28" y="314" width="318" height="40"/>
+                                <rect key="frame" x="28" y="291" width="318" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ijw-BQ-Obk"/>
                                 </constraints>
@@ -176,7 +176,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wre-Ke-qpd" firstAttribute="centerY" secondItem="PBU-cz-Msk" secondAttribute="centerY" id="Fuz-ct-IH5"/>
+                            <constraint firstItem="wre-Ke-qpd" firstAttribute="centerY" secondItem="PBU-cz-Msk" secondAttribute="centerY" constant="-22.5" id="Fuz-ct-IH5"/>
                             <constraint firstItem="y2r-eX-zYM" firstAttribute="leading" secondItem="kmU-3Q-tQW" secondAttribute="leading" id="Gpg-2m-IhB"/>
                             <constraint firstItem="kmU-3Q-tQW" firstAttribute="trailing" secondItem="cLp-nW-gU7" secondAttribute="trailing" id="IYS-hG-PHM"/>
                             <constraint firstItem="cLp-nW-gU7" firstAttribute="top" secondItem="kmU-3Q-tQW" secondAttribute="bottom" constant="22" id="OQq-xz-d5d"/>
@@ -186,7 +186,7 @@
                             <constraint firstItem="y2r-eX-zYM" firstAttribute="trailing" secondItem="kmU-3Q-tQW" secondAttribute="trailing" id="Vls-JB-djy"/>
                             <constraint firstItem="wre-Ke-qpd" firstAttribute="centerX" secondItem="PBU-cz-Msk" secondAttribute="centerX" id="ZbS-uD-Auy"/>
                             <constraint firstItem="kmU-3Q-tQW" firstAttribute="top" secondItem="y2r-eX-zYM" secondAttribute="bottom" constant="15" id="aGF-FW-BC0"/>
-                            <constraint firstItem="kmU-3Q-tQW" firstAttribute="top" secondItem="wre-Ke-qpd" secondAttribute="bottom" constant="45" id="enC-sA-o5I"/>
+                            <constraint firstItem="kmU-3Q-tQW" firstAttribute="top" secondItem="wre-Ke-qpd" secondAttribute="bottom" constant="68" id="enC-sA-o5I"/>
                             <constraint firstItem="kmU-3Q-tQW" firstAttribute="leading" secondItem="cLp-nW-gU7" secondAttribute="leading" id="fY4-xJ-Nej"/>
                             <constraint firstItem="y2r-eX-zYM" firstAttribute="trailing" secondItem="wre-Ke-qpd" secondAttribute="trailing" id="fYC-SD-2QF"/>
                             <constraint firstItem="OBW-Om-hwJ" firstAttribute="trailing" secondItem="cLp-nW-gU7" secondAttribute="trailing" id="fcj-5B-ULB"/>
@@ -196,7 +196,7 @@
                             <constraint firstItem="V8U-bw-jLr" firstAttribute="top" secondItem="byG-qZ-WlF" secondAttribute="bottom" constant="8" symbolic="YES" id="mJY-JF-SPu"/>
                             <constraint firstItem="byG-qZ-WlF" firstAttribute="centerX" secondItem="V8U-bw-jLr" secondAttribute="centerX" id="vcv-B3-Gmd"/>
                             <constraint firstItem="byG-qZ-WlF" firstAttribute="top" secondItem="FzE-j7-p1I" secondAttribute="bottom" constant="8" symbolic="YES" id="ye8-bc-HEG"/>
-                            <constraint firstItem="wre-Ke-qpd" firstAttribute="top" secondItem="V8U-bw-jLr" secondAttribute="bottom" constant="95" id="z6E-vR-oGu"/>
+                            <constraint firstItem="wre-Ke-qpd" firstAttribute="top" secondItem="V8U-bw-jLr" secondAttribute="bottom" constant="72" id="z6E-vR-oGu"/>
                             <constraint firstItem="cLp-nW-gU7" firstAttribute="leading" secondItem="OBW-Om-hwJ" secondAttribute="leading" id="zBB-BN-5fE"/>
                         </constraints>
                     </view>
@@ -211,7 +211,6 @@
                     <connections>
                         <outlet property="btn_editSave" destination="cLp-nW-gU7" id="YmQ-rv-DBt"/>
                         <outlet property="img_profile" destination="byG-qZ-WlF" id="iJS-um-ESj"/>
-                        <outlet property="lbl_name" destination="V8U-bw-jLr" id="gF3-YH-pga"/>
                         <outlet property="tf_birthday" destination="y2r-eX-zYM" id="YiN-ks-Z25"/>
                         <outlet property="tf_contactNo" destination="kmU-3Q-tQW" id="XdI-re-Y6G"/>
                         <outlet property="tf_email" destination="wre-Ke-qpd" id="yXG-J0-XLI"/>
