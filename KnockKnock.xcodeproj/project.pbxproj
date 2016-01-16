@@ -44,6 +44,8 @@
 		E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187E5501C32F29100E00E5A /* ItiTableViewController.swift */; };
 		E187E5551C32F3A700E00E5A /* ItiTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E187E5541C32F3A700E00E5A /* ItiTableViewController.xib */; };
 		E1922AF11C49643A0078C401 /* MarketPlaceV2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1922AF01C49643A0078C401 /* MarketPlaceV2TableViewCell.swift */; };
+		E1922AF31C4966F00078C401 /* MarketPlaceV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1922AF21C4966F00078C401 /* MarketPlaceV2ViewController.swift */; };
+		E1922AF51C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1922AF41C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift */; };
 		E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE1751C3D7D74009FAB48 /* Marketplace.swift */; };
 		E19FE1781C3D7D84009FAB48 /* MarketplaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */; };
 		E19FE17C1C3D7D8F009FAB48 /* MarketplaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE17A1C3D7D8F009FAB48 /* MarketplaceViewController.swift */; };
@@ -142,6 +144,8 @@
 		E187E5501C32F29100E00E5A /* ItiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiTableViewController.swift; sourceTree = "<group>"; };
 		E187E5541C32F3A700E00E5A /* ItiTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItiTableViewController.xib; sourceTree = "<group>"; };
 		E1922AF01C49643A0078C401 /* MarketPlaceV2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceV2TableViewCell.swift; sourceTree = "<group>"; };
+		E1922AF21C4966F00078C401 /* MarketPlaceV2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceV2ViewController.swift; sourceTree = "<group>"; };
+		E1922AF41C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceDetailsV2ViewController.swift; sourceTree = "<group>"; };
 		E19FE1751C3D7D74009FAB48 /* Marketplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
 		E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTableViewCell.swift; sourceTree = "<group>"; };
 		E19FE17A1C3D7D8F009FAB48 /* MarketplaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +361,8 @@
 			children = (
 				E1922AF01C49643A0078C401 /* MarketPlaceV2TableViewCell.swift */,
 				E164E68E1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift */,
+				E1922AF21C4966F00078C401 /* MarketPlaceV2ViewController.swift */,
+				E1922AF41C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift */,
 			);
 			name = MarketPlaceV2;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 				E1922AF11C49643A0078C401 /* MarketPlaceV2TableViewCell.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
 				7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */,
+				E1922AF31C4966F00078C401 /* MarketPlaceV2ViewController.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
 				E1B95E441C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift in Sources */,
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
@@ -675,6 +682,7 @@
 				E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */,
 				E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */,
 				F6DC5CC41C476BA500BA6776 /* MyBookingMainViewController.swift in Sources */,
+				E1922AF51C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */,
 				E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */,
