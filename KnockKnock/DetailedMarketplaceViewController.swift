@@ -29,7 +29,7 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     var activityArray = [PFObject]()
     var activities = [PFObject]()
     
-    var bookedDatesArray = [String]()
+    var bookedDatesArray = [NSDate]()
     var numOfDays: Int!
     var startDate = NSDate()
     var endDate = NSDate()
@@ -67,7 +67,7 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         
         numOfDays = activityArray.count - 1
         
-        bookedDatesArray = currentObject["bookedDate"] as! [String]
+        bookedDatesArray = currentObject["bookedDate"] as! [NSDate]
         print(bookedDatesArray)
         
         let query = PFQuery(className: "Activity")
@@ -133,8 +133,10 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var DestViewController : BookingViewController = segue.destinationViewController as! BookingViewController
+        
         DestViewController.StartDate = startDate
         DestViewController.EndDate = endDate
+        
         DestViewController.bookedDatesArray = bookedDatesArray
         DestViewController.price = currentObject["price"] as! Int
         DestViewController.host = currentObject["host"] as! PFUser
