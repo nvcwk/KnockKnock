@@ -85,6 +85,7 @@ extension ProfileEditViewController: ValidationDelegate {
         let currentUser = PFUser.currentUser()!
         
         currentUser.email = tf_email.text
+        currentUser.username = tf_email.text
         currentUser["contact"] = Int(tf_contactNo.text!)
         currentUser["dob"] = selectedDate
         
@@ -95,11 +96,12 @@ extension ProfileEditViewController: ValidationDelegate {
                 KnockKnockUtils.okAlert(self, title: "Updated!", message: "", handle: { UIAlertAction in
                         NSNotificationCenter.defaultCenter().postNotificationName("setupProfileTxtFields", object: nil)
                     
+                        PFUser.logInWithUsernameInBackground(currentUser.username!, password: currentUser.password!)
                         self.navigationController?.popToRootViewControllerAnimated(false)
+                    
+
                     }
                 )
-                
-                
             } else {
                 KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
             }
