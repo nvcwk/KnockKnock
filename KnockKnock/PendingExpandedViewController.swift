@@ -114,8 +114,7 @@ class PendingExpandedViewController: UIViewController {
             booking.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
-                    self.pendingObject["Status"] = "Accepted"
-                    self.pendingObject.saveInBackground()
+                    self.pendingObject.deleteInBackground()
                     
                     let myAlert =
                     UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
