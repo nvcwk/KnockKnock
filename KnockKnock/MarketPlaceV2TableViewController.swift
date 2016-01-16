@@ -15,6 +15,10 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
     var published = true
     
     override func viewDidLoad() {
+        let test = KnockKnockUtils.dateToString(NSDate())
+        
+        print(KnockKnockUtils.dateToParse(test))
+        
         print("TEST")
         super.viewDidLoad()
         
