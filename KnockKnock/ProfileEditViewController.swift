@@ -96,7 +96,7 @@ extension ProfileEditViewController: ValidationDelegate {
                 KnockKnockUtils.okAlert(self, title: "Updated!", message: "", handle: { UIAlertAction in
                         NSNotificationCenter.defaultCenter().postNotificationName("setupProfileTxtFields", object: nil)
                     
-                        PFUser.logInWithUsernameInBackground(currentUser.username!, password: currentUser.password!)
+
                         self.navigationController?.popToRootViewControllerAnimated(false)
                     
 
