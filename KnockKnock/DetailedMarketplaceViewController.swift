@@ -146,4 +146,5 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         DestViewController.marketplace = currentObject as! PFObject
         DestViewController.itinerary = currentObject["itinerary"] as! PFObject
     }
-}
+    
+    }
