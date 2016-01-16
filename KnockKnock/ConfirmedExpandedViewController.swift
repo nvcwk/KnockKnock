@@ -20,6 +20,7 @@ class ConfirmedExpandedViewController: UIViewController {
     @IBOutlet weak var endDate: UILabel!
     @IBOutlet weak var value: UILabel!
     @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
 
     var confirmedObject : PFObject!
     
@@ -59,6 +60,10 @@ class ConfirmedExpandedViewController: UIViewController {
             
         }
         
+        if (confirmedObject["Status"] as! String == "Cancelled"){
+            cancelButton.setTitle("", forState: UIControlState.Normal)
+            cancelButton.enabled = false
+        }
 
     }
 
@@ -67,5 +72,42 @@ class ConfirmedExpandedViewController: UIViewController {
        
     }
     
+    @IBAction func cancelButtonTapped(sender: AnyObject) {
+        
+        
+        let bookAlert = UIAlertController(title: "Cancel", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        
+        bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            self.confirmedObject["Status"] = "Cancelled"
+            self.confirmedObject["Remarks"] = "Cancelled"
 
-   }
+            let myAlert =
+            UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
+            
+            self.confirmedObject.saveInBackgroundWithBlock {
+                (success : Bool?, error: NSError?) -> Void in
+                if (success != nil) {
+                    let myAlert =
+                    UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
+                    
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
+                    
+                    myAlert.addAction(okAction);
+                    
+                    self.presentViewController(myAlert, animated:true, completion:nil);
+                } else {
+                    NSLog("%@", error!)
+                }
+            }
+        }))
+        bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        
+        presentViewController(bookAlert, animated: true, completion: nil)
+    }
+
+        
+    }
+

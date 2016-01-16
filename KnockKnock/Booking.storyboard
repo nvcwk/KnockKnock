@@ -332,6 +332,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovr-bQ-3hw">
                                 <rect key="frame" x="172" y="572" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="PaG-mz-RIA" eventType="touchUpInside" id="EXN-o5-Csr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgm-ca-wPr">
                                 <rect key="frame" x="20" y="129" width="345" height="21"/>
@@ -496,6 +499,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="Ovr-bQ-3hw" id="gkH-We-wJz"/>
                         <outlet property="confirmNum" destination="1oi-2q-gJr" id="a97-9a-FPU"/>
                         <outlet property="endDate" destination="8cB-85-kSS" id="ACZ-aE-8VJ"/>
                         <outlet property="header" destination="fgm-ca-wPr" id="CW4-1T-J8m"/>
