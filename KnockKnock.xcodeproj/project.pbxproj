@@ -69,8 +69,6 @@
 		F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */; };
 		F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */; };
 		F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */; };
-		F6DC5CB71C4769AC00BA6776 /* ConfirmedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CB51C4769AC00BA6776 /* ConfirmedTableViewCell.swift */; };
-		F6DC5CB81C4769AC00BA6776 /* ConfirmedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CB61C4769AC00BA6776 /* ConfirmedTableViewCell.xib */; };
 		F6DC5CBB1C4769EF00BA6776 /* PendingTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CB91C4769EF00BA6776 /* PendingTableViewViewController.swift */; };
 		F6DC5CBC1C4769EF00BA6776 /* PendingTableViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CBA1C4769EF00BA6776 /* PendingTableViewViewController.xib */; };
 		F6DC5CC11C476A5B00BA6776 /* ConfirmedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CBF1C476A5B00BA6776 /* ConfirmedTableViewController.swift */; };
@@ -166,8 +164,6 @@
 		F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTableViewCell.swift; sourceTree = "<group>"; };
 		F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendingTableViewCell.xib; sourceTree = "<group>"; };
-		F6DC5CB51C4769AC00BA6776 /* ConfirmedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedTableViewCell.swift; sourceTree = "<group>"; };
-		F6DC5CB61C4769AC00BA6776 /* ConfirmedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmedTableViewCell.xib; sourceTree = "<group>"; };
 		F6DC5CB91C4769EF00BA6776 /* PendingTableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTableViewViewController.swift; sourceTree = "<group>"; };
 		F6DC5CBA1C4769EF00BA6776 /* PendingTableViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendingTableViewViewController.xib; sourceTree = "<group>"; };
 		F6DC5CBF1C476A5B00BA6776 /* ConfirmedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedTableViewController.swift; sourceTree = "<group>"; };
@@ -431,8 +427,6 @@
 			children = (
 				F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */,
 				F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */,
-				F6DC5CB51C4769AC00BA6776 /* ConfirmedTableViewCell.swift */,
-				F6DC5CB61C4769AC00BA6776 /* ConfirmedTableViewCell.xib */,
 				F6DC5CB91C4769EF00BA6776 /* PendingTableViewViewController.swift */,
 				F6DC5CBA1C4769EF00BA6776 /* PendingTableViewViewController.xib */,
 				F6DC5CBF1C476A5B00BA6776 /* ConfirmedTableViewController.swift */,
@@ -560,7 +554,6 @@
 				F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */,
 				E159A8391C33E9E600EF80A4 /* PubTableViewController.xib in Resources */,
 				E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */,
-				F6DC5CB81C4769AC00BA6776 /* ConfirmedTableViewCell.xib in Resources */,
 				F6DC5CC21C476A5B00BA6776 /* ConfirmedTableViewController.xib in Resources */,
 				E159A8311C33DE4200EF80A4 /* PubTableViewCell.xib in Resources */,
 				E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */,
@@ -675,7 +668,6 @@
 				F6DC5CC11C476A5B00BA6776 /* ConfirmedTableViewController.swift in Sources */,
 				E15BF7801C3FFB6A009A3C31 /* PubDetailsEditViewController.swift in Sources */,
 				E19FE17C1C3D7D8F009FAB48 /* MarketplaceViewController.swift in Sources */,
-				F6DC5CB71C4769AC00BA6776 /* ConfirmedTableViewCell.swift in Sources */,
 				E1CAA80B1C27053300AB4637 /* ActivityTableViewCell.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
 				E15BF77E1C3FE617009A3C31 /* ProfileChangePassViewController.swift in Sources */,
