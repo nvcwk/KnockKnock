@@ -29,11 +29,12 @@ class KnockKnockUtils {
     }
     
     // Convert date to string
+    // Convert date to string in local time zone
     static func dateToString(date: NSDate) -> String {
         let formatter = NSDateFormatter()
-        formatter.dateStyle = NSDateFormatterStyle.LongStyle
-        formatter.dateFormat = "dd MMM yyyy"
-        formatter.timeZone = NSTimeZone(name: "UTC +8")
+        //formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.dateFormat = "dd MMM yyyy HH:mm:ss z"
+        formatter.timeZone = NSTimeZone.localTimeZone()
         return formatter.stringFromDate(date)
     }
     
@@ -46,10 +47,20 @@ class KnockKnockUtils {
         return formatter.stringFromDate(date)
     }
     
+    // Convert string to date
     static func StringToDate(stringDate: String) -> NSDate{
         let formatter = NSDateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.dateFormat = "dd MMM yyyy"
         formatter.timeZone = NSTimeZone(name: "GMT")
+        return formatter.dateFromString(stringDate)!
+    }
+    
+    
+    //Before pushing to parse, the timezone will be in UTC +0000
+    static func dateToParse(stringDate: String) -> NSDate{
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "dd MMM yyyy HH:mm:ss z"
+        formatter.timeZone = NSTimeZone.localTimeZone()
         return formatter.dateFromString(stringDate)!
     }
     

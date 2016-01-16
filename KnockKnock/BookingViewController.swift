@@ -20,12 +20,12 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     @IBOutlet weak var paxLabel: UILabel!
     
     var EndDate = NSDate()
-    var EndDate2 = NSDate()
+
     var StartDate = NSDate()
-    var StartDate2 = NSDate()
+
     var UserselectedDate = NSDate()
-    var bookedDatesArray = [String]()
-    var bookedDatesArray2 = [NSDate]()
+    var bookedDatesArray = [NSDate]()
+    //var bookedDatesArray2 = [NSDate]()
     var pax : Int = 1
     var price = Int()
     var selectedDate = NSDate()
@@ -39,22 +39,18 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        StartDate2 = StartDate.add(days: 1)
-        EndDate2 = EndDate.add(days: -1)
-        bookedDatesArray2.append(StartDate2)
-        bookedDatesArray2.append(EndDate2)
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         dateFormatter.timeZone = NSTimeZone(name: "GMT")
         
-        for stringDates in bookedDatesArray{
-            if let date = dateFormatter.dateFromString(stringDates){
-                var date = dateFormatter.dateFromString(stringDates)!
-                bookedDatesArray2.append(date)
-            }
-            
-        }
+//        for stringDates in bookedDatesArray{
+//            if let date = dateFormatter.dateFromString(stringDates){
+//                var date = dateFormatter.dateFromString(stringDates)!
+//                bookedDatesArray2.append(date)
+//            }
+//            
+//        }
        self.paxLabel.text = String(pax)
         self.priceLabel.text = String(price)
        
@@ -94,7 +90,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
        // return bookedDatesArray2.contains(date) ? UIImage(named: "cross") : nil
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
-        for dates in bookedDatesArray2{
+        for dates in bookedDatesArray{
             if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
                 return UIImage(named: "cross")
             }
@@ -107,7 +103,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     func calendar(calendar: FSCalendar!, shouldSelectDate date: NSDate!) -> Bool {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
-        for dates in bookedDatesArray2{
+        for dates in bookedDatesArray{
         if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
                 return false
         }
