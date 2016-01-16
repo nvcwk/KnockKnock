@@ -200,12 +200,15 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
             image = marketplaceObject["itinerary"].objectForKey("image")! as! PFFile
         }
         
+        cell.imageLabel.file = image
+        cell.imageLabel.loadInBackground()
         
-        image.getDataInBackgroundWithBlock({
-            (result, error) in
-            cell.imageLabel.image = UIImage(data: result!)
-        })
         
+//        image.getDataInBackgroundWithBlock({
+//            (result, error) in
+//            cell.imageLabel.image = UIImage(data: result!)
+//        })
+//        
         
         cell.priceLabel.text = "S$" + String(price) + "/pax"
         
