@@ -12,58 +12,74 @@ import ParseUI
 
 class ConfirmedTableViewController: PFQueryTableViewController {
 
+    
     var parentNaviController = UINavigationController()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.tableView.registerNib(UINib(nibName: "ConfirmedTableViewCell", bundle: nil), forCellReuseIdentifier: "ConfirmedViewCell")
+    super.viewDidLoad()
+    
+    self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingTableViewCell")
     }
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: "Confirmed")
-        
-        query.includeKey("Marketplace")
-        query.includeKey("Itinerary")
-        
-        query.whereKey("host", equalTo: PFUser.currentUser()!)
-        
-        return query
+    
+    var query1 = PFQuery(className: "Confirmed")
+    query1.whereKey("Requester", equalTo: PFUser.currentUser()!)
+    
+    
+    var query2 = PFQuery(className: "Confirmed")
+    query2.whereKey("Host", equalTo: PFUser.currentUser()!)
+    
+    
+    
+    var query = PFQuery.orQueryWithSubqueries([query1, query2])
+    query.includeKey("Marketplace")
+    query.includeKey("Itinerary")
+    query.includeKey("Host")
+    query.includeKey("Requester")
+    
+    
+    return query
+    
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
-        
-        var cell: ConfirmedTableViewCell = tableView.dequeueReusableCellWithIdentifier("ConfirmedTableViewCell") as! ConfirmedTableViewCell
-        
-        if let confirmed = object{
-            let marketplace = confirmed["Marketplace"] as! PFObject
-            let itinerary = marketplace["itinerary"] as! PFObject
-            cell.header.text = itinerary["titile"] as! String
-            
-            cell.date.text = "test"
-            
-            let requester = confirmed["Requester"] as! PFObject
-            cell.requester.text = requester.objectForKey("fName") as! String
-            
-            
-            
-        }
-        
-        return cell
+    
+        var cell: PendingTableViewCell = tableView.dequeueReusableCellWithIdentifier("PendingTableViewCell") as! PendingTableViewCell
+
+    
+    if let pending = object{
+    let marketplace = pending["Marketplace"] as! PFObject
+    let itinerary = pending["Itinerary"] as! PFObject
+    cell.header.text = itinerary["title"] as! String
+    
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "dd/MM/yyyy"
+    dateFormatter.timeZone = NSTimeZone(name: "GMT")
+    
+    cell.date.text = dateFormatter.stringFromDate(pending["Date"]! as! NSDate)
+    
+    let requester = pending["Requester"] as! PFObject
+    cell.requester.text = requester.objectForKey("fName") as! String
+    
+    
+    
     }
     
+    return cell
+    }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 163.0
+    return 163.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       /* let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
-        
-        viewController.pubObj = objectAtIndexPath(indexPath)! as PFObject
-        
-        parentNaviController.showViewController(viewController, sender: nil)
-*/
+    let viewController : ConfirmedExpandedViewController = UIStoryboard(name: "Booking", bundle: nil).instantiateViewControllerWithIdentifier("ConfirmedExpandedViewController") as! ConfirmedExpandedViewController
+    
+    viewController.confirmedObject = objectAtIndexPath(indexPath)! as PFObject
+    
+    
+    parentNaviController.showViewController(viewController, sender: nil)
     }
 
 }

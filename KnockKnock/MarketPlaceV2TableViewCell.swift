@@ -1,19 +1,21 @@
 //
-//  ConfirmedTableViewCell.swift
+//  MarketPlaceV2TableViewCell.swift
 //  KnockKnock
 //
-//  Created by Don Teo on 14/1/16.
+//  Created by Nicholas Chan on 16/1/16.
 //  Copyright © 2016 Gen6. All rights reserved.
 //
 
 import UIKit
+import Parse
 import ParseUI
 
-class ConfirmedTableViewCell: PFTableViewCell {
-    @IBOutlet weak var header: UILabel!
-    @IBOutlet weak var requester: UILabel!
-    @IBOutlet weak var date: UILabel!
-        
+class MarketPlaceV2TableViewCell: PFTableViewCell {
+
+    @IBOutlet weak var lb_title: UILabel!
+    @IBOutlet weak var lb_price: UILabel!
+    @IBOutlet weak var image_background: PFImageView!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +27,6 @@ class ConfirmedTableViewCell: PFTableViewCell {
         self.selectionStyle = UITableViewCellSelectionStyle.None
         // Configure the view for the selected state
     }
+
 
 }
