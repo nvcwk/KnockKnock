@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087D50C1C27D8E90005711E /* ProfileViewController.swift */; };
+		8FBD35491C4A351600D42AF8 /* MarketPlaceV2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FBD35481C4A351600D42AF8 /* MarketPlaceV2.storyboard */; };
 		C1EE6E34C4461D4E0E5AD45D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5AD10247D09E5AD74690E6 /* Pods.framework */; };
 		E110D1DA1C4684F00074CF48 /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E110D1D91C4684F00074CF48 /* Booking.storyboard */; };
 		E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11461F61C1170B900983BC3 /* AppDelegate.swift */; };
@@ -103,6 +104,7 @@
 		1B5AD10247D09E5AD74690E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2934923C3E232A836459B32D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7087D50C1C27D8E90005711E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8FBD35481C4A351600D42AF8 /* MarketPlaceV2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MarketPlaceV2.storyboard; sourceTree = "<group>"; };
 		E110D1D91C4684F00074CF48 /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
 		E11461F31C1170B900983BC3 /* KnockKnock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockKnock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11461F61C1170B900983BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				E16B357A1C1CC9D4003897EF /* Profile.storyboard */,
 				E11AC1FE1C16185400479927 /* Credential.storyboard */,
 				E11462011C1170B900983BC3 /* LaunchScreen.storyboard */,
+				8FBD35481C4A351600D42AF8 /* MarketPlaceV2.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */,
 				E159A8391C33E9E600EF80A4 /* PubTableViewController.xib in Resources */,
 				E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */,
+				8FBD35491C4A351600D42AF8 /* MarketPlaceV2.storyboard in Resources */,
 				F6DC5CB81C4769AC00BA6776 /* ConfirmedTableViewCell.xib in Resources */,
 				F6DC5CC21C476A5B00BA6776 /* ConfirmedTableViewController.xib in Resources */,
 				F601459C1C47A0D80085AC76 /* cross.png in Resources */,
