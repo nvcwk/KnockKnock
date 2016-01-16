@@ -13,13 +13,15 @@ class ItiSummaryViewController: UIViewController {
     let validator = Validator()
     var validationStatus = false
     
+    var setImage = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tv_summary.delegate = self
         imagePicker.delegate = self
         
-        validator.registerField(tf_title, rules: [RequiredRule(message: "Fill in title!")])
+        validator.registerField(tf_title, rules: [RequiredRule(message: "Fill in title!"), MinLengthRule(length: 5, message: "Title min 5 characters"), MaxLengthRule(length: 50, message: "Title max 50 characters")])
     }
     
     @IBAction func actionTapImage(sender: UITapGestureRecognizer) {
@@ -30,6 +32,9 @@ class ItiSummaryViewController: UIViewController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if(identifier == "toSelectDaysView") {
+            tf_title.text = KnockKnockUtils.trimmText(tf_title.text!)
+            tv_summary.text = KnockKnockUtils.trimmText(tv_summary.text)
+            
             validator.validate(self)
             
             return validationStatus
@@ -58,6 +63,7 @@ extension ItiSummaryViewController: UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
         img_tour.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        setImage = true
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -87,7 +93,7 @@ extension ItiSummaryViewController: ValidationDelegate {
             KnockKnockUtils.okAlert(self, title: "Error!", message: "Fill in summary!", handle: nil)
         }
         
-        if(img_tour.image == nil) {
+        if(!setImage) {
             isGood = false
             KnockKnockUtils.okAlert(self, title: "Error!", message: "Select an image!", handle: nil)
         }
