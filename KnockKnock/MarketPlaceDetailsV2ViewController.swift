@@ -81,4 +81,17 @@ extension MarketPlaceDetailsV2ViewController : UITableViewDelegate, UITableViewD
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var DestViewController : BookingViewController = segue.destinationViewController as! BookingViewController
+        var bookedDatesArray = pubObj["bookedDate"] as! [NSDate]
+        DestViewController.StartDate = pubObj["startAvailability"] as! NSDate
+        DestViewController.EndDate = pubObj["lastAvailability"] as! NSDate
+        
+        DestViewController.bookedDatesArray = bookedDatesArray
+        DestViewController.price = pubObj["price"] as! Int
+        DestViewController.host = hostObj
+        DestViewController.marketplace = pubObj
+        DestViewController.itinerary = itiObj
+    }
+
 }
