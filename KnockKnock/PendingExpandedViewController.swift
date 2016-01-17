@@ -28,6 +28,8 @@ class PendingExpandedViewController: UIViewController {
     var pendingObject : PFObject!
     var hostObject : PFObject!
     var requesterObject : PFObject!
+    var selectedDate : NSDate!
+    var bookedDateArray : [NSDate]!
     
     override func viewDidLoad() {
        
@@ -106,7 +108,7 @@ class PendingExpandedViewController: UIViewController {
             booking["Host"] = self.pendingObject["Host"]
             booking["Pax"] = self.pendingObject["Pax"]
             booking["Total"] = self.pendingObject["Total"]
-            booking["Marketplace"] = self.pendingObject["Marketplace"]
+            booking["Marketplace"] = self.pendingObject["Marketplace"] as! PFObject
             booking["Itinerary"] = self.pendingObject["Itinerary"]
             booking["Status"] = "Confirmed"
             let myAlert =
@@ -115,6 +117,20 @@ class PendingExpandedViewController: UIViewController {
             booking.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
+                    
+                    self.selectedDate = self.pendingObject["Date"] as! NSDate
+                    self.bookedDateArray = self.pendingObject["Marketplace"]["bookedDate"] as! [NSDate]
+                    
+                    self.bookedDateArray.append(self.selectedDate)
+                    
+                    var marketPlace = PFObject(className: "MarketPlace")
+                    
+                    marketPlace = self.pendingObject["Marketplace"] as! PFObject
+                    
+                    marketPlace["bookedDate"] = self.bookedDateArray
+                    
+                    marketPlace.saveInBackground()
+                    
                     //self.pendingObject.deleteInBackground()
                     self.pendingObject["Status"] = "Confirmed"
                     self.pendingObject.saveInBackground()

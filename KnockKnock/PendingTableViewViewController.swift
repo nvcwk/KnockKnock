@@ -23,16 +23,16 @@ class PendingTableViewViewController: PFQueryTableViewController {
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
     
-        var query1 = PFQuery(className: "Pending")
+        let query1 = PFQuery(className: "Pending")
         query1.whereKey("Requester", equalTo: PFUser.currentUser()!)
         query1.whereKey("Status", notEqualTo: "Confirmed")
         
-        var query2 = PFQuery(className: "Pending")
+        let query2 = PFQuery(className: "Pending")
         query2.whereKey("Host", equalTo: PFUser.currentUser()!)
         query2.whereKey("Status", notEqualTo: "Confirmed")
        
     
-        var query = PFQuery.orQueryWithSubqueries([query1, query2])
+        let query = PFQuery.orQueryWithSubqueries([query1, query2])
         query.includeKey("Marketplace")
         query.includeKey("Itinerary")
         query.includeKey("Host")
