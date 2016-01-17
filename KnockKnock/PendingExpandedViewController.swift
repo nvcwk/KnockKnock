@@ -22,7 +22,7 @@ class PendingExpandedViewController: UIViewController {
     @IBOutlet weak var actionButton2: UIButton!
     @IBOutlet weak var requesterContact: UILabel!
     @IBOutlet weak var requesterLabel: UILabel!
-    @IBOutlet weak var remarks: UITextField!
+    @IBOutlet weak var remarks: UILabel!
     @IBOutlet weak var reason: UILabel!
     
     var pendingObject : PFObject!
@@ -42,7 +42,7 @@ class PendingExpandedViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/YYYY"
         dateFormatter.timeZone = NSTimeZone(name: "GMT")
         var start = pendingObject["Date"] as! NSDate
-        var end = start.add(days: itineraryObject["duration"] as! Int)
+        var end = start.add(days: (itineraryObject["duration"] as! Int) - 1)
         
         header.text = itineraryObject["title"] as! String
         pax.text = String(pendingObject["Pax"])
@@ -50,7 +50,8 @@ class PendingExpandedViewController: UIViewController {
         endDate.text = dateFormatter.stringFromDate(end)
         value.text = String(pendingObject["Total"])
         status.text = caseStatus
-        
+        reason.text = ""
+        remarks.text =  ""
         
         
         

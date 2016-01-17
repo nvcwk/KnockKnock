@@ -37,7 +37,7 @@ class ConfirmedExpandedViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/YYYY"
         dateFormatter.timeZone = NSTimeZone(name: "GMT")
         var start = confirmedObject["Date"] as! NSDate
-        var end = start.add(days: itineraryObject["duration"] as! Int)
+        var end = start.add(days: (itineraryObject["duration"] as! Int) - 1)
         
         header.text = itineraryObject["title"] as! String
         pax.text = String(confirmedObject["Pax"])
@@ -75,7 +75,7 @@ class ConfirmedExpandedViewController: UIViewController {
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         
         
-        let bookAlert = UIAlertController(title: "Cancel", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        let bookAlert = UIAlertController(title: "Cancel Booking", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
         
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
