@@ -94,13 +94,13 @@ class ConfirmedExpandedViewController: UIViewController {
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
                     
                     myAlert.addAction(okAction);
-                    self.presentViewController(myAlert, animated:true, completion: { () -> Void in
+                    //self.presentViewController(myAlert, animated:true, completion: { () -> Void in
                         self.navigationController?.popToRootViewControllerAnimated(true)
                         //self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
 
-                    })
+                    //})
                     
-                    
+                    self.presentViewController(myAlert, animated:true, completion:nil);
                     self.viewDidLoad()
                    // self.navigationController?.popToRootViewControllerAnimated(true)
                     //self.dismissViewControllerAnimated(true, completion: nil)
