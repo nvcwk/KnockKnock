@@ -157,13 +157,16 @@ class PendingExpandedViewController: UIViewController {
                 self.pendingObject["Status"] = "Cancelled"
                 self.pendingObject["Remarks"] = "User Cancelled"
             }
+            
+
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
             self.pendingObject.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
-                let myAlert =
+                    
+                    let myAlert =
                     UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
                     
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
@@ -171,6 +174,8 @@ class PendingExpandedViewController: UIViewController {
                     myAlert.addAction(okAction);
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
+                    self.viewDidLoad()
+                   
                 } else {
                     NSLog("%@", error!)
                 }
