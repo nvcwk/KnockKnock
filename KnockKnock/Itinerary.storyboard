@@ -628,7 +628,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Day Tour Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Jj-Rm-T7g" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="47" y="241" width="279" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="i1q-tw-Ynt"/>
+                                    <constraint firstAttribute="height" constant="30" id="G5q-dG-HLT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -651,7 +651,7 @@
                                 <rect key="frame" x="47" y="323" width="279" height="132"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="132" id="j6D-Yw-rr1"/>
+                                    <constraint firstAttribute="height" constant="132" id="nmi-Ek-0a2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -659,16 +659,44 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Describe your Day Tour (Max 200 words)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbZ-5J-wc7">
                                 <rect key="frame" x="47" y="294" width="279" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="s1k-zC-7m1"/>
+                                    <constraint firstAttribute="height" constant="21" id="fOg-rB-W6Q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZb-FN-kEk" customClass="ABSteppedProgressBar" customModule="ABSteppedProgressBar">
-                                <rect key="frame" x="47" y="87" width="279" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikz-Bc-zES">
+                                <rect key="frame" x="0.0" y="87" width="116" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0rp-Ep-KdD"/>
+                                    <constraint firstAttribute="width" constant="116" id="NFl-nV-u5M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hl-M3-pYU">
+                                <rect key="frame" x="259" y="87" width="116" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="QvM-3Z-8bO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give your day tour a nice name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yx-Ze-P92">
+                                <rect key="frame" x="47" y="212" width="279" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3Ev-dd-9yA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VqI-l5-uI7" customClass="ABSteppedProgressBar" customModule="ABSteppedProgressBar">
+                                <rect key="frame" x="57" y="97" width="279" height="67"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfU-UH-UXf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnm-MC-Nqg">
                                         <rect key="frame" x="81" y="46" width="116" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -677,10 +705,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="bfU-UH-UXf" firstAttribute="centerX" secondItem="hZb-FN-kEk" secondAttribute="centerX" id="E3k-Hk-U3D"/>
-                                    <constraint firstAttribute="bottom" secondItem="bfU-UH-UXf" secondAttribute="bottom" id="euv-E7-U6H"/>
-                                    <constraint firstItem="bfU-UH-UXf" firstAttribute="leading" secondItem="hZb-FN-kEk" secondAttribute="leading" constant="81" id="gxo-LT-TFS"/>
-                                    <constraint firstItem="bfU-UH-UXf" firstAttribute="top" secondItem="hZb-FN-kEk" secondAttribute="top" constant="46" id="uvn-bC-LXw"/>
+                                    <constraint firstItem="Bnm-MC-Nqg" firstAttribute="centerX" secondItem="VqI-l5-uI7" secondAttribute="centerX" id="3Af-k2-1px"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bnm-MC-Nqg" secondAttribute="bottom" id="cco-wa-T5b"/>
+                                    <constraint firstItem="Bnm-MC-Nqg" firstAttribute="top" secondItem="VqI-l5-uI7" secondAttribute="top" constant="46" id="eNV-2u-9sb"/>
+                                    <constraint firstItem="Bnm-MC-Nqg" firstAttribute="leading" secondItem="VqI-l5-uI7" secondAttribute="leading" constant="81" id="xar-e7-DKU"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfPoints">
@@ -706,66 +734,38 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="displayNumbers" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="currentIndex">
-                                        <integer key="value" value="3"/>
+                                        <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikz-Bc-zES">
-                                <rect key="frame" x="0.0" y="87" width="116" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="aNZ-e9-mzP"/>
-                                    <constraint firstAttribute="width" constant="116" id="sk6-ee-tSE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hl-M3-pYU">
-                                <rect key="frame" x="259" y="87" width="116" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="ri1-sR-esh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give your day tour a nice name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yx-Ze-P92">
-                                <rect key="frame" x="47" y="212" width="279" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="qfN-SK-Fva"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="hZb-FN-kEk" secondAttribute="trailing" constant="33" id="01m-tb-uMS"/>
-                            <constraint firstItem="8yx-Ze-P92" firstAttribute="trailing" secondItem="3Jj-Rm-T7g" secondAttribute="trailing" id="12M-h7-n5l"/>
-                            <constraint firstItem="xg0-Hc-r9q" firstAttribute="leading" secondItem="YbZ-5J-wc7" secondAttribute="leading" id="16a-cR-6i6"/>
-                            <constraint firstItem="9hl-M3-pYU" firstAttribute="trailing" secondItem="6YC-BI-eNR" secondAttribute="trailing" id="4OF-fn-ggA"/>
-                            <constraint firstItem="6YC-BI-eNR" firstAttribute="leading" secondItem="Ikz-Bc-zES" secondAttribute="leading" id="8v8-04-3NH"/>
-                            <constraint firstItem="xg0-Hc-r9q" firstAttribute="trailing" secondItem="YbZ-5J-wc7" secondAttribute="trailing" id="DSC-CV-N58"/>
-                            <constraint firstItem="YbZ-5J-wc7" firstAttribute="top" secondItem="3Jj-Rm-T7g" secondAttribute="bottom" constant="23" id="Dz6-du-1Gn"/>
-                            <constraint firstItem="Ikz-Bc-zES" firstAttribute="firstBaseline" secondItem="9hl-M3-pYU" secondAttribute="firstBaseline" id="GaZ-oO-fYK"/>
-                            <constraint firstItem="8yx-Ze-P92" firstAttribute="top" secondItem="hZb-FN-kEk" secondAttribute="bottom" constant="58" id="J66-V1-vPl"/>
-                            <constraint firstItem="hZb-FN-kEk" firstAttribute="leading" secondItem="kQF-QU-coz" secondAttribute="leadingMargin" constant="31" id="Kuc-Gf-zf0"/>
-                            <constraint firstItem="3Jj-Rm-T7g" firstAttribute="leading" secondItem="8yx-Ze-P92" secondAttribute="leading" id="LIE-0C-sUi"/>
-                            <constraint firstItem="Ikz-Bc-zES" firstAttribute="top" secondItem="hZb-FN-kEk" secondAttribute="top" id="OBf-ib-uvM"/>
-                            <constraint firstItem="3Jj-Rm-T7g" firstAttribute="trailing" secondItem="YbZ-5J-wc7" secondAttribute="trailing" id="OD4-Of-QsK"/>
-                            <constraint firstItem="8yx-Ze-P92" firstAttribute="leading" secondItem="hZb-FN-kEk" secondAttribute="leading" id="P4y-jR-TiL"/>
-                            <constraint firstItem="8yx-Ze-P92" firstAttribute="trailing" secondItem="hZb-FN-kEk" secondAttribute="trailing" id="PVQ-Ae-FFL"/>
-                            <constraint firstItem="6YC-BI-eNR" firstAttribute="leading" secondItem="kQF-QU-coz" secondAttribute="leading" id="QWg-9x-4uH"/>
-                            <constraint firstItem="6YC-BI-eNR" firstAttribute="top" secondItem="kQF-QU-coz" secondAttribute="top" id="Qps-bz-6Jg"/>
-                            <constraint firstItem="xg0-Hc-r9q" firstAttribute="top" secondItem="YbZ-5J-wc7" secondAttribute="bottom" constant="8" symbolic="YES" id="XEr-em-GHS"/>
-                            <constraint firstItem="3Jj-Rm-T7g" firstAttribute="leading" secondItem="YbZ-5J-wc7" secondAttribute="leading" id="gOu-uI-lR8"/>
-                            <constraint firstItem="Ikz-Bc-zES" firstAttribute="baseline" secondItem="9hl-M3-pYU" secondAttribute="baseline" id="iuk-d9-xle"/>
-                            <constraint firstAttribute="trailing" secondItem="9hl-M3-pYU" secondAttribute="trailing" id="jV0-Ao-QUU"/>
-                            <constraint firstItem="vIf-qN-Gxg" firstAttribute="top" secondItem="xg0-Hc-r9q" secondAttribute="bottom" constant="212" id="m3Y-Wa-kha"/>
-                            <constraint firstItem="6YC-BI-eNR" firstAttribute="bottom" secondItem="vIf-qN-Gxg" secondAttribute="top" id="n0j-d3-29f"/>
-                            <constraint firstItem="3Jj-Rm-T7g" firstAttribute="top" secondItem="8yx-Ze-P92" secondAttribute="bottom" constant="8" symbolic="YES" id="vOg-C6-Kdn"/>
-                            <constraint firstItem="Ikz-Bc-zES" firstAttribute="top" secondItem="w73-7o-ok3" secondAttribute="bottom" constant="23" id="zPE-95-nBR"/>
+                            <constraint firstItem="VqI-l5-uI7" firstAttribute="leading" secondItem="kQF-QU-coz" secondAttribute="leadingMargin" constant="41" id="2xa-iq-cTL"/>
+                            <constraint firstItem="3Jj-Rm-T7g" firstAttribute="leading" secondItem="8yx-Ze-P92" secondAttribute="leading" id="7AA-dD-Jpe"/>
+                            <constraint firstItem="6YC-BI-eNR" firstAttribute="trailing" secondItem="9hl-M3-pYU" secondAttribute="trailing" id="Awj-jD-Eu7"/>
+                            <constraint firstItem="YbZ-5J-wc7" firstAttribute="top" secondItem="3Jj-Rm-T7g" secondAttribute="bottom" constant="23" id="EIf-fB-ewy"/>
+                            <constraint firstItem="VqI-l5-uI7" firstAttribute="top" secondItem="w73-7o-ok3" secondAttribute="bottom" constant="33" id="NUf-2f-QsF"/>
+                            <constraint firstItem="xg0-Hc-r9q" firstAttribute="top" secondItem="YbZ-5J-wc7" secondAttribute="bottom" constant="8" symbolic="YES" id="Nq5-ge-6cJ"/>
+                            <constraint firstItem="YbZ-5J-wc7" firstAttribute="leading" secondItem="xg0-Hc-r9q" secondAttribute="leading" id="SQn-t6-Py2"/>
+                            <constraint firstItem="3Jj-Rm-T7g" firstAttribute="leading" secondItem="YbZ-5J-wc7" secondAttribute="leading" id="Umq-Jj-gjr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8yx-Ze-P92" secondAttribute="trailing" constant="33" id="WLA-sO-fai"/>
+                            <constraint firstItem="Ikz-Bc-zES" firstAttribute="leading" secondItem="6YC-BI-eNR" secondAttribute="leading" id="YgJ-ky-N8S"/>
+                            <constraint firstItem="9hl-M3-pYU" firstAttribute="firstBaseline" secondItem="Ikz-Bc-zES" secondAttribute="firstBaseline" id="Yhh-BF-VoE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VqI-l5-uI7" secondAttribute="trailing" constant="23" id="cF6-BS-JvJ"/>
+                            <constraint firstItem="8yx-Ze-P92" firstAttribute="top" secondItem="VqI-l5-uI7" secondAttribute="bottom" constant="48" id="eUG-dI-vvn"/>
+                            <constraint firstItem="vIf-qN-Gxg" firstAttribute="top" secondItem="xg0-Hc-r9q" secondAttribute="bottom" constant="212" id="i6R-oj-5av"/>
+                            <constraint firstItem="Ikz-Bc-zES" firstAttribute="top" secondItem="w73-7o-ok3" secondAttribute="bottom" constant="23" id="j6Q-rI-eEg"/>
+                            <constraint firstItem="xg0-Hc-r9q" firstAttribute="trailing" secondItem="YbZ-5J-wc7" secondAttribute="trailing" id="nQ0-7V-jOd"/>
+                            <constraint firstItem="8yx-Ze-P92" firstAttribute="leading" secondItem="kQF-QU-coz" secondAttribute="leadingMargin" constant="31" id="pa2-YP-wRk"/>
+                            <constraint firstItem="6YC-BI-eNR" firstAttribute="bottom" secondItem="vIf-qN-Gxg" secondAttribute="top" id="q0g-3z-yTg"/>
+                            <constraint firstItem="Ikz-Bc-zES" firstAttribute="leading" secondItem="kQF-QU-coz" secondAttribute="leading" id="rCf-0s-Ok6"/>
+                            <constraint firstItem="3Jj-Rm-T7g" firstAttribute="top" secondItem="8yx-Ze-P92" secondAttribute="bottom" constant="8" symbolic="YES" id="rQW-uV-zxc"/>
+                            <constraint firstItem="3Jj-Rm-T7g" firstAttribute="trailing" secondItem="8yx-Ze-P92" secondAttribute="trailing" id="tAG-26-PPT"/>
+                            <constraint firstItem="Ikz-Bc-zES" firstAttribute="baseline" secondItem="9hl-M3-pYU" secondAttribute="baseline" id="wPr-wK-vlD"/>
+                            <constraint firstItem="YbZ-5J-wc7" firstAttribute="trailing" secondItem="3Jj-Rm-T7g" secondAttribute="trailing" id="wyH-fm-9bb"/>
+                            <constraint firstItem="6YC-BI-eNR" firstAttribute="top" secondItem="kQF-QU-coz" secondAttribute="top" id="yLn-by-TUe"/>
+                            <constraint firstAttribute="trailing" secondItem="6YC-BI-eNR" secondAttribute="trailing" id="zRU-dq-IZu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tour Schedule" id="RMp-o0-RtD">
