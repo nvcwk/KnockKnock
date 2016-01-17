@@ -30,6 +30,7 @@ class PendingTableViewViewController: PFQueryTableViewController {
         let query2 = PFQuery(className: "Pending")
         query2.whereKey("Host", equalTo: PFUser.currentUser()!)
         query2.whereKey("Status", notEqualTo: "Confirmed")
+        
        
     
         let query = PFQuery.orQueryWithSubqueries([query1, query2])
@@ -37,6 +38,7 @@ class PendingTableViewViewController: PFQueryTableViewController {
         query.includeKey("Itinerary")
         query.includeKey("Host")
         query.includeKey("Requester")
+        query.whereKey("Status", notEqualTo: "Cancelled")
         
         
         return query
