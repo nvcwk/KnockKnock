@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "166C3CBFA2EABAB7F49E57B519957630A6221FCE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "166C3CBFA2EABAB7F49E57B519957630A6221FCE" : 0,
+    "F36DFB499E7393EBA9A0BBEEC96AB3DD7BDFFA7D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ADE6D849-6059-4905-89A3-07453B1B4727",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "166C3CBFA2EABAB7F49E57B519957630A6221FCE" : "KnockKnock\/",
+    "F36DFB499E7393EBA9A0BBEEC96AB3DD7BDFFA7D" : "ABSteppedProgressBar\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KnockKnock",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KnockKnock.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nvcwk\/KnockKnock.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "166C3CBFA2EABAB7F49E57B519957630A6221FCE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/brendaaakoh\/ABSteppedProgressBar.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F36DFB499E7393EBA9A0BBEEC96AB3DD7BDFFA7D"
+    }
+  ]
+}
