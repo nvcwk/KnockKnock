@@ -60,9 +60,14 @@ class ConfirmedTableViewController: PFQueryTableViewController {
     
     cell.date.text = dateFormatter.stringFromDate(pending["Date"]! as! NSDate)
     
-    let requester = pending["Requester"] as! PFObject
-    cell.requester.text = requester.objectForKey("fName") as! String
-    
+        let requester = pending["Requester"] as! PFObject
+        let host = pending["Host"] as! PFObject
+        
+        if (host == PFUser.currentUser()){
+            cell.requester.text = requester.objectForKey("fName") as! String
+        }else{
+            cell.requester.text = host.objectForKey("fName") as! String
+        }
     
     
     }
