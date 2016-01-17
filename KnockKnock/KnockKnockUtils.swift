@@ -91,4 +91,11 @@ class KnockKnockUtils {
         return newImage
     }
     
+    static func trimmText(text: String) -> String {
+        let spaceSet = NSCharacterSet.whitespaceCharacterSet()
+        let trimmed = text.stringByTrimmingCharactersInSet(spaceSet)
+        
+        return trimmed
+    }
+    
 }

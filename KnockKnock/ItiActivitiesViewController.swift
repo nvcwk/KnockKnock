@@ -59,6 +59,7 @@ class ItiActivitiesViewController: UITableViewController {
         SwiftSpinner.show("Saving...")
         
         itineraryObj["activities"] = activities
+        itineraryObj["duration"] = days
         
         self.itineraryObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if (success) {
