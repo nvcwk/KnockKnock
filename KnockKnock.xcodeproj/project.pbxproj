@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087D50C1C27D8E90005711E /* ProfileViewController.swift */; };
+		709914AC1C4B41D800E2FF9A /* DPTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709914AB1C4B41D800E2FF9A /* DPTheme.swift */; };
 		70B0E5841C4943960033991D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0E5831C4943960033991D /* QuartzCore.framework */; };
 		C1EE6E34C4461D4E0E5AD45D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5AD10247D09E5AD74690E6 /* Pods.framework */; };
 		E110D1DA1C4684F00074CF48 /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E110D1D91C4684F00074CF48 /* Booking.storyboard */; };
@@ -103,6 +104,7 @@
 		1B5AD10247D09E5AD74690E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2934923C3E232A836459B32D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7087D50C1C27D8E90005711E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		709914AB1C4B41D800E2FF9A /* DPTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DPTheme.swift; path = "../../../Downloads/DPTheme-master/DPTheme/DPTheme.swift"; sourceTree = "<group>"; };
 		70B0E5831C4943960033991D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E110D1D91C4684F00074CF48 /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
 		E11461F31C1170B900983BC3 /* KnockKnock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockKnock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,7 +316,6 @@
 				E16B357A1C1CC9D4003897EF /* Profile.storyboard */,
 				E11AC1FE1C16185400479927 /* Credential.storyboard */,
 				E11462011C1170B900983BC3 /* LaunchScreen.storyboard */,
-				8FBD35481C4A351600D42AF8 /* MarketPlaceV2.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -373,6 +374,7 @@
 		E187E5391C32E48700E00E5A /* ExtLib */ = {
 			isa = PBXGroup;
 			children = (
+				709914AB1C4B41D800E2FF9A /* DPTheme.swift */,
 				E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */,
 			);
 			name = ExtLib;
@@ -686,6 +688,7 @@
 				F6DC5CC41C476BA500BA6776 /* MyBookingMainViewController.swift in Sources */,
 				E1922AF51C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
+				709914AC1C4B41D800E2FF9A /* DPTheme.swift in Sources */,
 				E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */,
 				E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */,
 				E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */,
