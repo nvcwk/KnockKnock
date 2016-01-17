@@ -70,9 +70,9 @@ class DetailedMarketplaceViewController: UIViewController, UITableViewDataSource
         
         numOfDays = activityArray.count - 1
         
-        bookedDatesArray = currentObject["bookedDate"] as! [NSDate]
-        print(bookedDatesArray)
-        
+        if (currentObject["bookedDate"] != nil){
+            bookedDatesArray = currentObject["bookedDate"] as! [NSDate]
+        }
         let query = PFQuery(className: "Activity")
         for a1 in activityArray{
             query.whereKey("objectId", matchesRegex: a1.objectId! )

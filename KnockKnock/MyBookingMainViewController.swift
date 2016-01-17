@@ -75,18 +75,5 @@ class MyBookingMainViewController: UIViewController, CAPSPageMenuDelegate {
     @IBAction func backItinerary(segue:UIStoryboardSegue) {
     }
     
-    /*
-    
-    func didMoveToPage(controller: UIViewController, index: Int){
-        print("ADASD")
-        if(index == 1) {
-            self.navigationItem.rightBarButtonItem?.title = ""
-            self.navigationItem.rightBarButtonItem?.enabled = false
-        } else {
-            self.navigationItem.rightBarButtonItem?.title = "Create"
-            self.navigationItem.rightBarButtonItem?.enabled = true
-        }
-    }
-    */
-
+   
 }
