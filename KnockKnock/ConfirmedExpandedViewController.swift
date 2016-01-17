@@ -94,18 +94,18 @@ class ConfirmedExpandedViewController: UIViewController {
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
                     
                     myAlert.addAction(okAction);
-                    
                     self.presentViewController(myAlert, animated:true, completion:nil);
-                } else {
+                    self.viewDidLoad()
+                                    } else {
                     NSLog("%@", error!)
                 }
             }
         }))
         bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
-            
         }))
         
         presentViewController(bookAlert, animated: true, completion: nil)
+        
     }
 
         
