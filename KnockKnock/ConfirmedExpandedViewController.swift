@@ -101,7 +101,7 @@ class ConfirmedExpandedViewController: UIViewController {
                     //})
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
-                    self.viewDidLoad()
+                    //self.viewDidLoad()
                    // self.navigationController?.popToRootViewControllerAnimated(true)
                     //self.dismissViewControllerAnimated(true, completion: nil)
                     

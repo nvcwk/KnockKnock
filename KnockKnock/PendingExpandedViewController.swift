@@ -96,7 +96,7 @@ class PendingExpandedViewController: UIViewController {
     @IBAction func button1Tapped(sender: AnyObject) {
             //accept codes
         
-        let bookAlert = UIAlertController(title: "Hosting", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        let bookAlert = UIAlertController(title: "Hosting", message: "Confirm Hosting", preferredStyle: UIAlertControllerStyle.Alert)
         
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
@@ -141,8 +141,9 @@ class PendingExpandedViewController: UIViewController {
                     
                     myAlert.addAction(okAction);
                     
-                    self.presentViewController(myAlert, animated:true, completion:nil);
-                    self.viewDidLoad()
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                   // self.presentViewController(myAlert, animated:true, completion:nil);
+                    //self.viewDidLoad()
                 } else {
                     NSLog("%@", error!)
                 }
@@ -190,8 +191,13 @@ class PendingExpandedViewController: UIViewController {
                     
                     myAlert.addAction(okAction);
                     
-                    self.presentViewController(myAlert, animated:true, completion:nil);
-                    self.viewDidLoad()
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                    // self.presentViewController(myAlert, animated:true, completion:nil);
+                    //self.viewDidLoad()
+
+                    
+                    //self.presentViewController(myAlert, animated:true, completion:nil);
+                    //self.viewDidLoad()
                    
                 } else {
                     NSLog("%@", error!)
