@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -18,7 +17,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="g9e-bq-m3V" kind="relationship" relationship="viewControllers" id="shY-Dy-m7B"/>
                         <segue destination="7NT-PX-KYv" kind="relationship" relationship="viewControllers" id="0m4-zD-YUE"/>
                         <segue destination="ymf-Zr-FqH" kind="relationship" relationship="viewControllers" id="ydq-JV-Fpa"/>
                         <segue destination="0gu-z4-IfZ" kind="relationship" relationship="viewControllers" id="cid-M9-7uq"/>
@@ -28,74 +26,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="MEi-P3-PIU">
-            <objects>
-                <navigationController id="g9e-bq-m3V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Home_Icon" id="9eT-fT-jd1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eQO-Vx-thC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="sMy-bl-eZZ">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="21f-OX-2zB" kind="relationship" relationship="rootViewController" id="Zhp-XL-uED"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jFm-Pj-MuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-0.5" y="809.5"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="YVK-hT-hjp">
-            <objects>
-                <viewController id="21f-OX-2zB" customClass="HomeViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fSz-Lp-b7h"/>
-                        <viewControllerLayoutGuide type="bottom" id="IZ3-3l-kMA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KN0-9F-Dhb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Main" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR0-zU-elF">
-                                <rect key="frame" x="62" y="80" width="250" height="114"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rfd-Sv-fmq" customClass="PFImageView">
-                                <rect key="frame" x="37" y="184" width="300" height="300"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFC-IW-KL6">
-                                <rect key="frame" x="163" y="517" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="actionLogout:" destination="21f-OX-2zB" eventType="touchUpInside" id="pKw-5D-ZZc"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="IZ3-3l-kMA" firstAttribute="top" secondItem="aR0-zU-elF" secondAttribute="bottom" constant="424" id="GbV-wP-9bd"/>
-                            <constraint firstItem="aR0-zU-elF" firstAttribute="centerX" secondItem="KN0-9F-Dhb" secondAttribute="centerX" id="Ro6-pu-WjH"/>
-                            <constraint firstItem="aR0-zU-elF" firstAttribute="leading" secondItem="KN0-9F-Dhb" secondAttribute="leadingMargin" constant="42" id="gGl-eM-G1a"/>
-                            <constraint firstItem="aR0-zU-elF" firstAttribute="top" secondItem="fSz-Lp-b7h" secondAttribute="bottom" constant="16" id="tDZ-QQ-zGd"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="pKs-0w-bAy"/>
-                    <connections>
-                        <outlet property="image_profile" destination="Rfd-Sv-fmq" id="uAh-wc-0wm"/>
-                        <outlet property="lb_temp" destination="aR0-zU-elF" id="1w9-Sg-tYf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SAP-VO-eud" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-0.5" y="1671.5"/>
         </scene>
         <!--Profile-->
         <scene sceneID="E2Y-EJ-Fp6">
@@ -138,7 +68,4 @@
             <point key="canvasLocation" x="690.5" y="552.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Home_Icon" width="30" height="30"/>
-    </resources>
 </document>
