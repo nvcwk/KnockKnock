@@ -19,7 +19,6 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
         
         print(KnockKnockUtils.dateToParse(test))
         
-        print("TEST")
         super.viewDidLoad()
         
     }
@@ -35,6 +34,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             query.includeKey("itinerary")
             query.includeKey("host")
             query.includeKey("itinerary.activities")
+            print("hello world")
         }
         
         return query
