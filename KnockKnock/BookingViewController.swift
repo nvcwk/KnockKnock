@@ -123,6 +123,24 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     }
     
     @IBAction func confirmBtnTapped(sender: AnyObject) {
+        //validation to check if dates are consecutive
+        var testerDates = [NSDate]()
+        var tester = false
+        selectedDate.sort()
+        var first = selectedDate.first
+        testerDates.append(first!)
+        for (var i = 0; i < numOfDays; i++){
+            var tempDate = first?.add(days: i)
+            testerDates.append(tempDate!)
+        }
+        
+        for date in testerDates {
+            if (!selectedDate.contains(date)){
+                tester = true
+            }
+        }
+        
+        //validation to check if days equal number of days of tour
         if (selectedDate.count != numOfDays){
             
             var alertTitle = "Days Count Mismatch"
@@ -135,6 +153,17 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             
             presentViewController(alert, animated: true, completion: nil)
             
+        }else if(tester){
+            var alertTitle = "Please select consecutive days"
+            var message = String("There must not be gaps in between dates")
+            let okText = "OKAY"
+            
+            let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            let okayButtton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
+            alert.addAction(okayButtton)
+            
+            presentViewController(alert, animated: true, completion: nil)
+
         }else{
             
             
