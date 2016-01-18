@@ -1244,6 +1244,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="840"/>
                     <connections>
+                        <outlet property="barBtn_publish" destination="4bz-AL-9hN" id="JDA-7n-1sC"/>
                         <outlet property="image_image" destination="gUR-o7-hcw" id="Kci-Yg-GaE"/>
                         <outlet property="lb_title" destination="4hQ-Ya-Lfn" id="MV3-gf-Zs5"/>
                         <outlet property="tv_activities" destination="COo-vl-mj3" id="pQT-HK-bfi"/>

@@ -17,11 +17,19 @@ class ItiDetailsViewController: UIViewController {
     @IBOutlet weak var tv_description: UITextView!
     @IBOutlet weak var image_image: PFImageView!
     @IBOutlet weak var tv_activities: UITableView!
+    @IBOutlet weak var barBtn_publish: UIBarButtonItem!
     
     var activities = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let host = itineraryObj["host"] as! PFUser
+        
+        if (PFUser.currentUser() != host) {
+            barBtn_publish.title = ""
+            barBtn_publish.enabled = false
+        }
         
         activities = itineraryObj["activities"] as! NSArray
         
