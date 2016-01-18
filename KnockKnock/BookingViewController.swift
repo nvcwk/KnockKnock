@@ -135,7 +135,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             
             presentViewController(alert, animated: true, completion: nil)
             
-        }else if{{
+        }else{
             
             
             let bookAlert = UIAlertController(title: "Book?", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
