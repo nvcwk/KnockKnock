@@ -103,7 +103,7 @@ extension ProfileEditViewController: ValidationDelegate {
                     }
                 )
             } else {
-                KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
+                KnockKnockUtils.okAlert(self, title: "Error!", message: (error?.userInfo.description)!, handle: nil)
             }
         }
     }
