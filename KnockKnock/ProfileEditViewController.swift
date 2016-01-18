@@ -84,15 +84,21 @@ extension ProfileEditViewController: ValidationDelegate {
         
         let currentUser = PFUser.currentUser()!
         
+        print(currentUser.email)
+        
+        let tempEmail = currentUser.email!
+        let tempContact = currentUser["contact"] as! Int
+        let tempDob = currentUser["dob"] as! NSDate
+        
         currentUser.email = tf_email.text
         currentUser.username = tf_email.text
         currentUser["contact"] = Int(tf_contactNo.text!)
         currentUser["dob"] = selectedDate
         
         currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            SwiftSpinner.hide()
+            
             if (success) {
-                SwiftSpinner.hide()
-                
                 KnockKnockUtils.okAlert(self, title: "Updated!", message: "", handle: { UIAlertAction in
                         NSNotificationCenter.defaultCenter().postNotificationName("setupProfileTxtFields", object: nil)
                     
@@ -103,7 +109,12 @@ extension ProfileEditViewController: ValidationDelegate {
                     }
                 )
             } else {
-                KnockKnockUtils.okAlert(self, title: "Error!", message: (error?.userInfo.description)!, handle: nil)
+                currentUser.email = tempEmail
+                currentUser.username = tempEmail
+                currentUser["contact"] = tempContact
+                currentUser["dob"] = tempDob
+                
+                KnockKnockUtils.okAlert(self, title: "Error!", message: (error?.userInfo["error"])! as! String, handle: nil)
             }
         }
     }
