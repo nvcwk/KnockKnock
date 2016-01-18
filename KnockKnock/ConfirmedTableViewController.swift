@@ -38,8 +38,7 @@ class ConfirmedTableViewController: PFQueryTableViewController {
     query.includeKey("Itinerary")
     query.includeKey("Host")
     query.includeKey("Requester")
-    
-    
+    query.includeKey("Itinerary.activities")
     return query
     
     }
