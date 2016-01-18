@@ -211,6 +211,18 @@ class PendingExpandedViewController: UIViewController {
         presentViewController(bookAlert, animated: true, completion: nil)
     }
 
+    @IBAction func browseButtonTapped(sender: AnyObject) {
+        let itineraryObject = (pendingObject["Itinerary"]) as! PFObject
+        
+        let activities = itineraryObject["activities"] as! NSArray
+        print(activities)
+        var storyboard = UIStoryboard(name: "Itinerary", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("itiDetailsView") as! ItiDetailsViewController
+        
+        controller.itineraryObj = itineraryObject
+        self.showViewController(controller, sender:self)
+    }
+    
     
     
 }

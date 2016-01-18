@@ -233,6 +233,27 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQa-qF-ZlB" customClass="ZFRippleButton" customModule="ZFRippleButton">
+                                <rect key="frame" x="48" y="385" width="280" height="40"/>
+                                <color key="backgroundColor" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TRP-v7-mOw"/>
+                                </constraints>
+                                <state key="normal" title="Browse Itinerary">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.035294117649999998" green="0.31372549020000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="browseButtonTapped:" destination="N3i-dn-Fjb" eventType="touchUpInside" id="afH-iG-ihw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -460,7 +481,7 @@
                                     <action selector="cancelButtonTapped:" destination="PaG-mz-RIA" eventType="touchUpInside" id="EXN-o5-Csr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remarks: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qy-LA-HuQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Remarks: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qy-LA-HuQ">
                                 <rect key="frame" x="25" y="324" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -472,6 +493,27 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70U-yn-fXt" customClass="ZFRippleButton" customModule="ZFRippleButton">
+                                <rect key="frame" x="47" y="353" width="280" height="40"/>
+                                <color key="backgroundColor" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="h4J-1o-nxv"/>
+                                </constraints>
+                                <state key="normal" title="Browse Itinerary">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.035294117649999998" green="0.31372549020000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="browseItineraryButtonTapped:" destination="PaG-mz-RIA" eventType="touchUpInside" id="e5n-nQ-VRa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -484,6 +526,7 @@
                             <constraint firstItem="1g0-Ax-vqC" firstAttribute="top" secondItem="Udg-Fd-QHX" secondAttribute="bottom" constant="43" id="6Pl-h5-9UY"/>
                             <constraint firstItem="PWK-EI-4Bu" firstAttribute="top" secondItem="8cB-85-kSS" secondAttribute="bottom" constant="324" id="74c-Ry-JGB"/>
                             <constraint firstItem="MWC-HO-FUJ" firstAttribute="firstBaseline" secondItem="YVe-pE-J35" secondAttribute="firstBaseline" id="7Ck-VZ-MK5"/>
+                            <constraint firstAttribute="bottom" secondItem="70U-yn-fXt" secondAttribute="bottom" constant="274" id="Acz-8A-0Qg"/>
                             <constraint firstItem="Rx9-9z-JGI" firstAttribute="top" secondItem="cWs-SJ-8uS" secondAttribute="bottom" constant="2" id="CIO-js-ObX"/>
                             <constraint firstItem="8cB-85-kSS" firstAttribute="top" secondItem="MMz-HB-ciy" secondAttribute="bottom" constant="88" id="DND-gz-kpk"/>
                             <constraint firstItem="cWs-SJ-8uS" firstAttribute="leading" secondItem="ce1-Gq-nbp" secondAttribute="trailing" constant="8" id="DWi-Am-vmN"/>
@@ -499,6 +542,7 @@
                             <constraint firstItem="1oi-2q-gJr" firstAttribute="leading" secondItem="7Cb-7V-H8p" secondAttribute="trailing" constant="38" id="RTn-Px-TGo"/>
                             <constraint firstItem="1g0-Ax-vqC" firstAttribute="firstBaseline" secondItem="YVe-pE-J35" secondAttribute="firstBaseline" id="Teu-jc-C8d"/>
                             <constraint firstItem="MWC-HO-FUJ" firstAttribute="baseline" secondItem="YVe-pE-J35" secondAttribute="baseline" id="VLU-js-N4v"/>
+                            <constraint firstItem="70U-yn-fXt" firstAttribute="leading" secondItem="AAU-Yg-VRK" secondAttribute="leading" constant="47" id="W9o-lq-Hn1"/>
                             <constraint firstItem="DbI-Ft-agQ" firstAttribute="top" secondItem="1g0-Ax-vqC" secondAttribute="bottom" constant="-62" id="WTb-Tk-hS6"/>
                             <constraint firstItem="7Cb-7V-H8p" firstAttribute="top" secondItem="J4A-Ea-SPR" secondAttribute="bottom" constant="20" id="Wd2-h2-1Kn"/>
                             <constraint firstItem="YVe-pE-J35" firstAttribute="leading" secondItem="1g0-Ax-vqC" secondAttribute="trailing" constant="18" id="XIx-bg-K5F"/>
@@ -510,11 +554,13 @@
                             <constraint firstItem="PWK-EI-4Bu" firstAttribute="top" secondItem="DbI-Ft-agQ" secondAttribute="bottom" constant="365" id="dwc-ax-FU8"/>
                             <constraint firstItem="7Cb-7V-H8p" firstAttribute="firstBaseline" secondItem="1oi-2q-gJr" secondAttribute="firstBaseline" id="eBf-ks-wBW"/>
                             <constraint firstItem="go0-zj-PBm" firstAttribute="firstBaseline" secondItem="DbI-Ft-agQ" secondAttribute="firstBaseline" id="gCo-pV-nKl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="70U-yn-fXt" secondAttribute="trailing" constant="28" id="gpT-3B-ZTf"/>
                             <constraint firstItem="go0-zj-PBm" firstAttribute="leading" secondItem="DbI-Ft-agQ" secondAttribute="trailing" constant="16" id="gzR-tC-Wlr"/>
                             <constraint firstItem="8cB-85-kSS" firstAttribute="baseline" secondItem="MWC-HO-FUJ" secondAttribute="baseline" id="ivI-vZ-XbT"/>
                             <constraint firstItem="1g0-Ax-vqC" firstAttribute="leading" secondItem="Udg-Fd-QHX" secondAttribute="leading" id="jNR-WQ-xqw"/>
                             <constraint firstItem="8cB-85-kSS" firstAttribute="leading" secondItem="MWC-HO-FUJ" secondAttribute="trailing" constant="20" id="jtH-8L-nUf"/>
                             <constraint firstItem="fgm-ca-wPr" firstAttribute="top" secondItem="7Cb-7V-H8p" secondAttribute="bottom" constant="15" id="jzb-Rj-06j"/>
+                            <constraint firstItem="70U-yn-fXt" firstAttribute="top" secondItem="7qy-LA-HuQ" secondAttribute="bottom" constant="8" id="roC-3a-F4V"/>
                             <constraint firstItem="DbI-Ft-agQ" firstAttribute="baseline" secondItem="go0-zj-PBm" secondAttribute="baseline" id="uOx-fd-Vqb"/>
                             <constraint firstItem="QSc-12-xww" firstAttribute="top" secondItem="fgm-ca-wPr" secondAttribute="bottom" constant="23" id="vlh-qj-vsn"/>
                             <constraint firstItem="MMz-HB-ciy" firstAttribute="leading" secondItem="QSc-12-xww" secondAttribute="trailing" constant="8" id="xn7-OK-Yrm"/>
