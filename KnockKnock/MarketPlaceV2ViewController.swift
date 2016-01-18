@@ -19,7 +19,7 @@ class MarketPlaceV2ViewController: UIViewController {
         super.viewDidLoad()
         
         ParseUtils.checkLogin(self)
-        
+                
         var fadeAnimation: QIULaunchAnimationFade = QIULaunchAnimationFade()
         //fadeAnimation.animationDuration = 5;
         fadeAnimation.startAnimation(nil)
