@@ -56,6 +56,7 @@ class PendingExpandedViewController: UIViewController {
         remarks.text =  ""
         
         
+
         
         
         if (hostObject == PFUser.currentUser()){
@@ -64,6 +65,7 @@ class PendingExpandedViewController: UIViewController {
             requesterContact.text = String(requesterObject["contact"])
             actionButton.setTitle("Accept", forState: UIControlState.Normal)
             actionButton2.setTitle("Reject", forState: UIControlState.Normal)
+            
 
         }else{
             requesterLabel.text = "Your Host: "
@@ -77,12 +79,29 @@ class PendingExpandedViewController: UIViewController {
                 remarks.text =  pendingObject["Remarks"] as! String
                 actionButton2.setTitle("", forState: UIControlState.Normal)
                 actionButton2.enabled = false
+                status.font = UIFont.boldSystemFontOfSize(18.0)
+                status.textColor = UIColor.redColor()
             }else{
                 reason.text = ""
                 actionButton2.setTitle("Cancel", forState: UIControlState.Normal)
             }
             
         }
+        //cell alignment and font
+        pendingNum.textAlignment = NSTextAlignment.Right;
+        header.textAlignment = NSTextAlignment.Center;
+        header.font = UIFont.boldSystemFontOfSize(20.0)
+        pax.textAlignment = NSTextAlignment.Right;
+        value.textAlignment = NSTextAlignment.Right;
+        status.textAlignment = NSTextAlignment.Right;
+        remarks.textAlignment = NSTextAlignment.Right;
+        startDate.textAlignment = NSTextAlignment.Center;
+        endDate.textAlignment = NSTextAlignment.Right;
+        requester.textAlignment = NSTextAlignment.Right;
+        requesterContact.textAlignment = NSTextAlignment.Right;
+        requester.textAlignment = NSTextAlignment.Right;
+        requesterContact.textAlignment = NSTextAlignment.Right;
+
         
         
         // Do any additional setup "after loading the view.
