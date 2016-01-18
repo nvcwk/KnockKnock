@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QIULaunchAnimation
 
 class MarketPlaceV2ViewController: UIViewController {
     
@@ -16,6 +17,12 @@ class MarketPlaceV2ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ParseUtils.checkLogin(self)
+        
+        var fadeAnimation: QIULaunchAnimationFade = QIULaunchAnimationFade()
+        //fadeAnimation.animationDuration = 5;
+        fadeAnimation.startAnimation(nil)
 
         // Do any additional setup after loading the view.
     }
