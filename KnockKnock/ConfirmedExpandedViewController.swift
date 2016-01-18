@@ -77,7 +77,7 @@ class ConfirmedExpandedViewController: UIViewController {
         value.textAlignment = NSTextAlignment.Right;
         status.textAlignment = NSTextAlignment.Right;
         remarks.textAlignment = NSTextAlignment.Right;
-        startDate.textAlignment = NSTextAlignment.Center;
+        startDate.textAlignment = NSTextAlignment.Left;
         endDate.textAlignment = NSTextAlignment.Right;
         requester.textAlignment = NSTextAlignment.Right;
         requesterContact.textAlignment = NSTextAlignment.Right;
