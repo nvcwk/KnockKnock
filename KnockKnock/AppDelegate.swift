@@ -26,19 +26,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ParseUtils.loadParse()
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
+        
+        
+        
+        
         IQKeyboardManager.sharedManager().enable = true
         
         let mainColor: UIColor = DPTheme.color(0x00A1B0, alpha: 1.0)
         let secondColor: UIColor = DPTheme.color(0xFFFFFF, alpha: 1.0)
         let fontName = "Avenir-Heavy"
         
-        DPTheme.setupTheme(
-            secondColor,
-            secondaryColor: mainColor,
-            fontName: fontName,
-            lightStatusBar: true)
+//        DPTheme.setupTheme(
+//            secondColor,
+//            secondaryColor: mainColor,
+//            fontName: fontName,
+//            lightStatusBar: true)
         DPTheme.customizeTabBar(secondColor, textColor: mainColor, fontName: "Avenir", fontSize: 10.0)
-        DPTheme.customizeButton(mainColor)
+        DPTheme.customizeNavigationBar(secondColor, textColor: mainColor, fontName: fontName, fontSize: 19.0, buttonColor: mainColor)
         return true
     }
 
