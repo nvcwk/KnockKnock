@@ -205,15 +205,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Remarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-7l-33t">
-                                <rect key="frame" x="20" y="364" width="330" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="3KW-Oa-4nw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Status            : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRI-Qb-NIG">
                                 <rect key="frame" x="21" y="275" width="112" height="21"/>
                                 <constraints>
@@ -228,6 +219,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="35P-aJ-Dhp"/>
                                     <constraint firstAttribute="width" constant="98" id="uku-cH-ziP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Remarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-7l-33t">
+                                <rect key="frame" x="131" y="336" width="330" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3KW-Oa-4nw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -258,7 +258,7 @@
                             <constraint firstItem="HUu-0n-d0j" firstAttribute="leading" secondItem="efL-EC-r6g" secondAttribute="leadingMargin" constant="-10" id="RgX-HU-f2x"/>
                             <constraint firstItem="OHS-3K-9Jv" firstAttribute="baseline" secondItem="9Ax-5d-pxm" secondAttribute="firstBaseline" constant="-38" id="S01-re-7B5"/>
                             <constraint firstItem="99q-tZ-7KM" firstAttribute="top" secondItem="eeo-r7-nz5" secondAttribute="bottom" constant="2" id="SdP-bH-8SI"/>
-                            <constraint firstItem="Tia-7l-33t" firstAttribute="top" secondItem="KJ3-Uq-Onb" secondAttribute="bottom" constant="7" id="UKJ-9N-TPn"/>
+                            <constraint firstItem="Tia-7l-33t" firstAttribute="top" secondItem="KJ3-Uq-Onb" secondAttribute="bottom" constant="-21" id="UKJ-9N-TPn"/>
                             <constraint firstItem="8rP-CM-kCi" firstAttribute="firstBaseline" secondItem="akS-If-igq" secondAttribute="firstBaseline" id="UvH-OC-sze"/>
                             <constraint firstItem="LQj-O8-0RH" firstAttribute="leading" secondItem="efL-EC-r6g" secondAttribute="leading" constant="144" id="Xhv-Vo-A54"/>
                             <constraint firstItem="HUu-0n-d0j" firstAttribute="firstBaseline" secondItem="clz-z0-4Sg" secondAttribute="firstBaseline" id="asy-ie-Qmk"/>
@@ -268,10 +268,10 @@
                             <constraint firstItem="OHS-3K-9Jv" firstAttribute="top" secondItem="efx-eE-ZhR" secondAttribute="bottom" constant="8" id="byi-fG-73i"/>
                             <constraint firstItem="0p6-S7-KpP" firstAttribute="baseline" secondItem="aPv-jI-TqW" secondAttribute="baseline" id="djw-2d-S8a"/>
                             <constraint firstItem="HUu-0n-d0j" firstAttribute="leading" secondItem="akS-If-igq" secondAttribute="leading" constant="-14" id="dsO-88-4dw"/>
-                            <constraint firstItem="Tia-7l-33t" firstAttribute="trailing" secondItem="eeo-r7-nz5" secondAttribute="trailing" id="dxW-HN-Yb1"/>
+                            <constraint firstItem="Tia-7l-33t" firstAttribute="trailing" secondItem="eeo-r7-nz5" secondAttribute="trailing" constant="111" id="dxW-HN-Yb1"/>
                             <constraint firstItem="0p6-S7-KpP" firstAttribute="firstBaseline" secondItem="aPv-jI-TqW" secondAttribute="firstBaseline" id="fGC-qT-QAg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OHS-3K-9Jv" secondAttribute="trailing" constant="53" id="gED-ch-pvP"/>
-                            <constraint firstAttribute="bottom" secondItem="Tia-7l-33t" secondAttribute="bottom" constant="282" id="gND-7s-sQ4"/>
+                            <constraint firstAttribute="bottom" secondItem="Tia-7l-33t" secondAttribute="bottom" constant="310" id="gND-7s-sQ4"/>
                             <constraint firstItem="VEa-qf-aJR" firstAttribute="top" secondItem="j32-Y9-HAl" secondAttribute="bottom" constant="28" id="i3D-0D-0tW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eeo-r7-nz5" secondAttribute="trailing" constant="5" id="j2g-Wi-o8m"/>
                             <constraint firstItem="clz-z0-4Sg" firstAttribute="baseline" secondItem="HUu-0n-d0j" secondAttribute="baseline" id="lpr-TI-FBE"/>
@@ -291,7 +291,7 @@
                             <constraint firstItem="LQj-O8-0RH" firstAttribute="centerX" secondItem="ZQP-z9-pH7" secondAttribute="centerX" constant="-25" id="ujg-iS-tLc"/>
                             <constraint firstItem="efx-eE-ZhR" firstAttribute="top" secondItem="qhZ-wJ-jYh" secondAttribute="bottom" constant="66" id="vK7-pB-WD9"/>
                             <constraint firstItem="aPv-jI-TqW" firstAttribute="top" secondItem="akS-If-igq" secondAttribute="bottom" constant="8" id="vNl-6D-3Ec"/>
-                            <constraint firstItem="Tia-7l-33t" firstAttribute="leading" secondItem="KJ3-Uq-Onb" secondAttribute="leading" id="vWz-hW-AiU"/>
+                            <constraint firstItem="Tia-7l-33t" firstAttribute="leading" secondItem="KJ3-Uq-Onb" secondAttribute="leading" constant="111" id="vWz-hW-AiU"/>
                             <constraint firstItem="j32-Y9-HAl" firstAttribute="leading" secondItem="efL-EC-r6g" secondAttribute="leading" constant="159" id="wV8-Tl-v8Q"/>
                             <constraint firstItem="akS-If-igq" firstAttribute="baseline" secondItem="8rP-CM-kCi" secondAttribute="baseline" id="wWq-pQ-TlR"/>
                         </constraints>
@@ -407,7 +407,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h0-LN-Sh8">
                                 <rect key="frame" x="152" y="280" width="133" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="Zyt-qh-vCH"/>
+                                    <constraint firstAttribute="width" constant="133" id="Zyt-qh-vCH"/>
                                     <constraint firstAttribute="height" constant="51" id="kp3-T3-qqL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -417,7 +417,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Request Num" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oi-2q-gJr">
                                 <rect key="frame" x="206" y="84" width="114" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="104" id="4ml-hv-Wlp"/>
+                                    <constraint firstAttribute="width" constant="114" id="4ml-hv-Wlp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -460,6 +460,18 @@
                                     <action selector="cancelButtonTapped:" destination="PaG-mz-RIA" eventType="touchUpInside" id="EXN-o5-Csr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remarks: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qy-LA-HuQ">
+                                <rect key="frame" x="25" y="324" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvP-pL-mWL">
+                                <rect key="frame" x="152" y="323" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -515,6 +527,8 @@
                         <outlet property="endDate" destination="8cB-85-kSS" id="ACZ-aE-8VJ"/>
                         <outlet property="header" destination="fgm-ca-wPr" id="CW4-1T-J8m"/>
                         <outlet property="pax" destination="Rx9-9z-JGI" id="X8a-mk-nft"/>
+                        <outlet property="remarks" destination="XvP-pL-mWL" id="ZjL-s0-2Ie"/>
+                        <outlet property="remarksLabel" destination="7qy-LA-HuQ" id="9nd-2C-cb7"/>
                         <outlet property="requester" destination="MMz-HB-ciy" id="cA3-ER-tZ4"/>
                         <outlet property="requesterContact" destination="cWs-SJ-8uS" id="fuT-89-BKy"/>
                         <outlet property="requesterLabel" destination="QSc-12-xww" id="lWP-UF-aAB"/>

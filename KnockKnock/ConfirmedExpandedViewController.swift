@@ -21,7 +21,8 @@ class ConfirmedExpandedViewController: UIViewController {
     @IBOutlet weak var value: UILabel!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
-
+    @IBOutlet weak var remarks: UILabel!
+    @IBOutlet weak var remarksLabel: UILabel!
     var confirmedObject : PFObject!
     
     override func viewDidLoad() {
@@ -63,6 +64,8 @@ class ConfirmedExpandedViewController: UIViewController {
         if (confirmedObject["Status"] as! String == "Cancelled"){
             cancelButton.setTitle("", forState: UIControlState.Normal)
             cancelButton.enabled = false
+            remarks.text = confirmedObject["Remarks"] as! String
+            remarksLabel.text = "Remarks: "
         }
 
     }
@@ -80,8 +83,12 @@ class ConfirmedExpandedViewController: UIViewController {
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
             self.confirmedObject["Status"] = "Cancelled"
-            self.confirmedObject["Remarks"] = "Cancelled"
-
+            let hostObject = (self.confirmedObject["Host"]) as! PFObject
+            if (hostObject == PFUser.currentUser()){
+                self.confirmedObject["Remarks"] = "Host Cancelled"
+             }else{
+                self.confirmedObject["Remarks"] = "Requester Cancelled"
+            }
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
@@ -94,17 +101,9 @@ class ConfirmedExpandedViewController: UIViewController {
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
                     
                     myAlert.addAction(okAction);
-                    //self.presentViewController(myAlert, animated:true, completion: { () -> Void in
                         self.navigationController?.popToRootViewControllerAnimated(true)
-                        //self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-
-                    //})
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
-                    //self.viewDidLoad()
-                   // self.navigationController?.popToRootViewControllerAnimated(true)
-                    //self.dismissViewControllerAnimated(true, completion: nil)
-                    
                 } else {
                     NSLog("%@", error!)
                 }
