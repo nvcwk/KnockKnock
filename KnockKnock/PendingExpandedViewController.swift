@@ -161,8 +161,9 @@ class PendingExpandedViewController: UIViewController {
                     myAlert.addAction(okAction);
                     
                     self.navigationController?.popToRootViewControllerAnimated(true)
-                   // self.presentViewController(myAlert, animated:true, completion:nil);
-                    //self.viewDidLoad()
+                    
+                    self.presentViewController(myAlert, animated:true, completion:nil);
+
                 } else {
                     NSLog("%@", error!)
                 }
@@ -211,12 +212,8 @@ class PendingExpandedViewController: UIViewController {
                     myAlert.addAction(okAction);
                     
                     self.navigationController?.popToRootViewControllerAnimated(true)
-                    // self.presentViewController(myAlert, animated:true, completion:nil);
-                    //self.viewDidLoad()
-
                     
-                    //self.presentViewController(myAlert, animated:true, completion:nil);
-                    //self.viewDidLoad()
+                    self.presentViewController(myAlert, animated:true, completion:nil);
                    
                 } else {
                     NSLog("%@", error!)

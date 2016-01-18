@@ -117,7 +117,8 @@ class ConfirmedExpandedViewController: UIViewController {
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
                     
                     myAlert.addAction(okAction);
-                        self.navigationController?.popToRootViewControllerAnimated(true)
+                    
+                    self.navigationController?.popToRootViewControllerAnimated(true)
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
                 } else {

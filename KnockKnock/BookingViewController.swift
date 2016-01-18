@@ -172,7 +172,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
                 var booking = PFObject(className: "Pending")
                 booking["Requester"] = PFUser.currentUser()
-                booking["Date"] = self.selectedDate
+                booking["Date"] = first
                 booking["Host"] = self.host
                 booking["Pax"] = Int(self.pax)
                 booking["Total"] = Int(self.finalPrice)
@@ -192,17 +192,21 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                     
                     myAlert.addAction(okAction);
                     
-                    self.presentViewController(myAlert, animated:true, completion:nil);
-                } else {
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                        
+                    //self.presentViewController(myAlert, animated:true, completion:nil);
+                        
+                    } else {
                         NSLog("%@", error!)
                     }
             }
         }))
-        
+            
             bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
                         
                         }))
             presentViewController(bookAlert, animated: true, completion: nil)
+            
     }
     
         
