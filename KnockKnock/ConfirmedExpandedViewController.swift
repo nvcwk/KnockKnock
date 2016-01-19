@@ -108,17 +108,37 @@ class ConfirmedExpandedViewController: UIViewController {
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
-           // var selectedDate = confirmedObject["Date"] as! NSDate
-            //self.bookedDateArray = self.confirmedObject["Marketplace"]["bookedDate"] as! [NSDate]
+            //remove all booked dates from marketplace bookedDate array
+            var firstDate = self.confirmedObject["Date"] as! NSDate
+            var marketplaceObject = self.confirmedObject["Marketplace"]
+            var bookedDateArray = marketplaceObject["bookedDate"] as! [NSDate]
             
-            /*let itineraryObject = (self.confirmedObject["Itinerary"]) as! PFObject
+            let itineraryObject = (self.confirmedObject["Itinerary"]) as! PFObject
             var duration = itineraryObject["duration"] as! Int
             for (var i = 0; i < duration; i++){
-                var tempDate = self.selectedDate.add(days: i)
-                self.bookedDateArray.append(tempDate)
+                var tempDate = firstDate.add(days: i)
+                var index = bookedDateArray.indexOf(tempDate)
+                if (index != nil){
+                    bookedDateArray.removeAtIndex(index!)
+                }
+                
+                /*
+                for index in 0...bookedDateArray.count {
+                    var tempDate2 = bookedDateArray //bookedDateArray(index)
+                    if (tempDate2 == tempDate){
+                        bookedDateArray.removeAtIndex(index)
+                    }
+                    
+                } */
             }
-
-            */
+            var marketPlace = PFObject(className: "MarketPlace")
+            
+            marketPlace = self.confirmedObject["Marketplace"] as! PFObject
+            
+            marketPlace["bookedDate"] = bookedDateArray
+            
+            marketPlace.saveInBackground()
+            //
             self.confirmedObject.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
