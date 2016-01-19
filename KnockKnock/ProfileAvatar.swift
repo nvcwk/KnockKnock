@@ -17,5 +17,6 @@ class ProfileAvatar: PFImageView {
         let radius: CGFloat = self.bounds.size.width / 2.0
         
         self.layer.cornerRadius = radius
+        self.backgroundColor = nil
     }
 }

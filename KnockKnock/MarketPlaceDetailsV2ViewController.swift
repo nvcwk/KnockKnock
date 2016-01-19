@@ -21,6 +21,7 @@ class MarketPlaceDetailsV2ViewController: UIViewController {
     @IBOutlet weak var lb_endDate: UILabel!
     @IBOutlet weak var image_image: PFImageView!
     @IBOutlet weak var table_activity: UITableView!
+    @IBOutlet weak var img_host: PFImageView!
     
     var pubObj = PFObject(className: "MarketPlace")
     var itiObj = PFObject(className: "Itinerary")
@@ -52,12 +53,23 @@ class MarketPlaceDetailsV2ViewController: UIViewController {
         
         var image = itiObj["image"] as! PFFile
         
+        var img_profile = hostObj["profilePic"] as! PFFile
+        img_host.file = img_profile
+        img_host.loadInBackground()
+        
         image_image.file = image
         image_image.loadInBackground()
         
         table_activity.delegate = self
         table_activity.dataSource = self
+        
+        self.img_host.layer.cornerRadius = self.img_host.frame.size.width/2
+        self.img_host.clipsToBounds = true
+        
+        self.title = itiObj["title"] as! String
     }
+    
+
 }
 
 extension MarketPlaceDetailsV2ViewController : UITableViewDelegate, UITableViewDataSource {
