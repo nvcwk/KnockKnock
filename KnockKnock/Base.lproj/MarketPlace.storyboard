@@ -89,9 +89,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="307.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cis-ct-PrS" customClass="MyImageView" customModule="KnockKnock" customModuleProvider="target">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="187" translatesAutoresizingMaskIntoConstraints="NO" id="cis-ct-PrS" customClass="PFImageView">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="187" id="UeT-Es-K4n"/>
                                                 <constraint firstAttribute="width" secondItem="cis-ct-PrS" secondAttribute="height" multiplier="375:187" id="Ygg-bZ-bST"/>
                                             </constraints>
                                             <variation key="default">
@@ -193,12 +194,14 @@
                                         <constraint firstItem="iNQ-jv-cbn" firstAttribute="top" secondItem="cis-ct-PrS" secondAttribute="bottom" constant="24" id="XZB-Ei-mTU"/>
                                         <constraint firstItem="2O6-nX-lWA" firstAttribute="leading" secondItem="IhT-CC-t4n" secondAttribute="trailing" constant="8" symbolic="YES" id="Zp3-mm-nOg"/>
                                         <constraint firstItem="dhI-uw-6Zz" firstAttribute="top" secondItem="cis-ct-PrS" secondAttribute="bottom" constant="8" symbolic="YES" id="aW1-K7-0eE"/>
+                                        <constraint firstItem="cis-ct-PrS" firstAttribute="leading" secondItem="PTt-5s-Xp2" secondAttribute="leading" id="dCl-nf-VUc"/>
                                         <constraint firstItem="RJo-oT-KKJ" firstAttribute="top" secondItem="anz-Jq-H65" secondAttribute="bottom" constant="2" id="eDI-Z4-Rck"/>
                                         <constraint firstItem="2O6-nX-lWA" firstAttribute="top" secondItem="dhI-uw-6Zz" secondAttribute="bottom" constant="23" id="fMH-aB-ztb"/>
                                         <constraint firstItem="RJo-oT-KKJ" firstAttribute="trailing" secondItem="anz-Jq-H65" secondAttribute="trailing" id="i0g-a8-ikx"/>
                                         <constraint firstItem="RJo-oT-KKJ" firstAttribute="leading" secondItem="anz-Jq-H65" secondAttribute="leading" id="kjR-rD-Hqj"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="IhT-CC-t4n" secondAttribute="bottom" constant="7.5" id="ko3-rm-lHD"/>
                                         <constraint firstItem="dhI-uw-6Zz" firstAttribute="centerY" secondItem="iNQ-jv-cbn" secondAttribute="centerY" id="l1I-EU-HpR"/>
+                                        <constraint firstAttribute="trailing" secondItem="cis-ct-PrS" secondAttribute="trailing" id="lUg-K2-dUw"/>
                                         <constraint firstItem="NwN-ch-DeI" firstAttribute="leading" secondItem="PTt-5s-Xp2" secondAttribute="leadingMargin" id="nnZ-W9-RkU"/>
                                         <constraint firstItem="iNQ-jv-cbn" firstAttribute="trailing" secondItem="anz-Jq-H65" secondAttribute="trailing" id="pjS-yu-Gnx"/>
                                         <constraint firstItem="IhT-CC-t4n" firstAttribute="top" secondItem="NwN-ch-DeI" secondAttribute="bottom" id="sWA-fD-2CL"/>
@@ -206,6 +209,13 @@
                                         <constraint firstItem="d6g-Ib-pvv" firstAttribute="leading" secondItem="NwN-ch-DeI" secondAttribute="trailing" constant="8" symbolic="YES" id="spI-98-9Ov"/>
                                         <constraint firstItem="cis-ct-PrS" firstAttribute="leading" secondItem="PTt-5s-Xp2" secondAttribute="leading" id="vE7-8g-rSh"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="5LU-bo-WY5"/>
+                                            <exclude reference="sZw-WV-i8k"/>
+                                            <exclude reference="vE7-8g-rSh"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="image_background" destination="cis-ct-PrS" id="guv-aq-Xh2"/>
@@ -343,7 +353,7 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4z-91-Xi3" customClass="PFImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="47" width="375" height="216"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
