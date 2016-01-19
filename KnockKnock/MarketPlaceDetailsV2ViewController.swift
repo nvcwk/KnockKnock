@@ -94,6 +94,7 @@ extension MarketPlaceDetailsV2ViewController : UITableViewDelegate, UITableViewD
         DestViewController.host = hostObj
         DestViewController.marketplace = pubObj
         DestViewController.itinerary = itiObj
+        DestViewController.numOfDays = itiObj["duration"] as! Int
     }
 
 }

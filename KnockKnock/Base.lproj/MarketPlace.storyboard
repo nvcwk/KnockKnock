@@ -781,10 +781,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sV3-gd-npV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sV3-gd-npV">
                                 <rect key="frame" x="0.0" y="151" width="375" height="191"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qww-GA-Evu" customClass="FSCalendar">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qww-GA-Evu" customClass="FSCalendar">
                                         <rect key="frame" x="0.0" y="-9" width="375" height="210"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
@@ -797,8 +797,15 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qww-GA-Evu" secondAttribute="bottom" constant="-10" id="75N-Hz-Pib"/>
+                                    <constraint firstItem="qww-GA-Evu" firstAttribute="leading" secondItem="sV3-gd-npV" secondAttribute="leading" id="b7J-oT-wJv"/>
+                                    <constraint firstAttribute="bottom" secondItem="qww-GA-Evu" secondAttribute="bottom" constant="-10" id="cyc-WD-S44"/>
+                                    <constraint firstAttribute="trailing" secondItem="qww-GA-Evu" secondAttribute="trailing" id="yZ6-YD-WVL"/>
+                                    <constraint firstItem="qww-GA-Evu" firstAttribute="centerY" secondItem="sV3-gd-npV" secondAttribute="centerY" id="zPS-ag-tkh"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Number Of Pax: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXN-aP-IlV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number Of Pax: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXN-aP-IlV">
                                 <rect key="frame" x="11" y="401" width="126" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="HIc-xJ-FLW"/>
@@ -841,7 +848,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm0-tx-nLt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm0-tx-nLt">
                                 <rect key="frame" x="222" y="401" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="eRk-J8-dJX"/>
@@ -850,7 +857,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v0x-IK-Pvp" customClass="GMStepper" customModule="GMStepper">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0x-IK-Pvp" customClass="GMStepper" customModule="GMStepper">
                                 <rect key="frame" x="64" y="430" width="231" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -871,15 +878,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="sV3-gd-npV" firstAttribute="centerX" secondItem="fmQ-F1-aFE" secondAttribute="centerX" id="0AE-ii-lD9"/>
+                            <constraint firstItem="v0x-IK-Pvp" firstAttribute="top" secondItem="OXN-aP-IlV" secondAttribute="bottom" constant="8" symbolic="YES" id="23z-yD-BdS"/>
+                            <constraint firstItem="bmm-GD-sFW" firstAttribute="firstBaseline" secondItem="Msm-gj-A9F" secondAttribute="firstBaseline" id="3rF-go-M0F"/>
                             <constraint firstItem="bmm-GD-sFW" firstAttribute="firstBaseline" secondItem="dBF-fl-d6P" secondAttribute="firstBaseline" id="8GI-2D-agn"/>
                             <constraint firstItem="dBF-fl-d6P" firstAttribute="baseline" secondItem="bmm-GD-sFW" secondAttribute="baseline" id="8iS-a1-JdZ"/>
                             <constraint firstItem="sV3-gd-npV" firstAttribute="top" secondItem="Rmk-10-lq4" secondAttribute="bottom" constant="87" id="H3X-76-Cae"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v0x-IK-Pvp" secondAttribute="trailing" constant="64" id="JaF-e5-QgE"/>
                             <constraint firstItem="sV3-gd-npV" firstAttribute="leading" secondItem="lzp-k1-Ydq" secondAttribute="leading" id="KBf-gf-w3B"/>
+                            <constraint firstItem="v0x-IK-Pvp" firstAttribute="leading" secondItem="lzp-k1-Ydq" secondAttribute="leadingMargin" constant="48" id="NcI-G7-hgk"/>
                             <constraint firstItem="fmQ-F1-aFE" firstAttribute="top" secondItem="bmm-GD-sFW" secondAttribute="bottom" constant="31" id="T4a-oL-Lrf"/>
                             <constraint firstItem="OXN-aP-IlV" firstAttribute="top" secondItem="sV3-gd-npV" secondAttribute="bottom" constant="59" id="TeW-7P-ODg"/>
+                            <constraint firstItem="v0x-IK-Pvp" firstAttribute="top" secondItem="lzp-k1-Ydq" secondAttribute="top" constant="430" id="VeU-dJ-c69"/>
                             <constraint firstItem="bm0-tx-nLt" firstAttribute="leading" secondItem="OXN-aP-IlV" secondAttribute="trailing" constant="15" id="X7v-9m-NZ2"/>
                             <constraint firstItem="mWn-cR-Smh" firstAttribute="top" secondItem="fmQ-F1-aFE" secondAttribute="bottom" constant="28" id="XAt-ok-dZM"/>
                             <constraint firstItem="bm0-tx-nLt" firstAttribute="firstBaseline" secondItem="OXN-aP-IlV" secondAttribute="firstBaseline" id="ZPf-04-BW9"/>
+                            <constraint firstItem="dBF-fl-d6P" firstAttribute="top" secondItem="v0x-IK-Pvp" secondAttribute="bottom" constant="14" id="f3e-av-wfh"/>
                             <constraint firstItem="fmQ-F1-aFE" firstAttribute="trailing" secondItem="Msm-gj-A9F" secondAttribute="trailing" id="fr4-fF-915"/>
                             <constraint firstItem="fmQ-F1-aFE" firstAttribute="top" secondItem="Msm-gj-A9F" secondAttribute="bottom" constant="32" id="hZ0-io-m1U"/>
                             <constraint firstAttribute="trailing" secondItem="sV3-gd-npV" secondAttribute="trailing" id="j9I-8R-ltd"/>
