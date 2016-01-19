@@ -26,8 +26,8 @@ class MarketPlaceV2TableViewCell: PFTableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.image_background.frame = CGRectMake(0, 0, 32, 32)
-        self.image_background.clipsToBounds = true
+        //self.image_background.frame = CGRectMake(0, 0, 66, 66)
+        //self.image_background.clipsToBounds = true
         
 
         
