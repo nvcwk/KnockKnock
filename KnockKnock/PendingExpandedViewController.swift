@@ -22,12 +22,14 @@ class PendingExpandedViewController: UIViewController {
     @IBOutlet weak var actionButton2: UIButton!
     @IBOutlet weak var requesterContact: UILabel!
     @IBOutlet weak var requesterLabel: UILabel!
-    @IBOutlet weak var remarks: UITextField!
+    @IBOutlet weak var remarks: UILabel!
     @IBOutlet weak var reason: UILabel!
     
     var pendingObject : PFObject!
     var hostObject : PFObject!
     var requesterObject : PFObject!
+    var selectedDate : NSDate!
+    var bookedDateArray : [NSDate]!
     
     override func viewDidLoad() {
        
@@ -42,17 +44,22 @@ class PendingExpandedViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/YYYY"
         dateFormatter.timeZone = NSTimeZone(name: "GMT")
         var start = pendingObject["Date"] as! NSDate
-        var end = start.add(days: itineraryObject["duration"] as! Int)
+        var end = start.add(days: (itineraryObject["duration"] as! Int) - 1)
+        var stringDate = KnockKnockUtils.dateToString(start)
+        var index = stringDate.endIndex.advancedBy(-15)
+        
         
         header.text = itineraryObject["title"] as! String
         pax.text = String(pendingObject["Pax"])
-        startDate.text = dateFormatter.stringFromDate(start)
-        endDate.text = dateFormatter.stringFromDate(end)
+        startDate.text = (KnockKnockUtils.dateToString(start)).substringToIndex(index)
+        endDate.text = (KnockKnockUtils.dateToString(end)).substringToIndex(index)
         value.text = String(pendingObject["Total"])
         status.text = caseStatus
+        reason.text = ""
+        remarks.text =  ""
         
         
-        
+
         
         
         if (hostObject == PFUser.currentUser()){
@@ -61,6 +68,7 @@ class PendingExpandedViewController: UIViewController {
             requesterContact.text = String(requesterObject["contact"])
             actionButton.setTitle("Accept", forState: UIControlState.Normal)
             actionButton2.setTitle("Reject", forState: UIControlState.Normal)
+            
 
         }else{
             requesterLabel.text = "Your Host: "
@@ -74,12 +82,29 @@ class PendingExpandedViewController: UIViewController {
                 remarks.text =  pendingObject["Remarks"] as! String
                 actionButton2.setTitle("", forState: UIControlState.Normal)
                 actionButton2.enabled = false
+                status.font = UIFont.boldSystemFontOfSize(18.0)
+                status.textColor = UIColor.redColor()
             }else{
                 reason.text = ""
                 actionButton2.setTitle("Cancel", forState: UIControlState.Normal)
             }
             
         }
+        //cell alignment and font
+        pendingNum.textAlignment = NSTextAlignment.Right;
+        header.textAlignment = NSTextAlignment.Center;
+        header.font = UIFont.boldSystemFontOfSize(20.0)
+        pax.textAlignment = NSTextAlignment.Right;
+        value.textAlignment = NSTextAlignment.Right;
+        status.textAlignment = NSTextAlignment.Right;
+        remarks.textAlignment = NSTextAlignment.Right;
+        startDate.textAlignment = NSTextAlignment.Left;
+        endDate.textAlignment = NSTextAlignment.Right;
+        requester.textAlignment = NSTextAlignment.Right;
+        requesterContact.textAlignment = NSTextAlignment.Right;
+        requester.textAlignment = NSTextAlignment.Right;
+        requesterContact.textAlignment = NSTextAlignment.Right;
+
         
         
         // Do any additional setup "after loading the view.
@@ -93,7 +118,7 @@ class PendingExpandedViewController: UIViewController {
     @IBAction func button1Tapped(sender: AnyObject) {
             //accept codes
         
-        let bookAlert = UIAlertController(title: "Hosting", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        let bookAlert = UIAlertController(title: "Hosting", message: "Confirm Hosting", preferredStyle: UIAlertControllerStyle.Alert)
         
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
@@ -105,7 +130,7 @@ class PendingExpandedViewController: UIViewController {
             booking["Host"] = self.pendingObject["Host"]
             booking["Pax"] = self.pendingObject["Pax"]
             booking["Total"] = self.pendingObject["Total"]
-            booking["Marketplace"] = self.pendingObject["Marketplace"]
+            booking["Marketplace"] = self.pendingObject["Marketplace"] as! PFObject
             booking["Itinerary"] = self.pendingObject["Itinerary"]
             booking["Status"] = "Confirmed"
             let myAlert =
@@ -114,6 +139,27 @@ class PendingExpandedViewController: UIViewController {
             booking.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
+        
+                    
+                    self.selectedDate = self.pendingObject["Date"] as! NSDate
+                    self.bookedDateArray = self.pendingObject["Marketplace"]["bookedDate"] as! [NSDate]
+                    
+                    let itineraryObject = (self.pendingObject["Itinerary"]) as! PFObject
+                    var duration = itineraryObject["duration"] as! Int
+                    for (var i = 0; i < duration; i++){
+                        var tempDate = self.selectedDate.add(days: i)
+                         self.bookedDateArray.append(tempDate)
+                    }
+                   // self.bookedDateArray.append(self.selectedDate)
+                    
+                    var marketPlace = PFObject(className: "MarketPlace")
+                    
+                    marketPlace = self.pendingObject["Marketplace"] as! PFObject
+                    
+                    marketPlace["bookedDate"] = self.bookedDateArray
+                    
+                    marketPlace.saveInBackground()
+                    
                     //self.pendingObject.deleteInBackground()
                     self.pendingObject["Status"] = "Confirmed"
                     self.pendingObject.saveInBackground()
@@ -124,8 +170,10 @@ class PendingExpandedViewController: UIViewController {
                     
                     myAlert.addAction(okAction);
                     
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                    
                     self.presentViewController(myAlert, animated:true, completion:nil);
-                    self.viewDidLoad()
+
                 } else {
                     NSLog("%@", error!)
                 }
@@ -157,20 +205,26 @@ class PendingExpandedViewController: UIViewController {
                 self.pendingObject["Status"] = "Cancelled"
                 self.pendingObject["Remarks"] = "User Cancelled"
             }
+            
+
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
             self.pendingObject.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
-                let myAlert =
+                    
+                    let myAlert =
                     UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
                     
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
                     
                     myAlert.addAction(okAction);
                     
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                    
                     self.presentViewController(myAlert, animated:true, completion:nil);
+                   
                 } else {
                     NSLog("%@", error!)
                 }
@@ -183,6 +237,18 @@ class PendingExpandedViewController: UIViewController {
         presentViewController(bookAlert, animated: true, completion: nil)
     }
 
+    @IBAction func browseButtonTapped(sender: AnyObject) {
+        let itineraryObject = (pendingObject["Itinerary"]) as! PFObject
+        
+        let activities = itineraryObject["activities"] as! NSArray
+        print(activities)
+        var storyboard = UIStoryboard(name: "Itinerary", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("itiDetailsView") as! ItiDetailsViewController
+        
+        controller.itineraryObj = itineraryObject
+        self.showViewController(controller, sender:self)
+    }
+    
     
     
 }
