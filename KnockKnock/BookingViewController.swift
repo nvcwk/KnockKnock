@@ -179,7 +179,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
                 var booking = PFObject(className: "Pending")
                 booking["Requester"] = PFUser.currentUser()
-                booking["Date"] = self.first
+                booking["Date"] = self.selectedDate.sort().first
                 booking["Host"] = self.host
                 booking["Pax"] = Int(self.pax)
                 booking["Total"] = Int(self.finalPrice)

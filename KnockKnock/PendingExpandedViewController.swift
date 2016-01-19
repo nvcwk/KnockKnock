@@ -48,8 +48,8 @@ class PendingExpandedViewController: UIViewController {
         
         header.text = itineraryObject["title"] as! String
         pax.text = String(pendingObject["Pax"])
-        startDate.text = dateFormatter.stringFromDate(start)
-        endDate.text = dateFormatter.stringFromDate(end)
+        startDate.text = KnockKnockUtils.dateToString(start)
+        endDate.text = KnockKnockUtils.dateToString(end)
         value.text = String(pendingObject["Total"])
         status.text = caseStatus
         reason.text = ""
@@ -136,11 +136,18 @@ class PendingExpandedViewController: UIViewController {
             booking.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
+        
                     
                     self.selectedDate = self.pendingObject["Date"] as! NSDate
                     self.bookedDateArray = self.pendingObject["Marketplace"]["bookedDate"] as! [NSDate]
                     
-                    self.bookedDateArray.append(self.selectedDate)
+                    let itineraryObject = (self.pendingObject["Itinerary"]) as! PFObject
+                    var duration = itineraryObject["duration"] as! Int
+                    for (var i = 0; i < duration; i++){
+                        var tempDate = self.selectedDate.add(days: i)
+                         self.bookedDateArray.append(tempDate)
+                    }
+                   // self.bookedDateArray.append(self.selectedDate)
                     
                     var marketPlace = PFObject(className: "MarketPlace")
                     
