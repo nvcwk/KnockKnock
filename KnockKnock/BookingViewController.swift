@@ -32,7 +32,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var marketplace : PFObject!
     var itinerary : PFObject!
     var numOfDays = Int()
-    
+    var first = NSDate()
     
 
     override func viewDidLoad() {
@@ -126,13 +126,20 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         //validation to check if dates are consecutive
         var testerDates = [NSDate]()
         var tester = false
-        selectedDate.sort()
-        var first = selectedDate.first
-        testerDates.append(first!)
-        for (var i = 0; i < numOfDays; i++){
-            var tempDate = first?.add(days: i)
-            testerDates.append(tempDate!)
+        selectedDate = selectedDate.sort()
+
+        if (!selectedDate.isEmpty){
+            var first2 = NSDate()
+            first2 = selectedDate.first!
+            testerDates.append(first2)
+           // print("first date: \(first2)")
+            for (var i = 0; i < numOfDays; i++){
+                var tempDate = first2.add(days: i)
+                testerDates.append(tempDate)
+            }
+           
         }
+        
         
         for date in testerDates {
             if (!selectedDate.contains(date)){
@@ -172,7 +179,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
                 var booking = PFObject(className: "Pending")
                 booking["Requester"] = PFUser.currentUser()
-                booking["Date"] = first
+                booking["Date"] = self.first
                 booking["Host"] = self.host
                 booking["Pax"] = Int(self.pax)
                 booking["Total"] = Int(self.finalPrice)
