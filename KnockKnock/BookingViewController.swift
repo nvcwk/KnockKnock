@@ -80,11 +80,12 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     
     //show marking that some dates not available
     func calendar(calendar: FSCalendar!, imageForDate date: NSDate!) -> UIImage! {
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         for dates in bookedDatesArray{
             if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
-                return UIImage(named: "cross")
+                return UIImage(named: "cross_2")
             }
         }
         return nil
