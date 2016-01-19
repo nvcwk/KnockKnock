@@ -64,19 +64,20 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             cell.image_background.file = image
             cell.image_background.loadInBackground()
             
-            cell.image_background.contentMode = UIViewContentMode.ScaleAspectFill
+            cell.image_background.contentMode = UIViewContentMode.ScaleToFill
             
+//            cell.image_background.frame = CGRectMake(0, 0, 66, 66)
             
-            tableView.rowHeight = UITableViewAutomaticDimension
+            //self.tableView.rowHeight = UITableViewAutomaticDimension;
             
         }
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 163.0
-    }
+//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return 308.0
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "toMarketPlaceDetail") {
