@@ -22,6 +22,11 @@ class MarketPlaceV2TableViewCell: PFTableViewCell {
         
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.image_background.frame = CGRectMake(0, 0, 32, 32)
+    }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         self.selectionStyle = UITableViewCellSelectionStyle.None

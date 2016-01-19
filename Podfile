@@ -25,6 +25,8 @@ pod 'QIULaunchAnimation'
 pod 'FSCalendar'
 pod 'autoAutoLayout', '~> 2.0'
 pod 'ABSteppedProgressBar', :git => 'https://github.com/brendaaakoh/ABSteppedProgressBar', :commit => '1057ed8b552e6f1170c0b3164fd53c9a9ee87de9'
+pod 'HCSStarRatingView', '~> 1.4.3'
+
 
 
 

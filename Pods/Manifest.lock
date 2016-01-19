@@ -44,6 +44,7 @@ PODS:
   - FSCalendar (1.7.2)
   - GMStepper (1.1.0)
   - GoogleMaps (1.11.1)
+  - HCSStarRatingView (1.4.3)
   - IQKeyboardManagerSwift (3.3.4)
   - ObjectiveSugar (0.9)
   - Parse (1.10.0):
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - FSCalendar
   - GMStepper
   - GoogleMaps
+  - HCSStarRatingView (~> 1.4.3)
   - IQKeyboardManagerSwift
   - ObjectiveSugar (~> 0.5)
   - Parse
@@ -107,6 +109,7 @@ SPEC CHECKSUMS:
   FSCalendar: 38f5b3de1aeaa7dc03a3e997bdc6fb3ff3a88b8d
   GMStepper: 3b7922778a80e0eab89a55003ca36b25fc2393b7
   GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
+  HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   ObjectiveSugar: 18409ee1ec578dd8598b55e5008f393488dca5cf
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2

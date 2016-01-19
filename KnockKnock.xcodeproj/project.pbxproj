@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		706B0FD71C4CBC2F0078CD38 /* MyCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B0FD61C4CBC2F0078CD38 /* MyCustomTextField.swift */; };
+		706B0FD91C4D2BAA0078CD38 /* ProfileAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B0FD81C4D2BAA0078CD38 /* ProfileAvatar.swift */; };
 		7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087D50C1C27D8E90005711E /* ProfileViewController.swift */; };
+		7095F3511C4E30BC002C1AD5 /* MyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7095F3501C4E30BC002C1AD5 /* MyImageView.swift */; };
 		709914B01C4B63C500E2FF9A /* DPTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709914AF1C4B63C500E2FF9A /* DPTheme.swift */; };
 		70B0E5841C4943960033991D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0E5831C4943960033991D /* QuartzCore.framework */; };
 		C1EE6E34C4461D4E0E5AD45D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5AD10247D09E5AD74690E6 /* Pods.framework */; };
@@ -105,7 +107,9 @@
 		1B5AD10247D09E5AD74690E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2934923C3E232A836459B32D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		706B0FD61C4CBC2F0078CD38 /* MyCustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTextField.swift; sourceTree = "<group>"; };
+		706B0FD81C4D2BAA0078CD38 /* ProfileAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAvatar.swift; sourceTree = "<group>"; };
 		7087D50C1C27D8E90005711E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7095F3501C4E30BC002C1AD5 /* MyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageView.swift; sourceTree = "<group>"; };
 		709914AF1C4B63C500E2FF9A /* DPTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPTheme.swift; sourceTree = "<group>"; };
 		70B0E5831C4943960033991D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E110D1D91C4684F00074CF48 /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
@@ -344,11 +348,13 @@
 		E11AC20D1C16DD3A00479927 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				706B0FD81C4D2BAA0078CD38 /* ProfileAvatar.swift */,
 				E11AC21E1C16E0B700479927 /* KnockKnockUtils.swift */,
 				E11AC2201C16E12C00479927 /* ParseUtils.swift */,
 				E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */,
 				E1CAA8081C26A7BC00AB4637 /* KnockKnockImageUtils.swift */,
 				706B0FD61C4CBC2F0078CD38 /* MyCustomTextField.swift */,
+				7095F3501C4E30BC002C1AD5 /* MyImageView.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -670,6 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1751ABB1C273210000A1360 /* Activity.swift in Sources */,
+				706B0FD91C4D2BAA0078CD38 /* ProfileAvatar.swift in Sources */,
 				E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */,
 				E1CAA8091C26A7BC00AB4637 /* KnockKnockImageUtils.swift in Sources */,
 				E159A8301C33DE4200EF80A4 /* PubTableViewCell.swift in Sources */,
@@ -708,6 +715,7 @@
 				F6DC5CBB1C4769EF00BA6776 /* PendingTableViewViewController.swift in Sources */,
 				E19FE17E1C3D7DA8009FAB48 /* DetailedMarketplaceViewController.swift in Sources */,
 				E164E68F1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift in Sources */,
+				7095F3511C4E30BC002C1AD5 /* MyImageView.swift in Sources */,
 				E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
 				E15BF77C1C3FE191009A3C31 /* ProfileEditViewController.swift in Sources */,

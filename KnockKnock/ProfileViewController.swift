@@ -13,8 +13,11 @@ import ZFRippleButton
 import TextFieldEffects
 import SwiftSpinner
 import SwiftValidator
+import autoAutoLayout
 
 class ProfileViewController: UIViewController {
+
+    
     @IBOutlet weak var img_profile : PFImageView!
 
     @IBOutlet weak var btn_editSave: UIButton!
@@ -22,6 +25,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tf_birthday: UITextField!
     @IBOutlet weak var tf_contactNo: UITextField!
     
+    @IBOutlet weak var lbl_country: UILabel!
+    @IBOutlet weak var lbl_name: UILabel!
     let imagePicker = UIImagePickerController()
     
     @IBAction func actionSelectPic(sender: UITapGestureRecognizer) {
@@ -31,13 +36,26 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
+
+        
+        self.img_profile.layer.cornerRadius = self.img_profile.frame.size.width/2
+        self.img_profile.clipsToBounds = true
+        
         // Get Current User
         let currentUser = PFUser.currentUser()!;
         
         let fName = currentUser["fName"] as! String
         let lName = currentUser["lName"] as! String
         
-        navigationItem.title = fName + " " + lName
+        if let country = currentUser["country"] as? String {
+            lbl_country.text = country
+        }
+        
+        //navigationItem.title = fName + " " + lName
+        
+        lbl_name.text = fName + " " + lName
         
         imagePicker.delegate = self
         
