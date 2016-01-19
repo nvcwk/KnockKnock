@@ -29,7 +29,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
         var query = PFQuery(className: "MarketPlace")
         
         query.whereKey("isPublished", equalTo: published)
-        query.whereKey("host", notEqualTo: PFUser.currentUser()!)
+        //query.whereKey("host", notEqualTo: PFUser.currentUser()!)
         
         query.includeKey("itinerary")
         query.includeKey("host")
@@ -53,6 +53,8 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             
             cell.image_background.file = image
             cell.image_background.loadInBackground()
+            
+            
         }
         
         return cell
