@@ -121,15 +121,6 @@ class ConfirmedExpandedViewController: UIViewController {
                 if (index != nil){
                     bookedDateArray.removeAtIndex(index!)
                 }
-                
-                /*
-                for index in 0...bookedDateArray.count {
-                    var tempDate2 = bookedDateArray //bookedDateArray(index)
-                    if (tempDate2 == tempDate){
-                        bookedDateArray.removeAtIndex(index)
-                    }
-                    
-                } */
             }
             var marketPlace = PFObject(className: "MarketPlace")
             
