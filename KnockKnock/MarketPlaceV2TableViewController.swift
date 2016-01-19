@@ -19,7 +19,6 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
         
         print(KnockKnockUtils.dateToParse(test))
         
-        print("TEST")
         super.viewDidLoad()
         
     }
@@ -28,12 +27,24 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "MarketPlace")
         
+<<<<<<< HEAD
         query.whereKey("isPublished", equalTo: published)
         //query.whereKey("host", notEqualTo: PFUser.currentUser()!)
         
         query.includeKey("itinerary")
         query.includeKey("host")
         query.includeKey("itinerary.activities")
+=======
+        if (PFUser.currentUser() != nil) {
+            query.whereKey("isPublished", equalTo: published)
+            query.whereKey("host", notEqualTo: PFUser.currentUser()!)
+            
+            query.includeKey("itinerary")
+            query.includeKey("host")
+            query.includeKey("itinerary.activities")
+            print("hello world")
+        }
+>>>>>>> origin/master
         
         return query
     }
