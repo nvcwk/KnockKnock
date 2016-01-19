@@ -8,9 +8,12 @@
 
 import UIKit
 import QIULaunchAnimation
+import TextImageButton
 
 class MarketPlaceV2ViewController: UIViewController {
     
+    @IBOutlet weak var btn_sortby: UIButton!
+    @IBOutlet weak var btn_filter: UIButton!
     @IBOutlet weak var view_container: UIView!
     
     var test = true
@@ -25,6 +28,15 @@ class MarketPlaceV2ViewController: UIViewController {
         fadeAnimation.startAnimation(nil)
 
         // Do any additional setup after loading the view.
+        
+        let btn_sortby = TextImageButton()
+
+        
+        btn_sortby.setTitle("Sort By", forState: .Normal)
+        btn_sortby.setImage(UIImage(named: "sort"), forState: .Normal)
+        btn_sortby.spacing = 10
+
+        
     }
 
     override func didReceiveMemoryWarning() {
