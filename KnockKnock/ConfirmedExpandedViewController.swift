@@ -42,8 +42,8 @@ class ConfirmedExpandedViewController: UIViewController {
         
         header.text = itineraryObject["title"] as! String
         pax.text = String(confirmedObject["Pax"])
-        startDate.text = dateFormatter.stringFromDate(start)
-        endDate.text = dateFormatter.stringFromDate(end)
+        startDate.text = KnockKnockUtils.dateToString(start)
+        endDate.text = KnockKnockUtils.dateToString(end)
         value.text = String(confirmedObject["Total"])
         status.text = caseStatus
         
@@ -108,6 +108,17 @@ class ConfirmedExpandedViewController: UIViewController {
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
+           // var selectedDate = confirmedObject["Date"] as! NSDate
+            //self.bookedDateArray = self.confirmedObject["Marketplace"]["bookedDate"] as! [NSDate]
+            
+            /*let itineraryObject = (self.confirmedObject["Itinerary"]) as! PFObject
+            var duration = itineraryObject["duration"] as! Int
+            for (var i = 0; i < duration; i++){
+                var tempDate = self.selectedDate.add(days: i)
+                self.bookedDateArray.append(tempDate)
+            }
+
+            */
             self.confirmedObject.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
