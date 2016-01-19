@@ -27,15 +27,14 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "MarketPlace")
         
-<<<<<<< HEAD
-        query.whereKey("isPublished", equalTo: published)
-        //query.whereKey("host", notEqualTo: PFUser.currentUser()!)
-        
-        query.includeKey("itinerary")
-        query.includeKey("host")
-        query.includeKey("itinerary.activities")
-=======
-        if (PFUser.currentUser() != nil) {
+//        query.whereKey("isPublished", equalTo: published)
+//        //query.whereKey("host", notEqualTo: PFUser.currentUser()!)
+//        
+//        query.includeKey("itinerary")
+//        query.includeKey("host")
+//        query.includeKey("itinerary.activities")
+
+        if(PFUser.currentUser() != nil) {
             query.whereKey("isPublished", equalTo: published)
             query.whereKey("host", notEqualTo: PFUser.currentUser()!)
             
@@ -44,7 +43,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             query.includeKey("itinerary.activities")
             print("hello world")
         }
->>>>>>> origin/master
+
         
         return query
     }
@@ -65,6 +64,10 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             cell.image_background.file = image
             cell.image_background.loadInBackground()
             
+            cell.image_background.contentMode = UIViewContentMode.ScaleAspectFill
+            
+            
+            tableView.rowHeight = UITableViewAutomaticDimension
             
         }
         
