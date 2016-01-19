@@ -111,7 +111,7 @@ class ProfileViewController: UIViewController {
 //
 //    }
 //    
-    @IBAction func actionLogout(sender: UIBarButtonItem) {
+    @IBAction func actionLogout(sender: UIButton) {
         ParseUtils.logout(self)
     }
 }

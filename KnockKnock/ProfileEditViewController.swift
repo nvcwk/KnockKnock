@@ -19,6 +19,18 @@ class ProfileEditViewController: UIViewController {
     @IBOutlet weak var tf_email: UITextField!
     @IBOutlet weak var tf_birthday: UITextField!
     @IBOutlet weak var tf_contactNo: UITextField!
+    @IBOutlet weak var profile_img: PFImageView!
+    @IBOutlet weak var tf_firstname: UITextField!
+    @IBOutlet weak var tf_lastname: UITextField!
+    
+    @IBOutlet weak var tf_password: UITextField!
+    @IBOutlet weak var tf_newPassword: UITextField!
+    
+    let imagePicker = UIImagePickerController()
+    
+    @IBAction func actionSelectPic(sender: UITapGestureRecognizer) {
+        KnockKnockImageUtils.imagePicker(self, picker: self.imagePicker)
+    }
     
     var selectedDate = NSDate()
     let datePicker = UIDatePicker()
@@ -36,6 +48,11 @@ class ProfileEditViewController: UIViewController {
         navigationItem.title = fName + " " + lName
         
         setupTxtFields()
+        loadProfilePic()
+        
+        self.profile_img.layer.cornerRadius = self.profile_img.frame.size.width/2
+        self.profile_img.clipsToBounds = true
+
         
         let missTxt = String("Please fill in all inputs")
         
@@ -64,6 +81,14 @@ class ProfileEditViewController: UIViewController {
     func setupTxtFields() {
         let currentUser = PFUser.currentUser()!;
         
+        if let firstname = currentUser["fName"] as? String{
+            tf_firstname.text = firstname
+        }
+        
+        if let lasttname = currentUser["lName"] as? String{
+            tf_lastname.text = lasttname
+        }
+        
         // Setting default values
         tf_email.text = currentUser.email
         
@@ -86,6 +111,9 @@ extension ProfileEditViewController: ValidationDelegate {
         
         print(currentUser.email)
         
+        let tempFname = currentUser["fName"]
+        let tempLname = currentUser["lName"]
+        
         let tempEmail = currentUser.email!
         let tempContact = currentUser["contact"] as! Int
         let tempDob = currentUser["dob"] as! NSDate
@@ -94,6 +122,8 @@ extension ProfileEditViewController: ValidationDelegate {
         currentUser.username = tf_email.text
         currentUser["contact"] = Int(tf_contactNo.text!)
         currentUser["dob"] = selectedDate
+        currentUser["fName"] = tf_firstname.text
+        currentUser["lName"] = tf_lastname.text
         
         currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             SwiftSpinner.hide()
@@ -113,6 +143,8 @@ extension ProfileEditViewController: ValidationDelegate {
                 currentUser.username = tempEmail
                 currentUser["contact"] = tempContact
                 currentUser["dob"] = tempDob
+                currentUser["fName"] = tempFname
+                currentUser["lName"] = tempLname
                 
                 KnockKnockUtils.okAlert(self, title: "Error!", message: (error?.userInfo["error"])! as! String, handle: nil)
             }
@@ -121,6 +153,45 @@ extension ProfileEditViewController: ValidationDelegate {
     
     func validationFailed(errors:[UITextField:ValidationError]) {
         KnockKnockUtils.okAlert(self, title: "Error!", message: (errors.values.first?.errorMessage)!, handle: nil)
+    }
+    
+    func loadProfilePic() {
+        let currentUser = PFUser.currentUser()!;
+        
+        profile_img.file = currentUser["profilePic"] as! PFFile
+        profile_img.loadInBackground()
+    }
+}
+
+extension ProfileEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        
+        SwiftSpinner.show("Updating...")
+        
+        profile_img.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        
+        let currentUser = PFUser.currentUser()!
+        
+        currentUser["profilePic"] = PFFile(data: UIImagePNGRepresentation(profile_img.image!)!)!
+        
+        currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                SwiftSpinner.hide()
+                
+                self.loadProfilePic()
+                
+                KnockKnockUtils.okAlert(self, title: "Message!", message: "Updated New Pic!", handle: nil)
+                
+            } else {
+                KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
+            }
+        }
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
