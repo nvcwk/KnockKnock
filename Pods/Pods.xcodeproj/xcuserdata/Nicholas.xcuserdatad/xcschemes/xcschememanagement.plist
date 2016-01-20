@@ -49,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HCSStarRatingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -80,6 +85,16 @@
 			<false/>
 		</dict>
 		<key>QIULaunchAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RTIconButton-RTIconButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RTIconButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -127,22 +142,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>14484001DD588EA2DACA9F603DA883F7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>192C8C2413796E089B0A00D1D53C6C09</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1B5F7149F049D7E26F421261FBF36265</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>242829106C7EFD04D15DD86C0C5544BC</key>
+		<key>20861EB1F8E02CD94F337E85E8F76B42</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,22 +162,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53AC4865B48A5DF454A68BD8EAA6A5C0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>57ADC05E440A960212657DE6DA1FEDD5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D69761C2CD2A1E5C013537B29CAB4CF</key>
+		<key>5D1AAE6206D507A2423AF2C7CAE465B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>64E42372366CE9054BF504393A90E217</key>
+		<key>5D69761C2CD2A1E5C013537B29CAB4CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,7 +187,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>884FCBAAE39700191353B31C56E81485</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9266BCFE006C277B1041497F639317FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5EEA6EE7A6BF40A41365E2C34B41A8A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ADBEA4D6BF9C4F9CE128C39B696CEEDC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -197,7 +212,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B229BF88D93B576E55B8FE05DC8CFA84</key>
+		<key>BAA56C6418074C8574E087ECC89E5073</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -217,7 +232,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F15FB257A1FA9F506E3F83437B4B354D</key>
+		<key>D58F65482956E316A8EA30D09595452A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DED48B8365C454999E17ED3E6C3924BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E865E912D6A4B87BEC9E9EC335C85158</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -233,6 +258,11 @@
 			<true/>
 		</dict>
 		<key>F8878A29900A25BDE9E2342E03BC8EAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC58163E8D5A3FF81A10491EC2AF2647</key>
 		<dict>
 			<key>primary</key>
 			<true/>

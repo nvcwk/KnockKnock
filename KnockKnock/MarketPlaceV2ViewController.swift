@@ -8,7 +8,7 @@
 
 import UIKit
 import QIULaunchAnimation
-import TextImageButton
+//import TextImageButton
 
 class MarketPlaceV2ViewController: UIViewController {
     
@@ -29,12 +29,12 @@ class MarketPlaceV2ViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let btn_sortby = TextImageButton()
-
-        
-        btn_sortby.setTitle("Sort By", forState: .Normal)
-        btn_sortby.setImage(UIImage(named: "sort"), forState: .Normal)
-        btn_sortby.spacing = 10
+//        let btn_sortby = TextImageButton()
+//
+//        
+//        btn_sortby.setTitle("Sort By", forState: .Normal)
+//        btn_sortby.setImage(UIImage(named: "sort"), forState: .Normal)
+//        btn_sortby.spacing = 10
 
         
     }
