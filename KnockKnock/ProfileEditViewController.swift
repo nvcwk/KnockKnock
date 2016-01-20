@@ -13,6 +13,7 @@ import ZFRippleButton
 import TextFieldEffects
 import SwiftSpinner
 import SwiftValidator
+import autoAutoLayout
 
 class ProfileEditViewController: UIViewController {
     
@@ -39,6 +40,10 @@ class ProfileEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
+
         
         let currentUser = PFUser.currentUser()!;
         

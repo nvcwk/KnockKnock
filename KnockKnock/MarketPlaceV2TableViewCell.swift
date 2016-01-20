@@ -29,7 +29,7 @@ class MarketPlaceV2TableViewCell: PFTableViewCell {
         //self.image_background.frame = CGRectMake(0, 0, 66, 66)
         //self.image_background.clipsToBounds = true
         
-
+        
         
         
     }

@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import ParseUI
+import autoAutoLayout
 
 class MarketPlaceV2TableViewController: PFQueryTableViewController {
     
@@ -18,6 +19,9 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
         let test = KnockKnockUtils.dateToString(NSDate())
         
         print(KnockKnockUtils.dateToParse(test))
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         super.viewDidLoad()
         
