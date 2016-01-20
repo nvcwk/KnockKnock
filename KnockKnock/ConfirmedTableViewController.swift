@@ -74,7 +74,7 @@ class ConfirmedTableViewController: PFQueryTableViewController {
     return cell
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 163.0
+    return 69.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -84,6 +84,10 @@ class ConfirmedTableViewController: PFQueryTableViewController {
     
     
     parentNaviController.showViewController(viewController, sender: nil)
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Confirmed Tours"
     }
 
 }

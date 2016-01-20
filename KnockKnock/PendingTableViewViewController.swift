@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import ParseUI
+import UIImageView_Letters
 
 class PendingTableViewViewController: PFQueryTableViewController {
 
@@ -16,6 +17,8 @@ class PendingTableViewViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingTableViewCell")
     }
@@ -48,6 +51,9 @@ class PendingTableViewViewController: PFQueryTableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
         
+        
+        
+        
         var cell: PendingTableViewCell = tableView.dequeueReusableCellWithIdentifier("PendingTableViewCell") as! PendingTableViewCell
         
         if let pending = object{
@@ -69,8 +75,7 @@ class PendingTableViewViewController: PFQueryTableViewController {
             }else{
                 cell.requester.text = host.objectForKey("fName") as! String
             }
-            
-            
+
             
             
         }
@@ -78,7 +83,7 @@ class PendingTableViewViewController: PFQueryTableViewController {
         return cell
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 163.0
+        return 69.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -88,5 +93,9 @@ class PendingTableViewViewController: PFQueryTableViewController {
         
         
         parentNaviController.showViewController(viewController, sender: nil)
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Requests Pending"
     }
 }
