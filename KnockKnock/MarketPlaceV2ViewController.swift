@@ -8,7 +8,7 @@
 
 import UIKit
 import QIULaunchAnimation
-//import TextImageButton
+import autoAutoLayout
 
 class MarketPlaceV2ViewController: UIViewController {
     
@@ -22,7 +22,10 @@ class MarketPlaceV2ViewController: UIViewController {
         super.viewDidLoad()
         
         ParseUtils.checkLogin(self)
-                
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
+        
         var fadeAnimation: QIULaunchAnimationFade = QIULaunchAnimationFade()
         //fadeAnimation.animationDuration = 5;
         fadeAnimation.startAnimation(nil)

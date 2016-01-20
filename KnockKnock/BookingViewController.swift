@@ -11,6 +11,7 @@ import FSCalendar
 import Parse
 import ParseUI
 import GMStepper
+import autoAutoLayout
 
 class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
 
@@ -37,6 +38,10 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
+        
         cal.allowsMultipleSelection = true
         
         let dateFormatter = NSDateFormatter()
