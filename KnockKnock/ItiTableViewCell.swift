@@ -13,7 +13,6 @@ class ItiTableViewCell: PFTableViewCell {
 
 
     @IBOutlet weak var lb_title: UILabel!
-    @IBOutlet weak var lb_created: UILabel!
     @IBOutlet weak var image_background: PFImageView!
     
     override func awakeFromNib() {
