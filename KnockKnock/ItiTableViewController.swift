@@ -42,7 +42,7 @@ class ItiTableViewController: PFQueryTableViewController {
             
             let date = itinerary.createdAt!
             
-            cell.lb_created.text = KnockKnockUtils.dateToString(date)
+//            cell.lb_created.text = KnockKnockUtils.dateToString(date)
             
             let imageFile = itinerary["image"] as! PFFile
             
@@ -54,7 +54,7 @@ class ItiTableViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 163.0
+        return 252.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

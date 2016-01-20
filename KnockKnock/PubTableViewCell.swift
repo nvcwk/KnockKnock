@@ -12,7 +12,8 @@ import ParseUI
 class PubTableViewCell: PFTableViewCell {
 
     @IBOutlet weak var lb_title: UILabel!
-    @IBOutlet weak var lb_availability: UILabel!
+    @IBOutlet weak var lb_start: UILabel!
+    @IBOutlet weak var lb_end: UILabel!
      @IBOutlet weak var lb_price: UILabel!
     @IBOutlet weak var image_background: PFImageView!
     

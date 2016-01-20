@@ -44,7 +44,9 @@ class PubTableViewController: PFQueryTableViewController {
             let startAvailability = KnockKnockUtils.dateToString(publish["startAvailability"] as! NSDate)
             let lastAvailability = KnockKnockUtils.dateToString(publish["lastAvailability"] as! NSDate)
             
-            cell.lb_availability.text = startAvailability + " ~ " + lastAvailability
+            cell.lb_start.text = startAvailability
+            
+            cell.lb_end.text = lastAvailability
             
             cell.lb_title.text = itinerary["title"] as! String
             
@@ -52,13 +54,15 @@ class PubTableViewController: PFQueryTableViewController {
             
             cell.image_background.file = imageFile
             cell.image_background.loadInBackground()
+            
+//                        cell.image_background.contentMode = UIViewContentMode.ScaleToFill
         }
         
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 163.0
+        return 308.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
