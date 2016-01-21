@@ -375,7 +375,7 @@
                                         <rect key="frame" x="0.0" y="28" width="340" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GaZ-J6-wjp" id="W5T-PX-4nK">
-                                            <rect key="frame" x="0.0" y="0.0" width="340" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="77.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBI-3U-0BA">

@@ -16,10 +16,10 @@ import SwiftValidator
 import autoAutoLayout
 
 class ProfileViewController: UIViewController {
-
+    
     
     @IBOutlet weak var img_profile : PFImageView!
-
+    
     @IBOutlet weak var btn_editSave: UIButton!
     @IBOutlet weak var tf_email: UITextField!
     @IBOutlet weak var tf_birthday: UITextField!
@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController {
         
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
-
+        
         
         self.img_profile.layer.cornerRadius = self.img_profile.frame.size.width/2
         self.img_profile.clipsToBounds = true
@@ -74,8 +74,10 @@ class ProfileViewController: UIViewController {
     func loadProfilePic() {
         let currentUser = PFUser.currentUser()!;
         
-        img_profile.file = currentUser["profilePic"] as! PFFile
-        img_profile.loadInBackground()
+        if (currentUser["profilePic"] != nil) {
+            img_profile.file = currentUser["profilePic"] as! PFFile
+            img_profile.loadInBackground()
+        }
     }
     
     func setupTxtFields() {
@@ -93,24 +95,24 @@ class ProfileViewController: UIViewController {
         }
     }
     
-//    
-//    func disableEditing() {
-//        tf_email.userInteractionEnabled = false
-//        tf_birthday.userInteractionEnabled = false
-//        tf_contactNo.userInteractionEnabled = false
-//        isEdit = false
-//
-//    }
-//    
-//    func enableEditing() {
-//        tf_email.userInteractionEnabled = true
-//        tf_birthday.userInteractionEnabled = true
-//        tf_contactNo.userInteractionEnabled = true
-//        isEdit = true
-//        
-//
-//    }
-//    
+    //
+    //    func disableEditing() {
+    //        tf_email.userInteractionEnabled = false
+    //        tf_birthday.userInteractionEnabled = false
+    //        tf_contactNo.userInteractionEnabled = false
+    //        isEdit = false
+    //
+    //    }
+    //
+    //    func enableEditing() {
+    //        tf_email.userInteractionEnabled = true
+    //        tf_birthday.userInteractionEnabled = true
+    //        tf_contactNo.userInteractionEnabled = true
+    //        isEdit = true
+    //
+    //
+    //    }
+    //
     @IBAction func actionLogout(sender: UIButton) {
         ParseUtils.logout(self)
     }
@@ -126,9 +128,9 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         img_profile.image = info[UIImagePickerControllerEditedImage] as? UIImage
         
         let currentUser = PFUser.currentUser()!
-            
+        
         currentUser["profilePic"] = PFFile(data: UIImagePNGRepresentation(img_profile.image!)!)!
-            
+        
         currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if (success) {
                 SwiftSpinner.hide()
@@ -136,12 +138,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                 self.loadProfilePic()
                 
                 KnockKnockUtils.okAlert(self, title: "Message!", message: "Updated New Pic!", handle: nil)
-        
+                
             } else {
                 KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
             }
         }
-
+        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

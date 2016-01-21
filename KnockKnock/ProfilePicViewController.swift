@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import autoAutoLayout
 
 class ProfilePicViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -19,6 +20,12 @@ class ProfilePicViewController: UIViewController, UIImagePickerControllerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
+        
+        self.img_profile.layer.cornerRadius = self.img_profile.frame.size.width/2
+        self.img_profile.clipsToBounds = true
         
         picker.delegate = self
         picker.allowsEditing = true
@@ -55,7 +62,7 @@ class ProfilePicViewController: UIViewController, UIImagePickerControllerDelegat
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func actionChange(sender: UIButton) {
+    @IBAction func actionChange(sender: UITapGestureRecognizer) {
         let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { UIAlertAction in
