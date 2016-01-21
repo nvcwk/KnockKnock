@@ -11,6 +11,7 @@ import SwiftValidator
 import SwiftSpinner
 import Parse
 import ParseUI
+import autoAutoLayout
 
 class ProfileChangePassViewController: UIViewController {
     
@@ -18,12 +19,34 @@ class ProfileChangePassViewController: UIViewController {
     
     @IBOutlet weak var tf_cfmPass: UITextField!
     
+    @IBOutlet weak var tf_fName: UITextField!
+    
+    @IBOutlet weak var tf_lName: UITextField!
+    
+    @IBOutlet weak var image_profile: PFImageView!
+    
     let validator = Validator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
+        
         let missTxt = String("Please fill in all inputs")
+        
+        var user = PFUser.currentUser()
+        
+        tf_fName.text = user!["fName"] as! String
+        tf_lName.text = user!["lName"] as! String
+        
+        if (user!["profilePic"] != nil) {
+            
+            var image = user!["profilePic"] as! PFFile
+            
+            image_profile.file = image
+            image_profile.loadInBackground()
+        }
         
         validator.registerField(tf_newPass, rules: [RequiredRule(message: missTxt), ConfirmationRule(confirmField: tf_cfmPass, message: "Password do not match!"), KnockKnockRule(regex: "^(?=.*\\d)(?=.*[a-zA-Z])(?!.*[\\W_\\x7B-\\xFF]).{7,20}$", message: "Password does not fit requirements")])
         
@@ -31,6 +54,10 @@ class ProfileChangePassViewController: UIViewController {
     
     @IBAction func actionSave(sender: AnyObject) {
         validator.validate(self)
+    }
+    
+    @IBAction func viewRequirements(sender: UIButton) {
+        KnockKnockUtils.okAlert(self, title: "Password Requirements", message: "Should contain 7-20 characters with at least 1 Upper or Lower Alphabet and 1 numerical digit. Special characters are allowed.", handle: nil)
     }
 }
 

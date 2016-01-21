@@ -75,7 +75,7 @@ class ProfileEditViewController: UIViewController {
     
     
     func updateDob(sender: UIDatePicker) {
-        tf_birthday.text = KnockKnockUtils.dateToString(sender.date)
+        tf_birthday.text = KnockKnockUtils.dateToStringDisplay(sender.date)
         selectedDate = sender.date
     }
     
@@ -98,7 +98,7 @@ class ProfileEditViewController: UIViewController {
         tf_email.text = currentUser.email
         
         if let birthDate = currentUser["dob"] as? NSDate {
-            tf_birthday.text = KnockKnockUtils.dateToString(birthDate)
+            tf_birthday.text = KnockKnockUtils.dateToStringDisplay(birthDate)
         }
         
         if let contactNumber = currentUser["contact"] as? Int {
