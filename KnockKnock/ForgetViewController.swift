@@ -2,6 +2,7 @@ import UIKit
 import SwiftValidator
 import Parse
 import SwiftSpinner
+import autoAutoLayout
 
 class ForgetViewController: UIViewController, ValidationDelegate {
 
@@ -12,6 +13,9 @@ class ForgetViewController: UIViewController, ValidationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         validator.registerField(tf_email, errorLabel: lb_email, rules: [RequiredRule(), EmailRule(message: "Invalid email")])
         
