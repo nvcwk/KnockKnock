@@ -25,6 +25,8 @@ class PubTableViewController: PFQueryTableViewController {
         var query = PFQuery(className: "MarketPlace")
         
         query.includeKey("itinerary")
+        query.includeKey("host")
+        query.includeKey("itinerary.activities")
         
         query.whereKey("host", equalTo: PFUser.currentUser()!)
         query.whereKey("isPublished", equalTo: true)
