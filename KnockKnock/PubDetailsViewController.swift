@@ -18,15 +18,30 @@ class PubDetailsViewController: UIViewController {
     @IBOutlet weak var lb_start: UILabel!
     @IBOutlet weak var lb_last: UILabel!
     @IBOutlet weak var lb_price: UILabel!
+    @IBOutlet weak var image_host: ProfileAvatar!
+    @IBOutlet weak var lb_hostName: UILabel!
+    @IBOutlet weak var table_activities: UITableView!
     
     var pubObj = PFObject(className: "MarketPlace")
     
     var itineraryObj = PFObject(className: "Itinerary")
     
+    var hostObj = PFUser()
+    
+    var activities = NSArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         itineraryObj = pubObj["itinerary"] as! PFObject
+        
+        activities = itineraryObj["activities"] as! NSArray
+        
+        activities = activities.sortedArrayUsingDescriptors([
+            NSSortDescriptor(key: "day", ascending: true)
+            ])
+        
+        hostObj = pubObj["host"] as! PFUser
         
         lb_title.text = itineraryObj["title"] as! String
         
@@ -41,7 +56,14 @@ class PubDetailsViewController: UIViewController {
         lb_last.text = "Last Availability: " + KnockKnockUtils.dateToString(
             pubObj["lastAvailability"] as! NSDate)
         
-
+        lb_hostName.text = (hostObj["fName"] as! String) + " " + (hostObj["lName"] as! String)
+        
+        var img_profile = hostObj["profilePic"] as! PFFile
+        image_host.file = img_profile
+        image_host.loadInBackground()
+        
+        table_activities.delegate = self
+        table_activities.dataSource = self
     }
     
     
@@ -97,12 +119,35 @@ class PubDetailsViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue .identifier == "toItiView") {
             let controller = segue.destinationViewController as! ItiDetailsViewController
-
+            
             controller.itineraryObj = itineraryObj
         } else  if (segue.identifier == "toEditPublishView") {
             let controller = segue.destinationViewController as! PubDetailsEditViewController
             controller.publishObj = pubObj
         }
+    }
+    
+}
+
+extension PubDetailsViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return activities.count
+    }
+    
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("activityCell", forIndexPath: indexPath) as! ActivityDetailsTableViewCell
+        
+        let activity = activities[indexPath.row] as! PFObject
+        
+        let day = activity["day"] as! Int
+        let title = activity["title"] as! String
+        
+        cell.lb_day.text = "Day " + String(day) + " - " + title
+        cell.tv_details.text = activity["description"] as! String
+        
+        
+        return cell
     }
     
     
