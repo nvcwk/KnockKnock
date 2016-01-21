@@ -111,7 +111,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBW-Om-hwJ" customClass="RTIconButton">
                                 <rect key="frame" x="17" y="419" width="340" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.074509803921568626" green="0.56862745098039214" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5in-ma-wDG"/>
                                 </constraints>
@@ -119,15 +119,6 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Logout" image="Exit"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iconMargin">
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
@@ -602,42 +593,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="f6G-TM-xUI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnn-Sb-Xw2" customClass="ZFRippleButton" customModule="ZFRippleButton">
-                                <rect key="frame" x="20" y="403" width="335" height="40"/>
-                                <color key="backgroundColor" red="0.086274509799999996" green="0.45098039220000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="X6d-j6-Vg0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Change Profile Picture">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="actionChange:" destination="gt6-4z-RlB" eventType="touchUpInside" id="b7a-6A-sRW"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-profile" translatesAutoresizingMaskIntoConstraints="NO" id="qvE-Oy-2mb">
-                                <rect key="frame" x="37" y="80" width="300" height="300"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogy-mB-3Ox" customClass="ZFRippleButton" customModule="ZFRippleButton">
-                                <rect key="frame" x="20" y="459" width="335" height="40"/>
-                                <color key="backgroundColor" red="0.086274509799999996" green="0.45098039220000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="519" width="335" height="40"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.42352941176470588" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="uUX-i7-FA8"/>
+                                    <constraint firstAttribute="height" constant="40" id="iI2-uY-8gT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Continue">
@@ -648,42 +608,59 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.090196078431372548" green="0.42352941176470588" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.090196078431372548" green="0.42352941176470588" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="actionUpload:" destination="gt6-4z-RlB" eventType="touchUpInside" id="Y76-cf-b5F"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to change profile image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wd-Vp-Ddw">
+                                <rect key="frame" x="81" y="432" width="213" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PVh-GD-qLe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="QgL-bN-uhW" userLabel="profilePhoto" customClass="ProfileAvatar" customModule="KnockKnock" customModuleProvider="target">
+                                <rect key="frame" x="37" y="110" width="300" height="300"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BMz-Mc-Tnp" appends="YES" id="i6s-fV-Pg3"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="f6G-TM-xUI" firstAttribute="top" secondItem="R5J-93-p5k" secondAttribute="top" id="1qG-Nz-nKf"/>
-                            <constraint firstItem="fnn-Sb-Xw2" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="4" id="38U-Wf-4da"/>
-                            <constraint firstItem="fnn-Sb-Xw2" firstAttribute="trailing" secondItem="Ogy-mB-3Ox" secondAttribute="trailing" id="JTU-xB-G67"/>
-                            <constraint firstItem="KKE-nd-cib" firstAttribute="top" secondItem="Ogy-mB-3Ox" secondAttribute="bottom" constant="168" id="KmY-fg-wmH"/>
-                            <constraint firstItem="qvE-Oy-2mb" firstAttribute="top" secondItem="Jhn-nw-1rE" secondAttribute="bottom" constant="60" id="Obe-Gl-rjn"/>
-                            <constraint firstItem="f6G-TM-xUI" firstAttribute="bottom" secondItem="KKE-nd-cib" secondAttribute="top" id="PKg-EY-QUk"/>
-                            <constraint firstItem="f6G-TM-xUI" firstAttribute="centerX" secondItem="qvE-Oy-2mb" secondAttribute="centerX" id="Pes-3C-PSO"/>
-                            <constraint firstItem="f6G-TM-xUI" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leading" id="Qbl-a5-mgv"/>
-                            <constraint firstItem="Ogy-mB-3Ox" firstAttribute="top" secondItem="fnn-Sb-Xw2" secondAttribute="bottom" constant="16" id="Rvg-5r-Co9"/>
-                            <constraint firstAttribute="trailing" secondItem="f6G-TM-xUI" secondAttribute="trailing" id="Sen-1b-6o3"/>
-                            <constraint firstItem="fnn-Sb-Xw2" firstAttribute="top" secondItem="qvE-Oy-2mb" secondAttribute="bottom" constant="23" id="d0l-W4-5XW"/>
-                            <constraint firstItem="fnn-Sb-Xw2" firstAttribute="leading" secondItem="Ogy-mB-3Ox" secondAttribute="leading" id="s7l-C8-dWh"/>
-                            <constraint firstItem="qvE-Oy-2mb" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="21" id="uIu-ml-wOO"/>
-                            <constraint firstItem="qvE-Oy-2mb" firstAttribute="centerX" secondItem="fnn-Sb-Xw2" secondAttribute="centerX" id="zGq-f6-pRf"/>
+                            <constraint firstItem="QgL-bN-uhW" firstAttribute="centerX" secondItem="R5J-93-p5k" secondAttribute="centerX" id="1oJ-J9-wBu"/>
+                            <constraint firstItem="QgL-bN-uhW" firstAttribute="top" secondItem="Jhn-nw-1rE" secondAttribute="bottom" constant="90" id="5K4-uL-gpz"/>
+                            <constraint firstItem="Ogy-mB-3Ox" firstAttribute="top" secondItem="7wd-Vp-Ddw" secondAttribute="bottom" constant="66" id="8mr-AP-vOV"/>
+                            <constraint firstItem="Ogy-mB-3Ox" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="4" id="AXb-VD-LGQ"/>
+                            <constraint firstItem="7wd-Vp-Ddw" firstAttribute="centerX" secondItem="Ogy-mB-3Ox" secondAttribute="centerX" id="PjA-ju-0Tc"/>
+                            <constraint firstItem="QgL-bN-uhW" firstAttribute="centerX" secondItem="7wd-Vp-Ddw" secondAttribute="centerX" id="T0t-aA-ivf"/>
+                            <constraint firstItem="7wd-Vp-Ddw" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="65" id="Uil-2J-Ol4"/>
+                            <constraint firstItem="QgL-bN-uhW" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="21" id="Y0c-SC-nbf"/>
+                            <constraint firstItem="7wd-Vp-Ddw" firstAttribute="top" secondItem="QgL-bN-uhW" secondAttribute="bottom" constant="22" id="gC1-e7-y6X"/>
+                            <constraint firstItem="KKE-nd-cib" firstAttribute="top" secondItem="Ogy-mB-3Ox" secondAttribute="bottom" constant="108" id="iFU-xz-GJ0"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="btn_upload" destination="fnn-Sb-Xw2" id="jKr-tY-bOC"/>
-                        <outlet property="img_profile" destination="qvE-Oy-2mb" id="3sB-du-Ykz"/>
+                        <outlet property="img_profile" destination="QgL-bN-uhW" id="QzV-Lz-LmP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXT-8g-8la" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BMz-Mc-Tnp">
+                    <connections>
+                        <action selector="actionChange:" destination="gt6-4z-RlB" id="SHV-yV-DUW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="789.5" y="6.5"/>
         </scene>
@@ -694,7 +671,6 @@
         <image name="Profile_Icon" width="30" height="30"/>
         <image name="background" width="1563" height="2779"/>
         <image name="birthday" width="30" height="30"/>
-        <image name="default-profile" width="30" height="30"/>
         <image name="email" width="30" height="30"/>
         <image name="iphone" width="30" height="30"/>
         <image name="password" width="256" height="256"/>

@@ -60,6 +60,8 @@ class ParseUtils {
         user["fName"] = fName
         user["lName"] = lName
         
+//        KnockKnockUtils.storyBoardCall(controller, story: "Profile", animated: true, view:"profilePic")
+        
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             SwiftSpinner.hide()
