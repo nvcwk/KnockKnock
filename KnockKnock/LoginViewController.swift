@@ -3,6 +3,7 @@ import Parse
 import SwiftSpinner
 import ParseFacebookUtilsV4
 import TextFieldEffects
+import autoAutoLayout
 
 class LoginViewController: UIViewController {
     
@@ -12,6 +13,9 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
 
         
 //        let emailIcon = UIImageView(image: UIImage(named: "username"))
