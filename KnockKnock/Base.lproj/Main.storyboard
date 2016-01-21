@@ -19,8 +19,8 @@
                     <connections>
                         <segue destination="7NT-PX-KYv" kind="relationship" relationship="viewControllers" id="0m4-zD-YUE"/>
                         <segue destination="ymf-Zr-FqH" kind="relationship" relationship="viewControllers" id="ydq-JV-Fpa"/>
-                        <segue destination="0gu-z4-IfZ" kind="relationship" relationship="viewControllers" id="cid-M9-7uq"/>
                         <segue destination="I1f-RT-BjS" kind="relationship" relationship="viewControllers" id="cRx-7p-a4g"/>
+                        <segue destination="0gu-z4-IfZ" kind="relationship" relationship="viewControllers" id="cid-M9-7uq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

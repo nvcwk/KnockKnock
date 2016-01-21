@@ -38,6 +38,13 @@ class KnockKnockUtils {
         return formatter.stringFromDate(date)
     }
     
+    static func dateToStringDisplay(date: NSDate) -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        //formatter.timeZone = NSTimeZone.localTimeZone()
+        return formatter.stringFromDate(date)
+    }
+    
     // Convert date to string
     static func timeToString(date: NSDate) -> String {
         let formatter = NSDateFormatter()
