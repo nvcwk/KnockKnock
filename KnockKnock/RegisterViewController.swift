@@ -9,6 +9,7 @@
 import UIKit
 import CountryPicker
 import SwiftValidator
+import autoAutoLayout
 
 class RegisterViewController: UIViewController, CountryPickerDelegate, ValidationDelegate {
     
@@ -33,6 +34,9 @@ class RegisterViewController: UIViewController, CountryPickerDelegate, Validatio
         
         // Do any additional setup after loading the view.
         
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
+        
         countryPickerView.delegate = self
         countryPickerView.selectedLocale = NSLocale.currentLocale()
         tf_country.inputView = countryPickerView
@@ -56,7 +60,7 @@ class RegisterViewController: UIViewController, CountryPickerDelegate, Validatio
     }
     
     func updateBirthday(sender: UIDatePicker) {
-        tf_birthday.text = KnockKnockUtils.dateToString(sender.date)
+        tf_birthday.text = KnockKnockUtils.dateToStringDisplay(sender.date)
         selectedDate = sender.date
     }
     
