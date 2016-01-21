@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import autoAutoLayout
 
 class ConfirmedExpandedViewController: UIViewController {
     @IBOutlet weak var confirmNum: UILabel!
@@ -25,9 +26,13 @@ class ConfirmedExpandedViewController: UIViewController {
     @IBOutlet weak var remarksLabel: UILabel!
     var confirmedObject : PFObject!
     
+    @IBOutlet weak var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
+        
         confirmNum.text = confirmedObject.objectId
         let hostObject = (confirmedObject["Host"]) as! PFObject
         let requesterObject = (confirmedObject["Requester"]) as! PFObject
@@ -69,25 +74,28 @@ class ConfirmedExpandedViewController: UIViewController {
         if (confirmedObject["Status"] as! String == "Cancelled"){
             cancelButton.setTitle("", forState: UIControlState.Normal)
             cancelButton.enabled = false
+            cancelButton.hidden = true
+            image.image = UIImage(named: "cancel")
+            
             remarks.text = confirmedObject["Remarks"] as! String
             remarksLabel.text = "Remarks: "
             status.font = UIFont.boldSystemFontOfSize(18.0)
             status.textColor = UIColor.redColor()
         }
         //cell alignment and font
-        confirmNum.textAlignment = NSTextAlignment.Right;
-        header.textAlignment = NSTextAlignment.Center;
-        header.font = UIFont.boldSystemFontOfSize(20.0)
-        pax.textAlignment = NSTextAlignment.Right;
-        value.textAlignment = NSTextAlignment.Right;
-        status.textAlignment = NSTextAlignment.Right;
-        remarks.textAlignment = NSTextAlignment.Right;
-        startDate.textAlignment = NSTextAlignment.Left;
-        endDate.textAlignment = NSTextAlignment.Right;
-        requester.textAlignment = NSTextAlignment.Right;
-        requesterContact.textAlignment = NSTextAlignment.Right;
-        requester.textAlignment = NSTextAlignment.Right;
-        requesterContact.textAlignment = NSTextAlignment.Right;
+//        confirmNum.textAlignment = NSTextAlignment.Right;
+//        header.textAlignment = NSTextAlignment.Center;
+//        header.font = UIFont.boldSystemFontOfSize(20.0)
+//        pax.textAlignment = NSTextAlignment.Right;
+//        value.textAlignment = NSTextAlignment.Right;
+//        status.textAlignment = NSTextAlignment.Right;
+//        remarks.textAlignment = NSTextAlignment.Right;
+//        startDate.textAlignment = NSTextAlignment.Left;
+//        endDate.textAlignment = NSTextAlignment.Right;
+//        requester.textAlignment = NSTextAlignment.Right;
+//        requesterContact.textAlignment = NSTextAlignment.Right;
+//        requester.textAlignment = NSTextAlignment.Right;
+//        requesterContact.textAlignment = NSTextAlignment.Right;
 
     }
 
