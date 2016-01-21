@@ -9,7 +9,6 @@
 import UIKit
 import Parse
 import ParseUI
-import UIImageView_Letters
 
 class PendingTableViewViewController: PFQueryTableViewController {
 
