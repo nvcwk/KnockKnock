@@ -87,7 +87,7 @@ class ProfileViewController: UIViewController {
         tf_email.text = currentUser.email
         
         if let birthDate = currentUser["dob"] as? NSDate {
-            tf_birthday.text = KnockKnockUtils.dateToString(birthDate)
+            tf_birthday.text = KnockKnockUtils.dateToStringDisplay(birthDate)
         }
         
         if let contactNumber = currentUser["contact"] as? Int {
@@ -95,24 +95,6 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    //
-    //    func disableEditing() {
-    //        tf_email.userInteractionEnabled = false
-    //        tf_birthday.userInteractionEnabled = false
-    //        tf_contactNo.userInteractionEnabled = false
-    //        isEdit = false
-    //
-    //    }
-    //
-    //    func enableEditing() {
-    //        tf_email.userInteractionEnabled = true
-    //        tf_birthday.userInteractionEnabled = true
-    //        tf_contactNo.userInteractionEnabled = true
-    //        isEdit = true
-    //
-    //
-    //    }
-    //
     @IBAction func actionLogout(sender: UIButton) {
         ParseUtils.logout(self)
     }
