@@ -35,7 +35,7 @@ class ItiPublishViewController: UIViewController {
             forControlEvents:UIControlEvents.ValueChanged)
         
         tf_startDate.inputView = startDatePicker
-        tf_startDate.text = KnockKnockUtils.dateToString(5.days.fromDate(NSDate()))
+        tf_startDate.text = KnockKnockUtils.dateToStringDisplay(5.days.fromDate(NSDate()))
         
         endDatePicker.datePickerMode = UIDatePickerMode.Date
         endDatePicker.minimumDate = 5.days.fromDate(NSDate())
@@ -43,7 +43,7 @@ class ItiPublishViewController: UIViewController {
             forControlEvents:UIControlEvents.ValueChanged)
         
         tf_endDate.inputView = endDatePicker
-        tf_endDate.text = KnockKnockUtils.dateToString(5.days.fromDate(NSDate()))
+        tf_endDate.text = KnockKnockUtils.dateToStringDisplay(5.days.fromDate(NSDate()))
 
         lb_title.text = itineraryObj["title"] as! String
         
