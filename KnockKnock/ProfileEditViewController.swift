@@ -62,7 +62,7 @@ class ProfileEditViewController: UIViewController {
         let missTxt = String("Please fill in all inputs")
         
         validator.registerField(tf_email, rules: [RequiredRule(message: missTxt), EmailRule(message: "Invalid E-Mail Adress")])
-        validator.registerField(tf_contactNo, rules: [RequiredRule(message: missTxt)])
+        validator.registerField(tf_contactNo, rules: [RequiredRule(message: missTxt), MaxLengthRule(length: 16, message: "Contact Max 16 numbers")])
         
         datePicker.datePickerMode = UIDatePickerMode.Date
         datePicker.maximumDate = NSDate()
