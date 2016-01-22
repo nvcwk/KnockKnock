@@ -18,9 +18,6 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
     var sort = 0
     
     override func viewDidLoad() {
-        let test = KnockKnockUtils.dateToString(NSDate())
-        
-        print(KnockKnockUtils.dateToParse(test))
         
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
