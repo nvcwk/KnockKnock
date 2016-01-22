@@ -84,6 +84,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Popover.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>QIULaunchAnimation.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -119,11 +124,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>UIImageView-Letters.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ZFRippleButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -142,11 +142,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0C7E43156F603A6FAFB52CAB91304D99</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>0F98F85575B93F19AE698C564B266D98</key>
 		<dict>
 			<key>primary</key>
@@ -157,22 +152,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1FBE2A13AA2D4A1CF9BE6741459484F4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>220D449D41A8FE0F928E49DEB5E33307</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>25B1150CE42646AE766DE80D80662962</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2F80CBFC6B8CEBA3C76014AB5128817D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -188,11 +168,6 @@
 			<true/>
 		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4D4A88BD15B0838396AD659EE654EE1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -232,11 +207,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>897A7D2D5022093C5ED93B95408972D8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9266BCFE006C277B1041497F639317FA</key>
 		<dict>
 			<key>primary</key>
@@ -258,11 +228,6 @@
 			<true/>
 		</dict>
 		<key>C58C7421DAD296EE054EEEDAE49151AD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C727D4EC3FD6465FABED1F52BF7B9355</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -292,11 +257,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ECB0182056936FDA528506793519A47E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>F5ACF367AE3BD7A7F2AF2D430901DF7B</key>
 		<dict>
 			<key>primary</key>
@@ -312,17 +272,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F9DADCAD7465B0BCEA3766F5558AC4EF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>FA4EFC879953F4F05F14BC34A3CC0E77</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FF99B66F6528A8B6385969F872FE5F8D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
