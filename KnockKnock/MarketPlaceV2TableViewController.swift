@@ -41,6 +41,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
         if(PFUser.currentUser() != nil) {
             query.whereKey("isPublished", equalTo: published)
             query.whereKey("host", notEqualTo: PFUser.currentUser()!)
+            query.whereKey("lastAvailability", greaterThan: NSDate())
             
             query.includeKey("itinerary")
             query.includeKey("host")
