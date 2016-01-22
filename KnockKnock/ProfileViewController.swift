@@ -36,6 +36,9 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        
+        
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
