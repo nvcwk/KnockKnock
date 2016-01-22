@@ -64,6 +64,10 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             
             cell.lb_price.text = String(mpObj["price"] as! Int) + " SGD"
             
+            cell.startDate.text = KnockKnockUtils.dateToString( mpObj["startAvailability"])
+            
+            
+            cell.endDate.text = KnockKnockUtils.dateToString( mpObj["endAvailability"])
             let image = itiObj["image"] as! PFFile
             
             cell.image_background.file = image

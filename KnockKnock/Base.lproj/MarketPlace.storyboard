@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mzm-qA-zp6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mzm-qA-zp6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -266,9 +266,11 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="endDate" destination="2O6-nX-lWA" id="tgw-la-LXu"/>
                                     <outlet property="image_background" destination="cis-ct-PrS" id="guv-aq-Xh2"/>
                                     <outlet property="lb_price" destination="RJo-oT-KKJ" id="fwn-hM-0Qm"/>
                                     <outlet property="lb_title" destination="dhI-uw-6Zz" id="0we-gd-ajX"/>
+                                    <outlet property="startDate" destination="d6g-Ib-pvv" id="L7Y-hj-sFv"/>
                                     <segue destination="4IK-tC-C9S" kind="show" identifier="toMarketPlaceDetail" id="aAW-y1-MRC"/>
                                 </connections>
                             </tableViewCell>
