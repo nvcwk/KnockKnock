@@ -67,13 +67,13 @@ class ConfirmedExpandedViewController: UIViewController {
         if (hostObject == PFUser.currentUser()){
             requesterLabel.text = "Requested By: "
             requester.text = requesterObject["fName"] as! String
-            requesterContact.text = String(requesterObject["contact"])
+            requesterContact.text = String(requesterObject["email"])
             
             
         }else{
             requesterLabel.text = "Your Host: "
             requester.text = hostObject["fName"] as! String
-            requesterContact.text = String(hostObject["contact"])
+            requesterContact.text = String(hostObject["email"])
             
         }
         
