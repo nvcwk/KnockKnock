@@ -31,6 +31,9 @@ class ConfirmedExpandedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.view!.removeConstraints(self.view.constraints)
+
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         image.image? = (image.image?.imageWithRenderingMode(.AlwaysTemplate))!
