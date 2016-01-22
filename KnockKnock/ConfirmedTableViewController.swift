@@ -78,14 +78,14 @@ class ConfirmedTableViewController: PFQueryTableViewController {
         }else{
             cell.requester.text = host.objectForKey("fName") as! String
         }
-    
+        cell.status.text = pending["Status"]as! String
     
     }
     
     return cell
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 69.0
+    return 105.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
