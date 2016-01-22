@@ -2,6 +2,7 @@ import UIKit
 import DZNPhotoPickerController
 import SwiftValidator
 import Parse
+import autoAutoLayout
 
 class ItiSummaryViewController: UIViewController {
     
@@ -17,6 +18,8 @@ class ItiSummaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         tv_summary.delegate = self
         imagePicker.delegate = self

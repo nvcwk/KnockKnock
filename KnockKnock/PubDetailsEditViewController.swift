@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import ParseUI
 import SwiftSpinner
+import autoAutoLayout
 
 class PubDetailsEditViewController: UIViewController {
     
@@ -31,6 +32,8 @@ class PubDetailsEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         lb_title.text = publishObj["itinerary"]["title"] as! String
 
