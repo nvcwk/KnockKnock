@@ -1,6 +1,7 @@
 import UIKit
 import Parse
 import SwiftSpinner
+import autoAutoLayout
 
 class ItiActivitiesViewController: UITableViewController {
     var itineraryObj = PFObject(className: "Itinerary")
@@ -13,6 +14,8 @@ class ItiActivitiesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         self.navigationItem.setHidesBackButton(true, animated:true)
         

@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import ParseUI
 import SwiftSpinner
+import autoAutoLayout
 
 class PubDetailsViewController: UIViewController {
     
@@ -32,6 +33,9 @@ class PubDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         itineraryObj = pubObj["itinerary"] as! PFObject
         
