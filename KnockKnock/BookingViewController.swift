@@ -59,10 +59,12 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     }
     @IBAction func stepperTapped(sender: AnyObject) {
         var currentValue = Int(stepper.value)
+        
+        print(currentValue)
         self.paxLabel.text = "\(currentValue)"
         var newPrice  = price * currentValue
         self.priceLabel.text = String(newPrice)
-        pax = Int(currentValue)
+        pax = currentValue
         finalPrice = newPrice
     }
     
@@ -190,8 +192,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                 booking["Date"] = self.selectedDate.sort().first
                 booking["Host"] = self.host
                 booking["Pax"] = Int(self.pax)
-                booking["Total"] = Int(self.finalPrice)
-                booking["Marketplace"] = self.marketplace
+                booking["Total"] = self.price * self.pax
                 booking["Marketplace"] = self.marketplace
                 booking["Status"] = "Pending"
                 booking["Itinerary"] = self.itinerary
