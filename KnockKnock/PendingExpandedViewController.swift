@@ -105,6 +105,7 @@ class PendingExpandedViewController: UIViewController {
                 remarks.text =  pendingObject["Remarks"] as! String
                 actionButton2.setTitle("", forState: UIControlState.Normal)
                 actionButton2.enabled = false
+                actionButton2.hidden = true 
                 status.font = UIFont.boldSystemFontOfSize(18.0)
                 status.textColor = UIColor.redColor()
             }else{

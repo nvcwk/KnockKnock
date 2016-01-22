@@ -82,30 +82,23 @@ class ConfirmedExpandedViewController: UIViewController {
             cancelButton.enabled = false
             cancelButton.hidden = true
             image.image = UIImage(named: "cancel")
-             image.image? = (image.image?.imageWithRenderingMode(.AlwaysTemplate))!
+            image.image? = (image.image?.imageWithRenderingMode(.AlwaysTemplate))!
             image.tintColor = UIColor.redColor()
-
+            
             //theImageView.tintColor = UIColor(red:0.14, green:0.63, blue:0.78, alpha:1.0)
             
             remarks.text = confirmedObject["Remarks"] as! String
             remarksLabel.text = "Remarks: "
             status.font = UIFont.boldSystemFontOfSize(18.0)
             status.textColor = UIColor.redColor()
+        }else if(confirmedObject["Status"] as! String == "Completed"){
+            remarks.text = confirmedObject["Remarks"] as! String
+            remarksLabel.text = "Remarks: "
+            cancelButton.setTitle("", forState: UIControlState.Normal)
+            cancelButton.enabled = false
+            cancelButton.hidden = true
         }
-        //cell alignment and font
-//        confirmNum.textAlignment = NSTextAlignment.Right;
-//        header.textAlignment = NSTextAlignment.Center;
-//        header.font = UIFont.boldSystemFontOfSize(20.0)
-//        pax.textAlignment = NSTextAlignment.Right;
-//        value.textAlignment = NSTextAlignment.Right;
-//        status.textAlignment = NSTextAlignment.Right;
-//        remarks.textAlignment = NSTextAlignment.Right;
-//        startDate.textAlignment = NSTextAlignment.Left;
-//        endDate.textAlignment = NSTextAlignment.Right;
-//        requester.textAlignment = NSTextAlignment.Right;
-//        requesterContact.textAlignment = NSTextAlignment.Right;
-//        requester.textAlignment = NSTextAlignment.Right;
-//        requesterContact.textAlignment = NSTextAlignment.Right;
+        
 
     }
 

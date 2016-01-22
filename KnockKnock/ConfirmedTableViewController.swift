@@ -53,6 +53,13 @@ class ConfirmedTableViewController: PFQueryTableViewController {
 
     
     if let pending = object{
+        
+    var date = pending["Date"]! as! NSDate
+    //check if booking has been completed
+        if (date <= NSDate()){
+            updateRecords(pending)
+        }
+        
     let marketplace = pending["Marketplace"] as! PFObject
     let itinerary = pending["Itinerary"] as! PFObject
     cell.header.text = itinerary["title"] as! String
@@ -61,7 +68,7 @@ class ConfirmedTableViewController: PFQueryTableViewController {
     dateFormatter.dateFormat = "dd/MM/yyyy"
     dateFormatter.timeZone = NSTimeZone(name: "GMT")
     
-    cell.date.text = dateFormatter.stringFromDate(pending["Date"]! as! NSDate)
+    cell.date.text = KnockKnockUtils.dateToStringDisplay(date)
     
         let requester = pending["Requester"] as! PFObject
         let host = pending["Host"] as! PFObject
@@ -93,5 +100,15 @@ class ConfirmedTableViewController: PFQueryTableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Confirmed Tours"
     }
+    
+    func updateRecords(record: PFObject){
+        
+        record["Status"] = "Completed"
+        record["Remarks"] = "Tour Completed"
+        record.saveInBackground()
+        
+        
+    }
+
 
 }
