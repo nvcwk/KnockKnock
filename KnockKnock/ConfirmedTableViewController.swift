@@ -42,6 +42,7 @@ class ConfirmedTableViewController: PFQueryTableViewController {
     query.includeKey("Host")
     query.includeKey("Requester")
     query.includeKey("Itinerary.activities")
+    query.orderByAscending("Date")
     return query
     
     }
