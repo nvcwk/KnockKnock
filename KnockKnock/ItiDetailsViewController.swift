@@ -28,6 +28,9 @@ class ItiDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.profile_img.layer.cornerRadius = self.profile_img.frame.size.width/2
+        self.profile_img.clipsToBounds = true
+        
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
