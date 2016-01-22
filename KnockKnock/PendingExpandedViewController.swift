@@ -75,11 +75,11 @@ class PendingExpandedViewController: UIViewController {
             requester.text = requesterObject["fName"] as! String
             requesterContact.text = String(requesterObject["contact"])
             
-            if (caseStatus == "Expired"){
+            if (caseStatus == "Expired" || caseStatus == "Rejected" ){
                 status.font = UIFont.boldSystemFontOfSize(18.0)
                 status.textColor = UIColor.redColor()
                 actionButton.setTitle("", forState: UIControlState.Normal)
-                actionButton.enabled = false
+              //  actionButton.enabled = false
                 actionButton.hidden = true
                 actionButton2.setTitle("", forState: UIControlState.Normal)
                 actionButton2.enabled = false
@@ -162,7 +162,6 @@ class PendingExpandedViewController: UIViewController {
                         var tempDate = self.selectedDate.add(days: i)
                          self.bookedDateArray.append(tempDate)
                     }
-                   // self.bookedDateArray.append(self.selectedDate)
                     
                     var marketPlace = PFObject(className: "MarketPlace")
                     
@@ -172,7 +171,6 @@ class PendingExpandedViewController: UIViewController {
                     
                     marketPlace.saveInBackground()
                     
-                    //self.pendingObject.deleteInBackground()
                     self.pendingObject["Status"] = "Confirmed"
                     self.pendingObject.saveInBackground()
                     let myAlert =
@@ -201,7 +199,7 @@ class PendingExpandedViewController: UIViewController {
 
     }
 
-    @IBAction func button2Tapped(sender: AnyObject) {
+    @IBAction func button2Pressed(sender: AnyObject) {
         //reject codes
         
         let bookAlert = UIAlertController(title: "Reject/Cancel", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
@@ -209,7 +207,7 @@ class PendingExpandedViewController: UIViewController {
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
             
-           // var booking = PFObject(className: "Pending")
+            // var booking = PFObject(className: "Pending")
             if (self.hostObject == PFUser.currentUser()){
                 self.pendingObject["Status"] = "Rejected"
                 self.pendingObject["Remarks"] = "Host Rejected"
@@ -218,7 +216,7 @@ class PendingExpandedViewController: UIViewController {
                 self.pendingObject["Remarks"] = "User Cancelled"
             }
             
-
+            
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
@@ -236,7 +234,7 @@ class PendingExpandedViewController: UIViewController {
                     self.navigationController?.popToRootViewControllerAnimated(true)
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
-                   
+                    
                 } else {
                     NSLog("%@", error!)
                 }
@@ -248,6 +246,7 @@ class PendingExpandedViewController: UIViewController {
         
         presentViewController(bookAlert, animated: true, completion: nil)
     }
+    
 
     @IBAction func browseButtonTapped(sender: AnyObject) {
         let itineraryObject = (pendingObject["Itinerary"]) as! PFObject
