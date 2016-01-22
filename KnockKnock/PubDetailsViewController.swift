@@ -34,6 +34,9 @@ class PubDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.image_host.layer.cornerRadius = self.image_host.frame.size.width/2
+        self.image_host.clipsToBounds = true
+        
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
