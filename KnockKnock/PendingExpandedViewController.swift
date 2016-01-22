@@ -74,17 +74,22 @@ class PendingExpandedViewController: UIViewController {
             requesterLabel.text = "Requested By: "
             requester.text = requesterObject["fName"] as! String
             requesterContact.text = String(requesterObject["contact"])
+            
             if (caseStatus == "Expired"){
                 status.font = UIFont.boldSystemFontOfSize(18.0)
                 status.textColor = UIColor.redColor()
                 actionButton.setTitle("", forState: UIControlState.Normal)
                 actionButton.enabled = false
+                actionButton.hidden = true
                 actionButton2.setTitle("", forState: UIControlState.Normal)
                 actionButton2.enabled = false
+                actionButton2.hidden = true
                 reason.text = "Reason: "
                 remarks.text =  pendingObject["Remarks"] as! String
 
             }else{
+                actionButton.hidden = false
+                actionButton2.hidden = false
                 actionButton.setTitle("Accept", forState: UIControlState.Normal)
                 actionButton2.setTitle("Reject", forState: UIControlState.Normal)
 
@@ -105,33 +110,16 @@ class PendingExpandedViewController: UIViewController {
                 remarks.text =  pendingObject["Remarks"] as! String
                 actionButton2.setTitle("", forState: UIControlState.Normal)
                 actionButton2.enabled = false
-                actionButton2.hidden = true 
+                actionButton2.hidden = true
                 status.font = UIFont.boldSystemFontOfSize(18.0)
                 status.textColor = UIColor.redColor()
             }else{
                 reason.text = ""
-                actionButton2.setTitle("Cancel", forState: UIControlState.Normal)
+                actionButton2.setTitle("Cancel Booking", forState: UIControlState.Normal)
             }
             
         }
-        //cell alignment and font
-//        pendingNum.textAlignment = NSTextAlignment.Right;
-//        header.textAlignment = NSTextAlignment.Center;
-//        header.font = UIFont.boldSystemFontOfSize(20.0)
-//        pax.textAlignment = NSTextAlignment.Right;
-//        value.textAlignment = NSTextAlignment.Right;
-//        status.textAlignment = NSTextAlignment.Right;
-//        remarks.textAlignment = NSTextAlignment.Right;
-//        startDate.textAlignment = NSTextAlignment.Left;
-//        endDate.textAlignment = NSTextAlignment.Right;
-//        requester.textAlignment = NSTextAlignment.Right;
-//        requesterContact.textAlignment = NSTextAlignment.Right;
-//        requester.textAlignment = NSTextAlignment.Right;
-//        requesterContact.textAlignment = NSTextAlignment.Right;
-
         
-        
-        // Do any additional setup "after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

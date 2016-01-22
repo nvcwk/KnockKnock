@@ -228,12 +228,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc1-hy-8Ld">
+                                <rect key="frame" x="31" y="570" width="313" height="40"/>
+                                <color key="backgroundColor" red="0.14022973599999999" green="0.63129826659999999" blue="0.77669933219999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="actionButton" destination="mzj-t6-dbx" id="VWg-ac-nbp"/>
-                        <outlet property="actionButton2" destination="j32-Y9-HAl" id="pxs-Qx-wgu"/>
+                        <outlet property="actionButton2" destination="Nc1-hy-8Ld" id="Kjm-Pd-LiY"/>
                         <outlet property="endDate" destination="ibr-r3-jNK" id="iGf-2H-Geq"/>
                         <outlet property="header" destination="eeo-r7-nz5" id="rdw-ZU-nhb"/>
                         <outlet property="pax" destination="8rP-CM-kCi" id="71f-JN-3FL"/>
