@@ -364,7 +364,6 @@
 			children = (
 				E19FE17D1C3D7DA8009FAB48 /* DetailedMarketplaceViewController.swift */,
 				E19FE17A1C3D7D8F009FAB48 /* MarketplaceViewController.swift */,
-				F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */,
 			);
 			name = MarketPlace;
 			sourceTree = "<group>";
@@ -454,6 +453,7 @@
 				F6DC5CC31C476BA500BA6776 /* MyBookingMainViewController.swift */,
 				F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */,
 				F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */,
+				F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */,
 			);
 			name = MyBooking;
 			sourceTree = "<group>";
