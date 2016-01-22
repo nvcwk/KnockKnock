@@ -3,6 +3,7 @@ import GMStepper
 import Parse
 import SwiftDate
 import SwiftSpinner
+import autoAutoLayout
 
 class ItiPublishViewController: UIViewController {
    
@@ -24,6 +25,9 @@ class ItiPublishViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         startDatePicker.datePickerMode = UIDatePickerMode.Date
         startDatePicker.minimumDate = 5.days.fromDate(NSDate())

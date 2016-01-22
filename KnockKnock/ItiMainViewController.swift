@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import autoAutoLayout
 
 class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
     
@@ -24,6 +25,9 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
 
