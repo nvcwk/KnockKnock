@@ -59,6 +59,12 @@ class PendingTableViewViewController: PFQueryTableViewController {
         var cell: PendingTableViewCell = tableView.dequeueReusableCellWithIdentifier("PendingTableViewCell") as! PendingTableViewCell
         
         if let pending = object{
+            
+            var startDate = pending["Date"]as! NSDate
+            if (startDate <= NSDate())
+            {
+                updateRecords(pending)
+            }
             let marketplace = pending["Marketplace"] as! PFObject
             let itinerary = pending["Itinerary"] as! PFObject
             cell.header.text = itinerary["title"] as! String
@@ -67,7 +73,7 @@ class PendingTableViewViewController: PFQueryTableViewController {
             dateFormatter.dateFormat = "dd/MM/yyyy"
             dateFormatter.timeZone = NSTimeZone(name: "GMT")
             
-            cell.date.text = dateFormatter.stringFromDate(pending["Date"]! as! NSDate)
+            cell.date.text = KnockKnockUtils.dateToStringDisplay(startDate)
             
             let requester = pending["Requester"] as! PFObject
             let host = pending["Host"] as! PFObject
@@ -99,5 +105,14 @@ class PendingTableViewViewController: PFQueryTableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Requests Pending"
+    }
+    
+    func updateRecords(record: PFObject){
+        
+        record["Status"] = "Expired"
+        record["Remarks"] = "Booking Expired"
+        record.saveInBackground()
+        
+        
     }
 }

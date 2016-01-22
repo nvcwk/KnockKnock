@@ -74,8 +74,22 @@ class PendingExpandedViewController: UIViewController {
             requesterLabel.text = "Requested By: "
             requester.text = requesterObject["fName"] as! String
             requesterContact.text = String(requesterObject["contact"])
-            actionButton.setTitle("Accept", forState: UIControlState.Normal)
-            actionButton2.setTitle("Reject", forState: UIControlState.Normal)
+            if (caseStatus == "Expired"){
+                status.font = UIFont.boldSystemFontOfSize(18.0)
+                status.textColor = UIColor.redColor()
+                actionButton.setTitle("", forState: UIControlState.Normal)
+                actionButton.enabled = false
+                actionButton2.setTitle("", forState: UIControlState.Normal)
+                actionButton2.enabled = false
+                reason.text = "Reason: "
+                remarks.text =  pendingObject["Remarks"] as! String
+
+            }else{
+                actionButton.setTitle("Accept", forState: UIControlState.Normal)
+                actionButton2.setTitle("Reject", forState: UIControlState.Normal)
+
+            }
+            
             
 
         }else{
@@ -86,7 +100,7 @@ class PendingExpandedViewController: UIViewController {
             actionButton.enabled = false
             actionButton.hidden = true
 
-            if (caseStatus == "Rejected" || caseStatus == "Cancelled"){
+            if (caseStatus == "Rejected" || caseStatus == "Cancelled" || caseStatus == "Expired"){
                 reason.text = "Reason: "
                 remarks.text =  pendingObject["Remarks"] as! String
                 actionButton2.setTitle("", forState: UIControlState.Normal)
@@ -257,6 +271,7 @@ class PendingExpandedViewController: UIViewController {
         controller.itineraryObj = itineraryObject
         self.showViewController(controller, sender:self)
     }
+    
     
     
     
