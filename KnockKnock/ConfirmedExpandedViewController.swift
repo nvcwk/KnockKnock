@@ -172,10 +172,11 @@ class ConfirmedExpandedViewController: UIViewController {
         
     }
 
-    @IBAction func browseItineraryButtonTapped(sender: AnyObject) {
+    @IBAction func infoButtonTapped(sender: AnyObject) {
+        
         let itineraryObject = (confirmedObject["Itinerary"]) as! PFObject
         
-         let activities = itineraryObject["activities"] as! NSArray
+        let activities = itineraryObject["activities"] as! NSArray
         print(activities)
         var storyboard = UIStoryboard(name: "Itinerary", bundle: nil)
         let controller = storyboard.instantiateViewControllerWithIdentifier("itiDetailsView") as! ItiDetailsViewController
@@ -183,7 +184,10 @@ class ConfirmedExpandedViewController: UIViewController {
         controller.itineraryObj = itineraryObject
         self.showViewController(controller, sender:self)
         
+
     }
+    
+    
     
     
     }
