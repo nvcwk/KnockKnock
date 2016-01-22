@@ -71,6 +71,13 @@ class ItiPublishViewController: UIViewController {
     
     
     @IBAction func actionPublish(sender: UIBarButtonItem) {
+        var price = Int(lb_price.text!)
+        
+        if (price == nil || price! == 0){
+            KnockKnockUtils.okAlert(self, title: "Please Check Price", message: "Please enter valid price!", handle: nil)
+        }else{
+
+        
         SwiftSpinner.show("Publishing...")
         
         publishObj["price"] = Int(lb_price.text!)
@@ -89,6 +96,7 @@ class ItiPublishViewController: UIViewController {
             } else {
                 KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
             }
+        }
         }
     }
 

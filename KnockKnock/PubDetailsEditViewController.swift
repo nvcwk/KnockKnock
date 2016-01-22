@@ -84,6 +84,13 @@ class PubDetailsEditViewController: UIViewController {
 
 
     @IBAction func actionUpdate(sender: AnyObject) {
+        var price = Int(tf_price.text!)
+        
+        if (price == nil || price! == 0){
+            KnockKnockUtils.okAlert(self, title: "Please Check Price", message: "Please enter valid price!", handle: nil)
+        }else{
+
+        
         SwiftSpinner.show("Updating...")
         
         publishObj["price"] = Int(tf_price.text!)
@@ -100,7 +107,8 @@ class PubDetailsEditViewController: UIViewController {
                 })
             }
         })
-
+            
+        }
     }
 
 }
