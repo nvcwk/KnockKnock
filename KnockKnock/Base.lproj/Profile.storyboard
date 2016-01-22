@@ -482,7 +482,18 @@
                                     <constraint firstAttribute="height" constant="20" id="eiL-Ta-coI"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="First Name" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="gvG-Ka-7ks" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="5wL-CO-7gs" userLabel="profilePhoto" customClass="ProfileAvatar" customModule="KnockKnock" customModuleProvider="target">
+                                <rect key="frame" x="41" y="130" width="92" height="92"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="vto-Iu-hTc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6Ne-Nz-n4s" appends="YES" id="Msn-Up-9hd"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="First Name" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="gvG-Ka-7ks">
                                 <rect key="frame" x="141" y="155" width="192" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="2ib-aZ-eqw"/>
@@ -543,17 +554,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="5wL-CO-7gs" userLabel="profilePhoto" customClass="ProfileAvatar" customModule="KnockKnock" customModuleProvider="target">
-                                <rect key="frame" x="41" y="130" width="92" height="92"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="92" id="vto-Iu-hTc"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="6Ne-Nz-n4s" appends="YES" id="Msn-Up-9hd"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
