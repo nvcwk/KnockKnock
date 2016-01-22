@@ -22,6 +22,7 @@ class MarketPlaceDetailsV2ViewController: UIViewController {
     @IBOutlet weak var image_image: PFImageView!
     @IBOutlet weak var table_activity: UITableView!
     @IBOutlet weak var img_host: PFImageView!
+    @IBOutlet weak var tour_summary: UITextView!
     
     var pubObj = PFObject(className: "MarketPlace")
     var itiObj = PFObject(className: "Itinerary")
@@ -55,6 +56,8 @@ class MarketPlaceDetailsV2ViewController: UIViewController {
         lb_endDate.text = KnockKnockUtils.dateToString(pubObj["lastAvailability"] as! NSDate)
         
         var image = itiObj["image"] as! PFFile
+        
+        tour_summary.text = itiObj["summary"] as! String
         
         var img_profile = hostObj["profilePic"] as! PFFile
         img_host.file = img_profile

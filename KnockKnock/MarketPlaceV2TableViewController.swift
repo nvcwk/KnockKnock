@@ -62,7 +62,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             
             cell.lb_title.text = itiObj["title"] as! String
             
-            cell.lb_price.text = String(mpObj["price"] as! Int)
+            cell.lb_price.text = String(mpObj["price"] as! Int) + " SGD"
             
             let image = itiObj["image"] as! PFFile
             
