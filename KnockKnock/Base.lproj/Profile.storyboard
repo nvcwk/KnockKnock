@@ -65,29 +65,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="vv3-ji-8LU" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
-                                <rect key="frame" x="20" y="273" width="335" height="16"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="jpf-lw-gJd"/>
-                                </constraints>
-                                <color key="textColor" red="0.20793876259999999" green="0.20793876259999999" blue="0.20793876259999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" red="0.14022973599999999" green="0.63129826659999999" blue="0.77669933219999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                        <color key="value" red="0.14022973599999999" green="0.63129826659999999" blue="0.77669933219999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.1967724116" green="0.1967724116" blue="0.1967724116" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Birthday" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="y2r-eX-zYM">
                                 <rect key="frame" x="87" y="335" width="233" height="25"/>
                                 <color key="textColor" red="0.20793876259999999" green="0.20793876259999999" blue="0.20793876259999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -148,7 +125,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBW-Om-hwJ" customClass="RTIconButton">
-                                <rect key="frame" x="18" y="486" width="340" height="30"/>
+                                <rect key="frame" x="18" y="469" width="340" height="30"/>
                                 <color key="backgroundColor" red="0.074509803921568626" green="0.56862745098039214" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kZs-kC-W13"/>
@@ -200,6 +177,29 @@
                                 <color key="textColor" red="0.20793876259999999" green="0.20793876259999999" blue="0.20793876259999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.14022973599999999" green="0.63129826659999999" blue="0.77669933219999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.14022973599999999" green="0.63129826659999999" blue="0.77669933219999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.1967724116" green="0.1967724116" blue="0.1967724116" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="vv3-ji-8LU" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
+                                <rect key="frame" x="20" y="275" width="335" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="jpf-lw-gJd"/>
+                                </constraints>
+                                <color key="textColor" red="0.20793876259999999" green="0.20793876259999999" blue="0.20793876259999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
                                         <color key="value" red="0.14022973599999999" green="0.63129826659999999" blue="0.77669933219999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -318,19 +318,13 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter New Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBq-Tv-A1a">
-                                <rect key="frame" x="20" y="274" width="335" height="34"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-4s-ubV">
                                 <rect key="frame" x="132" y="316" width="94" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="3SS-Tr-DIT"/>
                                     <constraint firstAttribute="width" constant="94" id="6S3-E3-7yq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                                 <state key="normal" title="Requirements">
                                     <color key="titleColor" red="0.1180568929" green="0.5314786574" blue="0.65388919960000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -347,7 +341,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="New Password" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ebq-Cd-DYI" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
                                 <rect key="frame" x="91" y="362" width="221" height="25"/>
                                 <color key="textColor" red="0.20793876259999999" green="0.20793876259999999" blue="0.20793876259999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
@@ -367,7 +361,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Confirm New Password" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ath-Vl-7gF" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
                                 <rect key="frame" x="91" y="395" width="221" height="25"/>
                                 <color key="textColor" red="0.20793876259999999" green="0.20793876259999999" blue="0.20793876259999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
@@ -384,6 +378,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter New Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBq-Tv-A1a">
+                                <rect key="frame" x="20" y="274" width="335" height="34"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -652,9 +652,9 @@
                                 <rect key="frame" x="20" y="519" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.090196078431372548" green="0.42352941176470588" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="iI2-uY-8gT"/>
+                                    <constraint firstAttribute="height" constant="40" id="fcd-HG-C1c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -673,12 +673,12 @@
                                     <action selector="actionUpload:" destination="gt6-4z-RlB" eventType="touchUpInside" id="Y76-cf-b5F"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to change profile image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wd-Vp-Ddw">
-                                <rect key="frame" x="81" y="432" width="213" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to change profile image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wd-Vp-Ddw">
+                                <rect key="frame" x="37" y="432" width="300" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="PVh-GD-qLe"/>
+                                    <constraint firstAttribute="height" constant="21" id="4ah-gK-MQz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -693,16 +693,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QgL-bN-uhW" firstAttribute="centerX" secondItem="R5J-93-p5k" secondAttribute="centerX" id="1oJ-J9-wBu"/>
-                            <constraint firstItem="QgL-bN-uhW" firstAttribute="top" secondItem="Jhn-nw-1rE" secondAttribute="bottom" constant="90" id="5K4-uL-gpz"/>
-                            <constraint firstItem="Ogy-mB-3Ox" firstAttribute="top" secondItem="7wd-Vp-Ddw" secondAttribute="bottom" constant="66" id="8mr-AP-vOV"/>
-                            <constraint firstItem="Ogy-mB-3Ox" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="4" id="AXb-VD-LGQ"/>
-                            <constraint firstItem="7wd-Vp-Ddw" firstAttribute="centerX" secondItem="Ogy-mB-3Ox" secondAttribute="centerX" id="PjA-ju-0Tc"/>
-                            <constraint firstItem="QgL-bN-uhW" firstAttribute="centerX" secondItem="7wd-Vp-Ddw" secondAttribute="centerX" id="T0t-aA-ivf"/>
-                            <constraint firstItem="7wd-Vp-Ddw" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="65" id="Uil-2J-Ol4"/>
-                            <constraint firstItem="QgL-bN-uhW" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="21" id="Y0c-SC-nbf"/>
-                            <constraint firstItem="7wd-Vp-Ddw" firstAttribute="top" secondItem="QgL-bN-uhW" secondAttribute="bottom" constant="22" id="gC1-e7-y6X"/>
-                            <constraint firstItem="KKE-nd-cib" firstAttribute="top" secondItem="Ogy-mB-3Ox" secondAttribute="bottom" constant="108" id="iFU-xz-GJ0"/>
+                            <constraint firstItem="QgL-bN-uhW" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="21" id="2VV-lm-sll"/>
+                            <constraint firstItem="KKE-nd-cib" firstAttribute="top" secondItem="Ogy-mB-3Ox" secondAttribute="bottom" constant="108" id="3f9-Sg-53N"/>
+                            <constraint firstItem="QgL-bN-uhW" firstAttribute="centerX" secondItem="R5J-93-p5k" secondAttribute="centerX" id="AjS-O8-RNN"/>
+                            <constraint firstItem="QgL-bN-uhW" firstAttribute="top" secondItem="Jhn-nw-1rE" secondAttribute="bottom" constant="90" id="C0A-oi-pGN"/>
+                            <constraint firstItem="7wd-Vp-Ddw" firstAttribute="centerX" secondItem="Ogy-mB-3Ox" secondAttribute="centerX" id="FP5-69-Cg7"/>
+                            <constraint firstItem="7wd-Vp-Ddw" firstAttribute="top" secondItem="QgL-bN-uhW" secondAttribute="bottom" constant="22" id="OAc-CP-oDR"/>
+                            <constraint firstItem="7wd-Vp-Ddw" firstAttribute="trailing" secondItem="QgL-bN-uhW" secondAttribute="trailing" id="eUU-C5-7dZ"/>
+                            <constraint firstItem="Ogy-mB-3Ox" firstAttribute="top" secondItem="7wd-Vp-Ddw" secondAttribute="bottom" constant="66" id="jOi-Hf-yKB"/>
+                            <constraint firstItem="QgL-bN-uhW" firstAttribute="leading" secondItem="7wd-Vp-Ddw" secondAttribute="leading" id="scr-Jv-Elf"/>
+                            <constraint firstItem="Ogy-mB-3Ox" firstAttribute="leading" secondItem="R5J-93-p5k" secondAttribute="leadingMargin" constant="4" id="u5M-wP-vrv"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
