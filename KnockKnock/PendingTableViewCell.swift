@@ -14,6 +14,7 @@ class PendingTableViewCell: PFTableViewCell {
     @IBOutlet weak var header: UILabel!
     @IBOutlet weak var requester: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var status: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
