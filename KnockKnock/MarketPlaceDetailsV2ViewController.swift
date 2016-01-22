@@ -51,9 +51,9 @@ class MarketPlaceDetailsV2ViewController: UIViewController {
         
         lb_hostContact.text = String(hostObj["contact"] as! Int)
         
-        lb_startDate.text = KnockKnockUtils.dateToString(pubObj["startAvailability"] as! NSDate)
+        lb_startDate.text = KnockKnockUtils.dateToStringDisplay(pubObj["startAvailability"] as! NSDate)
         
-        lb_endDate.text = KnockKnockUtils.dateToString(pubObj["lastAvailability"] as! NSDate)
+        lb_endDate.text = KnockKnockUtils.dateToStringDisplay(pubObj["lastAvailability"] as! NSDate)
         
         var image = itiObj["image"] as! PFFile
         
