@@ -248,7 +248,9 @@ class PendingExpandedViewController: UIViewController {
     }
     
 
-    @IBAction func browseButtonTapped(sender: AnyObject) {
+    
+    @IBAction func infoButtonTapped(sender: AnyObject) {
+        
         let itineraryObject = (pendingObject["Itinerary"]) as! PFObject
         
         let activities = itineraryObject["activities"] as! NSArray
@@ -259,7 +261,6 @@ class PendingExpandedViewController: UIViewController {
         controller.itineraryObj = itineraryObject
         self.showViewController(controller, sender:self)
     }
-    
     
     
     

@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="1171.5" y="539.5"/>
         </scene>
-        <!--Pending Expanded View Controller-->
+        <!--Title-->
         <scene sceneID="pUL-27-6dW">
             <objects>
                 <viewController storyboardIdentifier="PendingExpandedViewController" id="N3i-dn-Fjb" customClass="PendingExpandedViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -139,25 +139,6 @@
                                 <rect key="frame" x="157" y="98" width="60" height="60"/>
                                 <color key="tintColor" red="0.14022973599999999" green="0.63129826659999999" blue="0.77669933219999998" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQa-qF-ZlB">
-                                <rect key="frame" x="31" y="477" width="313" height="40"/>
-                                <color key="backgroundColor" red="0.14022973599999999" green="0.63129826659999999" blue="0.77669933219999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <state key="normal" title="Browse Itinerary">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.10920751469999999" green="0.48649515599999998" blue="0.59993165540000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.035294117649999998" green="0.31372549020000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="browseButtonTapped:" destination="N3i-dn-Fjb" eventType="touchUpInside" id="afH-iG-ihw"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzj-t6-dbx">
                                 <rect key="frame" x="31" y="525" width="313" height="40"/>
                                 <color key="backgroundColor" red="0.14022973599999999" green="0.63129826659999999" blue="0.77669933219999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -231,6 +212,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="UF7-7c-4Hf">
+                        <barButtonItem key="rightBarButtonItem" title="Info" id="XEr-Em-MbX">
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="N3i-dn-Fjb" id="Nn4-Gb-B8s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="actionButton" destination="mzj-t6-dbx" id="VWg-ac-nbp"/>
                         <outlet property="actionButton2" destination="Nc1-hy-8Ld" id="Kjm-Pd-LiY"/>
