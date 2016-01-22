@@ -74,7 +74,7 @@ class PendingExpandedViewController: UIViewController {
         if (hostObject == PFUser.currentUser()){
             requesterLabel.text = "Requested By: "
             requester.text = requesterObject["fName"] as! String
-            requesterContact.text = String(requesterObject["contact"])
+            requesterContact.text = String(requesterObject["email"])
             
             if (caseStatus == "Expired" || caseStatus == "Rejected" || caseStatus == "Cancelled" ){
                 status.font = UIFont.boldSystemFontOfSize(18.0)
@@ -101,7 +101,7 @@ class PendingExpandedViewController: UIViewController {
         }else{
             requesterLabel.text = "Your Host: "
             requester.text = hostObject["fName"] as! String
-            requesterContact.text = String(hostObject["contact"])
+            requesterContact.text = String(hostObject["email"])
             actionButton.setTitle("", forState: UIControlState.Normal)
             actionButton.enabled = false
             actionButton.hidden = true
