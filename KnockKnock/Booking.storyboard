@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CQJ-mk-qfZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CQJ-mk-qfZ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="1171.5" y="539.5"/>
         </scene>
-        <!--Title-->
+        <!--Pending Expanded View Controller-->
         <scene sceneID="pUL-27-6dW">
             <objects>
                 <viewController storyboardIdentifier="PendingExpandedViewController" id="N3i-dn-Fjb" customClass="PendingExpandedViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -213,7 +213,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="UF7-7c-4Hf">
+                    <navigationItem key="navigationItem" id="UF7-7c-4Hf">
                         <barButtonItem key="rightBarButtonItem" title="Info" id="XEr-Em-MbX">
                             <connections>
                                 <action selector="infoButtonTapped:" destination="N3i-dn-Fjb" id="Nn4-Gb-B8s"/>
