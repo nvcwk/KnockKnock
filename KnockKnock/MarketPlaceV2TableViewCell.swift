@@ -15,7 +15,8 @@ class MarketPlaceV2TableViewCell: PFTableViewCell {
     @IBOutlet weak var lb_title: UILabel!
     @IBOutlet weak var lb_price: UILabel!
     @IBOutlet weak var image_background: PFImageView!
-
+    @IBOutlet weak var startDate: UILabel!
+    @IBOutlet weak var endDate: UILabel!
     //MarketPlaceV2TableViewCell.postImageView.contentMode = UIViewContentMode.ScaleAspectFill
     
     override func awakeFromNib() {
