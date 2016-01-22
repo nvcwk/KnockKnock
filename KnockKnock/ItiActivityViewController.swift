@@ -1,6 +1,7 @@
 import UIKit
 import GoogleMaps
 import Parse
+import autoAutoLayout
 import SwiftValidator
 
 class ItiActivityViewController: UIViewController {
@@ -24,6 +25,9 @@ class ItiActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
 //        timePicker.datePickerMode = UIDatePickerMode.Time
 //        timePicker.addTarget(self, action: Selector("updateMeeting:"),
