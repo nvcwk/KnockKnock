@@ -416,11 +416,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Change Password" id="sfq-Od-COo">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="IpG-0M-80m">
-                            <connections>
-                                <segue destination="liB-Rk-dWo" kind="unwind" unwindAction="cancelProfile:" id="MZd-1L-DOI"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Change" id="WJg-XF-c0d">
                             <connections>
                                 <action selector="actionSave:" destination="vLQ-02-FTn" id="4CF-AC-DAF"/>
@@ -436,7 +431,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vh5-I3-kLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="liB-Rk-dWo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1755.5" y="31.5"/>
         </scene>
@@ -616,11 +610,6 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="CKM-mC-Q2R">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="249-K3-KAr">
-                            <connections>
-                                <segue destination="hDS-Xn-Jaa" kind="unwind" unwindAction="cancelProfile:" id="jAb-mA-GdJ"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="It5-6v-fow">
                             <connections>
                                 <action selector="actionSave:" destination="6Lj-yW-FEw" id="hr2-KV-51g"/>
@@ -639,7 +628,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgn-UF-ctZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="hDS-Xn-Jaa" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="6Ne-Nz-n4s">
                     <connections>
                         <action selector="actionSelectPic:" destination="6Lj-yW-FEw" id="R9b-Yu-4dm"/>
