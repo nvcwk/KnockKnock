@@ -71,7 +71,7 @@ class ItiActivitiesViewController: UITableViewController {
                 if(publish) {
                     self.performSegueWithIdentifier("toPublishView", sender: nil)
                 } else {
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.navigationController?.popToRootViewControllerAnimated(true)
                 }
                 
             } else {
