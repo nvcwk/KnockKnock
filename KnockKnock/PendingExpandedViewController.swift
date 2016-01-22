@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import autoAutoLayout
 
 class PendingExpandedViewController: UIViewController {
     @IBOutlet weak var pendingNum: UILabel!
@@ -34,6 +35,10 @@ class PendingExpandedViewController: UIViewController {
     override func viewDidLoad() {
        
         super.viewDidLoad()
+        
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
+
+        
         pendingNum.text = pendingObject.objectId
         hostObject = (pendingObject["Host"]) as! PFObject
         requesterObject = (pendingObject["Requester"]) as! PFObject
@@ -76,6 +81,7 @@ class PendingExpandedViewController: UIViewController {
             requesterContact.text = String(hostObject["contact"])
             actionButton.setTitle("", forState: UIControlState.Normal)
             actionButton.enabled = false
+            actionButton.hidden = true
 
             if (caseStatus == "Rejected" || caseStatus == "Cancelled"){
                 reason.text = "Reason: "
@@ -91,19 +97,19 @@ class PendingExpandedViewController: UIViewController {
             
         }
         //cell alignment and font
-        pendingNum.textAlignment = NSTextAlignment.Right;
-        header.textAlignment = NSTextAlignment.Center;
-        header.font = UIFont.boldSystemFontOfSize(20.0)
-        pax.textAlignment = NSTextAlignment.Right;
-        value.textAlignment = NSTextAlignment.Right;
-        status.textAlignment = NSTextAlignment.Right;
-        remarks.textAlignment = NSTextAlignment.Right;
-        startDate.textAlignment = NSTextAlignment.Left;
-        endDate.textAlignment = NSTextAlignment.Right;
-        requester.textAlignment = NSTextAlignment.Right;
-        requesterContact.textAlignment = NSTextAlignment.Right;
-        requester.textAlignment = NSTextAlignment.Right;
-        requesterContact.textAlignment = NSTextAlignment.Right;
+//        pendingNum.textAlignment = NSTextAlignment.Right;
+//        header.textAlignment = NSTextAlignment.Center;
+//        header.font = UIFont.boldSystemFontOfSize(20.0)
+//        pax.textAlignment = NSTextAlignment.Right;
+//        value.textAlignment = NSTextAlignment.Right;
+//        status.textAlignment = NSTextAlignment.Right;
+//        remarks.textAlignment = NSTextAlignment.Right;
+//        startDate.textAlignment = NSTextAlignment.Left;
+//        endDate.textAlignment = NSTextAlignment.Right;
+//        requester.textAlignment = NSTextAlignment.Right;
+//        requesterContact.textAlignment = NSTextAlignment.Right;
+//        requester.textAlignment = NSTextAlignment.Right;
+//        requesterContact.textAlignment = NSTextAlignment.Right;
 
         
         
