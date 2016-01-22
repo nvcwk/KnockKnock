@@ -185,7 +185,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gI-sH-dAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Lw2-3C-kDe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2286.5" y="48.5"/>
+            <point key="canvasLocation" x="1836.5" y="58.5"/>
         </scene>
         <!--Tour Details-->
         <scene sceneID="OJi-LD-atA">
@@ -304,8 +304,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="Image_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-St-eE1">
-                                <rect key="frame" x="47" y="454" width="280" height="171"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" image="Image_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-St-eE1">
+                                <rect key="frame" x="47" y="454" width="280" height="104"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -375,7 +375,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1831.5" y="48.5"/>
+            <point key="canvasLocation" x="1344.5" y="58.5"/>
         </scene>
         <!--Publish your Tour-->
         <scene sceneID="AV4-eP-EA1">
@@ -497,7 +497,7 @@
                                 <rect key="frame" x="20" y="177" width="335" height="0.5"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -613,7 +613,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYd-3v-scG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="lWw-D6-cEh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2749.5" y="48.5"/>
+            <point key="canvasLocation" x="2367.5" y="58.5"/>
         </scene>
         <!--Tour Schedule-->
         <scene sceneID="nKm-Pb-5FM">
@@ -1018,7 +1018,7 @@
                                 <rect key="frame" x="20" y="160" width="335" height="0.5"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Availability " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbE-DY-pOm">
@@ -1178,9 +1178,7 @@
                     <navigationItem key="navigationItem" title="Itinerary" id="i2Y-m1-Pfg">
                         <barButtonItem key="rightBarButtonItem" title="Create" id="VgB-qr-DiA">
                             <connections>
-                                <segue destination="Ibd-mD-yot" kind="popoverPresentation" popoverAnchorBarButtonItem="VgB-qr-DiA" id="zvh-RH-Ga3">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="IwN-1m-eIC" kind="show" id="tYB-B1-Ige"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1306,7 +1304,7 @@
                                 <rect key="frame" x="15" y="306" width="237" height="1"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCB-K2-gMh">
@@ -1380,22 +1378,6 @@
             </objects>
             <point key="canvasLocation" x="1831.5" y="-790"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Bnm-Dr-dxZ">
-            <objects>
-                <navigationController id="Ibd-mD-yot" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IBe-Ah-tYR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="IwN-1m-eIC" kind="relationship" relationship="rootViewController" id="9q3-zP-w4p"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tBL-pk-SNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1344.5" y="48.5"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Image_Placeholder" width="100" height="100"/>
@@ -1403,6 +1385,6 @@
         <image name="background" width="1563" height="2779"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="imT-ux-Uue"/>
+        <segue reference="MnU-2H-wvk"/>
     </inferredMetricsTieBreakers>
 </document>
