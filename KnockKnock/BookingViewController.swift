@@ -12,18 +12,19 @@ import Parse
 import ParseUI
 import GMStepper
 import autoAutoLayout
+import SwiftSpinner
 
 class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
-
+    
     @IBOutlet weak var cal: FSCalendar!
     @IBOutlet weak var stepper: GMStepper!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var paxLabel: UILabel!
     
     var EndDate = NSDate()
-
+    
     var StartDate = NSDate()
-
+    
     var bookedDatesArray = [NSDate]()
     var pax : Int = 1
     var price = Int()
@@ -35,7 +36,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var numOfDays = Int()
     var first = NSDate()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,8 +54,8 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         self.priceLabel.text = String(price)
         
         self.title = "BOOK TOUR"
-
-       
+        
+        
     }
     @IBAction func stepperTapped(sender: AnyObject) {
         var currentValue = Int(stepper.value)
@@ -63,14 +64,13 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         self.priceLabel.text = String(newPrice)
         pax = Int(currentValue)
         finalPrice = newPrice
-
     }
     
     
     
     
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -98,16 +98,16 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         }
         return nil
     }
-
-
+    
+    
     //prevent dates from being selected
     func calendar(calendar: FSCalendar!, shouldSelectDate date: NSDate!) -> Bool {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         for dates in bookedDatesArray{
-        if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
+            if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
                 return false
-        }
+            }
         }
         return true
     }
@@ -116,16 +116,16 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     //when date is selected
     func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
         selectedDate.append(date)
-
+        
     }
     
     func calendar(calendar: FSCalendar!, didDeselectDate date: NSDate!) {
         var index = 0
         for dateInArray in selectedDate {
             if (dateInArray == date){
-            selectedDate.removeAtIndex(index)
-        }else{
-            index = index + 1
+                selectedDate.removeAtIndex(index)
+            }else{
+                index = index + 1
             }
             
         }
@@ -136,17 +136,17 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         var testerDates = [NSDate]()
         var tester = false
         selectedDate = selectedDate.sort()
-
+        
         if (!selectedDate.isEmpty){
             var first2 = NSDate()
             first2 = selectedDate.first!
             testerDates.append(first2)
-           // print("first date: \(first2)")
+            // print("first date: \(first2)")
             for (var i = 0; i < numOfDays; i++){
                 var tempDate = first2.add(days: i)
                 testerDates.append(tempDate)
             }
-           
+            
         }
         
         
@@ -158,10 +158,9 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         
         //validation to check if days equal number of days of tour
         if (selectedDate.count != numOfDays){
-            
             var alertTitle = "Days Count Mismatch"
             var message = String("Please select \(numOfDays) consecutive days")
-            let okText = "OKAY"
+            let okText = "Okay"
             
             let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: UIAlertControllerStyle.Alert)
             let okayButtton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
@@ -169,23 +168,23 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             
             presentViewController(alert, animated: true, completion: nil)
             
-        }else if(tester){
+        } else if(tester) {
             var alertTitle = "Please select consecutive days"
             var message = String("There must not be gaps in between dates")
-            let okText = "OKAY"
+            let okText = "Okay"
             
             let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: UIAlertControllerStyle.Alert)
             let okayButtton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
             alert.addAction(okayButtton)
             
             presentViewController(alert, animated: true, completion: nil)
-
-        }else{
             
-            
+        } else {
             let bookAlert = UIAlertController(title: "Book?", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
             
             bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+                SwiftSpinner.show("Sending Request...")
+                
                 var booking = PFObject(className: "Pending")
                 booking["Requester"] = PFUser.currentUser()
                 booking["Date"] = self.selectedDate.sort().first
@@ -196,39 +195,33 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                 booking["Marketplace"] = self.marketplace
                 booking["Status"] = "Pending"
                 booking["Itinerary"] = self.itinerary
-                let myAlert =
-                UIAlertController(title:"Sending to host!!", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
                 
+                let myAlert =
                 booking.saveInBackgroundWithBlock {
                     (success : Bool?, error: NSError?) -> Void in
+                    SwiftSpinner.hide()
+                    
                     if (success != nil) {
-                let myAlert =
-                    UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
-                    
-                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
-                    
-                    myAlert.addAction(okAction);
-                    
-                    self.navigationController?.popToRootViewControllerAnimated(true)
-                        
-                    //self.presentViewController(myAlert, animated:true, completion:nil);
-                        
+                        let myAlert =
+                        KnockKnockUtils.okAlert(self, title: "Message", message: "Request Sent! Check your latest confirmed bookings in the booking tab!", handle: { (action: UIAlertAction!) in
+                                self.navigationController?.popToRootViewControllerAnimated(true)
+                        } )
                     } else {
-                        NSLog("%@", error!)
+                        KnockKnockUtils.okAlert(self, title: "Error", message: "Try Again!", handle: nil)
                     }
-            }
-        }))
+                }
+            }))
             
             bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
-                        
-                        }))
+                
+            }))
             presentViewController(bookAlert, animated: true, completion: nil)
             
-    }
-    
+        }
         
         
+        
     }
     
     
-    }
+}
