@@ -542,7 +542,7 @@
 				TargetAttributes = {
 					E11461F21C1170B900983BC3 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = K768H3AZRE;
+						DevelopmentTeam = 43G5RY5J49;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -889,13 +889,14 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = KnockKnock/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gen6.knockknocktest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gen6.knockknock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KnockKnock/KnockKnock-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -912,12 +913,13 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = KnockKnock/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gen6.knockknocktest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gen6.knockknock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KnockKnock/KnockKnock-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
