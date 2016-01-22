@@ -173,7 +173,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQj-O8-0RH">
                                 <rect key="frame" x="20" y="166" width="335" height="35"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
-                                <color key="textColor" red="0.14022973599999999" green="0.63129826659999999" blue="0.77669933219999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.14117647058823529" green="0.63137254901960782" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dj1-Ux-Gbi">
@@ -245,6 +245,7 @@
                         <outlet property="requesterLabel" destination="99q-tZ-7KM" id="6L0-kX-3xb"/>
                         <outlet property="startDate" destination="aPv-jI-TqW" id="9U7-Hj-QZr"/>
                         <outlet property="status" destination="LQj-O8-0RH" id="bw4-Vp-qv5"/>
+                        <outlet property="theImageView" destination="h2z-C1-Bdu" id="Enn-V7-Nuj"/>
                         <outlet property="value" destination="xE1-nf-rZc" id="rNU-eg-xm9"/>
                     </connections>
                 </viewController>

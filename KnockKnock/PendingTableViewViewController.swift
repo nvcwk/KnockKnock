@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import ParseUI
+import autoAutoLayout
 
 class PendingTableViewViewController: PFQueryTableViewController {
 
@@ -17,6 +18,8 @@ class PendingTableViewViewController: PFQueryTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view!.removeConstraints(self.view.constraints)
+        AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         
         self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingTableViewCell")

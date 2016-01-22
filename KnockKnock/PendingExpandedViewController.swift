@@ -25,6 +25,7 @@ class PendingExpandedViewController: UIViewController {
     @IBOutlet weak var requesterLabel: UILabel!
     @IBOutlet weak var remarks: UILabel!
     @IBOutlet weak var reason: UILabel!
+    @IBOutlet weak var theImageView: UIImageView!
     
     var pendingObject : PFObject!
     var hostObject : PFObject!
@@ -38,6 +39,10 @@ class PendingExpandedViewController: UIViewController {
         
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
 
+        
+        theImageView.image? = (theImageView.image?.imageWithRenderingMode(.AlwaysTemplate))!
+        //theImageView.tintColor = UIColor(red:0.14, green:0.63, blue:0.78, alpha:1.0)
+        theImageView.tintColor = UIColor.darkGrayColor()
         
         pendingNum.text = pendingObject.objectId
         hostObject = (pendingObject["Host"]) as! PFObject
