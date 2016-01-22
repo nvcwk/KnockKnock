@@ -76,7 +76,7 @@ class PendingExpandedViewController: UIViewController {
             requester.text = requesterObject["fName"] as! String
             requesterContact.text = String(requesterObject["contact"])
             
-            if (caseStatus == "Expired" || caseStatus == "Rejected" ){
+            if (caseStatus == "Expired" || caseStatus == "Rejected" || caseStatus == "Cancelled" ){
                 status.font = UIFont.boldSystemFontOfSize(18.0)
                 status.textColor = UIColor.redColor()
                 actionButton.setTitle("", forState: UIControlState.Normal)
