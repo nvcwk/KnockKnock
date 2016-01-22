@@ -17,8 +17,9 @@ class ParseUtils {
         Parse.enableLocalDatastore()
         
         // Initialize Parse.
-        Parse.setApplicationId("G0SdBZjvAOJaghaMBYeGXoUUeyOoyJE8jA1MYESf",
-            clientKey: "EqIuyDEoVHCJrkeKg5JDZjVqz65n2rJCOGifyt2F")
+        //Parse.setApplicationId("G0SdBZjvAOJaghaMBYeGXoUUeyOoyJE8jA1MYESf", clientKey: "EqIuyDEoVHCJrkeKg5JDZjVqz65n2rJCOGifyt2F")
+        
+        Parse.setApplicationId("G0SdBZjvAOJaghaMBYeGXoUUeyOoyJE8jA1MYESf", clientKey: "EqIuyDEoVHCJrkeKg5JDZjVqz65n2rJCOGifyt2F")
     }
     
     // Check user login
