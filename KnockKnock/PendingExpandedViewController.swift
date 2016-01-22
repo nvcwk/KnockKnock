@@ -55,14 +55,12 @@ class PendingExpandedViewController: UIViewController {
         dateFormatter.timeZone = NSTimeZone(name: "GMT")
         var start = pendingObject["Date"] as! NSDate
         var end = start.add(days: (itineraryObject["duration"] as! Int) - 1)
-        var stringDate = KnockKnockUtils.dateToString(start)
-        var index = stringDate.endIndex.advancedBy(-15)
         
         
         header.text = itineraryObject["title"] as! String
         pax.text = String(pendingObject["Pax"])
-        startDate.text = (KnockKnockUtils.dateToString(start)).substringToIndex(index)
-        endDate.text = (KnockKnockUtils.dateToString(end)).substringToIndex(index)
+        startDate.text = KnockKnockUtils.dateToStringDisplay(start)
+        endDate.text = KnockKnockUtils.dateToStringDisplay(end)
         value.text = String(pendingObject["Total"])
         status.text = caseStatus
         reason.text = ""

@@ -54,11 +54,9 @@ class PubDetailsViewController: UIViewController {
         
         lb_price.text = "Price: $" + String(pubObj["price"] as! Int)
         
-        lb_start.text = "Start Availability: " + KnockKnockUtils.dateToString(
-            pubObj["startAvailability"] as! NSDate)
+        lb_start.text =  KnockKnockUtils.dateToStringDisplay(pubObj["startAvailability"] as! NSDate)
         
-        lb_last.text = "Last Availability: " + KnockKnockUtils.dateToString(
-            pubObj["lastAvailability"] as! NSDate)
+        lb_last.text = KnockKnockUtils.dateToStringDisplay(pubObj["lastAvailability"] as! NSDate)
         
         lb_hostName.text = (hostObj["fName"] as! String) + " " + (hostObj["lName"] as! String)
         
