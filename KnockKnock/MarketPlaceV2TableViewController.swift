@@ -15,6 +15,8 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
     
     var published = true
     
+    var sort = 0
+    
     override func viewDidLoad() {
         let test = KnockKnockUtils.dateToString(NSDate())
         
@@ -39,16 +41,23 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
 //        query.includeKey("itinerary.activities")
 
         if(PFUser.currentUser() != nil) {
+            if (sort == 0) {
+                query.addDescendingOrder("price")
+            } else if (sort == 1) {
+                query.addAscendingOrder("price")
+            } else if (sort == 2) {
+                query.addAscendingOrder("startAvailability")
+            }
+            
             query.whereKey("isPublished", equalTo: published)
             query.whereKey("host", notEqualTo: PFUser.currentUser()!)
-            query.whereKey("lastAvailability", greaterThan: NSDate())
+            query.whereKey("lastAvailability", greaterThanOrEqualTo: NSDate())
             
             query.includeKey("itinerary")
             query.includeKey("host")
             query.includeKey("itinerary.activities")
-            print("hello world")
+            
         }
-
         
         return query
     }

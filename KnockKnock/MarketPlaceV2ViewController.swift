@@ -30,7 +30,7 @@ class MarketPlaceV2ViewController: UIViewController {
     
     var clicked_button = false
     
-    private var texts_sortby = ["Highest to Lowest Price", "Lowest to Highest Price", "By Alphabetical Order", "Earliest Start Date", "Latest Start Date"]
+    private var texts_sortby = ["Highest to Lowest Price", "Lowest to Highest Price", "Earliest Start Date"]
 
     
     //@IBOutlet weak var leftBottomButton: UIButton!
@@ -49,11 +49,6 @@ class MarketPlaceV2ViewController: UIViewController {
         fadeAnimation.startAnimation(nil)
 
         // Do any additional setup after loading the view.
-        
-        
-
-
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,9 +59,9 @@ class MarketPlaceV2ViewController: UIViewController {
         
         clicked_button = true
         
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 180))
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 140))
         
-        let startPoint = CGPoint(x: self.view.frame.width - 300, y: 100)
+        let startPoint = CGPoint(x: self.view.frame.width / 2, y: 100)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -112,6 +107,11 @@ extension MarketPlaceV2ViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.popover_show.dismiss()
         clicked_button = false
+        
+        var controller = self.childViewControllers[0] as! MarketPlaceV2TableViewController
+        controller.sort = indexPath.row
+        controller.loadObjects()
+        controller.viewWillAppear(true)
     }
 }
 
