@@ -5,6 +5,7 @@
 //  Created by Nicholas Chan on 23/1/16.
 //  Copyright © 2016 Gen6. All rights reserved.
 //
+
 import UIKit
 
 extension UIImagePickerController

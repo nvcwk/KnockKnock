@@ -51,10 +51,7 @@ class PendingTableViewViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
-        
-        
-        
-        
+                
         var cell: PendingTableViewCell = tableView.dequeueReusableCellWithIdentifier("PendingTableViewCell") as! PendingTableViewCell
         
         if let pending = object{

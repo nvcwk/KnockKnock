@@ -53,7 +53,7 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
         controllerArray.append(controller1!)
         
         controller2 = PubTableViewController(nibName: "PubTableViewController", bundle: nil)
-        controller2!.title = "Publish"
+        controller2!.title = "Published"
         controller2!.parentNaviController = self.navigationController!
         controllerArray.append(controller2!)
         

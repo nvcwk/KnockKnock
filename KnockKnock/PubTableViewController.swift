@@ -69,6 +69,10 @@ class PubTableViewController: PFQueryTableViewController {
         return 308.0
     }
     
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Published Itinerary"
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
         
