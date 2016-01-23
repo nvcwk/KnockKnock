@@ -71,6 +71,7 @@ class ItiActivitiesViewController: UITableViewController {
                 if(publish) {
                     self.performSegueWithIdentifier("toPublishView", sender: nil)
                 } else {
+                    NSNotificationCenter.defaultCenter().postNotificationName("loadItinerary", object: nil)
                     self.navigationController?.popToRootViewControllerAnimated(true)
                 }
                 

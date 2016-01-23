@@ -31,6 +31,8 @@ class PubTableViewController: PFQueryTableViewController {
         query.whereKey("host", equalTo: PFUser.currentUser()!)
         query.whereKey("isPublished", equalTo: true)
         
+        query.addDescendingOrder("updatedAt")
+        
         return query
     }
     

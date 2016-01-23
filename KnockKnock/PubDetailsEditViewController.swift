@@ -101,7 +101,7 @@ class PubDetailsEditViewController: UIViewController {
             if(error == nil) {
                 
                 KnockKnockUtils.okAlert(self, title: "Updated!", message: "", handle: { UIAlertAction in
-                    NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
+                    NSNotificationCenter.defaultCenter().postNotificationName("loadPublish", object: nil)
                     
                     self.navigationController?.popToRootViewControllerAnimated(true)
                 })

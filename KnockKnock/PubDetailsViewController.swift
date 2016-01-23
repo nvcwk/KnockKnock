@@ -107,7 +107,7 @@ class PubDetailsViewController: UIViewController {
                 SwiftSpinner.hide()
                 
                 if(error == nil) {
-                    NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
+                    NSNotificationCenter.defaultCenter().postNotificationName("loadPublish", object: nil)
                     
                     self.navigationController?.popToRootViewControllerAnimated(true)
                 }
