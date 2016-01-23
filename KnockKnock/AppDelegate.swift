@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            lightStatusBar: true)
         DPTheme.customizeTabBar(secondColor, textColor: mainColor, fontName: "Avenir", fontSize: 10.0)
         DPTheme.customizeNavigationBar(secondColor, textColor: mainColor, fontName: fontName, fontSize: 19.0, buttonColor: mainColor)
+    
         return true
     }
 
