@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="789.5" y="858.5"/>
         </scene>
-        <!--PROFILE-->
+        <!--KnockKnock-->
         <scene sceneID="8Sm-Og-LK3">
             <objects>
                 <viewController id="2ng-me-C9Q" customClass="ProfileViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -237,7 +237,7 @@
                             <constraint firstItem="kmU-3Q-tQW" firstAttribute="trailing" secondItem="y2r-eX-zYM" secondAttribute="trailing" id="xAc-sZ-Hzy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="PROFILE" id="nwI-Ki-V8Z">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="nwI-Ki-V8Z">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="ibV-FU-pXf">
                             <connections>
                                 <segue destination="6Lj-yW-FEw" kind="show" id="bp2-vz-K03"/>
@@ -263,7 +263,7 @@
             </objects>
             <point key="canvasLocation" x="1275.5" y="858.5"/>
         </scene>
-        <!--Change Password-->
+        <!--KnockKnock-->
         <scene sceneID="dWm-Jl-vz0">
             <objects>
                 <viewController id="vLQ-02-FTn" customClass="ProfileChangePassViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -398,7 +398,7 @@
                             <constraint firstItem="Bhl-d3-Onl" firstAttribute="top" secondItem="ath-Vl-7gF" secondAttribute="bottom" constant="198" id="znL-VI-Bsx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Change Password" id="sfq-Od-COo">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="sfq-Od-COo">
                         <barButtonItem key="rightBarButtonItem" title="Change" id="WJg-XF-c0d">
                             <connections>
                                 <action selector="actionSave:" destination="vLQ-02-FTn" id="4CF-AC-DAF"/>
@@ -417,7 +417,7 @@
             </objects>
             <point key="canvasLocation" x="1755.5" y="31.5"/>
         </scene>
-        <!--Edit Profile-->
+        <!--KnockKnock-->
         <scene sceneID="tK0-BR-2kX">
             <objects>
                 <viewController id="6Lj-yW-FEw" customClass="ProfileEditViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -591,7 +591,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Profile" id="CKM-mC-Q2R">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="CKM-mC-Q2R">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="It5-6v-fow">
                             <connections>
                                 <action selector="actionSave:" destination="6Lj-yW-FEw" id="hr2-KV-51g"/>

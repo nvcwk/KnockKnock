@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="785.5" y="-789.5"/>
         </scene>
-        <!--Tour Duration-->
+        <!--KnockKnock-->
         <scene sceneID="oo9-pf-Zjj">
             <objects>
                 <viewController id="nAh-xg-sPe" customClass="ItiDaysSelectorViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -158,7 +158,7 @@
                             <constraint firstItem="1Jl-S5-hPn" firstAttribute="centerX" secondItem="kPU-h1-iJ4" secondAttribute="centerX" id="zYR-X1-DyU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tour Duration" id="mlH-b9-ifS">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="mlH-b9-ifS">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="5sF-Yn-ylM">
                             <connections>
                                 <segue destination="YFb-Bc-DuT" kind="show" identifier="toActivitiesView" id="pUD-bY-pcR"/>
@@ -174,7 +174,7 @@
             </objects>
             <point key="canvasLocation" x="1836.5" y="58.5"/>
         </scene>
-        <!--Tour Details-->
+        <!--KnockKnock-->
         <scene sceneID="OJi-LD-atA">
             <objects>
                 <viewController id="IwN-1m-eIC" customClass="ItiSummaryViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -335,7 +335,7 @@
                             <constraint firstItem="sM9-o7-HMe" firstAttribute="top" secondItem="08L-Pi-zWN" secondAttribute="top" id="zHp-bi-Pug"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tour Details" id="ZJT-7Q-HeY">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="ZJT-7Q-HeY">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="LlS-ba-rpV">
                             <connections>
                                 <segue destination="nAh-xg-sPe" kind="show" identifier="toSelectDaysView" id="V4L-IX-ylN"/>
@@ -357,7 +357,7 @@
             </objects>
             <point key="canvasLocation" x="1344.5" y="58.5"/>
         </scene>
-        <!--Publish your Tour-->
+        <!--KnockKnock-->
         <scene sceneID="AV4-eP-EA1">
             <objects>
                 <viewController id="7HZ-lp-O8I" customClass="ItiPublishViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -369,13 +369,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkt-dQ-6iv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkt-dQ-6iv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="95"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price per Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acu-hO-fvK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price per Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acu-hO-fvK">
                                 <rect key="frame" x="20" y="188" width="335" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="4Tc-mS-exj"/>
@@ -384,7 +384,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHr-BW-n4K">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHr-BW-n4K">
                                 <rect key="frame" x="131" y="220" width="14" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="14" id="QVa-gi-nd9"/>
@@ -394,7 +394,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Availability (Earliest 5 days from today)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfe-Jl-TnC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Availability (Earliest 5 days from today)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfe-Jl-TnC">
                                 <rect key="frame" x="40" y="277" width="295" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="jyM-Fe-D2X"/>
@@ -403,7 +403,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZm-1u-sbS" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZm-1u-sbS" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
                                 <rect key="frame" x="146" y="220" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="65T-MS-cOY"/>
@@ -411,7 +411,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKl-Wq-sHG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKl-Wq-sHG">
                                 <rect key="frame" x="61" y="309" width="103" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="GMg-Pw-A4j"/>
@@ -421,7 +421,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uev-zH-ZfR" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uev-zH-ZfR" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
                                 <rect key="frame" x="159" y="309" width="169" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="169" id="HXG-Vv-odT"/>
@@ -443,7 +443,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-n3-Sqn" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-n3-Sqn" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
                                 <rect key="frame" x="159" y="347" width="169" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -462,7 +462,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQd-Ss-FVH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="End Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQd-Ss-FVH">
                                 <rect key="frame" x="61" y="347" width="103" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JMa-7r-wIb"/>
@@ -471,7 +471,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKt-fj-Zgt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKt-fj-Zgt">
                                 <rect key="frame" x="20" y="167" width="335" height="1"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -516,7 +516,7 @@
                             <constraint firstItem="uev-zH-ZfR" firstAttribute="top" secondItem="bKl-Wq-sHG" secondAttribute="top" id="zc8-cd-xNd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Publish your Tour" id="XEU-ac-ipz">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="XEU-ac-ipz">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="kZ9-01-Z9W">
                             <connections>
                                 <segue destination="w4W-f1-qOE" kind="unwind" unwindAction="backItinerary:" id="EbL-oI-X1o"/>
@@ -541,7 +541,7 @@
             </objects>
             <point key="canvasLocation" x="3234.5" y="-760.5"/>
         </scene>
-        <!--Activities-->
+        <!--KnockKnock-->
         <scene sceneID="rBA-DV-oeN">
             <objects>
                 <tableViewController id="YFb-Bc-DuT" customClass="ItiActivitiesViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -582,7 +582,7 @@
                             <outlet property="delegate" destination="YFb-Bc-DuT" id="zbt-sh-fsj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Activities" id="pdf-Su-0fF">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="pdf-Su-0fF">
                         <barButtonItem key="rightBarButtonItem" title="Proceed" id="Ck8-GI-eDh">
                             <connections>
                                 <action selector="actionSave:" destination="YFb-Bc-DuT" id="6iU-RZ-Eqh"/>
@@ -597,7 +597,7 @@
             </objects>
             <point key="canvasLocation" x="2367.5" y="58.5"/>
         </scene>
-        <!--Tour Schedule-->
+        <!--KnockKnock-->
         <scene sceneID="nKm-Pb-5FM">
             <objects>
                 <viewController id="qln-e2-Ix6" customClass="ItiActivityViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -732,7 +732,7 @@
                             <constraint firstItem="VqI-l5-uI7" firstAttribute="top" secondItem="w73-7o-ok3" secondAttribute="bottom" constant="33" id="xF2-FG-4Mx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tour Schedule" id="RMp-o0-RtD">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="RMp-o0-RtD">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="QqS-NG-doW">
                             <connections>
                                 <segue destination="kDu-Et-PRh" kind="unwind" identifier="saveToActivitiesView" unwindAction="backActivities:" id="RCd-PU-E0L"/>
@@ -749,7 +749,7 @@
             </objects>
             <point key="canvasLocation" x="3234.5" y="48.5"/>
         </scene>
-        <!--Published Itinerary-->
+        <!--KnockKnock-->
         <scene sceneID="lCW-to-UTR">
             <objects>
                 <viewController storyboardIdentifier="pubDetailsView" id="GH3-TZ-QAj" customClass="PubDetailsViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -972,7 +972,7 @@
                             <constraint firstItem="a2y-yF-6a0" firstAttribute="top" secondItem="nHP-Dm-Nub" secondAttribute="bottom" constant="7" id="v3u-Yk-SLk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Published Itinerary" id="OMh-Rb-Fcu">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="OMh-Rb-Fcu">
                         <barButtonItem key="rightBarButtonItem" title="More" id="xvE-5S-7oX">
                             <connections>
                                 <action selector="actionMore:" destination="GH3-TZ-QAj" id="Yew-Ec-XL3"/>
@@ -996,7 +996,7 @@
             </objects>
             <point key="canvasLocation" x="1831.5" y="-1714.5"/>
         </scene>
-        <!--Edit Tour-->
+        <!--KnockKnock-->
         <scene sceneID="jlc-sk-cpB">
             <objects>
                 <viewController id="dr5-9A-ayD" customClass="PubDetailsEditViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -1149,7 +1149,7 @@
                             <constraint firstItem="rDE-KG-Mo8" firstAttribute="centerY" secondItem="N7g-7e-EcW" secondAttribute="centerY" id="zQj-T6-ekb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Tour" id="G0G-HR-n4T">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="G0G-HR-n4T">
                         <barButtonItem key="rightBarButtonItem" title="Update" id="1SQ-Xr-d89">
                             <connections>
                                 <action selector="actionUpdate:" destination="dr5-9A-ayD" id="26p-E3-ccN"/>
@@ -1167,7 +1167,7 @@
             </objects>
             <point key="canvasLocation" x="2286.5" y="-1714.5"/>
         </scene>
-        <!--Itinerary-->
+        <!--KnockKnock-->
         <scene sceneID="wp1-Ag-LXz">
             <objects>
                 <viewController id="JqM-f3-pzD" customClass="ItiMainViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -1180,7 +1180,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Itinerary" id="i2Y-m1-Pfg">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="i2Y-m1-Pfg">
                         <barButtonItem key="rightBarButtonItem" title="Create" id="VgB-qr-DiA">
                             <connections>
                                 <segue destination="IwN-1m-eIC" kind="show" id="tYB-B1-Ige"/>
@@ -1377,6 +1377,6 @@
         <image name="Itinerary_Icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="imT-ux-Uue"/>
+        <segue reference="MnU-2H-wvk"/>
     </inferredMetricsTieBreakers>
 </document>

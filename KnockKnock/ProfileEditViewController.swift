@@ -50,7 +50,7 @@ class ProfileEditViewController: UIViewController {
         let fName = currentUser["fName"] as! String
         let lName = currentUser["lName"] as! String
         
-        navigationItem.title = fName + " " + lName
+        //navigationItem.title = fName + " " + lName
         
         setupTxtFields()
         loadProfilePic()

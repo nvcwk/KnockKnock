@@ -75,7 +75,7 @@ class MarketPlaceDetailsV2ViewController: UIViewController {
         self.img_host.layer.cornerRadius = self.img_host.frame.size.width/2
         self.img_host.clipsToBounds = true
         
-        self.title = itiObj["title"] as! String
+//        self.title = itiObj["title"] as! String
     }
     
 

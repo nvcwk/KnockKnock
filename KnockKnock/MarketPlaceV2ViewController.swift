@@ -52,17 +52,17 @@ class MarketPlaceV2ViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        var customView = UIView(frame: CGRectMake(0, 0, 250, 44))
-        
-        var marginX = CGFloat(0)
-        var label = UILabel(frame: CGRectMake(marginX, 0, 250, 44))
-        label.text = "KnockKnock"
-        label.textColor = DPTheme.color(0x00A1B0, alpha: 1.0)
-        label.font = UIFont(name: "SnellRoundhand-Black", size: 25)
-        customView.addSubview(label)
-        
-        var leftButton = UIBarButtonItem(customView: customView)
-        self.navigationItem.leftBarButtonItem = leftButton
+//        var customView = UIView(frame: CGRectMake(0, 0, 250, 44))
+//        
+//        var marginX = CGFloat(0)
+//        var label = UILabel(frame: CGRectMake(marginX, 0, 250, 44))
+//        label.text = "KnockKnock"
+//        label.textColor = DPTheme.color(0x00A1B0, alpha: 1.0)
+//        label.font = UIFont(name: "SnellRoundhand-Black", size: 25)
+//        customView.addSubview(label)
+//        
+//        var leftButton = UIBarButtonItem(customView: customView)
+//        self.navigationItem.leftBarButtonItem = leftButton
     }
 
     override func didReceiveMemoryWarning() {
