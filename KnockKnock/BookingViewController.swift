@@ -55,15 +55,12 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         
         self.paxLabel.text = String(pax)
         self.priceLabel.text = String(price)
-        
-        self.title = "BOOK TOUR"
-        
-        
+    
     }
     @IBAction func stepperTapped(sender: AnyObject) {
         var currentValue = Int(stepper.value)
         
-        print(currentValue)
+//        print(currentValue)
         self.paxLabel.text = "\(currentValue)"
         var newPrice  = price * currentValue
         self.priceLabel.text = String(newPrice)
