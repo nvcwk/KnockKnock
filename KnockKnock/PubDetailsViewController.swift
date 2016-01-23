@@ -22,6 +22,7 @@ class PubDetailsViewController: UIViewController {
     @IBOutlet weak var image_host: ProfileAvatar!
     @IBOutlet weak var lb_hostName: UILabel!
     @IBOutlet weak var table_activities: UITableView!
+    @IBOutlet weak var tv_summary: UITextView!
     
     var pubObj = PFObject(className: "MarketPlace")
     
@@ -68,6 +69,8 @@ class PubDetailsViewController: UIViewController {
         var img_profile = hostObj["profilePic"] as! PFFile
         image_host.file = img_profile
         image_host.loadInBackground()
+        
+        tv_summary.text = itineraryObj["summary"] as! String
         
         table_activities.delegate = self
         table_activities.dataSource = self

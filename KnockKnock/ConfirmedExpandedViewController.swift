@@ -158,6 +158,8 @@ class ConfirmedExpandedViewController: UIViewController {
                     
                     myAlert.addAction(okAction);
                     
+                    NSNotificationCenter.defaultCenter().postNotificationName("loadConfirm", object: nil)
+                    
                     self.navigationController?.popToRootViewControllerAnimated(true)
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
