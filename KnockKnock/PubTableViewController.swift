@@ -43,8 +43,8 @@ class PubTableViewController: PFQueryTableViewController {
             let itinerary = publish["itinerary"] as! PFObject
             cell.lb_price.text = String(publish["price"] as! Int)
             
-            let startAvailability = KnockKnockUtils.dateToString(publish["startAvailability"] as! NSDate)
-            let lastAvailability = KnockKnockUtils.dateToString(publish["lastAvailability"] as! NSDate)
+            let startAvailability = KnockKnockUtils.dateToStringDisplay(publish["startAvailability"] as! NSDate)
+            let lastAvailability = KnockKnockUtils.dateToStringDisplay(publish["lastAvailability"] as! NSDate)
             
             cell.lb_start.text = startAvailability
             

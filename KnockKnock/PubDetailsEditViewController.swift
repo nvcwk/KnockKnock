@@ -43,9 +43,9 @@ class PubDetailsEditViewController: UIViewController {
         
         selectedEndDate = publishObj["lastAvailability"] as! NSDate
         
-        tf_startDate.text = KnockKnockUtils.dateToString(selectedStartDate)
+        tf_startDate.text = KnockKnockUtils.dateToStringDisplay(selectedStartDate)
         
-        tf_endDate.text = KnockKnockUtils.dateToString(selectedEndDate)
+        tf_endDate.text = KnockKnockUtils.dateToStringDisplay(selectedEndDate)
         
         startDatePicker.datePickerMode = UIDatePickerMode.Date
         startDatePicker.minimumDate = NSDate()
@@ -53,7 +53,7 @@ class PubDetailsEditViewController: UIViewController {
             forControlEvents:UIControlEvents.ValueChanged)
         
         tf_startDate.inputView = startDatePicker
-        tf_startDate.text = KnockKnockUtils.dateToString(5.days.fromDate(NSDate()))
+        tf_startDate.text = KnockKnockUtils.dateToStringDisplay(5.days.fromDate(NSDate()))
         
         endDatePicker.datePickerMode = UIDatePickerMode.Date
         endDatePicker.minimumDate = NSDate()
@@ -61,11 +61,11 @@ class PubDetailsEditViewController: UIViewController {
             forControlEvents:UIControlEvents.ValueChanged)
         
         tf_endDate.inputView = endDatePicker
-        tf_endDate.text = KnockKnockUtils.dateToString(5.days.fromDate(NSDate()))
+        tf_endDate.text = KnockKnockUtils.dateToStringDisplay(5.days.fromDate(NSDate()))
     }
     
     func updateStartDate(sender: UIDatePicker) {
-        tf_startDate.text = KnockKnockUtils.dateToString(sender.date)
+        tf_startDate.text = KnockKnockUtils.dateToStringDisplay(sender.date)
         publishObj["startAvailability"] = sender.date
         selectedStartDate = sender.date
         endDatePicker.minimumDate = sender.date
@@ -76,7 +76,7 @@ class PubDetailsEditViewController: UIViewController {
     }
     
     func updateEndDate(sender: UIDatePicker) {
-        tf_endDate.text = KnockKnockUtils.dateToString(sender.date)
+        tf_endDate.text = KnockKnockUtils.dateToStringDisplay(sender.date)
         publishObj["lastAvailability"] = sender.date
         selectedEndDate = sender.date
     }

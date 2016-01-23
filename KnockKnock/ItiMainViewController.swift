@@ -84,7 +84,6 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
     
     
     func didMoveToPage(controller: UIViewController, index: Int){
-        print("ADASD")
         if(index == 1) {
             self.navigationItem.rightBarButtonItem?.title = ""
             self.navigationItem.rightBarButtonItem?.enabled = false
