@@ -833,7 +833,7 @@
                                 <color key="textColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xPM-e2-fbC" customClass="PFImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xPM-e2-fbC" customClass="PFImageView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="184"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="184" id="Vpi-wq-yrl"/>
@@ -1294,7 +1294,7 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FEo-MB-y7N" customClass="PFImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FEo-MB-y7N" customClass="PFImageView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="184"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="184" id="ZcM-FT-jSx"/>
