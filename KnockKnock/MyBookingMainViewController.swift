@@ -16,6 +16,19 @@ class MyBookingMainViewController: UIViewController, CAPSPageMenuDelegate {
     var controller1 : PendingTableViewViewController?
     var controller2 : ConfirmedTableViewController?
     
+    func loadPending(notification: NSNotification){
+        //load data here
+        setup()
+        pageMenu?.moveToPage(0)
+    }
+    
+    func loadConfirm(notification: NSNotification) {
+        setup()
+        pageMenu?.moveToPage(1)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +37,8 @@ class MyBookingMainViewController: UIViewController, CAPSPageMenuDelegate {
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPending:",name:"loadPending", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadConfirm:",name:"loadConfirm", object: nil)
         
         setup()
     }

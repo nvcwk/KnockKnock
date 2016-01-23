@@ -183,6 +183,8 @@ class PendingExpandedViewController: UIViewController {
                     
                     myAlert.addAction(okAction);
                     
+                    NSNotificationCenter.defaultCenter().postNotificationName("loadPending", object: nil)
+                    
                     self.navigationController?.popToRootViewControllerAnimated(true)
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
@@ -233,6 +235,8 @@ class PendingExpandedViewController: UIViewController {
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
                     
                     myAlert.addAction(okAction);
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName("loadPending", object: nil)
                     
                     self.navigationController?.popToRootViewControllerAnimated(true)
                     
