@@ -51,6 +51,20 @@ class MarketPlaceV2ViewController: UIViewController {
         fadeAnimation.startAnimation(nil)
 
         // Do any additional setup after loading the view.
+        
+        var customView = UIView(frame: CGRectMake(0, 0, 250, 44))
+        
+        var marginX = CGFloat(0)
+        var label = UILabel(frame: CGRectMake(marginX, 0, 250, 44))
+        label.text = "KnockKnock"
+        label.textColor = DPTheme.color(0x00A1B0, alpha: 1.0)
+        label.font = UIFont(name: "Avenir-Heavy", size: 25)
+        customView.addSubview(label)
+        
+        var leftButton = UIBarButtonItem(customView: customView)
+        self.navigationItem.leftBarButtonItem = leftButton
+        
+        self.title = ""
     }
 
     override func didReceiveMemoryWarning() {
