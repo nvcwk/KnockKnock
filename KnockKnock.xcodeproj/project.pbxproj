@@ -26,6 +26,7 @@
 		E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC20B1C16CD3200479927 /* HomeViewController.swift */; };
 		E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC21E1C16E0B700479927 /* KnockKnockUtils.swift */; };
 		E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2201C16E12C00479927 /* ParseUtils.swift */; };
+		E12396AD1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12396AC1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift */; };
 		E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */; };
 		E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */; };
 		E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14174F41C3D7E57005E3B9A /* MarketActivityTableViewCell.swift */; };
@@ -128,6 +129,7 @@
 		E11AC20B1C16CD3200479927 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E11AC21E1C16E0B700479927 /* KnockKnockUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockUtils.swift; sourceTree = "<group>"; };
 		E11AC2201C16E12C00479927 /* ParseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUtils.swift; sourceTree = "<group>"; };
+		E12396AC1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+SupportedOrientations.swift"; sourceTree = "<group>"; };
 		E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiMainViewController.swift; sourceTree = "<group>"; };
 		E14174F41C3D7E57005E3B9A /* MarketActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 			children = (
 				E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */,
 				709914AF1C4B63C500E2FF9A /* DPTheme.swift */,
+				E12396AC1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift */,
 			);
 			name = ExtLib;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
 				E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */,
+				E12396AD1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift in Sources */,
 				F6DC5CC11C476A5B00BA6776 /* ConfirmedTableViewController.swift in Sources */,
 				E15BF7801C3FFB6A009A3C31 /* PubDetailsEditViewController.swift in Sources */,
 				E1CAA80B1C27053300AB4637 /* ActivityTableViewCell.swift in Sources */,
