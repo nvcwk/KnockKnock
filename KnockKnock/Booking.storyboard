@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="690.5" y="552.5"/>
         </scene>
-        <!--BOOKING-->
+        <!--KnockKnock-->
         <scene sceneID="b7B-0s-xd0">
             <objects>
                 <viewController id="wBw-nL-b7K" customClass="MyBookingMainViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="BOOKING" id="K6f-wY-CA5"/>
+                    <navigationItem key="navigationItem" title="KnockKnock" id="K6f-wY-CA5"/>
                     <connections>
                         <segue destination="PaG-mz-RIA" kind="show" id="mR7-11-oGR"/>
                         <segue destination="N3i-dn-Fjb" kind="show" id="asF-ZI-Ldd"/>
@@ -50,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="1171.5" y="539.5"/>
         </scene>
-        <!--Pending Expanded View Controller-->
+        <!--KnockKnock-->
         <scene sceneID="pUL-27-6dW">
             <objects>
                 <viewController storyboardIdentifier="PendingExpandedViewController" id="N3i-dn-Fjb" customClass="PendingExpandedViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -326,7 +326,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="UF7-7c-4Hf">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="UF7-7c-4Hf">
                         <barButtonItem key="rightBarButtonItem" title="Info" id="XEr-Em-MbX">
                             <connections>
                                 <action selector="infoButtonTapped:" destination="N3i-dn-Fjb" id="Nn4-Gb-B8s"/>
@@ -356,7 +356,7 @@
             </objects>
             <point key="canvasLocation" x="1663.5" y="207.5"/>
         </scene>
-        <!--Confirmed Expanded View Controller-->
+        <!--KnockKnock-->
         <scene sceneID="o2Z-Zi-ggK">
             <objects>
                 <viewController storyboardIdentifier="ConfirmedExpandedViewController" id="PaG-mz-RIA" customClass="ConfirmedExpandedViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
@@ -501,7 +501,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HdX-oe-DhF">
+                    <navigationItem key="navigationItem" title="KnockKnock" id="HdX-oe-DhF">
                         <barButtonItem key="rightBarButtonItem" title="Info" id="4Lj-z3-pUS">
                             <connections>
                                 <action selector="infoButtonTapped:" destination="PaG-mz-RIA" id="fKF-W1-VU9"/>
