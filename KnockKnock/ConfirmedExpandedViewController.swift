@@ -31,9 +31,11 @@ class ConfirmedExpandedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        
         
         self.view!.removeConstraints(self.view.constraints)
-
+        
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         image.image? = (image.image?.imageWithRenderingMode(.AlwaysTemplate))!
@@ -99,12 +101,12 @@ class ConfirmedExpandedViewController: UIViewController {
             cancelButton.hidden = true
         }
         
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-       
+        
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
@@ -118,7 +120,7 @@ class ConfirmedExpandedViewController: UIViewController {
             let hostObject = (self.confirmedObject["Host"]) as! PFObject
             if (hostObject == PFUser.currentUser()){
                 self.confirmedObject["Remarks"] = "Host Cancelled"
-             }else{
+            }else{
                 self.confirmedObject["Remarks"] = "Requester Cancelled"
             }
             let myAlert =
@@ -171,7 +173,7 @@ class ConfirmedExpandedViewController: UIViewController {
         presentViewController(bookAlert, animated: true, completion: nil)
         
     }
-
+    
     @IBAction func infoButtonTapped(sender: AnyObject) {
         
         let itineraryObject = (confirmedObject["Itinerary"]) as! PFObject
@@ -184,11 +186,11 @@ class ConfirmedExpandedViewController: UIViewController {
         controller.itineraryObj = itineraryObject
         self.showViewController(controller, sender:self)
         
-
+        
     }
     
     
     
     
-    }
+}
 

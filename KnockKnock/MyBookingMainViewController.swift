@@ -10,26 +10,21 @@ import UIKit
 import autoAutoLayout
 
 class MyBookingMainViewController: UIViewController, CAPSPageMenuDelegate {
-
+    
     var pageMenu: CAPSPageMenu?
     
     var controller1 : PendingTableViewViewController?
     var controller2 : ConfirmedTableViewController?
     
-    func loadList(notification: NSNotification){
-        //load data here
-        setup()
-        pageMenu?.moveToPage(1)
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
         
         setup()
     }
@@ -79,5 +74,5 @@ class MyBookingMainViewController: UIViewController, CAPSPageMenuDelegate {
     @IBAction func backItinerary(segue:UIStoryboardSegue) {
     }
     
-   
+    
 }

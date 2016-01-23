@@ -26,7 +26,7 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-                self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
@@ -81,8 +81,6 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
     @IBAction func backItinerary(segue:UIStoryboardSegue) {
     }
 
-    
-    
     func didMoveToPage(controller: UIViewController, index: Int){
         if(index == 1) {
             self.navigationItem.rightBarButtonItem?.title = ""
