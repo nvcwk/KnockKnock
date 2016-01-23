@@ -79,7 +79,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             cell.image_background.file = image
             cell.image_background.loadInBackground()
             
-            cell.image_background.contentMode = UIViewContentMode.ScaleToFill
+            //cell.image_background.contentMode = UIViewContentMode.ScaleToFill
             
 //            cell.image_background.frame = CGRectMake(0, 0, 66, 66)
             
