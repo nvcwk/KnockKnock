@@ -16,10 +16,15 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
     var controller1 : ItiTableViewController?
     var controller2 : PubTableViewController?
 
-    func loadList(notification: NSNotification){
+    func loadPublish(notification: NSNotification){
         //load data here
         setup()
         pageMenu?.moveToPage(1)
+    }
+    
+    func loadItinerary(notification: NSNotification) {
+        setup()
+        pageMenu?.moveToPage(0)
     }
     
     
@@ -31,7 +36,9 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadPublish:", name:"loadPublish", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadItinerary:", name:"loadItinerary", object: nil)
+        
 
         setup()
     }

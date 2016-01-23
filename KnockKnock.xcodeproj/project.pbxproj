@@ -362,6 +362,18 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		E12396AB1C532F1D00FB4760 /* Create Itinerary */ = {
+			isa = PBXGroup;
+			children = (
+				E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */,
+				E1CAA7EE1C24853600AB4637 /* ItiDaysSelectorViewController.swift */,
+				E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */,
+				E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */,
+				E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */,
+			);
+			name = "Create Itinerary";
+			sourceTree = "<group>";
+		};
 		E164E68D1C494E4F00AEC87C /* MarketPlaceV2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,13 +397,9 @@
 		E1A7DA941C3CB14900759A8F /* Itinerary */ = {
 			isa = PBXGroup;
 			children = (
+				E12396AB1C532F1D00FB4760 /* Create Itinerary */,
 				E11AC2061C16241600479927 /* CustomUI */,
 				E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */,
-				E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */,
-				E1CAA7EE1C24853600AB4637 /* ItiDaysSelectorViewController.swift */,
-				E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */,
-				E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */,
-				E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */,
 				E159A83A1C345CE700EF80A4 /* ItiDetailsViewController.swift */,
 				E1B95E451C36C14600F85B8F /* PubDetailsViewController.swift */,
 				E15BF77F1C3FFB6A009A3C31 /* PubDetailsEditViewController.swift */,
