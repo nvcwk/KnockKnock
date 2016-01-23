@@ -28,6 +28,8 @@ class ItiDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        
         self.profile_img.layer.cornerRadius = self.profile_img.frame.size.width/2
         self.profile_img.clipsToBounds = true
         
@@ -55,13 +57,13 @@ class ItiDetailsViewController: UIViewController {
         activities = activities.sortedArrayUsingDescriptors([
             NSSortDescriptor(key: "day", ascending: true)
             ])
-    
+        
         lb_title.text = itineraryObj["title"] as! String
         
         image_image.file = itineraryObj["image"] as! PFFile
         image_image.loadInBackground()
-
-//        tv_description.text = itineraryObj["summary"] as! String
+        
+        //        tv_description.text = itineraryObj["summary"] as! String
         
         tv_activities.delegate = self
         tv_activities.dataSource = self
@@ -85,17 +87,17 @@ extension ItiDetailsViewController : UITableViewDelegate, UITableViewDataSource 
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("activityCell", forIndexPath: indexPath) as! ActivityDetailsTableViewCell
-
+        
         let activity = activities[indexPath.row] as! PFObject
-
+        
         let day = activity["day"] as! Int
         let title = activity["title"] as! String
         
         cell.lb_day.text = "Day " + String(day) + " - " + title
         cell.tv_details.text = activity["description"] as! String
-
+        
         
         return cell
     }
-
+    
 }

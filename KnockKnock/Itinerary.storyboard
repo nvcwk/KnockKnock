@@ -159,11 +159,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tour Duration" id="mlH-b9-ifS">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ljh-zZ-cFj">
-                            <connections>
-                                <segue destination="Lw2-3C-kDe" kind="unwind" unwindAction="backItinerary:" id="Muw-87-4DE"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="5sF-Yn-ylM">
                             <connections>
                                 <segue destination="YFb-Bc-DuT" kind="show" identifier="toActivitiesView" id="pUD-bY-pcR"/>
@@ -176,7 +171,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gI-sH-dAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Lw2-3C-kDe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1836.5" y="58.5"/>
         </scene>
@@ -300,7 +294,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="Image_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-St-eE1">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="Image_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-St-eE1">
                                 <rect key="frame" x="47" y="454" width="280" height="156"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -455,7 +449,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-n3-Sqn" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-n3-Sqn" customClass="MyCustomTextField" customModule="KnockKnock" customModuleProvider="target">
                                 <rect key="frame" x="159" y="357" width="169" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -474,7 +468,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="End Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQd-Ss-FVH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQd-Ss-FVH">
                                 <rect key="frame" x="61" y="357" width="103" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -527,9 +521,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Publish your Tour" id="XEU-ac-ipz">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="GEf-Pg-B8N">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="kZ9-01-Z9W">
                             <connections>
-                                <segue destination="w4W-f1-qOE" kind="unwind" unwindAction="backItinerary:" id="CPa-YI-yay"/>
+                                <segue destination="w4W-f1-qOE" kind="unwind" unwindAction="backItinerary:" id="EbL-oI-X1o"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Publish" id="HV9-VZ-3h2">
@@ -593,11 +587,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Activities" id="pdf-Su-0fF">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mrZ-5c-04e">
-                            <connections>
-                                <segue destination="lWw-D6-cEh" kind="unwind" unwindAction="backItinerary:" id="edf-9c-tTd"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Proceed" id="Ck8-GI-eDh">
                             <connections>
                                 <action selector="actionSave:" destination="YFb-Bc-DuT" id="6iU-RZ-Eqh"/>
@@ -609,7 +598,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYd-3v-scG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="lWw-D6-cEh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2367.5" y="58.5"/>
         </scene>
@@ -751,11 +739,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tour Schedule" id="RMp-o0-RtD">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="IPw-op-wJl">
-                            <connections>
-                                <segue destination="kDu-Et-PRh" kind="unwind" unwindAction="backActivities:" id="3Ci-gl-hhn"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="QqS-NG-doW">
                             <connections>
                                 <segue destination="kDu-Et-PRh" kind="unwind" identifier="saveToActivitiesView" unwindAction="backActivities:" id="RCd-PU-E0L"/>
@@ -1364,6 +1347,6 @@
         <image name="Itinerary_Icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="imT-ux-Uue"/>
+        <segue reference="MnU-2H-wvk"/>
     </inferredMetricsTieBreakers>
 </document>

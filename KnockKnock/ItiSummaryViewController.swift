@@ -21,6 +21,8 @@ class ItiSummaryViewController: UIViewController {
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        
         tv_summary.delegate = self
         imagePicker.delegate = self
         
