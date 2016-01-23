@@ -17,7 +17,7 @@ class ItiActivitiesViewController: UITableViewController {
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
-        self.navigationItem.setHidesBackButton(true, animated:true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
         completed = [Bool](count: days, repeatedValue: false)
         

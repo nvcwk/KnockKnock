@@ -7,11 +7,12 @@ class ItiDaysSelectorViewController: UIViewController {
     @IBOutlet weak var stepper_days: GMStepper!
     
     var itineraryObj = PFObject(className:"Itinerary")
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.setHidesBackButton(true, animated:true)
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -22,5 +23,5 @@ class ItiDaysSelectorViewController: UIViewController {
         }
         
     }
-
+    
 }
