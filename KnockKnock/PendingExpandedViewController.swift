@@ -34,12 +34,14 @@ class PendingExpandedViewController: UIViewController {
     var bookedDateArray : [NSDate]!
     
     override func viewDidLoad() {
-       
-       
+        
+        
         super.viewDidLoad()
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
-
+        
         
         theImageView.image? = (theImageView.image?.imageWithRenderingMode(.AlwaysTemplate))!
         //theImageView.tintColor = UIColor(red:0.14, green:0.63, blue:0.78, alpha:1.0)
@@ -68,7 +70,7 @@ class PendingExpandedViewController: UIViewController {
         remarks.text =  ""
         
         
-
+        
         
         
         if (hostObject == PFUser.currentUser()){
@@ -80,24 +82,24 @@ class PendingExpandedViewController: UIViewController {
                 status.font = UIFont.boldSystemFontOfSize(18.0)
                 status.textColor = UIColor.redColor()
                 actionButton.setTitle("", forState: UIControlState.Normal)
-              //  actionButton.enabled = false
+                //  actionButton.enabled = false
                 actionButton.hidden = true
                 actionButton2.setTitle("", forState: UIControlState.Normal)
                 actionButton2.enabled = false
                 actionButton2.hidden = true
                 reason.text = "Reason: "
                 remarks.text =  pendingObject["Remarks"] as! String
-
+                
             }else{
                 actionButton.hidden = false
                 actionButton2.hidden = false
                 actionButton.setTitle("Accept", forState: UIControlState.Normal)
                 actionButton2.setTitle("Reject", forState: UIControlState.Normal)
-
+                
             }
             
             
-
+            
         }else{
             requesterLabel.text = "Your Host: "
             requester.text = hostObject["fName"] as! String
@@ -105,7 +107,7 @@ class PendingExpandedViewController: UIViewController {
             actionButton.setTitle("", forState: UIControlState.Normal)
             actionButton.enabled = false
             actionButton.hidden = true
-
+            
             if (caseStatus == "Rejected" || caseStatus == "Cancelled" || caseStatus == "Expired"){
                 reason.text = "Reason: "
                 remarks.text =  pendingObject["Remarks"] as! String
@@ -122,14 +124,14 @@ class PendingExpandedViewController: UIViewController {
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func button1Tapped(sender: AnyObject) {
-            //accept codes
+        //accept codes
         
         let bookAlert = UIAlertController(title: "Hosting", message: "Confirm Hosting", preferredStyle: UIAlertControllerStyle.Alert)
         
@@ -152,7 +154,7 @@ class PendingExpandedViewController: UIViewController {
             booking.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
-        
+                    
                     
                     self.selectedDate = self.pendingObject["Date"] as! NSDate
                     self.bookedDateArray = self.pendingObject["Marketplace"]["bookedDate"] as! [NSDate]
@@ -161,7 +163,7 @@ class PendingExpandedViewController: UIViewController {
                     var duration = itineraryObject["duration"] as! Int
                     for (var i = 0; i < duration; i++){
                         var tempDate = self.selectedDate.add(days: i)
-                         self.bookedDateArray.append(tempDate)
+                        self.bookedDateArray.append(tempDate)
                     }
                     
                     var marketPlace = PFObject(className: "MarketPlace")
@@ -184,7 +186,7 @@ class PendingExpandedViewController: UIViewController {
                     self.navigationController?.popToRootViewControllerAnimated(true)
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
-
+                    
                 } else {
                     NSLog("%@", error!)
                 }
@@ -196,10 +198,10 @@ class PendingExpandedViewController: UIViewController {
         
         presentViewController(bookAlert, animated: true, completion: nil)
         
-
-
+        
+        
     }
-
+    
     @IBAction func button2Pressed(sender: AnyObject) {
         //reject codes
         
@@ -248,7 +250,7 @@ class PendingExpandedViewController: UIViewController {
         presentViewController(bookAlert, animated: true, completion: nil)
     }
     
-
+    
     
     @IBAction func infoButtonTapped(sender: AnyObject) {
         
