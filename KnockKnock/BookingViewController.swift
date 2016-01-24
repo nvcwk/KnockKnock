@@ -126,7 +126,6 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     //when date is selected
     func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
         var newDate = KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date))
-        print(newDate)
         
         selectedDate.append(newDate)
     }
