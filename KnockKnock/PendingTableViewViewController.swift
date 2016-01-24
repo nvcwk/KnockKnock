@@ -57,7 +57,7 @@ class PendingTableViewViewController: PFQueryTableViewController {
         if let pending = object{
             
             var startDate = pending["Date"]as! NSDate
-            if (startDate < NSDate())
+            if (startDate < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate())))
             {
                 updateRecords(pending)
             }

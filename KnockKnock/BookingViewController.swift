@@ -100,9 +100,6 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                 return UIImage(named: "cross_2")
             }
         }
-        if(dateFormatter.stringFromDate(date) == dateFormatter.stringFromDate(NSDate())){
-            return UIImage(named: "cross_2")
-        }
         return nil
     }
     
@@ -115,9 +112,6 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
                 return false
             }
-        }
-        if(dateFormatter.stringFromDate(date) == dateFormatter.stringFromDate(NSDate())){
-            return false
         }
         return true
     }
