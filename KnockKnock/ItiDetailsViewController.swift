@@ -45,9 +45,11 @@ class ItiDetailsViewController: UIViewController {
         
         host_name.text = (host["fName"] as! String) + " " + (host["lName"] as! String)
         
-        var img_profile = host["profilePic"] as! PFFile
-        profile_img.file = img_profile
-        profile_img.loadInBackground()
+        if (host["profilePic"] != nil) {
+            var img_profile = host["profilePic"] as! PFFile
+            profile_img.file = img_profile
+            profile_img.loadInBackground()
+        }
         
         
         description_txt.text = itineraryObj["summary"] as! String

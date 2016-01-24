@@ -66,9 +66,11 @@ class PubDetailsViewController: UIViewController {
         
         lb_hostName.text = (hostObj["fName"] as! String) + " " + (hostObj["lName"] as! String)
         
-        var img_profile = hostObj["profilePic"] as! PFFile
-        image_host.file = img_profile
-        image_host.loadInBackground()
+        if (hostObj["profilePic"] != nil) {
+            var img_profile = hostObj["profilePic"] as! PFFile
+            image_host.file = img_profile
+            image_host.loadInBackground()
+        }
         
         tv_summary.text = itineraryObj["summary"] as! String
         
