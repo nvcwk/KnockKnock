@@ -64,7 +64,7 @@ class PubDetailsViewController: UIViewController {
         
         lb_last.text = KnockKnockUtils.dateToStringDisplay(pubObj["lastAvailability"] as! NSDate)
         
-        lb_hostName.text = (hostObj["fName"] as! String) + " " + (hostObj["lName"] as! String)
+        lb_hostName.text = (hostObj["fName"] as! String) //+ " " + (hostObj["lName"] as! String)
         
         if (hostObj["profilePic"] != nil) {
             var img_profile = hostObj["profilePic"] as! PFFile

@@ -50,10 +50,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="kZn-Os-A87" secondAttribute="bottom" id="8ST-rJ-P8s"/>
-                                    <constraint firstItem="kZn-Os-A87" firstAttribute="top" secondItem="Uem-gf-etP" secondAttribute="top" constant="46" id="95L-tA-Nhv"/>
-                                    <constraint firstItem="kZn-Os-A87" firstAttribute="leading" secondItem="Uem-gf-etP" secondAttribute="leading" constant="81" id="cmc-35-mme"/>
-                                    <constraint firstItem="kZn-Os-A87" firstAttribute="centerX" secondItem="Uem-gf-etP" secondAttribute="centerX" id="ulc-yt-zjo"/>
+                                    <constraint firstItem="kZn-Os-A87" firstAttribute="top" secondItem="Uem-gf-etP" secondAttribute="top" constant="46" id="Sdf-2N-KjP"/>
+                                    <constraint firstItem="kZn-Os-A87" firstAttribute="leading" secondItem="Uem-gf-etP" secondAttribute="leading" constant="81" id="XcY-0C-Qhw"/>
+                                    <constraint firstItem="kZn-Os-A87" firstAttribute="centerX" secondItem="Uem-gf-etP" secondAttribute="centerX" id="YyR-AG-J1Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="kZn-Os-A87" secondAttribute="bottom" id="hY2-Gw-nuJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfPoints">
@@ -86,8 +86,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPO-DJ-hE1">
                                 <rect key="frame" x="0.0" y="87" width="116" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="aJ0-wC-eRQ"/>
-                                    <constraint firstAttribute="height" constant="21" id="n9k-aT-LsS"/>
+                                    <constraint firstAttribute="height" constant="21" id="KpO-Bo-sf2"/>
+                                    <constraint firstAttribute="width" constant="116" id="kaN-Xk-1in"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,23 +96,23 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGe-NZ-C2R">
                                 <rect key="frame" x="259" y="87" width="116" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="Xxg-Tg-jVJ"/>
+                                    <constraint firstAttribute="width" constant="116" id="WlS-QW-VDA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="How many days will your tour be? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvL-bo-erQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many days will your tour be? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvL-bo-erQ">
                                 <rect key="frame" x="20" y="258" width="335" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="gd7-DS-pHU"/>
+                                    <constraint firstAttribute="height" constant="21" id="K1B-Vd-ho3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Jl-S5-hPn" customClass="GMStepper" customModule="GMStepper">
-                                <rect key="frame" x="89" y="302" width="196" height="0.0"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Jl-S5-hPn" customClass="GMStepper" customModule="GMStepper">
+                                <rect key="frame" x="88" y="287" width="198" height="45"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
                                         <real key="value" value="1"/>
@@ -140,22 +140,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SPO-DJ-hE1" firstAttribute="leading" secondItem="kPU-h1-iJ4" secondAttribute="leading" id="BiE-fL-UG8"/>
-                            <constraint firstItem="Uem-gf-etP" firstAttribute="centerX" secondItem="1Jl-S5-hPn" secondAttribute="centerX" id="Cv3-2E-f1u"/>
-                            <constraint firstAttribute="trailing" secondItem="xGe-NZ-C2R" secondAttribute="trailing" id="EYG-tf-IRO"/>
-                            <constraint firstItem="xGe-NZ-C2R" firstAttribute="baseline" secondItem="SPO-DJ-hE1" secondAttribute="baseline" id="ICg-KP-0ah"/>
-                            <constraint firstItem="1Jl-S5-hPn" firstAttribute="centerY" secondItem="kPU-h1-iJ4" secondAttribute="centerY" id="Ktw-rx-gkk"/>
-                            <constraint firstItem="QiI-VU-7vj" firstAttribute="top" secondItem="1Jl-S5-hPn" secondAttribute="bottom" constant="259" id="R7S-OH-epZ"/>
-                            <constraint firstItem="Uem-gf-etP" firstAttribute="leading" secondItem="kPU-h1-iJ4" secondAttribute="leadingMargin" constant="31" id="SDP-tL-9Ux"/>
-                            <constraint firstAttribute="bottom" secondItem="Uem-gf-etP" secondAttribute="bottom" constant="513" id="UYQ-sg-BEc"/>
-                            <constraint firstItem="GvL-bo-erQ" firstAttribute="leading" secondItem="kPU-h1-iJ4" secondAttribute="leadingMargin" constant="4" id="YbI-aF-clb"/>
-                            <constraint firstItem="1Jl-S5-hPn" firstAttribute="top" secondItem="GvL-bo-erQ" secondAttribute="bottom" constant="23" id="dSt-F6-GpN"/>
-                            <constraint firstItem="1Jl-S5-hPn" firstAttribute="centerX" secondItem="GvL-bo-erQ" secondAttribute="centerX" id="fOO-9O-ubr"/>
-                            <constraint firstItem="SPO-DJ-hE1" firstAttribute="top" secondItem="Uem-gf-etP" secondAttribute="top" id="gPj-Ix-iOB"/>
-                            <constraint firstItem="SPO-DJ-hE1" firstAttribute="top" secondItem="jbs-cm-r7O" secondAttribute="bottom" constant="23" id="gPp-ed-KWo"/>
-                            <constraint firstItem="1Jl-S5-hPn" firstAttribute="leading" secondItem="kPU-h1-iJ4" secondAttribute="leadingMargin" constant="73" id="pk5-jo-NXS"/>
-                            <constraint firstItem="xGe-NZ-C2R" firstAttribute="firstBaseline" secondItem="SPO-DJ-hE1" secondAttribute="firstBaseline" id="z3z-rz-K1q"/>
-                            <constraint firstItem="1Jl-S5-hPn" firstAttribute="centerX" secondItem="kPU-h1-iJ4" secondAttribute="centerX" id="zYR-X1-DyU"/>
+                            <constraint firstItem="SPO-DJ-hE1" firstAttribute="leading" secondItem="kPU-h1-iJ4" secondAttribute="leading" id="1nv-eI-OEm"/>
+                            <constraint firstItem="SPO-DJ-hE1" firstAttribute="top" secondItem="Uem-gf-etP" secondAttribute="top" id="Iqr-Ix-Vzt"/>
+                            <constraint firstItem="SPO-DJ-hE1" firstAttribute="firstBaseline" secondItem="xGe-NZ-C2R" secondAttribute="firstBaseline" id="KTY-tp-JOR"/>
+                            <constraint firstItem="GvL-bo-erQ" firstAttribute="leading" secondItem="kPU-h1-iJ4" secondAttribute="leadingMargin" constant="4" id="PdX-vf-Qdh"/>
+                            <constraint firstItem="SPO-DJ-hE1" firstAttribute="baseline" secondItem="xGe-NZ-C2R" secondAttribute="baseline" id="VjU-x0-saO"/>
+                            <constraint firstItem="Uem-gf-etP" firstAttribute="leading" secondItem="kPU-h1-iJ4" secondAttribute="leadingMargin" constant="31" id="Zc9-3x-p6e"/>
+                            <constraint firstItem="Uem-gf-etP" firstAttribute="centerX" secondItem="1Jl-S5-hPn" secondAttribute="centerX" id="bNL-lb-VEW"/>
+                            <constraint firstItem="1Jl-S5-hPn" firstAttribute="top" secondItem="GvL-bo-erQ" secondAttribute="bottom" constant="8" symbolic="YES" id="bSQ-IH-qu0"/>
+                            <constraint firstItem="1Jl-S5-hPn" firstAttribute="centerX" secondItem="kPU-h1-iJ4" secondAttribute="centerX" id="cfy-jt-n9h"/>
+                            <constraint firstAttribute="bottom" secondItem="Uem-gf-etP" secondAttribute="bottom" constant="513" id="dRv-Jn-iGU"/>
+                            <constraint firstAttribute="trailing" secondItem="xGe-NZ-C2R" secondAttribute="trailing" id="drY-cr-CMX"/>
+                            <constraint firstItem="GvL-bo-erQ" firstAttribute="centerX" secondItem="1Jl-S5-hPn" secondAttribute="centerX" id="esf-Ch-sI6"/>
+                            <constraint firstItem="GvL-bo-erQ" firstAttribute="top" secondItem="kPU-h1-iJ4" secondAttribute="top" constant="258" id="jMn-nn-LWq"/>
+                            <constraint firstItem="SPO-DJ-hE1" firstAttribute="top" secondItem="jbs-cm-r7O" secondAttribute="bottom" constant="23" id="ltG-T6-uuC"/>
+                            <constraint firstItem="1Jl-S5-hPn" firstAttribute="leading" secondItem="kPU-h1-iJ4" secondAttribute="leadingMargin" constant="72" id="mNW-Ks-kuY"/>
+                            <constraint firstItem="QiI-VU-7vj" firstAttribute="top" secondItem="1Jl-S5-hPn" secondAttribute="bottom" constant="286" id="shT-sB-W9Q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="KnockKnock" id="mlH-b9-ifS">

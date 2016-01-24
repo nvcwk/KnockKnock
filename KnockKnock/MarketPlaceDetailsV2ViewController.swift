@@ -50,7 +50,7 @@ class MarketPlaceDetailsV2ViewController: UIViewController {
         
         lb_title.text = itiObj["title"] as! String
         
-        lb_hostName.text = (hostObj["fName"] as! String) + " " + (hostObj["lName"] as! String)
+        lb_hostName.text = (hostObj["fName"] as! String) //+ " " + (hostObj["lName"] as! String)
         
         lb_hostContact.text = String(hostObj["contact"] as! Int)
         

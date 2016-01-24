@@ -43,7 +43,7 @@ class ItiDetailsViewController: UIViewController {
             barBtn_publish.enabled = false
         }
         
-        host_name.text = (host["fName"] as! String) + " " + (host["lName"] as! String)
+        host_name.text = (host["fName"] as! String) // + " " + (host["lName"] as! String)
         
         if (host["profilePic"] != nil) {
             var img_profile = host["profilePic"] as! PFFile
