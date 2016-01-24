@@ -28,6 +28,7 @@ pod 'ABSteppedProgressBar', :git => 'https://github.com/brendaaakoh/ABSteppedPro
 pod 'HCSStarRatingView', '~> 1.4.3'
 pod 'RTIconButton'
 pod 'Popover'
+pod 'Scrollable', '~> 1.0'
 
 
 
