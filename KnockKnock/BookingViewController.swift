@@ -133,7 +133,8 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     func calendar(calendar: FSCalendar!, didDeselectDate date: NSDate!) {
         var index = 0
         for dateInArray in selectedDate {
-            if (dateInArray == date){
+            var newDate = KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date))
+            if (dateInArray == newDate){
                 selectedDate.removeAtIndex(index)
             }else{
                 index = index + 1
