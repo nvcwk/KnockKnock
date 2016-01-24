@@ -40,7 +40,7 @@ class KnockKnockUtils {
     
     static func dateToStringDisplay(date: NSDate) -> String {
         let formatter = NSDateFormatter()
-        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.dateStyle = NSDateFormatterStyle.MediumStyle
         //formatter.timeZone = NSTimeZone.localTimeZone()
         return formatter.stringFromDate(date)
     }

@@ -47,7 +47,7 @@ class PendingExpandedViewController: UIViewController {
         //theImageView.tintColor = UIColor(red:0.14, green:0.63, blue:0.78, alpha:1.0)
         theImageView.tintColor = UIColor.darkGrayColor()
         
-        pendingNum.text = pendingObject.objectId
+        //pendingNum.text = pendingObject.objectId
         hostObject = (pendingObject["Host"]) as! PFObject
         requesterObject = (pendingObject["Requester"]) as! PFObject
         let itineraryObject = (pendingObject["Itinerary"]) as! PFObject
@@ -68,11 +68,7 @@ class PendingExpandedViewController: UIViewController {
         status.text = caseStatus
         reason.text = ""
         remarks.text =  ""
-        
-        
-        
-        
-        
+
         if (hostObject == PFUser.currentUser()){
             requesterLabel.text = "Requested By: "
             requester.text = requesterObject["fName"] as! String
