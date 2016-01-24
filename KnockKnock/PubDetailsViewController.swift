@@ -58,7 +58,7 @@ class PubDetailsViewController: UIViewController {
         image_background.file = itineraryObj["image"] as! PFFile
         image_background.loadInBackground()
         
-        lb_price.text = "Price: $" + String(pubObj["price"] as! Int)
+        lb_price.text = String(pubObj["price"] as! Int)
         
         lb_start.text =  KnockKnockUtils.dateToStringDisplay(pubObj["startAvailability"] as! NSDate)
         
