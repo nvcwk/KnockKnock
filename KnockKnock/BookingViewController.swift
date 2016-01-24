@@ -55,6 +55,8 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         
         self.paxLabel.text = String(pax)
         self.priceLabel.text = String(price)
+
+        
     
     }
     @IBAction func stepperTapped(sender: AnyObject) {
@@ -117,8 +119,10 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     
     //when date is selected
     func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
-        selectedDate.append(date)
+        var newDate = KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date))
+        print(newDate)
         
+        selectedDate.append(newDate)
     }
     
     func calendar(calendar: FSCalendar!, didDeselectDate date: NSDate!) {
