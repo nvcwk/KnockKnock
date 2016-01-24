@@ -163,8 +163,10 @@ extension ProfileEditViewController: ValidationDelegate {
     func loadProfilePic() {
         let currentUser = PFUser.currentUser()!;
         
-        profile_img.file = currentUser["profilePic"] as! PFFile
-        profile_img.loadInBackground()
+        if (currentUser["profilePic"] != nil) {
+            profile_img.file = currentUser["profilePic"] as! PFFile
+            profile_img.loadInBackground()
+        }
     }
 }
 
