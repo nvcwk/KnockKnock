@@ -60,6 +60,7 @@ PODS:
   - Popover (0.8.1)
   - QIULaunchAnimation (0.0.1)
   - RTIconButton (1.0.0)
+  - Scrollable (1.0.5)
   - SwiftDate (2.0.2)
   - SwiftSpinner (0.8.0)
   - SwiftValidator (3.0.1)
@@ -85,6 +86,7 @@ DEPENDENCIES:
   - Popover
   - QIULaunchAnimation
   - RTIconButton
+  - Scrollable (~> 1.0)
   - SwiftDate
   - SwiftSpinner
   - SwiftValidator
@@ -122,6 +124,7 @@ SPEC CHECKSUMS:
   Popover: efa33e8368f88acbc15d66660708957896d67460
   QIULaunchAnimation: b979692b9c6e5e487c327d55ac2a39656d68a11d
   RTIconButton: 5174ff0555381ff78dd629c038673159f0a50b7b
+  Scrollable: 1be6d6b8b4fbc6aa98f5f44a24c1f88105ae35dd
   SwiftDate: b4f4d0962afe48365ad2800c9850a6626deb9359
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   SwiftValidator: c59223144754045d7691febdc3b3ecc2e73b609c

@@ -8,17 +8,17 @@
 
 import UIKit
 
-extension UIImagePickerController
-{
-    public override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Landscape
-    }
-}
-
-
-class LandscapePickerController: UIImagePickerController
-{
-    public override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Landscape
-    }
-}
+//extension UIImagePickerController
+//{
+//    public override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+//        return UIInterfaceOrientationMask.Landscape
+//    }
+//}
+//
+//
+//class LandscapePickerController: UIImagePickerController
+//{
+//    public override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+//        return UIInterfaceOrientationMask.Landscape
+//    }
+//}
