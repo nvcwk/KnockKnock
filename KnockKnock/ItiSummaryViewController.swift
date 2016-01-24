@@ -1,5 +1,4 @@
 import UIKit
-import DZNPhotoPickerController
 import SwiftValidator
 import Parse
 import autoAutoLayout
