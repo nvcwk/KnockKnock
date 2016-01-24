@@ -17,7 +17,6 @@ pod 'SwiftValidator'
 pod 'CountryPicker'
 pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
-pod 'DZNPhotoPickerController/Editor'
 pod 'GMStepper'
 pod 'GoogleMaps' 
 pod 'SwiftDate'
@@ -30,18 +29,11 @@ pod 'RTIconButton'
 pod 'Popover'
 pod 'Scrollable', '~> 1.0'
 
-
-
-
-
-
-
-
-
 =begin 
 To Consider 
 pod 'LRTextField'
 pod 'JVFloatLabeledTextField'
 pod 'DZNPhotoPickerController'
 pod 'RLDTableViewSuite'
+pod 'DZNPhotoPickerController/Editor'
 =end
