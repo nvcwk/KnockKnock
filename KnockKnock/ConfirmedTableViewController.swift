@@ -56,7 +56,7 @@ class ConfirmedTableViewController: PFQueryTableViewController {
         
     var date = pending["Date"]! as! NSDate
     //check if booking has been completed
-        if (date < NSDate()){
+        if (date < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate()))){
             updateRecords(pending)
         }
         
