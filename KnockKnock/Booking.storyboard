@@ -668,16 +668,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wf4-SV-Tdu">
-                                <rect key="frame" x="20" y="365" width="335" height="209"/>
+                                <rect key="frame" x="20" y="327" width="335" height="217"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="209" id="72B-ax-2iY"/>
+                                    <constraint firstAttribute="height" constant="217" id="72B-ax-2iY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your Review Below: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3a-7k-G6Z">
-                                <rect key="frame" x="20" y="336" width="198" height="21"/>
+                                <rect key="frame" x="20" y="305" width="198" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ccM-bt-pIS"/>
                                 </constraints>
@@ -685,8 +685,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5a-Do-EQf">
-                                <rect key="frame" x="23" y="570" width="329" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5a-Do-EQf">
+                                <rect key="frame" x="23" y="552" width="329" height="40"/>
                                 <color key="backgroundColor" red="0.090196078430000007" green="0.49803921569999998" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dof-tj-FF6"/>
@@ -699,22 +699,38 @@
                                     <action selector="submitButtonTapped:" destination="VK8-l8-VqM" eventType="touchUpInside" id="dCK-SO-mFi"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVj-lg-74o" customClass="HCSStarRatingView">
+                                <rect key="frame" x="68" y="227" width="238" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uHe-7U-nxj" firstAttribute="centerX" secondItem="HS2-D1-SPx" secondAttribute="centerX" id="E12-yJ-40A"/>
                             <constraint firstItem="n5a-Do-EQf" firstAttribute="centerX" secondItem="Wf4-SV-Tdu" secondAttribute="centerX" id="EKo-Vq-r7q"/>
-                            <constraint firstItem="Wf4-SV-Tdu" firstAttribute="top" secondItem="p3a-7k-G6Z" secondAttribute="bottom" constant="8" symbolic="YES" id="IBF-Qa-tbz"/>
+                            <constraint firstItem="Wf4-SV-Tdu" firstAttribute="top" secondItem="p3a-7k-G6Z" secondAttribute="bottom" constant="1" id="IBF-Qa-tbz"/>
                             <constraint firstItem="p3a-7k-G6Z" firstAttribute="leading" secondItem="rpW-jc-mKa" secondAttribute="leading" id="Q34-ZG-NcB"/>
                             <constraint firstItem="rpW-jc-mKa" firstAttribute="top" secondItem="uHe-7U-nxj" secondAttribute="bottom" constant="1" id="TpB-qA-WFR"/>
-                            <constraint firstItem="ycl-Oo-Dfc" firstAttribute="top" secondItem="Wf4-SV-Tdu" secondAttribute="bottom" constant="44" id="Ts5-hF-kf3"/>
+                            <constraint firstItem="ycl-Oo-Dfc" firstAttribute="top" secondItem="Wf4-SV-Tdu" secondAttribute="bottom" constant="74" id="Ts5-hF-kf3"/>
                             <constraint firstItem="uHe-7U-nxj" firstAttribute="leading" secondItem="gP2-5y-mpU" secondAttribute="leadingMargin" constant="4" id="UN8-Om-WEd"/>
                             <constraint firstItem="HS2-D1-SPx" firstAttribute="centerX" secondItem="gP2-5y-mpU" secondAttribute="centerX" id="Vei-mK-L93"/>
                             <constraint firstItem="uHe-7U-nxj" firstAttribute="leading" secondItem="rpW-jc-mKa" secondAttribute="leading" id="agr-Kw-tft"/>
                             <constraint firstItem="p3a-7k-G6Z" firstAttribute="leading" secondItem="Wf4-SV-Tdu" secondAttribute="leading" id="gNC-oW-Hrk"/>
-                            <constraint firstItem="ycl-Oo-Dfc" firstAttribute="top" secondItem="n5a-Do-EQf" secondAttribute="bottom" constant="8" symbolic="YES" id="gzc-az-rdZ"/>
+                            <constraint firstItem="ycl-Oo-Dfc" firstAttribute="top" secondItem="n5a-Do-EQf" secondAttribute="bottom" constant="26" id="gzc-az-rdZ"/>
                             <constraint firstItem="HS2-D1-SPx" firstAttribute="top" secondItem="nzE-XV-uCl" secondAttribute="bottom" constant="8" symbolic="YES" id="hBH-E4-hX4"/>
-                            <constraint firstItem="n5a-Do-EQf" firstAttribute="leading" secondItem="gP2-5y-mpU" secondAttribute="leadingMargin" constant="7" id="jm5-Uf-hYI"/>
+                            <constraint firstItem="n5a-Do-EQf" firstAttribute="leading" secondItem="gP2-5y-mpU" secondAttribute="leadingMargin" constant="3" id="jm5-Uf-hYI"/>
                             <constraint firstItem="Wf4-SV-Tdu" firstAttribute="trailing" secondItem="rpW-jc-mKa" secondAttribute="trailing" id="pPg-YL-GDi"/>
                             <constraint firstItem="uHe-7U-nxj" firstAttribute="top" secondItem="HS2-D1-SPx" secondAttribute="bottom" constant="8" symbolic="YES" id="rpP-Xm-YEQ"/>
                             <constraint firstItem="uHe-7U-nxj" firstAttribute="trailing" secondItem="rpW-jc-mKa" secondAttribute="trailing" id="vr0-6i-JLi"/>
