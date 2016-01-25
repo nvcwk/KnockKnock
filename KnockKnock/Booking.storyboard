@@ -710,7 +710,7 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="NO"/>
                                 </userDefinedRuntimeAttributes>
@@ -738,6 +738,7 @@
                     </view>
                     <connections>
                         <outlet property="reviewTitle" destination="uHe-7U-nxj" id="qHJ-d6-ivG"/>
+                        <outlet property="stars" destination="dVj-lg-74o" id="AXH-J2-Gvb"/>
                         <outlet property="textView" destination="Wf4-SV-Tdu" id="5cH-bg-Z33"/>
                     </connections>
                 </viewController>

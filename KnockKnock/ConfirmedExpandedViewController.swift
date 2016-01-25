@@ -112,6 +112,7 @@ class ConfirmedExpandedViewController: UIViewController {
                 reviewButton.hidden = false
             }else{
                 reviewButton.enabled = false
+                reviewButton.hidden = false
                 reviewButton.setTitle("Tour Reviewed", forState: UIControlState.Normal)
             }
         }

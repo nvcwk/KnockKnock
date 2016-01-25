@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import SwiftSpinner
 import Parse
 import autoAutoLayout
+import HCSStarRatingView
+
 class RatingViewController: UIViewController {
 
     var confirmedObject : PFObject!
+    var clientRating = 0.0
+    var hostRating = 0.0
+    var clientRatingCount = 1.0
+    var hostRatingCount = 1.0
     
+    
+    @IBOutlet weak var stars: HCSStarRatingView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var reviewTitle: UILabel!
        override func viewDidLoad() {
@@ -52,6 +61,60 @@ class RatingViewController: UIViewController {
             alert.addAction(okayButtton)
             
             presentViewController(alert, animated: true, completion: nil)
+        }else{
+            var rating = stars.value
+            var ToBeUpdated = PFObject(className: "ToBeUpdated")
+            let clientObject = confirmedObject["Requester"] as! PFObject
+            let hostObject = confirmedObject["Host"] as! PFObject
+            
+            if (hostObject == PFUser.currentUser()){
+                
+                if( clientObject["rating"] != nil){
+                    self.clientRating = clientObject["rating"] as! Double
+                }
+                if( clientObject["ratingCount"] != nil){
+                    self.clientRatingCount = clientObject["ratingCount"] as! Double
+                    self.clientRatingCount = self.clientRatingCount + 1
+                }
+                self.clientRating = (self.clientRating + Double(rating))
+            }else{
+                if( hostObject["rating"] != nil){
+                    hostRating = hostObject["rating"] as! Double
+                }
+                if( hostObject["ratingCount"] != nil){
+                    self.hostRatingCount = hostObject["ratingCount"] as! Double
+                }
+                self.hostRatingCount = self.hostRatingCount + 1
+                self.hostRating = (self.hostRating + Double(rating))
+            }
+                ToBeUpdated["RatingCount"] = self.clientRatingCount
+                ToBeUpdated["Rating"] =  self.clientRating
+                confirmedObject["Reviewed"] = true
+                confirmedObject.saveInBackground()
+                SwiftSpinner.show("Submitting...")
+                ToBeUpdated.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                    SwiftSpinner.hide()
+                    
+                    if (success) {
+                        KnockKnockUtils.okAlert(self, title: "Submitted!", message: "Thank You", handle: { UIAlertAction in
+                            NSNotificationCenter.defaultCenter().postNotificationName("setupProfileTxtFields", object: nil)
+                            
+                            self.navigationController?.popToRootViewControllerAnimated(false)
+                            
+                            
+                            }
+                        )
+                    } else {
+                        KnockKnockUtils.okAlert(self, title: "Error!", message: (error?.userInfo["error"])! as! String, handle: nil)
+                    }
+                }
+                
+                
+            
+
+            
+            var booking = PFObject(className: "Reviews")
+
         }
         
     }
