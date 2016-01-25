@@ -712,7 +712,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
