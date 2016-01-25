@@ -74,6 +74,7 @@
 		F60DD3711C48B06D00B79F54 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F60DD3701C48B06D00B79F54 /* cross.png */; };
 		F60DD3731C48F7CA00B79F54 /* PendingExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */; };
 		F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */; };
+		F664382B1C560F0A0013C25F /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F664382A1C560F0A0013C25F /* RatingViewController.swift */; };
 		F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */; };
 		F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */; };
 		F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */; };
@@ -177,6 +178,7 @@
 		F60DD3701C48B06D00B79F54 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = CountryPicker.bundle/cross.png; sourceTree = "<group>"; };
 		F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingExpandedViewController.swift; sourceTree = "<group>"; };
 		F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedExpandedViewController.swift; sourceTree = "<group>"; };
+		F664382A1C560F0A0013C25F /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTableViewCell.swift; sourceTree = "<group>"; };
 		F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendingTableViewCell.xib; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		E11AC2081C16244900479927 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F66438291C560EE30013C25F /* Rating */,
 				E12396AA1C53270800FB4760 /* Profile */,
 				E164E68D1C494E4F00AEC87C /* MarketPlaceV2 */,
 				F6DC5CAB1C47683B00BA6776 /* MyBooking */,
@@ -449,6 +452,14 @@
 				E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		F66438291C560EE30013C25F /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				F664382A1C560F0A0013C25F /* RatingViewController.swift */,
+			);
+			name = Rating;
 			sourceTree = "<group>";
 		};
 		F6DC5CAB1C47683B00BA6776 /* MyBooking */ = {
@@ -711,6 +722,7 @@
 				F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
 				E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */,
+				F664382B1C560F0A0013C25F /* RatingViewController.swift in Sources */,
 				E12396AD1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift in Sources */,
 				F6DC5CC11C476A5B00BA6776 /* ConfirmedTableViewController.swift in Sources */,
 				E15BF7801C3FFB6A009A3C31 /* PubDetailsEditViewController.swift in Sources */,
