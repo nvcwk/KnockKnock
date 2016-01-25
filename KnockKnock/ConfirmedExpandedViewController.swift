@@ -66,6 +66,11 @@ class ConfirmedExpandedViewController: UIViewController {
         value.text = String(confirmedObject["Total"])
         status.text = caseStatus
         
+        //default to hide fields and button
+        reviewButton.hidden = true
+        remarksLabel.text = ""
+        remarks.text = ""
+        
         
         if (hostObject == PFUser.currentUser()){
             requesterLabel.text = "Requested By: "
@@ -106,7 +111,6 @@ class ConfirmedExpandedViewController: UIViewController {
                 reviewButton.enabled = false
                 reviewButton.hidden = false
             }
-            
         }
         
         
@@ -198,6 +202,14 @@ class ConfirmedExpandedViewController: UIViewController {
         
         
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var DestViewController : RatingViewController = segue.destinationViewController as! RatingViewController
+        DestViewController.confirmedObject = confirmedObject as! PFObject
+    }
+    
+    
+    
     
     
     
