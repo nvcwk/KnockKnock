@@ -15,10 +15,9 @@ import HCSStarRatingView
 class RatingViewController: UIViewController {
 
     var confirmedObject : PFObject!
-    var clientRating = 0.0
-    var hostRating = 0.0
-    var clientRatingCount = 1.0
-    var hostRatingCount = 1.0
+    var totalRating = 0.0
+    var ratingCount = 1.0
+
     
     
     @IBOutlet weak var stars: HCSStarRatingView!
@@ -64,33 +63,43 @@ class RatingViewController: UIViewController {
         }else{
             var rating = stars.value
             var ToBeUpdated = PFObject(className: "ToBeUpdated")
+            var review = PFObject(className: "Review")
             let clientObject = confirmedObject["Requester"] as! PFObject
             let hostObject = confirmedObject["Host"] as! PFObject
+            var userToUpdate: PFObject
             
             if (hostObject == PFUser.currentUser()){
                 
                 if( clientObject["rating"] != nil){
-                    self.clientRating = clientObject["rating"] as! Double
+                    self.totalRating = clientObject["rating"] as! Double
                 }
+                self.totalRating = (self.totalRating + Double(rating))
                 if( clientObject["ratingCount"] != nil){
-                    self.clientRatingCount = clientObject["ratingCount"] as! Double
-                    self.clientRatingCount = self.clientRatingCount + 1
+                    self.ratingCount = clientObject["ratingCount"] as! Double
+                    self.ratingCount = self.ratingCount + 1
                 }
-                self.clientRating = (self.clientRating + Double(rating))
+                userToUpdate = clientObject
             }else{
                 if( hostObject["rating"] != nil){
-                    hostRating = hostObject["rating"] as! Double
+                    totalRating = hostObject["rating"] as! Double
                 }
+                self.totalRating = (self.totalRating + Double(rating))
                 if( hostObject["ratingCount"] != nil){
-                    self.hostRatingCount = hostObject["ratingCount"] as! Double
+                    self.ratingCount = hostObject["ratingCount"] as! Double
                 }
-                self.hostRatingCount = self.hostRatingCount + 1
-                self.hostRating = (self.hostRating + Double(rating))
+                self.ratingCount = self.ratingCount + 1
+                userToUpdate = hostObject
             }
-                ToBeUpdated["RatingCount"] = self.clientRatingCount
-                ToBeUpdated["Rating"] =  self.clientRating
+                ToBeUpdated["RatingCount"] = self.ratingCount
+                ToBeUpdated["Rating"] =  self.totalRating
+                ToBeUpdated["User"] = userToUpdate
                 confirmedObject["Reviewed"] = true
                 confirmedObject.saveInBackground()
+                review["Host"] = hostObject
+                review["Client"] = clientObject
+                review["Itinerary"] = confirmedObject["Itinerary"] as! PFObject
+                review["Review"] = textView.text
+                review.saveInBackground()
                 SwiftSpinner.show("Submitting...")
                 ToBeUpdated.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                     SwiftSpinner.hide()
