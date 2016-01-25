@@ -7,9 +7,12 @@
 //
 
 import UIKit
-
+import Parse
+import autoAutoLayout
 class RatingViewController: UIViewController {
 
+    var confirmedObject : PFObject!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
