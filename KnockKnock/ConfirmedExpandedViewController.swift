@@ -24,6 +24,7 @@ class ConfirmedExpandedViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var remarks: UILabel!
     @IBOutlet weak var remarksLabel: UILabel!
+    @IBOutlet weak var reviewButton: UIButton!
     var confirmedObject : PFObject!
     
     @IBOutlet weak var image: UIImageView!
@@ -99,6 +100,13 @@ class ConfirmedExpandedViewController: UIViewController {
             cancelButton.setTitle("", forState: UIControlState.Normal)
             cancelButton.enabled = false
             cancelButton.hidden = true
+            
+            if (confirmedObject["Reviewed"] == nil || confirmedObject["Reviewed"] as! Bool == false){
+                
+                reviewButton.enabled = false
+                reviewButton.hidden = false
+            }
+            
         }
         
         
