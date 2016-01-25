@@ -108,8 +108,11 @@ class ConfirmedExpandedViewController: UIViewController {
             
             if (confirmedObject["Reviewed"] == nil || confirmedObject["Reviewed"] as! Bool == false){
                 
-                reviewButton.enabled = false
+                reviewButton.enabled = true
                 reviewButton.hidden = false
+            }else{
+                reviewButton.enabled = false
+                reviewButton.setTitle("Tour Reviewed", forState: UIControlState.Normal)
             }
         }
         
@@ -202,10 +205,10 @@ class ConfirmedExpandedViewController: UIViewController {
         
         
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
         var DestViewController : RatingViewController = segue.destinationViewController as! RatingViewController
-        DestViewController.confirmedObject = confirmedObject as! PFObject
+        DestViewController.confirmedObject = confirmedObject as PFObject
     }
     
     
