@@ -117,6 +117,44 @@ class KnockKnockUtils {
         let trimmed = text.stringByTrimmingCharactersInSet(spaceSet)
         
         return trimmed
+        
     }
     
+    //update user's rating
+    static func updateUserRating(user: PFUser) {
+        var totalRating = 0.0
+        var ratingCount = 0.0
+        
+        if( user["rating"] != nil){
+            totalRating = user["rating"] as! Double
+        }
+        
+        if( user["ratingCount"] != nil){
+            ratingCount = user["ratingCount"] as! Double
+        }
+        
+        let query = PFQuery(className: "ToBeUpdated")
+        query.whereKey("User", equalTo: user)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil{
+                if let objects = objects as [PFObject]!{
+                    for object in objects {
+                        var newRating = object["Rating"] as! Double
+                        totalRating = totalRating + newRating
+                        ratingCount = ratingCount + 1
+                        object.deleteInBackground()
+                    }
+                }
+                user["rating"] = totalRating
+                user["ratingCount"] = ratingCount
+                user.saveInBackground()
+            }else{
+                //log details of the failure
+                print("error: \(error!)  \(error!.userInfo)")
+            }
+        }
+        
+    }
 }
