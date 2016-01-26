@@ -399,6 +399,7 @@
 				E164E68E1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift */,
 				E1922AF21C4966F00078C401 /* MarketPlaceV2ViewController.swift */,
 				E1922AF41C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift */,
+				E117372E1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift */,
 				7020E9681C5767590026931F /* MarketPlaceDetailsViewController_V2.swift */,
 			);
 			name = MarketPlaceV2;
@@ -760,6 +761,7 @@
 				706B0FD71C4CBC2F0078CD38 /* MyCustomTextField.swift in Sources */,
 				E1B95E461C36C14600F85B8F /* PubDetailsViewController.swift in Sources */,
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
+				F6858DB01C573B0400FAB184 /* ReviewsTableCell.swift in Sources */,
 				70C807381C57E53E0039CCF1 /* TimelineView.swift in Sources */,
 				E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */,
 				E117372F1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift in Sources */,
