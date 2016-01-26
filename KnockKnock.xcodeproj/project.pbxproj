@@ -21,6 +21,7 @@
 		E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11462011C1170B900983BC3 /* LaunchScreen.storyboard */; };
 		E114620E1C1170BA00983BC3 /* KnockKnockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114620D1C1170BA00983BC3 /* KnockKnockTests.swift */; };
 		E11462191C1170BA00983BC3 /* KnockKnockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11462181C1170BA00983BC3 /* KnockKnockUITests.swift */; };
+		E117372B1C57E34900E193E4 /* MarketPlaceV3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E117372A1C57E34900E193E4 /* MarketPlaceV3.storyboard */; };
 		E11AC1FF1C16185400479927 /* Credential.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11AC1FE1C16185400479927 /* Credential.storyboard */; };
 		E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2001C1618A100479927 /* LoginViewController.swift */; };
 		E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC20B1C16CD3200479927 /* HomeViewController.swift */; };
@@ -127,6 +128,7 @@
 		E11462141C1170BA00983BC3 /* KnockKnockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnockKnockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11462181C1170BA00983BC3 /* KnockKnockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnockKnockUITests.swift; sourceTree = "<group>"; };
 		E114621A1C1170BA00983BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E117372A1C57E34900E193E4 /* MarketPlaceV3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MarketPlaceV3.storyboard; sourceTree = "<group>"; };
 		E11AC1FE1C16185400479927 /* Credential.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Credential.storyboard; sourceTree = "<group>"; };
 		E11AC2001C1618A100479927 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E11AC20B1C16CD3200479927 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				E16B357A1C1CC9D4003897EF /* Profile.storyboard */,
 				E11AC1FE1C16185400479927 /* Credential.storyboard */,
 				E11462011C1170B900983BC3 /* LaunchScreen.storyboard */,
+				E117372A1C57E34900E193E4 /* MarketPlaceV3.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				E11462031C1170B900983BC3 /* LaunchScreen.storyboard in Resources */,
 				E11462001C1170B900983BC3 /* Assets.xcassets in Resources */,
 				F60DD3711C48B06D00B79F54 /* cross.png in Resources */,
+				E117372B1C57E34900E193E4 /* MarketPlaceV3.storyboard in Resources */,
 				E11461FE1C1170B900983BC3 /* Main.storyboard in Resources */,
 				E110D1DA1C4684F00074CF48 /* Booking.storyboard in Resources */,
 				E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */,
