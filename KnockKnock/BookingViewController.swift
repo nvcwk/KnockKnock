@@ -100,6 +100,11 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                 return UIImage(named: "cross_2")
             }
         }
+        if (KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date)) < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate()))){
+            if(KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date)) >= KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(StartDate))){
+            return UIImage(named: "cross_2")
+            }
+        }
         return nil
     }
     
@@ -112,6 +117,9 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
                 return false
             }
+        }
+        if (KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date)) < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate()))){
+            return false
         }
         return true
     }

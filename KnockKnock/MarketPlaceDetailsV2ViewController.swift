@@ -27,6 +27,7 @@ class MarketPlaceDetailsV2ViewController: UIViewController {
     var pubObj = PFObject(className: "MarketPlace")
     var itiObj = PFObject(className: "Itinerary")
     var hostObj = PFUser()
+    var identifier = ""
     
     var activities = NSArray()
     
