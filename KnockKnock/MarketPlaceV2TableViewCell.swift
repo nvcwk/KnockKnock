@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import ParseUI
+import HCSStarRatingView
 
 class MarketPlaceV2TableViewCell: PFTableViewCell {
 
@@ -17,6 +18,8 @@ class MarketPlaceV2TableViewCell: PFTableViewCell {
     @IBOutlet weak var image_background: PFImageView!
     @IBOutlet weak var startDate: UILabel!
     @IBOutlet weak var endDate: UILabel!
+    @IBOutlet weak var stars: HCSStarRatingView!
+    
     //MarketPlaceV2TableViewCell.postImageView.contentMode = UIViewContentMode.ScaleAspectFill
     
     override func awakeFromNib() {

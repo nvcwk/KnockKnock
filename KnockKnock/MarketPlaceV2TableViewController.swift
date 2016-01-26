@@ -79,11 +79,19 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             cell.image_background.file = image
             cell.image_background.loadInBackground()
             
-            //cell.image_background.contentMode = UIViewContentMode.ScaleToFill
             
-//            cell.image_background.frame = CGRectMake(0, 0, 66, 66)
-            
-            //self.tableView.rowHeight = UITableViewAutomaticDimension;
+           //for stars
+            let hostObj = itiObj["host"] as! PFObject
+            var rating = 0.0
+            var ratingCount = 1.0
+            if (hostObj["rating"] != nil){
+                rating = hostObj["rating"] as! Double
+            }
+            if (hostObj["ratingCount"] != nil){
+                ratingCount = hostObj["ratingCount"] as! Double
+            }
+            var stars = rating/ratingCount
+            cell.stars.value = CGFloat(stars)
             
         }
         
