@@ -56,11 +56,13 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
             var insert_into : TimeFrame
             let activity = activities[i] as! PFObject as PFObject!
             
-            let day = activity["day"] as! Int
-            var day_string = "Day" + String(day)
             let title = activity["title"] as! String
+            let day = activity["day"] as! Int
+            var day_string = "Day " + String(day) + " - " + title
             
-            insert_into = TimeFrame(text: title, date: day_string, image: nil)
+            let summary = activity["description"] as! String
+            
+            insert_into = TimeFrame(text: summary, date: day_string, image: nil)
             
             frames.append(insert_into)
         }
