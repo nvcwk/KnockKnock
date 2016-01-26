@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mzm-qA-zp6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mzm-qA-zp6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -834,7 +834,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="0.0" id="KX4-Y3-4Lx">
-                                <rect key="frame" x="0.0" y="28" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KX4-Y3-4Lx" id="GF4-Qr-Jj8">
                                     <rect key="frame" x="0.0" y="-0.5" width="375" height="0.5"/>
@@ -842,10 +842,10 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewsTableCell" rowHeight="275" id="nEO-N4-EBl" customClass="ReviewsTableCell" customModule="KnockKnock" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="275"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="275"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nEO-N4-EBl" id="T0c-VB-lac">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="reviwer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqq-LK-jpT">
@@ -927,6 +927,6 @@
         <image name="sort" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aAW-y1-MRC"/>
+        <segue reference="xpS-Cj-HCW"/>
     </inferredMetricsTieBreakers>
 </document>
