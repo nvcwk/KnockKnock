@@ -259,9 +259,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="MNz-g5-wzJ"/>
                                             <exclude reference="LkB-r4-UgN"/>
                                             <exclude reference="M0W-LE-zJg"/>
+                                            <exclude reference="MNz-g5-wzJ"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

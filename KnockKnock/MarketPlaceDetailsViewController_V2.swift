@@ -35,6 +35,7 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
     var activities = NSArray()
     var timeLine : TimelineView!
     
+    var identifier = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,21 +138,41 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
         self.tableView.layoutIfNeeded()
     }
     
+    @IBAction func reviewButtonTapped(sender: AnyObject) {
+        //self.performSegueWithIdentifier("ReviewView", sender: self)
+        self.identifier = "showReviewView"
+        
+    }
+    @IBAction func bookButtomTapped(sender: AnyObject) {
+        //self.performSegueWithIdentifier("BookingView", sender: self)
+        self.identifier = "showBookingView"
+    }
+    
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var DestViewController : BookingViewController = segue.destinationViewController as! BookingViewController
-        if (pubObj["bookedDate"] != nil){
-            var bookedDatesArray = pubObj["bookedDate"] as! [NSDate]
-            DestViewController.bookedDatesArray = bookedDatesArray
+        if segue.identifier == "showReviewView" {
+            var DestViewController : ReviewsTableViewController = segue.destinationViewController as! ReviewsTableViewController
+            
+            DestViewController.itineraryObject = itiObj
+            
+        } else if segue.identifier == "showBookingView" {
+            
+            var DestViewController : BookingViewController = segue.destinationViewController as! BookingViewController
+            if (pubObj["bookedDate"] != nil){
+                var bookedDatesArray = pubObj["bookedDate"] as! [NSDate]
+                DestViewController.bookedDatesArray = bookedDatesArray
+                
+            }
+            DestViewController.StartDate = pubObj["startAvailability"] as! NSDate
+            DestViewController.EndDate = pubObj["lastAvailability"] as! NSDate
+            DestViewController.price = pubObj["price"] as! Int
+            DestViewController.host = hostObj
+            DestViewController.marketplace = pubObj
+            DestViewController.itinerary = itiObj
+            DestViewController.numOfDays = itiObj["duration"] as! Int
             
         }
-        DestViewController.StartDate = pubObj["startAvailability"] as! NSDate
-        DestViewController.EndDate = pubObj["lastAvailability"] as! NSDate
-        DestViewController.price = pubObj["price"] as! Int
-        DestViewController.host = hostObj
-        DestViewController.marketplace = pubObj
-        DestViewController.itinerary = itiObj
-        DestViewController.numOfDays = itiObj["duration"] as! Int
     }
     
 }
