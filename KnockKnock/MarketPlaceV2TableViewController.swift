@@ -79,11 +79,38 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             cell.image_background.file = image
             cell.image_background.loadInBackground()
             
-            //cell.image_background.contentMode = UIViewContentMode.ScaleToFill
             
-//            cell.image_background.frame = CGRectMake(0, 0, 66, 66)
+           //for stars
+            let hostObj = itiObj["host"] as! PFObject
+            var rating = 0.0
+            var ratingCount = 1.0
             
-            //self.tableView.rowHeight = UITableViewAutomaticDimension;
+            let query = PFQuery(className: "Rating")
+            query.whereKey("User", equalTo: hostObj)
+            query.findObjectsInBackgroundWithBlock {
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                if error == nil{
+                    if let objects = objects as [PFObject]!{
+                        for object in objects {
+                            if (object["Rating"] != nil){
+                                rating = object["Rating"] as! Double
+                            }
+                            print("rating shd be \(rating)")
+                            if (object["RatingCount"] != nil){
+                                ratingCount = object["RatingCount"] as! Double
+                            }
+                            print("ratingCount shd be \(ratingCount)")
+                            var stars = rating/ratingCount
+                            cell.stars.value = CGFloat(stars)
+                        }
+                    }
+                }else{
+                    //log details of the failure
+                    print("error: \(error!)  \(error!.userInfo)")
+                }
+            }
+            
             
         }
         

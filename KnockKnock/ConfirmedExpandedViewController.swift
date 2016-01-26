@@ -24,6 +24,7 @@ class ConfirmedExpandedViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var remarks: UILabel!
     @IBOutlet weak var remarksLabel: UILabel!
+    @IBOutlet weak var reviewButton: UIButton!
     var confirmedObject : PFObject!
     
     @IBOutlet weak var image: UIImageView!
@@ -65,6 +66,11 @@ class ConfirmedExpandedViewController: UIViewController {
         value.text = String(confirmedObject["Total"])
         status.text = caseStatus
         
+        //default to hide fields and button
+        reviewButton.hidden = true
+        remarksLabel.text = ""
+        remarks.text = ""
+        
         
         if (hostObject == PFUser.currentUser()){
             requesterLabel.text = "Requested By: "
@@ -99,6 +105,29 @@ class ConfirmedExpandedViewController: UIViewController {
             cancelButton.setTitle("", forState: UIControlState.Normal)
             cancelButton.enabled = false
             cancelButton.hidden = true
+            
+            if(hostObject == PFUser.currentUser()){
+                if (confirmedObject["HostReviewed"] == nil || confirmedObject["HostReviewed"] as! Bool == false){
+                    
+                    reviewButton.enabled = true
+                    reviewButton.hidden = false
+                }else{
+                    reviewButton.enabled = false
+                    reviewButton.hidden = false
+                    reviewButton.setTitle("Tour Reviewed", forState: UIControlState.Normal)
+                }
+            }else{
+                if (confirmedObject["ClientReviewed"] == nil || confirmedObject["ClientReviewed"] as! Bool == false){
+                    
+                    reviewButton.enabled = true
+                    reviewButton.hidden = false
+                }else{
+                    reviewButton.enabled = false
+                    reviewButton.hidden = false
+                    reviewButton.setTitle("Tour Reviewed", forState: UIControlState.Normal)
+                }
+            }
+            
         }
         
         
@@ -190,6 +219,14 @@ class ConfirmedExpandedViewController: UIViewController {
         
         
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
+        var DestViewController : RatingViewController = segue.destinationViewController as! RatingViewController
+        DestViewController.confirmedObject = confirmedObject as PFObject
+    }
+    
+    
+    
     
     
     
