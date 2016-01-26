@@ -69,53 +69,53 @@ class MarketPlaceDetailsV2ViewController: UIViewController {
         image_image.file = image
         image_image.loadInBackground()
         
-        table_activity.delegate = self
-        table_activity.dataSource = self
+//        table_activity.delegate = self
+//        table_activity.dataSource = self
         
         self.img_host.layer.cornerRadius = self.img_host.frame.size.width/2
         self.img_host.clipsToBounds = true
         
-//        self.title = itiObj["title"] as! String
+        self.title = itiObj["title"] as! String
     }
     
 
 }
 
-extension MarketPlaceDetailsV2ViewController : UITableViewDelegate, UITableViewDataSource {
-    
-    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activities.count
-    }
-    
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("activityCell", forIndexPath: indexPath) as! ActivityDetailsTableViewCell
-        
-        let activity = activities[indexPath.row] as! PFObject
-        
-        let day = activity["day"] as! Int
-        let title = activity["title"] as! String
-        
-        cell.lb_day.text = "Day " + String(day) + " - " + title
-        cell.tv_details.text = activity["description"] as! String
-        
-        
-        return cell
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var DestViewController : BookingViewController = segue.destinationViewController as! BookingViewController
-        if (pubObj["bookedDate"] != nil){
-            var bookedDatesArray = pubObj["bookedDate"] as! [NSDate]
-            DestViewController.bookedDatesArray = bookedDatesArray
-
-        }
-        DestViewController.StartDate = pubObj["startAvailability"] as! NSDate
-        DestViewController.EndDate = pubObj["lastAvailability"] as! NSDate
-        DestViewController.price = pubObj["price"] as! Int
-        DestViewController.host = hostObj
-        DestViewController.marketplace = pubObj
-        DestViewController.itinerary = itiObj
-        DestViewController.numOfDays = itiObj["duration"] as! Int
-    }
-
-}
+//extension MarketPlaceDetailsV2ViewController : UITableViewDelegate, UITableViewDataSource {
+//    
+//    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return activities.count
+//    }
+//    
+//    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("activityCell", forIndexPath: indexPath) as! ActivityDetailsTableViewCell
+//        
+//        let activity = activities[indexPath.row] as! PFObject
+//        
+//        let day = activity["day"] as! Int
+//        let title = activity["title"] as! String
+//        
+//        cell.lb_day.text = "Day " + String(day) + " - " + title
+//        cell.tv_details.text = activity["description"] as! String
+//        
+//        
+//        return cell
+//    }
+//    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        var DestViewController : BookingViewController = segue.destinationViewController as! BookingViewController
+//        if (pubObj["bookedDate"] != nil){
+//            var bookedDatesArray = pubObj["bookedDate"] as! [NSDate]
+//            DestViewController.bookedDatesArray = bookedDatesArray
+//
+//        }
+//        DestViewController.StartDate = pubObj["startAvailability"] as! NSDate
+//        DestViewController.EndDate = pubObj["lastAvailability"] as! NSDate
+//        DestViewController.price = pubObj["price"] as! Int
+//        DestViewController.host = hostObj
+//        DestViewController.marketplace = pubObj
+//        DestViewController.itinerary = itiObj
+//        DestViewController.numOfDays = itiObj["duration"] as! Int
+//    }
+//
+//}

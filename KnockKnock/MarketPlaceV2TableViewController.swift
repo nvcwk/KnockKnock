@@ -99,7 +99,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             if let cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPathForCell(cell)
     
-                let controller = segue.destinationViewController as! MarketPlaceDetailsV2ViewController
+                let controller = segue.destinationViewController as! MarketPlaceDetailsViewController_V2
                 
                 let pubObj = objectAtIndexPath(indexPath)
                 
