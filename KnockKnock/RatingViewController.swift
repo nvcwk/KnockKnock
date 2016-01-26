@@ -69,28 +69,11 @@ class RatingViewController: UIViewController {
             var userToUpdate: PFObject
             
             if (hostObject == PFUser.currentUser()){
-                
-               /* if( clientObject["rating"] != nil){
-                    self.totalRating = clientObject["rating"] as! Double
-                }
-                self.totalRating = (self.totalRating + Double(rating))
-                if( clientObject["ratingCount"] != nil){
-                    self.ratingCount = clientObject["ratingCount"] as! Double
-                    self.ratingCount = self.ratingCount + 1
-                }
-                */
                 userToUpdate = clientObject
+                confirmedObject["HostReviewed"] = true
             }else{
-               /* if( hostObject["rating"] != nil){
-                    totalRating = hostObject["rating"] as! Double
-                }
-                self.totalRating = (self.totalRating + Double(rating))
-                if( hostObject["ratingCount"] != nil){
-                    self.ratingCount = hostObject["ratingCount"] as! Double
-                }
-                self.ratingCount = self.ratingCount + 1
-                */
                 userToUpdate = hostObject
+                confirmedObject["ClientReviewed"] = true
             }
                 ToBeUpdated["Rating"] =  rating
                 ToBeUpdated["User"] = userToUpdate
