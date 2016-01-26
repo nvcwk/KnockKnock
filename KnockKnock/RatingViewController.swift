@@ -70,7 +70,7 @@ class RatingViewController: UIViewController {
             
             if (hostObject == PFUser.currentUser()){
                 
-                if( clientObject["rating"] != nil){
+               /* if( clientObject["rating"] != nil){
                     self.totalRating = clientObject["rating"] as! Double
                 }
                 self.totalRating = (self.totalRating + Double(rating))
@@ -78,9 +78,10 @@ class RatingViewController: UIViewController {
                     self.ratingCount = clientObject["ratingCount"] as! Double
                     self.ratingCount = self.ratingCount + 1
                 }
+                */
                 userToUpdate = clientObject
             }else{
-                if( hostObject["rating"] != nil){
+               /* if( hostObject["rating"] != nil){
                     totalRating = hostObject["rating"] as! Double
                 }
                 self.totalRating = (self.totalRating + Double(rating))
@@ -88,10 +89,10 @@ class RatingViewController: UIViewController {
                     self.ratingCount = hostObject["ratingCount"] as! Double
                 }
                 self.ratingCount = self.ratingCount + 1
+                */
                 userToUpdate = hostObject
             }
-                ToBeUpdated["RatingCount"] = self.ratingCount
-                ToBeUpdated["Rating"] =  self.totalRating
+                ToBeUpdated["Rating"] =  rating
                 ToBeUpdated["User"] = userToUpdate
                 confirmedObject["Reviewed"] = true
                 confirmedObject.saveInBackground()

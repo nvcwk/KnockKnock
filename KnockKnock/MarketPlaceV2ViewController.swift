@@ -10,6 +10,7 @@ import UIKit
 import QIULaunchAnimation
 import autoAutoLayout
 import Popover
+import Parse
 
 class MarketPlaceV2ViewController: UIViewController {
     
@@ -38,7 +39,8 @@ class MarketPlaceV2ViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        KnockKnockUtils.updateUserRating(PFUser.currentUser()!)
+
                 self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
         ParseUtils.checkLogin(self)
