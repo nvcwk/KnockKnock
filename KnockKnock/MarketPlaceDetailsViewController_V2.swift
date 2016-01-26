@@ -13,7 +13,9 @@ import autoAutoLayout
 
 class MarketPlaceDetailsViewController_V2: UITableViewController {
     
+    //@IBOutlet weak var detailsCell: UITableViewCell!
 
+    @IBOutlet weak var summary_Cell: UITableViewCell!
     @IBOutlet weak var con_timeline: UIView!
     @IBOutlet weak var lb_title: UILabel!
     @IBOutlet weak var lb_price: UILabel!
@@ -32,11 +34,10 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
     
     var activities = NSArray()
     var timeLine : TimelineView!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
         
@@ -53,7 +54,6 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
         
         for var i = 0; i < activities.count; ++i {
             var insert_into : TimeFrame
-            print(i)
             let activity = activities[i] as! PFObject as PFObject!
             
             let day = activity["day"] as! Int
@@ -105,11 +105,36 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
         self.img_host.layer.cornerRadius = self.img_host.frame.size.width/2
         self.img_host.clipsToBounds = true
         
-        self.title = itiObj["title"] as! String
+        
+        self.tableView.estimatedRowHeight = 10
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        let fixedWidth = tour_summary.frame.size.width
+        tour_summary.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        let newSize = tour_summary.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        var newFrame = tour_summary.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        tour_summary.frame = newFrame;
+        
+        
+        tour_summary.scrollEnabled = false;
+        
+        
+        let fixedWidth_time = timeLine.frame.size.width
+        timeLine.sizeThatFits(CGSize(width: fixedWidth_time, height: CGFloat.max))
+        let newSize_time = timeLine.sizeThatFits(CGSize(width: fixedWidth_time, height: CGFloat.max))
+        var newFrame_time = timeLine.frame
+        newFrame_time.size = CGSize(width: max(newSize_time.width, fixedWidth_time), height: newSize_time.height)
+        con_timeline.frame = newFrame_time;
 
+        
+        self.title = itiObj["title"] as! String
+        
+        
+        self.tableView.setNeedsLayout()
+        self.tableView.layoutIfNeeded()
     }
     
-
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var DestViewController : BookingViewController = segue.destinationViewController as! BookingViewController
