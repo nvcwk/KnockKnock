@@ -22,6 +22,7 @@
 		E114620E1C1170BA00983BC3 /* KnockKnockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114620D1C1170BA00983BC3 /* KnockKnockTests.swift */; };
 		E11462191C1170BA00983BC3 /* KnockKnockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11462181C1170BA00983BC3 /* KnockKnockUITests.swift */; };
 		E117372B1C57E34900E193E4 /* MarketPlaceV3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E117372A1C57E34900E193E4 /* MarketPlaceV3.storyboard */; };
+		E117372F1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E117372E1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift */; };
 		E11AC1FF1C16185400479927 /* Credential.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11AC1FE1C16185400479927 /* Credential.storyboard */; };
 		E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2001C1618A100479927 /* LoginViewController.swift */; };
 		E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC20B1C16CD3200479927 /* HomeViewController.swift */; };
@@ -129,6 +130,7 @@
 		E11462181C1170BA00983BC3 /* KnockKnockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnockKnockUITests.swift; sourceTree = "<group>"; };
 		E114621A1C1170BA00983BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E117372A1C57E34900E193E4 /* MarketPlaceV3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MarketPlaceV3.storyboard; sourceTree = "<group>"; };
+		E117372E1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceDetailsBackup.swift; sourceTree = "<group>"; };
 		E11AC1FE1C16185400479927 /* Credential.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Credential.storyboard; sourceTree = "<group>"; };
 		E11AC2001C1618A100479927 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E11AC20B1C16CD3200479927 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				E164E68E1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift */,
 				E1922AF21C4966F00078C401 /* MarketPlaceV2ViewController.swift */,
 				E1922AF41C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift */,
+				E117372E1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift */,
 			);
 			name = MarketPlaceV2;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
 				F6858DB01C573B0400FAB184 /* ReviewsTableCell.swift in Sources */,
 				E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */,
+				E117372F1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
