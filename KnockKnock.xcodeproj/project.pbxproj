@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7020E9531C574F440026931F /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020E9521C574F440026931F /* TimelineView.swift */; };
+		7020E9691C5767590026931F /* MarketPlaceDetailsViewController_V2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020E9681C5767590026931F /* MarketPlaceDetailsViewController_V2.swift */; };
 		706B0FD71C4CBC2F0078CD38 /* MyCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B0FD61C4CBC2F0078CD38 /* MyCustomTextField.swift */; };
 		706B0FD91C4D2BAA0078CD38 /* ProfileAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B0FD81C4D2BAA0078CD38 /* ProfileAvatar.swift */; };
 		7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087D50C1C27D8E90005711E /* ProfileViewController.swift */; };
@@ -105,6 +107,8 @@
 		10AD83D3612BA182A25F67B2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1B5AD10247D09E5AD74690E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2934923C3E232A836459B32D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7020E9521C574F440026931F /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineView.swift; path = "../../../Downloads/Timeline-master/Timeline/TimelineView.swift"; sourceTree = "<group>"; };
+		7020E9681C5767590026931F /* MarketPlaceDetailsViewController_V2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceDetailsViewController_V2.swift; sourceTree = "<group>"; };
 		706B0FD61C4CBC2F0078CD38 /* MyCustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTextField.swift; sourceTree = "<group>"; };
 		706B0FD81C4D2BAA0078CD38 /* ProfileAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAvatar.swift; sourceTree = "<group>"; };
 		7087D50C1C27D8E90005711E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 				E164E68E1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift */,
 				E1922AF21C4966F00078C401 /* MarketPlaceV2ViewController.swift */,
 				E1922AF41C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift */,
+				7020E9681C5767590026931F /* MarketPlaceDetailsViewController_V2.swift */,
 			);
 			name = MarketPlaceV2;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 		E1E4B44F1C18230A00242A83 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7020E9521C574F440026931F /* TimelineView.swift */,
 				F60DD3701C48B06D00B79F54 /* cross.png */,
 				E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */,
 			);
@@ -688,6 +694,7 @@
 				E159A83B1C345CE700EF80A4 /* ItiDetailsViewController.swift in Sources */,
 				E1922AF11C49643A0078C401 /* MarketPlaceV2TableViewCell.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
+				7020E9691C5767590026931F /* MarketPlaceDetailsViewController_V2.swift in Sources */,
 				7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */,
 				E1922AF31C4966F00078C401 /* MarketPlaceV2ViewController.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,
@@ -723,6 +730,7 @@
 				E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
 				E15BF77C1C3FE191009A3C31 /* ProfileEditViewController.swift in Sources */,
+				7020E9531C574F440026931F /* TimelineView.swift in Sources */,
 				E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */,
 				E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */,
 				706B0FD71C4CBC2F0078CD38 /* MyCustomTextField.swift in Sources */,
