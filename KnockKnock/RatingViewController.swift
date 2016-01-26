@@ -70,15 +70,18 @@ class RatingViewController: UIViewController {
             
             if (hostObject == PFUser.currentUser()){
                 userToUpdate = clientObject
+                review["ClientReview"] = false
                 confirmedObject["HostReviewed"] = true
             }else{
                 userToUpdate = hostObject
+                review["ClientReview"] = true
                 confirmedObject["ClientReviewed"] = true
             }
                 ToBeUpdated["Rating"] =  rating
                 ToBeUpdated["User"] = userToUpdate
                 confirmedObject["Reviewed"] = true
                 confirmedObject.saveInBackground()
+                review["Stars"] = rating
                 review["Host"] = hostObject
                 review["Client"] = clientObject
                 review["Itinerary"] = confirmedObject["Itinerary"] as! PFObject
