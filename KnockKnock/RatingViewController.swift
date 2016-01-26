@@ -15,8 +15,7 @@ import HCSStarRatingView
 class RatingViewController: UIViewController {
 
     var confirmedObject : PFObject!
-    var totalRating = 0.0
-    var ratingCount = 1.0
+
 
     
     
@@ -62,7 +61,6 @@ class RatingViewController: UIViewController {
             presentViewController(alert, animated: true, completion: nil)
         }else{
             var rating = stars.value
-            var ToBeUpdated = PFObject(className: "ToBeUpdated")
             var review = PFObject(className: "Review")
             let clientObject = confirmedObject["Requester"] as! PFObject
             let hostObject = confirmedObject["Host"] as! PFObject
@@ -77,18 +75,57 @@ class RatingViewController: UIViewController {
                 review["ClientReview"] = true
                 confirmedObject["ClientReviewed"] = true
             }
-                ToBeUpdated["Rating"] =  rating
-                ToBeUpdated["User"] = userToUpdate
-                confirmedObject["Reviewed"] = true
+        
+            //retrieve and update rating table
+            let query = PFQuery(className: "Rating")
+            query.whereKey("User", equalTo: userToUpdate)
+            query.findObjectsInBackgroundWithBlock {
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                if error == nil{
+                    var dbrating = 0
+                    var dbratingCount = 0
+                    if let objects = objects as [PFObject]!{
+                        for object in objects {
+                            if (object["Rating"] != nil){
+                                dbrating = object["Rating"] as! Int
+                            }
+                            dbrating = dbrating + Int(rating)
+                            if (object["RatingCount"] != nil){
+                                dbratingCount = object["RatingCount"] as! Int
+                            }
+                            dbratingCount = dbratingCount + 1
+                            object["Rating"] = dbrating
+                            object["RatingCount"] = dbratingCount
+                            object.saveInBackground()
+                        }
+                        
+                    }
+                    if objects?.count == 0{
+                        var ratingObject = PFObject(className: "Rating")
+                        
+                        ratingObject["User"] = userToUpdate
+                        ratingObject["Rating"] = dbrating + Int(rating)
+                        ratingObject["RatingCount"] = dbratingCount + 1
+                        ratingObject.saveInBackground()
+                        
+                    }
+                }else{
+                    //log details of the failure
+                    print("error: \(error!)  \(error!.userInfo)")
+                }
+            }
+
+            
+            
                 confirmedObject.saveInBackground()
                 review["Stars"] = rating
                 review["Host"] = hostObject
                 review["Client"] = clientObject
                 review["Itinerary"] = confirmedObject["Itinerary"] as! PFObject
                 review["Review"] = textView.text
-                review.saveInBackground()
                 SwiftSpinner.show("Submitting...")
-                ToBeUpdated.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                review.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                     SwiftSpinner.hide()
                     
                     if (success) {

@@ -699,7 +699,7 @@
                                     <action selector="submitButtonTapped:" destination="VK8-l8-VqM" eventType="touchUpInside" id="dCK-SO-mFi"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVj-lg-74o" customClass="HCSStarRatingView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVj-lg-74o" customClass="HCSStarRatingView">
                                 <rect key="frame" x="68" y="227" width="238" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -717,10 +717,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dVj-lg-74o" firstAttribute="centerX" secondItem="rpW-jc-mKa" secondAttribute="centerX" id="1cD-Go-n9F"/>
                             <constraint firstItem="uHe-7U-nxj" firstAttribute="centerX" secondItem="HS2-D1-SPx" secondAttribute="centerX" id="E12-yJ-40A"/>
                             <constraint firstItem="n5a-Do-EQf" firstAttribute="centerX" secondItem="Wf4-SV-Tdu" secondAttribute="centerX" id="EKo-Vq-r7q"/>
+                            <constraint firstItem="dVj-lg-74o" firstAttribute="top" secondItem="rpW-jc-mKa" secondAttribute="bottom" constant="2" id="GJU-dE-tOq"/>
                             <constraint firstItem="Wf4-SV-Tdu" firstAttribute="top" secondItem="p3a-7k-G6Z" secondAttribute="bottom" constant="1" id="IBF-Qa-tbz"/>
+                            <constraint firstItem="dVj-lg-74o" firstAttribute="leading" secondItem="gP2-5y-mpU" secondAttribute="leadingMargin" constant="52" id="OIz-Mb-KP3"/>
                             <constraint firstItem="p3a-7k-G6Z" firstAttribute="leading" secondItem="rpW-jc-mKa" secondAttribute="leading" id="Q34-ZG-NcB"/>
+                            <constraint firstItem="p3a-7k-G6Z" firstAttribute="top" secondItem="dVj-lg-74o" secondAttribute="bottom" constant="26" id="TG9-vy-Tz5"/>
                             <constraint firstItem="rpW-jc-mKa" firstAttribute="top" secondItem="uHe-7U-nxj" secondAttribute="bottom" constant="1" id="TpB-qA-WFR"/>
                             <constraint firstItem="ycl-Oo-Dfc" firstAttribute="top" secondItem="Wf4-SV-Tdu" secondAttribute="bottom" constant="74" id="Ts5-hF-kf3"/>
                             <constraint firstItem="uHe-7U-nxj" firstAttribute="leading" secondItem="gP2-5y-mpU" secondAttribute="leadingMargin" constant="4" id="UN8-Om-WEd"/>
