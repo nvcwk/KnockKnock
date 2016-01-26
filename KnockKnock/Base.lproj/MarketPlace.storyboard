@@ -496,15 +496,15 @@
                                         </tableViewCellContentView>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="37" id="xO2-kw-kiu">
-                                        <rect key="frame" x="0.0" y="344" width="375" height="37"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="42" id="xO2-kw-kiu">
+                                        <rect key="frame" x="0.0" y="344" width="375" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xO2-kw-kiu" id="jP7-Jw-f97">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZ6-aL-b14" customClass="RTIconButton">
-                                                    <rect key="frame" x="17" y="0.0" width="340" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZ6-aL-b14" customClass="RTIconButton">
+                                                    <rect key="frame" x="17" y="6" width="340" height="30"/>
                                                     <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -527,6 +527,12 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tZ6-aL-b14" firstAttribute="leading" secondItem="jP7-Jw-f97" secondAttribute="leadingMargin" constant="9" id="NRr-H9-wlX"/>
+                                                <constraint firstItem="tZ6-aL-b14" firstAttribute="top" secondItem="jP7-Jw-f97" secondAttribute="topMargin" constant="-2" id="nHq-e9-DXE"/>
+                                                <constraint firstItem="tZ6-aL-b14" firstAttribute="centerY" secondItem="jP7-Jw-f97" secondAttribute="centerY" id="njV-FG-NOR"/>
+                                                <constraint firstItem="tZ6-aL-b14" firstAttribute="centerX" secondItem="jP7-Jw-f97" secondAttribute="centerX" id="ogx-Vx-LX6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
