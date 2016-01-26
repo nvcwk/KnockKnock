@@ -84,14 +84,33 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             let hostObj = itiObj["host"] as! PFObject
             var rating = 0.0
             var ratingCount = 1.0
-            if (hostObj["rating"] != nil){
-                rating = hostObj["rating"] as! Double
+            
+            let query = PFQuery(className: "Rating")
+            query.whereKey("User", equalTo: hostObj)
+            query.findObjectsInBackgroundWithBlock {
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                if error == nil{
+                    if let objects = objects as [PFObject]!{
+                        for object in objects {
+                            if (object["Rating"] != nil){
+                                rating = object["Rating"] as! Double
+                            }
+                            print("rating shd be \(rating)")
+                            if (object["RatingCount"] != nil){
+                                ratingCount = object["RatingCount"] as! Double
+                            }
+                            print("ratingCount shd be \(ratingCount)")
+                            var stars = rating/ratingCount
+                            cell.stars.value = CGFloat(stars)
+                        }
+                    }
+                }else{
+                    //log details of the failure
+                    print("error: \(error!)  \(error!.userInfo)")
+                }
             }
-            if (hostObj["ratingCount"] != nil){
-                ratingCount = hostObj["ratingCount"] as! Double
-            }
-            var stars = rating/ratingCount
-            cell.stars.value = CGFloat(stars)
+            
             
         }
         

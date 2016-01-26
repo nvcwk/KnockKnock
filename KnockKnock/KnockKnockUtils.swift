@@ -121,6 +121,7 @@ class KnockKnockUtils {
     }
     
     //update user's rating
+    /*
     static func updateUserRating(user: PFUser) {
         var totalRating = 0.0
         var ratingCount = 0.0
@@ -155,6 +156,6 @@ class KnockKnockUtils {
                 print("error: \(error!)  \(error!.userInfo)")
             }
         }
-        
-    }
+
+    } */
 }
