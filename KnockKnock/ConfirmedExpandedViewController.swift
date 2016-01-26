@@ -106,15 +106,28 @@ class ConfirmedExpandedViewController: UIViewController {
             cancelButton.enabled = false
             cancelButton.hidden = true
             
-            if (confirmedObject["Reviewed"] == nil || confirmedObject["Reviewed"] as! Bool == false){
-                
-                reviewButton.enabled = true
-                reviewButton.hidden = false
+            if(hostObject == PFUser.currentUser()){
+                if (confirmedObject["HostReviewed"] == nil || confirmedObject["HostReviewed"] as! Bool == false){
+                    
+                    reviewButton.enabled = true
+                    reviewButton.hidden = false
+                }else{
+                    reviewButton.enabled = false
+                    reviewButton.hidden = false
+                    reviewButton.setTitle("Tour Reviewed", forState: UIControlState.Normal)
+                }
             }else{
-                reviewButton.enabled = false
-                reviewButton.hidden = false
-                reviewButton.setTitle("Tour Reviewed", forState: UIControlState.Normal)
+                if (confirmedObject["ClientReviewed"] == nil || confirmedObject["ClientReviewed"] as! Bool == false){
+                    
+                    reviewButton.enabled = true
+                    reviewButton.hidden = false
+                }else{
+                    reviewButton.enabled = false
+                    reviewButton.hidden = false
+                    reviewButton.setTitle("Tour Reviewed", forState: UIControlState.Normal)
+                }
             }
+            
         }
         
         
