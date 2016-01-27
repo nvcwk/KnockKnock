@@ -40,6 +40,11 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        stepper.buttonsFont = UIFont(name: "Avenir", size: 15.0)!
+        stepper.labelFont = UIFont(name: "Avenir", size: 15.0)!
+
+
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
         
