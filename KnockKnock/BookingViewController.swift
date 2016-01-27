@@ -43,8 +43,6 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         stepper.buttonsFont = UIFont(name: "Avenir", size: 15.0)!
         stepper.labelFont = UIFont(name: "Avenir", size: 15.0)!
 
-
-        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
         
@@ -102,6 +100,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         dateFormatter.dateFormat = "YYYY-MM-dd"
         for dates in bookedDatesArray{
             if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
+                
                 return UIImage(named: "cross_2")
             }
         }

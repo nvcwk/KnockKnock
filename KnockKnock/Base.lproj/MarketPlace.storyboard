@@ -1123,24 +1123,22 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="reviwer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PA-KC-Eqt">
-                                            <rect key="frame" x="8" y="44" width="136" height="27.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="136" id="2UP-nw-d3l"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="reviwer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PA-KC-Eqt">
+                                            <rect key="frame" x="94" y="17.5" width="170" height="26.5"/>
                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Lb-ad-mMU">
-                                            <rect key="frame" x="131" y="85" width="236" height="45"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="comment comment comment comment comment comment comment" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Lb-ad-mMU">
+                                            <rect key="frame" x="20" y="61" width="334" height="69"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F7i-Mu-FgM" customClass="HCSStarRatingView">
-                                            <rect key="frame" x="253" y="6" width="108" height="33"/>
+                                            <rect key="frame" x="272" y="19" width="82" height="24"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" red="0.0" green="0.68144068970000005" blue="0.74330529560000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
@@ -1151,30 +1149,19 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reviewed By:" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-Tn-97D">
-                                            <rect key="frame" x="8" y="8" width="79" height="28"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="YJp-KP-DbT"/>
-                                                <constraint firstAttribute="width" constant="79" id="mqM-xn-29q"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By:" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-Tn-97D">
+                                            <rect key="frame" x="73" y="17.5" width="22" height="26.5"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Oze-Ud-Fmz" customClass="PFImageView">
+                                            <rect key="frame" x="20" y="8" width="45" height="45"/>
+                                        </imageView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="4mw-Tn-97D" firstAttribute="top" secondItem="9PA-KC-Eqt" secondAttribute="top" id="12q-Fd-hMT"/>
-                                        <constraint firstItem="7Lb-ad-mMU" firstAttribute="top" secondItem="3Q2-Sa-eHF" secondAttribute="topMargin" constant="39" id="5aB-Fl-zbc"/>
-                                        <constraint firstItem="7Lb-ad-mMU" firstAttribute="trailing" secondItem="3Q2-Sa-eHF" secondAttribute="trailingMargin" id="5ye-11-rLP"/>
-                                        <constraint firstItem="9PA-KC-Eqt" firstAttribute="leading" secondItem="4mw-Tn-97D" secondAttribute="trailing" constant="8" symbolic="YES" id="AIg-3z-XDN"/>
-                                        <constraint firstItem="4mw-Tn-97D" firstAttribute="bottom" secondItem="9PA-KC-Eqt" secondAttribute="bottom" id="B1i-hp-e2q"/>
-                                        <constraint firstItem="4mw-Tn-97D" firstAttribute="leading" secondItem="3Q2-Sa-eHF" secondAttribute="leadingMargin" id="Dia-LA-Y1o"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="7Lb-ad-mMU" secondAttribute="bottom" constant="-0.5" id="YHc-RY-MFp"/>
-                                        <constraint firstItem="4mw-Tn-97D" firstAttribute="top" secondItem="3Q2-Sa-eHF" secondAttribute="topMargin" constant="-1" id="ooR-I8-K1U"/>
-                                        <constraint firstItem="4mw-Tn-97D" firstAttribute="leading" secondItem="7Lb-ad-mMU" secondAttribute="leading" id="utB-0D-NW4"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="profile_image" destination="Oze-Ud-Fmz" id="4Bg-Ey-E9b"/>
                                     <outlet property="reviwer" destination="9PA-KC-Eqt" id="wPL-Yo-RiO"/>
                                     <outlet property="stars" destination="F7i-Mu-FgM" id="Z4e-Nr-uBS"/>
                                     <outlet property="textView" destination="7Lb-ad-mMU" id="BOR-iL-gXx"/>

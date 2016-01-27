@@ -16,5 +16,6 @@ class ReviewsTableCell: PFTableViewCell {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var stars: HCSStarRatingView!
    
+    @IBOutlet weak var profile_image: PFImageView!
 
 }
