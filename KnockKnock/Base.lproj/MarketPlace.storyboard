@@ -552,7 +552,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="bookButtomTapped:" destination="kPf-oT-qhp" eventType="touchUpInside" id="uXJ-iW-Auz"/>
-                                                        <segue destination="EQ8-WC-ZJB" kind="show" id="jNA-Zf-Q1g"/>
+                                                        <segue destination="EQ8-WC-ZJB" kind="show" identifier="showBookingView" id="jNA-Zf-Q1g"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
