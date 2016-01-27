@@ -22,6 +22,10 @@ class ReviewsTableViewController: PFQueryTableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
+        self.tableView.estimatedRowHeight = 10
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
 
     // MARK: - Table view data source
@@ -42,6 +46,22 @@ class ReviewsTableViewController: PFQueryTableViewController {
             cell.stars.value = review["Stars"] as! CGFloat
             cell.reviwer.text = reviewer["fName"] as! String
             cell.textView.text = review["Review"] as! String
+            
+            
+            let fixedWidth = cell.textView.frame.size.width
+            cell.textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+            let newSize = cell.textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+            var newFrame = cell.textView.frame
+            newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+            cell.textView.frame = newFrame;
+            
+            cell.textView.scrollEnabled = false;
+
+            
+            cell.profile_image.layer.cornerRadius = cell.profile_image.frame.size.width/2
+            cell.profile_image.clipsToBounds = true
+            
+            
         }
         
         return cell
