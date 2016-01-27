@@ -28,8 +28,6 @@ pod 'HCSStarRatingView', '~> 1.4.3'
 pod 'RTIconButton'
 pod 'Popover'
 pod 'Scrollable', '~> 1.0'
-pod 'ImageSlideshow'
-pod "ImageSlideshow/AFURL"
 
 =begin 
 To Consider 

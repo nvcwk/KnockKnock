@@ -1199,7 +1199,7 @@
         <!--KnockKnock-->
         <scene sceneID="bar-d0-jJ5">
             <objects>
-                <viewController storyboardIdentifier="itiDetailsView" id="ayT-fK-nBV" customClass="ItiDetailsViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="itiDetailsView" automaticallyAdjustsScrollViewInsets="NO" id="ayT-fK-nBV" customClass="ItiDetailsViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BVo-WJ-Ipt"/>
                         <viewControllerLayoutGuide type="bottom" id="e7E-nj-gzW"/>
@@ -1303,7 +1303,7 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jD-qB-DrA" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jD-qB-DrA" customClass="ImageSlideshow" customModule="KnockKnock" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="184"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
