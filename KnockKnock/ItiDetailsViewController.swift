@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import ParseUI
 import autoAutoLayout
+import ImageSlideshow
 
 class ItiDetailsViewController: UIViewController {
     var itineraryObj = PFObject(className: "Itinerary")
@@ -21,8 +22,10 @@ class ItiDetailsViewController: UIViewController {
     @IBOutlet weak var barBtn_publish: UIBarButtonItem!
     @IBOutlet weak var profile_img: PFImageView!
     
+    @IBOutlet weak var slideshow_images: ImageSlideshow!
     @IBOutlet weak var description_txt: UITextView!
     @IBOutlet weak var host_name: UILabel!
+    
     var activities = NSArray()
     
     override func viewDidLoad() {
@@ -62,13 +65,37 @@ class ItiDetailsViewController: UIViewController {
         
         lb_title.text = itineraryObj["title"] as! String
         
-        image_image.file = itineraryObj["image"] as! PFFile
-        image_image.loadInBackground()
+//        image_image.file = itineraryObj["image"] as! PFFile
+//        image_image.loadInBackground()
         
         //        tv_description.text = itineraryObj["summary"] as! String
         
         tv_activities.delegate = self
         tv_activities.dataSource = self
+        
+        var images = itineraryObj["images"] as! NSArray
+        
+        var imageArr = [AFURLSource]()
+        
+        for var i = 0; i < images.count; i++ {
+            let imageObj = images[i] as! PFObject
+            
+            let image = imageObj["image"] as! PFFile
+            
+//            image.getDataInBackgroundWithBlock({
+//                (imageData: NSData?, error: NSError?) -> Void in
+//                if (error == nil) {
+//                    let image = UIImage(data:imageData!)
+//                    
+//                    imageArr.append(ImageSource(image: image!))
+//    
+//                }
+//            })
+            
+            imageArr.append(AFURLSource(urlString: image.url!)!)
+        }
+        
+        slideshow_images.setImageInputs(imageArr)
     }
     
     

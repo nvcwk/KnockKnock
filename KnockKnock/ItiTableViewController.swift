@@ -28,6 +28,7 @@ class ItiTableViewController: PFQueryTableViewController {
         query.includeKey("activities")
         query.addDescendingOrder("updatedAt")
         query.whereKey("host", equalTo: PFUser.currentUser()!)
+        query.includeKey("images")
         
         return query
     }
