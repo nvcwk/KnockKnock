@@ -95,6 +95,7 @@ class ItiDetailsViewController: UIViewController {
             imageArr.append(AFURLSource(urlString: image.url!)!)
         }
         
+        slideshow_images.contentScaleMode = UIViewContentMode.ScaleToFill
         slideshow_images.setImageInputs(imageArr)
     }
     

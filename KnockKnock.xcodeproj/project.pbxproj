@@ -27,13 +27,6 @@
 		E117372F1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E117372E1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift */; };
 		E11737471C58A03100E193E4 /* ic_cross_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11737391C58A03100E193E4 /* ic_cross_white@2x.png */; };
 		E11737481C58A03100E193E4 /* ic_cross_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E117373A1C58A03100E193E4 /* ic_cross_white@3x.png */; };
-		E11737491C58A03100E193E4 /* FullScreenSlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E117373D1C58A03100E193E4 /* FullScreenSlideshowViewController.swift */; };
-		E117374A1C58A03100E193E4 /* ImageSlideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E117373E1C58A03100E193E4 /* ImageSlideshow.swift */; };
-		E117374B1C58A03100E193E4 /* ImageSlideshowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E117373F1C58A03100E193E4 /* ImageSlideshowItem.swift */; };
-		E117374C1C58A03100E193E4 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11737401C58A03100E193E4 /* InputSource.swift */; };
-		E117374D1C58A03100E193E4 /* UIImage+AspectFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11737411C58A03100E193E4 /* UIImage+AspectFit.swift */; };
-		E117374E1C58A03100E193E4 /* ZoomAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11737421C58A03100E193E4 /* ZoomAnimatedTransitioning.swift */; };
-		E117374F1C58A03100E193E4 /* AFURLSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11737441C58A03100E193E4 /* AFURLSource.swift */; };
 		E11AC1FF1C16185400479927 /* Credential.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11AC1FE1C16185400479927 /* Credential.storyboard */; };
 		E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2001C1618A100479927 /* LoginViewController.swift */; };
 		E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC20B1C16CD3200479927 /* HomeViewController.swift */; };
@@ -146,13 +139,6 @@
 		E117372E1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceDetailsBackup.swift; sourceTree = "<group>"; };
 		E11737391C58A03100E193E4 /* ic_cross_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_cross_white@2x.png"; path = "ImageSlideshow/Pod/Assets/ic_cross_white@2x.png"; sourceTree = "<group>"; };
 		E117373A1C58A03100E193E4 /* ic_cross_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_cross_white@3x.png"; path = "ImageSlideshow/Pod/Assets/ic_cross_white@3x.png"; sourceTree = "<group>"; };
-		E117373D1C58A03100E193E4 /* FullScreenSlideshowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullScreenSlideshowViewController.swift; path = Pod/Classes/Core/FullScreenSlideshowViewController.swift; sourceTree = "<group>"; };
-		E117373E1C58A03100E193E4 /* ImageSlideshow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSlideshow.swift; path = Pod/Classes/Core/ImageSlideshow.swift; sourceTree = "<group>"; };
-		E117373F1C58A03100E193E4 /* ImageSlideshowItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSlideshowItem.swift; path = Pod/Classes/Core/ImageSlideshowItem.swift; sourceTree = "<group>"; };
-		E11737401C58A03100E193E4 /* InputSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputSource.swift; path = Pod/Classes/Core/InputSource.swift; sourceTree = "<group>"; };
-		E11737411C58A03100E193E4 /* UIImage+AspectFit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+AspectFit.swift"; path = "Pod/Classes/Core/UIImage+AspectFit.swift"; sourceTree = "<group>"; };
-		E11737421C58A03100E193E4 /* ZoomAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomAnimatedTransitioning.swift; path = Pod/Classes/Core/ZoomAnimatedTransitioning.swift; sourceTree = "<group>"; };
-		E11737441C58A03100E193E4 /* AFURLSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AFURLSource.swift; path = Pod/Classes/InputSources/AFURLSource.swift; sourceTree = "<group>"; };
 		E11AC1FE1C16185400479927 /* Credential.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Credential.storyboard; sourceTree = "<group>"; };
 		E11AC2001C1618A100479927 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E11AC20B1C16CD3200479927 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -327,20 +313,6 @@
 			path = KnockKnockUITests;
 			sourceTree = "<group>";
 		};
-		E11737351C58A03100E193E4 /* ImageSlideshow */ = {
-			isa = PBXGroup;
-			children = (
-				E11737441C58A03100E193E4 /* AFURLSource.swift */,
-				E117373D1C58A03100E193E4 /* FullScreenSlideshowViewController.swift */,
-				E117373E1C58A03100E193E4 /* ImageSlideshow.swift */,
-				E117373F1C58A03100E193E4 /* ImageSlideshowItem.swift */,
-				E11737401C58A03100E193E4 /* InputSource.swift */,
-				E11737411C58A03100E193E4 /* UIImage+AspectFit.swift */,
-				E11737421C58A03100E193E4 /* ZoomAnimatedTransitioning.swift */,
-			);
-			path = ImageSlideshow;
-			sourceTree = "<group>";
-		};
 		E11AC2061C16241600479927 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,7 +415,6 @@
 				E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */,
 				709914AF1C4B63C500E2FF9A /* DPTheme.swift */,
 				E12396AC1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift */,
-				E11737351C58A03100E193E4 /* ImageSlideshow */,
 			);
 			name = ExtLib;
 			sourceTree = "<group>";
@@ -763,7 +734,6 @@
 				E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */,
 				E19FE1781C3D7D84009FAB48 /* MarketplaceTableViewCell.swift in Sources */,
 				F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */,
-				E117374E1C58A03100E193E4 /* ZoomAnimatedTransitioning.swift in Sources */,
 				E187E5441C32E80800E00E5A /* ItiTableViewCell.swift in Sources */,
 				E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */,
 				F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */,
@@ -773,13 +743,11 @@
 				E1922AF51C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				709914B01C4B63C500E2FF9A /* DPTheme.swift in Sources */,
-				E117374B1C58A03100E193E4 /* ImageSlideshowItem.swift in Sources */,
 				E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */,
 				E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */,
 				F6858DB21C573B4F00FAB184 /* ReviewsTableViewController.swift in Sources */,
 				E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */,
 				E1822CE41C27C0C500E78ED6 /* ItiPublishViewController.swift in Sources */,
-				E11737491C58A03100E193E4 /* FullScreenSlideshowViewController.swift in Sources */,
 				F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */,
 				E11AC20C1C16CD3200479927 /* HomeViewController.swift in Sources */,
 				E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */,
@@ -790,15 +758,12 @@
 				E1CAA80B1C27053300AB4637 /* ActivityTableViewCell.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
 				E15BF77E1C3FE617009A3C31 /* ProfileChangePassViewController.swift in Sources */,
-				E117374A1C58A03100E193E4 /* ImageSlideshow.swift in Sources */,
 				F6DC5CBB1C4769EF00BA6776 /* PendingTableViewViewController.swift in Sources */,
-				E117374F1C58A03100E193E4 /* AFURLSource.swift in Sources */,
 				E164E68F1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift in Sources */,
 				7095F3511C4E30BC002C1AD5 /* MyImageView.swift in Sources */,
 				E1CAA8031C25501900AB4637 /* ItiActivitiesViewController.swift in Sources */,
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
 				E15BF77C1C3FE191009A3C31 /* ProfileEditViewController.swift in Sources */,
-				E117374C1C58A03100E193E4 /* InputSource.swift in Sources */,
 				E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */,
 				E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */,
 				706B0FD71C4CBC2F0078CD38 /* MyCustomTextField.swift in Sources */,
@@ -806,7 +771,6 @@
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
 				F6858DB01C573B0400FAB184 /* ReviewsTableCell.swift in Sources */,
 				70C807381C57E53E0039CCF1 /* TimelineView.swift in Sources */,
-				E117374D1C58A03100E193E4 /* UIImage+AspectFit.swift in Sources */,
 				E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */,
 				E117372F1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift in Sources */,
 			);
