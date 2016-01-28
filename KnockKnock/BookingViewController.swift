@@ -35,13 +35,21 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var itinerary : PFObject!
     var numOfDays = Int()
     var first = NSDate()
-    
+    var userEmail : String!
+    var hostEmail : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         stepper.buttonsFont = UIFont(name: "Avenir", size: 15.0)!
         stepper.labelFont = UIFont(name: "Avenir", size: 15.0)!
+        
+        userEmail = PFUser.currentUser()!.email!
+        hostEmail = host.email!
+        
+        
+        print(userEmail)
+        print(hostEmail)
 
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
@@ -223,6 +231,36 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                         KnockKnockUtils.okAlert(self, title: "Message", message: "Request Sent! Check your latest confirmed bookings in the booking tab!", handle: { (action: UIAlertAction!) in
                                 self.navigationController?.popToRootViewControllerAnimated(true)
                         } )
+                        
+                        
+                        
+                        //Send email to the user and host
+                        
+                        // Swift
+                        // send to the user email
+                        PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["email":self.userEmail]) {
+                            (response: AnyObject?, error: NSError?) -> Void in
+                            
+                            if error == nil{
+                                print("hello")
+                            }else{
+                                
+                            }
+                            
+                        }
+                        
+                        //Send to the host email
+                        PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["email":self.hostEmail]) {
+                            (response: AnyObject?, error: NSError?) -> Void in
+                            
+                            if error == nil{
+                                print("hello")
+                            }else{
+                                
+                            }
+                            
+                        }
+                        
                     } else {
                         KnockKnockUtils.okAlert(self, title: "Error", message: "Try Again!", handle: nil)
                     }
