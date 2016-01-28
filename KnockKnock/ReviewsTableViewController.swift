@@ -56,6 +56,11 @@ class ReviewsTableViewController: PFQueryTableViewController {
             cell.textView.frame = newFrame;
             
             cell.textView.scrollEnabled = false;
+            
+            var img_profile = reviewer["profilePic"] as! PFFile
+            
+            cell.profile_image.file = img_profile
+            cell.profile_image.loadInBackground()
 
             
             cell.profile_image.layer.cornerRadius = cell.profile_image.frame.size.width/2
