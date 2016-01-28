@@ -32,10 +32,10 @@ class RatingViewController: UIViewController {
         
         if (hostObject == PFUser.currentUser()){
         //host reviews requester
-        reviewTitle.text = "Review your \(clientObject["fName"])!"
+        reviewTitle.text = "Tell us what you like about  \(clientObject["fName"])!"
         }else{
         //requester reviews host
-         reviewTitle.text = "Review your \(hostObject["fName"])!"
+         reviewTitle.text = "Tell us what you like about \(hostObject["fName"])!"
         }
         
         
