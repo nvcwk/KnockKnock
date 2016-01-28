@@ -28,13 +28,14 @@ class RatingViewController: UIViewController {
         textView.layer.backgroundColor =  UIColor.lightGrayColor().CGColor
         
         let hostObject = confirmedObject["Host"] as! PFObject
-    
+        let clientObject = confirmedObject["Requester"] as! PFObject
+        
         if (hostObject == PFUser.currentUser()){
         //host reviews requester
-        reviewTitle.text = "Review your participants!"
+        reviewTitle.text = "Review your \(clientObject["fName"])!"
         }else{
         //requester reviews host
-         reviewTitle.text = "Review your host!"
+         reviewTitle.text = "Review your \(hostObject["fName"])!"
         }
         
         
