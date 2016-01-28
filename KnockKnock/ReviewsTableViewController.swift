@@ -35,6 +35,7 @@ class ReviewsTableViewController: PFQueryTableViewController {
         let query = PFQuery(className: "Review")
         query.whereKey("Itinerary", equalTo: itineraryObject)
         query.whereKey("ClientReview", equalTo: true)
+        query.orderByAscending("Stars")
         return query
         
     }
