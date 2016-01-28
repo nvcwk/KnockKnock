@@ -47,7 +47,9 @@ class ReviewsTableViewController: PFQueryTableViewController {
             cell.stars.value = review["Stars"] as! CGFloat
             cell.reviwer.text = reviewer["fName"] as! String
             cell.textView.text = review["Review"] as! String
-            
+            let reviewDate = review.createdAt
+            cell.date.text = KnockKnockUtils.dateToStringDisplay(reviewDate!)
+           
             
             let fixedWidth = cell.textView.frame.size.width
             cell.textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
