@@ -87,6 +87,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             
             let query = PFQuery(className: "Review")
             query.whereKey("Itinerary", equalTo: itiObj)
+            query.whereKey("ClientReview", equalTo: true)
             query.findObjectsInBackgroundWithBlock {
                 (objects: [PFObject]?, error: NSError?) -> Void in
                 
