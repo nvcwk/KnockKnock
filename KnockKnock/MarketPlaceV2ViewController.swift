@@ -27,6 +27,10 @@ class MarketPlaceV2ViewController: UIViewController {
     ]
 
     
+    @IBAction func dismiss_pop(sender: AnyObject) {
+        popover_filter.dismiss()
+        popover_show.dismiss()
+    }
     var test = true
     
     var clicked_button = false
@@ -53,18 +57,7 @@ class MarketPlaceV2ViewController: UIViewController {
         fadeAnimation.startAnimation(nil)
 
         // Do any additional setup after loading the view.
-        
-//        var customView = UIView(frame: CGRectMake(0, 0, 250, 44))
-//        
-//        var marginX = CGFloat(0)
-//        var label = UILabel(frame: CGRectMake(marginX, 0, 250, 44))
-//        label.text = "KnockKnock"
-//        label.textColor = DPTheme.color(0x00A1B0, alpha: 1.0)
-//        label.font = UIFont(name: "SnellRoundhand-Black", size: 25)
-//        customView.addSubview(label)
-//        
-//        var leftButton = UIBarButtonItem(customView: customView)
-//        self.navigationItem.leftBarButtonItem = leftButton
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,11 +66,11 @@ class MarketPlaceV2ViewController: UIViewController {
     }
     @IBAction func on_Press(sender: AnyObject) {
         
-        clicked_button = true
+        //clicked_button = true
         
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 140))
         
-        let startPoint = CGPoint(x: self.view.frame.width / 2, y: 100)
+        let startPoint = CGPoint(x: self.view.frame.width/2 - 80, y: 100)
         
         tableView.delegate = self
         tableView.dataSource = self
