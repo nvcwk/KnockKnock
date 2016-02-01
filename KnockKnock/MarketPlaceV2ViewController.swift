@@ -70,7 +70,7 @@ class MarketPlaceV2ViewController: UIViewController {
         
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 140))
         
-        let startPoint = CGPoint(x: self.view.frame.width/2 - 80, y: 100)
+        let startPoint = CGPoint(x: self.view.frame.width/2 , y: 100)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -127,11 +127,11 @@ extension MarketPlaceV2ViewController: UITableViewDelegate {
 extension MarketPlaceV2ViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        if(clicked_button == true){
+//        if(clicked_button == true){
             return texts_sortby.count
-        } else {
-            return 1
-        }
+//        } else {
+//            return 1
+//        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
