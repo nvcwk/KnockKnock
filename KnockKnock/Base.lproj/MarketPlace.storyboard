@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mzm-qA-zp6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mzm-qA-zp6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -105,7 +105,15 @@
                             <constraint firstItem="xgc-Wd-ARg" firstAttribute="top" secondItem="9q3-Op-nbD" secondAttribute="bottom" constant="20" id="ot3-nS-e2h"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="KnockKnock" id="Azr-jZ-l6x"/>
+                    <navigationItem key="navigationItem" title="KnockKnock" id="Azr-jZ-l6x">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="AC1-HW-Z1z">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ez2-0y-UH0">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btn_filter" destination="hWL-0j-iVI" id="phA-Y1-PbR"/>
                         <outlet property="btn_sortby" destination="xgc-Wd-ARg" id="7Uv-as-Ar5"/>
