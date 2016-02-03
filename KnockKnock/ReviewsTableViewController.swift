@@ -22,10 +22,13 @@ class ReviewsTableViewController: PFQueryTableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
-        self.tableView.estimatedRowHeight = 10
+        self.tableView.estimatedRowHeight = 90
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
+        
+        self.tableView.setNeedsLayout()
+        self.tableView.layoutIfNeeded()
     }
 
     // MARK: - Table view data source
@@ -75,10 +78,30 @@ class ReviewsTableViewController: PFQueryTableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 105.0
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        var numOfSections: Int = 0
+        if (objects?.count != 0) {
+            //self.tableView.separatorStyle = .SingleLine
+            numOfSections = 1
+            tableView.backgroundView = nil
+        }
+        else {
+            var noDataLabel: UILabel = UILabel(frame: CGRectMake(0, 0, tableView.bounds.size.width, tableView.bounds.size.height))
+            
+            noDataLabel.text = "No Reviews Yet!"
+            noDataLabel.textColor = UIColor.darkGrayColor()
+            noDataLabel.textAlignment = .Center
+            tableView.backgroundView = noDataLabel
+            tableView.separatorStyle = .None
+            tableView.separatorColor = UIColor.whiteColor()
+        }
+        return numOfSections
     }
     
+//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return 105.0
+//    }
+//    
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Reviews"
