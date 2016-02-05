@@ -389,9 +389,6 @@
 			children = (
 				E1CAA7EC1C23E95C00AB4637 /* ItiSummaryViewController.swift */,
 				E1CAA7EE1C24853600AB4637 /* ItiDaysSelectorViewController.swift */,
-				E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */,
-				E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */,
-				E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */,
 			);
 			name = "Create Itinerary";
 			sourceTree = "<group>";
@@ -480,6 +477,9 @@
 			children = (
 				E1E8A8151C64DF7D00A1A9B2 /* ItiImageViewController.swift */,
 				E1E8A8171C64E50500A1A9B2 /* ItiSumViewController.swift */,
+				E1CAA8021C25501900AB4637 /* ItiActivitiesViewController.swift */,
+				E1CAA8041C2554A000AB4637 /* ItiActivityViewController.swift */,
+				E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */,
 			);
 			name = "Create V2";
 			sourceTree = "<group>";
