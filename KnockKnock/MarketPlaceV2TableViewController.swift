@@ -32,6 +32,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
         query.includeKey("itinerary")
         query.includeKey("host")
         query.includeKey("itinerary.activities")
+        query.includeKey("itinerary.images")
         
         //        query.whereKey("isPublished", equalTo: published)
         //        //query.whereKey("host", notEqualTo: PFUser.currentUser()!)
@@ -72,9 +73,15 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
                 
                 
                 cell.endDate.text = KnockKnockUtils.dateToStringDisplay( mpObj["lastAvailability"] as! NSDate)
-                let image = itiObj["image"] as! PFFile
+//                let image = itiObj["image"] as! PFFile
                 
-                cell.image_background.file = image
+                var images = itiObj["images"] as! NSArray
+                
+                let imageObj = images[0] as! PFObject
+                
+                let imageFile = imageObj["image"] as! PFFile
+                
+                cell.image_background.file = imageFile
                 cell.image_background.loadInBackground()
                 
                 

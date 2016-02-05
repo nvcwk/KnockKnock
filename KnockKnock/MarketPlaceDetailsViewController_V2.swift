@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import ParseUI
 import autoAutoLayout
+import ImageSlideshow
 
 class MarketPlaceDetailsViewController_V2: UITableViewController {
     
@@ -23,10 +24,11 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
     @IBOutlet weak var lb_hostContact: UILabel!
     @IBOutlet weak var lb_startDate: UILabel!
     @IBOutlet weak var lb_endDate: UILabel!
-    @IBOutlet weak var image_image: PFImageView!
+//    @IBOutlet weak var image_image: PFImageView!
     @IBOutlet weak var table_activity: UITableView!
     @IBOutlet weak var img_host: PFImageView!
     @IBOutlet weak var tour_summary: UITextView!
+    @IBOutlet weak var slideshow_images: ImageSlideshow!
     
     var pubObj = PFObject(className: "MarketPlace")
     var itiObj = PFObject(className: "Itinerary")
@@ -93,7 +95,7 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
         
         lb_endDate.text = KnockKnockUtils.dateToStringDisplay(pubObj["lastAvailability"] as! NSDate)
         
-        var image = itiObj["image"] as! PFFile
+//        var image = itiObj["image"] as! PFFile
         
         tour_summary.text = itiObj["summary"] as! String
         
@@ -101,8 +103,34 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
         img_host.file = img_profile
         img_host.loadInBackground()
         
-        image_image.file = image
-        image_image.loadInBackground()
+//        image_image.file = image
+//        image_image.loadInBackground()
+        
+        var images = itiObj["images"] as! NSArray
+        
+        var imageArr = [AFURLSource]()
+        
+        for var i = 0; i < images.count; i++ {
+            let imageObj = images[i] as! PFObject
+            
+            let image = imageObj["image"] as! PFFile
+            
+            //            image.getDataInBackgroundWithBlock({
+            //                (imageData: NSData?, error: NSError?) -> Void in
+            //                if (error == nil) {
+            //                    let image = UIImage(data:imageData!)
+            //
+            //                    imageArr.append(ImageSource(image: image!))
+            //
+            //                }
+            //            })
+            
+            imageArr.append(AFURLSource(urlString: image.url!)!)
+        }
+        
+        slideshow_images.clipsToBounds = true
+        slideshow_images.contentScaleMode = UIViewContentMode.ScaleAspectFill
+        slideshow_images.setImageInputs(imageArr)
 
         
         self.img_host.layer.cornerRadius = self.img_host.frame.size.width/2
