@@ -75,6 +75,8 @@
 		E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4451C17291000242A83 /* ForgetViewController.swift */; };
 		E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */; };
 		E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4541C18601100242A83 /* RegisterViewController.swift */; };
+		E1E8A8161C64DF7D00A1A9B2 /* ItiImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8A8151C64DF7D00A1A9B2 /* ItiImageViewController.swift */; };
+		E1E8A8181C64E50500A1A9B2 /* ItiSumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8A8171C64E50500A1A9B2 /* ItiSumViewController.swift */; };
 		F60DD3711C48B06D00B79F54 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F60DD3701C48B06D00B79F54 /* cross.png */; };
 		F60DD3731C48F7CA00B79F54 /* PendingExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */; };
 		F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */; };
@@ -185,6 +187,8 @@
 		E1E4B4451C17291000242A83 /* ForgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
 		E1E4B44D1C1822F700242A83 /* CountryPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CountryPicker.bundle; sourceTree = "<group>"; };
 		E1E4B4541C18601100242A83 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E1E8A8151C64DF7D00A1A9B2 /* ItiImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiImageViewController.swift; sourceTree = "<group>"; };
+		E1E8A8171C64E50500A1A9B2 /* ItiSumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiSumViewController.swift; sourceTree = "<group>"; };
 		F60DD3701C48B06D00B79F54 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = CountryPicker.bundle/cross.png; sourceTree = "<group>"; };
 		F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingExpandedViewController.swift; sourceTree = "<group>"; };
 		F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedExpandedViewController.swift; sourceTree = "<group>"; };
@@ -418,6 +422,7 @@
 		E1A7DA941C3CB14900759A8F /* Itinerary */ = {
 			isa = PBXGroup;
 			children = (
+				E1E8A8141C64DE8000A1A9B2 /* Create V2 */,
 				E12396AB1C532F1D00FB4760 /* Create Itinerary */,
 				E11AC2061C16241600479927 /* CustomUI */,
 				E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */,
@@ -468,6 +473,15 @@
 				70C807371C57E53E0039CCF1 /* TimelineView.swift */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		E1E8A8141C64DE8000A1A9B2 /* Create V2 */ = {
+			isa = PBXGroup;
+			children = (
+				E1E8A8151C64DF7D00A1A9B2 /* ItiImageViewController.swift */,
+				E1E8A8171C64E50500A1A9B2 /* ItiSumViewController.swift */,
+			);
+			name = "Create V2";
 			sourceTree = "<group>";
 		};
 		F66438291C560EE30013C25F /* Rating */ = {
@@ -735,6 +749,7 @@
 				E1922AF51C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift in Sources */,
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				709914B01C4B63C500E2FF9A /* DPTheme.swift in Sources */,
+				E1E8A8181C64E50500A1A9B2 /* ItiSumViewController.swift in Sources */,
 				E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */,
 				E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */,
 				F6858DB21C573B4F00FAB184 /* ReviewsTableViewController.swift in Sources */,
@@ -765,6 +780,7 @@
 				70C807381C57E53E0039CCF1 /* TimelineView.swift in Sources */,
 				E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */,
 				E117372F1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift in Sources */,
+				E1E8A8161C64DF7D00A1A9B2 /* ItiImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
