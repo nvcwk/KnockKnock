@@ -27,6 +27,7 @@ class PubTableViewController: PFQueryTableViewController {
         query.includeKey("itinerary")
         query.includeKey("host")
         query.includeKey("itinerary.activities")
+        query.includeKey("itinerary.images")
         
         query.whereKey("host", equalTo: PFUser.currentUser()!)
         query.whereKey("isPublished", equalTo: true)
@@ -54,7 +55,13 @@ class PubTableViewController: PFQueryTableViewController {
             
             cell.lb_title.text = itinerary["title"] as! String
             
-            let imageFile = itinerary["image"] as! PFFile
+//            let imageFile = itinerary["image"] as! PFFile
+            
+            var images = itinerary["images"] as! NSArray
+            
+            let imageObj = images[0] as! PFObject
+            
+            let imageFile = imageObj["image"] as! PFFile
             
             cell.image_background.file = imageFile
             cell.image_background.loadInBackground()

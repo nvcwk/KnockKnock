@@ -11,6 +11,7 @@ import Parse
 import ParseUI
 import SwiftSpinner
 import autoAutoLayout
+import ImageSlideshow
 
 class PubDetailsViewController: UIViewController {
     
@@ -23,6 +24,7 @@ class PubDetailsViewController: UIViewController {
     @IBOutlet weak var lb_hostName: UILabel!
     @IBOutlet weak var table_activities: UITableView!
     @IBOutlet weak var tv_summary: UITextView!
+    @IBOutlet weak var slideshow_images: ImageSlideshow!
     
     var pubObj = PFObject(className: "MarketPlace")
     
@@ -54,9 +56,9 @@ class PubDetailsViewController: UIViewController {
         hostObj = pubObj["host"] as! PFUser
         
         lb_title.text = itineraryObj["title"] as! String
-        
-        image_background.file = itineraryObj["image"] as! PFFile
-        image_background.loadInBackground()
+//        
+//        image_background.file = itineraryObj["image"] as! PFFile
+//        image_background.loadInBackground()
         
         lb_price.text = String(pubObj["price"] as! Int)
         
@@ -76,6 +78,32 @@ class PubDetailsViewController: UIViewController {
         
         table_activities.delegate = self
         table_activities.dataSource = self
+        
+        var images = itineraryObj["images"] as! NSArray
+        
+        var imageArr = [AFURLSource]()
+        
+        for var i = 0; i < images.count; i++ {
+            let imageObj = images[i] as! PFObject
+            
+            let image = imageObj["image"] as! PFFile
+            
+            //            image.getDataInBackgroundWithBlock({
+            //                (imageData: NSData?, error: NSError?) -> Void in
+            //                if (error == nil) {
+            //                    let image = UIImage(data:imageData!)
+            //
+            //                    imageArr.append(ImageSource(image: image!))
+            //
+            //                }
+            //            })
+            
+            imageArr.append(AFURLSource(urlString: image.url!)!)
+        }
+        
+        slideshow_images.clipsToBounds = true
+        slideshow_images.contentScaleMode = UIViewContentMode.ScaleAspectFill
+        slideshow_images.setImageInputs(imageArr)
     }
     
     
