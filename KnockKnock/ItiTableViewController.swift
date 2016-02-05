@@ -26,6 +26,8 @@ class ItiTableViewController: PFQueryTableViewController {
         var query = PFQuery(className: "Itinerary")
         
         query.includeKey("activities")
+        query.includeKey("images")
+        
         query.addDescendingOrder("updatedAt")
         query.whereKey("host", equalTo: PFUser.currentUser()!)
         
@@ -36,7 +38,7 @@ class ItiTableViewController: PFQueryTableViewController {
         
         var cell: ItiTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItiTableViewCell") as! ItiTableViewCell
         
-        if let itinerary = object{
+        if let itinerary = object {
 
             cell.lb_title.text = itinerary["title"] as! String
             
@@ -44,7 +46,13 @@ class ItiTableViewController: PFQueryTableViewController {
             
 //            cell.lb_created.text = KnockKnockUtils.dateToString(date)
             
-            let imageFile = itinerary["image"] as! PFFile
+            //let imageFile = itinerary["image"] as! PFFile
+            
+            var images = itinerary["images"] as! NSArray
+            
+            let imageObj = images[0] as! PFObject
+            
+            let imageFile = imageObj["image"] as! PFFile
             
             cell.image_background.file = imageFile
             cell.image_background.loadInBackground()
