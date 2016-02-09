@@ -15,6 +15,7 @@
 		709914B01C4B63C500E2FF9A /* DPTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709914AF1C4B63C500E2FF9A /* DPTheme.swift */; };
 		70B0E5841C4943960033991D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0E5831C4943960033991D /* QuartzCore.framework */; };
 		70C807381C57E53E0039CCF1 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C807371C57E53E0039CCF1 /* TimelineView.swift */; };
+		8FC788881C5FC1D9006C6C70 /* VerifyTourGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC788871C5FC1D9006C6C70 /* VerifyTourGuideViewController.swift */; };
 		C1EE6E34C4461D4E0E5AD45D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5AD10247D09E5AD74690E6 /* Pods.framework */; };
 		E110D1DA1C4684F00074CF48 /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E110D1D91C4684F00074CF48 /* Booking.storyboard */; };
 		E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11461F61C1170B900983BC3 /* AppDelegate.swift */; };
@@ -120,6 +121,7 @@
 		709914AF1C4B63C500E2FF9A /* DPTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPTheme.swift; sourceTree = "<group>"; };
 		70B0E5831C4943960033991D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		70C807371C57E53E0039CCF1 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		8FC788871C5FC1D9006C6C70 /* VerifyTourGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyTourGuideViewController.swift; sourceTree = "<group>"; };
 		E110D1D91C4684F00074CF48 /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
 		E11461F31C1170B900983BC3 /* KnockKnock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockKnock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11461F61C1170B900983BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -252,6 +254,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8FC788861C5FC1BF006C6C70 /* VerifyTourGuide */ = {
+			isa = PBXGroup;
+			children = (
+				8FC788871C5FC1D9006C6C70 /* VerifyTourGuideViewController.swift */,
+			);
+			name = VerifyTourGuide;
+			sourceTree = "<group>";
+		};
 		E11461EA1C1170B900983BC3 = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +352,7 @@
 		E11AC2081C16244900479927 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8FC788861C5FC1BF006C6C70 /* VerifyTourGuide */,
 				F66438291C560EE30013C25F /* Rating */,
 				E12396AA1C53270800FB4760 /* Profile */,
 				E164E68D1C494E4F00AEC87C /* MarketPlaceV2 */,
@@ -736,6 +747,7 @@
 				E11461F71C1170B900983BC3 /* AppDelegate.swift in Sources */,
 				709914B01C4B63C500E2FF9A /* DPTheme.swift in Sources */,
 				E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */,
+				8FC788881C5FC1D9006C6C70 /* VerifyTourGuideViewController.swift in Sources */,
 				E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */,
 				F6858DB21C573B4F00FAB184 /* ReviewsTableViewController.swift in Sources */,
 				E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */,
