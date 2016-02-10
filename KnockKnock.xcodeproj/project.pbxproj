@@ -31,6 +31,7 @@
 		E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC21E1C16E0B700479927 /* KnockKnockUtils.swift */; };
 		E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2201C16E12C00479927 /* ParseUtils.swift */; };
 		E12396AD1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12396AC1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift */; };
+		E12CD3281C69274800E1DFCD /* UIImage+ImageQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12CD3271C69274800E1DFCD /* UIImage+ImageQuality.swift */; };
 		E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */; };
 		E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */; };
 		E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14174F41C3D7E57005E3B9A /* MarketActivityTableViewCell.swift */; };
@@ -143,6 +144,7 @@
 		E11AC21E1C16E0B700479927 /* KnockKnockUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockUtils.swift; sourceTree = "<group>"; };
 		E11AC2201C16E12C00479927 /* ParseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUtils.swift; sourceTree = "<group>"; };
 		E12396AC1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+SupportedOrientations.swift"; sourceTree = "<group>"; };
+		E12CD3271C69274800E1DFCD /* UIImage+ImageQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageQuality.swift"; sourceTree = "<group>"; };
 		E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiMainViewController.swift; sourceTree = "<group>"; };
 		E14174F41C3D7E57005E3B9A /* MarketActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				E1CAA8081C26A7BC00AB4637 /* KnockKnockImageUtils.swift */,
 				706B0FD61C4CBC2F0078CD38 /* MyCustomTextField.swift */,
 				7095F3501C4E30BC002C1AD5 /* MyImageView.swift */,
+				E12CD3271C69274800E1DFCD /* UIImage+ImageQuality.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				E1B95E461C36C14600F85B8F /* PubDetailsViewController.swift in Sources */,
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
 				F6858DB01C573B0400FAB184 /* ReviewsTableCell.swift in Sources */,
+				E12CD3281C69274800E1DFCD /* UIImage+ImageQuality.swift in Sources */,
 				70C807381C57E53E0039CCF1 /* TimelineView.swift in Sources */,
 				E1CAA7ED1C23E95C00AB4637 /* ItiSummaryViewController.swift in Sources */,
 				E117372F1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift in Sources */,
