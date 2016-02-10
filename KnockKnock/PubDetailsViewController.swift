@@ -34,6 +34,8 @@ class PubDetailsViewController: UIViewController {
     
     var activities = NSArray()
     
+    var transitionDelegate: ZoomAnimatedTransitioningDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -104,6 +106,25 @@ class PubDetailsViewController: UIViewController {
         slideshow_images.clipsToBounds = true
         slideshow_images.contentScaleMode = UIViewContentMode.ScaleAspectFill
         slideshow_images.setImageInputs(imageArr)
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: "openFullScreen")
+        slideshow_images.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    
+    func openFullScreen() {
+        let ctr = FullScreenSlideshowViewController()
+        // called when full-screen VC dismissed and used to set the page to our original slideshow
+        ctr.pageSelected = {(page: Int) in
+            self.slideshow_images.setScrollViewPage(page, animated: false)
+        }
+        
+        // set the initial page
+        ctr.initialPage = slideshow_images.scrollViewPage
+        // set the inputs
+        ctr.inputs = slideshow_images.images
+        self.transitionDelegate = ZoomAnimatedTransitioningDelegate(slideshowView: slideshow_images);
+        ctr.transitioningDelegate = self.transitionDelegate!
+        self.presentViewController(ctr, animated: true, completion: nil)
     }
     
     

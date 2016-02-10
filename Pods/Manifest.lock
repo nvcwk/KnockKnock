@@ -64,6 +64,7 @@ PODS:
     - Parse (~> 1.9)
   - Popover (0.8.1)
   - QIULaunchAnimation (0.0.1)
+  - RSKImageCropper (1.5.1)
   - RTIconButton (1.0.0)
   - Scrollable (1.0.5)
   - SwiftDate (2.0.2)
@@ -91,6 +92,7 @@ DEPENDENCIES:
   - ParseUI
   - Popover
   - QIULaunchAnimation
+  - RSKImageCropper
   - RTIconButton
   - Scrollable (~> 1.0)
   - SwiftDate
@@ -129,6 +131,7 @@ SPEC CHECKSUMS:
   ParseUI: c2bcdfbb00330e464b5b773266ae221697a3bb7b
   Popover: efa33e8368f88acbc15d66660708957896d67460
   QIULaunchAnimation: b979692b9c6e5e487c327d55ac2a39656d68a11d
+  RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
   RTIconButton: 5174ff0555381ff78dd629c038673159f0a50b7b
   Scrollable: 1be6d6b8b4fbc6aa98f5f44a24c1f88105ae35dd
   SwiftDate: b4f4d0962afe48365ad2800c9850a6626deb9359

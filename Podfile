@@ -30,6 +30,8 @@ pod 'Popover'
 pod 'Scrollable', '~> 1.0'
 pod 'ImageSlideshow'
 pod 'ImageSlideshow/AFURL'
+#pod 'TOCropViewController'
+pod 'RSKImageCropper'
 
 =begin 
 To Consider 

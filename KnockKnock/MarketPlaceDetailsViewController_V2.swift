@@ -39,6 +39,8 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
     
     var identifier = ""
     
+    var transitionDelegate: ZoomAnimatedTransitioningDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
@@ -131,6 +133,9 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
         slideshow_images.clipsToBounds = true
         slideshow_images.contentScaleMode = UIViewContentMode.ScaleAspectFill
         slideshow_images.setImageInputs(imageArr)
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: "openFullScreen")
+        slideshow_images.addGestureRecognizer(gestureRecognizer)
 
         
         self.img_host.layer.cornerRadius = self.img_host.frame.size.width/2
@@ -166,6 +171,24 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
         self.tableView.layoutIfNeeded()
     }
     
+    func openFullScreen() {
+        let ctr = FullScreenSlideshowViewController()
+        // called when full-screen VC dismissed and used to set the page to our original slideshow
+        ctr.pageSelected = {(page: Int) in
+            self.slideshow_images.setScrollViewPage(page, animated: false)
+        }
+        
+        // set the initial page
+        ctr.initialPage = slideshow_images.scrollViewPage
+        // set the inputs
+        ctr.inputs = slideshow_images.images
+        self.transitionDelegate = ZoomAnimatedTransitioningDelegate(slideshowView: slideshow_images);
+        ctr.transitioningDelegate = self.transitionDelegate!
+        self.presentViewController(ctr, animated: true, completion: nil)
+    }
+    
+    
+    
     @IBAction func reviewButtonTapped(sender: AnyObject) {
         //self.performSegueWithIdentifier("ReviewView", sender: self)
         self.identifier = "showReviewView"
@@ -175,6 +198,7 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
         //self.performSegueWithIdentifier("BookingView", sender: self)
         self.identifier = "showBookingView"
     }
+    
     
     
     
