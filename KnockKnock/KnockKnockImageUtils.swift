@@ -3,8 +3,8 @@ import UIKit
 class KnockKnockImageUtils {
     
     static func imagePicker(controller: UIViewController, picker: UIImagePickerController) {
-        picker.allowsEditing = true
-        //picker.cropSize = CGSizeMake(420, 300); // <- there is a bug
+//        picker.allowsEditing = true
+//        picker.cropSize = CGSizeMake(320, 320); // <- there is a bug
         
         let alert:UIAlertController = UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         

@@ -9,6 +9,8 @@
 import UIKit
 import autoAutoLayout
 import Parse
+//import TOCropViewController
+import RSKImageCropper
 
 class ItiImageViewController: UIViewController {
     @IBOutlet weak var img_image1: UIImageView!
@@ -92,10 +94,10 @@ class ItiImageViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-                if(segue .identifier == "itiStep31") {
-                    let controller = segue.destinationViewController as! ItiDaysSelectorViewController
-                    controller.itineraryObj = itiObj
-                }
+        if(segue .identifier == "itiStep31") {
+            let controller = segue.destinationViewController as! ItiDaysSelectorViewController
+            controller.itineraryObj = itiObj
+        }
     }
     
     
@@ -104,36 +106,57 @@ class ItiImageViewController: UIViewController {
 extension ItiImageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
-        var image = UIImage()
-        var no = 0
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        if(selectedImage == 1) {
-            image = info[UIImagePickerControllerEditedImage] as! UIImage
-            img_image1.image = image
-            no = 1
-        } else if (selectedImage == 2) {
-            image = info[UIImagePickerControllerEditedImage] as! UIImage
-            img_image2.image = image
-            no = 2
-        } else if (selectedImage == 3) {
-            image = info[UIImagePickerControllerEditedImage] as! UIImage
-            img_image3.image = image
-            no = 3
-        } else if (selectedImage == 4) {
-            image = info[UIImagePickerControllerEditedImage] as! UIImage
-            img_image4.image = image
-            no = 4
-        }
+        let cropView = RSKImageCropViewController(image: image)
+        cropView.cropMode = RSKImageCropMode.Square
+        cropView.delegate = self
+        presentViewController(cropView, animated: false, completion: nil)
         
-        editImageArr(image,no: no)
-    }
-    
-    func editImageArr(image: UIImage, no: Int) {
-        imagesArr[no - 1] = UIImagePNGRepresentation(image)!
+        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
+
+extension ItiImageViewController: RSKImageCropViewControllerDelegate  {
+    func imageCropViewController(controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
+        var no = 0
+        
+        if(selectedImage == 1) {
+            no = 1
+            img_image1.image = croppedImage
+        } else if (selectedImage == 2) {
+            img_image2.image = croppedImage
+            no = 2
+        } else if (selectedImage == 3) {
+            img_image3.image = croppedImage
+            no = 3
+        } else if (selectedImage == 4) {
+            img_image4.image = croppedImage
+            no = 4
+        }
+        
+        editImageArr(croppedImage,no: no)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func editImageArr(image: UIImage, no: Int) {
+        imagesArr[no - 1] = image.mediumQualityJPEGNSData
+    }
+    
+    func imageCropViewControllerDidCancelCrop(controller: RSKImageCropViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+//extension ItiImageViewController:  TOCropViewControllerDelegate {
+//    func cropViewController(cropViewController: TOCropViewController!, didCropToImage image: UIImage!, withRect cropRect: CGRect, angle: Int) {
+//        img_image1.image = image
+//        self.dismissViewControllerAnimated(true, completion: nil)
+//    }
+//}
 
