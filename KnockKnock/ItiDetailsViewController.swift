@@ -119,6 +119,7 @@ class ItiDetailsViewController: UIViewController {
         ctr.inputs = slideshow_images.images
         self.transitionDelegate = ZoomAnimatedTransitioningDelegate(slideshowView: slideshow_images);
         ctr.transitioningDelegate = self.transitionDelegate!
+        
         self.presentViewController(ctr, animated: true, completion: nil)
     }
     
