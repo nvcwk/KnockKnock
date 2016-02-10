@@ -30,6 +30,7 @@ pod 'Popover'
 pod 'Scrollable', '~> 1.0'
 pod 'ImageSlideshow'
 pod 'ImageSlideshow/AFURL'
+pod 'LGSemiModalNavController'
 
 =begin 
 To Consider 

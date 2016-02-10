@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7020E9691C5767590026931F /* MarketPlaceDetailsViewController_V2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020E9681C5767590026931F /* MarketPlaceDetailsViewController_V2.swift */; };
+		703D67F91C6BA6A000DDB659 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D67F71C6BA6A000DDB659 /* SortViewController.swift */; };
+		703D67FC1C6BADFC00DDB659 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D67FB1C6BADFC00DDB659 /* FilterViewController.swift */; };
 		706B0FD71C4CBC2F0078CD38 /* MyCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B0FD61C4CBC2F0078CD38 /* MyCustomTextField.swift */; };
 		706B0FD91C4D2BAA0078CD38 /* ProfileAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B0FD81C4D2BAA0078CD38 /* ProfileAvatar.swift */; };
 		7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7087D50C1C27D8E90005711E /* ProfileViewController.swift */; };
@@ -115,6 +117,8 @@
 		1B5AD10247D09E5AD74690E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2934923C3E232A836459B32D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7020E9681C5767590026931F /* MarketPlaceDetailsViewController_V2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceDetailsViewController_V2.swift; sourceTree = "<group>"; };
+		703D67F71C6BA6A000DDB659 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
+		703D67FB1C6BADFC00DDB659 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		706B0FD61C4CBC2F0078CD38 /* MyCustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTextField.swift; sourceTree = "<group>"; };
 		706B0FD81C4D2BAA0078CD38 /* ProfileAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAvatar.swift; sourceTree = "<group>"; };
 		7087D50C1C27D8E90005711E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -402,6 +406,8 @@
 				E1922AF41C497B1E0078C401 /* MarketPlaceDetailsV2ViewController.swift */,
 				E117372E1C57E43500E193E4 /* MarketPlaceDetailsBackup.swift */,
 				7020E9681C5767590026931F /* MarketPlaceDetailsViewController_V2.swift */,
+				703D67F71C6BA6A000DDB659 /* SortViewController.swift */,
+				703D67FB1C6BADFC00DDB659 /* FilterViewController.swift */,
 			);
 			name = MarketPlaceV2;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 				E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */,
 				E1CAA8091C26A7BC00AB4637 /* KnockKnockImageUtils.swift in Sources */,
 				E159A8301C33DE4200EF80A4 /* PubTableViewCell.swift in Sources */,
+				703D67FC1C6BADFC00DDB659 /* FilterViewController.swift in Sources */,
 				E159A83B1C345CE700EF80A4 /* ItiDetailsViewController.swift in Sources */,
 				E1922AF11C49643A0078C401 /* MarketPlaceV2TableViewCell.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
@@ -742,6 +749,7 @@
 				F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */,
 				E187E5441C32E80800E00E5A /* ItiTableViewCell.swift in Sources */,
 				E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */,
+				703D67F91C6BA6A000DDB659 /* SortViewController.swift in Sources */,
 				F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */,
 				E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */,
 				F60DD3731C48F7CA00B79F54 /* PendingExpandedViewController.swift in Sources */,

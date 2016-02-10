@@ -9,33 +9,14 @@
 import UIKit
 import QIULaunchAnimation
 import autoAutoLayout
-import Popover
 import Parse
+import LGSemiModalNavController
 
 class MarketPlaceV2ViewController: UIViewController {
-    
+
     @IBOutlet weak var btn_sortby: UIButton!
     @IBOutlet weak var btn_filter: UIButton!
     @IBOutlet weak var view_container: UIView!
-    
-    var popover_show = Popover()
-    var popover_filter = Popover()
-    
-    private var popoverOptions: [PopoverOption] = [
-        .Type(.Down),
-        .BlackOverlayColor(UIColor(white: 0.0, alpha: 0.6))
-    ]
-
-    
-    @IBAction func dismiss_pop(sender: AnyObject) {
-        popover_filter.dismiss()
-        popover_show.dismiss()
-    }
-    var test = true
-    
-    var clicked_button = false
-    
-    private var texts_sortby = ["Highest to Lowest Price", "Lowest to Highest Price", "Earliest Start Date"]
 
     
     //@IBOutlet weak var leftBottomButton: UIButton!
@@ -43,6 +24,7 @@ class MarketPlaceV2ViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+
        // KnockKnockUtils.updateUserRating(PFUser.currentUser()!)
 
                 self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
@@ -52,11 +34,8 @@ class MarketPlaceV2ViewController: UIViewController {
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
-        var fadeAnimation: QIULaunchAnimationFade = QIULaunchAnimationFade()
-        //fadeAnimation.animationDuration = 5;
-        fadeAnimation.startAnimation(nil)
-
         // Do any additional setup after loading the view.
+        
 
     }
 
@@ -65,78 +44,53 @@ class MarketPlaceV2ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func on_Press(sender: AnyObject) {
+        var lgVC = UIViewController();
         
-        //clicked_button = true
+        let storyboard: UIStoryboard = UIStoryboard(name: "MarketPlace", bundle: nil )
         
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 140))
+        lgVC = storyboard.instantiateViewControllerWithIdentifier("SortViewController")
         
-        let startPoint = CGPoint(x: self.view.frame.width/2 - 80, y: 100)
+        var semiModal: LGSemiModalNavViewController = LGSemiModalNavViewController(rootViewController: lgVC)
+        lgVC.navigationItem.title = "Sort By: "
+//        var applyButton : UIBarButtonItem = UIBarButtonItem(title: "Apply", style: UIBarButtonItemStyle.Plain, target: self, action: "")
+//        lgVC.navigationItem.rightBarButtonItem = applyButton
+        lgVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 17)!]
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.scrollEnabled = false
-        self.popover_show = Popover(options: self.popoverOptions, showHandler: nil, dismissHandler: nil)
-
-        //var popover = Popover()
-        self.popover_show.show(tableView, point: startPoint)
-
+        
+        semiModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 300)
+        semiModal.backgroundShadeColor = UIColor.darkGrayColor()
+        semiModal.animationSpeed = 0.35
+        semiModal.tapDismissEnabled = true
+        semiModal.backgroundShadeAlpha = 0.3
+        semiModal.scaleTransform = CGAffineTransformMakeScale(1.0, 1.0)
+        semiModal.view.backgroundColor = UIColor.whiteColor()
+        
+        self.presentViewController(semiModal, animated: true, completion: { _ in })
+        
     }
     @IBAction func on_Press_filter(sender: AnyObject) {
-        let startPoint = CGPoint(x: self.view.frame.width - 80, y: 100)
-//        let aView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 180))
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 180))
+        var lgVC = UIViewController();
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.scrollEnabled = false
-        self.popover_show = Popover(options: self.popoverOptions, showHandler: nil, dismissHandler: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "MarketPlace", bundle: nil )
         
-        //var popover = Popover()
-        self.popover_filter.show(tableView, point: startPoint)
+        lgVC = storyboard.instantiateViewControllerWithIdentifier("FilterViewController")
+        
+        var semiModal: LGSemiModalNavViewController = LGSemiModalNavViewController(rootViewController: lgVC)
+        lgVC.navigationItem.title = "Filter By: "
+        lgVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 17)!]
+        
+        
+        semiModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 250)
+        semiModal.backgroundShadeColor = UIColor.darkGrayColor()
+        semiModal.animationSpeed = 0.35
+        semiModal.tapDismissEnabled = true
+        semiModal.backgroundShadeAlpha = 0.3
+        semiModal.scaleTransform = CGAffineTransformMakeScale(1.0, 1.0)
+        semiModal.view.backgroundColor = UIColor.whiteColor()
+        
+        self.presentViewController(semiModal, animated: true, completion: { _ in })
     }
-    
-    @IBAction func actionTest(sender: UIButton) {
-        
-        if(test) {
-            test = false
-        } else {
-            test = true
-        }
-        
-        var tv = self.childViewControllers[0] as! MarketPlaceV2TableViewController
-        tv.published = test
-        tv.loadObjects()
-        tv.viewWillAppear(true)
-    }
+
     
 }
 
-extension MarketPlaceV2ViewController: UITableViewDelegate {
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.popover_show.dismiss()
-        clicked_button = false
-        
-        var controller = self.childViewControllers[0] as! MarketPlaceV2TableViewController
-        controller.sort = indexPath.row
-        controller.loadObjects()
-        controller.viewWillAppear(true)
-    }
-}
-
-extension MarketPlaceV2ViewController: UITableViewDataSource {
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        if(clicked_button == true){
-            return texts_sortby.count
-        } else {
-            return 1
-        }
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
-        cell.textLabel?.text = self.texts_sortby[indexPath.row]
-        return cell
-    }
-}
