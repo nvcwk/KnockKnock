@@ -37,7 +37,7 @@ class ProfilePicViewController: UIViewController {
     }
     
     @IBAction func actionUpload(sender: UIButton) {
-        ParseUtils.updateProfileImage(KnockKnockUtils.RBResizeImage(img_profile.image!, targetSize: CGSize(width: 300, height: 300)), controller: self)
+        ParseUtils.updateProfileImage(img_profile.image!, controller: self)
     }
     
 

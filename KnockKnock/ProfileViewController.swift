@@ -14,6 +14,7 @@ import TextFieldEffects
 import SwiftSpinner
 import SwiftValidator
 import autoAutoLayout
+import RSKImageCropper
 
 class ProfileViewController: UIViewController {
     
@@ -108,13 +109,29 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
         
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        let cropView = RSKImageCropViewController(image: image)
+        cropView.cropMode = RSKImageCropMode.Circle
+        cropView.delegate = self
+        presentViewController(cropView, animated: false, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension ProfileViewController: RSKImageCropViewControllerDelegate  {
+    func imageCropViewController(controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
+        
         SwiftSpinner.show("Updating...")
         
-        img_profile.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        img_profile.image = croppedImage
         
         let currentUser = PFUser.currentUser()!
         
-        currentUser["profilePic"] = PFFile(data: UIImagePNGRepresentation(img_profile.image!)!)!
+        currentUser["profilePic"] = PFFile(data: croppedImage.mediumQualityJPEGNSData)
         
         currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if (success) {
@@ -127,11 +144,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             } else {
                 KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
             }
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
-        
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
+    func imageCropViewControllerDidCancelCrop(controller: RSKImageCropViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
