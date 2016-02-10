@@ -90,16 +90,6 @@ class PubDetailsViewController: UIViewController {
             
             let image = imageObj["image"] as! PFFile
             
-            //            image.getDataInBackgroundWithBlock({
-            //                (imageData: NSData?, error: NSError?) -> Void in
-            //                if (error == nil) {
-            //                    let image = UIImage(data:imageData!)
-            //
-            //                    imageArr.append(ImageSource(image: image!))
-            //
-            //                }
-            //            })
-            
             imageArr.append(AFURLSource(urlString: image.url!)!)
         }
         

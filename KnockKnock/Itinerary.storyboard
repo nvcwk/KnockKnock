@@ -809,7 +809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJp-Ib-led" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1831.5" y="-1714.5"/>
+            <point key="canvasLocation" x="1821.5" y="-1714.5"/>
         </scene>
         <!--KnockKnock-->
         <scene sceneID="jlc-sk-cpB">

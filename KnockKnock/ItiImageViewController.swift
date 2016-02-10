@@ -153,10 +153,4 @@ extension ItiImageViewController: RSKImageCropViewControllerDelegate  {
     }
 }
 
-//extension ItiImageViewController:  TOCropViewControllerDelegate {
-//    func cropViewController(cropViewController: TOCropViewController!, didCropToImage image: UIImage!, withRect cropRect: CGRect, angle: Int) {
-//        img_image1.image = image
-//        self.dismissViewControllerAnimated(true, completion: nil)
-//    }
-//}
 

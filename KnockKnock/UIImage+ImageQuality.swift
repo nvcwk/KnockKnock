@@ -4,7 +4,7 @@
 //
 //  Created by Nicholas Chan on 9/2/16.
 //  Copyright © 2016 Gen6. All rights reserved.
-//
+///
 
 import Foundation
 import UIKit
