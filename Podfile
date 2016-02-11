@@ -30,12 +30,9 @@ pod 'Popover'
 pod 'Scrollable', '~> 1.0'
 pod 'ImageSlideshow'
 pod 'ImageSlideshow/AFURL'
-<<<<<<< HEAD
 pod 'LGSemiModalNavController'
-=======
-#pod 'TOCropViewController'
+pod 'TOCropViewController'
 pod 'RSKImageCropper'
->>>>>>> origin/master
 
 =begin 
 To Consider 
