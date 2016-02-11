@@ -65,12 +65,14 @@ PODS:
     - Parse (~> 1.9)
   - Popover (0.8.1)
   - QIULaunchAnimation (0.0.1)
+  - RSKImageCropper (1.5.1)
   - RTIconButton (1.0.0)
   - Scrollable (1.0.5)
   - SwiftDate (2.0.2)
   - SwiftSpinner (0.8.0)
   - SwiftValidator (3.0.1)
   - TextFieldEffects (1.1.0)
+  - TOCropViewController (1.2.3)
   - ZFRippleButton (0.5.1)
 
 DEPENDENCIES:
@@ -93,12 +95,14 @@ DEPENDENCIES:
   - ParseUI
   - Popover
   - QIULaunchAnimation
+  - RSKImageCropper
   - RTIconButton
   - Scrollable (~> 1.0)
   - SwiftDate
   - SwiftSpinner
   - SwiftValidator
   - TextFieldEffects
+  - TOCropViewController
   - ZFRippleButton
 
 EXTERNAL SOURCES:
@@ -132,12 +136,14 @@ SPEC CHECKSUMS:
   ParseUI: c2bcdfbb00330e464b5b773266ae221697a3bb7b
   Popover: efa33e8368f88acbc15d66660708957896d67460
   QIULaunchAnimation: b979692b9c6e5e487c327d55ac2a39656d68a11d
+  RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
   RTIconButton: 5174ff0555381ff78dd629c038673159f0a50b7b
   Scrollable: 1be6d6b8b4fbc6aa98f5f44a24c1f88105ae35dd
   SwiftDate: b4f4d0962afe48365ad2800c9850a6626deb9359
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   SwiftValidator: c59223144754045d7691febdc3b3ecc2e73b609c
   TextFieldEffects: 8e43fea8836e97be80fc4db27a1596c9e98a26ba
+  TOCropViewController: 17c98c4c79f56fcf576ad726559cb93bb4c9ee8b
   ZFRippleButton: 263bdf4e31dabd5826133b121d9ff908c87a6a11
 
 COCOAPODS: 0.39.0
