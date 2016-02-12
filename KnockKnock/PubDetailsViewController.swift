@@ -34,6 +34,8 @@ class PubDetailsViewController: UIViewController {
     
     var activities = NSArray()
     
+    var transitionDelegate: ZoomAnimatedTransitioningDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,9 +58,9 @@ class PubDetailsViewController: UIViewController {
         hostObj = pubObj["host"] as! PFUser
         
         lb_title.text = itineraryObj["title"] as! String
-//        
-//        image_background.file = itineraryObj["image"] as! PFFile
-//        image_background.loadInBackground()
+        //
+        //        image_background.file = itineraryObj["image"] as! PFFile
+        //        image_background.loadInBackground()
         
         lb_price.text = String(pubObj["price"] as! Int)
         
@@ -88,22 +90,31 @@ class PubDetailsViewController: UIViewController {
             
             let image = imageObj["image"] as! PFFile
             
-            //            image.getDataInBackgroundWithBlock({
-            //                (imageData: NSData?, error: NSError?) -> Void in
-            //                if (error == nil) {
-            //                    let image = UIImage(data:imageData!)
-            //
-            //                    imageArr.append(ImageSource(image: image!))
-            //
-            //                }
-            //            })
-            
             imageArr.append(AFURLSource(urlString: image.url!)!)
         }
         
         slideshow_images.clipsToBounds = true
         slideshow_images.contentScaleMode = UIViewContentMode.ScaleAspectFill
         slideshow_images.setImageInputs(imageArr)
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: "openFullScreen")
+        slideshow_images.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    
+    func openFullScreen() {
+        let ctr = FullScreenSlideshowViewController()
+        // called when full-screen VC dismissed and used to set the page to our original slideshow
+        ctr.pageSelected = {(page: Int) in
+            self.slideshow_images.setScrollViewPage(page, animated: false)
+        }
+        
+        // set the initial page
+        ctr.initialPage = slideshow_images.scrollViewPage
+        // set the inputs
+        ctr.inputs = slideshow_images.images
+        self.transitionDelegate = ZoomAnimatedTransitioningDelegate(slideshowView: slideshow_images);
+        ctr.transitioningDelegate = self.transitionDelegate!
+        self.presentViewController(ctr, animated: true, completion: nil)
     }
     
     
