@@ -9,15 +9,16 @@
 import UIKit
 import Parse
 import autoAutoLayout
+import RSKImageCropper
 
-class ProfilePicViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfilePicViewController: UIViewController {
     
     @IBOutlet weak var img_profile: UIImageView!
     @IBOutlet weak var btn_upload: UIButton!
     
-    var picker = UIImagePickerController()
+    let imagePicker = UIImagePickerController()
     var popover: UIPopoverController? = nil
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,73 +28,46 @@ class ProfilePicViewController: UIViewController, UIImagePickerControllerDelegat
         self.img_profile.layer.cornerRadius = self.img_profile.frame.size.width/2
         self.img_profile.clipsToBounds = true
         
-        picker.delegate = self
-        picker.allowsEditing = true
+        imagePicker.delegate = self
     }
     
-    func openCamera() {
-        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
-            picker.sourceType = UIImagePickerControllerSourceType.Camera
     
-            self.presentViewController(picker, animated: true, completion: nil)
-        } else {
-            openGallery()
-        }
+    @IBAction func actionProfile(sender: AnyObject) {
+        KnockKnockImageUtils.imagePicker(self, picker: self.imagePicker)
     }
-    
-    func openGallery() {
-        picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            self.presentViewController(picker, animated: true, completion: nil)
-        } else {
-            popover = UIPopoverController(contentViewController: picker)
-            
-            popover!.presentPopoverFromRect(btn_upload.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
-        }
-    }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
-    {
-        picker.dismissViewControllerAnimated(true, completion: nil)
-        img_profile.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController)
-    {
-        picker.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBAction func actionChange(sender: UITapGestureRecognizer) {
-        let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
-        let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { UIAlertAction in
-            self.openCamera()
-        }
-        
-        let gallaryAction = UIAlertAction(title: "Gallery", style: UIAlertActionStyle.Default) { UIAlertAction in
-            self.openGallery()
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { UIAlertAction in }
-        
-        // Add the actions
-        alert.addAction(cameraAction)
-        alert.addAction(gallaryAction)
-        alert.addAction(cancelAction)
-        
-        // Present the controller
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            self.presentViewController(alert, animated: true, completion: nil)
-        } else {
-            popover = UIPopoverController(contentViewController: alert)
-            
-            popover!.presentPopoverFromRect(btn_upload.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
-        }
-    }
-    
     
     @IBAction func actionUpload(sender: UIButton) {
-        ParseUtils.updateProfileImage(KnockKnockUtils.RBResizeImage(img_profile.image!, targetSize: CGSize(width: 300, height: 300)), controller: self)
+        ParseUtils.updateProfileImage(img_profile.image!, controller: self)
     }
     
+    
+}
 
+extension ProfilePicViewController: RSKImageCropViewControllerDelegate  {
+    func imageCropViewController(controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
+        img_profile.image = croppedImage
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imageCropViewControllerDidCancelCrop(controller: RSKImageCropViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension ProfilePicViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        let cropView = RSKImageCropViewController(image: image)
+        cropView.cropMode = RSKImageCropMode.Circle
+        cropView.delegate = self
+        presentViewController(cropView, animated: false, completion: nil)
+        
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
