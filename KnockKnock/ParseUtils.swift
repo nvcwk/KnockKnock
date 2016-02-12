@@ -90,7 +90,7 @@ class ParseUtils {
         
         let user = currentUser()
         
-        let imageFile:PFFile = PFFile(data: UIImagePNGRepresentation(image)!)!
+        let imageFile:PFFile = PFFile(data: image.lowQualityJPEGNSData)!
         
         user["profilePic"] = imageFile
         
