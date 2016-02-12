@@ -3,8 +3,8 @@ import UIKit
 class KnockKnockImageUtils {
     
     static func imagePicker(controller: UIViewController, picker: UIImagePickerController) {
-        picker.allowsEditing = true
-        //picker.cropSize = CGSizeMake(420, 300); // <- there is a bug
+        //        picker.allowsEditing = true
+        //        picker.cropSize = CGSizeMake(320, 320); // <- there is a bug
         
         let alert:UIAlertController = UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
@@ -13,7 +13,7 @@ class KnockKnockImageUtils {
         }
         
         let gallaryAction = UIAlertAction(title: "Gallery", style: UIAlertActionStyle.Default) { UIAlertAction in
-             KnockKnockImageUtils.openGallery(controller, picker: picker)
+            KnockKnockImageUtils.openGallery(controller, picker: picker)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { UIAlertAction in }
@@ -23,7 +23,7 @@ class KnockKnockImageUtils {
         alert.addAction(cancelAction)
         
         controller.presentViewController(alert, animated: true, completion: nil)
-       
+        
     }
     
     private static func cameraPicker(controller: UIViewController, picker: UIImagePickerController) {
@@ -40,5 +40,5 @@ class KnockKnockImageUtils {
         controller.presentViewController(picker, animated: true, completion: nil)
     }
     
-
+    
 }
