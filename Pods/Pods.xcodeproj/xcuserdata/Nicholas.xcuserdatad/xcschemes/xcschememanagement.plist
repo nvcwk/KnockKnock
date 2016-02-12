@@ -64,6 +64,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LGSemiModalNavController-LGSemiModalNavController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LGSemiModalNavController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectiveSugar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -134,6 +144,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TOCropViewController-TOCropViewControllerBundle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TOCropViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TextFieldEffects.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -167,7 +187,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>31EEDA772D86E6D85F731C43CBDB4FF8</key>
+		<key>1E5B1AE21DCD74EE351063F8A98B8258</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2F6D35F4BBAE72F5AFE9232C633F374E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3ACE9E2E07F92C6E1B4324E99A31DB23</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>459DE8C0FFFC7823ED2E9E68FAAED739</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,7 +217,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4B74566AF028C16390127BFEBCD65118</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>511B536F0DE06D9C3BD65397A91990C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>54776DB7236F7BD6E1C48630FB193989</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -197,7 +242,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61C43D7184AB357D3388B2D1FB955A57</key>
+		<key>62AB0B19229DE8F08F1CB3A5E343DB4D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -207,32 +252,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>67565F65CAC8529E34F36CB37D02E095</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6F96D3A1D152B95E06C6ADD2E6441A55</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7413BE6AB2C8576026EB9DECA7A843BD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>775761CAB21245BD488D042EC5EFCBE3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>785D4F727CCE78C0CDC844D4C323784D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>79B6C8E3B140A732C1BBCE2E7A0909C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C22232E6C089CDAF375ED7DDA6E87E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -242,12 +267,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98FB0827BE2F90E47652A895652A0362</key>
+		<key>93B3F4C3934CA609624BAA5BC3357A3B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A297BB4EB0C692DA119C5F3F5D90E6B3</key>
+		<key>9BD2D4F80BB032948ACA363F7BE01F9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -257,7 +282,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A7AFCF9EACD90D20C043009ABC1BAA49</key>
+		<key>ADBA1CD3F8F436D4DC5B65025B313555</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -272,7 +297,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BE7D22F43E5D47ABA4B7E1E8CE0ECE11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1237305C93D5077E6894A6DE469BF8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C58C7421DAD296EE054EEEDAE49151AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1584606C3CBE11C3A0427D2EC9BFE83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -282,12 +322,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DD0EF194DF9F12AF7580920A4644F950</key>
+		<key>D441F1575770E46B495109D8D85469BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F07CFA6B65E28924016F4448B61444F6</key>
+		<key>E46AFA6CA7CCA143C252D46E2BD5A85C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
