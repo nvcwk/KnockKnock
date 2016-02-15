@@ -108,26 +108,26 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
 //        image_image.file = image
 //        image_image.loadInBackground()
         
-        var images = itiObj["images"] as! NSArray
-        
         var imageArr = [AFURLSource]()
         
-        for var i = 0; i < images.count; i++ {
-            let imageObj = images[i] as! PFObject
+        if (itiObj["images"] != nil) {
+            var images = itiObj["images"] as! NSArray
             
-            let image = imageObj["image"] as! PFFile
-            
-            //            image.getDataInBackgroundWithBlock({
-            //                (imageData: NSData?, error: NSError?) -> Void in
-            //                if (error == nil) {
-            //                    let image = UIImage(data:imageData!)
-            //
-            //                    imageArr.append(ImageSource(image: image!))
-            //
-            //                }
-            //            })
-            
-            imageArr.append(AFURLSource(urlString: image.url!)!)
+            if(images.count > 0) {
+                for var i = 0; i < images.count; i++ {
+                    let imageObj = images[i] as! PFObject
+                    
+                    let image = imageObj["image"] as! PFFile
+                    
+                    imageArr.append(AFURLSource(urlString: image.url!)!)
+                }
+            }
+        } else {
+            if(itiObj["image"] != nil) {
+                var image = itiObj["image"] as! PFFile
+                
+                imageArr.append(AFURLSource(urlString: image.url!)!)
+            }
         }
         
         slideshow_images.clipsToBounds = true

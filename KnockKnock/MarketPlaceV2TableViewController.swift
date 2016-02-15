@@ -75,14 +75,25 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
                 cell.endDate.text = KnockKnockUtils.dateToStringDisplay( mpObj["lastAvailability"] as! NSDate)
 //                let image = itiObj["image"] as! PFFile
                 
-                var images = itiObj["images"] as! NSArray
-                
-                let imageObj = images[0] as! PFObject
-                
-                let imageFile = imageObj["image"] as! PFFile
-                
-                cell.image_background.file = imageFile
-                cell.image_background.loadInBackground()
+                if(itiObj["images"] != nil) {
+                    var images = itiObj["images"] as! NSArray
+                    
+                    if(images.count > 0) {
+                        let imageObj = images[0] as! PFObject
+                        
+                        let imageFile = imageObj["image"] as! PFFile
+                        
+                        cell.image_background.file = imageFile
+                        cell.image_background.loadInBackground()
+                    }
+                } else {
+                    if(itiObj["image"] != nil) {
+                        let imageFile = itiObj["image"] as! PFFile
+                    
+                        cell.image_background.file = imageFile
+                        cell.image_background.loadInBackground()
+                    }
+                }
                 
                 
                 //for stars

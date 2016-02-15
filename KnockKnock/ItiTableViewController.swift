@@ -39,23 +39,34 @@ class ItiTableViewController: PFQueryTableViewController {
         var cell: ItiTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItiTableViewCell") as! ItiTableViewCell
         
         if let itinerary = object {
-
+            
             cell.lb_title.text = itinerary["title"] as! String
             
             let date = itinerary.createdAt!
             
-//            cell.lb_created.text = KnockKnockUtils.dateToString(date)
+            //            cell.lb_created.text = KnockKnockUtils.dateToString(date)
             
             //let imageFile = itinerary["image"] as! PFFile
             
-            var images = itinerary["images"] as! NSArray
-            
-            let imageObj = images[0] as! PFObject
-            
-            let imageFile = imageObj["image"] as! PFFile
-            
-            cell.image_background.file = imageFile
-            cell.image_background.loadInBackground()
+            if(itinerary["images"] != nil) {
+                var images = itinerary["images"] as! NSArray
+                
+                if(images.count > 0) {
+                    let imageObj = images[0] as! PFObject
+                    
+                    let imageFile = imageObj["image"] as! PFFile
+                    
+                    cell.image_background.file = imageFile
+                    cell.image_background.loadInBackground()
+                }
+            } else {
+                if(itinerary["image"] != nil) {
+                    let imageFile = itinerary["image"] as! PFFile
+                    
+                    cell.image_background.file = imageFile
+                    cell.image_background.loadInBackground()
+                }
+            }
         }
         
         return cell
