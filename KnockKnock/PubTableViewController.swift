@@ -55,18 +55,29 @@ class PubTableViewController: PFQueryTableViewController {
             
             cell.lb_title.text = itinerary["title"] as! String
             
-//            let imageFile = itinerary["image"] as! PFFile
+            //            let imageFile = itinerary["image"] as! PFFile
             
-            var images = itinerary["images"] as! NSArray
+            if(itinerary["images"] != nil) {
+                var images = itinerary["images"] as! NSArray
+                
+                if(images.count > 0) {
+                    let imageObj = images[0] as! PFObject
+                    
+                    let imageFile = imageObj["image"] as! PFFile
+                    
+                    cell.image_background.file = imageFile
+                    cell.image_background.loadInBackground()
+                }
+            } else {
+                if(itinerary["image"] != nil) {
+                    let imageFile = itinerary["image"] as! PFFile
+                    
+                    cell.image_background.file = imageFile
+                    cell.image_background.loadInBackground()
+                }
+            }
             
-            let imageObj = images[0] as! PFObject
-            
-            let imageFile = imageObj["image"] as! PFFile
-            
-            cell.image_background.file = imageFile
-            cell.image_background.loadInBackground()
-            
-//                        cell.image_background.contentMode = UIViewContentMode.ScaleToFill
+            //                        cell.image_background.contentMode = UIViewContentMode.ScaleToFill
         }
         
         return cell

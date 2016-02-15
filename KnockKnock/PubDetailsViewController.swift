@@ -81,16 +81,26 @@ class PubDetailsViewController: UIViewController {
         table_activities.delegate = self
         table_activities.dataSource = self
         
-        var images = itineraryObj["images"] as! NSArray
-        
         var imageArr = [AFURLSource]()
         
-        for var i = 0; i < images.count; i++ {
-            let imageObj = images[i] as! PFObject
+        if (itineraryObj["images"] != nil) {
+            var images = itineraryObj["images"] as! NSArray
             
-            let image = imageObj["image"] as! PFFile
-            
-            imageArr.append(AFURLSource(urlString: image.url!)!)
+            if(images.count > 0) {
+                for var i = 0; i < images.count; i++ {
+                    let imageObj = images[i] as! PFObject
+                    
+                    let image = imageObj["image"] as! PFFile
+                    
+                    imageArr.append(AFURLSource(urlString: image.url!)!)
+                }
+            }
+        } else {
+            if(itineraryObj["image"] != nil) {
+                var image = itineraryObj["image"] as! PFFile
+                
+                imageArr.append(AFURLSource(urlString: image.url!)!)
+            }
         }
         
         slideshow_images.clipsToBounds = true
