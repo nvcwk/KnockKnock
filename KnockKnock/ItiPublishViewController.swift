@@ -29,6 +29,8 @@ class ItiPublishViewController: UIViewController {
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
+        lb_price.delegate = self
+        
         startDatePicker.datePickerMode = UIDatePickerMode.Date
         startDatePicker.minimumDate = 5.days.fromDate(NSDate())
         startDatePicker.addTarget(self, action: Selector("updateStartDate:"),
@@ -102,5 +104,14 @@ class ItiPublishViewController: UIViewController {
         }
     }
 
+}
+
+extension ItiPublishViewController: UITextFieldDelegate {
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        
+        let newLength = text.utf16.count + string.utf16.count - range.length
+        return newLength <= 3 // Bool
+    }
 }
 
