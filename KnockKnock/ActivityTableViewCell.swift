@@ -4,6 +4,8 @@ class ActivityTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lb_day: UILabel!
     
+    @IBOutlet weak var lb_instru: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

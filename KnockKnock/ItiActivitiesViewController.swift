@@ -37,6 +37,19 @@ class ItiActivitiesViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("activityCell", forIndexPath: indexPath) as! ActivityTableViewCell
         cell.lb_day.text = "Day " + String(indexPath.row + 1)
+        
+        if(indexPath.row % 2 == 0) {
+            cell.lb_day.textColor = DPTheme.color(0xFFFFFF, alpha: 1.0)
+            cell.lb_instru.textColor = DPTheme.color(0xFFFFFF, alpha: 1.0)
+            cell.backgroundColor = DPTheme.color(0x00A1B0, alpha: 1.0)
+        }
+        else {
+            cell.lb_day.textColor = DPTheme.color(0x00A1B0, alpha: 1.0)
+            cell.lb_instru.textColor = DPTheme.color(0x00A1B0, alpha: 1.0)
+            cell.backgroundColor = DPTheme.color(0xFFFFFF, alpha: 1.0)
+        }
+        
+        
         return cell
     }
     
