@@ -13,6 +13,8 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
     
     var pageMenu: CAPSPageMenu?
     
+    @IBOutlet weak var btn_add: UIButton!
+    
     var controller1 : ItiTableViewController?
     var controller2 : PubTableViewController?
 
@@ -41,6 +43,8 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
         
 
         setup()
+        self.view.bringSubviewToFront(btn_add)
+        
     }
     
     func setup() {
@@ -90,11 +94,9 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
 
     func didMoveToPage(controller: UIViewController, index: Int){
         if(index == 1) {
-            self.navigationItem.rightBarButtonItem?.title = ""
-            self.navigationItem.rightBarButtonItem?.enabled = false
+            self.btn_add.hidden = true
         } else {
-            self.navigationItem.rightBarButtonItem?.title = "Create"
-            self.navigationItem.rightBarButtonItem?.enabled = true
+            self.btn_add.hidden = false
         }
     }
     
