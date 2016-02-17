@@ -993,16 +993,23 @@
                     <view key="view" contentMode="scaleToFill" id="Owh-H5-uYK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1m-Ux-7dO">
+                                <rect key="frame" x="317" y="564" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.52156862745098043" blue="0.58039215686274515" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="psC-A6-5re" kind="show" id="ckZ-jj-jcv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="KnockKnock" id="i2Y-m1-Pfg">
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="VgB-qr-DiA">
-                            <connections>
-                                <segue destination="psC-A6-5re" kind="show" id="rlt-GH-AoN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="KnockKnock" id="i2Y-m1-Pfg"/>
                     <connections>
+                        <outlet property="btn_add" destination="S1m-Ux-7dO" id="G1D-Fg-kvJ"/>
                         <segue destination="ayT-fK-nBV" kind="show" identifier="toItiDetailsView" id="4Qm-yt-CBq"/>
                         <segue destination="GH3-TZ-QAj" kind="show" identifier="toPubDetailsView" id="rv5-t6-YIL"/>
                     </connections>
