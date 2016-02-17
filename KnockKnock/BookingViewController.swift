@@ -206,7 +206,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             presentViewController(alert, animated: true, completion: nil)
             
         } else {
-            let bookAlert = UIAlertController(title: "Book?", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+            let bookAlert = UIAlertController(title: "Booking", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
             
             bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
                 SwiftSpinner.show("Sending Request...")
