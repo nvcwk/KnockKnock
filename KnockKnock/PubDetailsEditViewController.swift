@@ -35,6 +35,8 @@ class PubDetailsEditViewController: UIViewController {
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
+        tf_price.delegate = self
+        
         lb_title.text = publishObj["itinerary"]["title"] as! String
 
         tf_price.text = String(publishObj["price"] as! Int)
@@ -111,4 +113,13 @@ class PubDetailsEditViewController: UIViewController {
         }
     }
 
+}
+
+extension PubDetailsEditViewController: UITextFieldDelegate {
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        
+        let newLength = text.utf16.count + string.utf16.count - range.length
+        return newLength <= 3 // Bool
+    }
 }
