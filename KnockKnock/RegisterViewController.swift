@@ -52,8 +52,8 @@ class RegisterViewController: UIViewController, CountryPickerDelegate, Validatio
         
         validator.registerField(tf_email, rules: [RequiredRule(message: missTxt), EmailRule(message: "Invalid E-Mail Adress")])
         validator.registerField(tf_pass, rules: [RequiredRule(message: missTxt), ConfirmationRule(confirmField: tf_cfmPass, message: "Password do not match!"), KnockKnockRule(regex: "^(?=.*\\d)(?=.*[a-zA-Z])(?!.*[\\W_\\x7B-\\xFF]).{7,20}$", message: "Password does not fit requirements")])
-        validator.registerField(tf_fName, rules: [RequiredRule(message: missTxt), MaxLengthRule(length: 10, message: "First Name should be max 10 characters"), KnockKnockRule(regex: "^[a-z]{1,10}$", message: "First Name must have characters only")])
-        validator.registerField(tf_lName, rules: [RequiredRule(message: missTxt), MinLengthRule(length: 2, message: "Last Name should be min 2 characters"), MaxLengthRule(length: 10, message: "Last Name should be max 10 characters"), KnockKnockRule(regex: "^[a-z]{2,10}$", message: "Last Name must have characters only")])
+        validator.registerField(tf_fName, rules: [RequiredRule(message: missTxt), MaxLengthRule(length: 10, message: "First Name should be max 10 characters"), KnockKnockRule(regex: "^[a-z ]{1,10}$", message: "First Name must have characters only")])
+        validator.registerField(tf_lName, rules: [RequiredRule(message: missTxt), MinLengthRule(length: 2, message: "Last Name should be min 2 characters"), MaxLengthRule(length: 10, message: "Last Name should be max 10 characters"), KnockKnockRule(regex: "^[a-z ]{2,10}$", message: "Last Name must have characters only")])
         validator.registerField(tf_country, rules: [RequiredRule(message: missTxt)])
         validator.registerField(tf_birthday, rules: [RequiredRule(message: missTxt)])
         validator.registerField(tf_contact, rules: [RequiredRule(message: missTxt)])
@@ -69,6 +69,10 @@ class RegisterViewController: UIViewController, CountryPickerDelegate, Validatio
     }
     
     @IBAction func actionSignUser(sender: UIButton) {
+        tf_email.text = KnockKnockUtils.trimmText(tf_email.text!)
+        tf_fName.text = KnockKnockUtils.trimmText(tf_fName.text!)
+        tf_lName.text = KnockKnockUtils.trimmText(tf_lName.text!)
+        
         validator.validate(self)
     }
     
@@ -81,6 +85,6 @@ class RegisterViewController: UIViewController, CountryPickerDelegate, Validatio
     }
 
     @IBAction func viewRequirements(sender: UIButton) {
-        KnockKnockUtils.okAlert(self, title: "Password Requirements", message: "Should contain 7-20 characters with at least 1 Upper or Lower Alphabet and 1 numerical digit. Special characters are allowed.", handle: nil)
+        KnockKnockUtils.okAlert(self, title: "Password Requirements", message: "Should contain 7-20 characters with at least 1 Upper or Lower Alphabet and 1 numerical digit. Special characters are not allowed.", handle: nil)
     }
 }
