@@ -10,8 +10,9 @@ import UIKit
 
 class SortViewController: UIViewController {
 
-    @IBOutlet weak var testingLabel: UILabel!
     override func viewDidLoad() {
+    
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
