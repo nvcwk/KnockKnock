@@ -185,7 +185,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         //validation to check if days equal number of days of tour
         if (selectedDate.count != numOfDays){
             var alertTitle = "Days Count Mismatch"
-            var message = String("Please select \(numOfDays) consecutive days")
+            var message = String("Please select \(numOfDays) consecutive day/s")
             let okText = "Okay"
             
             let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: UIAlertControllerStyle.Alert)
