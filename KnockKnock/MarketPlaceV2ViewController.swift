@@ -79,10 +79,15 @@ class MarketPlaceV2ViewController: UIViewController {
         lgVC.navigationItem.title = "Filter By: "
         lgVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 14)!]
         
-        var applyButton : UIBarButtonItem = UIBarButtonItem(title: "Apply", style: UIBarButtonItemStyle.Plain, target: self, action: "")
+        var applyButton : UIBarButtonItem = UIBarButtonItem(title: "Apply Filters", style: UIBarButtonItemStyle.Plain, target: self, action: "")
         
         lgVC.navigationItem.rightBarButtonItem = applyButton
         applyButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir", size: 14)!], forState: UIControlState.Normal)
+        
+        var clearButton : UIBarButtonItem = UIBarButtonItem(title: "Reset Filters", style: UIBarButtonItemStyle.Plain, target: self, action: "")
+        lgVC.navigationItem.leftBarButtonItem = clearButton
+        clearButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir", size: 14)!], forState: UIControlState.Normal)
+        
         
         semiModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 300)
         semiModal.backgroundShadeColor = UIColor.darkGrayColor()
