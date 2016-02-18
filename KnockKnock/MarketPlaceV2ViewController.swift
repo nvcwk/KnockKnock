@@ -54,10 +54,10 @@ class MarketPlaceV2ViewController: UIViewController {
         lgVC.navigationItem.title = "Sort By: "
 //        var applyButton : UIBarButtonItem = UIBarButtonItem(title: "Apply", style: UIBarButtonItemStyle.Plain, target: self, action: "")
 //        lgVC.navigationItem.rightBarButtonItem = applyButton
-        lgVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 17)!]
+        lgVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 14)!]
         
         
-        semiModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 300)
+        semiModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 275)
         semiModal.backgroundShadeColor = UIColor.darkGrayColor()
         semiModal.animationSpeed = 0.35
         semiModal.tapDismissEnabled = true
@@ -77,10 +77,14 @@ class MarketPlaceV2ViewController: UIViewController {
         
         var semiModal: LGSemiModalNavViewController = LGSemiModalNavViewController(rootViewController: lgVC)
         lgVC.navigationItem.title = "Filter By: "
-        lgVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 17)!]
+        lgVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 14)!]
         
+        var applyButton : UIBarButtonItem = UIBarButtonItem(title: "Apply", style: UIBarButtonItemStyle.Plain, target: self, action: "")
         
-        semiModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 250)
+        lgVC.navigationItem.rightBarButtonItem = applyButton
+        applyButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir", size: 14)!], forState: UIControlState.Normal)
+        
+        semiModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 300)
         semiModal.backgroundShadeColor = UIColor.darkGrayColor()
         semiModal.animationSpeed = 0.35
         semiModal.tapDismissEnabled = true
