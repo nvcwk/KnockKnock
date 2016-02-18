@@ -57,12 +57,11 @@ class ItiPublishViewController: UIViewController {
     func updateStartDate(sender: UIDatePicker) {
         tf_startDate.text = KnockKnockUtils.dateToStringDisplay(sender.date)
         publishObj["startAvailability"] = sender.date
-        
-        endDatePicker.minimumDate = sender.date
-        
         if(selectedEndDate < sender.date) {
-            tf_endDate.text = ""
+            tf_endDate.text = KnockKnockUtils.dateToStringDisplay(sender.date)
+            publishObj["lastAvailability"] = sender.date
         }
+        endDatePicker.minimumDate = sender.date
     }
     
     func updateEndDate(sender: UIDatePicker) {

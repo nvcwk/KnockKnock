@@ -49,6 +49,9 @@ class RegisterViewController: UIViewController, CountryPickerDelegate, Validatio
         tf_birthday.inputView = datePicker
         
         let missTxt = String("Please fill in all inputs")
+        var name = tf_fName.text!
+
+        
         
         validator.registerField(tf_email, rules: [RequiredRule(message: missTxt), EmailRule(message: "Invalid E-Mail Adress")])
         validator.registerField(tf_pass, rules: [RequiredRule(message: missTxt), ConfirmationRule(confirmField: tf_cfmPass, message: "Password do not match!"), KnockKnockRule(regex: "^(?=.*\\d)(?=.*[a-zA-Z])(?!.*[\\W_\\x7B-\\xFF]).{7,20}$", message: "Password should contain 7-20 characters with at least 1 Upper or Lower Alphabet and 1 numerical digit. Special characters are not allowed.")])
