@@ -51,6 +51,7 @@ class ItiPublishViewController: UIViewController {
         
         publishObj["startAvailability"] = NSDate()
         publishObj["lastAvailability"] = NSDate()
+        
 //        tf_id.text = "Itinerary ID: #" + itineraryObj.objectId!
     }
     
