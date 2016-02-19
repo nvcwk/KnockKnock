@@ -8,12 +8,13 @@
 
 import UIKit
 import autoAutoLayout
+import KBRoundedButton
 
 class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
     
     var pageMenu: CAPSPageMenu?
     
-    @IBOutlet weak var btn_add: UIButton!
+    @IBOutlet weak var btn_add: KBRoundedButton!
     
     var controller1 : ItiTableViewController?
     var controller2 : PubTableViewController?

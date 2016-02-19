@@ -44,7 +44,7 @@ class PubTableViewController: PFQueryTableViewController {
         if let publish = object{
             
             let itinerary = publish["itinerary"] as! PFObject
-            cell.lb_price.text = String(publish["price"] as! Int)
+            cell.lb_price.text = "$" + String(publish["price"] as! Int)
             
             let startAvailability = KnockKnockUtils.dateToStringDisplay(publish["startAvailability"] as! NSDate)
             let lastAvailability = KnockKnockUtils.dateToStringDisplay(publish["lastAvailability"] as! NSDate)
@@ -84,7 +84,7 @@ class PubTableViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 308.0
+        return 130.0
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

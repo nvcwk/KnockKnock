@@ -15,6 +15,7 @@ class ItiTableViewCell: PFTableViewCell {
     @IBOutlet weak var lb_title: UILabel!
     @IBOutlet weak var image_background: PFImageView!
     
+    @IBOutlet weak var lb_createdDateTime: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
 
