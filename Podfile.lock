@@ -51,6 +51,7 @@ PODS:
     - ImageSlideshow/Core
   - ImageSlideshow/Core (0.3)
   - IQKeyboardManagerSwift (3.3.4)
+  - KBRoundedButton (1.0.4)
   - LGSemiModalNavController (0.2.0)
   - ObjectiveSugar (0.9)
   - Parse (1.10.0):
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - ImageSlideshow
   - ImageSlideshow/AFURL
   - IQKeyboardManagerSwift
+  - KBRoundedButton
   - LGSemiModalNavController
   - ObjectiveSugar (~> 0.5)
   - Parse
@@ -129,6 +131,7 @@ SPEC CHECKSUMS:
   HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a
   ImageSlideshow: 909390b0688b98a2a3e0148dc5d8e378b848418f
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
+  KBRoundedButton: 8fde755b8f1df3ddd3c3c280d9b27ce04ab55d00
   LGSemiModalNavController: ba49f8cbc24638be981cbca8a526f66b5dd90414
   ObjectiveSugar: 18409ee1ec578dd8598b55e5008f393488dca5cf
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2

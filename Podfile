@@ -33,6 +33,7 @@ pod 'ImageSlideshow/AFURL'
 pod 'LGSemiModalNavController'
 pod 'TOCropViewController'
 pod 'RSKImageCropper'
+pod 'KBRoundedButton'
 
 =begin 
 To Consider 
