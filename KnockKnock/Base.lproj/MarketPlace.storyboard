@@ -39,8 +39,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="xgc-Wd-ARg" customClass="RTIconButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="xgc-Wd-ARg" customClass="RTIconButton">
                                 <rect key="frame" x="20" y="77" width="157" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7VV-fw-4c6"/>
+                                    <constraint firstAttribute="width" constant="157" id="FQB-GV-9vH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="tintColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sort By" image="sort"/>
@@ -59,13 +63,13 @@
                                     <action selector="on_Press:" destination="f1c-cW-Kjj" eventType="touchUpInside" id="QjV-em-oQ3"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZc-FO-q5C">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZc-FO-q5C">
                                 <rect key="frame" x="0.0" y="117" width="375" height="501"/>
                                 <connections>
                                     <segue destination="HCo-19-Y6F" kind="embed" identifier="marketPlaceView" id="2xu-ri-tYf"/>
                                 </connections>
                             </containerView>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWL-0j-iVI" customClass="RTIconButton">
+                            <button hidden="YES" autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWL-0j-iVI" customClass="RTIconButton">
                                 <rect key="frame" x="198" y="77" width="157" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="tintColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,8 +89,45 @@
                                     <action selector="on_Press_filter:" destination="f1c-cW-Kjj" eventType="touchUpInside" id="Vp6-uz-UXT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="kfG-5L-OAM" customClass="RTIconButton">
+                                <rect key="frame" x="109" y="79" width="157" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sort By" image="sort"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconPosition">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="iconSize">
+                                        <size key="value" width="20" height="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconMargin">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sortv1_Press:" destination="f1c-cW-Kjj" eventType="touchUpInside" id="2AV-lq-mGx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VZc-FO-q5C" firstAttribute="leading" secondItem="jb7-3S-LiE" secondAttribute="leading" id="37R-4W-T2i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hWL-0j-iVI" secondAttribute="trailing" constant="4" id="9ET-Ri-Jqu"/>
+                            <constraint firstItem="kfG-5L-OAM" firstAttribute="top" secondItem="9q3-Op-nbD" secondAttribute="bottom" constant="15" id="LZ0-jO-bYR"/>
+                            <constraint firstItem="VZc-FO-q5C" firstAttribute="top" secondItem="xgc-Wd-ARg" secondAttribute="bottom" constant="10" id="NbF-KS-Sof"/>
+                            <constraint firstItem="VZc-FO-q5C" firstAttribute="bottom" secondItem="UoG-MU-cMl" secondAttribute="top" id="No0-mb-D2g"/>
+                            <constraint firstItem="VZc-FO-q5C" firstAttribute="top" secondItem="kfG-5L-OAM" secondAttribute="bottom" constant="8" symbolic="YES" id="PCM-rO-hfH"/>
+                            <constraint firstAttribute="trailing" secondItem="VZc-FO-q5C" secondAttribute="trailing" id="QOV-mb-bj5"/>
+                            <constraint firstItem="hWL-0j-iVI" firstAttribute="firstBaseline" secondItem="xgc-Wd-ARg" secondAttribute="firstBaseline" id="Rg9-oI-Qw9"/>
+                            <constraint firstItem="kfG-5L-OAM" firstAttribute="leading" secondItem="jb7-3S-LiE" secondAttribute="leadingMargin" constant="93" id="alx-WS-OaH"/>
+                            <constraint firstItem="xgc-Wd-ARg" firstAttribute="top" secondItem="9q3-Op-nbD" secondAttribute="bottom" constant="13" id="gIt-fy-5bR"/>
+                            <constraint firstItem="VZc-FO-q5C" firstAttribute="centerX" secondItem="kfG-5L-OAM" secondAttribute="centerX" id="jgd-Sh-LYG"/>
+                            <constraint firstItem="hWL-0j-iVI" firstAttribute="baseline" secondItem="xgc-Wd-ARg" secondAttribute="baseline" id="l4c-sx-psf"/>
+                            <constraint firstItem="hWL-0j-iVI" firstAttribute="leading" secondItem="xgc-Wd-ARg" secondAttribute="trailing" constant="21" id="pdo-ge-0jM"/>
+                            <constraint firstItem="xgc-Wd-ARg" firstAttribute="top" secondItem="hWL-0j-iVI" secondAttribute="top" id="t3p-bL-GLs"/>
+                            <constraint firstItem="xgc-Wd-ARg" firstAttribute="leading" secondItem="jb7-3S-LiE" secondAttribute="leadingMargin" constant="4" id="y7R-HC-Eft"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="KnockKnock" id="Azr-jZ-l6x"/>
                     <connections>
