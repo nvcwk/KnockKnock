@@ -233,12 +233,9 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                         } )
                         
                         
-                        
                         //Send email to the user and host
-                        
-                        // Swift
-                        // send to the user email
-                        PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["email":self.userEmail]) {
+
+                        PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["userEmail":self.userEmail, "hostEmail": self.hostEmail]) {
                             (response: AnyObject?, error: NSError?) -> Void in
                             
                             if error == nil{
@@ -250,7 +247,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                         }
                         
                         //Send to the host email
-                        PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["email":self.hostEmail]) {
+                        PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["email":self.hostEmail, ]) {
                             (response: AnyObject?, error: NSError?) -> Void in
                             
                             if error == nil{
