@@ -9,15 +9,23 @@
 import UIKit
 import ParseUI
 import Parse
+import DZNEmptyDataSet
 
-class ItiTableViewController: PFQueryTableViewController {
+class ItiTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     var parentNaviController = UINavigationController()
     
     override func viewDidLoad() {
+        
+        loadingViewEnabled = false
+        
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+        // A little trick for removing the cell separators
+        self.tableView.tableFooterView = UIView()
+        self.tableView.registerNib(UINib(nibName: "ItiTableViewCell", bundle: nil), forCellReuseIdentifier: "ItiTableViewCell")
         super.viewDidLoad()
         
-        self.tableView.registerNib(UINib(nibName: "ItiTableViewCell", bundle: nil), forCellReuseIdentifier: "ItiTableViewCell")
         
     }
     
@@ -76,9 +84,7 @@ class ItiTableViewController: PFQueryTableViewController {
         return 130.0
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Created Itinerary"
-    }
+    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewController : ItiDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("itiDetailsView") as! ItiDetailsViewController
@@ -87,4 +93,41 @@ class ItiTableViewController: PFQueryTableViewController {
         
         parentNaviController.showViewController(viewController, sender: nil)
     }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
+        
+        var image = UIImage(named: "empty")!
+        
+        return image
+    }
+    
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
+        var text: String = "No Itinearies Created Yet!"
+        var attributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(18.0), NSForegroundColorAttributeName: UIColor.darkGrayColor()]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
+        var text: String = "Select the '+' button to start! "
+        var paragraph: NSMutableParagraphStyle = NSMutableParagraphStyle()
+        //paragraph.lineBreakMode = NSLineBreakByWordWrapping
+        paragraph.alignment = .Center
+        var attributes = [NSFontAttributeName: UIFont.systemFontOfSize(14.0), NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSParagraphStyleAttributeName: paragraph]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    
+    func emptyDataSetShouldDisplay(scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    
+    func emptyDataSetShouldAllowTouch(scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Created Itinerary"
+    }
+    
 }

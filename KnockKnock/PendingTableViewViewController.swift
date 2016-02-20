@@ -10,24 +10,34 @@ import UIKit
 import Parse
 import ParseUI
 import autoAutoLayout
+import DZNEmptyDataSet
 
-class PendingTableViewViewController: PFQueryTableViewController {
-
+class PendingTableViewViewController: PFQueryTableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate  {
+    
     var parentNaviController = UINavigationController()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+        loadingViewEnabled = false
+        
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+        // A little trick for removing the cell separators
+        self.tableView.tableFooterView = UIView()
         
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         
         self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingTableViewCell")
+        
+        super.viewDidLoad()
+        
     }
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
-    
+        
         let query1 = PFQuery(className: "Pending")
         query1.whereKey("Requester", equalTo: PFUser.currentUser()!)
         query1.whereKey("Status", notEqualTo: "Confirmed")
@@ -36,8 +46,8 @@ class PendingTableViewViewController: PFQueryTableViewController {
         query2.whereKey("Host", equalTo: PFUser.currentUser()!)
         query2.whereKey("Status", notEqualTo: "Confirmed")
         
-       
-    
+        
+        
         let query = PFQuery.orQueryWithSubqueries([query1, query2])
         query.includeKey("Marketplace")
         query.includeKey("Itinerary")
@@ -47,11 +57,11 @@ class PendingTableViewViewController: PFQueryTableViewController {
         query.orderByAscending("Date")
         
         return query
-    
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
-                
+        
         var cell: PendingTableViewCell = tableView.dequeueReusableCellWithIdentifier("PendingTableViewCell") as! PendingTableViewCell
         
         if let pending = object{
@@ -93,10 +103,42 @@ class PendingTableViewViewController: PFQueryTableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewController : PendingExpandedViewController = UIStoryboard(name: "Booking", bundle: nil).instantiateViewControllerWithIdentifier("PendingExpandedViewController") as! PendingExpandedViewController
         
-       viewController.pendingObject = objectAtIndexPath(indexPath)! as PFObject
+        viewController.pendingObject = objectAtIndexPath(indexPath)! as PFObject
         
         
         parentNaviController.showViewController(viewController, sender: nil)
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
+        
+        var image = UIImage(named: "empty")!
+        
+        return image
+    }
+    
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
+        var text: String = "No Bookings Yet!"
+        var attributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(18.0), NSForegroundColorAttributeName: UIColor.darkGrayColor()]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
+        var text: String = "Booking Requests  will appear here when someone books your tour! "
+        var paragraph: NSMutableParagraphStyle = NSMutableParagraphStyle()
+        //paragraph.lineBreakMode = NSLineBreakByWordWrapping
+        paragraph.alignment = .Center
+        var attributes = [NSFontAttributeName: UIFont.systemFontOfSize(14.0), NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSParagraphStyleAttributeName: paragraph]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    
+    func emptyDataSetShouldDisplay(scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    
+    func emptyDataSetShouldAllowTouch(scrollView: UIScrollView) -> Bool {
+        return true
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
