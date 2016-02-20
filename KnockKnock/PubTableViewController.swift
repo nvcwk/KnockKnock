@@ -9,15 +9,23 @@
 import UIKit
 import Parse
 import ParseUI
+import DZNEmptyDataSet
 
-class PubTableViewController: PFQueryTableViewController {
+class PubTableViewController: PFQueryTableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     var parentNaviController = UINavigationController()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        loadingViewEnabled = false
+        
+        
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+        // A little trick for removing the cell separators
+        self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(UINib(nibName: "PubTableViewCell", bundle: nil), forCellReuseIdentifier: "PubViewCell")
+        super.viewDidLoad()
     }
     
     // Define the query that will provide the data for the table view
@@ -83,6 +91,39 @@ class PubTableViewController: PFQueryTableViewController {
         return cell
     }
     
+    func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
+        
+        var image = UIImage(named: "empty")!
+        
+        return image
+    }
+    
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
+        var text: String = "No Itinearies Published Yet!"
+        var attributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(18.0), NSForegroundColorAttributeName: UIColor.darkGrayColor()]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
+        var text: String = "Publish an itinerary on the 'Created' Tab to Start! "
+        var paragraph: NSMutableParagraphStyle = NSMutableParagraphStyle()
+        //paragraph.lineBreakMode = NSLineBreakByWordWrapping
+        paragraph.alignment = .Center
+        var attributes = [NSFontAttributeName: UIFont.systemFontOfSize(14.0), NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSParagraphStyleAttributeName: paragraph]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func emptyDataSetShouldDisplay(scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    
+    func emptyDataSetShouldAllowTouch(scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    
+    
+    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 130.0
     }
@@ -98,5 +139,8 @@ class PubTableViewController: PFQueryTableViewController {
         
         parentNaviController.showViewController(viewController, sender: nil)
     }
+    
+    
+    
     
 }

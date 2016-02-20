@@ -23,6 +23,9 @@ class MarketPlaceV2TableViewCell: PFTableViewCell {
     //MarketPlaceV2TableViewCell.postImageView.contentMode = UIViewContentMode.ScaleAspectFill
     
     override func awakeFromNib() {
+        image_background.clipsToBounds = true
+        image_background.contentMode = UIViewContentMode.ScaleAspectFill;
+
         super.awakeFromNib()
         
         

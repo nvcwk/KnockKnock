@@ -34,6 +34,7 @@ pod 'LGSemiModalNavController'
 pod 'TOCropViewController'
 pod 'RSKImageCropper'
 pod 'KBRoundedButton'
+pod 'DZNEmptyDataSet'
 
 =begin 
 To Consider 
