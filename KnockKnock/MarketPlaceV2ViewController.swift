@@ -28,6 +28,7 @@ class MarketPlaceV2ViewController: UIViewController {
     ]
     
     var sortVC = SortTableViewController();
+    var filterVC = FilterTableViewController();
     
     @IBAction func dismiss_pop(sender: AnyObject) {
         popover_filter.dismiss()
@@ -60,7 +61,7 @@ class MarketPlaceV2ViewController: UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "MarketPlace", bundle: nil )
         
         sortVC = storyboard.instantiateViewControllerWithIdentifier("SortViewController") as! SortTableViewController
-    
+        filterVC = storyboard.instantiateViewControllerWithIdentifier("FilterViewController") as! FilterTableViewController
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,6 +108,31 @@ class MarketPlaceV2ViewController: UIViewController {
         
     }
     
+    @IBAction func applyReset(sender: AnyObject) {
+        filterVC.startDate = 1.years.ago()
+        filterVC.endDate = 5.years.fromNow()
+        filterVC.days = 5
+        filterVC.minPrice = 0
+        filterVC.maxPrice = 999
+        
+        filterVC.tf_minPrice.text = String(filterVC.minPrice)
+        filterVC.tf_maxPrice.text = String(filterVC.maxPrice)
+        filterVC.tf_startDate.text = KnockKnockUtils.dateToStringDisplay(filterVC.startDate)
+        filterVC.tf_endDate.text = KnockKnockUtils.dateToStringDisplay(filterVC.endDate)
+        filterVC.ctrl_days.selectedSegmentIndex = filterVC.days
+        
+        var controller = self.childViewControllers[0] as! MarketPlaceV2TableViewController
+        controller.days = filterVC.days
+        controller.minPrice = filterVC.minPrice
+        controller.maxPrice = filterVC.maxPrice
+        controller.startDate = filterVC.startDate
+        controller.endDate = filterVC.endDate
+        controller.loadObjects()
+        controller.viewWillAppear(true)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func applySort(sender: AnyObject) {        
         var controller = self.childViewControllers[0] as! MarketPlaceV2TableViewController
         controller.ascending = sortVC.ascending
@@ -117,24 +143,39 @@ class MarketPlaceV2ViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func applyFilter(sender: AnyObject) {
+        if(filterVC.tf_minPrice.text!.isEmpty) {
+            filterVC.tf_minPrice.text = String(0)
+        }
+        
+        if(filterVC.tf_maxPrice.text!.isEmpty) {
+            filterVC.tf_maxPrice.text = String(999)
+        }
+        
+        var controller = self.childViewControllers[0] as! MarketPlaceV2TableViewController
+        controller.days = filterVC.days
+        controller.minPrice = filterVC.minPrice
+        controller.maxPrice = filterVC.maxPrice
+        controller.startDate = filterVC.startDate
+        controller.endDate = filterVC.endDate
+        controller.loadObjects()
+        controller.viewWillAppear(true)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func on_Press_filter(sender: AnyObject) {
-        var lgVC = UIViewController();
+        var semiModal: LGSemiModalNavViewController = LGSemiModalNavViewController(rootViewController: filterVC)
+        filterVC.navigationItem.title = "Filter By: "
+        filterVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 14)!]
         
-        let storyboard: UIStoryboard = UIStoryboard(name: "MarketPlace", bundle: nil)
+        var applyButton : UIBarButtonItem = UIBarButtonItem(title: "Apply Filters", style: UIBarButtonItemStyle.Plain, target: self, action: "applyFilter:")
         
-        lgVC = storyboard.instantiateViewControllerWithIdentifier("FilterViewController")
-        
-        var semiModal: LGSemiModalNavViewController = LGSemiModalNavViewController(rootViewController: lgVC)
-        lgVC.navigationItem.title = "Filter By: "
-        lgVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 14)!]
-        
-        var applyButton : UIBarButtonItem = UIBarButtonItem(title: "Apply Filters", style: UIBarButtonItemStyle.Plain, target: self, action: "")
-        
-        lgVC.navigationItem.rightBarButtonItem = applyButton
+        filterVC.navigationItem.rightBarButtonItem = applyButton
         applyButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir", size: 14)!], forState: UIControlState.Normal)
         
-        var clearButton : UIBarButtonItem = UIBarButtonItem(title: "Reset Filters", style: UIBarButtonItemStyle.Plain, target: self, action: "")
-        lgVC.navigationItem.leftBarButtonItem = clearButton
+        var clearButton : UIBarButtonItem = UIBarButtonItem(title: "Reset Filters", style: UIBarButtonItemStyle.Plain, target: self, action: "applyReset:")
+        filterVC.navigationItem.leftBarButtonItem = clearButton
         clearButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir", size: 14)!], forState: UIControlState.Normal)
         
         

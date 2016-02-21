@@ -18,6 +18,12 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
     var sort = 1
     var ascending = true
     
+    var startDate = 1.years.ago()
+    var endDate = 5.years.fromNow()
+    var days = 5
+    var minPrice = 0
+    var maxPrice = 999
+    
     override func viewDidLoad() {
         
         self.view!.removeConstraints(self.view.constraints)
@@ -35,29 +41,40 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
         query.includeKey("itinerary.activities")
         query.includeKey("itinerary.images")
         
+        var query2 = PFQuery(className: "Itinerary")
+        
         if(PFUser.currentUser() != nil) {
             if(ascending) {
                 if (sort == 1) {
-                    query.addAscendingOrder("updatedAt")
+                    query.orderByAscending("updatedAt")
                 } else if (sort == 2) {
-                    query.addAscendingOrder("price")
+                    query.orderByAscending("price")
                 } else if (sort == 3) {
-                    query.addAscendingOrder("startAvailability")
+                    query.orderByAscending("startAvailability")
                 }
             } else {
                 if (sort == 1) {
-                    query.addDescendingOrder("updatedAt")
+                    query.orderByDescending("updatedAt")
                 } else if (sort == 2) {
-                    query.addDescendingOrder("price")
+                    query.orderByDescending("price")
                 } else if (sort == 3) {
-                    query.addDescendingOrder("startAvailability")
+                    query.orderByDescending("startAvailability")
                 }
             }
             
             query.whereKey("isPublished", equalTo: published)
             query.whereKey("host", notEqualTo: PFUser.currentUser()!)
             query.whereKey("lastAvailability", greaterThanOrEqualTo: NSDate())
+            
+            query.whereKey("lastAvailability", lessThanOrEqualTo: endDate)
+            query.whereKey("startAvailability", greaterThanOrEqualTo: startDate) // needs to double check
+            query.whereKey("price", greaterThanOrEqualTo: minPrice)
+            query.whereKey("price", lessThanOrEqualTo: maxPrice)
         }
+        
+        query2.whereKey("duration", lessThanOrEqualTo: days)
+        
+        query.whereKey("itinerary", matchesQuery: query2)
         
         return query
     }
