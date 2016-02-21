@@ -34,6 +34,7 @@
 		E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AC2201C16E12C00479927 /* ParseUtils.swift */; };
 		E12396AD1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12396AC1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift */; };
 		E127E8E61C79B4D90006B07D /* SortTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E127E8E51C79B4D90006B07D /* SortTableViewController.swift */; };
+		E127E8EA1C79EA7E0006B07D /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E127E8E91C79EA7E0006B07D /* FilterTableViewController.swift */; };
 		E13563501C31A534003DCB6C /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */; };
 		E1368CD31C2336AA00A41C6F /* ItiMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */; };
 		E13C7C081C6E527E001A73C6 /* UIImage+ImageQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13C7C071C6E527E001A73C6 /* UIImage+ImageQuality.swift */; };
@@ -149,6 +150,7 @@
 		E11AC2201C16E12C00479927 /* ParseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUtils.swift; sourceTree = "<group>"; };
 		E12396AC1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+SupportedOrientations.swift"; sourceTree = "<group>"; };
 		E127E8E51C79B4D90006B07D /* SortTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTableViewController.swift; sourceTree = "<group>"; };
+		E127E8E91C79EA7E0006B07D /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		E135634F1C31A534003DCB6C /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		E1368CD21C2336AA00A41C6F /* ItiMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiMainViewController.swift; sourceTree = "<group>"; };
 		E13C7C071C6E527E001A73C6 /* UIImage+ImageQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageQuality.swift"; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				703D67F71C6BA6A000DDB659 /* SortViewController.swift */,
 				703D67FB1C6BADFC00DDB659 /* FilterViewController.swift */,
 				E127E8E51C79B4D90006B07D /* SortTableViewController.swift */,
+				E127E8E91C79EA7E0006B07D /* FilterTableViewController.swift */,
 			);
 			name = MarketPlaceV2;
 			sourceTree = "<group>";
@@ -599,7 +602,7 @@
 				TargetAttributes = {
 					E11461F21C1170B900983BC3 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 43G5RY5J49;
+						DevelopmentTeam = 7F392F8CBL;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -784,6 +787,7 @@
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
 				E15BF77C1C3FE191009A3C31 /* ProfileEditViewController.swift in Sources */,
 				E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */,
+				E127E8EA1C79EA7E0006B07D /* FilterTableViewController.swift in Sources */,
 				E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */,
 				706B0FD71C4CBC2F0078CD38 /* MyCustomTextField.swift in Sources */,
 				E1B95E461C36C14600F85B8F /* PubDetailsViewController.swift in Sources */,
@@ -959,7 +963,7 @@
 				INFOPLIST_FILE = KnockKnock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gensix.knockknock;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nvcwk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KnockKnock/KnockKnock-Bridging-Header.h";
@@ -983,7 +987,7 @@
 				INFOPLIST_FILE = KnockKnock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gensix.knockknock;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nvcwk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KnockKnock/KnockKnock-Bridging-Header.h";
