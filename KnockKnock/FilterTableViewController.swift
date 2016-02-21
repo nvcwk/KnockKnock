@@ -40,13 +40,13 @@ class FilterTableViewController: UITableViewController {
         tf_maxPrice.addTarget(self, action: "maxDidChange:", forControlEvents: UIControlEvents.EditingChanged)
         
         startDatePicker.datePickerMode = UIDatePickerMode.Date
-        startDatePicker.minimumDate = NSDate()
+        //startDatePicker.minimumDate = 1.years.ago()
         startDatePicker.addTarget(self, action: Selector("updateStartDate:"),
             forControlEvents:UIControlEvents.ValueChanged)
         tf_startDate.inputView = startDatePicker
         
         endDatePicker.datePickerMode = UIDatePickerMode.Date
-        endDatePicker.minimumDate = NSDate()
+        //endDatePicker.minimumDate = NSDate()
         endDatePicker.addTarget(self, action: Selector("updateEndDate:"),
             forControlEvents:UIControlEvents.ValueChanged)
         tf_endDate.inputView = endDatePicker
@@ -73,14 +73,14 @@ class FilterTableViewController: UITableViewController {
         tf_startDate.text = KnockKnockUtils.dateToStringDisplay(sender.date)
         startDate = sender.date
         
-        if(sender.date >= startDate) {
-            tf_endDate.text = KnockKnockUtils.dateToStringDisplay(sender.date)
-            endDate = sender.date
-        } else {
-            tf_endDate.text = KnockKnockUtils.dateToStringDisplay(startDate)
-            endDate = startDate
-            
-        }
+//        if(sender.date >= startDate) {
+//            tf_endDate.text = KnockKnockUtils.dateToStringDisplay(sender.date)
+//            endDate = sender.date
+//        } else {
+//            tf_endDate.text = KnockKnockUtils.dateToStringDisplay(startDate)
+//            endDate = startDate
+//            
+//        }
     }
     
     func updateEndDate(sender: UIDatePicker) {
