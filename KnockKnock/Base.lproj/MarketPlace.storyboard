@@ -39,7 +39,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="xgc-Wd-ARg" customClass="RTIconButton">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZc-FO-q5C">
+                                <rect key="frame" x="0.0" y="117" width="375" height="501"/>
+                                <connections>
+                                    <segue destination="HCo-19-Y6F" kind="embed" identifier="marketPlaceView" id="2xu-ri-tYf"/>
+                                </connections>
+                            </containerView>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWL-0j-iVI" customClass="RTIconButton">
+                                <rect key="frame" x="198" y="77" width="157" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Filter By" image="filter"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconPosition">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="iconSize">
+                                        <size key="value" width="20" height="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconMargin">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="on_Press_filter:" destination="f1c-cW-Kjj" eventType="touchUpInside" id="Vp6-uz-UXT"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="kfG-5L-OAM" customClass="RTIconButton">
+                                <rect key="frame" x="109" y="79" width="157" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sort By" image="sort"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconPosition">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="iconSize">
+                                        <size key="value" width="20" height="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconMargin">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sortv1_Press:" destination="f1c-cW-Kjj" eventType="touchUpInside" id="2AV-lq-mGx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="xgc-Wd-ARg" customClass="RTIconButton">
                                 <rect key="frame" x="20" y="77" width="157" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7VV-fw-4c6"/>
@@ -61,52 +107,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="on_Press:" destination="f1c-cW-Kjj" eventType="touchUpInside" id="QjV-em-oQ3"/>
-                                </connections>
-                            </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZc-FO-q5C">
-                                <rect key="frame" x="0.0" y="117" width="375" height="501"/>
-                                <connections>
-                                    <segue destination="HCo-19-Y6F" kind="embed" identifier="marketPlaceView" id="2xu-ri-tYf"/>
-                                </connections>
-                            </containerView>
-                            <button hidden="YES" autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWL-0j-iVI" customClass="RTIconButton">
-                                <rect key="frame" x="198" y="77" width="157" height="30"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <color key="tintColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Filter By" image="filter"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconPosition">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="iconSize">
-                                        <size key="value" width="20" height="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconMargin">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="on_Press_filter:" destination="f1c-cW-Kjj" eventType="touchUpInside" id="Vp6-uz-UXT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="kfG-5L-OAM" customClass="RTIconButton">
-                                <rect key="frame" x="109" y="79" width="157" height="30"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <color key="tintColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Sort By" image="sort"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconPosition">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="iconSize">
-                                        <size key="value" width="20" height="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconMargin">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="sortv1_Press:" destination="f1c-cW-Kjj" eventType="touchUpInside" id="2AV-lq-mGx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1145,7 +1145,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="143"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oyq-hV-N2P" id="3Q2-Sa-eHF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reviwer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PA-KC-Eqt">
@@ -1257,7 +1257,7 @@
         <!--Table View Controller-->
         <scene sceneID="VNC-8o-ymy">
             <objects>
-                <tableViewController id="OW3-df-DN1" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FilterViewController" id="OW3-df-DN1" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PVA-2U-Vp0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1426,6 +1426,8 @@
                             <outlet property="delegate" destination="OW3-df-DN1" id="RqU-kt-eaC"/>
                         </connections>
                     </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="275"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5iJ-qB-MwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1434,7 +1436,7 @@
         <!--Filter View Controller-->
         <scene sceneID="9EP-ZX-5LD">
             <objects>
-                <viewController storyboardIdentifier="FilterViewController" id="NFs-uB-gxo" customClass="FilterViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NFs-uB-gxo" customClass="FilterViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OOV-6j-DKu"/>
                         <viewControllerLayoutGuide type="bottom" id="6if-yf-mQJ"/>
@@ -1445,9 +1447,6 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qm6-h3-wS9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
-                                <connections>
-                                    <segue destination="OW3-df-DN1" kind="embed" id="rLp-Jq-dqL"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1465,12 +1464,12 @@
             </objects>
             <point key="canvasLocation" x="-463.5" y="778.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sort Table View Controller-->
         <scene sceneID="iCa-Z9-s6o">
             <objects>
-                <tableViewController id="HiO-Fr-flv" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SortViewController" id="HiO-Fr-flv" customClass="SortTableViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kLj-Se-iuV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -1490,11 +1489,14 @@
                                                         <segment title="Descending"/>
                                                     </segments>
                                                     <color key="tintColor" red="0.072658218349999998" green="0.54612931740000004" blue="0.62796067290000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="actionChangeSortOrder:" destination="HiO-Fr-flv" eventType="valueChanged" id="X6g-n2-Tkm"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" shouldIndentWhileEditing="NO" id="DxY-zb-q8C">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="sortCell" id="DxY-zb-q8C">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DxY-zb-q8C" id="CTM-tE-wzp">
@@ -1502,9 +1504,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eky-k5-8lw">
-                                                    <rect key="frame" x="8" y="6" width="359" height="32"/>
+                                                    <rect key="frame" x="8" y="4.5" width="359" height="32"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                    <state key="normal" title="By Tour Title">
+                                                    <state key="normal" title="By Published Date">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -1548,23 +1550,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" shouldIndentWhileEditing="NO" id="Fzs-wc-LWR">
-                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fzs-wc-LWR" id="rnV-om-9tc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lk-xP-DkK">
-                                                    <rect key="frame" x="8" y="6" width="359" height="32"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                    <state key="normal" title="By Tour Rating">
-                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1573,6 +1558,8 @@
                             <outlet property="delegate" destination="HiO-Fr-flv" id="40X-LI-xUl"/>
                         </connections>
                     </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="175"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MD6-vQ-53o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1581,7 +1568,7 @@
         <!--Sort View Controller-->
         <scene sceneID="EaI-Y1-j03">
             <objects>
-                <viewController storyboardIdentifier="SortViewController" id="DgU-82-I6B" customClass="SortViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DgU-82-I6B" customClass="SortViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hB9-xP-82M"/>
                         <viewControllerLayoutGuide type="bottom" id="c8W-uB-FE1"/>
@@ -1592,9 +1579,6 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3YA-eZ-oWY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
-                                <connections>
-                                    <segue destination="HiO-Fr-flv" kind="embed" id="jDJ-CH-1Rf"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

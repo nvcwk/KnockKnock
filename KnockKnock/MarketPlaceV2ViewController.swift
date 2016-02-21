@@ -27,6 +27,7 @@ class MarketPlaceV2ViewController: UIViewController {
         .BlackOverlayColor(UIColor(white: 0.0, alpha: 0.6))
     ]
     
+    var sortVC = SortTableViewController();
     
     @IBAction func dismiss_pop(sender: AnyObject) {
         popover_filter.dismiss()
@@ -56,7 +57,10 @@ class MarketPlaceV2ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-
+        let storyboard: UIStoryboard = UIStoryboard(name: "MarketPlace", bundle: nil )
+        
+        sortVC = storyboard.instantiateViewControllerWithIdentifier("SortViewController") as! SortTableViewController
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,17 +88,11 @@ class MarketPlaceV2ViewController: UIViewController {
     
     
     @IBAction func on_Press(sender: AnyObject) {
-        var lgVC = UIViewController();
-        
-        let storyboard: UIStoryboard = UIStoryboard(name: "MarketPlace", bundle: nil )
-        
-        lgVC = storyboard.instantiateViewControllerWithIdentifier("SortViewController")
-        
-        var semiModal: LGSemiModalNavViewController = LGSemiModalNavViewController(rootViewController: lgVC)
-        lgVC.navigationItem.title = "Sort By: "
-//        var applyButton : UIBarButtonItem = UIBarButtonItem(title: "Apply", style: UIBarButtonItemStyle.Plain, target: self, action: "")
-//        lgVC.navigationItem.rightBarButtonItem = applyButton
-        lgVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 14)!]
+        var semiModal: LGSemiModalNavViewController = LGSemiModalNavViewController(rootViewController: sortVC)
+        sortVC.navigationItem.title = "Sort By: "
+        var applyButton : UIBarButtonItem = UIBarButtonItem(title: "Apply", style: UIBarButtonItemStyle.Plain, target: self, action: "applySort:")
+        sortVC.navigationItem.rightBarButtonItem = applyButton
+        sortVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 14)!]
         
         
         semiModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 275)
@@ -109,10 +107,20 @@ class MarketPlaceV2ViewController: UIViewController {
         
     }
     
+    @IBAction func applySort(sender: AnyObject) {        
+        var controller = self.childViewControllers[0] as! MarketPlaceV2TableViewController
+        controller.ascending = sortVC.ascending
+        controller.sort = sortVC.selected
+        controller.loadObjects()
+        controller.viewWillAppear(true)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func on_Press_filter(sender: AnyObject) {
         var lgVC = UIViewController();
         
-        let storyboard: UIStoryboard = UIStoryboard(name: "MarketPlace", bundle: nil )
+        let storyboard: UIStoryboard = UIStoryboard(name: "MarketPlace", bundle: nil)
         
         lgVC = storyboard.instantiateViewControllerWithIdentifier("FilterViewController")
         
