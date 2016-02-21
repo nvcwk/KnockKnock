@@ -15,7 +15,8 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
     
     var published = true
     
-    var sort = 0
+    var sort = 1
+    var ascending = true
     
     override func viewDidLoad() {
         
@@ -34,20 +35,23 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
         query.includeKey("itinerary.activities")
         query.includeKey("itinerary.images")
         
-        //        query.whereKey("isPublished", equalTo: published)
-        //        //query.whereKey("host", notEqualTo: PFUser.currentUser()!)
-        //
-        //        query.includeKey("itinerary")
-        //        query.includeKey("host")
-        //        query.includeKey("itinerary.activities")
-        
         if(PFUser.currentUser() != nil) {
-            if (sort == 0) {
-                query.addDescendingOrder("price")
-            } else if (sort == 1) {
-                query.addAscendingOrder("price")
-            } else if (sort == 2) {
-                query.addAscendingOrder("startAvailability")
+            if(ascending) {
+                if (sort == 1) {
+                    query.addAscendingOrder("updatedAt")
+                } else if (sort == 2) {
+                    query.addAscendingOrder("price")
+                } else if (sort == 3) {
+                    query.addAscendingOrder("startAvailability")
+                }
+            } else {
+                if (sort == 1) {
+                    query.addDescendingOrder("updatedAt")
+                } else if (sort == 2) {
+                    query.addDescendingOrder("price")
+                } else if (sort == 3) {
+                    query.addDescendingOrder("startAvailability")
+                }
             }
             
             query.whereKey("isPublished", equalTo: published)
@@ -73,7 +77,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
                 
                 
                 cell.endDate.text = KnockKnockUtils.dateToStringDisplay( mpObj["lastAvailability"] as! NSDate)
-//                let image = itiObj["image"] as! PFFile
+                //                let image = itiObj["image"] as! PFFile
                 
                 if(itiObj["images"] != nil) {
                     var images = itiObj["images"] as! NSArray
@@ -89,7 +93,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
                 } else {
                     if(itiObj["image"] != nil) {
                         let imageFile = itiObj["image"] as! PFFile
-                    
+                        
                         cell.image_background.file = imageFile
                         cell.image_background.loadInBackground()
                     }
