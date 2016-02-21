@@ -45,10 +45,13 @@ class SortTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if(indexPath == 0) {
+        if(indexPath.row == 0) {
+            let rowToSelect:NSIndexPath = NSIndexPath(forRow: selected, inSection: 0);
+            self.tableView.selectRowAtIndexPath(rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.None)
             
+            self.tableView(self.tableView, didSelectRowAtIndexPath: rowToSelect);
+        } else {
+            selected = indexPath.row
         }
-        selected = indexPath.row
     }
 }
