@@ -2,7 +2,6 @@ import UIKit
 import Parse
 import SwiftSpinner
 import ParseUI
-import GoogleMaps
 import QIULaunchAnimation
 
 class HomeViewController: UIViewController {

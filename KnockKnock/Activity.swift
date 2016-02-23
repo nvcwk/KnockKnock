@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import GoogleMaps
 
 class Activity {
     var title = ""
     var day = 0
     var description = ""
-    var cor : CLLocationCoordinate2D?
+    //var cor : CLLocationCoordinate2D?
     var meetingTime = NSDate()
     var address = ""
     var isCompleted = false
@@ -24,7 +23,7 @@ class Activity {
         title = ""
         day = 0
         description = ""
-        cor = CLLocationCoordinate2D()
+        //cor = CLLocationCoordinate2D()
         meetingTime = NSDate()
         address = ""
         
