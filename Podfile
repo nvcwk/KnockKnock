@@ -8,36 +8,53 @@ pod 'Parse'
 ######### Parse UI Extension #########
 pod 'ParseUI'
 
-# Custom UI
-pod 'SwiftSpinner'
-pod 'SwiftValidator'
-pod 'CountryPicker'
-pod 'TextFieldEffects'
-pod 'IQKeyboardManagerSwift'
-pod 'GMStepper'
-pod 'SwiftDate'
-pod 'QIULaunchAnimation'
-pod 'FSCalendar'
+######### Universal UI Layout #########
 pod 'autoAutoLayout', '~> 2.0'
-pod 'ABSteppedProgressBar', :git => 'https://github.com/brendaaakoh/ABSteppedProgressBar', :commit => '1057ed8b552e6f1170c0b3164fd53c9a9ee87de9'
-pod 'HCSStarRatingView', '~> 1.4.3'
-pod 'RTIconButton'
-pod 'Popover'
-pod 'Scrollable', '~> 1.0'
-pod 'ImageSlideshow'
-pod 'ImageSlideshow/AFURL'
-pod 'LGSemiModalNavController'
-pod 'TOCropViewController'
-pod 'RSKImageCropper'
-pod 'KBRoundedButton'
+
+######### Loading and Splash Screen #########
+pod 'QIULaunchAnimation'
+pod 'SwiftSpinner'
 pod 'DZNEmptyDataSet'
 
+######### Common Input, Button & Validator #########
+pod 'TextFieldEffects'
+pod 'SwiftValidator'
+pod 'RTIconButton'
+pod 'KBRoundedButton'
+
+######### Custom Keyboard #########
+pod 'CountryPicker'
+pod 'IQKeyboardManagerSwift'
+
+######### Extended Int Api with Date functions #########
+pod 'SwiftDate'
+
+######### MarketPlace #########
+pod 'HCSStarRatingView', '~> 1.4.3'
+pod 'LGSemiModalNavController'
+
+######### Booking #########
+pod 'FSCalendar'
+
+######### Itinerary Mgmt #########
+pod 'ABSteppedProgressBar', :git => 'https://github.com/brendaaakoh/ABSteppedProgressBar', :commit => '1057ed8b552e6f1170c0b3164fd53c9a9ee87de9'
+pod 'GMStepper'
+
+######### Image Mgmt #########
+pod 'ImageSlideshow'
+pod 'ImageSlideshow/AFURL'
+pod 'TOCropViewController'
+pod 'RSKImageCropper'
+
+######### Etc #########
 =begin 
 To Consider 
+pod 'Scrollable', '~> 1.0'
+pod 'ImageSlideshow/AFURL'
+pod 'Popover'
 pod 'ZFRippleButton'
 pod 'GoogleMaps' 
 pod 'ParseFacebookUtilsV4'
-pod 'AFNetworking', '~> 2.0'  
 pod 'ObjectiveSugar', '~> 0.5'
 pod 'LRTextField'
 pod 'JVFloatLabeledTextField'
