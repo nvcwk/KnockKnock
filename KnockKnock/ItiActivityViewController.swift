@@ -1,5 +1,4 @@
 import UIKit
-import GoogleMaps
 import Parse
 import autoAutoLayout
 import SwiftValidator

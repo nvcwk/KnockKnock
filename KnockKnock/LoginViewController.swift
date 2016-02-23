@@ -1,7 +1,6 @@
 import UIKit
 import Parse
 import SwiftSpinner
-import ParseFacebookUtilsV4
 import TextFieldEffects
 import autoAutoLayout
 
@@ -56,19 +55,19 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func actionFBLogin(sender: UIButton) {
-        SwiftSpinner.show("Logging in....")
-        PFFacebookUtils.logInInBackgroundWithReadPermissions(["email"]) {
-            (user: PFUser?, error: NSError?) -> Void in
-            SwiftSpinner.hide()
-            
-            if let user = user {
-                KnockKnockUtils.storyBoardCall(self, story: "Main", animated: false)
-            } else {
-                KnockKnockUtils.okAlert(self, title: "Error Logging In!", message: "Try Again!", handle: nil)
-            }
-        }
-    }
+//    @IBAction func actionFBLogin(sender: UIButton) {
+//        SwiftSpinner.show("Logging in....")
+//        PFFacebookUtils.logInInBackgroundWithReadPermissions(["email"]) {
+//            (user: PFUser?, error: NSError?) -> Void in
+//            SwiftSpinner.hide()
+//            
+//            if let user = user {
+//                KnockKnockUtils.storyBoardCall(self, story: "Main", animated: false)
+//            } else {
+//                KnockKnockUtils.okAlert(self, title: "Error Logging In!", message: "Try Again!", handle: nil)
+//            }
+//        }
+//    }
     
     @IBAction func backLogin(segue:UIStoryboardSegue) {
     }

@@ -2,23 +2,19 @@ platform :ios, "8.0"
 
 use_frameworks!
 
-pod 'AFNetworking', '~> 2.0'  
-pod 'ObjectiveSugar', '~> 0.5'
-
-# Backend Cloud
+######### Parse Cloud Database #########
 pod 'Parse'
-pod 'ParseFacebookUtilsV4'
+
+######### Parse UI Extension #########
 pod 'ParseUI'
 
 # Custom UI
-pod 'ZFRippleButton'
 pod 'SwiftSpinner'
 pod 'SwiftValidator'
 pod 'CountryPicker'
 pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
 pod 'GMStepper'
-pod 'GoogleMaps' 
 pod 'SwiftDate'
 pod 'QIULaunchAnimation'
 pod 'FSCalendar'
@@ -38,6 +34,11 @@ pod 'DZNEmptyDataSet'
 
 =begin 
 To Consider 
+pod 'ZFRippleButton'
+pod 'GoogleMaps' 
+pod 'ParseFacebookUtilsV4'
+pod 'AFNetworking', '~> 2.0'  
+pod 'ObjectiveSugar', '~> 0.5'
 pod 'LRTextField'
 pod 'JVFloatLabeledTextField'
 pod 'DZNPhotoPickerController'

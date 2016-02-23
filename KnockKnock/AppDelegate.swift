@@ -8,10 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
-import ParseFacebookUtilsV4
 import IQKeyboardManagerSwift
-import GoogleMaps
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
