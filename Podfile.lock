@@ -42,11 +42,9 @@ PODS:
   - ParseUI (1.2.0):
     - Bolts/Tasks (~> 1.3)
     - Parse (~> 1.9)
-  - Popover (0.9.0)
   - QIULaunchAnimation (0.0.1)
   - RSKImageCropper (1.5.1)
   - RTIconButton (1.0.0)
-  - Scrollable (1.0.5)
   - SwiftDate (3.0.2)
   - SwiftSpinner (0.8.0)
   - SwiftValidator (3.0.3)
@@ -56,6 +54,7 @@ PODS:
 DEPENDENCIES:
   - ABSteppedProgressBar (from `https://github.com/brendaaakoh/ABSteppedProgressBar`,
     commit `1057ed8b552e6f1170c0b3164fd53c9a9ee87de9`)
+  - AFNetworking
   - autoAutoLayout (~> 2.0)
   - CountryPicker
   - DZNEmptyDataSet
@@ -69,11 +68,9 @@ DEPENDENCIES:
   - LGSemiModalNavController
   - Parse
   - ParseUI
-  - Popover
   - QIULaunchAnimation
   - RSKImageCropper
   - RTIconButton
-  - Scrollable (~> 1.0)
   - SwiftDate
   - SwiftSpinner
   - SwiftValidator
@@ -106,11 +103,9 @@ SPEC CHECKSUMS:
   LGSemiModalNavController: ba49f8cbc24638be981cbca8a526f66b5dd90414
   Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
-  Popover: e5a2cbfa29bb982c95cff0d7eb94f47173dbfbcc
   QIULaunchAnimation: b979692b9c6e5e487c327d55ac2a39656d68a11d
   RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
   RTIconButton: 5174ff0555381ff78dd629c038673159f0a50b7b
-  Scrollable: 1be6d6b8b4fbc6aa98f5f44a24c1f88105ae35dd
   SwiftDate: 952306bbcd546719ba7431889939b58c5f57bae8
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
