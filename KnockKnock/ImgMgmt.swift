@@ -69,6 +69,9 @@ class ImgMgmt: NSObject {
             if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
                 picker.sourceType = UIImagePickerControllerSourceType.Camera
                 controller.presentViewController(picker, animated: true, completion: nil)
+            } else {
+                picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                controller.presentViewController(picker, animated: true, completion: nil)
             }
         } else {
             picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -96,6 +99,10 @@ extension ImgMgmt: UIImagePickerControllerDelegate, UINavigationControllerDelega
 extension ImgMgmt: RSKImageCropViewControllerDelegate  {
     func imageCropViewController(controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
         delegate?.getFinalImage(UIImage(data: croppedImage.lowQualityJPEGNSData)!)
+    }
+    
+    func imageCropViewControllerDidCancelCrop(controller: RSKImageCropViewController) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
