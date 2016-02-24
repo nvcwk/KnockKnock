@@ -124,16 +124,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>TOCropViewController-TOCropViewControllerBundle.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TOCropViewController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>TextFieldEffects.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -152,16 +142,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01D0DE05BE96EFB04B6BD1A5CC9347A5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>09104EE56801C1893CA2B405589EFD07</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1286FC4C82A86692BCF5BBD1B23D2C33</key>
 		<dict>
 			<key>primary</key>
@@ -177,17 +157,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3D0244205C3431C8F167A62A5E2218F4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3DE83C0B986B005BA72CCCD76DC28F80</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>442D4AAF2CB938EE56E71B94F23C5CF4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -207,17 +177,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6ED9F6A8B4A856FEE8FF439713C5EBB6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>6F1BF44DEF389E2D9BF905EF42E20DD7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>730066378BD549D32D1B3528219334F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -228,21 +188,6 @@
 			<true/>
 		</dict>
 		<key>7C835FBABC16DF252332CCE3AE4EF689</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7CF999D94F78A934B66C1ED1D900E1E1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>81E800FA939890994B2263BEE2779FD7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8C8B64CAB39816AA2410F4A61124C966</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -292,27 +237,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C77BC67781A89C4616DC092B7B32E4C9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CCA4FA833248925D873DC6D25799A027</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>D2E180613C6E640BD4792AC9ED5A3E15</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>D441F1575770E46B495109D8D85469BA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DA1DFF71DB36728CE576CA3D3E82E1DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
