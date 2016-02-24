@@ -17,15 +17,21 @@ class PubTableViewController: PFQueryTableViewController, DZNEmptyDataSetSource,
     
     override func viewDidLoad() {
         
-        loadingViewEnabled = false
+        //loadingViewEnabled = false
         
-        
+        self.tableView.reloadData()
+
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(UINib(nibName: "PubTableViewCell", bundle: nil), forCellReuseIdentifier: "PubViewCell")
         super.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
     }
     
     // Define the query that will provide the data for the table view
@@ -122,7 +128,9 @@ class PubTableViewController: PFQueryTableViewController, DZNEmptyDataSetSource,
         return true
     }
     
-    
+    func emptyDataSetShouldAllowImageViewAnimate(scrollView: UIScrollView) -> Bool {
+        return true
+    }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 130.0

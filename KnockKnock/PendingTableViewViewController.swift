@@ -18,7 +18,9 @@ class PendingTableViewViewController: PFQueryTableViewController, DZNEmptyDataSe
     
     override func viewDidLoad() {
         
-        loadingViewEnabled = false
+        //loadingViewEnabled = false
+        
+        self.tableView.reloadData()
         
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
@@ -33,6 +35,11 @@ class PendingTableViewViewController: PFQueryTableViewController, DZNEmptyDataSe
         
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
     }
     
     // Define the query that will provide the data for the table view

@@ -17,7 +17,11 @@ class ItiTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, 
     
     override func viewDidLoad() {
         
-        loadingViewEnabled = false
+        
+        
+        //loadingViewEnabled = false
+        
+        self.tableView.reloadData()
         
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
@@ -27,6 +31,11 @@ class ItiTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, 
         super.viewDidLoad()
         
         
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
     }
     
     // Define the query that will provide the data for the table view
@@ -123,6 +132,10 @@ class ItiTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, 
     }
     
     func emptyDataSetShouldAllowTouch(scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    
+    func emptyDataSetShouldAllowImageViewAnimate(scrollView: UIScrollView) -> Bool {
         return true
     }
     

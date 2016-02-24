@@ -22,6 +22,7 @@ class ReviewsTableViewController: PFQueryTableViewController ,DZNEmptyDataSetSou
         
         self.title = itineraryObject["title"] as! String + " Reviews"
         
+        self.tableView.reloadData()
         
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
@@ -37,6 +38,11 @@ class ReviewsTableViewController: PFQueryTableViewController ,DZNEmptyDataSetSou
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
     }
     
     // MARK: - Table view data source
