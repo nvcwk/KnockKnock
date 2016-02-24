@@ -19,13 +19,19 @@ class RatingViewController: UIViewController {
 
     
     
+    @IBOutlet weak var theImageView: UIImageView!
     @IBOutlet weak var stars: HCSStarRatingView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var reviewTitle: UILabel!
        override func viewDidLoad() {
         //setting up textbox
-        textView.layer.borderColor =  UIColor.blackColor().CGColor
-        textView.layer.backgroundColor =  UIColor.lightGrayColor().CGColor
+        //textView.layer.borderColor =  UIColor.blackColor().CGColor
+        //textView.layer.backgroundColor =  UIColor.lightGrayColor().CGColor
+        
+        
+        theImageView.image? = (theImageView.image?.imageWithRenderingMode(.AlwaysTemplate))!
+        theImageView.tintColor = UIColor(red:0.07, green:0.55, blue:0.63, alpha:1.0)
+
         
         let hostObject = confirmedObject["Host"] as! PFObject
         let clientObject = confirmedObject["Requester"] as! PFObject

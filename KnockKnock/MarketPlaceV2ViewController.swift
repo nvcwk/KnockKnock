@@ -11,7 +11,7 @@ import QIULaunchAnimation
 import autoAutoLayout
 import Parse
 import LGSemiModalNavController
-import Popover
+//import Popover
 
 class MarketPlaceV2ViewController: UIViewController {
 
@@ -19,24 +19,24 @@ class MarketPlaceV2ViewController: UIViewController {
     @IBOutlet weak var btn_filter: UIButton!
     @IBOutlet weak var view_container: UIView!
     
-    var popover_show = Popover()
-    var popover_filter = Popover()
-    
-    private var popoverOptions: [PopoverOption] = [
-        .Type(.Down),
-        .BlackOverlayColor(UIColor(white: 0.0, alpha: 0.6))
-    ]
-    
+//    var popover_show = Popover()
+//    var popover_filter = Popover()
+//    
+//    private var popoverOptions: [PopoverOption] = [
+//        .Type(.Down),
+//        .BlackOverlayColor(UIColor(white: 0.0, alpha: 0.6))
+//    ]
+//    
     var sortVC = SortTableViewController();
     var filterVC = FilterTableViewController();
     
-    @IBAction func dismiss_pop(sender: AnyObject) {
-        popover_filter.dismiss()
-        popover_show.dismiss()
-    }
-    var test = true
-    
-    var clicked_button = false
+//    @IBAction func dismiss_pop(sender: AnyObject) {
+//        popover_filter.dismiss()
+//        popover_show.dismiss()
+//    }
+//    var test = true
+//    
+//    var clicked_button = false
     
     private var texts_sortby = ["Highest to Lowest Price", "Lowest to Highest Price", "Earliest Start Date"]
 
@@ -77,13 +77,13 @@ class MarketPlaceV2ViewController: UIViewController {
         
         let startPoint = CGPoint(x: self.view.frame.width/2 , y: 100)
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.scrollEnabled = false
-        self.popover_show = Popover(options: self.popoverOptions, showHandler: nil, dismissHandler: nil)
-        
-        //var popover = Popover()
-        self.popover_show.show(tableView, point: startPoint)
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        tableView.scrollEnabled = false
+//        self.popover_show = Popover(options: self.popoverOptions, showHandler: nil, dismissHandler: nil)
+//        
+//        //var popover = Popover()
+//        self.popover_show.show(tableView, point: startPoint)
         
     }
     
@@ -192,19 +192,19 @@ class MarketPlaceV2ViewController: UIViewController {
 
     
 }
-
-extension MarketPlaceV2ViewController: UITableViewDelegate {
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.popover_show.dismiss()
-        clicked_button = false
-        
-        var controller = self.childViewControllers[0] as! MarketPlaceV2TableViewController
-        controller.sort = indexPath.row
-        controller.loadObjects()
-        controller.viewWillAppear(true)
-    }
-}
+//
+//extension MarketPlaceV2ViewController: UITableViewDelegate {
+//    
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        self.popover_show.dismiss()
+//        clicked_button = false
+//        
+//        var controller = self.childViewControllers[0] as! MarketPlaceV2TableViewController
+//        controller.sort = indexPath.row
+//        controller.loadObjects()
+//        controller.viewWillAppear(true)
+//    }
+//}
 
 extension MarketPlaceV2ViewController: UITableViewDataSource {
     

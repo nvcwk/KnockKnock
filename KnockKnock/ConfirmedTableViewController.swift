@@ -20,7 +20,9 @@ class ConfirmedTableViewController: PFQueryTableViewController,DZNEmptyDataSetSo
     override func viewDidLoad() {
         
         
-        loadingViewEnabled = false
+        //loadingViewEnabled = false
+        
+        self.tableView.reloadData()
         
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
@@ -31,6 +33,11 @@ class ConfirmedTableViewController: PFQueryTableViewController,DZNEmptyDataSetSo
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingTableViewCell")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
     }
     
     // Define the query that will provide the data for the table view

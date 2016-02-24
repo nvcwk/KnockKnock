@@ -46,5 +46,4 @@ pod 'ImageSlideshow/AFURL'
 pod 'RSKImageCropper'
 
 
-#pod 'ParseFacebookUtilsV4'
 #pod 'TOCropViewController'
