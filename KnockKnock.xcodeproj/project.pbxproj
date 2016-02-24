@@ -81,6 +81,7 @@
 		E1E4B4551C18601100242A83 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B4541C18601100242A83 /* RegisterViewController.swift */; };
 		E1E8A8161C64DF7D00A1A9B2 /* ItiImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8A8151C64DF7D00A1A9B2 /* ItiImageViewController.swift */; };
 		E1E8A8181C64E50500A1A9B2 /* ItiSumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8A8171C64E50500A1A9B2 /* ItiSumViewController.swift */; };
+		E1EAB8321C7DB54800B35AEF /* ImgMgmt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EAB8311C7DB54800B35AEF /* ImgMgmt.swift */; };
 		F60DD3711C48B06D00B79F54 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F60DD3701C48B06D00B79F54 /* cross.png */; };
 		F60DD3731C48F7CA00B79F54 /* PendingExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */; };
 		F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */; };
@@ -197,6 +198,7 @@
 		E1E4B4541C18601100242A83 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E1E8A8151C64DF7D00A1A9B2 /* ItiImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiImageViewController.swift; sourceTree = "<group>"; };
 		E1E8A8171C64E50500A1A9B2 /* ItiSumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItiSumViewController.swift; sourceTree = "<group>"; };
+		E1EAB8311C7DB54800B35AEF /* ImgMgmt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgMgmt.swift; sourceTree = "<group>"; };
 		F60DD3701C48B06D00B79F54 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = CountryPicker.bundle/cross.png; sourceTree = "<group>"; };
 		F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingExpandedViewController.swift; sourceTree = "<group>"; };
 		F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedExpandedViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		E11461F51C1170B900983BC3 /* KnockKnock */ = {
 			isa = PBXGroup;
 			children = (
+				E1EAB8301C7DB50A00B35AEF /* ImgMgmt */,
 				E187E5391C32E48700E00E5A /* ExtLib */,
 				E1CAA80C1C27129400AB4637 /* Entity */,
 				E1CAA8011C254F9A00AB4637 /* ViewCell */,
@@ -494,6 +497,14 @@
 				E1822CE31C27C0C500E78ED6 /* ItiPublishViewController.swift */,
 			);
 			name = "Create V2";
+			sourceTree = "<group>";
+		};
+		E1EAB8301C7DB50A00B35AEF /* ImgMgmt */ = {
+			isa = PBXGroup;
+			children = (
+				E1EAB8311C7DB54800B35AEF /* ImgMgmt.swift */,
+			);
+			name = ImgMgmt;
 			sourceTree = "<group>";
 		};
 		F66438291C560EE30013C25F /* Rating */ = {
@@ -778,6 +789,7 @@
 				F6DC5CC11C476A5B00BA6776 /* ConfirmedTableViewController.swift in Sources */,
 				E15BF7801C3FFB6A009A3C31 /* PubDetailsEditViewController.swift in Sources */,
 				E1CAA80B1C27053300AB4637 /* ActivityTableViewCell.swift in Sources */,
+				E1EAB8321C7DB54800B35AEF /* ImgMgmt.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
 				E15BF77E1C3FE617009A3C31 /* ProfileChangePassViewController.swift in Sources */,
 				F6DC5CBB1C4769EF00BA6776 /* PendingTableViewViewController.swift in Sources */,
