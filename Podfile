@@ -7,7 +7,6 @@ pod 'Parse'
 
 ######### Parse UI Extension #########
 pod 'ParseUI'
-pod 'ParseFacebookUtilsV4'
 
 ######### Universal UI Layout #########
 pod 'autoAutoLayout', '~> 2.0'
@@ -44,6 +43,8 @@ pod 'GMStepper'
 ######### Image Mgmt #########
 pod 'ImageSlideshow'
 pod 'ImageSlideshow/AFURL'
-pod 'TOCropViewController'
 pod 'RSKImageCropper'
 
+
+#pod 'ParseFacebookUtilsV4'
+#pod 'TOCropViewController'
