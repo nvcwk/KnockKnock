@@ -49,7 +49,6 @@ PODS:
   - SwiftSpinner (0.8.0)
   - SwiftValidator (3.0.3)
   - TextFieldEffects (1.1.0)
-  - TOCropViewController (1.2.6)
 
 DEPENDENCIES:
   - ABSteppedProgressBar (from `https://github.com/brendaaakoh/ABSteppedProgressBar`,
@@ -74,7 +73,6 @@ DEPENDENCIES:
   - SwiftSpinner
   - SwiftValidator
   - TextFieldEffects
-  - TOCropViewController
 
 EXTERNAL SOURCES:
   ABSteppedProgressBar:
@@ -109,6 +107,5 @@ SPEC CHECKSUMS:
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
   TextFieldEffects: 8e43fea8836e97be80fc4db27a1596c9e98a26ba
-  TOCropViewController: 030e38f7c696d8eec4320a5baa8250b49c8f065f
 
 COCOAPODS: 0.39.0
