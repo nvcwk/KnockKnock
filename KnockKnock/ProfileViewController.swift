@@ -28,11 +28,9 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var lbl_country: UILabel!
     @IBOutlet weak var lbl_name: UILabel!
-    let imagePicker = UIImagePickerController()
+    //let imagePicker = UIImagePickerController()
     
-    @IBAction func actionSelectPic(sender: UITapGestureRecognizer) {
-        KnockKnockImageUtils.imagePicker(self, picker: self.imagePicker)
-    }
+    var imgMgmt = ImgMgmt()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +59,20 @@ class ProfileViewController: UIViewController {
         
         lbl_name.text = fName + " " + lName
         
-        imagePicker.delegate = self
+        //imagePicker.delegate = self
         
         loadProfilePic()
         setupTxtFields()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadFields:",name:"setupProfileTxtFields", object: nil)
+        
+        imgMgmt = ImgMgmt(controller: self, mode: ImgMgmtCropMode.Circle)
+        imgMgmt.delegate = self
+    }
+    
+    @IBAction func actionSelectPic(sender: UITapGestureRecognizer) {
+        // KnockKnockImageUtils.imagePicker(self, picker: self.imagePicker)
+        imgMgmt.displayPickerOptions()
     }
     
     @IBAction func cancelProfile(segue : UIStoryboardSegue) { }
@@ -105,33 +111,15 @@ class ProfileViewController: UIViewController {
 }
 
 
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
-        
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        let cropView = RSKImageCropViewController(image: image)
-        cropView.cropMode = RSKImageCropMode.Circle
-        cropView.delegate = self
-        presentViewController(cropView, animated: false, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
-    }
-}
-
-extension ProfileViewController: RSKImageCropViewControllerDelegate  {
-    func imageCropViewController(controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
-        
+extension ProfileViewController: ImgMgmtDelegate {
+    func getFinalImage(image: UIImage) {
         SwiftSpinner.show("Updating...")
         
-        img_profile.image = croppedImage
+        img_profile.image = image
         
         let currentUser = PFUser.currentUser()!
         
-        currentUser["profilePic"] = PFFile(data: croppedImage.mediumQualityJPEGNSData)
+        currentUser["profilePic"] = PFFile(data: image.uncompressedPNGData)
         
         currentUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if (success) {
@@ -147,9 +135,7 @@ extension ProfileViewController: RSKImageCropViewControllerDelegate  {
             
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+
     }
     
-    func imageCropViewControllerDidCancelCrop(controller: RSKImageCropViewController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
 }
