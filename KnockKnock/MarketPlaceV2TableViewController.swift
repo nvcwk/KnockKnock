@@ -87,7 +87,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
             if let itiObj = mpObj["itinerary"] as? PFObject {
                 
                 cell.lb_title.text = itiObj["title"] as! String
-                
+                var title2 = itiObj["title"] as! String
                 cell.lb_price.text = String(mpObj["price"] as! Int) + " SGD"
                 
                 cell.startDate.text = KnockKnockUtils.dateToStringDisplay( mpObj["startAvailability"] as! NSDate)
@@ -115,7 +115,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
                         cell.image_background.loadInBackground()
                     }
                 }
-                
+                cell.stars.value = 0
                 
                 //for stars
                 let hostObj = itiObj["host"] as! PFObject
@@ -137,6 +137,8 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
                                 }
                                 var stars = rating/ratingCount
                                 cell.stars.value = CGFloat(stars)
+                                //print(title2 + " - "  + String(stars))
+                                
                             }
                         }
                     }else{

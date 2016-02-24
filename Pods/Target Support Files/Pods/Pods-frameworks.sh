@@ -104,7 +104,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/SwiftDate.framework"
   install_framework "Pods/SwiftSpinner.framework"
   install_framework "Pods/SwiftValidator.framework"
-  install_framework "Pods/TOCropViewController.framework"
   install_framework "Pods/TextFieldEffects.framework"
   install_framework "Pods/autoAutoLayout.framework"
 fi
@@ -129,7 +128,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/SwiftDate.framework"
   install_framework "Pods/SwiftSpinner.framework"
   install_framework "Pods/SwiftValidator.framework"
-  install_framework "Pods/TOCropViewController.framework"
   install_framework "Pods/TextFieldEffects.framework"
   install_framework "Pods/autoAutoLayout.framework"
 fi
