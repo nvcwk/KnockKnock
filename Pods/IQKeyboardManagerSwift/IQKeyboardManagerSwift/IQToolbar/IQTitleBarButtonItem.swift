@@ -1,7 +1,7 @@
 //
 //  IQTitleBarButtonItem.swift
 // https://github.com/hackiftekhar/IQKeyboardManager
-// Copyright (c) 2013-16 Iftekhar Qurashi.
+// Copyright (c) 2013-15 Iftekhar Qurashi.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
 
 import UIKit
 
-public class IQTitleBarButtonItem: IQBarButtonItem {
+public class IQTitleBarButtonItem: UIBarButtonItem {
    
     public var font : UIFont? {
     
@@ -32,7 +32,7 @@ public class IQTitleBarButtonItem: IQBarButtonItem {
             if let unwrappedFont = font {
                 _titleLabel?.font = unwrappedFont
             } else {
-                _titleLabel?.font = UIFont.systemFontOfSize(13)
+                _titleLabel?.font = UIFont.boldSystemFontOfSize(12)
             }
         }
     }
@@ -44,25 +44,23 @@ public class IQTitleBarButtonItem: IQBarButtonItem {
         super.init()
     }
     
-    init(title : String?) {
+    init(frame : CGRect, title : String?) {
 
         self.init(title: nil, style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
-        _titleView = UIView()
+        _titleView = UIView(frame: frame)
         _titleView?.backgroundColor = UIColor.clearColor()
-        _titleView?.autoresizingMask = [.FlexibleWidth,.FlexibleHeight]
+        _titleView?.autoresizingMask = .FlexibleWidth
         
-        _titleLabel = UILabel()
-        _titleLabel?.numberOfLines = 0
-        _titleLabel?.textColor = UIColor.grayColor()
+        _titleLabel = UILabel(frame: _titleView!.bounds)
+        _titleLabel?.textColor = UIColor.lightGrayColor()
         _titleLabel?.backgroundColor = UIColor.clearColor()
         _titleLabel?.textAlignment = .Center
         _titleLabel?.text = title
-        _titleLabel?.autoresizingMask = [.FlexibleWidth,.FlexibleHeight]
-        font = UIFont.systemFontOfSize(13.0)
+        _titleLabel?.autoresizingMask = .FlexibleWidth
+        font = UIFont.boldSystemFontOfSize(12.0)
         _titleLabel?.font = self.font
-        _titleView?.addSubview(_titleLabel!)
-        customView = _titleView
+        customView = _titleLabel
         enabled = false
     }
 

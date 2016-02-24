@@ -7,6 +7,7 @@ pod 'Parse'
 
 ######### Parse UI Extension #########
 pod 'ParseUI'
+pod 'ParseFacebookUtilsV4'
 
 ######### Universal UI Layout #########
 pod 'autoAutoLayout', '~> 2.0'
@@ -24,7 +25,7 @@ pod 'KBRoundedButton'
 
 ######### Custom Keyboard #########
 pod 'CountryPicker'
-pod 'IQKeyboardManagerSwift'
+pod 'IQKeyboardManagerSwift', '3.3.4'
 
 ######### Extended Int Api with Date functions #########
 pod 'SwiftDate'
@@ -46,19 +47,3 @@ pod 'ImageSlideshow/AFURL'
 pod 'TOCropViewController'
 pod 'RSKImageCropper'
 
-######### Etc #########
-=begin 
-To Consider 
-pod 'Scrollable', '~> 1.0'
-pod 'ImageSlideshow/AFURL'
-pod 'Popover'
-pod 'ZFRippleButton'
-pod 'GoogleMaps' 
-pod 'ParseFacebookUtilsV4'
-pod 'ObjectiveSugar', '~> 0.5'
-pod 'LRTextField'
-pod 'JVFloatLabeledTextField'
-pod 'DZNPhotoPickerController'
-pod 'RLDTableViewSuite'
-pod 'DZNPhotoPickerController/Editor'
-=end
