@@ -33,6 +33,9 @@ class ProfileChangePassViewController: UIViewController {
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
+        self.image_profile.layer.cornerRadius = self.image_profile.frame.size.width/2
+        self.image_profile.clipsToBounds = true
+        
         let missTxt = String("Please fill in all inputs")
         
         var user = PFUser.currentUser()
@@ -57,7 +60,7 @@ class ProfileChangePassViewController: UIViewController {
     }
     
     @IBAction func viewRequirements(sender: UIButton) {
-        KnockKnockUtils.okAlert(self, title: "Password Requirements", message: "Should contain 7-20 characters with at least 1 Upper or Lower Alphabet and 1 numerical digit. Special characters are allowed.", handle: nil)
+        KnockKnockUtils.okAlert(self, title: "Password Requirements", message: "Should contain 7-20 characters with at least 1 Upper or Lower Alphabet and 1 numerical digit. Special characters are not allowed.", handle: nil)
     }
 }
 
