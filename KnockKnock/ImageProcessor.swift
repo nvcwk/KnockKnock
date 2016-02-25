@@ -10,37 +10,34 @@ import Foundation
 import UIKit
 import RSKImageCropper
 
-@objc protocol ImgMgmtDelegate {
+@objc protocol ImageProcessorDelegate {
     func getFinalImage(image: UIImage)
 }
 
-public enum ImgMgmtCropMode {
+public enum ImageProcessorCropMode {
     case Square
     case Circle
 }
 
-class ImgMgmt: NSObject {
+class ImageProcessor: NSObject {
     var controller = UIViewController()
-    var cropMode = RSKImageCropMode.Square
+    var cropMode = ImageProcessorCropMode.Square //Default Square
     
-    weak var delegate: ImgMgmtDelegate?
+    weak var delegate: ImageProcessorDelegate?
     
     override init() {
         super.init()
     }
     
-    init(controller: UIViewController, mode: ImgMgmtCropMode) {
+    init(controller: UIViewController, mode: ImageProcessorCropMode) {
         super.init()
         
         self.controller = controller
-        
-        if(mode == ImgMgmtCropMode.Circle) {
-            cropMode = RSKImageCropMode.Circle
-        } else if (mode == ImgMgmtCropMode.Square) {
-            cropMode = RSKImageCropMode.Square
-        }
+        self.cropMode = mode
     }
-    
+}
+
+extension ImageProcessor {
     func displayPickerOptions() {
         let alert:UIAlertController = UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
@@ -80,13 +77,19 @@ class ImgMgmt: NSObject {
     }
 }
 
-extension ImgMgmt: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ImageProcessor: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         let cropView = RSKImageCropViewController(image: image)
-        cropView.cropMode = cropMode
+        
+        if(cropMode == ImageProcessorCropMode.Circle) {
+            cropView.cropMode = RSKImageCropMode.Circle
+        } else if (cropMode == ImageProcessorCropMode.Square) {
+            cropView.cropMode = RSKImageCropMode.Square
+        }
+        
         cropView.delegate = self
         controller.presentViewController(cropView, animated: false, completion: nil)
     }
@@ -96,7 +99,7 @@ extension ImgMgmt: UIImagePickerControllerDelegate, UINavigationControllerDelega
     }
 }
 
-extension ImgMgmt: RSKImageCropViewControllerDelegate  {
+extension ImageProcessor: RSKImageCropViewControllerDelegate  {
     func imageCropViewController(controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
         delegate?.getFinalImage(UIImage(data: croppedImage.lowQualityJPEGNSData)!)
     }
