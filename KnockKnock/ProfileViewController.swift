@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var lbl_name: UILabel!
     //let imagePicker = UIImagePickerController()
     
-    var imgMgmt = ImgMgmt()
+    var imgMgmt = ImageProcessor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +66,7 @@ class ProfileViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadFields:",name:"setupProfileTxtFields", object: nil)
         
-        imgMgmt = ImgMgmt(controller: self, mode: ImgMgmtCropMode.Circle)
+        imgMgmt = ImageProcessor(controller: self, mode: ImageProcessorCropMode.Circle)
         imgMgmt.delegate = self
     }
     
@@ -111,7 +111,7 @@ class ProfileViewController: UIViewController {
 }
 
 
-extension ProfileViewController: ImgMgmtDelegate {
+extension ProfileViewController: ImageProcessorDelegate {
     func getFinalImage(image: UIImage) {
         SwiftSpinner.show("Updating...")
         

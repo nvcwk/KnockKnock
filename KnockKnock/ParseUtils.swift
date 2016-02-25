@@ -18,10 +18,10 @@ class ParseUtils {
         
         // Initialize Parse.
         // Prod DB
-        //Parse.setApplicationId("G0SdBZjvAOJaghaMBYeGXoUUeyOoyJE8jA1MYESf", clientKey: "EqIuyDEoVHCJrkeKg5JDZjVqz65n2rJCOGifyt2F")
+        Parse.setApplicationId("G0SdBZjvAOJaghaMBYeGXoUUeyOoyJE8jA1MYESf", clientKey: "EqIuyDEoVHCJrkeKg5JDZjVqz65n2rJCOGifyt2F")
         
         //Development
-        Parse.setApplicationId("vYNUU2duZ55QlQNA7XKfjGfOvYmakcAZ0sJOYRHO", clientKey: "vBrciAAvdgFipUxAAf12luP8JzaQhHbPs9ELbvs9")
+        //Parse.setApplicationId("vYNUU2duZ55QlQNA7XKfjGfOvYmakcAZ0sJOYRHO", clientKey: "vBrciAAvdgFipUxAAf12luP8JzaQhHbPs9ELbvs9")
         
         //DemoTestFlight
         //Parse.setApplicationId("2FDJom70zeQTj3Qy3V4xje9DFIhHqYFzSbCHX5g7", clientKey: "yxBmkc4m91epYYSYDAyX4z7QV76MGIjIE9oI1Hfa")
