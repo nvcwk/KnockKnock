@@ -25,6 +25,9 @@ class ConfirmedExpandedViewController: UIViewController {
     @IBOutlet weak var remarks: UILabel!
     @IBOutlet weak var remarksLabel: UILabel!
     @IBOutlet weak var reviewButton: UIButton!
+    @IBOutlet weak var confirmCompletion: UIButton!
+    
+    
     var confirmedObject : PFObject!
     
     @IBOutlet weak var image: UIImageView!
@@ -70,7 +73,7 @@ class ConfirmedExpandedViewController: UIViewController {
         reviewButton.hidden = true
         remarksLabel.text = ""
         remarks.text = ""
-        
+        confirmCompletion.hidden = true
         
         if (hostObject == PFUser.currentUser()){
             requesterLabel.text = "Requested By: "
@@ -99,6 +102,15 @@ class ConfirmedExpandedViewController: UIViewController {
             remarksLabel.text = "Remarks: "
             status.font = UIFont.boldSystemFontOfSize(18.0)
             status.textColor = UIColor.redColor()
+        }else if(confirmedObject["Status"] as! String == "Pending Completion"){
+            if(hostObject == PFUser.currentUser()){
+                confirmCompletion.enabled = true
+                confirmCompletion.hidden = false
+                
+            }else{
+            
+            }
+            
         }else if(confirmedObject["Status"] as! String == "Completed"){
             remarks.text = confirmedObject["Remarks"] as! String
             remarksLabel.text = "Remarks: "
@@ -226,6 +238,56 @@ class ConfirmedExpandedViewController: UIViewController {
     }
     
     
+    @IBAction func confirmCompletionButtonTapped(sender: AnyObject) {
+        let bookAlert = UIAlertController(title: "Booking Completed?", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        
+        bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            
+            self.updateRecordsCompleted(self.confirmedObject)
+            
+            let myAlert =
+            UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
+            
+            //
+            self.confirmedObject.saveInBackgroundWithBlock {
+                (success : Bool?, error: NSError?) -> Void in
+                if (success != nil) {
+                    let myAlert =
+                    UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
+                    
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
+                    
+                    myAlert.addAction(okAction);
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName("loadConfirm", object: nil)
+                    
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                    
+                    self.presentViewController(myAlert, animated:true, completion:nil);
+                } else {
+                    NSLog("%@", error!)
+                }
+            }
+        }))
+        bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        
+        presentViewController(bookAlert, animated: true, completion: nil)
+        
+        
+    }
+    
+    
+    func updateRecordsCompleted(record: PFObject){
+        
+        record["Status"] = "Completed"
+        record["Remarks"] = "Tour Completed"
+
+        
+        
+    }
     
     
     
