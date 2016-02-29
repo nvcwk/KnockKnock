@@ -25,7 +25,6 @@ PODS:
   - Bolts/Tasks (1.6.0)
   - CountryPicker (1.2.3)
   - DZNEmptyDataSet (1.7.3)
-  - Firebase (2.5.1)
   - FSCalendar (1.8.1)
   - GMStepper (1.1.0)
   - HCSStarRatingView (1.4.3)
@@ -60,7 +59,6 @@ DEPENDENCIES:
   - autoAutoLayout (~> 2.0)
   - CountryPicker
   - DZNEmptyDataSet
-  - Firebase
   - FSCalendar
   - GMStepper
   - HCSStarRatingView (~> 1.4.3)
@@ -97,7 +95,6 @@ SPEC CHECKSUMS:
   Bolts: f52a250053bb517ca874523c3913776359ab3def
   CountryPicker: 6f166e2f1cc250f07eba4c587fbe1c0efc21049b
   DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
-  Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   FSCalendar: 8ffbacc9186241f2d33a04053dd8c68ca2f38771
   GMStepper: 3b7922778a80e0eab89a55003ca36b25fc2393b7
   HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a

@@ -81,6 +81,8 @@
 		F60DD3731C48F7CA00B79F54 /* PendingExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */; };
 		F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */; };
 		F655B1A21C84290800214DA8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F655B1A01C84290800214DA8 /* Chat.storyboard */; };
+		F655B1A51C842CBB00214DA8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B1A41C842CBB00214DA8 /* ChatViewController.swift */; };
+		F655B1A71C84566B00214DA8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B1A61C84566B00214DA8 /* Message.swift */; };
 		F664382B1C560F0A0013C25F /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F664382A1C560F0A0013C25F /* RatingViewController.swift */; };
 		F6858DB01C573B0400FAB184 /* ReviewsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6858DAF1C573B0400FAB184 /* ReviewsTableCell.swift */; };
 		F6858DB21C573B4F00FAB184 /* ReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6858DB11C573B4F00FAB184 /* ReviewsTableViewController.swift */; };
@@ -199,6 +201,8 @@
 		F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingExpandedViewController.swift; sourceTree = "<group>"; };
 		F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedExpandedViewController.swift; sourceTree = "<group>"; };
 		F655B1A11C84290800214DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chat.storyboard; sourceTree = "<group>"; };
+		F655B1A41C842CBB00214DA8 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		F655B1A61C84566B00214DA8 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F664382A1C560F0A0013C25F /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		F6858DAF1C573B0400FAB184 /* ReviewsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableCell.swift; sourceTree = "<group>"; };
 		F6858DB11C573B4F00FAB184 /* ReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewController.swift; sourceTree = "<group>"; };
@@ -504,6 +508,8 @@
 		F655B1A31C842C7300214DA8 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F655B1A41C842CBB00214DA8 /* ChatViewController.swift */,
+				F655B1A61C84566B00214DA8 /* Message.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -794,6 +800,7 @@
 				E1EAB8321C7DB54800B35AEF /* ImageProcessor.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
 				E15BF77E1C3FE617009A3C31 /* ProfileChangePassViewController.swift in Sources */,
+				F655B1A71C84566B00214DA8 /* Message.swift in Sources */,
 				F6DC5CBB1C4769EF00BA6776 /* PendingTableViewViewController.swift in Sources */,
 				E164E68F1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift in Sources */,
 				7095F3511C4E30BC002C1AD5 /* MyImageView.swift in Sources */,
@@ -801,6 +808,7 @@
 				E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */,
 				E15BF77C1C3FE191009A3C31 /* ProfileEditViewController.swift in Sources */,
 				E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */,
+				F655B1A51C842CBB00214DA8 /* ChatViewController.swift in Sources */,
 				E127E8EA1C79EA7E0006B07D /* FilterTableViewController.swift in Sources */,
 				E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */,
 				706B0FD71C4CBC2F0078CD38 /* MyCustomTextField.swift in Sources */,

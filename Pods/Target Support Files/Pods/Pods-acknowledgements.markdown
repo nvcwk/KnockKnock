@@ -148,10 +148,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## Firebase
-
-https://www.firebase.com/terms/terms-of-service.html
-
 ## GMStepper
 
 The MIT License (MIT)

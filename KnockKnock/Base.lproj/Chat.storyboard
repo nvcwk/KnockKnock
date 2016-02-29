@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="3sl-3n-UUj">
             <objects>
-                <viewController id="mIA-wz-gNb" sceneMemberID="viewController">
+                <viewController id="mIA-wz-gNb" customClass="ChatViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WBi-C1-UKe"/>
                         <viewControllerLayoutGuide type="bottom" id="utc-Xv-6pv"/>
@@ -16,6 +16,18 @@
                     <view key="view" contentMode="scaleToFill" id="VSt-jE-1fq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fgs-Dk-6zB" customClass="JSQMessagesCollectionView">
+                                <rect key="frame" x="0.0" y="132" width="365" height="192"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1W3-k0-Sgw">
+                                    <size key="itemSize" width="330" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="cpf-Dl-MEs"/>
@@ -29,6 +41,7 @@
         <!--Item-->
         <scene sceneID="WeO-lP-YmK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRv-FD-u1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rkq-OU-aTf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="OnP-Mb-GvE"/>
                     <toolbarItems/>
@@ -41,7 +54,6 @@
                         <segue destination="mIA-wz-gNb" kind="relationship" relationship="rootViewController" id="OII-VT-zKu"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VRv-FD-u1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="997" y="402"/>
         </scene>

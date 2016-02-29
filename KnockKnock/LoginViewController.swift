@@ -3,6 +3,7 @@ import Parse
 import SwiftSpinner
 import TextFieldEffects
 import autoAutoLayout
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -36,7 +37,7 @@ class LoginViewController: UIViewController {
     @IBAction func actionLogin(sender: UIButton) {
         let user = tf_username.text!
         let pass = tf_password.text!
-
+        
         if (user.isEmpty || pass.isEmpty) {
             KnockKnockUtils.okAlert(self, title: "Missing Input", message: "Key in all inputs!", handle: nil)
         } else {
@@ -47,7 +48,9 @@ class LoginViewController: UIViewController {
                 SwiftSpinner.hide()
                 
                 if ((user) != nil) {
+                    
                     KnockKnockUtils.storyBoardCall(self, story: "Main", animated: true)
+                        
                 } else {
                     KnockKnockUtils.okAlert(self, title: "Error", message: "Incorrect Username or Password", handle: nil)
                 }
