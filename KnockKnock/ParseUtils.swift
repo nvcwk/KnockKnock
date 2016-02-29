@@ -31,10 +31,19 @@ class ParseUtils {
     static func checkLogin(controller: UIViewController) -> Bool {
         if PFUser.currentUser() == nil {
             KnockKnockUtils.storyBoardCall(controller, story: "Credential", animated: true)
-            
+    
             return false
         }
+        self.activateNotification()
+        
         return true
+    }
+    
+    static func activateNotification() {
+        print("settingup")
+        let installation = PFInstallation.currentInstallation()
+        installation.channels = [(PFUser.currentUser()?.objectId)!]
+        installation.saveInBackground()
     }
     
     // Logout
@@ -79,6 +88,8 @@ class ParseUtils {
                 // Show the errorString somewhere and let the user try again.
             } else {
                 KnockKnockUtils.okAlert(controller, title: "Sign up success!", message: "Welcome " + fName, handle: { (action:UIAlertAction!) in
+                    self.activateNotification()
+                    
                     KnockKnockUtils.storyBoardCall(controller, story: "Profile", animated: true, view:"profilePic")})
             }
         }
