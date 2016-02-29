@@ -80,9 +80,11 @@
 		F60DD3711C48B06D00B79F54 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F60DD3701C48B06D00B79F54 /* cross.png */; };
 		F60DD3731C48F7CA00B79F54 /* PendingExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */; };
 		F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */; };
-		F655B1A21C84290800214DA8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F655B1A01C84290800214DA8 /* Chat.storyboard */; };
 		F655B1A51C842CBB00214DA8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B1A41C842CBB00214DA8 /* ChatViewController.swift */; };
-		F655B1A71C84566B00214DA8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B1A61C84566B00214DA8 /* Message.swift */; };
+		F655B1A91C8476E900214DA8 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B1A81C8476E900214DA8 /* Messages.swift */; };
+		F655B1AB1C84829E00214DA8 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B1AA1C84829E00214DA8 /* MessageTableViewController.swift */; };
+		F655B1AD1C8482D000214DA8 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B1AC1C8482D000214DA8 /* MessageTableViewCell.swift */; };
+		F655B1B01C84840500214DA8 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F655B1AE1C84840500214DA8 /* Message.storyboard */; };
 		F664382B1C560F0A0013C25F /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F664382A1C560F0A0013C25F /* RatingViewController.swift */; };
 		F6858DB01C573B0400FAB184 /* ReviewsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6858DAF1C573B0400FAB184 /* ReviewsTableCell.swift */; };
 		F6858DB21C573B4F00FAB184 /* ReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6858DB11C573B4F00FAB184 /* ReviewsTableViewController.swift */; };
@@ -200,9 +202,11 @@
 		F60DD3701C48B06D00B79F54 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = CountryPicker.bundle/cross.png; sourceTree = "<group>"; };
 		F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingExpandedViewController.swift; sourceTree = "<group>"; };
 		F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedExpandedViewController.swift; sourceTree = "<group>"; };
-		F655B1A11C84290800214DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chat.storyboard; sourceTree = "<group>"; };
 		F655B1A41C842CBB00214DA8 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		F655B1A61C84566B00214DA8 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F655B1A81C8476E900214DA8 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		F655B1AA1C84829E00214DA8 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		F655B1AC1C8482D000214DA8 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		F655B1AF1C84840500214DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Message.storyboard; sourceTree = "<group>"; };
 		F664382A1C560F0A0013C25F /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		F6858DAF1C573B0400FAB184 /* ReviewsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableCell.swift; sourceTree = "<group>"; };
 		F6858DB11C573B4F00FAB184 /* ReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewController.swift; sourceTree = "<group>"; };
@@ -339,7 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				E11461FC1C1170B900983BC3 /* Main.storyboard */,
-				F655B1A01C84290800214DA8 /* Chat.storyboard */,
+				F655B1AE1C84840500214DA8 /* Message.storyboard */,
 				E110D1D91C4684F00074CF48 /* Booking.storyboard */,
 				E16B35841C1CCC65003897EF /* MarketPlace.storyboard */,
 				E16B357D1C1CCA39003897EF /* Itinerary.storyboard */,
@@ -509,7 +513,9 @@
 			isa = PBXGroup;
 			children = (
 				F655B1A41C842CBB00214DA8 /* ChatViewController.swift */,
-				F655B1A61C84566B00214DA8 /* Message.swift */,
+				F655B1A81C8476E900214DA8 /* Messages.swift */,
+				F655B1AA1C84829E00214DA8 /* MessageTableViewController.swift */,
+				F655B1AC1C8482D000214DA8 /* MessageTableViewCell.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 			files = (
 				E187E5551C32F3A700E00E5A /* ItiTableViewController.xib in Resources */,
 				F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */,
+				F655B1B01C84840500214DA8 /* Message.storyboard in Resources */,
 				E159A8391C33E9E600EF80A4 /* PubTableViewController.xib in Resources */,
 				E16B357E1C1CCA39003897EF /* Itinerary.storyboard in Resources */,
 				F6DC5CC21C476A5B00BA6776 /* ConfirmedTableViewController.xib in Resources */,
@@ -677,7 +684,6 @@
 				E11461FE1C1170B900983BC3 /* Main.storyboard in Resources */,
 				E110D1DA1C4684F00074CF48 /* Booking.storyboard in Resources */,
 				E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */,
-				F655B1A21C84290800214DA8 /* Chat.storyboard in Resources */,
 				E16B357C1C1CC9D4003897EF /* Profile.storyboard in Resources */,
 				E187E5451C32E80800E00E5A /* ItiTableViewCell.xib in Resources */,
 				E16B35861C1CCC65003897EF /* MarketPlace.storyboard in Resources */,
@@ -787,6 +793,7 @@
 				E159A8381C33E9E600EF80A4 /* PubTableViewController.swift in Sources */,
 				E14174F51C3D7E57005E3B9A /* MarketActivityTableViewCell.swift in Sources */,
 				F6858DB21C573B4F00FAB184 /* ReviewsTableViewController.swift in Sources */,
+				F655B1A91C8476E900214DA8 /* Messages.swift in Sources */,
 				E1CAA8051C2554A000AB4637 /* ItiActivityViewController.swift in Sources */,
 				E1822CE41C27C0C500E78ED6 /* ItiPublishViewController.swift in Sources */,
 				F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */,
@@ -800,7 +807,6 @@
 				E1EAB8321C7DB54800B35AEF /* ImageProcessor.swift in Sources */,
 				E11AC2211C16E12C00479927 /* ParseUtils.swift in Sources */,
 				E15BF77E1C3FE617009A3C31 /* ProfileChangePassViewController.swift in Sources */,
-				F655B1A71C84566B00214DA8 /* Message.swift in Sources */,
 				F6DC5CBB1C4769EF00BA6776 /* PendingTableViewViewController.swift in Sources */,
 				E164E68F1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift in Sources */,
 				7095F3511C4E30BC002C1AD5 /* MyImageView.swift in Sources */,
@@ -812,7 +818,9 @@
 				E127E8EA1C79EA7E0006B07D /* FilterTableViewController.swift in Sources */,
 				E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */,
 				706B0FD71C4CBC2F0078CD38 /* MyCustomTextField.swift in Sources */,
+				F655B1AB1C84829E00214DA8 /* MessageTableViewController.swift in Sources */,
 				E1B95E461C36C14600F85B8F /* PubDetailsViewController.swift in Sources */,
+				F655B1AD1C8482D000214DA8 /* MessageTableViewCell.swift in Sources */,
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,
 				F6858DB01C573B0400FAB184 /* ReviewsTableCell.swift in Sources */,
 				70C807381C57E53E0039CCF1 /* TimelineView.swift in Sources */,
@@ -886,12 +894,12 @@
 			name = MarketPlace.storyboard;
 			sourceTree = "<group>";
 		};
-		F655B1A01C84290800214DA8 /* Chat.storyboard */ = {
+		F655B1AE1C84840500214DA8 /* Message.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F655B1A11C84290800214DA8 /* Base */,
+				F655B1AF1C84840500214DA8 /* Base */,
 			);
-			name = Chat.storyboard;
+			name = Message.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
