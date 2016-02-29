@@ -73,7 +73,7 @@ class ConfirmedTableViewController: PFQueryTableViewController,DZNEmptyDataSetSo
             var date = pending["Date"]! as! NSDate
             //check if booking has been completed
             if (date < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate()))){
-                updateRecords(pending)
+                updateRecordsConfirmCompleted(pending)
             }
             
             let marketplace = pending["Marketplace"] as! PFObject
@@ -151,14 +151,16 @@ class ConfirmedTableViewController: PFQueryTableViewController,DZNEmptyDataSetSo
         return "Confirmed Tours"
     }
     
-    func updateRecords(record: PFObject){
+    func updateRecordsConfirmCompleted(record: PFObject){
         
-        record["Status"] = "Completed"
-        record["Remarks"] = "Tour Completed"
+        record["Status"] = "Pending Completion"
+        record["Remarks"] = ""
         record.saveInBackground()
         
         
     }
     
+
+
     
 }
