@@ -80,6 +80,7 @@
 		F60DD3711C48B06D00B79F54 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F60DD3701C48B06D00B79F54 /* cross.png */; };
 		F60DD3731C48F7CA00B79F54 /* PendingExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */; };
 		F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */; };
+		F655B1A21C84290800214DA8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F655B1A01C84290800214DA8 /* Chat.storyboard */; };
 		F664382B1C560F0A0013C25F /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F664382A1C560F0A0013C25F /* RatingViewController.swift */; };
 		F6858DB01C573B0400FAB184 /* ReviewsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6858DAF1C573B0400FAB184 /* ReviewsTableCell.swift */; };
 		F6858DB21C573B4F00FAB184 /* ReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6858DB11C573B4F00FAB184 /* ReviewsTableViewController.swift */; };
@@ -197,6 +198,7 @@
 		F60DD3701C48B06D00B79F54 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = CountryPicker.bundle/cross.png; sourceTree = "<group>"; };
 		F60DD3721C48F7CA00B79F54 /* PendingExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingExpandedViewController.swift; sourceTree = "<group>"; };
 		F60DD3741C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedExpandedViewController.swift; sourceTree = "<group>"; };
+		F655B1A11C84290800214DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chat.storyboard; sourceTree = "<group>"; };
 		F664382A1C560F0A0013C25F /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		F6858DAF1C573B0400FAB184 /* ReviewsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableCell.swift; sourceTree = "<group>"; };
 		F6858DB11C573B4F00FAB184 /* ReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewController.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				E11461FC1C1170B900983BC3 /* Main.storyboard */,
+				F655B1A01C84290800214DA8 /* Chat.storyboard */,
 				E110D1D91C4684F00074CF48 /* Booking.storyboard */,
 				E16B35841C1CCC65003897EF /* MarketPlace.storyboard */,
 				E16B357D1C1CCA39003897EF /* Itinerary.storyboard */,
@@ -347,6 +350,7 @@
 		E11AC2081C16244900479927 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F655B1A31C842C7300214DA8 /* Chat */,
 				F66438291C560EE30013C25F /* Rating */,
 				E12396AA1C53270800FB4760 /* Profile */,
 				E164E68D1C494E4F00AEC87C /* MarketPlaceV2 */,
@@ -495,6 +499,13 @@
 				E1EAB8311C7DB54800B35AEF /* ImageProcessor.swift */,
 			);
 			name = ImgMgmt;
+			sourceTree = "<group>";
+		};
+		F655B1A31C842C7300214DA8 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Chat;
 			sourceTree = "<group>";
 		};
 		F66438291C560EE30013C25F /* Rating */ = {
@@ -660,6 +671,7 @@
 				E11461FE1C1170B900983BC3 /* Main.storyboard in Resources */,
 				E110D1DA1C4684F00074CF48 /* Booking.storyboard in Resources */,
 				E1E4B44E1C1822F700242A83 /* CountryPicker.bundle in Resources */,
+				F655B1A21C84290800214DA8 /* Chat.storyboard in Resources */,
 				E16B357C1C1CC9D4003897EF /* Profile.storyboard in Resources */,
 				E187E5451C32E80800E00E5A /* ItiTableViewCell.xib in Resources */,
 				E16B35861C1CCC65003897EF /* MarketPlace.storyboard in Resources */,
@@ -864,6 +876,14 @@
 				E16B35851C1CCC65003897EF /* Base */,
 			);
 			name = MarketPlace.storyboard;
+			sourceTree = "<group>";
+		};
+		F655B1A01C84290800214DA8 /* Chat.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F655B1A11C84290800214DA8 /* Base */,
+			);
+			name = Chat.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -45,5 +45,8 @@ pod 'ImageSlideshow'
 pod 'ImageSlideshow/AFURL'
 pod 'RSKImageCropper'
 
+######### Chat Mgmt #########
+pod 'Firebase'
+pod 'JSQMessagesViewController'
 
 #pod 'TOCropViewController'
