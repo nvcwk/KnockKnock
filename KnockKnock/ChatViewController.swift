@@ -13,7 +13,7 @@ import JSQMessagesViewController
 import Foundation
 import MediaPlayer
 
-class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ChatViewController: JSQMessagesViewController{
     
     var timer: NSTimer = NSTimer()
     var isLoading: Bool = false
@@ -194,11 +194,11 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         self.sendMessage(text, video: nil, picture: nil)
     }
     
-    override func didPressAccessoryButton(sender: UIButton!) {
+   /* override func didPressAccessoryButton(sender: UIButton!) {
         var action = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Take photo", "Choose existing photo", "Choose existing video")
         action.showInView(self.view)
     }
-    
+    */
     // MARK: - JSQMessages CollectionView DataSource
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {

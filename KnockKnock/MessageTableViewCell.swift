@@ -7,18 +7,45 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
+import JSQMessagesViewController
+
 
 class MessageTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+        
+      
+    @IBOutlet var userImage: PFImageView!
+    
+    @IBOutlet weak var lastMessageLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var timeElapsedLabel: UILabel!
+    
+    @IBOutlet weak var counterLabel: UILabel!
+    
+        func bindData(message: PFObject) {
+            userImage.layer.cornerRadius = userImage.frame.size.width / 2
+            userImage.layer.masksToBounds = true
+            
+            let lastUser = message.objectForKey("LastUser") as? PFUser
+            userImage.file = lastUser?["profilePic"] as? PFFile
+            userImage.loadInBackground(nil)
+            
+            descriptionLabel.text = message.objectForKey("MsgDescription") as? String
+            lastMessageLabel.text = message.objectForKey("LastMessage") as? String
+            
+            let seconds = NSDate().timeIntervalSinceDate(message.objectForKey("Update") as! NSDate)
+            timeElapsedLabel.text = KnockKnockUtils.timeElapsed(seconds)
+            let dateText = JSQMessagesTimestampFormatter.sharedFormatter().relativeDateForDate(message.objectForKey("Update") as? NSDate)
+            if dateText == "Today" {
+                timeElapsedLabel.text = JSQMessagesTimestampFormatter.sharedFormatter().timeForDate(message.objectForKey("Update") as? NSDate)
+            } else {
+                timeElapsedLabel.text = dateText
+            }
+            
+            let counter = message.objectForKey("Counter") as! Int
+            counterLabel.text = (counter == 0) ? "" : "\(counter) new"
+        }
+        
+    
 }

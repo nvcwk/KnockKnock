@@ -89,6 +89,7 @@
 		F6858DB01C573B0400FAB184 /* ReviewsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6858DAF1C573B0400FAB184 /* ReviewsTableCell.swift */; };
 		F6858DB21C573B4F00FAB184 /* ReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6858DB11C573B4F00FAB184 /* ReviewsTableViewController.swift */; };
 		F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */; };
+		F6D35D2A1C85982900584E44 /* SelectSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D35D291C85982900584E44 /* SelectSingleViewController.swift */; };
 		F6DC5CB11C47692F00BA6776 /* PendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */; };
 		F6DC5CB21C47692F00BA6776 /* PendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */; };
 		F6DC5CBB1C4769EF00BA6776 /* PendingTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CB91C4769EF00BA6776 /* PendingTableViewViewController.swift */; };
@@ -211,6 +212,7 @@
 		F6858DAF1C573B0400FAB184 /* ReviewsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableCell.swift; sourceTree = "<group>"; };
 		F6858DB11C573B4F00FAB184 /* ReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewController.swift; sourceTree = "<group>"; };
 		F6D33DFF1C44D8DC00F913BB /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		F6D35D291C85982900584E44 /* SelectSingleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSingleViewController.swift; sourceTree = "<group>"; };
 		F6DC5CAF1C47692F00BA6776 /* PendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTableViewCell.swift; sourceTree = "<group>"; };
 		F6DC5CB01C47692F00BA6776 /* PendingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendingTableViewCell.xib; sourceTree = "<group>"; };
 		F6DC5CB91C4769EF00BA6776 /* PendingTableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTableViewViewController.swift; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 				F655B1A81C8476E900214DA8 /* Messages.swift */,
 				F655B1AA1C84829E00214DA8 /* MessageTableViewController.swift */,
 				F655B1AC1C8482D000214DA8 /* MessageTableViewCell.swift */,
+				F6D35D291C85982900584E44 /* SelectSingleViewController.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 				E19FE1781C3D7D84009FAB48 /* MarketplaceTableViewCell.swift in Sources */,
 				F6D33E001C44D8DC00F913BB /* BookingViewController.swift in Sources */,
 				E187E5441C32E80800E00E5A /* ItiTableViewCell.swift in Sources */,
+				F6D35D2A1C85982900584E44 /* SelectSingleViewController.swift in Sources */,
 				E1CAA7EF1C24853600AB4637 /* ItiDaysSelectorViewController.swift in Sources */,
 				703D67F91C6BA6A000DDB659 /* SortViewController.swift in Sources */,
 				F60DD3751C48F7DF00B79F54 /* ConfirmedExpandedViewController.swift in Sources */,
