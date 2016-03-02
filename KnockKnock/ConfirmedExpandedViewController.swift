@@ -29,6 +29,8 @@ class ConfirmedExpandedViewController: UIViewController {
     
     
     var confirmedObject : PFObject!
+    var requesterObject : PFObject!
+    var hostObject : PFObject!
     
     @IBOutlet weak var image: UIImageView!
     
@@ -48,8 +50,8 @@ class ConfirmedExpandedViewController: UIViewController {
         
         
         confirmNum.text = confirmedObject.objectId
-        let hostObject = (confirmedObject["Host"]) as! PFObject
-        let requesterObject = (confirmedObject["Requester"]) as! PFObject
+        hostObject = (confirmedObject["Host"]) as! PFObject
+        requesterObject = (confirmedObject["Requester"]) as! PFObject
         let itineraryObject = (confirmedObject["Itinerary"]) as! PFObject
         var caseStatus =  confirmedObject["Status"] as! String
         
@@ -161,8 +163,17 @@ class ConfirmedExpandedViewController: UIViewController {
             let hostObject = (self.confirmedObject["Host"]) as! PFObject
             if (hostObject == PFUser.currentUser()){
                 self.confirmedObject["Remarks"] = "Host Cancelled"
+                
+                var requesterName = self.requesterObject["fName"] as! String
+                
+                PFCloud.callFunctionInBackground("requesterCancelConfirm", withParameters: ["host": self.hostObject.objectId!, "requester": requesterName])
+                
             }else{
                 self.confirmedObject["Remarks"] = "Requester Cancelled"
+                
+                var hostName = self.hostObject["fName"] as! String
+                
+                PFCloud.callFunctionInBackground("hostCancelConfirm", withParameters: ["host": hostName, "requester": self.requesterObject.objectId!])
             }
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
