@@ -179,6 +179,10 @@ class PendingExpandedViewController: UIViewController {
                     
                     myAlert.addAction(okAction);
                     
+                    var hostName = self.hostObject["fName"] as! String
+                    
+                    PFCloud.callFunctionInBackground("sendPending", withParameters: ["host":hostName, "requester": self.requesterObject.objectId!])
+                    
                     NSNotificationCenter.defaultCenter().postNotificationName("loadPending", object: nil)
                     
                     self.navigationController?.popToRootViewControllerAnimated(true)
@@ -212,9 +216,17 @@ class PendingExpandedViewController: UIViewController {
             if (self.hostObject == PFUser.currentUser()){
                 self.pendingObject["Status"] = "Rejected"
                 self.pendingObject["Remarks"] = "Host Rejected"
+                
+                var hostName = self.hostObject["fName"] as! String
+                
+                PFCloud.callFunctionInBackground("hostCancel", withParameters: ["host":hostName, "requester": self.requesterObject.objectId!])
             }else{
                 self.pendingObject["Status"] = "Cancelled"
                 self.pendingObject["Remarks"] = "User Cancelled"
+                
+                var requesterName = self.requesterObject["fName"] as! String
+                
+                PFCloud.callFunctionInBackground("requesterCancel", withParameters: ["host": self.hostObject.objectId!, "requester": requesterName])
             }
             
             
