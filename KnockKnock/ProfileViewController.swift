@@ -9,7 +9,6 @@
 import UIKit
 import Parse
 import ParseUI
-import ZFRippleButton
 import TextFieldEffects
 import SwiftSpinner
 import SwiftValidator
