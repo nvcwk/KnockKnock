@@ -31,6 +31,7 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
         
         super.viewDidLoad()
         
+        self.objectsPerPage = 1000
     }
     
     // Define the query that will provide the data for the table view

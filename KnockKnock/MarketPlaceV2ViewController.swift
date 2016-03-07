@@ -62,6 +62,8 @@ class MarketPlaceV2ViewController: UIViewController {
         
         sortVC = storyboard.instantiateViewControllerWithIdentifier("SortViewController") as! SortTableViewController
         filterVC = storyboard.instantiateViewControllerWithIdentifier("FilterViewController") as! FilterTableViewController
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

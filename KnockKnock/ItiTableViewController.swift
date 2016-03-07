@@ -22,6 +22,7 @@ class ItiTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, 
         //loadingViewEnabled = false
         
         self.tableView.reloadData()
+        self.objectsPerPage = 1000
         
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
