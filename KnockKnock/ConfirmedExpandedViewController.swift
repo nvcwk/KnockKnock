@@ -105,6 +105,9 @@ class ConfirmedExpandedViewController: UIViewController {
             status.font = UIFont.boldSystemFontOfSize(18.0)
             status.textColor = UIColor.redColor()
         }else if(confirmedObject["Status"] as! String == "Pending Completion"){
+            cancelButton.setTitle("", forState: UIControlState.Normal)
+            cancelButton.enabled = false
+            cancelButton.hidden = true
             if(hostObject == PFUser.currentUser()){
                 confirmCompletion.enabled = true
                 confirmCompletion.hidden = false
@@ -261,9 +264,12 @@ class ConfirmedExpandedViewController: UIViewController {
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
             //
+            
+            
             self.confirmedObject.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
+                   // print("mark 1")
                     let myAlert =
                     UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
                     
@@ -271,15 +277,19 @@ class ConfirmedExpandedViewController: UIViewController {
                     
                     myAlert.addAction(okAction);
                     
-                    NSNotificationCenter.defaultCenter().postNotificationName("loadConfirm", object: nil)
+                   // NSNotificationCenter.defaultCenter().postNotificationName("loadConfirm", object: nil)
                     
                     self.navigationController?.popToRootViewControllerAnimated(true)
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
                 } else {
                     NSLog("%@", error!)
+                    //print("mark 2")
                 }
             }
+        
+            
+            
         }))
         bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
         }))
@@ -295,7 +305,6 @@ class ConfirmedExpandedViewController: UIViewController {
         
         record["Status"] = "Completed"
         record["Remarks"] = "Tour Completed"
-
         
         
     }

@@ -27,7 +27,7 @@ pod 'CountryPicker'
 pod 'IQKeyboardManagerSwift', '3.3.4'
 
 ######### Extended Int Api with Date functions #########
-pod 'SwiftDate'
+pod 'SwiftDate', '~> 3.0.1'
 
 ######### MarketPlace #########
 pod 'HCSStarRatingView', '~> 1.4.3'

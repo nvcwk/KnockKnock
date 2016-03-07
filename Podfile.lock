@@ -69,7 +69,7 @@ DEPENDENCIES:
   - QIULaunchAnimation
   - RSKImageCropper
   - RTIconButton
-  - SwiftDate
+  - SwiftDate (~> 3.0.1)
   - SwiftSpinner
   - SwiftValidator
   - TextFieldEffects
