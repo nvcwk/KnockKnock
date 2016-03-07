@@ -181,7 +181,7 @@ class PendingExpandedViewController: UIViewController {
                     
                     var hostName = self.hostObject["fName"] as! String
                     
-                    PFCloud.callFunctionInBackground("hostConfirm", withParameters: ["host": hostName, "requester": self.requesterObject.objectId!])
+                    PFCloud.callFunctionInBackground("hostConfirm", withParameters: ["hoster": hostName, "requester": self.requesterObject.objectId!])
                     
                     NSNotificationCenter.defaultCenter().postNotificationName("loadPending", object: nil)
                     
@@ -219,14 +219,16 @@ class PendingExpandedViewController: UIViewController {
                 
                 var hostName = self.hostObject["fName"] as! String
                 
-                PFCloud.callFunctionInBackground("hostCancel", withParameters: ["host":hostName, "requester": self.requesterObject.objectId!])
+                PFCloud.callFunctionInBackground("hostCancel", withParameters: ["hoster":hostName, "requester": self.requesterObject.objectId!])
+                
+                print("nvcwk")
             }else{
                 self.pendingObject["Status"] = "Cancelled"
                 self.pendingObject["Remarks"] = "User Cancelled"
                 
                 var requesterName = self.requesterObject["fName"] as! String
                 
-                PFCloud.callFunctionInBackground("requesterCancel", withParameters: ["host": self.hostObject.objectId!, "requester": requesterName])
+                PFCloud.callFunctionInBackground("requesterCancel", withParameters: ["hoster": self.hostObject.objectId!, "requester": requesterName])
             }
             
             

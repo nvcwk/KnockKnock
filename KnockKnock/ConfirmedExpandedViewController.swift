@@ -169,14 +169,14 @@ class ConfirmedExpandedViewController: UIViewController {
                 
                 var requesterName = self.requesterObject["fName"] as! String
                 
-                PFCloud.callFunctionInBackground("requesterCancelConfirm", withParameters: ["host": self.hostObject.objectId!, "requester": requesterName])
+                PFCloud.callFunctionInBackground("requesterCancelConfirm", withParameters: ["hoster": self.hostObject.objectId!, "requester": requesterName])
                 
             }else{
                 self.confirmedObject["Remarks"] = "Requester Cancelled"
                 
                 var hostName = self.hostObject["fName"] as! String
                 
-                PFCloud.callFunctionInBackground("hostCancelConfirm", withParameters: ["host": hostName, "requester": self.requesterObject.objectId!])
+                PFCloud.callFunctionInBackground("hostCancelConfirm", withParameters: ["hoster": hostName, "requester": self.requesterObject.objectId!])
             }
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
