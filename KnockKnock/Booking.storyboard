@@ -536,7 +536,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="confirmCompletionButtonTapped:" destination="PaG-mz-RIA" eventType="touchUpInside" id="iIz-k6-daR"/>
+                                    <action selector="confirmCompletionButtonTapped:" destination="PaG-mz-RIA" eventType="touchUpInside" id="AnY-0i-yYZ"/>
                                 </connections>
                             </button>
                         </subviews>

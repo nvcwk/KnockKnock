@@ -158,7 +158,7 @@ class ConfirmedExpandedViewController: UIViewController {
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         
         
-        let bookAlert = UIAlertController(title: "Cancel Booking", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        let bookAlert = UIAlertController(title: "Cancel Booking", message: "Confirm?", preferredStyle: UIAlertControllerStyle.Alert)
         
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
@@ -252,24 +252,23 @@ class ConfirmedExpandedViewController: UIViewController {
     }
     
     
+    
     @IBAction func confirmCompletionButtonTapped(sender: AnyObject) {
-        let bookAlert = UIAlertController(title: "Booking Completed?", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let bookAlert = UIAlertController(title: "Tour Completed?", message: "Confirm?", preferredStyle: UIAlertControllerStyle.Alert)
         
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
-            
-            self.updateRecordsCompleted(self.confirmedObject)
-            
+            self.confirmedObject["Status"] = "Completed"
+            self.confirmedObject["Remarks"] = "Tour Completed"
+
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
             //
-            
-            
             self.confirmedObject.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
                 if (success != nil) {
-                   // print("mark 1")
                     let myAlert =
                     UIAlertController(title:"Done!!", message: "", preferredStyle: UIAlertControllerStyle.Alert);
                     
@@ -277,19 +276,15 @@ class ConfirmedExpandedViewController: UIViewController {
                     
                     myAlert.addAction(okAction);
                     
-                   // NSNotificationCenter.defaultCenter().postNotificationName("loadConfirm", object: nil)
+                    NSNotificationCenter.defaultCenter().postNotificationName("loadConfirm", object: nil)
                     
                     self.navigationController?.popToRootViewControllerAnimated(true)
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
                 } else {
                     NSLog("%@", error!)
-                    //print("mark 2")
                 }
             }
-        
-            
-            
         }))
         bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
         }))
@@ -297,14 +292,6 @@ class ConfirmedExpandedViewController: UIViewController {
         
         presentViewController(bookAlert, animated: true, completion: nil)
         
-        
-    }
-    
-    
-    func updateRecordsCompleted(record: PFObject){
-        
-        record["Status"] = "Completed"
-        record["Remarks"] = "Tour Completed"
         
         
     }
