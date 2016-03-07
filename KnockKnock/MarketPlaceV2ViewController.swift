@@ -98,7 +98,7 @@ class MarketPlaceV2ViewController: UIViewController {
         sortVC.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir", size: 14)!]
         
         
-        semiModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 275)
+        semiModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 225)
         semiModal.backgroundShadeColor = UIColor.darkGrayColor()
         semiModal.animationSpeed = 0.35
         semiModal.tapDismissEnabled = true
