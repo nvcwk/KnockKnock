@@ -181,7 +181,7 @@ class PendingExpandedViewController: UIViewController {
                     
                     var requesterName = self.requesterObject["fName"] as! String
                     
-                    PFCloud.callFunctionInBackground("hostConfirm", withParameters: ["host": self.requesterObject.objectId!, "requester": requesterName])
+                    PFCloud.callFunctionInBackground("hostConfirm", withParameters: ["host": "" + self.requesterObject.objectId!, "requester": requesterName])
                     
                     NSNotificationCenter.defaultCenter().postNotificationName("loadPending", object: nil)
                     
