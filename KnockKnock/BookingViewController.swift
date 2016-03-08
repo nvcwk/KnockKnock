@@ -37,6 +37,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var first = NSDate()
     var userEmail : String!
     var hostEmail : String!
+    var weekendOnly : Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,6 +118,13 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             return UIImage(named: "cross_2")
             }
         }
+        if(weekendOnly != nil){
+            if(weekendOnly == true){
+                if([2,3,4,5,6].contains(date.weekday)){
+                    return UIImage(named: "cross_2")
+                }
+            }
+        }
         return nil
     }
     
@@ -133,6 +141,17 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         if (KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date)) < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate()))){
             return false
         }
+    
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        if(weekendOnly != nil){
+            if(weekendOnly == true){
+                if([2,3,4,5,6].contains(date.weekday)){
+                    return false
+                }
+            }
+        }
+        
+        
         return true
     }
     

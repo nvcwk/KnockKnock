@@ -312,6 +312,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Weekends Only" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8n-ix-D3i">
+                                <rect key="frame" x="40" y="408" width="295" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="9xp-My-lBX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXK-Jf-0br">
+                                <rect key="frame" x="163" y="440" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -365,6 +377,7 @@
                         <outlet property="lb_title" destination="Wkt-dQ-6iv" id="EPo-rw-fnt"/>
                         <outlet property="tf_endDate" destination="qPa-n3-Sqn" id="lx8-vj-o3h"/>
                         <outlet property="tf_startDate" destination="uev-zH-ZfR" id="JoW-1p-h0r"/>
+                        <outlet property="weekendsOnlySwitch" destination="UXK-Jf-0br" id="HMT-M7-bOz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gd-6S-pga" userLabel="First Responder" sceneMemberID="firstResponder"/>

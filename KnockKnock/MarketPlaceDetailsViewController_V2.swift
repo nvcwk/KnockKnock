@@ -220,6 +220,7 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
             DestViewController.marketplace = pubObj
             DestViewController.itinerary = itiObj
             DestViewController.numOfDays = itiObj["duration"] as! Int
+            DestViewController.weekendOnly = pubObj["weekendOnly"] as! Bool
             
         }
     }

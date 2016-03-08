@@ -137,6 +137,7 @@ extension MarketPlaceDetailsV2ViewController : UITableViewDelegate, UITableViewD
             DestViewController.marketplace = pubObj
             DestViewController.itinerary = itiObj
             DestViewController.numOfDays = itiObj["duration"] as! Int
+            DestViewController.weekendOnly = pubObj["weekendOnly"] as! Bool
             
         }
         

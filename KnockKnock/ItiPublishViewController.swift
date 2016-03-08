@@ -11,6 +11,7 @@ class ItiPublishViewController: UIViewController {
     @IBOutlet weak var lb_price: UITextField!
     @IBOutlet weak var tf_startDate: UITextField!
     @IBOutlet weak var tf_endDate: UITextField!
+    @IBOutlet weak var weekendsOnlySwitch: UISwitch!
 //    @IBOutlet weak var tf_id: UILabel!
     
     //    @IBOutlet weak var stepper_price: GMStepper!
@@ -71,7 +72,7 @@ class ItiPublishViewController: UIViewController {
         selectedEndDate = sender.date
     }
     
-    
+   
     @IBAction func actionPublish(sender: UIBarButtonItem) {
         var price = Int(lb_price.text!)
         
@@ -87,7 +88,12 @@ class ItiPublishViewController: UIViewController {
         publishObj["host"] = PFUser.currentUser()!
         publishObj["isPublished"] = true
         publishObj["bookedDate"] = [NSDate]()
-        
+            if weekendsOnlySwitch.on{
+                 publishObj["weekendOnly"] = true
+            }else{
+                 publishObj["weekendOnly"] = false
+            }
+            
         publishObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             SwiftSpinner.hide()
             
