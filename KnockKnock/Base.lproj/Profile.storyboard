@@ -125,7 +125,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBW-Om-hwJ" customClass="RTIconButton">
-                                <rect key="frame" x="18" y="469" width="340" height="30"/>
+                                <rect key="frame" x="18" y="506" width="340" height="30"/>
                                 <color key="backgroundColor" red="0.074509803921568626" green="0.56862745098039214" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kZs-kC-W13"/>
@@ -149,7 +149,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lb-JH-llk" customClass="RTIconButton">
-                                <rect key="frame" x="18" y="431" width="340" height="30"/>
+                                <rect key="frame" x="18" y="468" width="340" height="30"/>
                                 <color key="backgroundColor" red="0.074509803920000006" green="0.56862745100000001" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="eIQ-ho-hwg"/>
@@ -202,6 +202,30 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45b-bi-qaG" customClass="RTIconButton">
+                                <rect key="frame" x="18" y="417" width="340" height="30"/>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.56862745100000001" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="geC-34-ar0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="License" image="password"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconMargin">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconPosition">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="iconSize">
+                                        <size key="value" width="20" height="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="tmw-Ol-n4c" kind="show" id="Qsf-0V-VnR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -262,6 +286,62 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1275.5" y="858.5"/>
+        </scene>
+        <!--License-->
+        <scene sceneID="E0g-n2-zeZ">
+            <objects>
+                <viewController id="tmw-Ol-n4c" customClass="LicenseViewController" customModule="KnockKnock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5M9-1l-Eco"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xhm-qo-08H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Frw-9z-aUx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Z9i-im-koa" customClass="PFImageView">
+                                <rect key="frame" x="23" y="128" width="332" height="276"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4bd-oo-gHK" appends="YES" id="xcc-Pl-sgv"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to upload your guide license" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gda-eS-dsT">
+                                <rect key="frame" x="20" y="420" width="335" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="kw2-tj-eQq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gda-eS-dsT" firstAttribute="leading" secondItem="Frw-9z-aUx" secondAttribute="leadingMargin" constant="4" id="1OY-eA-Fjz"/>
+                            <constraint firstItem="Z9i-im-koa" firstAttribute="leading" secondItem="Frw-9z-aUx" secondAttribute="leadingMargin" constant="7" id="NV0-CU-QhQ"/>
+                            <constraint firstItem="Z9i-im-koa" firstAttribute="top" secondItem="5M9-1l-Eco" secondAttribute="bottom" constant="64" id="RdL-7Y-pJX"/>
+                            <constraint firstItem="Xhm-qo-08H" firstAttribute="top" secondItem="gda-eS-dsT" secondAttribute="bottom" constant="169" id="Zen-OR-48c"/>
+                            <constraint firstItem="gda-eS-dsT" firstAttribute="top" secondItem="Z9i-im-koa" secondAttribute="bottom" constant="16" id="bwS-Yl-GSq"/>
+                            <constraint firstItem="gda-eS-dsT" firstAttribute="centerX" secondItem="Frw-9z-aUx" secondAttribute="centerX" id="dkX-gK-Q37"/>
+                            <constraint firstItem="gda-eS-dsT" firstAttribute="trailing" secondItem="Z9i-im-koa" secondAttribute="trailing" id="h5t-eG-bML"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="License" id="zbo-eU-CeD"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="img_license" destination="Z9i-im-koa" id="UlQ-y9-rmi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDA-nT-Lrn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4bd-oo-gHK">
+                    <connections>
+                        <action selector="actionSelectPic:" destination="tmw-Ol-n4c" id="d9i-6f-zQg"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1275.5" y="1697.5"/>
         </scene>
         <!--KnockKnock-->
         <scene sceneID="dWm-Jl-vz0">

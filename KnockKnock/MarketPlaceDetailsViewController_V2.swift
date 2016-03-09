@@ -222,6 +222,10 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
             DestViewController.numOfDays = itiObj["duration"] as! Int
             DestViewController.weekendOnly = pubObj["weekendOnly"] as! Bool
             
+        } else if segue.identifier == "toHostDetails" {
+            var DestViewController : MarketPlaceHostViewController = segue.destinationViewController as! MarketPlaceHostViewController
+            
+            DestViewController.hostObj = hostObj
         }
     }
     

@@ -62,6 +62,8 @@
 		E1922AF31C4966F00078C401 /* MarketPlaceV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1922AF21C4966F00078C401 /* MarketPlaceV2ViewController.swift */; };
 		E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE1751C3D7D74009FAB48 /* Marketplace.swift */; };
 		E19FE1781C3D7D84009FAB48 /* MarketplaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */; };
+		E1AAC2241C9059C800539CD1 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AAC2231C9059C800539CD1 /* LicenseViewController.swift */; };
+		E1AAC2261C90632B00539CD1 /* MarketPlaceHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AAC2251C90632B00539CD1 /* MarketPlaceHostViewController.swift */; };
 		E1B95E441C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B95E431C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift */; };
 		E1B95E461C36C14600F85B8F /* PubDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B95E451C36C14600F85B8F /* PubDetailsViewController.swift */; };
 		E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */; };
@@ -174,6 +176,8 @@
 		E1922AF21C4966F00078C401 /* MarketPlaceV2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceV2ViewController.swift; sourceTree = "<group>"; };
 		E19FE1751C3D7D74009FAB48 /* Marketplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
 		E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTableViewCell.swift; sourceTree = "<group>"; };
+		E1AAC2231C9059C800539CD1 /* LicenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		E1AAC2251C90632B00539CD1 /* MarketPlaceHostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceHostViewController.swift; sourceTree = "<group>"; };
 		E1B95E431C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		E1B95E451C36C14600F85B8F /* PubDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubDetailsViewController.swift; sourceTree = "<group>"; };
 		E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockRule.swift; sourceTree = "<group>"; };
@@ -382,6 +386,7 @@
 				7087D50C1C27D8E90005711E /* ProfileViewController.swift */,
 				E15BF77B1C3FE191009A3C31 /* ProfileEditViewController.swift */,
 				E15BF77D1C3FE617009A3C31 /* ProfileChangePassViewController.swift */,
+				E1AAC2231C9059C800539CD1 /* LicenseViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 		E164E68D1C494E4F00AEC87C /* MarketPlaceV2 */ = {
 			isa = PBXGroup;
 			children = (
+				E1AAC2251C90632B00539CD1 /* MarketPlaceHostViewController.swift */,
 				E1922AF01C49643A0078C401 /* MarketPlaceV2TableViewCell.swift */,
 				E164E68E1C494E7800AEC87C /* MarketPlaceV2TableViewController.swift */,
 				E1922AF21C4966F00078C401 /* MarketPlaceV2ViewController.swift */,
@@ -744,6 +750,7 @@
 				706B0FD91C4D2BAA0078CD38 /* ProfileAvatar.swift in Sources */,
 				E11AC2011C1618A100479927 /* LoginViewController.swift in Sources */,
 				E1CAA8091C26A7BC00AB4637 /* KnockKnockImageUtils.swift in Sources */,
+				E1AAC2261C90632B00539CD1 /* MarketPlaceHostViewController.swift in Sources */,
 				E159A8301C33DE4200EF80A4 /* PubTableViewCell.swift in Sources */,
 				703D67FC1C6BADFC00DDB659 /* FilterViewController.swift in Sources */,
 				E159A83B1C345CE700EF80A4 /* ItiDetailsViewController.swift in Sources */,
@@ -780,6 +787,7 @@
 				F664382B1C560F0A0013C25F /* RatingViewController.swift in Sources */,
 				E12396AD1C5342D000FB4760 /* UIImagePickerController+SupportedOrientations.swift in Sources */,
 				F6DC5CC11C476A5B00BA6776 /* ConfirmedTableViewController.swift in Sources */,
+				E1AAC2241C9059C800539CD1 /* LicenseViewController.swift in Sources */,
 				E15BF7801C3FFB6A009A3C31 /* PubDetailsEditViewController.swift in Sources */,
 				E1CAA80B1C27053300AB4637 /* ActivityTableViewCell.swift in Sources */,
 				E1EAB8321C7DB54800B35AEF /* ImageProcessor.swift in Sources */,
