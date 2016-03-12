@@ -67,7 +67,9 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         
         self.paxLabel.text = String(pax)
         self.priceLabel.text = String(price)
-
+        
+        
+        
         
     
     }
@@ -81,10 +83,6 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         pax = currentValue
         finalPrice = newPrice
     }
-    
-    
-    
-    
     
     
     override func didReceiveMemoryWarning() {
