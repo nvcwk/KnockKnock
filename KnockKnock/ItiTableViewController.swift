@@ -11,7 +11,7 @@ import ParseUI
 import Parse
 import DZNEmptyDataSet
 
-class ItiTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class ItiTableViewController: PFQueryTableViewController {
     
     var parentNaviController = UINavigationController()
     
@@ -24,6 +24,7 @@ class ItiTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, 
         self.tableView.reloadData()
         self.objectsPerPage = 1000
         
+
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
         // A little trick for removing the cell separators
@@ -34,7 +35,8 @@ class ItiTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, 
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    
+    deinit {
         self.tableView.emptyDataSetSource = nil
         self.tableView.emptyDataSetDelegate = nil
     }
@@ -104,6 +106,13 @@ class ItiTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, 
         parentNaviController.showViewController(viewController, sender: nil)
     }
     
+
+    
+}
+
+extension ItiTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+{
+    // code for DZNEmptyDataSet goes here
     func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
         
         var image = UIImage(named: "empty")!
@@ -143,5 +152,4 @@ class ItiTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Created Itinerary"
     }
-    
 }

@@ -91,7 +91,7 @@ class PubDetailsEditViewController: UIViewController {
         if (price == nil || price! == 0){
             KnockKnockUtils.okAlert(self, title: "Please Check Price", message: "Please enter valid price!", handle: nil)
         }else{
-
+            
         
         SwiftSpinner.show("Updating...")
         
@@ -106,6 +106,7 @@ class PubDetailsEditViewController: UIViewController {
                     NSNotificationCenter.defaultCenter().postNotificationName("loadPublish", object: nil)
                     
                     self.navigationController?.popToRootViewControllerAnimated(true)
+                    
                 })
             }
         })

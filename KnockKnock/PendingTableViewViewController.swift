@@ -12,7 +12,7 @@ import ParseUI
 import autoAutoLayout
 import DZNEmptyDataSet
 
-class PendingTableViewViewController: PFQueryTableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate  {
+class PendingTableViewViewController: PFQueryTableViewController{
     
     var parentNaviController = UINavigationController()
     
@@ -37,7 +37,7 @@ class PendingTableViewViewController: PFQueryTableViewController, DZNEmptyDataSe
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    deinit {
         self.tableView.emptyDataSetSource = nil
         self.tableView.emptyDataSetDelegate = nil
     }
@@ -116,6 +116,25 @@ class PendingTableViewViewController: PFQueryTableViewController, DZNEmptyDataSe
         parentNaviController.showViewController(viewController, sender: nil)
     }
     
+
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Requests Pending"
+    }
+    
+    func updateRecords(record: PFObject){
+        
+        record["Status"] = "Expired"
+        record["Remarks"] = "Booking Expired"
+        record.saveInBackground()
+        
+        
+    }
+}
+
+extension PendingTableViewViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+{
+    // code for DZNEmptyDataSet goes here
     func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
         
         var image = UIImage(named: "empty")!
@@ -147,17 +166,6 @@ class PendingTableViewViewController: PFQueryTableViewController, DZNEmptyDataSe
     func emptyDataSetShouldAllowTouch(scrollView: UIScrollView) -> Bool {
         return true
     }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Requests Pending"
-    }
-    
-    func updateRecords(record: PFObject){
-        
-        record["Status"] = "Expired"
-        record["Remarks"] = "Booking Expired"
-        record.saveInBackground()
-        
-        
-    }
+
 }
+

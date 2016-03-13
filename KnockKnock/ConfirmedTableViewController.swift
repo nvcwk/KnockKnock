@@ -12,15 +12,12 @@ import ParseUI
 import autoAutoLayout
 import DZNEmptyDataSet
 
-class ConfirmedTableViewController: PFQueryTableViewController,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class ConfirmedTableViewController: PFQueryTableViewController{
     
     
     var parentNaviController = UINavigationController()
     
     override func viewDidLoad() {
-        
-        
-        //loadingViewEnabled = false
         
         self.tableView.reloadData()
         
@@ -35,10 +32,11 @@ class ConfirmedTableViewController: PFQueryTableViewController,DZNEmptyDataSetSo
         self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingTableViewCell")
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    deinit {
         self.tableView.emptyDataSetSource = nil
         self.tableView.emptyDataSetDelegate = nil
     }
+
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
@@ -109,6 +107,30 @@ class ConfirmedTableViewController: PFQueryTableViewController,DZNEmptyDataSetSo
         return cell
     }
     
+
+    
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 105.0
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let viewController : ConfirmedExpandedViewController = UIStoryboard(name: "Booking", bundle: nil).instantiateViewControllerWithIdentifier("ConfirmedExpandedViewController") as! ConfirmedExpandedViewController
+        
+        viewController.confirmedObject = objectAtIndexPath(indexPath)! as PFObject
+        
+        
+        parentNaviController.showViewController(viewController, sender: nil)
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Confirmed Tours"
+    }
+    
+}
+
+extension ConfirmedTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+{
     func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
         
         var image = UIImage(named: "empty")!
@@ -140,27 +162,4 @@ class ConfirmedTableViewController: PFQueryTableViewController,DZNEmptyDataSetSo
     func emptyDataSetShouldAllowTouch(scrollView: UIScrollView) -> Bool {
         return true
     }
-    
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 105.0
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let viewController : ConfirmedExpandedViewController = UIStoryboard(name: "Booking", bundle: nil).instantiateViewControllerWithIdentifier("ConfirmedExpandedViewController") as! ConfirmedExpandedViewController
-        
-        viewController.confirmedObject = objectAtIndexPath(indexPath)! as PFObject
-        
-        
-        parentNaviController.showViewController(viewController, sender: nil)
-    }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Confirmed Tours"
-    }
-    
-    
-
-
-    
 }

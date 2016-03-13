@@ -127,7 +127,7 @@ THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## FSCalendar
 
-Copyright (c) 2013-2016 FSCalendar (https://github.com/WenchaoIOS/FSCalendar)
+Copyright (c) 2013-2015 FSCalendar (https://github.com/WenchaoIOS/FSCalendar)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

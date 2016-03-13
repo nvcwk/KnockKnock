@@ -11,7 +11,7 @@ import Parse
 import ParseUI
 import DZNEmptyDataSet
 
-class PubTableViewController: PFQueryTableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class PubTableViewController: PFQueryTableViewController {
     
     var parentNaviController = UINavigationController()
     
@@ -30,10 +30,12 @@ class PubTableViewController: PFQueryTableViewController, DZNEmptyDataSetSource,
         super.viewDidLoad()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    
+    deinit {
         self.tableView.emptyDataSetSource = nil
         self.tableView.emptyDataSetDelegate = nil
     }
+    
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
@@ -98,6 +100,28 @@ class PubTableViewController: PFQueryTableViewController, DZNEmptyDataSetSource,
         return cell
     }
     
+
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 130.0
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Published Itinerary"
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
+        
+        viewController.pubObj = objectAtIndexPath(indexPath)! as PFObject
+        
+        parentNaviController.showViewController(viewController, sender: nil)
+    }
+    
+}
+
+extension PubTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+{
     func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
         
         var image = UIImage(named: "empty")!
@@ -132,24 +156,4 @@ class PubTableViewController: PFQueryTableViewController, DZNEmptyDataSetSource,
     func emptyDataSetShouldAllowImageViewAnimate(scrollView: UIScrollView) -> Bool {
         return true
     }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 130.0
-    }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Published Itinerary"
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
-        
-        viewController.pubObj = objectAtIndexPath(indexPath)! as PFObject
-        
-        parentNaviController.showViewController(viewController, sender: nil)
-    }
-    
-    
-    
-    
 }
