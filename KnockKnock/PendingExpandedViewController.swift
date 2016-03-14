@@ -97,7 +97,7 @@ class PendingExpandedViewController: UIViewController {
             
             
         }else{
-            requesterLabel.text = "Your Host: "
+            requesterLabel.text = "Your Local Expert: "
             requester.text = hostObject["fName"] as! String
             requesterContact.text = String(hostObject["email"])
             actionButton.setTitle("", forState: UIControlState.Normal)

@@ -124,7 +124,7 @@ class ConfirmedTableViewController: PFQueryTableViewController{
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Confirmed Tours"
+        return "Confirmed Excursion"
     }
     
 }

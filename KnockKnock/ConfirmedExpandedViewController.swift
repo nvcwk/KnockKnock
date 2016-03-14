@@ -84,7 +84,7 @@ class ConfirmedExpandedViewController: UIViewController {
             
             
         }else{
-            requesterLabel.text = "Your Host: "
+            requesterLabel.text = "Your Local Expert: "
             requester.text = hostObject["fName"] as! String
             requesterContact.text = String(hostObject["email"])
             

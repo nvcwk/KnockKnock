@@ -200,7 +200,7 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showReviewView" {
+               if segue.identifier == "showReviewView" {
             var DestViewController : ReviewsTableViewController = segue.destinationViewController as! ReviewsTableViewController
             
             DestViewController.itineraryObject = itiObj
@@ -223,9 +223,11 @@ class MarketPlaceDetailsViewController_V2: UITableViewController {
             DestViewController.weekendOnly = pubObj["weekendOnly"] as! Bool
             
         } else if segue.identifier == "toHostDetails" {
-            var DestViewController : MarketPlaceHostViewController = segue.destinationViewController as! MarketPlaceHostViewController
             
-            DestViewController.hostObj = hostObj
+            var DestViewController: MarketplaceHostReviewViewController  = segue.destinationViewController as! MarketplaceHostReviewViewController
+                
+           DestViewController.hostObject = hostObj
+                
         }
     }
     

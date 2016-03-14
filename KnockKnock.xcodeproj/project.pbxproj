@@ -93,6 +93,8 @@
 		F6DC5CC11C476A5B00BA6776 /* ConfirmedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CBF1C476A5B00BA6776 /* ConfirmedTableViewController.swift */; };
 		F6DC5CC21C476A5B00BA6776 /* ConfirmedTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5CC01C476A5B00BA6776 /* ConfirmedTableViewController.xib */; };
 		F6DC5CC41C476BA500BA6776 /* MyBookingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CC31C476BA500BA6776 /* MyBookingMainViewController.swift */; };
+		F6EBA8191C96A54C00D4D39D /* MarketplaceHostReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBA8181C96A54C00D4D39D /* MarketplaceHostReviewCell.swift */; };
+		F6EBA81B1C96A5BB00D4D39D /* MarketplaceHostReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBA81A1C96A5BB00D4D39D /* MarketplaceHostReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +214,8 @@
 		F6DC5CBF1C476A5B00BA6776 /* ConfirmedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmedTableViewController.swift; sourceTree = "<group>"; };
 		F6DC5CC01C476A5B00BA6776 /* ConfirmedTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmedTableViewController.xib; sourceTree = "<group>"; };
 		F6DC5CC31C476BA500BA6776 /* MyBookingMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingMainViewController.swift; sourceTree = "<group>"; };
+		F6EBA8181C96A54C00D4D39D /* MarketplaceHostReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceHostReviewCell.swift; sourceTree = "<group>"; };
+		F6EBA81A1C96A5BB00D4D39D /* MarketplaceHostReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceHostReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -506,6 +510,7 @@
 		F66438291C560EE30013C25F /* Rating */ = {
 			isa = PBXGroup;
 			children = (
+				F6EBA8171C96A52A00D4D39D /* MarketplaceHostReviews */,
 				F664382A1C560F0A0013C25F /* RatingViewController.swift */,
 				F6858DAF1C573B0400FAB184 /* ReviewsTableCell.swift */,
 				F6858DB11C573B4F00FAB184 /* ReviewsTableViewController.swift */,
@@ -536,6 +541,15 @@
 				F6DC5CC01C476A5B00BA6776 /* ConfirmedTableViewController.xib */,
 			);
 			name = CustomUI;
+			sourceTree = "<group>";
+		};
+		F6EBA8171C96A52A00D4D39D /* MarketplaceHostReviews */ = {
+			isa = PBXGroup;
+			children = (
+				F6EBA8181C96A54C00D4D39D /* MarketplaceHostReviewCell.swift */,
+				F6EBA81A1C96A5BB00D4D39D /* MarketplaceHostReviewViewController.swift */,
+			);
+			name = MarketplaceHostReviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -754,10 +768,12 @@
 				E159A8301C33DE4200EF80A4 /* PubTableViewCell.swift in Sources */,
 				703D67FC1C6BADFC00DDB659 /* FilterViewController.swift in Sources */,
 				E159A83B1C345CE700EF80A4 /* ItiDetailsViewController.swift in Sources */,
+				F6EBA81B1C96A5BB00D4D39D /* MarketplaceHostReviewViewController.swift in Sources */,
 				E1922AF11C49643A0078C401 /* MarketPlaceV2TableViewCell.swift in Sources */,
 				E11AC21F1C16E0B700479927 /* KnockKnockUtils.swift in Sources */,
 				7020E9691C5767590026931F /* MarketPlaceDetailsViewController_V2.swift in Sources */,
 				7087D50D1C27D8E90005711E /* ProfileViewController.swift in Sources */,
+				F6EBA8191C96A54C00D4D39D /* MarketplaceHostReviewCell.swift in Sources */,
 				E127E8E61C79B4D90006B07D /* SortTableViewController.swift in Sources */,
 				E1922AF31C4966F00078C401 /* MarketPlaceV2ViewController.swift in Sources */,
 				E182C1FA1C19D8F100B3DF9B /* ProfilePicViewController.swift in Sources */,

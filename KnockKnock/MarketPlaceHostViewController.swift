@@ -15,6 +15,9 @@ class MarketPlaceHostViewController: UIViewController {
     
     @IBOutlet weak var img_profile: ProfileAvatar!
     
+    @IBOutlet weak var reviewTableContainer: UIView!
+    
+   // var reviewTableView: MarketplaceHostReviewViewController?
     var hostObj = PFUser()
 
     @IBOutlet weak var lbl_name: UILabel!
@@ -23,6 +26,9 @@ class MarketPlaceHostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        var reviewTableView = MarketplaceHostReviewViewController()
+        reviewTableView.hostObject = hostObj
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
