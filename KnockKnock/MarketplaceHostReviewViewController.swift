@@ -72,7 +72,11 @@ class MarketplaceHostReviewViewController: PFQueryTableViewController,DZNEmptyDa
             cell.textView.text = review["Review"] as! String
             let reviewDate = review.createdAt
             cell.date.text = KnockKnockUtils.dateToStringDisplay(reviewDate!)
-            
+            if(review["ClientReview"] as! Bool == true){
+                cell.role.text = "As Local Expert"
+            }else{
+                cell.role.text = "As Participant"
+            }
             
             
             let contentSize = cell.textView.sizeThatFits(cell.textView.bounds.size)

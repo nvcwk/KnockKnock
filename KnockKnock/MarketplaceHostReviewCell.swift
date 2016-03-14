@@ -17,5 +17,6 @@ class MarketplaceHostReviewCell: PFTableViewCell {
     @IBOutlet weak var reviwer: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var profile_image: PFImageView!
+    @IBOutlet weak var role: UILabel!
     
 }
