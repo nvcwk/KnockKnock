@@ -53,13 +53,25 @@ class MarketplaceHostReviewViewController: PFQueryTableViewController,DZNEmptyDa
     
     override func queryForTable() -> PFQuery {
         
-        let query = PFQuery(className: "Review")
-        query.whereKey("Host", equalTo: hostObject)
+        let query1 = PFQuery(className: "Review")
+        query1.whereKey("ClientReview", equalTo: false)
+        query1.whereKey("Client", equalTo: hostObject)
+        
+        let query2 = PFQuery(className: "Review")
+        query2.whereKey("ClientReview", equalTo: true)
+        query2.whereKey("Host", equalTo: hostObject)
+        
+        let query = PFQuery.orQueryWithSubqueries([query1, query2])
+        
+        //query.whereKey("Host", equalTo: hostObject)
         //query.whereKey("ClientReview", equalTo: true)
         query.includeKey("Host")
         query.includeKey("Client")
         query.orderByAscending("Stars")
         return query
+        
+        
+        
         
     }
     
