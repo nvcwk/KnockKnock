@@ -12,21 +12,19 @@ class ItiPublishViewController: UIViewController {
     @IBOutlet weak var tf_startDate: UITextField!
     @IBOutlet weak var tf_endDate: UITextField!
     @IBOutlet weak var weekendsOnlySwitch: UISwitch!
-//    @IBOutlet weak var tf_id: UILabel!
-    
-    //    @IBOutlet weak var stepper_price: GMStepper!
-    
+
     let startDatePicker = UIDatePicker()
     let endDatePicker = UIDatePicker()
     var selectedEndDate = 5.days.fromDate(NSDate())
     var selectedStartDate = 5.days.fromDate(NSDate())
     
+    var pub = PubTableViewController()
+    
     var itineraryObj = PFObject(className: "Itinerary")
     var publishObj = PFObject(className: "MarketPlace")
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
@@ -52,8 +50,7 @@ class ItiPublishViewController: UIViewController {
         
         publishObj["startAvailability"] = NSDate()
         publishObj["lastAvailability"] = NSDate()
-        
-//        tf_id.text = "Itinerary ID: #" + itineraryObj.objectId!
+
     }
     
     func updateStartDate(sender: UIDatePicker) {
@@ -80,8 +77,8 @@ class ItiPublishViewController: UIViewController {
             KnockKnockUtils.okAlert(self, title: "Please Check Price", message: "Please enter valid price!", handle: nil)
         }else{
 
-        
         SwiftSpinner.show("Publishing...")
+            
         
         publishObj["price"] = Int(lb_price.text!)
         publishObj["itinerary"] = itineraryObj
@@ -94,15 +91,20 @@ class ItiPublishViewController: UIViewController {
                  publishObj["weekendOnly"] = false
             }
             
-        publishObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+        self.publishObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             SwiftSpinner.hide()
             
             if (success) {
                 
+                self.pub.self.tableView.reloadEmptyDataSet()
+                
                 KnockKnockUtils.okAlert(self, title: "Publish!", message: "Successful", handle: { (action:UIAlertAction!) in
                     NSNotificationCenter.defaultCenter().postNotificationName("loadPublish", object: nil)
                     
-                     self.navigationController?.popToRootViewControllerAnimated(false)})
+                     self.navigationController?.popToRootViewControllerAnimated(false)
+
+                    })
+            
             } else {
                 KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
             }

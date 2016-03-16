@@ -19,7 +19,6 @@ class PubTableViewController: PFQueryTableViewController {
         
         //loadingViewEnabled = false
         
-        self.tableView.reloadData()
         self.objectsPerPage = 1000
 
         self.tableView.emptyDataSetSource = self
@@ -29,13 +28,7 @@ class PubTableViewController: PFQueryTableViewController {
         self.tableView.registerNib(UINib(nibName: "PubTableViewCell", bundle: nil), forCellReuseIdentifier: "PubViewCell")
         super.viewDidLoad()
     }
-    
-    
-    deinit {
-        self.tableView.emptyDataSetSource = nil
-        self.tableView.emptyDataSetDelegate = nil
-    }
-    
+
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
@@ -53,6 +46,16 @@ class PubTableViewController: PFQueryTableViewController {
         
         return query
     }
+    
+//    override func viewDidDisappear(animated: Bool) {
+//        self.tableView.emptyDataSetSource = nil
+//        self.tableView.emptyDataSetDelegate = nil
+//    }
+//    
+//    deinit{
+//        self.tableView.emptyDataSetSource = nil
+//        self.tableView.emptyDataSetDelegate = nil
+//    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
         

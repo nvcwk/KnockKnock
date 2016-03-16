@@ -175,6 +175,7 @@ class PubDetailsViewController: UIViewController {
         alertController.addAction(CancelAction)
         
         self.presentViewController(alertController, animated: true, completion:nil)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
