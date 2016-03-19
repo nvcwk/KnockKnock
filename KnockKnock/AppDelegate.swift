@@ -38,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DPTheme.customizeTabBar(secondColor, textColor: mainColor, fontName: "Avenir", fontSize: 10.0)
         DPTheme.customizeNavigationBar(secondColor, textColor: mainColor, fontName: fontName, fontSize: 19.0, buttonColor: mainColor)
         
+        DPTheme.customizeSwitch(mainColor)
+        
         let types:UIUserNotificationType = ([.Alert, .Sound, .Badge])
         let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
         application.registerUserNotificationSettings(settings)

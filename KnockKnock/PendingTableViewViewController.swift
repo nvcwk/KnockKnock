@@ -22,8 +22,8 @@ class PendingTableViewViewController: PFQueryTableViewController{
         
         self.tableView.reloadData()
         
-        self.tableView.emptyDataSetSource = nil
-        self.tableView.emptyDataSetDelegate = nil
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
 
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
@@ -39,9 +39,9 @@ class PendingTableViewViewController: PFQueryTableViewController{
     }
     
     
-    override func viewDidAppear(animated: Bool) {
-        self.tableView.emptyDataSetSource = self
-        self.tableView.emptyDataSetDelegate = self
+    deinit{
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
     }
     
     // Define the query that will provide the data for the table view
@@ -116,6 +116,7 @@ class PendingTableViewViewController: PFQueryTableViewController{
         
         
         parentNaviController.showViewController(viewController, sender: nil)
+        self.tableView.reloadEmptyDataSet()
     }
     
 

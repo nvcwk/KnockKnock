@@ -20,11 +20,9 @@ class ConfirmedTableViewController: PFQueryTableViewController{
     override func viewDidLoad() {
         
         self.tableView.reloadData()
-        
-        // A little trick for removing the cell separators
-        
-        self.tableView.emptyDataSetSource = nil
-        self.tableView.emptyDataSetDelegate = nil
+    
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
         
         self.tableView.tableFooterView = UIView()
         self.view!.removeConstraints(self.view.constraints)
@@ -39,9 +37,9 @@ class ConfirmedTableViewController: PFQueryTableViewController{
     }
     
 
-    override func viewDidAppear(animated: Bool) {
-        self.tableView.emptyDataSetSource = self
-        self.tableView.emptyDataSetDelegate = self
+    deinit {
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
     }
     
     // Define the query that will provide the data for the table view
@@ -84,6 +82,8 @@ class ConfirmedTableViewController: PFQueryTableViewController{
                     pending["Status"] = "Pending Completion"
                     pending["Remarks"] = ""
                     pending.saveInBackground()
+                    self.tableView.reloadEmptyDataSet()
+
                 }
                 
             }
@@ -127,6 +127,8 @@ class ConfirmedTableViewController: PFQueryTableViewController{
         
         
         parentNaviController.showViewController(viewController, sender: nil)
+        self.tableView.reloadEmptyDataSet()
+
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
