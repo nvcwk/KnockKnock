@@ -17,7 +17,8 @@ class ItiTableViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         
-        self.reloadInputViews()
+        self.tableView.reloadEmptyDataSet()
+        self.tableView.reloadData()
         self.objectsPerPage = 1000
         
         self.tableView.emptyDataSetSource = self
@@ -32,6 +33,7 @@ class ItiTableViewController: PFQueryTableViewController {
     
     
     deinit {
+        
         self.tableView.emptyDataSetSource = nil
         self.tableView.emptyDataSetDelegate = nil
 
@@ -93,15 +95,20 @@ class ItiTableViewController: PFQueryTableViewController {
     }
     
     
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewController : ItiDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("itiDetailsView") as! ItiDetailsViewController
         
         viewController.itineraryObj = objectAtIndexPath(indexPath)! as PFObject
         
         parentNaviController.showViewController(viewController, sender: nil)
+        self.tableView.reloadEmptyDataSet()
+
+        
     }
     
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Created Itinerary"
+    }
 
     
 }
@@ -145,7 +152,5 @@ extension ItiTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         return true
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Created Itinerary"
-    }
+
 }

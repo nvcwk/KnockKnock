@@ -193,6 +193,8 @@ class PendingExpandedViewController: UIViewController {
                 } else {
                     NSLog("%@", error!)
                 }
+                
+                PendingTableViewViewController.self().tableView.reloadEmptyDataSet()
             }
         }))
         bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
@@ -256,6 +258,8 @@ class PendingExpandedViewController: UIViewController {
                 } else {
                     NSLog("%@", error!)
                 }
+                PendingTableViewViewController.self().tableView.reloadEmptyDataSet()
+
             }
         }))
         bookAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in

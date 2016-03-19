@@ -68,6 +68,8 @@ class ItiActivitiesViewController: UITableViewController {
             let controller = segue.destinationViewController as! ItiPublishViewController
             
             controller.itineraryObj = itineraryObj
+            self.tableView.reloadEmptyDataSet()
+
         }
     }
     
@@ -83,7 +85,6 @@ class ItiActivitiesViewController: UITableViewController {
                 
                 if(publish) {
                     self.performSegueWithIdentifier("toPublishView", sender: nil)
-                    //self.tableView.reloadEmptyDataSet()
 
                 } else {
                     NSNotificationCenter.defaultCenter().postNotificationName("loadItinerary", object: nil)

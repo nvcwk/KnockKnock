@@ -22,6 +22,10 @@ class ConfirmedTableViewController: PFQueryTableViewController{
         self.tableView.reloadData()
         
         // A little trick for removing the cell separators
+        
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
+        
         self.tableView.tableFooterView = UIView()
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)

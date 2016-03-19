@@ -17,31 +17,21 @@ class PubTableViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         
-        //loadingViewEnabled = false
+        self.tableView.reloadEmptyDataSet()
+        self.tableView.reloadData()
         
         self.objectsPerPage = 1000
-        self.tableView.reloadData()
+        
+        
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
 
-        self.tableView.emptyDataSetSource = nil
-        self.tableView.emptyDataSetDelegate = nil
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(UINib(nibName: "PubTableViewCell", bundle: nil), forCellReuseIdentifier: "PubViewCell")
         
-        self.tableView.reloadEmptyDataSet()
-
         super.viewDidLoad()
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        self.tableView.emptyDataSetSource = self
-        self.tableView.emptyDataSetDelegate = self
-    }
-    
-//    override func viewDidDisappear(animated: Bool) {
-//        self.tableView.emptyDataSetSource = nil
-//        self.tableView.emptyDataSetDelegate = nil
-//    }
 
     
     // Define the query that will provide the data for the table view
@@ -101,8 +91,6 @@ class PubTableViewController: PFQueryTableViewController {
                     cell.image_background.loadInBackground()
                 }
             }
-            
-            //                        cell.image_background.contentMode = UIViewContentMode.ScaleToFill
         }
         
         return cell
@@ -113,19 +101,19 @@ class PubTableViewController: PFQueryTableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 130.0
     }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Published Itinerary"
-    }
-    
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewController : PubDetailsViewController = UIStoryboard(name: "Itinerary", bundle: nil).instantiateViewControllerWithIdentifier("pubDetailsView") as! PubDetailsViewController
         
         viewController.pubObj = objectAtIndexPath(indexPath)! as PFObject
         
         parentNaviController.showViewController(viewController, sender: nil)
+        self.tableView.reloadEmptyDataSet()
     }
     
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Published Itinerary"
+    }
 }
 
 extension PubTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
