@@ -20,14 +20,28 @@ class PubTableViewController: PFQueryTableViewController {
         //loadingViewEnabled = false
         
         self.objectsPerPage = 1000
+        self.tableView.reloadData()
 
-        self.tableView.emptyDataSetSource = self
-        self.tableView.emptyDataSetDelegate = self
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(UINib(nibName: "PubTableViewCell", bundle: nil), forCellReuseIdentifier: "PubViewCell")
+        
+        self.tableView.reloadEmptyDataSet()
+
         super.viewDidLoad()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+    }
+    
+//    override func viewDidDisappear(animated: Bool) {
+//        self.tableView.emptyDataSetSource = nil
+//        self.tableView.emptyDataSetDelegate = nil
+//    }
 
     
     // Define the query that will provide the data for the table view
@@ -47,16 +61,7 @@ class PubTableViewController: PFQueryTableViewController {
         return query
     }
     
-//    override func viewDidDisappear(animated: Bool) {
-//        self.tableView.emptyDataSetSource = nil
-//        self.tableView.emptyDataSetDelegate = nil
-//    }
-//    
-//    deinit{
-//        self.tableView.emptyDataSetSource = nil
-//        self.tableView.emptyDataSetDelegate = nil
-//    }
-    
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
         
         var cell: PubTableViewCell = tableView.dequeueReusableCellWithIdentifier("PubViewCell") as! PubTableViewCell

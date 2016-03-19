@@ -170,7 +170,7 @@ class ConfirmedExpandedViewController: UIViewController {
                 var hostName = self.hostObject["fName"] as! String
                 
                 PFCloud.callFunctionInBackground("hostCancelConfirm", withParameters: ["hoster": hostName, "requester": self.requesterObject.objectId!])
-                
+
                 
             }else{
                 self.confirmedObject["Remarks"] = "Requester Cancelled"
@@ -181,6 +181,8 @@ class ConfirmedExpandedViewController: UIViewController {
                 
 
             }
+            
+            
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
@@ -205,6 +207,7 @@ class ConfirmedExpandedViewController: UIViewController {
             marketPlace["bookedDate"] = bookedDateArray
             
             marketPlace.saveInBackground()
+
             //
             self.confirmedObject.saveInBackgroundWithBlock {
                 (success : Bool?, error: NSError?) -> Void in
@@ -231,6 +234,7 @@ class ConfirmedExpandedViewController: UIViewController {
         
         
         presentViewController(bookAlert, animated: true, completion: nil)
+
         
     }
     

@@ -164,6 +164,7 @@ class PubDetailsViewController: UIViewController {
                     NSNotificationCenter.defaultCenter().postNotificationName("loadPublish", object: nil)
                     
                     self.navigationController?.popToRootViewControllerAnimated(true)
+
                 }
             })
             }
@@ -175,6 +176,8 @@ class PubDetailsViewController: UIViewController {
         alertController.addAction(CancelAction)
         
         self.presentViewController(alertController, animated: true, completion:nil)
+        PubTableViewController.self().tableView.reloadEmptyDataSet()
+
         
     }
     

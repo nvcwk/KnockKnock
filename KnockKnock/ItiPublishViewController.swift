@@ -94,6 +94,7 @@ class ItiPublishViewController: UIViewController {
         self.publishObj.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             SwiftSpinner.hide()
             
+            
             if (success) {
                 
                 self.pub.self.tableView.reloadEmptyDataSet()
@@ -108,6 +109,8 @@ class ItiPublishViewController: UIViewController {
             } else {
                 KnockKnockUtils.okAlert(self, title: "Error!", message: "Try Again!", handle: nil)
             }
+            PubTableViewController.self().tableView.reloadEmptyDataSet()
+
         }
         }
     }

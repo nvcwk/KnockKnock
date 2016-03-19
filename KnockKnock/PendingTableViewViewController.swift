@@ -22,8 +22,7 @@ class PendingTableViewViewController: PFQueryTableViewController{
         
         self.tableView.reloadData()
         
-        self.tableView.emptyDataSetSource = self
-        self.tableView.emptyDataSetDelegate = self
+
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
         
@@ -32,14 +31,22 @@ class PendingTableViewViewController: PFQueryTableViewController{
         
         
         self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingTableViewCell")
+        self.tableView.reloadEmptyDataSet()
+
         
         super.viewDidLoad()
         
     }
     
-    deinit {
-        self.tableView.emptyDataSetSource = nil
-        self.tableView.emptyDataSetDelegate = nil
+//    deinit {
+//        self.tableView.emptyDataSetSource = nil
+//        self.tableView.emptyDataSetDelegate = nil
+//    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
     }
     
     // Define the query that will provide the data for the table view

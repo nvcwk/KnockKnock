@@ -26,7 +26,7 @@ class PendingExpandedViewController: UIViewController {
     @IBOutlet weak var remarks: UILabel!
     @IBOutlet weak var reason: UILabel!
     @IBOutlet weak var theImageView: UIImageView!
-    
+        
     var pendingObject : PFObject!
     var hostObject : PFObject!
     var requesterObject : PFObject!
@@ -189,6 +189,7 @@ class PendingExpandedViewController: UIViewController {
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
                     
+                    
                 } else {
                     NSLog("%@", error!)
                 }
@@ -199,7 +200,6 @@ class PendingExpandedViewController: UIViewController {
         }))
         
         presentViewController(bookAlert, animated: true, completion: nil)
-        
         
         
     }
@@ -251,6 +251,7 @@ class PendingExpandedViewController: UIViewController {
                     self.navigationController?.popToRootViewControllerAnimated(true)
                     
                     self.presentViewController(myAlert, animated:true, completion:nil);
+
                     
                 } else {
                     NSLog("%@", error!)
@@ -262,6 +263,7 @@ class PendingExpandedViewController: UIViewController {
         }))
         
         presentViewController(bookAlert, animated: true, completion: nil)
+
     }
     
     
