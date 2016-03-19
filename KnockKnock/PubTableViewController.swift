@@ -23,8 +23,8 @@ class PubTableViewController: PFQueryTableViewController {
         self.objectsPerPage = 1000
         
         
-        self.tableView.emptyDataSetSource = self
-        self.tableView.emptyDataSetDelegate = self
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
 
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
@@ -32,6 +32,13 @@ class PubTableViewController: PFQueryTableViewController {
         
         super.viewDidLoad()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.reloadEmptyDataSet()
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+    }
+    
 
     
     // Define the query that will provide the data for the table view
