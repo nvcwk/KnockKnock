@@ -254,6 +254,8 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                         
                         var requester = PFUser.currentUser()!["fName"] as! String
                         
+                        NSNotificationCenter.defaultCenter().postNotificationName("loadPending", object: nil)
+                        
                         PFCloud.callFunctionInBackground("sendPending", withParameters: ["hoster": self.host.objectId!, "requester": requester])
 
                         PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["userEmail":self.userEmail, "hostEmail": self.hostEmail]) {
@@ -278,6 +280,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                             }
                             
                         }
+                        
                         
                     } else {
                         KnockKnockUtils.okAlert(self, title: "Error", message: "Try Again!", handle: nil)
