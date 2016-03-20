@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import autoAutoLayout
+import MessageUI
 
 class PendingExpandedViewController: UIViewController {
     @IBOutlet weak var pendingNum: UILabel!
@@ -284,5 +285,29 @@ class PendingExpandedViewController: UIViewController {
     }
     
     
+    @IBAction func actionEmail(sender: UITapGestureRecognizer) {
+        let itineraryObject = (pendingObject["Itinerary"]) as! PFObject
+        let subject = itineraryObject["title"] as! String
+        let hostName = hostObject["fName"] as! String
+        
+        var picker = MFMailComposeViewController()
+        picker.mailComposeDelegate = self
+        picker.setSubject(itineraryObject["title"] as! String)
+        picker.setMessageBody("", isHTML: true)
+        
+        picker.setToRecipients([hostObject["email"] as! String])
+        picker.setSubject("Enquries of: " + subject)
+        picker.setMessageBody("Hi " + hostName + ",", isHTML: false)
+        
+        presentViewController(picker, animated: true, completion: nil)
+        
+        print("EMAIL")
+    }
     
+}
+
+extension PendingExpandedViewController:  MFMailComposeViewControllerDelegate {
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
