@@ -71,6 +71,11 @@ extension LicenseViewController: ImageProcessorDelegate {
                 
                 self.loadProfilePic()
                 
+                let user = PFUser.currentUser()
+                let name = user!["fName"] as! String
+                
+                PFCloud.callFunctionInBackground("updateLicense", withParameters: ["user": name, "id": user!.objectId!])
+                
                 KnockKnockUtils.okAlert(self, title: "Message!", message: "Updated New License Pic!", handle: nil)
                 
             } else {
