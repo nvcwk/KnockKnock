@@ -157,7 +157,7 @@ extension ConfirmedTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDe
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
-        var text: String = "Confirmed Bookings  will appear here when confirmation for a tour is made! "
+        var text: String = "Confirmed Bookings  will appear here when confirmation for a excursion is made! "
         var paragraph: NSMutableParagraphStyle = NSMutableParagraphStyle()
         //paragraph.lineBreakMode = NSLineBreakByWordWrapping
         paragraph.alignment = .Center

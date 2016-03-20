@@ -125,7 +125,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBW-Om-hwJ" customClass="RTIconButton">
-                                <rect key="frame" x="18" y="506" width="340" height="30"/>
+                                <rect key="frame" x="18" y="505" width="340" height="30"/>
                                 <color key="backgroundColor" red="0.074509803921568626" green="0.56862745098039214" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kZs-kC-W13"/>
@@ -146,30 +146,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="actionLogout:" destination="2ng-me-C9Q" eventType="touchUpInside" id="lI4-vm-wfN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lb-JH-llk" customClass="RTIconButton">
-                                <rect key="frame" x="18" y="468" width="340" height="30"/>
-                                <color key="backgroundColor" red="0.074509803920000006" green="0.56862745100000001" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="eIQ-ho-hwg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Change Password" image="password"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconMargin">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconPosition">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="iconSize">
-                                        <size key="value" width="20" height="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="vLQ-02-FTn" kind="show" id="Iea-Ma-4y9"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Contact Number" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="kmU-3Q-tQW">
@@ -226,13 +202,37 @@
                                     <segue destination="tmw-Ol-n4c" kind="show" id="Qsf-0V-VnR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lb-JH-llk" customClass="RTIconButton">
+                                <rect key="frame" x="18" y="461" width="340" height="30"/>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.56862745100000001" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eIQ-ho-hwg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Change Password" image="password"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconMargin">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconPosition">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="iconSize">
+                                        <size key="value" width="20" height="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="vLQ-02-FTn" kind="show" id="Iea-Ma-4y9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QWc-o4-joq" firstAttribute="top" secondItem="j8c-e5-Fs9" secondAttribute="bottom" constant="8" symbolic="YES" id="1nJ-Mz-D8W"/>
                             <constraint firstItem="QWc-o4-joq" firstAttribute="top" secondItem="kmU-3Q-tQW" secondAttribute="top" id="4MA-Ex-rb8"/>
                             <constraint firstItem="wre-Ke-qpd" firstAttribute="trailing" secondItem="y2r-eX-zYM" secondAttribute="trailing" id="6fZ-Zf-36f"/>
-                            <constraint firstItem="OBW-Om-hwJ" firstAttribute="top" secondItem="kmU-3Q-tQW" secondAttribute="bottom" constant="31" id="6lh-gr-tQy"/>
+                            <constraint firstItem="OBW-Om-hwJ" firstAttribute="top" secondItem="kmU-3Q-tQW" secondAttribute="bottom" constant="117" id="6lh-gr-tQy"/>
                             <constraint firstItem="wre-Ke-qpd" firstAttribute="top" secondItem="uc8-0W-m8P" secondAttribute="top" id="Ah6-aG-Kj2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wre-Ke-qpd" secondAttribute="trailing" constant="39" id="Dee-v9-DPK"/>
                             <constraint firstItem="V8U-bw-jLr" firstAttribute="top" secondItem="byG-qZ-WlF" secondAttribute="bottom" constant="8" symbolic="YES" id="EVp-de-YVu"/>
@@ -243,9 +243,9 @@
                             <constraint firstItem="V8U-bw-jLr" firstAttribute="leading" secondItem="PBU-cz-Msk" secondAttribute="leadingMargin" constant="5" id="KRf-HK-JME"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V8U-bw-jLr" secondAttribute="trailing" constant="3" id="Mdx-ma-X8P"/>
                             <constraint firstItem="uc8-0W-m8P" firstAttribute="top" secondItem="Gnz-p6-l2X" secondAttribute="bottom" constant="32" id="MfI-K2-zNq"/>
-                            <constraint firstItem="OBW-Om-hwJ" firstAttribute="top" secondItem="QWc-o4-joq" secondAttribute="bottom" constant="36" id="OB8-w6-A5T"/>
+                            <constraint firstItem="OBW-Om-hwJ" firstAttribute="top" secondItem="QWc-o4-joq" secondAttribute="bottom" constant="122" id="OB8-w6-A5T"/>
                             <constraint firstItem="uc8-0W-m8P" firstAttribute="leading" secondItem="PBU-cz-Msk" secondAttribute="leadingMargin" constant="43" id="PJ2-R6-Fge"/>
-                            <constraint firstItem="OBW-Om-hwJ" firstAttribute="leading" secondItem="PBU-cz-Msk" secondAttribute="leadingMargin" constant="1" id="PKK-5Y-XoT"/>
+                            <constraint firstItem="OBW-Om-hwJ" firstAttribute="leading" secondItem="PBU-cz-Msk" secondAttribute="leadingMargin" constant="-2" id="PKK-5Y-XoT"/>
                             <constraint firstItem="y2r-eX-zYM" firstAttribute="leading" secondItem="wre-Ke-qpd" secondAttribute="leading" id="S4c-pU-uLX"/>
                             <constraint firstItem="Gnz-p6-l2X" firstAttribute="top" secondItem="byG-qZ-WlF" secondAttribute="bottom" constant="41" id="TjG-ho-dxR"/>
                             <constraint firstItem="y2r-eX-zYM" firstAttribute="top" secondItem="wre-Ke-qpd" secondAttribute="bottom" constant="3" id="WjC-mc-IKU"/>

@@ -117,9 +117,21 @@ class MarketPlaceV2TableViewController: PFQueryTableViewController {
                     }
                 }
                 cell.stars.value = 0
+                //for licensed label
+                let hostObj = itiObj["host"] as! PFObject
+                
+                if(hostObj["licenseVerified"] != nil ){
+                    if(hostObj["licenseVerified"] as! Bool == false ){
+                        cell.licensedGuideLabel.text = ""
+                    }else{
+                        cell.licensedGuideLabel.text = "Licensed Guide"
+                    }
+                }else{
+                    cell.licensedGuideLabel.text = ""
+                }
                 
                 //for stars
-                let hostObj = itiObj["host"] as! PFObject
+               
                 var rating : Double = 0.0
                 var ratingCount = 0.0
                 

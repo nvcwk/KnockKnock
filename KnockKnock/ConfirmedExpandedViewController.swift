@@ -131,7 +131,7 @@ class ConfirmedExpandedViewController: UIViewController {
                 }else{
                     reviewButton.enabled = false
                     reviewButton.hidden = false
-                    reviewButton.setTitle("Tour Reviewed", forState: UIControlState.Normal)
+                    reviewButton.setTitle("Excursion Reviewed", forState: UIControlState.Normal)
                 }
             }else{
                 if (confirmedObject["ClientReviewed"] == nil || confirmedObject["ClientReviewed"] as! Bool == false){
@@ -141,7 +141,7 @@ class ConfirmedExpandedViewController: UIViewController {
                 }else{
                     reviewButton.enabled = false
                     reviewButton.hidden = false
-                    reviewButton.setTitle("Tour Reviewed", forState: UIControlState.Normal)
+                    reviewButton.setTitle("Excursion Reviewed", forState: UIControlState.Normal)
                 }
             }
             
