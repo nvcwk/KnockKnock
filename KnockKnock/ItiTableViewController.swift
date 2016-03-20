@@ -17,27 +17,33 @@ class ItiTableViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         
-        self.tableView.reloadEmptyDataSet()
-        self.tableView.reloadData()
+        
+        //self.tableView.reloadData()
         self.objectsPerPage = 1000
         
-        self.tableView.emptyDataSetSource = self
-        self.tableView.emptyDataSetDelegate = self
+        self.tableView.reloadData()
+//        
+//        self.tableView.emptyDataSetSource = self
+//        self.tableView.emptyDataSetDelegate = self
         
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(UINib(nibName: "ItiTableViewCell", bundle: nil), forCellReuseIdentifier: "ItiTableViewCell")
+//        self.tableView.reloadEmptyDataSet()
         super.viewDidLoad()
-        
     }
     
-    
-    deinit {
-        
-        self.tableView.emptyDataSetSource = nil
-        self.tableView.emptyDataSetDelegate = nil
-
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
     }
+    
+//    deinit {
+//        
+//        self.tableView.emptyDataSetSource = nil
+//        self.tableView.emptyDataSetDelegate = nil
+//
+//    }
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {

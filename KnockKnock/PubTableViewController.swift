@@ -16,25 +16,19 @@ class PubTableViewController: PFQueryTableViewController {
     var parentNaviController = UINavigationController()
     
     override func viewDidLoad() {
-        
-        self.tableView.reloadEmptyDataSet()
-        self.tableView.reloadData()
-        
         self.objectsPerPage = 1000
         
+        self.tableView.reloadData()
         
-        self.tableView.emptyDataSetSource = nil
-        self.tableView.emptyDataSetDelegate = nil
-
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(UINib(nibName: "PubTableViewCell", bundle: nil), forCellReuseIdentifier: "PubViewCell")
+        //self.tableView.reloadEmptyDataSet()
         
         super.viewDidLoad()
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.tableView.reloadEmptyDataSet()
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
     }
