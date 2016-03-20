@@ -40,10 +40,10 @@ class ConfirmedTableViewController: PFQueryTableViewController{
         self.tableView.emptyDataSetDelegate = self
     }
     
-    deinit{
-        self.tableView.emptyDataSetSource = nil
-        self.tableView.emptyDataSetDelegate = nil
-    }
+//    deinit{
+//        self.tableView.emptyDataSetSource = nil
+//        self.tableView.emptyDataSetDelegate = nil
+//    }
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {

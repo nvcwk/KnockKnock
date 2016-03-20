@@ -86,6 +86,7 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
         
         pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, navheight, self.view.frame.width, self.view.frame.height - frameHeight), pageMenuOptions: parameters)
         
+        view.subviews.forEach({ $0.removeFromSuperview() })
         self.view.addSubview(pageMenu!.view)
         
         pageMenu!.delegate = self
