@@ -21,8 +21,8 @@ class ConfirmedTableViewController: PFQueryTableViewController{
         
         self.tableView.reloadData()
     
-        self.tableView.emptyDataSetSource = nil
-        self.tableView.emptyDataSetDelegate = nil
+//        self.tableView.emptyDataSetSource = nil
+//        self.tableView.emptyDataSetDelegate = nil
         
         self.tableView.tableFooterView = UIView()
         self.view!.removeConstraints(self.view.constraints)
@@ -35,11 +35,14 @@ class ConfirmedTableViewController: PFQueryTableViewController{
 
 
     }
-    
-
     override func viewDidAppear(animated: Bool) {
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
+    }
+    
+    deinit{
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
     }
     
     // Define the query that will provide the data for the table view
