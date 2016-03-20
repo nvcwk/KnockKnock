@@ -175,5 +175,8 @@ extension PendingTableViewViewController: DZNEmptyDataSetSource, DZNEmptyDataSet
         return true
     }
 
+    func emptyDataSetShouldAllowScroll(scrollView: UIScrollView) -> Bool {
+        return true
+    }
 }
 

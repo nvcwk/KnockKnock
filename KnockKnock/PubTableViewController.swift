@@ -159,4 +159,8 @@ extension PubTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
     func emptyDataSetShouldAllowImageViewAnimate(scrollView: UIScrollView) -> Bool {
         return true
     }
+    
+    func emptyDataSetShouldAllowScroll(scrollView: UIScrollView) -> Bool {
+        return true
+    }
 }

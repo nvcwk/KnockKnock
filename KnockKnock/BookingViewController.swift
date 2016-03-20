@@ -254,7 +254,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                         
                         var requester = PFUser.currentUser()!["fName"] as! String
                         
-                        NSNotificationCenter.defaultCenter().postNotificationName("loadPending", object: nil)
+                        NSNotificationCenter.defaultCenter().postNotificationName("loadPublish", object: nil)
                         
                         PFCloud.callFunctionInBackground("sendPending", withParameters: ["hoster": self.host.objectId!, "requester": requester])
 

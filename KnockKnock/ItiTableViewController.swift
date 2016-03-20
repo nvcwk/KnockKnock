@@ -152,5 +152,8 @@ extension ItiTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         return true
     }
     
+    func emptyDataSetShouldAllowScroll(scrollView: UIScrollView) -> Bool {
+        return true
+    }
 
 }

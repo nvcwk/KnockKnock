@@ -173,4 +173,8 @@ extension ConfirmedTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDe
     func emptyDataSetShouldAllowTouch(scrollView: UIScrollView) -> Bool {
         return true
     }
+    
+    func emptyDataSetShouldAllowScroll(scrollView: UIScrollView) -> Bool {
+        return true
+    }
 }
