@@ -306,21 +306,30 @@ class ConfirmedExpandedViewController: UIViewController {
     
     @IBAction func actionEmail(sender: UITapGestureRecognizer) {
         let itineraryObject = (confirmedObject["Itinerary"]) as! PFObject
+        
         let subject = itineraryObject["title"] as! String
-        let hostName = hostObject["fName"] as! String
+        
+        var name = ""
+        var email = ""
+        
+        if(PFUser.currentUser() == hostObject) {
+            name = requesterObject["fName"] as! String
+            email = requesterObject["email"] as! String
+        } else {
+            name = hostObject["fName"] as! String
+            email = hostObject["email"] as! String
+        }
         
         var picker = MFMailComposeViewController()
         picker.mailComposeDelegate = self
         picker.setSubject(itineraryObject["title"] as! String)
         picker.setMessageBody("", isHTML: true)
         
-        picker.setToRecipients([hostObject["email"] as! String])
+        picker.setToRecipients([email])
         picker.setSubject("Enquries of: " + subject)
-        picker.setMessageBody("Hi " + hostName + ",", isHTML: false)
+        picker.setMessageBody("Hi " + name + ",", isHTML: true)
         
         presentViewController(picker, animated: true, completion: nil)
-        
-        print("EMAIL")
     }
     
 }
