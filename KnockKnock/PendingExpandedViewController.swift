@@ -154,7 +154,8 @@ class PendingExpandedViewController: UIViewController {
                     
                     
                     self.selectedDate = self.pendingObject["Date"] as! NSDate
-                    self.bookedDateArray = self.pendingObject["Marketplace"]["bookedDate"] as! [NSDate]
+                    var marketplace = self.pendingObject["Marketplace"] as! PFObject
+                    self.bookedDateArray = marketplace["bookedDate"] as! [NSDate]
                     
                     let itineraryObject = (self.pendingObject["Itinerary"]) as! PFObject
                     var duration = itineraryObject["duration"] as! Int

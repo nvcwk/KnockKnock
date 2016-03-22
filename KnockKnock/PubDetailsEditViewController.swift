@@ -37,7 +37,8 @@ class PubDetailsEditViewController: UIViewController {
         
         tf_price.delegate = self
         
-        lb_title.text = publishObj["itinerary"]["title"] as! String
+        var itinerary = publishObj["itinerary"] as! PFObject
+        lb_title.text = itinerary["title"] as! String
 
         tf_price.text = String(publishObj["price"] as! Int)
         

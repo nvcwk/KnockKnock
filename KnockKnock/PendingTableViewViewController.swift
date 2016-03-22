@@ -17,7 +17,8 @@ class PendingTableViewViewController: PFQueryTableViewController{
     var parentNaviController = UINavigationController()
     
     override func viewDidLoad() {
-        
+        self.objectsPerPage = 1000
+
         //loadingViewEnabled = false
         
         self.tableView.reloadData()

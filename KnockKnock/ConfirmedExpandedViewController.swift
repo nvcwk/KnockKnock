@@ -189,7 +189,7 @@ class ConfirmedExpandedViewController: UIViewController {
             
             //remove all booked dates from marketplace bookedDate array
             var firstDate = self.confirmedObject["Date"] as! NSDate
-            var marketplaceObject = self.confirmedObject["Marketplace"]
+            var marketplaceObject = self.confirmedObject["Marketplace"] as! PFObject
             var bookedDateArray = marketplaceObject["bookedDate"] as! [NSDate]
             
             let itineraryObject = (self.confirmedObject["Itinerary"]) as! PFObject

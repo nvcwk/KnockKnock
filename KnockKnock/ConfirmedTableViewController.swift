@@ -18,7 +18,8 @@ class ConfirmedTableViewController: PFQueryTableViewController{
     var parentNaviController = UINavigationController()
     
     override func viewDidLoad() {
-        
+        self.objectsPerPage = 1000
+
         self.tableView.reloadData()
     
 //        self.tableView.emptyDataSetSource = nil
