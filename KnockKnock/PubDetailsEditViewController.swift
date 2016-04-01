@@ -77,6 +77,7 @@ class PubDetailsEditViewController: UIViewController {
             tf_endDate.text = ""
         }
     }
+
     
     func updateEndDate(sender: UIDatePicker) {
         tf_endDate.text = KnockKnockUtils.dateToStringDisplay(sender.date)
