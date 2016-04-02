@@ -13,11 +13,11 @@ pod 'autoAutoLayout', '~> 2.0'
 
 ######### Loading and Splash Screen #########
 pod 'QIULaunchAnimation'
-pod 'SwiftSpinner'
+pod 'SwiftSpinner', '~> 0.8.0'
 pod 'DZNEmptyDataSet'
 
 ######### Common Input, Button & Validator #########
-pod 'TextFieldEffects'
+pod 'TextFieldEffects', '~> 1.1.1'
 pod 'SwiftValidator'
 pod 'RTIconButton'
 pod 'KBRoundedButton'
@@ -41,8 +41,8 @@ pod 'ABSteppedProgressBar', :git => 'https://github.com/brendaaakoh/ABSteppedPro
 pod 'GMStepper'
 
 ######### Image Mgmt #########
-pod 'ImageSlideshow'
-pod 'ImageSlideshow/AFURL'
+pod 'ImageSlideshow', '~> 0.3.0'
+pod 'ImageSlideshow/AFURL', '~> 0.3.0'
 pod 'RSKImageCropper'
 
 
