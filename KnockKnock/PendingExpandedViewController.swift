@@ -44,9 +44,9 @@ class PendingExpandedViewController: UIViewController {
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
         
-        theImageView.image? = (theImageView.image?.imageWithRenderingMode(.AlwaysTemplate))!
+//        theImageView.image? = (theImageView.image?.imageWithRenderingMode(.AlwaysTemplate))!
         //theImageView.tintColor = UIColor(red:0.14, green:0.63, blue:0.78, alpha:1.0)
-        theImageView.tintColor = UIColor.darkGrayColor()
+        
         
         //pendingNum.text = pendingObject.objectId
         hostObject = (pendingObject["Host"]) as! PFObject
@@ -76,7 +76,18 @@ class PendingExpandedViewController: UIViewController {
             requesterContact.text = String(requesterObject["email"])
             
             if (caseStatus == "Expired" || caseStatus == "Rejected" || caseStatus == "Cancelled" ){
-                status.font = UIFont.boldSystemFontOfSize(18.0)
+                
+                if(caseStatus == "Cancelled"){
+                    theImageView.image = UIImage(named: "cancel")
+                }
+                if(caseStatus == "Rejected"){
+                    theImageView.image = UIImage(named: "cancel")
+                }
+                if(caseStatus == "Expired"){
+                    theImageView.image = UIImage(named: "Expired")
+                }
+                
+                //status.font = UIFont.boldSystemFontOfSize(18.0)
                 status.textColor = UIColor.redColor()
                 actionButton.setTitle("", forState: UIControlState.Normal)
                 //  actionButton.enabled = false
@@ -106,12 +117,23 @@ class PendingExpandedViewController: UIViewController {
             actionButton.hidden = true
             
             if (caseStatus == "Rejected" || caseStatus == "Cancelled" || caseStatus == "Expired"){
+                
+                if(caseStatus == "Cancelled"){
+                    theImageView.image = UIImage(named: "cancel")
+                }
+                if(caseStatus == "Rejected"){
+                    theImageView.image = UIImage(named: "cancel")
+                }
+                if(caseStatus == "Expired"){
+                    theImageView.image = UIImage(named: "Expired")
+                }
+                
                 reason.text = "Reason: "
                 remarks.text =  pendingObject["Remarks"] as! String
                 actionButton2.setTitle("", forState: UIControlState.Normal)
                 actionButton2.enabled = false
                 actionButton2.hidden = true
-                status.font = UIFont.boldSystemFontOfSize(18.0)
+                //status.font = UIFont.boldSystemFontOfSize(18.0)
                 status.textColor = UIColor.redColor()
             }else{
                 reason.text = ""

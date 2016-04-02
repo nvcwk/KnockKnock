@@ -12,7 +12,6 @@ import autoAutoLayout
 import MessageUI
 
 class ConfirmedExpandedViewController: UIViewController {
-    @IBOutlet weak var confirmNum: UILabel!
     @IBOutlet weak var header: UILabel!
     @IBOutlet weak var requester: UILabel!
     @IBOutlet weak var requesterLabel: UILabel!
@@ -50,7 +49,6 @@ class ConfirmedExpandedViewController: UIViewController {
         //image.tintColor = UIColor.greenColor()
         
         
-        confirmNum.text = confirmedObject.objectId
         hostObject = (confirmedObject["Host"]) as! PFObject
         requesterObject = (confirmedObject["Requester"]) as! PFObject
         let itineraryObject = (confirmedObject["Itinerary"]) as! PFObject
