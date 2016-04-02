@@ -90,9 +90,7 @@ import UIKit
         
         UIView.animateWithDuration(0.45, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.5, options: .BeginFromCurrentState, animations: ({
             self.foregroundView.frame.origin = CGPoint(x: self.frame.size.width * 0.6, y: 0)
-        }), completion: { _ in
-            self.animationCompletionHandler?(type: .TextEntry)
-        })
+        }), completion: nil)
     }
     
     override public func animateViewsForTextDisplay() {
@@ -103,9 +101,7 @@ import UIKit
             
             UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 2.0, options: .BeginFromCurrentState, animations: ({
                 self.foregroundView.frame.origin = CGPointZero
-            }), completion: { _ in
-                self.animationCompletionHandler?(type: .TextDisplay)
-            })
+            }), completion: nil)
         }
     }
     

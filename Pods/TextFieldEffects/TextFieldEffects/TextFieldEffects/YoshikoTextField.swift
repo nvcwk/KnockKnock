@@ -146,16 +146,13 @@ import UIKit
             
             self.placeholderLabel.frame = self.placeholderRectForBounds(self.bounds)
             
-        }) { _ in
-            self.updatePlaceholder()
-            
-            UIView.animateWithDuration(0.3, animations: {
-                self.placeholderLabel.alpha = 1
-                self.updateBorder()
-                self.updateBackground()
-            }, completion: { _ in
-                self.animationCompletionHandler?(type: self.isFirstResponder() ? .TextEntry : .TextDisplay)
-            })
+        }) { complete in
+                self.updatePlaceholder()
+                UIView.animateWithDuration(0.3, animations: {
+                    self.placeholderLabel.alpha = 1
+                    self.updateBorder()
+                    self.updateBackground()
+                })
         }
     }
     

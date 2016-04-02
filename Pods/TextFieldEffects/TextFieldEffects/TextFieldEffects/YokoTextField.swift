@@ -81,9 +81,7 @@ import UIKit
             
             self.foregroundView.layer.transform = CATransform3DIdentity
             
-            }, completion: { _ in
-                self.animationCompletionHandler?(type: .TextEntry)
-        })
+            }, completion: nil)
         
         foregroundLayer.frame = rectForBorder(foregroundView.frame, isFilled: false)
     }
@@ -94,9 +92,7 @@ import UIKit
                 
                 self.foregroundLayer.frame = self.rectForBorder(self.foregroundView.frame, isFilled: true)
                 self.foregroundView.layer.transform = self.rotationAndPerspectiveTransformForView(self.foregroundView)
-                }, completion: { _ in
-                    self.animationCompletionHandler?(type: .TextDisplay)
-            })
+                }, completion: nil)
         }
     }
     

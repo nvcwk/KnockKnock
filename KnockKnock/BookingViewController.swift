@@ -51,7 +51,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         
         print(userEmail)
         print(hostEmail)
-
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
         
@@ -71,12 +71,12 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         
         
         
-    
+        
     }
     @IBAction func stepperTapped(sender: AnyObject) {
         var currentValue = Int(stepper.value)
         
-//        print(currentValue)
+        //        print(currentValue)
         self.paxLabel.text = "\(currentValue)"
         var newPrice  = price * currentValue
         self.priceLabel.text = String(newPrice)
@@ -113,7 +113,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         }
         if (KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date)) < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate()))){
             if(KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date)) >= KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(StartDate))){
-            return UIImage(named: "cross_2")
+                return UIImage(named: "cross_2")
             }
         }
         if(weekendOnly != nil){
@@ -139,7 +139,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         if (KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date)) < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate()))){
             return false
         }
-    
+        
         let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         if(weekendOnly != nil){
             if(weekendOnly == true){
@@ -179,6 +179,8 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         var testerDates = [NSDate]()
         var tester = false
         selectedDate = selectedDate.sort()
+        let startDate = KnockKnockUtils.dateToStringDisplay(selectedDate.first!)
+        let lastDate = KnockKnockUtils.dateToStringDisplay(selectedDate.last!)
         
         if (!selectedDate.isEmpty){
             var first2 = NSDate()
@@ -223,7 +225,11 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             presentViewController(alert, animated: true, completion: nil)
             
         } else {
-            let bookAlert = UIAlertController(title: "Booking", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+            var total = self.price * self.pax
+            
+            var textMsg = "Summary\nStart Date: " + startDate + "\nLast Date: " + lastDate + "\nTotal Pax: " + String(pax) + "\nPrice: " + String(total) + "\n\nConfirmed?"
+            
+            let bookAlert = UIAlertController(title: "Booking", message: textMsg, preferredStyle: UIAlertControllerStyle.Alert)
             
             bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
                 SwiftSpinner.show("Sending Request...")
@@ -233,58 +239,58 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                 booking["Date"] = self.selectedDate.sort().first
                 booking["Host"] = self.host
                 booking["Pax"] = Int(self.pax)
-                booking["Total"] = self.price * self.pax
+                booking["Total"] = total
                 booking["Marketplace"] = self.marketplace
                 booking["Status"] = "Pending"
                 booking["Itinerary"] = self.itinerary
                 
                 let myAlert =
-                booking.saveInBackgroundWithBlock {
-                    (success : Bool?, error: NSError?) -> Void in
-                    SwiftSpinner.hide()
-                    
-                    if (success != nil) {
-                        let myAlert =
-                        KnockKnockUtils.okAlert(self, title: "Message", message: "Request Sent! Check your latest confirmed bookings in the booking tab!", handle: { (action: UIAlertAction!) in
-                                self.navigationController?.popToRootViewControllerAnimated(true)
-                        } )
+                    booking.saveInBackgroundWithBlock {
+                        (success : Bool?, error: NSError?) -> Void in
+                        SwiftSpinner.hide()
                         
-                        
-                        //Send email to the user and host
-                        
-                        var requester = PFUser.currentUser()!["fName"] as! String
-                        
-                        NSNotificationCenter.defaultCenter().postNotificationName("loadPublish", object: nil)
-                        
-                        PFCloud.callFunctionInBackground("sendPending", withParameters: ["hoster": self.host.objectId!, "requester": requester])
-
-                        PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["userEmail":self.userEmail, "hostEmail": self.hostEmail]) {
-                            (response: AnyObject?, error: NSError?) -> Void in
+                        if (success != nil) {
+                            let myAlert =
+                                KnockKnockUtils.okAlert(self, title: "Message", message: "Request Sent! Check your latest confirmed bookings in the booking tab!", handle: { (action: UIAlertAction!) in
+                                    self.navigationController?.popToRootViewControllerAnimated(true)
+                                } )
                             
-                            if error == nil{
-                                print("hello")
-                            }else{
+                            
+                            //Send email to the user and host
+                            
+                            var requester = PFUser.currentUser()!["fName"] as! String
+                            
+                            NSNotificationCenter.defaultCenter().postNotificationName("loadPublish", object: nil)
+                            
+                            PFCloud.callFunctionInBackground("sendPending", withParameters: ["hoster": self.host.objectId!, "requester": requester])
+                            
+                            PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["userEmail":self.userEmail, "hostEmail": self.hostEmail]) {
+                                (response: AnyObject?, error: NSError?) -> Void in
+                                
+                                if error == nil{
+                                    print("hello")
+                                }else{
+                                    
+                                }
                                 
                             }
                             
-                        }
-                        
-                        //Send to the host email
-                        PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["email":self.hostEmail, ]) {
-                            (response: AnyObject?, error: NSError?) -> Void in
-                            
-                            if error == nil{
-                                print("hello")
-                            }else{
+                            //Send to the host email
+                            PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["email":self.hostEmail, ]) {
+                                (response: AnyObject?, error: NSError?) -> Void in
+                                
+                                if error == nil{
+                                    print("hello")
+                                }else{
+                                    
+                                }
                                 
                             }
                             
+                            
+                        } else {
+                            KnockKnockUtils.okAlert(self, title: "Error", message: "Try Again!", handle: nil)
                         }
-                        
-                        
-                    } else {
-                        KnockKnockUtils.okAlert(self, title: "Error", message: "Try Again!", handle: nil)
-                    }
                 }
             }))
             

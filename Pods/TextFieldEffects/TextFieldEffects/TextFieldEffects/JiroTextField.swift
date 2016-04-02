@@ -87,9 +87,7 @@ import UIKit
             self.placeholderLabel.frame.origin = CGPoint(x: self.placeholderInsets.x, y: self.borderLayer.frame.origin.y - self.placeholderLabel.bounds.height)
             self.borderLayer.frame = self.rectForBorder(self.borderThickness, isFilled: true)
             
-        }), completion: { _ in
-            self.animationCompletionHandler?(type: .TextEntry)
-        })
+        }), completion:nil)
     }
     
     override public func animateViewsForTextDisplay() {
@@ -97,9 +95,7 @@ import UIKit
             UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 2.0, options: .BeginFromCurrentState, animations: ({
                 self.layoutPlaceholderInTextRect()
                 self.placeholderLabel.alpha = 1
-            }), completion: { _ in
-                self.animationCompletionHandler?(type: .TextDisplay)
-            })
+            }), completion: nil)
             
             borderLayer.frame = rectForBorder(borderThickness, isFilled: false)
         }

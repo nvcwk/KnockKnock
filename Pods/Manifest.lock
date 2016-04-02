@@ -1,19 +1,25 @@
 PODS:
   - ABSteppedProgressBar (0.0.3)
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - autoAutoLayout (2.0.2)
   - Bolts/Tasks (1.7.0)
@@ -22,12 +28,12 @@ PODS:
   - FSCalendar (2.0.1)
   - GMStepper (1.1.0)
   - HCSStarRatingView (1.4.3)
-  - ImageSlideshow (0.4.0):
-    - ImageSlideshow/Core (= 0.4.0)
-  - ImageSlideshow/AFURL (0.4.0):
-    - AFNetworking (~> 3.0)
+  - ImageSlideshow (0.3.1):
+    - ImageSlideshow/Core (= 0.3.1)
+  - ImageSlideshow/AFURL (0.3.1):
+    - AFNetworking (~> 2.3)
     - ImageSlideshow/Core
-  - ImageSlideshow/Core (0.4.0)
+  - ImageSlideshow/Core (0.3.1)
   - IQKeyboardManagerSwift (3.3.4)
   - KBRoundedButton (1.0.4)
   - LGSemiModalNavController (0.2.0)
@@ -40,9 +46,9 @@ PODS:
   - RSKImageCropper (1.5.1)
   - RTIconButton (1.0.1)
   - SwiftDate (3.0.8)
-  - SwiftSpinner (0.9.1)
+  - SwiftSpinner (0.8.0)
   - SwiftValidator (3.0.3)
-  - TextFieldEffects (1.2.0)
+  - TextFieldEffects (1.1.1)
 
 DEPENDENCIES:
   - ABSteppedProgressBar (from `https://github.com/brendaaakoh/ABSteppedProgressBar`,
@@ -53,8 +59,8 @@ DEPENDENCIES:
   - FSCalendar
   - GMStepper
   - HCSStarRatingView (~> 1.4.3)
-  - ImageSlideshow
-  - ImageSlideshow/AFURL
+  - ImageSlideshow (~> 0.3.0)
+  - ImageSlideshow/AFURL (~> 0.3.0)
   - IQKeyboardManagerSwift (= 3.3.4)
   - KBRoundedButton
   - LGSemiModalNavController
@@ -64,9 +70,9 @@ DEPENDENCIES:
   - RSKImageCropper
   - RTIconButton
   - SwiftDate (~> 3.0.1)
-  - SwiftSpinner
+  - SwiftSpinner (~> 0.8.0)
   - SwiftValidator
-  - TextFieldEffects
+  - TextFieldEffects (~> 1.1.1)
 
 EXTERNAL SOURCES:
   ABSteppedProgressBar:
@@ -80,7 +86,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ABSteppedProgressBar: 2f4f51ad45a9610f15fb696e2447482e690210c5
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   autoAutoLayout: cb00c68262cff287fbf2a3915de43be3395250dd
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   CountryPicker: 6f166e2f1cc250f07eba4c587fbe1c0efc21049b
@@ -88,7 +94,7 @@ SPEC CHECKSUMS:
   FSCalendar: 18117308f5876a8f6f0fe572085d543580c2c5e5
   GMStepper: 3b7922778a80e0eab89a55003ca36b25fc2393b7
   HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a
-  ImageSlideshow: 0d3632bc0c2b4d3fff24a49ce4d3022af8238b03
+  ImageSlideshow: 821ef30d14aa80bd87482f5828249db7524d9419
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   KBRoundedButton: 8fde755b8f1df3ddd3c3c280d9b27ce04ab55d00
   LGSemiModalNavController: ba49f8cbc24638be981cbca8a526f66b5dd90414
@@ -98,8 +104,8 @@ SPEC CHECKSUMS:
   RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
   RTIconButton: d1938c330df9ed977cdf9f5bba38ffb987333a5c
   SwiftDate: 971f8b9394f664f2226b9c3ab64e801a7291c612
-  SwiftSpinner: 09a60c00f4dfa2097b4deabd26f513ad077af4f1
+  SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
-  TextFieldEffects: bc4fd3bd557321bd61a0762f3f50965477a36f62
+  TextFieldEffects: a1a78efeb93b65c611ad287b28a068c9a4a5f5b4
 
 COCOAPODS: 0.39.0
