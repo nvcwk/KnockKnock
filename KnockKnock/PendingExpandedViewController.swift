@@ -79,12 +79,17 @@ class PendingExpandedViewController: UIViewController {
                 
                 if(caseStatus == "Cancelled"){
                     theImageView.image = UIImage(named: "cancel")
+                    status.text = "Booking Cancelled"
                 }
                 if(caseStatus == "Rejected"){
                     theImageView.image = UIImage(named: "cancel")
+                    status.text = "Booking Rejected"
+
                 }
                 if(caseStatus == "Expired"){
                     theImageView.image = UIImage(named: "Expired")
+                    status.text = "Booking Expired"
+
                 }
                 
                 //status.font = UIFont.boldSystemFontOfSize(18.0)
@@ -120,12 +125,17 @@ class PendingExpandedViewController: UIViewController {
                 
                 if(caseStatus == "Cancelled"){
                     theImageView.image = UIImage(named: "cancel")
+                    status.text = "Booking Cancelled"
                 }
                 if(caseStatus == "Rejected"){
                     theImageView.image = UIImage(named: "cancel")
+                    status.text = "Booking Rejected"
+                    
                 }
                 if(caseStatus == "Expired"){
                     theImageView.image = UIImage(named: "Expired")
+                    status.text = "Booking Expired"
+                    
                 }
                 
                 reason.text = "Reason: "

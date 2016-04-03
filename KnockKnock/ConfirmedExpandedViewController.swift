@@ -44,8 +44,8 @@ class ConfirmedExpandedViewController: UIViewController {
         
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
         
-        image.image? = (image.image?.imageWithRenderingMode(.AlwaysTemplate))!
-        image.tintColor = UIColor(red:0.14, green:0.63, blue:0.78, alpha:1.0)
+//        image.image? = (image.image?.imageWithRenderingMode(.AlwaysTemplate))!
+//        image.tintColor = UIColor(red:0.14, green:0.63, blue:0.78, alpha:1.0)
         //image.tintColor = UIColor.greenColor()
         
         
@@ -94,16 +94,13 @@ class ConfirmedExpandedViewController: UIViewController {
             cancelButton.enabled = false
             cancelButton.hidden = true
             image.image = UIImage(named: "cancel")
-            image.image? = (image.image?.imageWithRenderingMode(.AlwaysTemplate))!
-            image.tintColor = UIColor.redColor()
-            
-            //theImageView.tintColor = UIColor(red:0.14, green:0.63, blue:0.78, alpha:1.0)
+
             
             remarks.text = confirmedObject["Remarks"] as! String
             remarksLabel.text = "Remarks: "
-            status.font = UIFont.boldSystemFontOfSize(18.0)
             status.textColor = UIColor.redColor()
         }else if(confirmedObject["Status"] as! String == "Pending Completion"){
+            image.image = UIImage(named: "Pending")
             cancelButton.setTitle("", forState: UIControlState.Normal)
             cancelButton.enabled = false
             cancelButton.hidden = true
