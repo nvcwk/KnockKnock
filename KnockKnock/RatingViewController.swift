@@ -29,8 +29,8 @@ class RatingViewController: UIViewController {
         //textView.layer.backgroundColor =  UIColor.lightGrayColor().CGColor
         
         
-        theImageView.image? = (theImageView.image?.imageWithRenderingMode(.AlwaysTemplate))!
-        theImageView.tintColor = UIColor(red:0.07, green:0.55, blue:0.63, alpha:1.0)
+//        theImageView.image? = (theImageView.image?.imageWithRenderingMode(.AlwaysTemplate))!
+//        theImageView.tintColor = UIColor(red:0.07, green:0.55, blue:0.63, alpha:1.0)
 
         
         let hostObject = confirmedObject["Host"] as! PFObject
