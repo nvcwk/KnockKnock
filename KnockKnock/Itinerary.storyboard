@@ -173,7 +173,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="KnockKnock" id="mlH-b9-ifS">
-                        <barButtonItem key="rightBarButtonItem" title="Step 4" id="5sF-Yn-ylM">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="5sF-Yn-ylM">
                             <connections>
                                 <segue destination="YFb-Bc-DuT" kind="show" identifier="toActivitiesView" id="pUD-bY-pcR"/>
                             </connections>
@@ -1384,7 +1384,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="KnockKnock" id="tzh-o9-60x">
-                        <barButtonItem key="rightBarButtonItem" title="Step 2" id="RL0-rj-qik">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="RL0-rj-qik">
                             <connections>
                                 <segue destination="ONs-Hp-Pux" kind="show" identifier="itiStep2" id="1IL-eU-8rA"/>
                             </connections>
@@ -1566,7 +1566,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="KnockKnock" id="bnI-ET-XKO">
-                        <barButtonItem key="rightBarButtonItem" title="Step 3" id="cWr-K3-Kec">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="cWr-K3-Kec">
                             <connections>
                                 <segue destination="nAh-xg-sPe" kind="show" identifier="itiStep31" id="SR3-WS-C29"/>
                             </connections>
