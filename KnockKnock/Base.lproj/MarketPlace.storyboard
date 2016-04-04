@@ -418,7 +418,7 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUv-Kp-bLP" customClass="RTIconButton">
                                                     <rect key="frame" x="24" y="81" width="163" height="30"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.68144068970000005" blue="0.74330529560000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="gU3-RZ-JfW"/>
                                                     </constraints>
