@@ -108,7 +108,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         for dates in bookedDatesArray{
             if (dateFormatter.stringFromDate(dates) == dateFormatter.stringFromDate(date)){
                 
-                return UIImage(named: "cross_2")
+                return UIImage(named: "Booked")
             }
         }
         if (KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(date)) < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate()))){
@@ -119,7 +119,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         if(weekendOnly != nil){
             if(weekendOnly == true){
                 if([2,3,4,5,6].contains(date.weekday)){
-                    return UIImage(named: "Dash")
+                    return UIImage(named: "cross_2")
                 }
             }
         }
