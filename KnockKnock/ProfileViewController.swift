@@ -27,6 +27,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var lbl_country: UILabel!
     @IBOutlet weak var lbl_name: UILabel!
+    @IBOutlet weak var lbl_licenseStatus: UILabel!
+    
     //let imagePicker = UIImagePickerController()
     
     var imgMgmt = ImageProcessor()
@@ -101,6 +103,13 @@ class ProfileViewController: UIViewController {
         
         if let contactNumber = currentUser["contact"] as? Int {
             tf_contactNo.text = String(contactNumber)
+        }
+        
+        if (currentUser["licenseVerified"] != nil) {
+            let status = currentUser["licenseVerified"] as! Bool
+            if (status) {
+                lbl_licenseStatus.text = "License Status: Verified"
+            }
         }
     }
     
