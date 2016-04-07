@@ -107,8 +107,25 @@ class ConfirmedTableViewController: PFQueryTableViewController{
             
             if (host == PFUser.currentUser()){
                 cell.requester.text = requester.objectForKey("fName") as! String
-            }else{
+                
+                if (requester.objectForKey("profilePic") != nil) {
+                    
+                    cell.image_profile.file = requester.objectForKey("profilePic") as! PFFile
+                    
+                    cell.image_profile.loadInBackground()
+                }
+                
+                
+            } else{
                 cell.requester.text = host.objectForKey("fName") as! String
+                
+                if (host.objectForKey("profilePic") != nil) {
+                    
+                    
+                    cell.image_profile.file = host.objectForKey("profilePic") as! PFFile
+                    
+                    cell.image_profile.loadInBackground()
+                }
             }
             cell.status.text = pending["Status"]as! String
             

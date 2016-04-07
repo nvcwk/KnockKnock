@@ -18,14 +18,14 @@ class PendingTableViewViewController: PFQueryTableViewController{
     
     override func viewDidLoad() {
         self.objectsPerPage = 1000
-
+        
         //loadingViewEnabled = false
         
         self.tableView.reloadData()
-//        
-//        self.tableView.emptyDataSetSource = nil
-//        self.tableView.emptyDataSetDelegate = nil
-
+        //
+        //        self.tableView.emptyDataSetSource = nil
+        //        self.tableView.emptyDataSetDelegate = nil
+        
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
         self.view!.removeConstraints(self.view.constraints)
@@ -33,7 +33,7 @@ class PendingTableViewViewController: PFQueryTableViewController{
         
         self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingTableViewCell")
         self.tableView.reloadEmptyDataSet()
-
+        
         
         super.viewDidLoad()
         
@@ -45,10 +45,10 @@ class PendingTableViewViewController: PFQueryTableViewController{
         self.tableView.emptyDataSetDelegate = self
     }
     
-//    deinit{
-//                self.tableView.emptyDataSetSource = nil
-//                self.tableView.emptyDataSetDelegate = nil
-//    }
+    //    deinit{
+    //                self.tableView.emptyDataSetSource = nil
+    //                self.tableView.emptyDataSetDelegate = nil
+    //    }
     
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
@@ -101,8 +101,25 @@ class PendingTableViewViewController: PFQueryTableViewController{
             
             if (host == PFUser.currentUser()){
                 cell.requester.text = requester.objectForKey("fName") as! String
-            }else{
+                
+                if (requester.objectForKey("profilePic") != nil) {
+                    
+                    cell.image_profile.file = requester.objectForKey("profilePic") as! PFFile
+                    
+                    cell.image_profile.loadInBackground()
+                }
+                
+                
+            } else{
                 cell.requester.text = host.objectForKey("fName") as! String
+                
+                if (host.objectForKey("profilePic") != nil) {
+                    
+                    
+                    cell.image_profile.file = host.objectForKey("profilePic") as! PFFile
+                    
+                    cell.image_profile.loadInBackground()
+                }
             }
             cell.status.text = pending["Status"]as! String
             
@@ -125,7 +142,7 @@ class PendingTableViewViewController: PFQueryTableViewController{
         self.tableView.reloadEmptyDataSet()
     }
     
-
+    
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Requests Pending"
@@ -175,7 +192,7 @@ extension PendingTableViewViewController: DZNEmptyDataSetSource, DZNEmptyDataSet
     func emptyDataSetShouldAllowTouch(scrollView: UIScrollView) -> Bool {
         return true
     }
-
+    
     func emptyDataSetShouldAllowScroll(scrollView: UIScrollView) -> Bool {
         return true
     }
