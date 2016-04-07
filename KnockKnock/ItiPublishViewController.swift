@@ -48,8 +48,8 @@ class ItiPublishViewController: UIViewController {
 
         lb_title.text = itineraryObj["title"] as! String
         
-        publishObj["startAvailability"] = NSDate()
-        publishObj["lastAvailability"] = NSDate()
+        publishObj["startAvailability"] = 5.days.fromDate(NSDate())
+        publishObj["lastAvailability"] = 5.days.fromDate(NSDate())
 
     }
     
