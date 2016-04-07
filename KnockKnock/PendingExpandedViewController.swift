@@ -161,8 +161,15 @@ class PendingExpandedViewController: UIViewController {
     
     @IBAction func button1Tapped(sender: AnyObject) {
         //accept codes
+        let start = startDate.text!
+        let end = endDate.text!
+        let ppl = pax.text!
+        let total = value.text!
         
-        let bookAlert = UIAlertController(title: "Hosting", message: "Confirm Hosting", preferredStyle: UIAlertControllerStyle.Alert)
+        var textMsg = "Summary\nStart Date: " + start + "\nLast Date: " + end + "\nTotal Pax: " + ppl + "\nPrice: " + total + "\n\nConfirm Hosting?"
+
+        
+        let bookAlert = UIAlertController(title: "Hosting", message: textMsg, preferredStyle: UIAlertControllerStyle.Alert)
         
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
@@ -240,9 +247,14 @@ class PendingExpandedViewController: UIViewController {
     
     @IBAction func button2Pressed(sender: AnyObject) {
         //reject codes
+        let start = startDate.text!
+        let end = endDate.text!
+        let ppl = pax.text!
+        let total = value.text!
         
-        let bookAlert = UIAlertController(title: "Reject/Cancel", message: "Confirmed?", preferredStyle: UIAlertControllerStyle.Alert)
+        var textMsg = "Summary\nStart Date: " + start + "\nLast Date: " + end + "\nTotal Pax: " + ppl + "\nPrice: " + total + "\n\nCancel?"
         
+        let bookAlert = UIAlertController(title: "Reject/Cancel", message: textMsg, preferredStyle: UIAlertControllerStyle.Alert)
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
             

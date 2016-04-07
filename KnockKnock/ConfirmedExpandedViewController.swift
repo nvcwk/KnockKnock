@@ -152,9 +152,14 @@ class ConfirmedExpandedViewController: UIViewController {
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
+        let start = startDate.text!
+        let end = endDate.text!
+        let ppl = pax.text!
+        let total = value.text!
         
+        var textMsg = "Summary\nStart Date: " + start + "\nLast Date: " + end + "\nTotal Pax: " + ppl + "\nPrice: " + total + "\n\nCancel?"
         
-        let bookAlert = UIAlertController(title: "Cancel Booking", message: "Confirm?", preferredStyle: UIAlertControllerStyle.Alert)
+        let bookAlert = UIAlertController(title: "Cancel Booking", message: textMsg, preferredStyle: UIAlertControllerStyle.Alert)
         
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
