@@ -129,7 +129,7 @@ class PendingTableViewViewController: PFQueryTableViewController{
         return cell
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 125.0
+        return 129.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

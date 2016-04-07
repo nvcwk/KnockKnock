@@ -15,7 +15,7 @@ class PendingTableViewCell: PFTableViewCell {
     @IBOutlet weak var requester: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var status: UILabel!
-    @IBOutlet weak var image_profile: ProfileAvatar!
+    @IBOutlet weak var image_profile: PFImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
