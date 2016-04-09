@@ -15,6 +15,7 @@ class MyBookingMainViewController: UIViewController, CAPSPageMenuDelegate {
     
     var controller1 : PendingTableViewViewController?
     var controller2 : ConfirmedTableViewController?
+    var controller3 : CancelledTableViewController?
     
     func loadPending(notification: NSNotification){
         //load data here
@@ -48,14 +49,19 @@ class MyBookingMainViewController: UIViewController, CAPSPageMenuDelegate {
         var parameters: [CAPSPageMenuOption]?
         
         controller1 = PendingTableViewViewController(nibName: "PendingTableViewViewController", bundle: nil)
-        controller1!.title = "Pending"
+        controller1!.title = "Requests"
         controller1!.parentNaviController = self.navigationController!
         controllerArray.append(controller1!)
         
         controller2 = ConfirmedTableViewController(nibName: "ConfirmedTableViewController", bundle: nil)
-        controller2!.title = "Confirmed"
+        controller2!.title = "Bookings"
         controller2!.parentNaviController = self.navigationController!
         controllerArray.append(controller2!)
+        
+        controller3 = CancelledTableViewController(nibName: "CancelledTableViewController", bundle: nil)
+        controller3!.title = "Cancelled"
+        controller3!.parentNaviController = self.navigationController!
+        controllerArray.append(controller3!)
         
         parameters = [
             .MenuItemSeparatorWidth(4.3),

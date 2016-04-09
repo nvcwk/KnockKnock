@@ -1,5 +1,5 @@
 //
-//  PendingTableViewViewController.swift
+//  ConfirmedTableViewController.swift
 //  KnockKnock
 //
 //  Created by Don Teo on 14/1/16.
@@ -12,21 +12,19 @@ import ParseUI
 import autoAutoLayout
 import DZNEmptyDataSet
 
-class PendingTableViewViewController: PFQueryTableViewController{
+class CancelledTableViewController: PFQueryTableViewController{
+    
     
     var parentNaviController = UINavigationController()
     
     override func viewDidLoad() {
         self.objectsPerPage = 1000
         
-        //loadingViewEnabled = false
-        
         self.tableView.reloadData()
-        //
+        
         //        self.tableView.emptyDataSetSource = nil
         //        self.tableView.emptyDataSetDelegate = nil
         
-        // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
         self.view!.removeConstraints(self.view.constraints)
         AutoAutoLayout.layoutFromBaseModel("6", forSubviewsOf: self.view!)
@@ -34,20 +32,18 @@ class PendingTableViewViewController: PFQueryTableViewController{
         self.tableView.registerNib(UINib(nibName: "PendingTableViewCell", bundle: nil), forCellReuseIdentifier: "PendingTableViewCell")
         self.tableView.reloadEmptyDataSet()
         
-        
         super.viewDidLoad()
         
+        
     }
-    
-    
     override func viewDidAppear(animated: Bool) {
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
     }
     
     //    deinit{
-    //                self.tableView.emptyDataSetSource = nil
-    //                self.tableView.emptyDataSetDelegate = nil
+    //        self.tableView.emptyDataSetSource = nil
+    //        self.tableView.emptyDataSetDelegate = nil
     //    }
     
     // Define the query that will provide the data for the table view
@@ -55,13 +51,21 @@ class PendingTableViewViewController: PFQueryTableViewController{
         
         let query1 = PFQuery(className: "Pending")
         query1.whereKey("Requester", equalTo: PFUser.currentUser()!)
-        query1.whereKey("Status", notContainedIn: ["Confirmed", "Expired"])
+        query1.whereKey("Status", containedIn: ["Rejected", "Expired", "Cancelled"])
         
         let query2 = PFQuery(className: "Pending")
         query2.whereKey("Host", equalTo: PFUser.currentUser()!)
-        query2.whereKey("Status", notContainedIn: ["Confirmed", "Expired"])
+        query2.whereKey("Status", containedIn: ["Rejected", "Expired", "Cancelled"])
         
-        let query = PFQuery.orQueryWithSubqueries([query1, query2])
+        var query3 = PFQuery(className: "Confirmed")
+        query3.whereKey("Requester", equalTo: PFUser.currentUser()!)
+        query3.whereKey("Status", equalTo: "Cancelled")
+        
+        var query4 = PFQuery(className: "Confirmed")
+        query4.whereKey("Host", equalTo: PFUser.currentUser()!)
+        query4.whereKey("Status", equalTo: "Cancelled")
+        
+        var query = PFQuery.orQueryWithSubqueries([query1, query2])
         query.includeKey("Marketplace")
         query.includeKey("Itinerary")
         query.includeKey("Host")
@@ -69,7 +73,15 @@ class PendingTableViewViewController: PFQueryTableViewController{
         query.includeKey("Itinerary.activities")
         query.orderByAscending("Date")
         
-        return query
+        var query5 = PFQuery.orQueryWithSubqueries([query3, query4])
+        query5.includeKey("Marketplace")
+        query5.includeKey("Itinerary")
+        query5.includeKey("Host")
+        query5.includeKey("Requester")
+        query5.includeKey("Itinerary.activities")
+        query5.orderByAscending("Date")
+    
+        return query5
         
     }
     
@@ -77,13 +89,25 @@ class PendingTableViewViewController: PFQueryTableViewController{
         
         var cell: PendingTableViewCell = tableView.dequeueReusableCellWithIdentifier("PendingTableViewCell") as! PendingTableViewCell
         
+        
         if let pending = object{
             
-            var startDate = pending["Date"]as! NSDate
-            if (startDate < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate())))
-            {
-                updateRecords(pending)
+            var date = pending["Date"]! as! NSDate
+            //check if booking has been completed
+            if (date < KnockKnockUtils.utcStringToLocal(KnockKnockUtils.dateToStringGMT(NSDate()))){
+                let statusForUpdate = pending["Status"] as! String
+                if(statusForUpdate == "Completed"){
+                    
+                }else{
+                    pending["Status"] = "Pending Completion"
+                    pending["Remarks"] = ""
+                    pending.saveInBackground()
+                    self.tableView.reloadEmptyDataSet()
+                    
+                }
+                
             }
+            
             let marketplace = pending["Marketplace"] as! PFObject
             let itinerary = pending["Itinerary"] as! PFObject
             cell.header.text = itinerary["title"] as! String
@@ -92,7 +116,7 @@ class PendingTableViewViewController: PFQueryTableViewController{
             dateFormatter.dateFormat = "dd/MM/yyyy"
             dateFormatter.timeZone = NSTimeZone(name: "GMT")
             
-            cell.date.text = KnockKnockUtils.dateToStringDisplay(startDate)
+            cell.date.text = KnockKnockUtils.dateToStringDisplay(date)
             
             let requester = pending["Requester"] as! PFObject
             let host = pending["Host"] as! PFObject
@@ -121,44 +145,37 @@ class PendingTableViewViewController: PFQueryTableViewController{
             }
             cell.status.text = pending["Status"]as! String
             
-            
         }
         
         return cell
     }
+    
+    
+    
+    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 129.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let viewController : PendingExpandedViewController = UIStoryboard(name: "Booking", bundle: nil).instantiateViewControllerWithIdentifier("PendingExpandedViewController") as! PendingExpandedViewController
+//        let viewController : ConfirmedExpandedViewController = UIStoryboard(name: "Booking", bundle: nil).instantiateViewControllerWithIdentifier("ConfirmedExpandedViewController") as! ConfirmedExpandedViewController
+//        
+//        viewController.confirmedObject = objectAtIndexPath(indexPath)! as PFObject
+//        
+//        
+//        parentNaviController.showViewController(viewController, sender: nil)
+//        self.tableView.reloadEmptyDataSet()
         
-        viewController.pendingObject = objectAtIndexPath(indexPath)! as PFObject
-        
-        
-        parentNaviController.showViewController(viewController, sender: nil)
-        self.tableView.reloadEmptyDataSet()
     }
-    
-    
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Requests Pending"
+        return "Cancelled Excursion"
     }
     
-    func updateRecords(record: PFObject){
-        
-        record["Status"] = "Expired"
-        record["Remarks"] = "Booking Expired"
-        record.saveInBackground()
-        
-        
-    }
 }
 
-extension PendingTableViewViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+extension CancelledTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
 {
-    // code for DZNEmptyDataSet goes here
     func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
         
         var image = UIImage(named: "empty")!
@@ -168,13 +185,13 @@ extension PendingTableViewViewController: DZNEmptyDataSetSource, DZNEmptyDataSet
     
     
     func titleForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
-        var text: String = "No Bookings Yet!"
+        var text: String = "No Cancelled Bookings!"
         var attributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(18.0), NSForegroundColorAttributeName: UIColor.darkGrayColor()]
         return NSAttributedString(string: text, attributes: attributes)
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
-        var text: String = "Booking Requests  will appear here when someone books your tour! "
+        var text: String = "Cancalled Bookings  will appear here! "
         var paragraph: NSMutableParagraphStyle = NSMutableParagraphStyle()
         //paragraph.lineBreakMode = NSLineBreakByWordWrapping
         paragraph.alignment = .Center
@@ -195,4 +212,3 @@ extension PendingTableViewViewController: DZNEmptyDataSetSource, DZNEmptyDataSet
         return true
     }
 }
-

@@ -64,6 +64,8 @@
 		E19FE1781C3D7D84009FAB48 /* MarketplaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */; };
 		E1AAC2241C9059C800539CD1 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AAC2231C9059C800539CD1 /* LicenseViewController.swift */; };
 		E1AAC2261C90632B00539CD1 /* MarketPlaceHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AAC2251C90632B00539CD1 /* MarketPlaceHostViewController.swift */; };
+		E1B43E3C1CB9107400724212 /* CancelledTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B43E3A1CB9107400724212 /* CancelledTableViewController.swift */; };
+		E1B43E3D1CB9107400724212 /* CancelledTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B43E3B1CB9107400724212 /* CancelledTableViewController.xib */; };
 		E1B95E441C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B95E431C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift */; };
 		E1B95E461C36C14600F85B8F /* PubDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B95E451C36C14600F85B8F /* PubDetailsViewController.swift */; };
 		E1C1A6651C1C3635005796E8 /* KnockKnockRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */; };
@@ -180,6 +182,8 @@
 		E19FE1771C3D7D84009FAB48 /* MarketplaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketplaceTableViewCell.swift; sourceTree = "<group>"; };
 		E1AAC2231C9059C800539CD1 /* LicenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		E1AAC2251C90632B00539CD1 /* MarketPlaceHostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPlaceHostViewController.swift; sourceTree = "<group>"; };
+		E1B43E3A1CB9107400724212 /* CancelledTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelledTableViewController.swift; sourceTree = "<group>"; };
+		E1B43E3B1CB9107400724212 /* CancelledTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CancelledTableViewController.xib; sourceTree = "<group>"; };
 		E1B95E431C368F8F00F85B8F /* ActivityDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		E1B95E451C36C14600F85B8F /* PubDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubDetailsViewController.swift; sourceTree = "<group>"; };
 		E1C1A6641C1C3635005796E8 /* KnockKnockRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnockKnockRule.swift; sourceTree = "<group>"; };
@@ -539,6 +543,8 @@
 				F6DC5CBA1C4769EF00BA6776 /* PendingTableViewViewController.xib */,
 				F6DC5CBF1C476A5B00BA6776 /* ConfirmedTableViewController.swift */,
 				F6DC5CC01C476A5B00BA6776 /* ConfirmedTableViewController.xib */,
+				E1B43E3A1CB9107400724212 /* CancelledTableViewController.swift */,
+				E1B43E3B1CB9107400724212 /* CancelledTableViewController.xib */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 				E16B357C1C1CC9D4003897EF /* Profile.storyboard in Resources */,
 				E187E5451C32E80800E00E5A /* ItiTableViewCell.xib in Resources */,
 				E16B35861C1CCC65003897EF /* MarketPlace.storyboard in Resources */,
+				E1B43E3D1CB9107400724212 /* CancelledTableViewController.xib in Resources */,
 				F6DC5CBC1C4769EF00BA6776 /* PendingTableViewViewController.xib in Resources */,
 				E11AC1FF1C16185400479927 /* Credential.storyboard in Resources */,
 			);
@@ -818,6 +825,7 @@
 				E19FE1761C3D7D74009FAB48 /* Marketplace.swift in Sources */,
 				E127E8EA1C79EA7E0006B07D /* FilterTableViewController.swift in Sources */,
 				E187E5511C32F29100E00E5A /* ItiTableViewController.swift in Sources */,
+				E1B43E3C1CB9107400724212 /* CancelledTableViewController.swift in Sources */,
 				706B0FD71C4CBC2F0078CD38 /* MyCustomTextField.swift in Sources */,
 				E1B95E461C36C14600F85B8F /* PubDetailsViewController.swift in Sources */,
 				E1E4B4461C17291000242A83 /* ForgetViewController.swift in Sources */,

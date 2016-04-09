@@ -51,12 +51,11 @@ class ConfirmedTableViewController: PFQueryTableViewController{
         
         var query1 = PFQuery(className: "Confirmed")
         query1.whereKey("Requester", equalTo: PFUser.currentUser()!)
-        
+        query1.whereKey("Status", notEqualTo: "Cancelled")
         
         var query2 = PFQuery(className: "Confirmed")
         query2.whereKey("Host", equalTo: PFUser.currentUser()!)
-        
-        
+        query1.whereKey("Status", notEqualTo: "Cancelled")
         
         var query = PFQuery.orQueryWithSubqueries([query1, query2])
         query.includeKey("Marketplace")

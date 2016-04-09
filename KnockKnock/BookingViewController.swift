@@ -179,8 +179,6 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         var testerDates = [NSDate]()
         var tester = false
         selectedDate = selectedDate.sort()
-        let startDate = KnockKnockUtils.dateToStringDisplay(selectedDate.first!)
-        let lastDate = KnockKnockUtils.dateToStringDisplay(selectedDate.last!)
         
         if (!selectedDate.isEmpty){
             var first2 = NSDate()
@@ -225,6 +223,9 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             presentViewController(alert, animated: true, completion: nil)
             
         } else {
+            let startDate = KnockKnockUtils.dateToStringDisplay(selectedDate.first!)
+            let lastDate = KnockKnockUtils.dateToStringDisplay(selectedDate.last!)
+            
             var total = self.price * self.pax
             
             var textMsg = "Summary\nStart Date: " + startDate + "\nLast Date: " + lastDate + "\nTotal Pax: " + String(pax) + "\nPrice: " + String(total) + "\n\nConfirmed?"

@@ -269,7 +269,7 @@ class PendingExpandedViewController: UIViewController {
                 
                 print("nvcwk")
             }else{
-                self.pendingObject["Status"] = "Cancelled"
+                self.pendingObject["Status"] = "Rejected"
                 self.pendingObject["Remarks"] = "User Cancelled"
                 
                 var requesterName = self.requesterObject["fName"] as! String
