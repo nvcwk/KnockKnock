@@ -45,7 +45,7 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
         
 
         setup()
-        self.view.bringSubviewToFront(btn_add)
+        
         
     }
     
@@ -93,6 +93,7 @@ class ItiMainViewController: UIViewController, CAPSPageMenuDelegate {
         })
 
         self.view.addSubview(pageMenu!.view)
+        self.view.bringSubviewToFront(btn_add)
         
         pageMenu!.delegate = self
     }
