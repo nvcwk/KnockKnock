@@ -79,7 +79,8 @@ class CancelledTableViewController: PFQueryTableViewController{
         query5.includeKey("Host")
         query5.includeKey("Requester")
         query5.includeKey("Itinerary.activities")
-        query5.orderByAscending("Date")
+        query5.addAscendingOrder("Status")
+        query5.addDescendingOrder("Date")
     
         return query5
         

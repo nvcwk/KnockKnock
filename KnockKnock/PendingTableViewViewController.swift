@@ -67,8 +67,9 @@ class PendingTableViewViewController: PFQueryTableViewController{
         query.includeKey("Host")
         query.includeKey("Requester")
         query.includeKey("Itinerary.activities")
-        query.orderByAscending("Date")
-        
+        query.addAscendingOrder("Status")
+        query.addDescendingOrder("Date")
+    
         return query
         
     }
