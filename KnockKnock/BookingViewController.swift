@@ -235,6 +235,10 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
                 SwiftSpinner.show("Sending Request...")
                 
+                let hostEmail = self.host["email"] as! String
+                let requesterEmail = PFUser.currentUser()!["email"] as! String
+                let title = self.itinerary["title"] as! String
+                
                 var booking = PFObject(className: "Pending")
                 booking["Requester"] = PFUser.currentUser()
                 booking["Date"] = self.selectedDate.sort().first
@@ -244,6 +248,9 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                 booking["Marketplace"] = self.marketplace
                 booking["Status"] = "Pending"
                 booking["Itinerary"] = self.itinerary
+                booking["hostEmail"] = hostEmail
+                booking["requesterEmail"] = requesterEmail
+                booking["title"] = title
                 
                 let myAlert =
                     booking.saveInBackgroundWithBlock {
@@ -255,7 +262,7 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                                 KnockKnockUtils.okAlert(self, title: "Message", message: "Request Sent! Check your latest confirmed bookings in the booking tab!", handle: { (action: UIAlertAction!) in
                                     self.navigationController?.popToRootViewControllerAnimated(true)
                                 } )
-                            
+                
                             
                             //Send email to the user and host
                             
@@ -265,31 +272,34 @@ class BookingViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                             
                             PFCloud.callFunctionInBackground("sendPending", withParameters: ["hoster": self.host.objectId!, "requester": requester])
                             
-                            PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["userEmail":self.userEmail, "hostEmail": self.hostEmail]) {
-                                (response: AnyObject?, error: NSError?) -> Void in
-                                
-                                if error == nil{
-                                    print("hello")
-                                }else{
-                                    
-                                }
-                                
-                            }
+                            
+                            
+//                            PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["userEmail":self.userEmail, "hostEmail": self.hostEmail]) {
+//                                (response: AnyObject?, error: NSError?) -> Void in
+//                                
+//                                if error == nil{
+//                                    print("hello")
+//                                }else{
+//                                    
+//                                }
+//                                
+//                            }
                             
                             //Send to the host email
-                            PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["email":self.hostEmail, ]) {
-                                (response: AnyObject?, error: NSError?) -> Void in
-                                
-                                if error == nil{
-                                    print("hello")
-                                }else{
-                                    
-                                }
-                                
-                            }
+//                            PFCloud.callFunctionInBackground("mailgunSendMail", withParameters: ["email":self.hostEmail, ]) {
+//                                (response: AnyObject?, error: NSError?) -> Void in
+//                                
+//                                if error == nil{
+//                                    print("hello")
+//                                }else{
+//                                    
+//                                }
+//                                
+//                            }
                             
                             
                         } else {
+                            
                             KnockKnockUtils.okAlert(self, title: "Error", message: "Try Again!", handle: nil)
                         }
                 }

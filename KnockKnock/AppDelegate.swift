@@ -91,23 +91,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication,
         didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
         fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-            if self.window!.rootViewController as? UITabBarController != nil {
-                var tababarController = self.window!.rootViewController as! UITabBarController
-                tababarController.selectedIndex = 2
-                
-//                let storyboard: UIStoryboard = UIStoryboard(name: "Booking", bundle: nil)
-//                let vc: UIViewController = storyboard.instantiateViewControllerWithIdentifier("bookingTab") as! MyBookingMainViewController
-                
-                
-                
-//                let storyboard: UIStoryboard = UIStoryboard(name: "Booking", bundle: nil)
-//                let vc: UIViewController = storyboard.instantiateViewControllerWithIdentifier("bookingTab") as! MyBookingMainViewController
-                //let vc = tababarController.selectedViewController! as UIViewController
-                
-                //print(userInfo["aps"]!["alert"])
-
-            }
-            
+//            if self.window!.rootViewController as? UITabBarController != nil {
+//                var tababarController = self.window!.rootViewController as! UITabBarController
+//                tababarController.selectedIndex = 2
+//                
+////                let storyboard: UIStoryboard = UIStoryboard(name: "Booking", bundle: nil)
+////                let vc: UIViewController = storyboard.instantiateViewControllerWithIdentifier("bookingTab") as! MyBookingMainViewController
+//                
+//                
+//                
+////                let storyboard: UIStoryboard = UIStoryboard(name: "Booking", bundle: nil)
+////                let vc: UIViewController = storyboard.instantiateViewControllerWithIdentifier("bookingTab") as! MyBookingMainViewController
+//                //let vc = tababarController.selectedViewController! as UIViewController
+//                
+//                //print(userInfo["aps"]!["alert"])
+//
+//            }
+        
             
         
     }
