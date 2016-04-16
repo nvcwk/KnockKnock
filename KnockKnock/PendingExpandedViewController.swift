@@ -173,6 +173,10 @@ class PendingExpandedViewController: UIViewController {
         
         
         bookAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            let hostEmail = self.hostObject["email"] as! String
+            let requesterEmail = self.requesterObject["email"] as! String
+            var itinerary = self.pendingObject["Itinerary"] as! PFObject
+            let title = itinerary["title"] as! String
             
             
             var booking = PFObject(className: "Confirmed")
@@ -184,6 +188,11 @@ class PendingExpandedViewController: UIViewController {
             booking["Marketplace"] = self.pendingObject["Marketplace"] as! PFObject
             booking["Itinerary"] = self.pendingObject["Itinerary"]
             booking["Status"] = "Confirmed"
+            booking["hostEmail"] = hostEmail
+            booking["requesterEmail"] = requesterEmail
+            booking["title"] = title
+            
+            
             let myAlert =
             UIAlertController(title:"Updating", message: "Please Wait...", preferredStyle: UIAlertControllerStyle.Alert);
             
